@@ -1,0 +1,19 @@
+---
+id: 435
+title: 流量包不能取消掉
+date: 2011-04-16T11:47:45+00:00
+author: tanglei
+layout: post
+guid: http://www.tanglei.name/?p=435
+permalink: /donot_cancel_gprs/
+duoshuo_thread_id:
+  - 1351844048792453385
+categories:
+  - MyLife
+tags:
+  - GPRS
+  - 流量包
+---
+之前每个月流量不怎么用，30M老是用一点点。上个月末就取消掉了。今天查了下话费信息，居然看到了不可思议的。[<img class="aligncenter size-medium wp-image-436" title="hf" src="http://www.tanglei.name/wp-content/uploads/2011/04/hf-158x300.png" alt="" width="158" height="300" />](http://www.tanglei.name/wp-content/uploads/2011/04/hf.png)因为流量扣费近10个大洋了。赶紧打10086咨询下。但也查询不到流量用到哪了。网上营业厅详单也不能显示具体用在哪。。。。汗啊。。认了吧。。还是把流量开通了。开通的时候人工台说现在开通能把之前扣掉的费用给返回。那就好了。但具体情况还不清楚。等两天再查下话费信息了。 现在余额不多了。好久没有冲话费了，就等着移动的活动了。虽然可用余额只有20多了。但帐户总余额还有100多呢。。都是活动送的话费。看5月份有不有活动了。不然还得去冲上先。
+
+这流量不知道用在哪了。新闻早晚报的流量是免费的，估计是什么墨迹天气啊之类的软件用的。在寝室也是连WIFI的。最有可能的也就是那些软件了。唉，以后智能机啊啥滴千万不要取消掉流量包。

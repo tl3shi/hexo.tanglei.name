@@ -1,0 +1,26 @@
+---
+id: 1020
+title: 腾讯实习-周日学习
+date: 2011-07-17T23:10:37+00:00
+author: tanglei
+layout: post
+guid: http://www.tanglei.name/%e8%85%be%e8%ae%af%e5%ae%9e%e4%b9%a0-%e5%91%a8%e6%97%a5%e5%ad%a6%e4%b9%a0/
+permalink: /intern-in-tencent-study-on-sunday/
+duoshuo_thread_id:
+  - 1351844048792453376
+categories:
+  - 实习那些事儿
+tags:
+  - 不关机后果
+  - 腾讯实习日志
+  - 腾讯实习生
+---
+今天周日,本来不上班的.但是鉴于自己对php还不熟悉,对明天要答疑的qzhttp+fastcgi+tcc的架构不了解这样的情况下,准备到公司主动加班.周日公司食堂不开啊没有班车各种不爽。
+
+到公司悲剧了，上次走的时候电脑没有关,结果收到了;这张纸贴在显示器前面。个悲剧啊……难怪有的电脑上面挂了个牌子，説因工作需要，要24小时开机呢。
+
+![](http://www.tanglei.name/wp-content/uploads/2011/07/071811_0310_1.png)
+
+好不容易下载了qzhttp的发布包,然后上传到linux的开发机上.终于知道之前佘嗲给的那个putty的作用了.不过还是用SecureCRT.启动qzhttp却说没有权限,找leaner要了root的权限,他一再强调不能乱搞啊,出问题了,找我算账,开发机上的各种代码,很多人的心血啊.显然对我这个新手来说有些不放心嘛.不过我还是有信息不会搞乱的.有了权限,但start时却报莫名其妙的错误搞不懂.算了,不搞这个了.Brian那个开发机上本来就有qzhttp可以用.Carmelo在研究CGI和TTC,差不多可以了.就差接受参数和qzhttp整合.我后来学习了下PHP,对开发机还有得熟悉啊,linux各种命令,VI不熟悉.写PHPdemo时,实在痛苦,之前J2EE写惯了,又得写各种代码夹杂在一起的了.
+
+晚上又研究了下CGI,有了点眉目了.在Tomcat下配置CGI，然后写了C的CGI程序运行了下。

@@ -1,0 +1,68 @@
+---
+id: 2453
+title: 如何让百度网盘客户端(云管家)走ipv6
+date: 2014-06-26T20:36:19+00:00
+author: tanglei
+layout: post
+guid: http://www.tanglei.name/?p=2453
+permalink: /use-ipv6-to-save-traffic-when-using-baiduyun/
+duoshuo_thread_id:
+  - 1351844048792453506
+enable_highlight:
+  - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
+categories:
+  - Windows
+  - 经验技巧
+tags:
+  - ipv6
+  - 校园网
+  - 百度云管家
+  - 百度网盘
+---
+百度云/网盘网页版的话直接改hosts即可，网传hosts如下:
+
+<pre>&lt;cc>2400:da00::dbf:0:6666 p.baidupcs.com 
+2400:da00::dbf:0:6666 nj.baidupcs.com 
+2400:da00::dbf:0:6666 bj.baidupcs.com 
+2400:da00::dbf:0:6666 qd.baidupcs.com 
+2400:da00::dbf:0:6666 qd.cache.baidupcs.com 
+2400:da00::dbf:0:6666 nj.cache.baidupcs.com 
+2400:da00::dbf:0:6666 cdn.baidupcs.com 
+2400:da00::dbf:0:6666 hot.baidupcs.com 
+2400:da00::dbf:0:6666 hot.cdn.baidupcs.com 
+2400:da00::dbf:0:6666 www.baidupcs.com 
+2400:da00::dbf:0:6666 d.pcs.baidu.com 
+2400:da00::dbf:0:6666 pcs.baidu.com&lt;/cc></pre>
+
+网页版感觉始终有点~一方面断掉校园网就直接连不上百度云了下载速度也没了，担心走ipv4~万一走ipv4，我的money就~~(不过大多数网友都说网页版是可以走ipv6的)~ 另外一个方面客户端还是要方便些的~但直接改hosts，客户端仍然走ipv4(自己验证 + 网上结果)~
+
+试了下可以使用goagent走ipv6.  [goagent安装配置请戳这里](https://code.google.com/p/goagent/wiki/InstallGuide).
+
+最后效果如下：
+
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image" src="http://www.tanglei.name/wp-content/uploads/2014/06/Image_thumb.png" alt="Image" width="669" height="718" border="0" />](http://www.tanglei.name/wp-content/uploads/2014/06/Image.png)
+
+主要修改goagent配置goagent.ini (我的是v3.0.2,截至2014-6-26的最新版本是v3.1.8, 对应的要改为profile = ipv6)
+
+profile = google_ipv6
+
+[google\_ipv6]里面的hosts改为如下，（下面的hosts截至2014-6-26还可用，v3.1.8对应在[iplist]下google\_ipv6 = 下面的ip地址列表）
+
+<pre>&lt;cc class="php">
+hosts = 2404:6800:4005:c00::64|2404:6800:4005:c00::65|2404:6800:4005:c00::5e|2404:6800:4005:c00::67|2404:6800:4005:c00::2f|2607:f8b0:4007:801::1012|2607:f8b0:4007:804::1013|2607:f8b0:4007:801::1011|2607:f8b0:4005:800::1013|2607:f8b0:4005:802::1010|2607:f8b0:400a:804::1002|2607:f8b0:4009:805::1011|2607:f8b0:4009:806::1012|2607:f8b0:4009:802::1014|2607:f8b0:4009:802::1004|2607:f8b0:400f:800::1010|2607:f8b0:4000:801::1010|2607:f8b0:4001:c00::67|2607:f8b0:4000:808::1014|2607:f8b0:400b:806::1011|2607:f8b0:4002:c06::67|2607:f8b0:4000:802::1011|2404:6800:4005:805::1018|2607:f8b0:4008:801::1012|2607:f8b0:4000:802::100e|2404:6800:4005:800::1003|2404:6800:4008:c02::68|2404:6800:4005:c00::11|2404:6800:4005:806::1010|2404:6800:4008:c03::6a|2607:f8b0:4002:c07::6a|2404:6800:4005:800::1011|2607:f8b0:400d:c04::67|2607:f8b0:4000:802::1014|2404:6800:4005:c00::65|2404:6800:4005:804::1011|2607:f8b0:400c:c03::64|2404:6800:4005:c00::64|2404:6800:4005:c00::5e|2607:f8b0:400c:c03::67|2607:f8b0:4006:806::1007|2404:6800:4005:c00::c7|2404:6800:4005:c00::67|2404:6800:4005:c00::2f|2607:f8b0:400c:c03::68|2607:f8b0:4006:806::1014|2607:f8b0:400c:c03::66|2607:f8b0:400c:c03::6a|2607:f8b0:4006:803::1013|2404:6800:4004:807::1014|2607:f8b0:400a:800::1012|2607:f8b0:400a:800::1001|2a00:1450:4009:804::1013|2607:f8b0:400a:801::1011|2a00:1450:4007:80a::1014|2001:4860:400b:c01::63|2a00:1450:4007:80a::1004|2a00:1450:400c:c06::65|2a00:1450:4007:809::1010|2a00:1450:4007:808::1011|2a00:1450:400c:c06::93|2a00:1450:400b:c02::63|2a00:1450:4001:c02::93|2a00:1450:4001:c02::67|2a00:1450:4001:c02::69|2a00:1450:400a:805::1013|2a00:1450:4013:c01::8b|2a00:1450:4001:807::1010|2a00:1450:4001:802::1011|2a00:1450:4013:c00::69|2a00:1450:4001:c02::64|2a00:1450:4001:809::1013|2a00:1450:4008:c01::69|2a00:1450:4005:808::1010|2a00:1450:4013:c00::66|2a00:1450:4001:80c::1013|2a00:1450:4001:801::1005|2a00:1450:4005:808::1006|2a00:1450:4001:80e::1014|2a00:1450:4001:80a::1010|2a00:1450:4005:809::1013|2a00:1450:4005:809::1012|2a00:1450:4002:804::1004|2a00:1450:4016:803::1012|2a00:1450:4006:801::1010|2a00:1450:4005:800::1012|2a00:1450:4016:803::1011|2a00:1450:4016:800::1000|2a00:1450:4002:804::1010|2a00:1450:4002:805::1006|2a00:1450:4016:800::1011|2a00:1450:4005:800::100e|2a00:1450:4003:803::1010|2a00:1450:4016:800::1010|2a00:1450:4002:805::1011|2a00:1450:400d:805::1012|2a00:1450:400d:805::1006|2404:6800:4003:c00::67|2a00:1450:400d:803::1010|2404:6800:4003:c00::6a|2404:6800:4003:808::1010|2404:6800:4003:807::1012|2800:3f0:4004:800::1012|2404:6800:4003:802::1013|2a00:1450:400f:803::1014|2404:6800:4003:c00::69|2a00:1450:4010:c03::67|2a00:1450:4010:c03::8b|2800:3f0:4002:802::1014|2a00:1450:4010:c03::69|2a00:1450:4010:c03::68|2a00:1450:4010:c04::93|2a00:1450:4010:c04::64|2a00:1450:4010:c03::93|2404:6800:4006:806::1010|2404:6800:4006:806::1002|2404:6800:4006:805::1011|2404:6800:4006:805::1013|2404:6800:4006:804::1013|2404:6800:4006:803::1010|2404:6800:4009:801::1014|2c0f:fb50:4002:800::1013|2c0f:fb50:4002:801::1011&lt;/cc></pre>
+
+这是用代理访问http://ip.chinaz.com 可以看到代理的ip~ 若不是自己的ip，则成功了。
+
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(1)" src="http://www.tanglei.name/wp-content/uploads/2014/06/Image1_thumb.png" alt="Image(1)" width="644" height="185" border="0" />](http://www.tanglei.name/wp-content/uploads/2014/06/Image1.png)
+
+百度网盘/百度云管家设置代理
+  
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(2)" src="http://www.tanglei.name/wp-content/uploads/2014/06/Image2_thumb.png" alt="Image(2)" width="499" height="109" border="0" />](http://www.tanglei.name/wp-content/uploads/2014/06/Image2.png)
+
+速度：几十k ~ 几百k 不等. 木有ipv4直接下载速度快啊， 我ipv4直接下载速度能达3M呢~
+
+**断掉校园网**也是仍然可以下载的~访问网页什么的也可以(也实现了ipv6上网~但每个月20G的流量上上网还是不会用这么多的，也就没必要上个网还走ipv6了)~
+
+这个方法应该同时也适用于结合vpn吧~(vps得支持ipv6)
+
+Reference： <a href="https://code.google.com/p/goagent/issues/detail?id=13734" target="_blank">https://code.google.com/p/goagent/issues/detail?id=13734</a>

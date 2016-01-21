@@ -1,0 +1,58 @@
+---
+id: 829
+title: 'Word07发布wordpress的blog博客教程[图片+视频]'
+date: 2011-06-14T11:13:48+00:00
+author: tanglei
+layout: post
+guid: http://www.tanglei.name/word07%e5%8f%91%e5%b8%83wordpress%e5%8d%9a%e5%ae%a2%e6%95%99%e7%a8%8b/
+permalink: /publish-a-blog-easily-and-quickly-with-good-style/
+duoshuo_thread_id:
+  - 1351844048792453129
+categories:
+  - wordpress
+tags:
+  - word
+  - wordpress博客
+  - 最简单发布博客方法
+---
+前言：N久前就在想有没有一个工具能让在word里面写好，排好版，图片啊啥的也包括在word里面，然后直接能够copy到博客发布系统里面。还想过自己写过一个小工具，让用户上传word排版好的带格式和图片的内容的博客日，然后自己通过在服务器用某种算法对word进行处理，上传图片，解析格式等。之前有过笨方法，就是将有格式啊图片啊之类的word另存为html文件。而现在好多博客系统包括wordpress也可以使用html编辑内容中，然后将html文件的源码copy过去，图片啊类似的，通过ftp形式后台上传，然后全文搜索替换图片的URL。这样格式就稳定了，本站的贵州支教模块下就是采用此方法发布的，只是博客的内容是直接进数据库里替换图片的URL。因为往往在发布blog时，特别是图片较多时就很麻烦，一个一个上传啊之类的。后来发现word07有这样一个功能，能够轻松发布带格式和图片的word版博客。然后就试了试。发现还不错。现在写了个教程如下，还录了个视频见附件。
+
+过程如下：
+
+首先编辑好你想要发布的博客内容，在word07里面，图片啊，字体格式啊自己先排好。如：
+
+![](http://www.tanglei.name/wp-content/uploads/2011/06/061411_0313_Word07wordp1.png)
+
+编辑好后，点击开始按钮的发布按钮，如图所示：
+
+![](http://www.tanglei.name/wp-content/uploads/2011/06/061411_0313_Word07wordp2.png)
+
+然后出现的界面：可以输入标题啊等再调整下格式之类的。
+
+![](http://www.tanglei.name/wp-content/uploads/2011/06/061411_0313_Word07wordp3.png)
+
+然后就是关联博客的帐号了：
+
+点击上面按钮上的管理帐户:刚开始没有，则新建一个，选择博客的服务提供商
+
+![](http://www.tanglei.name/wp-content/uploads/2011/06/061411_0313_Word07wordp4.png)
+
+如本站wordpress然后下一步，输入博客的站点地址，然后再输入你后台登陆的用户名和密码
+
+![](http://www.tanglei.name/wp-content/uploads/2011/06/061411_0313_Word07wordp5.png)
+
+若用户名密码等正确就会提示注册成功。
+
+跟帐户建立关联后，还可以获取站点的一些信息，如之前发布过的文章。
+
+还可以插入当前待发布的文章的类别。
+
+![](http://www.tanglei.name/wp-content/uploads/2011/06/061411_0313_Word07wordp6.png)
+
+最后发布即可，然后去你的站点就可以看到了。发布过程中，会不时的弹出对话框现实正在联系博客服务商，怀疑是在上传图片内容时的验证过程。
+
+当然为了做SEO，还要对文章做一些稍微的修改，例如添加tag标签啊，url重命名啊。图片的url就改不了了。上传的时候就默认用时间啊等命名了。当然有闲心还可以编辑下图片的alt属性啊等等。为了快就没那个必要了。
+
+这个是本人采用这种方式发布第一篇博客时录制的视频，exe的文件，无毒，放心。[点我下载](http://www.tanglei.name/wp-content/uploads/2011/06/word发布wordpress.zip)[word07发布blog教程wordpress](http://www.tanglei.name/wp-content/uploads/2011/06/word发布wordpress.zip)。
+
+&nbsp;
