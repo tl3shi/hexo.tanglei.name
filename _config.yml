@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://www.tanglei.name
+url: http://hexo.tanglei.name
 root: /
 #permalink: :year/:month/:day/:title/
 permalink: :title/
@@ -35,8 +35,8 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
-relative_link: false
+post_asset_folder: true
+relative_link: true
 future: true
 highlight:
   enable: true
@@ -58,7 +58,7 @@ time_format: HH:mm:ss
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-per_page: 20
+per_page: 15
 pagination_dir: page
 
 # Extensions
@@ -71,5 +71,5 @@ theme: maupassant
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:tl3shi/hexo.tanglei.name.git
+  repo: git@github.com:tangleithu/tangleithu.github.com.git
   branch: gh-pages

@@ -5,10 +5,11 @@ date: 2010-12-24T03:25:17+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=175
-permalink: /%e8%bd%af%e4%bb%b6%e4%bd%93%e7%b3%bb%e7%bb%93%e6%9e%84%e6%a6%82%e8%bf%b0/
+permalink: /summery-of-software-architecture/
 duoshuo_thread_id:
   - 1351844048792453154
 categories:
+  - 软件工程
   - 软件体系结构
 ---
 软件体系结构的定义有多种，常见如下：

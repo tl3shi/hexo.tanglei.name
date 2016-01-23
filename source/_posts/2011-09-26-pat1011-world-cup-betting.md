@@ -5,7 +5,7 @@ date: 2011-09-26T14:26:36+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1174
-permalink: /pat1011%e2%80%94world-cup-betting/
+permalink: /pat1011-world-cup-betting/
 duoshuo_thread_id:
   - 1351844048792453277
 enable_highlight:

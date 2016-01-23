@@ -4,11 +4,12 @@ title: 软件配置管理相关文档
 date: 2011-06-13T10:34:16+00:00
 author: tanglei
 layout: post
-guid: http://www.tanglei.name/%e8%bd%af%e4%bb%b6%e9%85%8d%e7%bd%ae%e7%ae%a1%e7%90%86%e7%9b%b8%e5%85%b3%e6%96%87%e6%a1%a3/
-permalink: /%e8%bd%af%e4%bb%b6%e9%85%8d%e7%bd%ae%e7%ae%a1%e7%90%86%e7%9b%b8%e5%85%b3%e6%96%87%e6%a1%a3/
+guid: http://www.tanglei.name/documents-of-software-configuration-management/
+permalink: /documents-of-software-configuration-management/
 duoshuo_thread_id:
   - 1351844048792453162
 categories:
+  - 软件工程
   - 软件配置管理
 tags:
   - 软件配置管理文档

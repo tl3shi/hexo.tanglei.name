@@ -6,7 +6,7 @@ author: tanglei
 excerpt: ' 12月15日下午，我校2009—2010学年先进班集体标兵答辩会在校本部立言厅、立德厅举行。本次答辩会由学工部主办，地球科学与信息物理学院承办，共有来自24个学院的29个候选班级入围。 '
 layout: post
 guid: http://www.tanglei.name/?p=61
-permalink: /%e6%88%91%e6%a0%a1%e4%b8%be%e8%a1%8c2009%e2%80%942010%e5%ad%a6%e5%b9%b4%e5%85%88%e8%bf%9b%e7%8f%ad%e9%9b%86%e4%bd%93%e6%a0%87%e5%85%b5%e7%ad%94%e8%be%a9%e4%bc%9a/
+permalink: /presentation-in-the-name-of-csu0804-in-csu/
 duoshuo_thread_id:
   - 1351844048792453197
 categories:
