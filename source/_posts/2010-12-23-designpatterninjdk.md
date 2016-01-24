@@ -5,7 +5,7 @@ date: 2010-12-23T08:51:38+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=164
-permalink: /designpatterninjdk/
+permalink: designpatterninjdk
 duoshuo_thread_id:
   - 1351842949280825450
 categories:

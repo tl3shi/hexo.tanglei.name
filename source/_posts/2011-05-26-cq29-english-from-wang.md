@@ -5,7 +5,7 @@ date: 2011-05-26T20:48:46+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=726
-permalink: /cq29-english-from-wang/
+permalink: cq29-english-from-wang
 duoshuo_thread_id:
   - 1351844048792453283
 categories:

@@ -5,7 +5,7 @@ date: 2011-06-10T11:58:54+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=796
-permalink: /scm-phase-flow/
+permalink: scm-phase-flow
 duoshuo_thread_id:
   - 1351844048792453125
 categories:

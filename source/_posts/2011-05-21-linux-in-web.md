@@ -5,7 +5,7 @@ date: 2011-05-21T15:54:55+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=683
-permalink: /linux-in-web/
+permalink: linux-in-web
 duoshuo_thread_id:
   - 1351844048792453292
 categories:

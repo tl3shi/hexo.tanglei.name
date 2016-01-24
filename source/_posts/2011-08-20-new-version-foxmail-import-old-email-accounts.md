@@ -5,7 +5,7 @@ date: 2011-08-20T17:26:10+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1125
-permalink: /new-version-foxmail-import-old-email-accounts/
+permalink: new-version-foxmail-import-old-email-accounts
 duoshuo_thread_id:
   - 1351844048792453240
 categories:

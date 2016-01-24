@@ -5,7 +5,7 @@ date: 2012-03-17T14:27:23+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1550
-permalink: /apriori-algorithm-in-python/
+permalink: apriori-algorithm-in-python
 duoshuo_thread_id:
   - 1351844048792453270
 enable_highlight:

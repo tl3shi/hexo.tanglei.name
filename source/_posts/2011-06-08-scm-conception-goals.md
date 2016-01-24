@@ -5,7 +5,7 @@ date: 2011-06-08T15:35:12+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=779
-permalink: /scm-conception-goals/
+permalink: scm-conception-goals
 duoshuo_thread_id:
   - 1351844048792453438
 categories:

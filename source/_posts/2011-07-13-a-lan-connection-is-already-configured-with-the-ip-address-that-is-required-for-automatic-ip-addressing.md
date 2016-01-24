@@ -5,7 +5,7 @@ date: 2011-07-13T23:22:09+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=980
-permalink: /a-lan-connection-is-already-configured-with-the-ip-address-that-is-required-for-automatic-ip-addressing/
+permalink: a-lan-connection-is-already-configured-with-the-ip-address-that-is-required-for-automatic-ip-addressing
 duoshuo_thread_id:
   - 1351844048792453160
 categories:

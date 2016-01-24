@@ -5,7 +5,7 @@ date: 2011-02-19T15:43:02+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=321
-permalink: /surprise_software_arch/
+permalink: surprise_software_arch
 duoshuo_thread_id:
   - 1351844048792453462
 categories:

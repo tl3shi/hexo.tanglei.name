@@ -5,7 +5,7 @@ date: 2011-09-01T21:45:47+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1145
-permalink: /run-process-backgroud-in-linux/
+permalink: run-process-backgroud-in-linux
 duoshuo_thread_id:
   - 1351844048792453381
 enable_highlight:

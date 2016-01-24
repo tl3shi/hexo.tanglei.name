@@ -5,7 +5,7 @@ date: 2010-12-27T10:14:54+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=194
-permalink: /lbs-billions/
+permalink: lbs-billions
 duoshuo_thread_id:
   - 1351844048792453135
 categories:

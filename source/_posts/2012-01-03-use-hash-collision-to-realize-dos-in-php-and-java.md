@@ -5,7 +5,7 @@ date: 2012-01-03T23:58:26+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1392
-permalink: /use-hash-collision-to-realize-dos-in-php-and-java/
+permalink: use-hash-collision-to-realize-dos-in-php-and-java
 duoshuo_thread_id:
   - 1351844048792453140
 enable_highlight:

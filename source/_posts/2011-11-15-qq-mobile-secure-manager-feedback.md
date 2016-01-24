@@ -5,7 +5,7 @@ date: 2011-11-15T21:51:03+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1272
-permalink: /qq-mobile-secure-manager-feedback/
+permalink: qq-mobile-secure-manager-feedback
 duoshuo_thread_id:
   - 1351844048792453426
 categories:

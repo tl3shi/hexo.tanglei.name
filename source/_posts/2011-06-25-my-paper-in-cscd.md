@@ -5,7 +5,7 @@ date: 2011-06-25T19:25:51+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=897
-permalink: /my-paper-in-cscd/
+permalink: my-paper-in-cscd
 duoshuo_thread_id:
   - 1351844048792453147
 categories:

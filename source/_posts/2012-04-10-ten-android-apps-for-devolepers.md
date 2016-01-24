@@ -5,7 +5,7 @@ date: 2012-04-10T19:05:00+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1690
-permalink: /ten-android-apps-for-devolepers/
+permalink: ten-android-apps-for-devolepers
 duoshuo_thread_id:
   - 1351844048792453303
 categories:

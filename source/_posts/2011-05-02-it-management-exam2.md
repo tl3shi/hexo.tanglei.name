@@ -5,7 +5,7 @@ date: 2011-05-02T05:16:54+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=592
-permalink: /it-management-exam2/
+permalink: it-management-exam2
 duoshuo_thread_id:
   - 1351844048792453200
 categories:

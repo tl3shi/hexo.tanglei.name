@@ -5,7 +5,7 @@ date: 2011-06-09T13:23:28+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=787
-permalink: /erich-gamma-visual-studio/
+permalink: erich-gamma-visual-studio
 duoshuo_thread_id:
   - 1351844048792453268
 categories:

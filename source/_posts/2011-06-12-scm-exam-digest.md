@@ -5,7 +5,7 @@ date: 2011-06-12T21:40:05+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=806
-permalink: /scm-exam-digest/
+permalink: scm-exam-digest
 duoshuo_thread_id:
   - 1351844048792453226
 categories:

@@ -5,7 +5,7 @@ date: 2010-12-22T14:58:50+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=144
-permalink: /javakeywords_volatile/
+permalink: javakeywords_volatile
 duoshuo_thread_id:
   - 1351844048792453389
 categories:

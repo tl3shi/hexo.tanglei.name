@@ -5,7 +5,7 @@ date: 2011-01-06T12:20:30+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=295
-permalink: /sofware-speak-on-201/
+permalink: sofware-speak-on-201
 duoshuo_thread_id:
   - 1351844048792453397
 categories:

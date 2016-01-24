@@ -5,7 +5,7 @@ date: 2011-12-21T20:23:27+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1316
-permalink: /run-linux-command-in-windows/
+permalink: run-linux-command-in-windows
 duoshuo_thread_id:
   - 1351844048792453262
 categories:

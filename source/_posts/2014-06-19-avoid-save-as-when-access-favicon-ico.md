@@ -5,7 +5,7 @@ date: 2014-06-19T13:21:38+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2434
-permalink: /avoid-save-as-when-access-favicon-ico/
+permalink: avoid-save-as-when-access-favicon-ico
 duoshuo_thread_id:
   - 1351844048792453505
 enable_highlight:

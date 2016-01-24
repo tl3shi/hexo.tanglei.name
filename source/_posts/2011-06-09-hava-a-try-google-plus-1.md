@@ -5,7 +5,7 @@ date: 2011-06-09T14:04:04+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=789
-permalink: /hava-a-try-google-plus-1/
+permalink: hava-a-try-google-plus-1
 duoshuo_thread_id:
   - 1351844048792453440
 enable_highlight:

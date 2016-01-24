@@ -5,7 +5,7 @@ date: 2010-12-19T13:57:19+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=99
-permalink: /wodpress_youhua/
+permalink: wodpress_youhua
 duoshuo_thread_id:
   - 1351844048792453146
 categories:

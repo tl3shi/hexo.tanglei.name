@@ -5,7 +5,7 @@ date: 2013-04-20T14:22:22+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2142
-permalink: /thuflute-and-me/
+permalink: thuflute-and-me
 duoshuo_thread_id:
   - 1351844048792453122
 categories:

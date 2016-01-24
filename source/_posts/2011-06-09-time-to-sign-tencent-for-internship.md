@@ -5,7 +5,7 @@ date: 2011-06-09T12:51:57+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=781
-permalink: /time-to-sign-tencent-for-internship/
+permalink: time-to-sign-tencent-for-internship
 duoshuo_thread_id:
   - 1351844048792453214
 categories:

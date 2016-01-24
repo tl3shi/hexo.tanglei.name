@@ -5,7 +5,7 @@ date: 2014-01-23T00:05:31+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2293
-permalink: /android-airplanemode-auto-switcher/
+permalink: android-airplanemode-auto-switcher
 duoshuo_thread_id:
   - 1351844048792453497
 enable_highlight:

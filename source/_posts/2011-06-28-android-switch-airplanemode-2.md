@@ -5,7 +5,7 @@ date: 2011-06-28T11:41:48+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=922
-permalink: /android-switch-airplanemode-2/
+permalink: android-switch-airplanemode-2
 duoshuo_thread_id:
   - 1351844048792453193
 enable_highlight:

@@ -5,7 +5,7 @@ date: 2012-02-01T17:25:30+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1440
-permalink: /some-of-my-projects/
+permalink: some-of-my-projects
 duoshuo_thread_id:
   - 1351844048792453354
 categories:

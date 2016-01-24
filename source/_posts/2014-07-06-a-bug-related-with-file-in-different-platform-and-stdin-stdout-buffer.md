@@ -5,7 +5,7 @@ date: 2014-07-06T15:02:44+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2494
-permalink: /a-bug-related-with-file-in-different-platform-and-stdin-stdout-buffer/
+permalink: a-bug-related-with-file-in-different-platform-and-stdin-stdout-buffer
 duoshuo_thread_id:
   - 1351844048792453508
 enable_highlight:

@@ -5,7 +5,7 @@ date: 2011-08-04T22:31:03+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1087
-permalink: /regular-expression-tutorials/
+permalink: regular-expression-tutorials
 duoshuo_thread_id:
   - 1351844048792453430
 categories:

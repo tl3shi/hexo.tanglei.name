@@ -5,7 +5,7 @@ date: 2013-12-10T23:03:57+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2256
-permalink: /start-local-application-from-url/
+permalink: start-local-application-from-url
 duoshuo_thread_id:
   - 1351844048792453494
 enable_highlight:

@@ -5,7 +5,7 @@ date: 2010-12-24T02:01:37+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=171
-permalink: /android-games/
+permalink: android-games
 duoshuo_thread_id:
   - 1351844048792453305
 categories:

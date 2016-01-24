@@ -5,7 +5,7 @@ date: 2012-05-23T13:59:19+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1796
-permalink: /share-experience-of-postgraduate-interview/
+permalink: share-experience-of-postgraduate-interview
 duoshuo_thread_id:
   - 1351844048792453321
 categories:

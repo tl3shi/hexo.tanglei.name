@@ -5,7 +5,7 @@ date: 2011-02-25T13:49:18+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=358
-permalink: /android_sensors_devlope/
+permalink: android_sensors_devlope
 duoshuo_thread_id:
   - 1351844048792453314
 enable_highlight:

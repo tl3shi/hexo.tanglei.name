@@ -5,7 +5,7 @@ date: 2011-08-14T23:02:36+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1112
-permalink: /my-travel-to-macao/
+permalink: my-travel-to-macao
 duoshuo_thread_id:
   - 1351844048792453414
 categories:

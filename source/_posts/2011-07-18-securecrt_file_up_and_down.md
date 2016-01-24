@@ -5,7 +5,7 @@ date: 2011-07-18T21:16:09+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1037
-permalink: /securecrt_file_up_and_down/
+permalink: securecrt_file_up_and_down
 duoshuo_thread_id:
   - 1351844048792453257
 categories:

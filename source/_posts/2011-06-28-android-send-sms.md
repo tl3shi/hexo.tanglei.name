@@ -5,7 +5,7 @@ date: 2011-06-28T13:21:46+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=931
-permalink: /android-send-sms/
+permalink: android-send-sms
 duoshuo_thread_id:
   - 1351844048792453260
 enable_highlight:

@@ -5,7 +5,7 @@ date: 2013-11-07T19:43:02+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2216
-permalink: /no-need-to-register-software-certificates/
+permalink: no-need-to-register-software-certificates
 duoshuo_thread_id:
   - 1351844048792453491
 categories:

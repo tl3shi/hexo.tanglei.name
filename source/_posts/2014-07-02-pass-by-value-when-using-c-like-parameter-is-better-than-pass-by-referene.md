@@ -5,7 +5,7 @@ date: 2014-07-02T23:21:39+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2461
-permalink: /pass-by-value-when-using-c-like-parameter-is-better-than-pass-by-referene/
+permalink: pass-by-value-when-using-c-like-parameter-is-better-than-pass-by-referene
 duoshuo_thread_id:
   - 1351844048792453507
 categories:

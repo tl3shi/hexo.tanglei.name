@@ -5,7 +5,7 @@ date: 2011-06-11T21:32:38+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=804
-permalink: /play-with-google-logo/
+permalink: play-with-google-logo
 duoshuo_thread_id:
   - 1351844048792453402
 categories:

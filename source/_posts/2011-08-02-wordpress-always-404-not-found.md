@@ -5,7 +5,7 @@ date: 2011-08-02T21:48:13+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1070
-permalink: /wordpress-always-404-not-found/
+permalink: wordpress-always-404-not-found
 duoshuo_thread_id:
   - 1351844048792453215
 categories:

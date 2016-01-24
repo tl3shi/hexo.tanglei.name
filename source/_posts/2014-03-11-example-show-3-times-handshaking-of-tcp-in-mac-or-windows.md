@@ -5,7 +5,7 @@ date: 2014-03-11T21:15:15+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2343
-permalink: /example-show-3-times-handshaking-of-tcp-in-mac-or-windows/
+permalink: example-show-3-times-handshaking-of-tcp-in-mac-or-windows
 duoshuo_thread_id:
   - 1351844048792453499
 categories:

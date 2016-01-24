@@ -5,7 +5,7 @@ date: 2011-06-06T17:31:29+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=767
-permalink: /cmm-exam-anwser/
+permalink: cmm-exam-anwser
 duoshuo_thread_id:
   - 1351844048792453403
 categories:

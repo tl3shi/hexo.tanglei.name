@@ -5,7 +5,7 @@ date: 2011-05-23T18:02:28+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=708
-permalink: /net-marketing/
+permalink: net-marketing
 duoshuo_thread_id:
   - 1351844048792453121
 categories:

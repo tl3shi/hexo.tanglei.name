@@ -5,7 +5,7 @@ date: 2010-12-28T13:46:32+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=235
-permalink: /say-easily/
+permalink: say-easily
 duoshuo_thread_id:
   - 1351844048792453328
 categories:

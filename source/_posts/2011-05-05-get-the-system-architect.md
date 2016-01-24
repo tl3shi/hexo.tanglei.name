@@ -5,7 +5,7 @@ date: 2011-05-05T15:47:05+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=622
-permalink: /get-the-system-architect/
+permalink: get-the-system-architect
 duoshuo_thread_id:
   - 1351844048792453306
 categories:

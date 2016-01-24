@@ -5,7 +5,7 @@ date: 2015-03-05T19:00:10+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2630
-permalink: /travel-to-vietnam/
+permalink: travel-to-vietnam
 duoshuo_thread_id:
   - 1351844048792453517
 categories:

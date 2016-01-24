@@ -5,7 +5,7 @@ date: 2012-03-25T00:36:02+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1629
-permalink: /delete-the-reductant-start-menu-in-ubuntu/
+permalink: delete-the-reductant-start-menu-in-ubuntu
 duoshuo_thread_id:
   - 1351844048792453294
 categories:

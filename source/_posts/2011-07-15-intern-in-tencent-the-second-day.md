@@ -5,7 +5,7 @@ date: 2011-07-15T00:25:28+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/%e8%85%be%e8%ae%af%e5%ae%9e%e4%b9%a0-%e7%ac%ac%e4%ba%8c%e5%a4%a9/
-permalink: /intern-in-tencent-the-second-day/
+permalink: intern-in-tencent-the-second-day
 duoshuo_thread_id:
   - 1351844048792453374
 categories:

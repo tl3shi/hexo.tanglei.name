@@ -5,7 +5,7 @@ date: 2011-04-16T11:47:45+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=435
-permalink: /donot_cancel_gprs/
+permalink: donot_cancel_gprs
 duoshuo_thread_id:
   - 1351844048792453385
 categories:

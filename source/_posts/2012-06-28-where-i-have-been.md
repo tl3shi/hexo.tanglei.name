@@ -5,7 +5,7 @@ date: 2012-06-28T22:40:25+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1831
-permalink: /where-i-have-been/
+permalink: where-i-have-been
 duoshuo_thread_id:
   - 1351844048792453404
 categories:

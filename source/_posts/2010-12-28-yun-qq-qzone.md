@@ -5,7 +5,7 @@ date: 2010-12-28T14:58:15+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=238
-permalink: /yun-qq-qzone/
+permalink: yun-qq-qzone
 duoshuo_thread_id:
   - 1351844048792453217
 categories:

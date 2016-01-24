@@ -5,7 +5,7 @@ date: 2011-04-12T04:54:54+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=429
-permalink: /words-after-bug/
+permalink: words-after-bug
 duoshuo_thread_id:
   - 1351844048792453218
 categories:

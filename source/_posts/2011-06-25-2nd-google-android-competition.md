@@ -5,7 +5,7 @@ date: 2011-06-25T18:50:07+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=893
-permalink: /2nd-google-android-competition/
+permalink: 2nd-google-android-competition
 duoshuo_thread_id:
   - 1351844048792453161
 categories:

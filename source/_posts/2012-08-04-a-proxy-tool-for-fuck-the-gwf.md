@@ -5,7 +5,7 @@ date: 2012-08-04T23:01:38+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1902
-permalink: /a-proxy-tool-for-fuck-the-gwf/
+permalink: a-proxy-tool-for-fuck-the-gwf
 duoshuo_thread_id:
   - 1351844048792453310
 enable_highlight:

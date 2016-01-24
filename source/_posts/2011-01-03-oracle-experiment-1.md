@@ -5,7 +5,7 @@ date: 2011-01-03T03:49:39+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=272
-permalink: /oracle-experiment-1/
+permalink: oracle-experiment-1
 duoshuo_thread_id:
   - 1351842949280825461
 enable_highlight:

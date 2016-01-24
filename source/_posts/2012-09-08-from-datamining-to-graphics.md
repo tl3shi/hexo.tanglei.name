@@ -5,7 +5,7 @@ date: 2012-09-08T11:30:06+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1936
-permalink: /from-datamining-to-graphics/
+permalink: from-datamining-to-graphics
 duoshuo_thread_id:
   - 1351844048792453401
 categories:

@@ -5,7 +5,7 @@ date: 2011-03-07T15:25:39+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=338
-permalink: /passport_in3days/
+permalink: passport_in3days
 duoshuo_thread_id:
   - 1351844048792453366
 categories:

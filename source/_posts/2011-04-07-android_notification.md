@@ -5,7 +5,7 @@ date: 2011-04-07T15:15:39+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=412
-permalink: /android_notification/
+permalink: android_notification
 duoshuo_thread_id:
   - 1351844048792453458
 enable_highlight:

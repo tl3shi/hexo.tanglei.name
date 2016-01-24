@@ -5,7 +5,7 @@ date: 2012-04-19T18:50:37+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1721
-permalink: /find-out-who-places-the-ads-on-my-android-phone/
+permalink: find-out-who-places-the-ads-on-my-android-phone
 duoshuo_thread_id:
   - 1351844048792453156
 categories:

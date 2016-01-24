@@ -10,7 +10,7 @@ excerpt: |
     软件演化（Software Evolution）是指软件在其生命周期内的更新行为和过程。演化是一系列贯穿软件生命周期始终的活动，系统需求改变、功能实现增强、新功能加入、软件架构改变、软件缺陷修复、运行环境改变均要求软件系统能够快速适应变化，具有较强的演化能力。软件静态演化（Static Evolution）和动态演化（Dynamic Evolution）是目前软件演化的两种重要类型。
 layout: post
 guid: http://www.tanglei.name/?p=51
-permalink: /2010_system_arch_paper/
+permalink: 2010_system_arch_paper
 duoshuo_thread_id:
   - 1351844048792453141
 categories:

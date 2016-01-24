@@ -5,7 +5,7 @@ date: 2011-05-13T11:08:55+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=644
-permalink: /tencent-sencond-interview-result/
+permalink: tencent-sencond-interview-result
 duoshuo_thread_id:
   - 1351844048792453133
 categories:

@@ -5,7 +5,7 @@ date: 2011-05-20T15:20:05+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=667
-permalink: /refuse-paper/
+permalink: refuse-paper
 duoshuo_thread_id:
   - 1351844048792453445
 categories:

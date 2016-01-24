@@ -5,7 +5,7 @@ date: 2013-12-05T11:19:04+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2248
-permalink: /com-interface-tlb/
+permalink: com-interface-tlb
 duoshuo_thread_id:
   - 1351844048792453493
 enable_highlight:

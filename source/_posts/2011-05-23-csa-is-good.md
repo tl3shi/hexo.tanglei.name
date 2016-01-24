@@ -5,7 +5,7 @@ date: 2011-05-23T18:53:20+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=699
-permalink: /csa-is-good/
+permalink: csa-is-good
 duoshuo_thread_id:
   - 1351844048792453339
 categories:

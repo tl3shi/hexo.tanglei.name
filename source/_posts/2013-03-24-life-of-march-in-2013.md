@@ -5,7 +5,7 @@ date: 2013-03-24T01:22:19+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2063
-permalink: /life-of-march-in-2013/
+permalink: life-of-march-in-2013
 duoshuo_thread_id:
   - 1351844048792453263
 categories:

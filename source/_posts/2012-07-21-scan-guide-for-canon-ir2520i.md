@@ -5,7 +5,7 @@ date: 2012-07-21T12:43:35+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1874
-permalink: /scan-guide-for-canon-ir2520i/
+permalink: scan-guide-for-canon-ir2520i
 duoshuo_thread_id:
   - 1351844048792453408
 categories:

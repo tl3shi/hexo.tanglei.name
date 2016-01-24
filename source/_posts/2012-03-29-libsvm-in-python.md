@@ -5,7 +5,7 @@ date: 2012-03-29T23:01:16+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1667
-permalink: /libsvm-in-python/
+permalink: libsvm-in-python
 duoshuo_thread_id:
   - 1351844048792453254
 categories:

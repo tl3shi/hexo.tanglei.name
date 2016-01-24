@@ -5,7 +5,7 @@ date: 2011-08-01T21:01:51+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1056
-permalink: /mysite-was-stopped-because-of-exceeded-of-bandwidth/
+permalink: mysite-was-stopped-because-of-exceeded-of-bandwidth
 duoshuo_thread_id:
   - 1351844048792453431
 categories:

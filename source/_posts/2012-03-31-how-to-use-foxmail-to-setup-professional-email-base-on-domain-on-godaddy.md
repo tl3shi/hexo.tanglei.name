@@ -5,7 +5,7 @@ date: 2012-03-31T21:44:35+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1675
-permalink: /how-to-use-foxmail-to-setup-professional-email-base-on-domain-on-godaddy/
+permalink: how-to-use-foxmail-to-setup-professional-email-base-on-domain-on-godaddy
 duoshuo_thread_id:
   - 1351844048792453325
 enable_highlight:

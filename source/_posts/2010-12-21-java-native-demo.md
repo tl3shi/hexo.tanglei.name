@@ -5,7 +5,7 @@ date: 2010-12-21T15:33:37+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=124
-permalink: /java-native-demo/
+permalink: java-native-demo
 duoshuo_thread_id:
   - 1351844048792453309
 enable_highlight:

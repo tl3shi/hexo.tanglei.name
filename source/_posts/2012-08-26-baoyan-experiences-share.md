@@ -5,7 +5,7 @@ date: 2012-08-26T22:19:03+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1924
-permalink: /baoyan-experiences-share/
+permalink: baoyan-experiences-share
 duoshuo_thread_id:
   - 1351844048792453137
 categories:

@@ -5,7 +5,7 @@ date: 2011-05-05T03:13:52+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=607
-permalink: /difference-delete-truncate/
+permalink: difference-delete-truncate
 duoshuo_thread_id:
   - 1351844048792453179
 enable_highlight:

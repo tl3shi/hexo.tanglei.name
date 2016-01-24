@@ -5,7 +5,7 @@ date: 2010-12-31T13:19:06+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=264
-permalink: /software-pingyou2010/
+permalink: software-pingyou2010
 duoshuo_thread_id:
   - 1351844048792453463
 categories:

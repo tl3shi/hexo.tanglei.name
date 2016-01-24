@@ -5,7 +5,7 @@ date: 2011-05-17T10:02:00+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=661
-permalink: /win7-sounds-big-small/
+permalink: win7-sounds-big-small
 duoshuo_thread_id:
   - 1351844048792453182
 categories:

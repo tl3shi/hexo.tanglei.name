@@ -5,7 +5,7 @@ date: 2011-01-08T13:50:35+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=303
-permalink: /linux-fork/
+permalink: linux-fork
 duoshuo_thread_id:
   - 1351844048792453317
 enable_highlight:

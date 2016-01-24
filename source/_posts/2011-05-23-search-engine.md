@@ -5,7 +5,7 @@ date: 2011-05-23T18:06:08+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=710
-permalink: /search-engine/
+permalink: search-engine
 duoshuo_thread_id:
   - 1351844048792453293
 categories:

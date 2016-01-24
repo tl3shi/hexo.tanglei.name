@@ -13,7 +13,7 @@ excerpt: |
   原来发布的每篇文章的url都写死了的。写在了数据库里面了
 layout: post
 guid: http://www.tanglei.name/?p=14
-permalink: /wordpress_blog_urlexception/
+permalink: wordpress_blog_urlexception
 duoshuo_thread_id:
   - 1351844048792453208
 categories:

@@ -5,7 +5,7 @@ date: 2011-06-14T11:13:48+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/word07%e5%8f%91%e5%b8%83wordpress%e5%8d%9a%e5%ae%a2%e6%95%99%e7%a8%8b/
-permalink: /publish-a-blog-easily-and-quickly-with-good-style/
+permalink: publish-a-blog-easily-and-quickly-with-good-style
 duoshuo_thread_id:
   - 1351844048792453129
 categories:

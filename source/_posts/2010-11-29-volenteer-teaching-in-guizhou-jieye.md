@@ -5,7 +5,7 @@ date: 2010-11-29T12:24:27+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=254
-permalink: /volenteer-teaching-in-guizhou-jieye/
+permalink: volenteer-teaching-in-guizhou-jieye
 duoshuo_thread_id:
   - 1351842949280825459
 categories:

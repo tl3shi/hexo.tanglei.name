@@ -5,7 +5,7 @@ date: 2011-07-03T23:02:03+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/ms%e9%87%8c%e7%a8%8b%e7%a2%91miuiandroid2-3%e5%88%b7app2sd/
-permalink: /milestone-miui-app2sd/
+permalink: milestone-miui-app2sd
 duoshuo_thread_id:
   - 1351844048792453433
 categories:

@@ -5,7 +5,7 @@ date: 2011-06-10T11:48:46+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=793
-permalink: /scm-roles-and-advice/
+permalink: scm-roles-and-advice
 duoshuo_thread_id:
   - 1351844048792453439
 categories:

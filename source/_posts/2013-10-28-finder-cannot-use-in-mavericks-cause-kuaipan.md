@@ -5,7 +5,7 @@ date: 2013-10-28T01:03:32+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2212
-permalink: /finder-cannot-use-in-mavericks-cause-kuaipan/
+permalink: finder-cannot-use-in-mavericks-cause-kuaipan
 duoshuo_thread_id:
   - 1351844048792453490
 categories:

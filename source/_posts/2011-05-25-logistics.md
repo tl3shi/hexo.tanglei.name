@@ -5,7 +5,7 @@ date: 2011-05-25T18:35:22+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=724
-permalink: /logistics/
+permalink: logistics
 duoshuo_thread_id:
   - 1351844048792453442
 categories:

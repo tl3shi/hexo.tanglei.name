@@ -5,7 +5,7 @@ date: 2011-07-15T00:35:15+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=997
-permalink: /xampp-start-but-access-forbidden-errorno-403/
+permalink: xampp-start-but-access-forbidden-errorno-403
 duoshuo_thread_id:
   - 1351844048792453123
 categories:

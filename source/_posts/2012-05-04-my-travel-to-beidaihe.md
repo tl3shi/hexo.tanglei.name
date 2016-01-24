@@ -5,7 +5,7 @@ date: 2012-05-04T09:12:28+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1765
-permalink: /my-travel-to-beidaihe/
+permalink: my-travel-to-beidaihe
 duoshuo_thread_id:
   - 1351844048792453150
 categories:

@@ -5,7 +5,7 @@ date: 2011-06-13T09:54:06+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=814
-permalink: /scm-functions-and-uses/
+permalink: scm-functions-and-uses
 duoshuo_thread_id:
   - 1351844048792453273
 categories:

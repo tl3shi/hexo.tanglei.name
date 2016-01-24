@@ -5,7 +5,7 @@ date: 2014-07-20T11:15:45+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2504
-permalink: /debug-in-xcode-is-crap/
+permalink: debug-in-xcode-is-crap
 duoshuo_thread_id:
   - 1351844048792453509
 categories:

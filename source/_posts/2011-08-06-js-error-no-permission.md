@@ -5,7 +5,7 @@ date: 2011-08-06T19:39:58+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1105
-permalink: /js-error-no-permission/
+permalink: js-error-no-permission
 duoshuo_thread_id:
   - 1351844048792453278
 categories:

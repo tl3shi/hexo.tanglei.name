@@ -5,7 +5,7 @@ date: 2011-10-02T16:04:57+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1193
-permalink: /postgraduate-interview-in-zju/
+permalink: postgraduate-interview-in-zju
 duoshuo_thread_id:
   - 1351844048792453163
 categories:

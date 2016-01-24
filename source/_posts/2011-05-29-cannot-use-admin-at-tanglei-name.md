@@ -5,7 +5,7 @@ date: 2011-05-29T16:47:53+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=730
-permalink: /cannot-use-admin-at-tanglei-name/
+permalink: cannot-use-admin-at-tanglei-name
 duoshuo_thread_id:
   - 1351844048792453369
 categories:

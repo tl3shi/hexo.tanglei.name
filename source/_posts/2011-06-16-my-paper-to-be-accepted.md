@@ -5,7 +5,7 @@ date: 2011-06-16T15:49:31+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=856
-permalink: /my-paper-to-be-accepted/
+permalink: my-paper-to-be-accepted
 duoshuo_thread_id:
   - 1351844048792453425
 categories:

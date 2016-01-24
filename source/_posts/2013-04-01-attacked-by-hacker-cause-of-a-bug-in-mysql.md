@@ -5,7 +5,7 @@ date: 2013-04-01T23:54:19+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2121
-permalink: /attacked-by-hacker-cause-of-a-bug-in-mysql/
+permalink: attacked-by-hacker-cause-of-a-bug-in-mysql
 duoshuo_thread_id:
   - 1351844048792453194
 categories:

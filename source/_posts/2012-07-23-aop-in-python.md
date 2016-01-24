@@ -5,7 +5,7 @@ date: 2012-07-23T00:39:37+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1881
-permalink: /aop-in-python/
+permalink: aop-in-python
 duoshuo_thread_id:
   - 1351844048792453290
 enable_highlight:

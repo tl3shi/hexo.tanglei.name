@@ -5,7 +5,7 @@ date: 2011-05-05T15:19:23+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=616
-permalink: /my-drivers-license/
+permalink: my-drivers-license
 duoshuo_thread_id:
   - 1351844048792453345
 categories:

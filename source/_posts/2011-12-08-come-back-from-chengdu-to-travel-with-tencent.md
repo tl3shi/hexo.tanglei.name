@@ -5,7 +5,7 @@ date: 2011-12-08T20:16:48+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1306
-permalink: /come-back-from-chengdu-to-travel-with-tencent/
+permalink: come-back-from-chengdu-to-travel-with-tencent
 duoshuo_thread_id:
   - 1351844048792453405
 categories:

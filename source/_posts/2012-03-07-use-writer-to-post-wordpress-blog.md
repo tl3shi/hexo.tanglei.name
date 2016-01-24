@@ -5,7 +5,7 @@ date: 2012-03-07T22:04:30+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1502
-permalink: /use-writer-to-post-wordpress-blog/
+permalink: use-writer-to-post-wordpress-blog
 duoshuo_thread_id:
   - 1351844048792453128
 categories:

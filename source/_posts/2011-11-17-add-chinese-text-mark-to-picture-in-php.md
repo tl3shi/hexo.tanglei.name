@@ -5,7 +5,7 @@ date: 2011-11-17T19:41:58+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1286
-permalink: /add-chinese-text-mark-to-picture-in-php/
+permalink: add-chinese-text-mark-to-picture-in-php
 duoshuo_thread_id:
   - 1351844048792453420
 enable_highlight:

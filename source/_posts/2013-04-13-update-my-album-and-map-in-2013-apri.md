@@ -5,7 +5,7 @@ date: 2013-04-13T11:57:36+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2128
-permalink: /update-my-album-and-map-in-2013-apri/
+permalink: update-my-album-and-map-in-2013-apri
 duoshuo_thread_id:
   - 1351844048792453184
 categories:

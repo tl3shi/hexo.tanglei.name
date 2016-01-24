@@ -5,7 +5,7 @@ date: 2012-01-02T17:33:27+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1370
-permalink: /my-travel-to-hongkong/
+permalink: my-travel-to-hongkong
 duoshuo_thread_id:
   - 1351844048792453334
 categories:

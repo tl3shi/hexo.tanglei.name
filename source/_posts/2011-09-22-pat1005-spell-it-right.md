@@ -5,7 +5,7 @@ date: 2011-09-22T14:09:36+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1164
-permalink: /pat1005-spell-it-right/
+permalink: pat1005-spell-it-right
 duoshuo_thread_id:
   - 1351844048792453363
 enable_highlight:

@@ -5,7 +5,7 @@ date: 2011-10-23T22:09:00+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1242
-permalink: /visit-japan-with-kimono/
+permalink: visit-japan-with-kimono
 duoshuo_thread_id:
   - 1351844048792453223
 categories:

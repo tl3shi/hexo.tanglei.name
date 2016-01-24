@@ -5,7 +5,7 @@ date: 2012-03-22T23:11:52+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1612
-permalink: /use-github-to-make-hello-world/
+permalink: use-github-to-make-hello-world
 duoshuo_thread_id:
   - 1351844048792453296
 categories:

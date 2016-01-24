@@ -5,7 +5,7 @@ date: 2013-03-28T23:06:07+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2072
-permalink: /convex-hull-of-points/
+permalink: convex-hull-of-points
 duoshuo_thread_id:
   - 1351844048792453272
 enable_highlight:

@@ -5,7 +5,7 @@ date: 2013-06-22T22:04:10+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2170
-permalink: /bibtex-batch-export/
+permalink: bibtex-batch-export
 duoshuo_thread_id:
   - 1351844048792453486
 categories:

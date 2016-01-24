@@ -5,7 +5,7 @@ date: 2012-08-18T20:49:47+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1916
-permalink: /defy-with-water-and-an-interesting-meal-card/
+permalink: defy-with-water-and-an-interesting-meal-card
 duoshuo_thread_id:
   - 1351844048792453244
 categories:

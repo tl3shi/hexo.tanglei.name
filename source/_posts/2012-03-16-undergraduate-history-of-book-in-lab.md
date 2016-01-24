@@ -5,7 +5,7 @@ date: 2012-03-16T21:04:16+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1543
-permalink: /undergraduate-history-of-book-in-lab/
+permalink: undergraduate-history-of-book-in-lab
 duoshuo_thread_id:
   - 1351844048792453348
 categories:

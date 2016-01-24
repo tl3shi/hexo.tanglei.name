@@ -5,7 +5,7 @@ date: 2011-08-19T22:11:49+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1115
-permalink: /programmers-to-make-b-likely/
+permalink: programmers-to-make-b-likely
 duoshuo_thread_id:
   - 1351844048792453266
 categories:

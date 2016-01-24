@@ -5,7 +5,7 @@ date: 2012-11-08T00:36:23+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2018
-permalink: /points-in-plane-with-delaunay-triangulation/
+permalink: points-in-plane-with-delaunay-triangulation
 duoshuo_thread_id:
   - 1351844048792453264
 categories:

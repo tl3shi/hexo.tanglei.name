@@ -5,7 +5,7 @@ date: 2011-03-31T15:03:09+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=377
-permalink: /file-kexie-setup/
+permalink: file-kexie-setup
 duoshuo_thread_id:
   - 1351844048792453392
 categories:

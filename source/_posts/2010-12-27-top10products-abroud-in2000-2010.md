@@ -5,7 +5,7 @@ date: 2010-12-27T07:05:31+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=192
-permalink: /top10products-abroud-in2000-2010/
+permalink: top10products-abroud-in2000-2010
 duoshuo_thread_id:
   - 1351844048792453220
 categories:

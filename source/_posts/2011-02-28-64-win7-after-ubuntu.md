@@ -5,7 +5,7 @@ date: 2011-02-28T16:17:29+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=331
-permalink: /64-win7-after-ubuntu/
+permalink: 64-win7-after-ubuntu
 duoshuo_thread_id:
   - 1351844048792453400
 categories:

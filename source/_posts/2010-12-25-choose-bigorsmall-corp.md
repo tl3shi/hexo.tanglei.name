@@ -5,7 +5,7 @@ date: 2010-12-25T02:04:43+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=182
-permalink: /choose-bigorsmall-corp/
+permalink: choose-bigorsmall-corp
 duoshuo_thread_id:
   - 1351842949280825451
 categories:

@@ -5,7 +5,7 @@ date: 2011-06-14T18:32:34+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=848
-permalink: /scm-tools-analysis/
+permalink: scm-tools-analysis
 duoshuo_thread_id:
   - 1351844048792453437
 categories:

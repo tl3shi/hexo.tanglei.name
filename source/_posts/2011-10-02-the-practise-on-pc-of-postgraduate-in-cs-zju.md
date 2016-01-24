@@ -5,7 +5,7 @@ date: 2011-10-02T15:42:04+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1184
-permalink: /the-practise-on-pc-of-postgraduate-in-cs-zju/
+permalink: the-practise-on-pc-of-postgraduate-in-cs-zju
 duoshuo_thread_id:
   - 1351844048792453232
 categories:

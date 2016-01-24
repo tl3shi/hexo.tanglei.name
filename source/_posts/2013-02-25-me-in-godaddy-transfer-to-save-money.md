@@ -5,7 +5,7 @@ date: 2013-02-25T23:54:03+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2050
-permalink: /me-in-godaddy-transfer-to-save-money/
+permalink: me-in-godaddy-transfer-to-save-money
 duoshuo_thread_id:
   - 1351844048792453388
 categories:

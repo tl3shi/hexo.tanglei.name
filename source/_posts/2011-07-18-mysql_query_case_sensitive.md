@@ -5,7 +5,7 @@ date: 2011-07-18T20:58:01+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1035
-permalink: /mysql_query_case_sensitive/
+permalink: mysql_query_case_sensitive
 duoshuo_thread_id:
   - 1351844048792453279
 enable_highlight:

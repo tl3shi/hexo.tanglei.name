@@ -5,7 +5,7 @@ date: 2012-08-02T12:40:42+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1890
-permalink: /github-with-octopress/
+permalink: github-with-octopress
 duoshuo_thread_id:
   - 1351844048792453407
 categories:

@@ -5,7 +5,7 @@ date: 2011-08-05T23:23:03+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1093
-permalink: /i3zhai-com-bandwidth-analysiz/
+permalink: i3zhai-com-bandwidth-analysiz
 duoshuo_thread_id:
   - 1351844048792453429
 categories:

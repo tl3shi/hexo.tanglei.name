@@ -5,7 +5,7 @@ date: 2011-04-30T00:56:26+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=567
-permalink: /interview_hand/
+permalink: interview_hand
 duoshuo_thread_id:
   - 1351844048792453349
 categories:

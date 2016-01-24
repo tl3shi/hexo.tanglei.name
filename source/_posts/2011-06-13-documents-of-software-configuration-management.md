@@ -5,7 +5,7 @@ date: 2011-06-13T10:34:16+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/documents-of-software-configuration-management/
-permalink: /documents-of-software-configuration-management/
+permalink: documents-of-software-configuration-management
 duoshuo_thread_id:
   - 1351844048792453162
 categories:

@@ -5,7 +5,7 @@ date: 2011-06-28T15:42:25+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=940
-permalink: /android-manage-sms/
+permalink: android-manage-sms
 duoshuo_thread_id:
   - 1351844048792453287
 enable_highlight:

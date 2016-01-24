@@ -5,7 +5,7 @@ date: 2013-09-17T23:25:57+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2200
-permalink: /vs2012-invoke-codes-in-matlab2012/
+permalink: vs2012-invoke-codes-in-matlab2012
 duoshuo_thread_id:
   - 1351844048792453489
 categories:

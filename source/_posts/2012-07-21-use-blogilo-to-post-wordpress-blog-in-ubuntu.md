@@ -5,7 +5,7 @@ date: 2012-07-21T00:16:17+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1866
-permalink: /use-blogilo-to-post-wordpress-blog-in-ubuntu/
+permalink: use-blogilo-to-post-wordpress-blog-in-ubuntu
 duoshuo_thread_id:
   - 1351844048792453286
 categories:

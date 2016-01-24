@@ -5,7 +5,7 @@ date: 2011-04-02T03:39:44+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=386
-permalink: /xgb_kexie_set/
+permalink: xgb_kexie_set
 duoshuo_thread_id:
   - 1351844048792453245
 categories:

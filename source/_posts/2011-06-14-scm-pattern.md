@@ -5,7 +5,7 @@ date: 2011-06-14T11:38:00+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/%e8%bd%af%e4%bb%b6%e9%85%8d%e7%bd%ae%e7%ae%a1%e7%90%86%e6%a8%a1%e5%bc%8f/
-permalink: /scm-pattern/
+permalink: scm-pattern
 duoshuo_thread_id:
   - 1351844048792453288
 categories:

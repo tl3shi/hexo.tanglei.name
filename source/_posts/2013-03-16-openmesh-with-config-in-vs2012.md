@@ -5,7 +5,7 @@ date: 2013-03-16T01:21:06+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2058
-permalink: /openmesh-with-config-in-vs2012/
+permalink: openmesh-with-config-in-vs2012
 duoshuo_thread_id:
   - 1351844048792453198
 categories:

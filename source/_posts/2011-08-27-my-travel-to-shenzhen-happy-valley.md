@@ -5,7 +5,7 @@ date: 2011-08-27T21:40:48+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1141
-permalink: /my-travel-to-shenzhen-happy-valley/
+permalink: my-travel-to-shenzhen-happy-valley
 duoshuo_thread_id:
   - 1351844048792453258
 categories:

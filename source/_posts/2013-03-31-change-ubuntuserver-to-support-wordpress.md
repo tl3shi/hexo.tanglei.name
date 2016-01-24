@@ -5,7 +5,7 @@ date: 2013-03-31T00:46:24+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2094
-permalink: /change-ubuntuserver-to-support-wordpress/
+permalink: change-ubuntuserver-to-support-wordpress
 duoshuo_thread_id:
   - 1351844048792453271
 enable_highlight:

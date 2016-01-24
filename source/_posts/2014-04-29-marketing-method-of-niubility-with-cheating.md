@@ -5,7 +5,7 @@ date: 2014-04-29T23:55:15+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2404
-permalink: /marketing-method-of-niubility-with-cheating/
+permalink: marketing-method-of-niubility-with-cheating
 duoshuo_thread_id:
   - 1351844048792453503
 categories:

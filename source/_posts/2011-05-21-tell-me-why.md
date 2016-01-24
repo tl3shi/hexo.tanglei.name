@@ -5,7 +5,7 @@ date: 2011-05-21T10:16:09+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=679
-permalink: /tell-me-why/
+permalink: tell-me-why
 duoshuo_thread_id:
   - 1351844048792453189
 categories:

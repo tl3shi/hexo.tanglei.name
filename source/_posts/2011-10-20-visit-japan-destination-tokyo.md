@@ -5,7 +5,7 @@ date: 2011-10-20T19:35:14+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1215
-permalink: /visit-japan-destination-tokyo/
+permalink: visit-japan-destination-tokyo
 duoshuo_thread_id:
   - 1351844048792453205
 categories:

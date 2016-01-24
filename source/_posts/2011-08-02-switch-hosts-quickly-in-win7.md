@@ -5,7 +5,7 @@ date: 2011-08-02T22:32:16+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1077
-permalink: /switch-hosts-quickly-in-win7/
+permalink: switch-hosts-quickly-in-win7
 duoshuo_thread_id:
   - 1351844048792453416
 enable_highlight:

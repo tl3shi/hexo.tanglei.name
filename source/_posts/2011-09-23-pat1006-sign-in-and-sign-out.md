@@ -5,7 +5,7 @@ date: 2011-09-23T14:13:32+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1166
-permalink: /pat1006-sign-in-and-sign-out/
+permalink: pat1006-sign-in-and-sign-out
 duoshuo_thread_id:
   - 1351844048792453394
 enable_highlight:

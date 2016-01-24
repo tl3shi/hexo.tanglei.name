@@ -5,7 +5,7 @@ date: 2011-08-27T13:13:20+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1135
-permalink: /intern-in-tencent-phase-summary/
+permalink: intern-in-tencent-phase-summary
 duoshuo_thread_id:
   - 1351844048792453127
 categories:

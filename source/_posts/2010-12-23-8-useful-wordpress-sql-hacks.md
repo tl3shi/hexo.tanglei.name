@@ -5,7 +5,7 @@ date: 2010-12-23T04:13:02+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=161
-permalink: /8-useful-wordpress-sql-hacks/
+permalink: 8-useful-wordpress-sql-hacks
 duoshuo_thread_id:
   - 1351844048792453153
 categories:

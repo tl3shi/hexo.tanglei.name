@@ -5,7 +5,7 @@ date: 2014-07-24T23:15:26+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2519
-permalink: /1-step-to-play-shenjingmao/
+permalink: 1-step-to-play-shenjingmao
 duoshuo_thread_id:
   - 1351844048792453510
 enable_highlight:

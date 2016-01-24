@@ -5,7 +5,7 @@ date: 2011-03-10T09:39:56+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=340
-permalink: /android_bluetooth_api/
+permalink: android_bluetooth_api
 duoshuo_thread_id:
   - 1351844048792453151
 enable_highlight:

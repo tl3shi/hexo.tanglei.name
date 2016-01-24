@@ -5,7 +5,7 @@ date: 2011-03-07T13:22:23+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=349
-permalink: /five_mobile_app/
+permalink: five_mobile_app
 duoshuo_thread_id:
   - 1351844048792453330
 categories:

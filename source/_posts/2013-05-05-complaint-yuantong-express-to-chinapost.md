@@ -5,7 +5,7 @@ date: 2013-05-05T20:38:18+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2153
-permalink: /complaint-yuantong-express-to-chinapost/
+permalink: complaint-yuantong-express-to-chinapost
 duoshuo_thread_id:
   - 1351844048792453484
 categories:

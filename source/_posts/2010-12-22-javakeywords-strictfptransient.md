@@ -5,7 +5,7 @@ date: 2010-12-22T15:25:36+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=150
-permalink: /javakeywords-strictfptransient/
+permalink: javakeywords-strictfptransient
 duoshuo_thread_id:
   - 1351844048792453199
 categories:

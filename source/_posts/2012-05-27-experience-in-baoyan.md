@@ -5,7 +5,7 @@ date: 2012-05-27T15:17:02+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1802
-permalink: /experience-in-baoyan/
+permalink: experience-in-baoyan
 duoshuo_thread_id:
   - 1351844048792453410
 categories:

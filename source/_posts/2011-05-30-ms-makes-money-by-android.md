@@ -5,7 +5,7 @@ date: 2011-05-30T15:21:06+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=740
-permalink: /ms-makes-money-by-android/
+permalink: ms-makes-money-by-android
 duoshuo_thread_id:
   - 1351844048792453165
 categories:

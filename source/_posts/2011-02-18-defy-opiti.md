@@ -5,7 +5,7 @@ date: 2011-02-18T06:57:44+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=311
-permalink: /defy-opiti/
+permalink: defy-opiti
 duoshuo_thread_id:
   - 1351844048792453387
 categories:

@@ -5,7 +5,7 @@ date: 2011-04-30T01:27:04+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=569
-permalink: /interview_qunshuo/
+permalink: interview_qunshuo
 duoshuo_thread_id:
   - 1351844048792453413
 categories:

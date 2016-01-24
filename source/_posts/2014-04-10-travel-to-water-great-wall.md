@@ -5,7 +5,7 @@ date: 2014-04-10T22:14:05+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2391
-permalink: /travel-to-water-great-wall/
+permalink: travel-to-water-great-wall
 duoshuo_thread_id:
   - 1351844048792453502
 categories:

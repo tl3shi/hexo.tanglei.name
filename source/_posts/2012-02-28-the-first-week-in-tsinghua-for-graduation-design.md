@@ -5,7 +5,7 @@ date: 2012-02-28T22:11:42+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1459
-permalink: /the-first-week-in-tsinghua-for-graduation-design/
+permalink: the-first-week-in-tsinghua-for-graduation-design
 duoshuo_thread_id:
   - 1351844048792453322
 categories:

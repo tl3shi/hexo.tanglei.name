@@ -19,7 +19,7 @@ excerpt: |
   图1-1是李工给出的架构设计示意图，请将恰当的功能描述填入图中的(1)一(4)。
 layout: post
 guid: http://www.tanglei.name/?p=47
-permalink: /2010-xitongjiagou-afternoon/
+permalink: 2010-xitongjiagou-afternoon
 duoshuo_thread_id:
   - 1351844048792453228
 categories:

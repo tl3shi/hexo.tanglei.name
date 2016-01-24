@@ -5,7 +5,7 @@ date: 2011-06-03T14:30:14+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=748
-permalink: /java-generics-tutorial/
+permalink: java-generics-tutorial
 duoshuo_thread_id:
   - 1351844048792453390
 categories:

@@ -5,7 +5,7 @@ date: 2011-12-17T15:37:18+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1313
-permalink: /summery-of-namecard-for-pengyou-com-v4/
+permalink: summery-of-namecard-for-pengyou-com-v4
 duoshuo_thread_id:
   - 1351844048792453393
 enable_highlight:

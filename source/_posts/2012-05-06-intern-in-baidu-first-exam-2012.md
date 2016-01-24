@@ -5,7 +5,7 @@ date: 2012-05-06T23:10:23+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1770
-permalink: /intern-in-baidu-first-exam-2012/
+permalink: intern-in-baidu-first-exam-2012
 duoshuo_thread_id:
   - 1351844048792453138
 categories:

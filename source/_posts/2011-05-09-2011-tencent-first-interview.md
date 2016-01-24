@@ -5,7 +5,7 @@ date: 2011-05-09T07:52:30+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=637
-permalink: /2011-tencent-first-interview/
+permalink: 2011-tencent-first-interview
 duoshuo_thread_id:
   - 1351844048792453186
 categories:

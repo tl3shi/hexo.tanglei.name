@@ -5,7 +5,7 @@ date: 2012-05-10T23:29:19+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1781
-permalink: /cannot-learn-datamining-in-my-master-life/
+permalink: cannot-learn-datamining-in-my-master-life
 duoshuo_thread_id:
   - 1351844048792453347
 categories:

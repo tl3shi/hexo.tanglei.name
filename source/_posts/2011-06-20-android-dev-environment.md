@@ -5,7 +5,7 @@ date: 2011-06-20T20:51:57+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=875
-permalink: /android-dev-environment/
+permalink: android-dev-environment
 duoshuo_thread_id:
   - 1351844048792453311
 enable_highlight:

@@ -5,7 +5,7 @@ date: 2010-11-05T13:08:45+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=208
-permalink: /volenteer-teaching-day5-visithome/
+permalink: volenteer-teaching-day5-visithome
 duoshuo_thread_id:
   - 1351844048792453185
 categories:

@@ -5,7 +5,7 @@ date: 2011-12-24T01:19:08+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1332
-permalink: /code-for-relative-posts-in-wordpress/
+permalink: code-for-relative-posts-in-wordpress
 duoshuo_thread_id:
   - 1351844048792453177
 enable_highlight:

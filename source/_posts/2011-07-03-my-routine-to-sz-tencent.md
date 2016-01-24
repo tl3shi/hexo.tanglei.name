@@ -5,7 +5,7 @@ date: 2011-07-03T22:08:37+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=947
-permalink: /my-routine-to-sz-tencent/
+permalink: my-routine-to-sz-tencent
 duoshuo_thread_id:
   - 1351844048792453373
 categories:

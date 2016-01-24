@@ -5,7 +5,7 @@ date: 2014-05-28T23:08:01+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2425
-permalink: /difference-between-struct-class/
+permalink: difference-between-struct-class
 duoshuo_thread_id:
   - 1351844048792453504
 enable_highlight:

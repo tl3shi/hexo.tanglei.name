@@ -5,7 +5,7 @@ date: 2011-11-13T00:16:57+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1255
-permalink: /bad-qq-mobile-sercure-manager/
+permalink: bad-qq-mobile-sercure-manager
 duoshuo_thread_id:
   - 1351844048792453384
 categories:

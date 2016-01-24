@@ -5,7 +5,7 @@ date: 2012-10-24T19:40:38+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2005
-permalink: /bezier-curve-and-surface/
+permalink: bezier-curve-and-surface
 duoshuo_thread_id:
   - 1351844048792453338
 enable_highlight:

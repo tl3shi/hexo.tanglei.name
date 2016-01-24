@@ -5,7 +5,7 @@ date: 2012-03-01T22:58:22+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1472
-permalink: /difference-between-array_merge-and-plus/
+permalink: difference-between-array_merge-and-plus
 duoshuo_thread_id:
   - 1351844048792453340
 enable_highlight:

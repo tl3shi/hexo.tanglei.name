@@ -5,7 +5,7 @@ date: 2011-11-13T00:20:56+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1257
-permalink: /donnot-accept-the-money-you-not-deserve-it/
+permalink: donnot-accept-the-money-you-not-deserve-it
 duoshuo_thread_id:
   - 1351844048792453142
 categories:

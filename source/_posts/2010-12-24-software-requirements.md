@@ -5,7 +5,7 @@ date: 2010-12-24T03:31:12+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=177
-permalink: /software-requirements/
+permalink: software-requirements
 duoshuo_thread_id:
   - 1351844048792453269
 categories:

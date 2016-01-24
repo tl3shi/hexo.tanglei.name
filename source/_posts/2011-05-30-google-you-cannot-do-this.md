@@ -5,7 +5,7 @@ date: 2011-05-30T15:25:42+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=742
-permalink: /google-you-cannot-do-this/
+permalink: google-you-cannot-do-this
 duoshuo_thread_id:
   - 1351844048792453195
 categories:

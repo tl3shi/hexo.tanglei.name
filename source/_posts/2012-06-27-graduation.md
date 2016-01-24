@@ -5,7 +5,7 @@ date: 2012-06-27T16:25:18+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1821
-permalink: /graduation/
+permalink: graduation
 duoshuo_thread_id:
   - 1351844048792453180
 categories:

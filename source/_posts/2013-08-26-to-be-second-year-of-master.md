@@ -5,7 +5,7 @@ date: 2013-08-26T00:34:34+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2194
-permalink: /to-be-second-year-of-master/
+permalink: to-be-second-year-of-master
 duoshuo_thread_id:
   - 1351844048792453487
 categories:

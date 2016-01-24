@@ -5,7 +5,7 @@ date: 2011-02-24T13:41:48+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=355
-permalink: /defy_sensors/
+permalink: defy_sensors
 duoshuo_thread_id:
   - 1351844048792453304
 enable_highlight:

@@ -5,7 +5,7 @@ date: 2011-05-20T16:25:24+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=677
-permalink: /electronic-commerce-exam/
+permalink: electronic-commerce-exam
 duoshuo_thread_id:
   - 1351844048792453335
 categories:

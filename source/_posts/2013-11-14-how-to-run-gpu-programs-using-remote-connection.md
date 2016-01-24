@@ -5,7 +5,7 @@ date: 2013-11-14T15:04:07+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2230
-permalink: /how-to-run-gpu-programs-using-remote-connection/
+permalink: how-to-run-gpu-programs-using-remote-connection
 duoshuo_thread_id:
   - 1351844048792453492
 categories:

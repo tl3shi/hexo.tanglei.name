@@ -5,7 +5,7 @@ date: 2011-06-15T21:53:50+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=851
-permalink: /the-university-is-nearly-over-after-scm-exam/
+permalink: the-university-is-nearly-over-after-scm-exam
 duoshuo_thread_id:
   - 1351844048792453436
 categories:

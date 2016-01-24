@@ -5,7 +5,7 @@ date: 2012-09-01T22:12:02+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1929
-permalink: /no-flute-association-in-thu/
+permalink: no-flute-association-in-thu
 duoshuo_thread_id:
   - 1351844048792453357
 categories:

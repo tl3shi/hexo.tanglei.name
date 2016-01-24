@@ -5,7 +5,7 @@ date: 2011-07-17T01:08:36+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1016
-permalink: /intern-in-tencent-no-working-in-weekend/
+permalink: intern-in-tencent-no-working-in-weekend
 duoshuo_thread_id:
   - 1351844048792453375
 categories:

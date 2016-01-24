@@ -5,7 +5,7 @@ date: 2011-07-12T17:17:03+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=978
-permalink: /android-start-another-activity-or-system-apk/
+permalink: android-start-another-activity-or-system-apk
 duoshuo_thread_id:
   - 1351844048792453320
 enable_highlight:

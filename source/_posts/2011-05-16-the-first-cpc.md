@@ -5,7 +5,7 @@ date: 2011-05-16T19:58:01+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=652
-permalink: /the-first-cpc/
+permalink: the-first-cpc
 duoshuo_thread_id:
   - 1351844048792453164
 categories:

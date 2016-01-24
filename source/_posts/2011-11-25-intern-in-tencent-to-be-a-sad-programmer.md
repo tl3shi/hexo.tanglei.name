@@ -5,7 +5,7 @@ date: 2011-11-25T21:06:20+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1296
-permalink: /intern-in-tencent-to-be-a-sad-programmer/
+permalink: intern-in-tencent-to-be-a-sad-programmer
 duoshuo_thread_id:
   - 1351844048792453424
 categories:

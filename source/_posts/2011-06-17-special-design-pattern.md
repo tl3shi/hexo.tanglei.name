@@ -5,7 +5,7 @@ date: 2011-06-17T08:30:05+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=860
-permalink: /special-design-pattern/
+permalink: special-design-pattern
 duoshuo_thread_id:
   - 1351844048792453155
 categories:

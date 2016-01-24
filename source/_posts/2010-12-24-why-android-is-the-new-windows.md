@@ -5,7 +5,7 @@ date: 2010-12-24T03:44:39+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=180
-permalink: /why-android-is-the-new-windows/
+permalink: why-android-is-the-new-windows
 duoshuo_thread_id:
   - 1351844048792453216
 categories:

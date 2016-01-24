@@ -5,7 +5,7 @@ date: 2011-04-27T06:21:38+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=558
-permalink: /itmanagement_ssd10_exam/
+permalink: itmanagement_ssd10_exam
 duoshuo_thread_id:
   - 1351844048792453329
 categories:

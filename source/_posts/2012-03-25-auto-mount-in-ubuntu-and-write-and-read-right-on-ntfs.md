@@ -5,7 +5,7 @@ date: 2012-03-25T23:23:39+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1646
-permalink: /auto-mount-in-ubuntu-and-write-and-read-right-on-ntfs/
+permalink: auto-mount-in-ubuntu-and-write-and-read-right-on-ntfs
 duoshuo_thread_id:
   - 1351844048792453168
 enable_highlight:

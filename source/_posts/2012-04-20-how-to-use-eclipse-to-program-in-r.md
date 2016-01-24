@@ -5,7 +5,7 @@ date: 2012-04-20T17:54:46+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1741
-permalink: /how-to-use-eclipse-to-program-in-r/
+permalink: how-to-use-eclipse-to-program-in-r
 duoshuo_thread_id:
   - 1351844048792453312
 enable_highlight:

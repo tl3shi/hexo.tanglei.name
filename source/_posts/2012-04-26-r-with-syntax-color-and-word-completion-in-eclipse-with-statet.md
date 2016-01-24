@@ -5,7 +5,7 @@ date: 2012-04-26T23:03:14+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1754
-permalink: /r-with-syntax-color-and-word-completion-in-eclipse-with-statet/
+permalink: r-with-syntax-color-and-word-completion-in-eclipse-with-statet
 duoshuo_thread_id:
   - 1351844048792453313
 enable_highlight:

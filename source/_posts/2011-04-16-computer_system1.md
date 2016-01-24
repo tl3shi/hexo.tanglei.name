@@ -5,7 +5,7 @@ date: 2011-04-16T12:04:32+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=439
-permalink: /computer_system1/
+permalink: computer_system1
 duoshuo_thread_id:
   - 1351844048792453298
 categories:

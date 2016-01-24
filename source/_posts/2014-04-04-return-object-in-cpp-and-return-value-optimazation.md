@@ -5,7 +5,7 @@ date: 2014-04-04T17:44:27+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2385
-permalink: /return-object-in-cpp-and-return-value-optimazation/
+permalink: return-object-in-cpp-and-return-value-optimazation
 duoshuo_thread_id:
   - 1351844048792453501
 enable_highlight:

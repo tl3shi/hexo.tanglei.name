@@ -5,7 +5,7 @@ date: 2011-05-01T08:50:38+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=579
-permalink: /txt_from_baidu/
+permalink: txt_from_baidu
 duoshuo_thread_id:
   - 1351844048792453362
 categories:

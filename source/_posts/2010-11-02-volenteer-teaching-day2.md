@@ -5,7 +5,7 @@ date: 2010-11-02T12:54:31+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=200
-permalink: /volenteer-teaching-day2/
+permalink: volenteer-teaching-day2
 duoshuo_thread_id:
   - 1351844048792453207
 categories:

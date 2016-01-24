@@ -5,7 +5,7 @@ date: 2011-10-02T13:50:16+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1156
-permalink: /the-way-to-postgraduate-in-csu/
+permalink: the-way-to-postgraduate-in-csu
 duoshuo_thread_id:
   - 1351844048792453188
 categories:

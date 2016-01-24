@@ -5,7 +5,7 @@ date: 2011-09-24T14:19:05+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1170
-permalink: /pat-1009-product-of-polynomials/
+permalink: pat-1009-product-of-polynomials
 duoshuo_thread_id:
   - 1351844048792453359
 enable_highlight:

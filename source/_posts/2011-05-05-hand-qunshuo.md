@@ -5,7 +5,7 @@ date: 2011-05-05T01:27:56+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=599
-permalink: /hand-qunshuo/
+permalink: hand-qunshuo
 duoshuo_thread_id:
   - 1351844048792453324
 categories:

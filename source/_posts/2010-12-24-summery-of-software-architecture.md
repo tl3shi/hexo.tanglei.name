@@ -5,7 +5,7 @@ date: 2010-12-24T03:25:17+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=175
-permalink: /summery-of-software-architecture/
+permalink: summery-of-software-architecture
 duoshuo_thread_id:
   - 1351844048792453154
 categories:

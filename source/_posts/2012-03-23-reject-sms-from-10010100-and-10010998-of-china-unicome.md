@@ -5,7 +5,7 @@ date: 2012-03-23T22:16:04+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1621
-permalink: /reject-sms-from-10010100-and-10010998-of-china-unicome/
+permalink: reject-sms-from-10010100-and-10010998-of-china-unicome
 duoshuo_thread_id:
   - 1351844048792453300
 categories:

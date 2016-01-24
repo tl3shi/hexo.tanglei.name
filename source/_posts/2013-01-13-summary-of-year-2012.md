@@ -5,7 +5,7 @@ date: 2013-01-13T00:57:55+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2037
-permalink: /summary-of-year-2012/
+permalink: summary-of-year-2012
 duoshuo_thread_id:
   - 1351844048792453265
 categories:

@@ -5,7 +5,7 @@ date: 2011-03-29T05:41:17+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=364
-permalink: /relocate_myblog/
+permalink: relocate_myblog
 duoshuo_thread_id:
   - 1351844048792453327
 categories:

@@ -5,7 +5,7 @@ date: 2011-10-22T21:58:58+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1227
-permalink: /visit-japan-feel-japanese-curlture/
+permalink: visit-japan-feel-japanese-curlture
 duoshuo_thread_id:
   - 1351844048792453196
 categories:

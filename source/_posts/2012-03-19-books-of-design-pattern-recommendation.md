@@ -5,7 +5,7 @@ date: 2012-03-19T23:28:40+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1575
-permalink: /books-of-design-pattern-recommendation/
+permalink: books-of-design-pattern-recommendation
 duoshuo_thread_id:
   - 1351844048792453249
 categories:

@@ -5,7 +5,7 @@ date: 2011-03-31T14:58:04+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=375
-permalink: /soft-kexie_setup/
+permalink: soft-kexie_setup
 duoshuo_thread_id:
   - 1351844048792453352
 categories:

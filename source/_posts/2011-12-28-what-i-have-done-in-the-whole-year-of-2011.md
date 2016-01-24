@@ -5,7 +5,7 @@ date: 2011-12-28T21:44:07+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1360
-permalink: /what-i-have-done-in-the-whole-year-of-2011/
+permalink: what-i-have-done-in-the-whole-year-of-2011
 duoshuo_thread_id:
   - 1351844048792453333
 categories:

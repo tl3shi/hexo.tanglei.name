@@ -5,7 +5,7 @@ date: 2011-10-26T22:06:07+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1239
-permalink: /visit-japan-with-toyota/
+permalink: visit-japan-with-toyota
 duoshuo_thread_id:
   - 1351844048792453201
 categories:

@@ -5,7 +5,7 @@ date: 2012-03-28T23:23:07+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1664
-permalink: /an-example-for-beginning-to-learn-libsvm/
+permalink: an-example-for-beginning-to-learn-libsvm
 duoshuo_thread_id:
   - 1351844048792453358
 categories:

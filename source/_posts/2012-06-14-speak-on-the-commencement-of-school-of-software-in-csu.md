@@ -5,7 +5,7 @@ date: 2012-06-14T16:59:03+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1811
-permalink: /speak-on-the-commencement-of-school-of-software-in-csu/
+permalink: speak-on-the-commencement-of-school-of-software-in-csu
 duoshuo_thread_id:
   - 1351844048792453276
 categories:

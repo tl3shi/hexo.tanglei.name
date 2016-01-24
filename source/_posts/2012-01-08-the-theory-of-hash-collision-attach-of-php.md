@@ -5,7 +5,7 @@ date: 2012-01-08T19:37:47+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1397
-permalink: /the-theory-of-hash-collision-attach-of-php/
+permalink: the-theory-of-hash-collision-attach-of-php
 duoshuo_thread_id:
   - 1351844048792453221
 enable_highlight:

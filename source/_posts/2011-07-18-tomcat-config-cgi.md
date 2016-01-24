@@ -5,7 +5,7 @@ date: 2011-07-18T17:36:55+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1024
-permalink: /tomcat-config-cgi/
+permalink: tomcat-config-cgi
 duoshuo_thread_id:
   - 1351844048792453202
 enable_highlight:

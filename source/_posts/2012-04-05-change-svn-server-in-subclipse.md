@@ -5,7 +5,7 @@ date: 2012-04-05T22:08:49+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1683
-permalink: /change-svn-server-in-subclipse/
+permalink: change-svn-server-in-subclipse
 duoshuo_thread_id:
   - 1351844048792453415
 categories:

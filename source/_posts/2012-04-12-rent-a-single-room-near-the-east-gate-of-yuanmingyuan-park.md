@@ -5,7 +5,7 @@ date: 2012-04-12T09:32:00+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1702
-permalink: /rent-a-single-room-near-the-east-gate-of-yuanmingyuan-park/
+permalink: rent-a-single-room-near-the-east-gate-of-yuanmingyuan-park
 duoshuo_thread_id:
   - 1351844048792453356
 categories:

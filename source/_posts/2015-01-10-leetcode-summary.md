@@ -5,7 +5,7 @@ date: 2015-01-10T23:22:24+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2564
-permalink: /leetcode-summary/
+permalink: leetcode-summary
 duoshuo_thread_id:
   - 1351844048792453514
 categories:

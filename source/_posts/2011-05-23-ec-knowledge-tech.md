@@ -5,7 +5,7 @@ date: 2011-05-23T17:57:38+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=706
-permalink: /ec-knowledge-tech/
+permalink: ec-knowledge-tech
 duoshuo_thread_id:
   - 1351844048792453444
 categories:

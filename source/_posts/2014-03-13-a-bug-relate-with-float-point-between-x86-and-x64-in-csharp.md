@@ -5,7 +5,7 @@ date: 2014-03-13T23:49:29+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2358
-permalink: /a-bug-relate-with-float-point-between-x86-and-x64-in-csharp/
+permalink: a-bug-relate-with-float-point-between-x86-and-x64-in-csharp
 duoshuo_thread_id:
   - 1351844048792453500
 enable_highlight:

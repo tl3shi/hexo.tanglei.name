@@ -5,7 +5,7 @@ date: 2011-07-18T21:23:08+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1039
-permalink: /linux-compress-uncompress-files/
+permalink: linux-compress-uncompress-files
 duoshuo_thread_id:
   - 1351844048792453353
 categories:

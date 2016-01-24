@@ -5,7 +5,7 @@ date: 2011-07-11T12:15:16+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=970
-permalink: /bug-error-generating-final-archive-debug-certificate-expired-on-xx-x-x/
+permalink: bug-error-generating-final-archive-debug-certificate-expired-on-xx-x-x
 duoshuo_thread_id:
   - 1351844048792453432
 categories:

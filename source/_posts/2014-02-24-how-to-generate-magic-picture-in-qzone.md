@@ -5,7 +5,7 @@ date: 2014-02-24T22:30:24+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2314
-permalink: /how-to-generate-magic-picture-in-qzone/
+permalink: how-to-generate-magic-picture-in-qzone
 duoshuo_thread_id:
   - 1351844048792453498
 categories:

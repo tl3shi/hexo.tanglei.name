@@ -5,7 +5,7 @@ date: 2011-10-13T09:13:32+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1201
-permalink: /postgraduate-interview-in-tsinghua/
+permalink: postgraduate-interview-in-tsinghua
 duoshuo_thread_id:
   - 1351844048792453342
 categories:

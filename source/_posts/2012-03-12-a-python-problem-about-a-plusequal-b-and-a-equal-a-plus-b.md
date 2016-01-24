@@ -5,7 +5,7 @@ date: 2012-03-12T08:56:19+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1522
-permalink: /a-python-problem-about-a-plusequal-b-and-a-equal-a-plus-b/
+permalink: a-python-problem-about-a-plusequal-b-and-a-equal-a-plus-b
 duoshuo_thread_id:
   - 1351844048792453418
 enable_highlight:

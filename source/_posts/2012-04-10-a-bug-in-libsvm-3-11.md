@@ -5,7 +5,7 @@ date: 2012-04-10T19:49:55+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1695
-permalink: /a-bug-in-libsvm-3-11/
+permalink: a-bug-in-libsvm-3-11
 duoshuo_thread_id:
   - 1351844048792453350
 categories:

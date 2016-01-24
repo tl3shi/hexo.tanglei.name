@@ -5,7 +5,7 @@ date: 2014-01-08T21:55:19+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2287
-permalink: /how-to-batch-delete-uploading-files-in-baidu-pan/
+permalink: how-to-batch-delete-uploading-files-in-baidu-pan
 duoshuo_thread_id:
   - 1351844048792453496
 categories:

@@ -5,7 +5,7 @@ date: 2012-01-16T15:02:45+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1417
-permalink: /end-up-with-my-internship-in-tencent/
+permalink: end-up-with-my-internship-in-tencent
 duoshuo_thread_id:
   - 1351844048792453139
 categories:

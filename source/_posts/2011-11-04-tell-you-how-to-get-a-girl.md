@@ -5,7 +5,7 @@ date: 2011-11-04T21:24:24+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1248
-permalink: /tell-you-how-to-get-a-girl/
+permalink: tell-you-how-to-get-a-girl
 duoshuo_thread_id:
   - 1351844048792453233
 categories:

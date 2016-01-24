@@ -5,7 +5,7 @@ date: 2012-09-12T21:11:24+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1945
-permalink: /ramdisk-for-4g-with-32bit-os/
+permalink: ramdisk-for-4g-with-32bit-os
 duoshuo_thread_id:
   - 1351844048792453331
 categories:

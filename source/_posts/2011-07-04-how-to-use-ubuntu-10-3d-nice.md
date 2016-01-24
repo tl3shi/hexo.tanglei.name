@@ -5,7 +5,7 @@ date: 2011-07-04T20:02:56+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=964
-permalink: /how-to-use-ubuntu-10-3d-nice/
+permalink: how-to-use-ubuntu-10-3d-nice
 duoshuo_thread_id:
   - 1351844048792453144
 categories:

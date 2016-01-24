@@ -5,7 +5,7 @@ date: 2012-03-08T23:19:57+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1508
-permalink: /start-to-learn-python/
+permalink: start-to-learn-python
 duoshuo_thread_id:
   - 1351844048792453344
 enable_highlight:

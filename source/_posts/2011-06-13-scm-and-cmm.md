@@ -5,7 +5,7 @@ date: 2011-06-13T09:47:50+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=810
-permalink: /scm-and-cmm/
+permalink: scm-and-cmm
 duoshuo_thread_id:
   - 1351844048792453285
 categories:

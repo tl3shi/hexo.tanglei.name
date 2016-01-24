@@ -5,7 +5,7 @@ date: 2011-11-25T21:20:18+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1298
-permalink: /to-chengdu-just-for-fun-with-cdsoft/
+permalink: to-chengdu-just-for-fun-with-cdsoft
 duoshuo_thread_id:
   - 1351844048792453248
 categories:

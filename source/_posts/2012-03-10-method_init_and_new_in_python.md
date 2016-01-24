@@ -5,7 +5,7 @@ date: 2012-03-10T17:55:39+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1514
-permalink: /method_init_and_new_in_python/
+permalink: method_init_and_new_in_python
 duoshuo_thread_id:
   - 1351844048792453346
 enable_highlight:

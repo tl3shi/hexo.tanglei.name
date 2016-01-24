@@ -5,7 +5,7 @@ date: 2012-03-05T14:02:34+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1499
-permalink: /android-system-message-sqlite-database/
+permalink: android-system-message-sqlite-database
 duoshuo_thread_id:
   - 1351844048792453295
 categories:

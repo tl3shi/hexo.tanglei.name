@@ -10,7 +10,7 @@ excerpt: |
     使用简单工厂模式设计一个可以创建不同几何形状(Shape)的绘图工具类，如可创建圆形(Circle)、方形(Rectangle)和三角形(Triangle) 对象，每个几何图形都要有绘制draw()和擦除erase()两个方法，要求在绘制不支持的几何图形时，提示一个UnsupportedShapeException，绘制类图并编程实现。
 layout: post
 guid: http://www.tanglei.name/?p=9
-permalink: /simplefactory/
+permalink: simplefactory
 duoshuo_thread_id:
   - 1351844048792453469
 categories:

@@ -5,7 +5,7 @@ date: 2011-11-05T14:11:40+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1253
-permalink: /intern-in-tencent-to-nov-5/
+permalink: intern-in-tencent-to-nov-5
 duoshuo_thread_id:
   - 1351844048792453242
 categories:

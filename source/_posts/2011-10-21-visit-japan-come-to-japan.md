@@ -5,7 +5,7 @@ date: 2011-10-21T21:55:14+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1224
-permalink: /visit-japan-come-to-japan/
+permalink: visit-japan-come-to-japan
 duoshuo_thread_id:
   - 1351844048792453213
 categories:

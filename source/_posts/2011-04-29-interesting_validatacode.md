@@ -5,7 +5,7 @@ date: 2011-04-29T12:06:03+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=565
-permalink: /interesting_validatacode/
+permalink: interesting_validatacode
 duoshuo_thread_id:
   - 1351844048792453406
 categories:

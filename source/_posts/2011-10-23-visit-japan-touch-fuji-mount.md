@@ -5,7 +5,7 @@ date: 2011-10-23T22:03:13+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1236
-permalink: /visit-japan-touch-fuji-mount/
+permalink: visit-japan-touch-fuji-mount
 duoshuo_thread_id:
   - 1351844048792453250
 categories:

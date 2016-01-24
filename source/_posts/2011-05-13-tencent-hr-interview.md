@@ -5,7 +5,7 @@ date: 2011-05-13T11:46:52+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=647
-permalink: /tencent-hr-interview/
+permalink: tencent-hr-interview
 duoshuo_thread_id:
   - 1351844048792453131
 categories:

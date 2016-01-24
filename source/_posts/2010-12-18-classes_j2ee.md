@@ -8,7 +8,7 @@ excerpt: |
   JAVA关键字
 layout: post
 guid: http://www.tanglei.name/?p=84
-permalink: /classes_j2ee/
+permalink: classes_j2ee
 duoshuo_thread_id:
   - 1351844048792453280
 categories:

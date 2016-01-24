@@ -5,7 +5,7 @@ date: 2011-06-28T16:34:38+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=944
-permalink: /android-get-contacts/
+permalink: android-get-contacts
 duoshuo_thread_id:
   - 1351844048792453434
 enable_highlight:

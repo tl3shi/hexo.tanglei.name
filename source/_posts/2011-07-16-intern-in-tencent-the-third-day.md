@@ -5,7 +5,7 @@ date: 2011-07-16T00:13:18+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1012
-permalink: /intern-in-tencent-the-third-day/
+permalink: intern-in-tencent-the-third-day
 duoshuo_thread_id:
   - 1351844048792453319
 categories:

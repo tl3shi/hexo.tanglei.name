@@ -5,7 +5,7 @@ date: 2011-04-23T09:07:21+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=508
-permalink: /chungxinluntan/
+permalink: chungxinluntan
 duoshuo_thread_id:
   - 1351844048792453159
 categories:

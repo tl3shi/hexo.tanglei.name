@@ -5,7 +5,7 @@ date: 2011-08-28T19:20:02+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1143
-permalink: /csu-software-note-for-software08-on-the-7th-term/
+permalink: csu-software-note-for-software08-on-the-7th-term
 duoshuo_thread_id:
   - 1351844048792453428
 categories:

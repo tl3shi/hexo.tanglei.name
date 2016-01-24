@@ -5,7 +5,7 @@ date: 2011-01-11T14:24:46+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=308
-permalink: /2010-system-artch-score/
+permalink: 2010-system-artch-score
 duoshuo_thread_id:
   - 1351844048792453170
 categories:

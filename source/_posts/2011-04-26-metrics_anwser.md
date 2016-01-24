@@ -5,7 +5,7 @@ date: 2011-04-26T23:25:49+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=539
-permalink: /metrics_anwser/
+permalink: metrics_anwser
 duoshuo_thread_id:
   - 1351844048792453187
 categories:

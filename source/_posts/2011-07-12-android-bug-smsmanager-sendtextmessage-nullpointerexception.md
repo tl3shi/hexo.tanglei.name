@@ -5,7 +5,7 @@ date: 2011-07-12T13:45:54+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=972
-permalink: /android-bug-smsmanager-sendtextmessage-nullpointerexception/
+permalink: android-bug-smsmanager-sendtextmessage-nullpointerexception
 duoshuo_thread_id:
   - 1351844048792453192
 categories:

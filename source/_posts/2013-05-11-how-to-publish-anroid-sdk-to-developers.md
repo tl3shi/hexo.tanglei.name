@@ -5,7 +5,7 @@ date: 2013-05-11T00:50:45+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2164
-permalink: /how-to-publish-anroid-sdk-to-developers/
+permalink: how-to-publish-anroid-sdk-to-developers
 duoshuo_thread_id:
   - 1351844048792453485
 enable_highlight:

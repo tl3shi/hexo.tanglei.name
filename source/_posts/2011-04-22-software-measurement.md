@@ -5,7 +5,7 @@ date: 2011-04-22T15:20:24+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=504
-permalink: /software-measurement/
+permalink: software-measurement
 duoshuo_thread_id:
   - 1351844048792453343
 categories:

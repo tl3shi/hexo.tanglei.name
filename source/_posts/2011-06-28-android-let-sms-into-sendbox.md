@@ -5,7 +5,7 @@ date: 2011-06-28T15:45:10+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=938
-permalink: /android-let-sms-into-sendbox/
+permalink: android-let-sms-into-sendbox
 duoshuo_thread_id:
   - 1351844048792453289
 enable_highlight:

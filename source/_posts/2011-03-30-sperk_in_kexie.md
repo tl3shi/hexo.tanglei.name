@@ -5,7 +5,7 @@ date: 2011-03-30T15:11:20+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=372
-permalink: /sperk_in_kexie/
+permalink: sperk_in_kexie
 duoshuo_thread_id:
   - 1351844048792453301
 categories:

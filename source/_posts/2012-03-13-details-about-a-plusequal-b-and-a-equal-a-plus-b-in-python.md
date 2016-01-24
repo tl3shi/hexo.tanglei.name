@@ -5,7 +5,7 @@ date: 2012-03-13T23:20:14+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1528
-permalink: /details-about-a-plusequal-b-and-a-equal-a-plus-b-in-python/
+permalink: details-about-a-plusequal-b-and-a-equal-a-plus-b-in-python
 duoshuo_thread_id:
   - 1351844048792453178
 enable_highlight:

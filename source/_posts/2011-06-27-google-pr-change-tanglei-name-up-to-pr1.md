@@ -5,7 +5,7 @@ date: 2011-06-27T22:12:59+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=916
-permalink: /google-pr-change-tanglei-name-up-to-pr1/
+permalink: google-pr-change-tanglei-name-up-to-pr1
 duoshuo_thread_id:
   - 1351844048792453238
 categories:

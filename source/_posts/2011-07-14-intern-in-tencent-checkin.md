@@ -5,7 +5,7 @@ date: 2011-07-14T00:07:36+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/%e8%85%be%e8%ae%af%e5%ae%9e%e4%b9%a0%e6%8a%a5%e9%81%93-%e5%88%9d%e6%9d%a5%e4%b9%8d%e9%81%93/
-permalink: /intern-in-tencent-checkin/
+permalink: intern-in-tencent-checkin
 duoshuo_thread_id:
   - 1351844048792453360
 categories:

@@ -5,7 +5,7 @@ date: 2012-02-22T21:59:12+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1457
-permalink: /renren-uses-plain-code/
+permalink: renren-uses-plain-code
 duoshuo_thread_id:
   - 1351844048792453143
 categories:
