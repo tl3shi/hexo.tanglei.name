@@ -15,7 +15,7 @@ timezone:
 url: http://hexo.tanglei.name
 root: /
 #permalink: :year/:month/:day/:title/
-permalink: :title/
+permalink: blog/:title.html
 permalink_defaults:
 
 # Directory

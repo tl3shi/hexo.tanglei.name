@@ -5,7 +5,7 @@ date: 2015-03-27T19:36:40+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2638
-permalink: /install-vim-latex-suite-in-mac-osx/
+permalink: install-vim-latex-suite-in-mac-osx
 duoshuo_thread_id:
   - 1351844048792453518
 categories:

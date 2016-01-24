@@ -5,7 +5,7 @@ date: 2014-06-26T20:36:19+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2453
-permalink: /use-ipv6-to-save-traffic-when-using-baiduyun/
+permalink: use-ipv6-to-save-traffic-when-using-baiduyun
 duoshuo_thread_id:
   - 1351844048792453506
 enable_highlight:
