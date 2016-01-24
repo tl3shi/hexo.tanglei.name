@@ -99,13 +99,13 @@ Demo 见[这里](./codecolorer-adapted-to-highlight/highlighttest.html)。
 mysql replace没有正则匹配，一个一个来了。
 
 ```sql
-UPDATE wp_posts SET post_content = REPLACE( post_content, '[/cc]', '</cc></pre>' ) where ID in 
+UPDATE wp_posts SET post_content = REPLACE( post_content, '[/cc]', '```</pre>' ) where ID in 
 (SELECT ID FROM wp_posts WHERE post_content LIKE '%[/cc]%');
 ```
 当试图用以上sql进行查询更新时，提示 "You can't specify target table 'wp_posts' for update in FROM clause"，因为这样对同一个表操作会冲突，中间加一个临时表解决问题。[^2]
 
 ```sql
-UPDATE wp_posts SET post_content = REPLACE( post_content, '[/cc]', '</cc></pre>' ) where ID in 
+UPDATE wp_posts SET post_content = REPLACE( post_content, '[/cc]', '```</pre>' ) where ID in 
 (SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[/cc]%') as tmp);
 ```
 
@@ -138,14 +138,14 @@ in ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang=
 UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="C"]', '<pre><cc class="C">' ) where ID in 
 ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="C"]%') as tmp); /*10*/
 
-UPDATE wp_posts SET post_content = REPLACE( post_content, '[/cc]', '</cc></pre>' ) where ID in 
+UPDATE wp_posts SET post_content = REPLACE( post_content, '[/cc]', '```</pre>' ) where ID in 
 ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[/cc]%') as tmp); 
 /*66*/
 
 UPDATE wp_posts SET post_content = REPLACE( post_content, '<code', '<pre><cc' ) where ID in 
 ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%<code%') as tmp); /*11*/
 
-UPDATE wp_posts SET post_content = REPLACE( post_content, '</code>', '</cc></pre>' ) where ID in 
+UPDATE wp_posts SET post_content = REPLACE( post_content, '</code>', '```</pre>' ) where ID in 
 ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%</code>%') as tmp); /*11*/
 
 UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="sql"]', '<pre><cc class="sql">' ) where ID in 
@@ -165,7 +165,7 @@ SELECT wp_posts.ID, 'enable_highlight',
 '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css">
 <script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script>
 <script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>' 
-FROM wp_posts WHERE wp_posts.ID in (SELECT ID FROM wp_posts WHERE wp_posts.post_content LIKE '%</cc></pre>%');
+FROM wp_posts WHERE wp_posts.ID in (SELECT ID FROM wp_posts WHERE wp_posts.post_content LIKE '%```</pre>%');
 ```
 
 参考文献：

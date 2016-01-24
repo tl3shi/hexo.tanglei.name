@@ -40,7 +40,7 @@ tags:
 
 这样的话，javac就编译不会通过(并不是编译语法错误之类的，copy到ubuntu下的分区绝对可以正常执行)。或者还会出现想把ubuntu下的一个文件copy到windows下的ntfs分区，也提示没有权限(设置的是755权限)，需得用“管理员身份”打开资源管理器：sodu nautilus，进行操作。还需要对fstab配置进行修改，因为前面的copy等操作设置的755，普通user操作不了，得root身份可以，整个挂载的分区是以root身份挂载的，而普通登陆用户非root，所以进行不了copy操作。在fstab添加参数user，意思就是以user的身份挂载，普通user就可以(前面对应的umask权限)copy啊之类的。下面是我的fstab文件的配置，其实也就是增加了user参数和fmask/dmask参数:普通分区跟系统分区还是有区别对待的.fstab相应的具体参数可以到<a href="http://blog.csdn.net/liuyuan_jq/article/details/1826131" target="_blank">这里</a>看看。以上如果不生效，可能是命令之间有冲突。我开始就没有生效，后来用了uid参数才达到的效果了。以下是我的配置：
 
-<pre><cc lang="bash">
+<pre>```bash
 # /etc/fstab: static file system information.
 #
 # <file system> <mount point>   <type>  <options>       <dump>  <pass>
@@ -64,7 +64,7 @@ UUID=a9e889bd-87cc-4468-913d-98c22a05add0	none	swap	sw	0	0
 
 注意看13行，我要study盘以普通用户(tl3shi)身份挂载，方便开发时可以直接运行。效果如下:
 
-<pre><cc lang="bash">
+<pre>```bash
 tl3shi@tanglei3shi:~$ ls -l /media
 总计 96
 drwxr-xr-x 1 root   root 20480 2012-04-04 11:27 life

@@ -66,7 +66,7 @@ gcc t.cpp -D_STDCALL_SUPPORTED -DGLUT_DISABLE_ATEXIT_HACK -lopengl32 -lglu32 -lg
   
 可以配置到VIMRC文件中，map到键盘就方便了，跟一般的C++/C程序区分下，另外加个编译的映射，比如ctrl+alt+F5，运行还是不变。
 
-<pre><cc lang="bash">
+<pre>```bash
 func CompileOpenGLRun()
     exec "!gcc % -g -o %<.exe -D_STDCALL_SUPPORTED -DGLUT_DISABLE_ATEXIT_HACK -lopengl32 -lglu32 -lglut32 "
 endfunc

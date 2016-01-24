@@ -42,7 +42,7 @@ passShellEnvironment &#8211; 是否将shell的环境变量传递给CGI脚本。�
   
 myeclipse新建一个web项目。web.xml内容如下
 
-<pre><cc lang="xml">
+<pre>```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.4" 
 	xmlns="http://java.sun.com/xml/ns/j2ee" 
@@ -184,7 +184,7 @@ int main(void)
       	return 0; 
       }
       
-      </cc></pre>
+      ```</pre>
       
       
       <p>
@@ -262,7 +262,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </FORM > 
         </body>
       </html>
-      </cc></pre>
+      ```</pre>
       
       
       <p>

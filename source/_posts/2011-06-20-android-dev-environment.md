@@ -28,7 +28,7 @@ Iterator
   	String ki = (String) k.next();
   	Log.e("tl3shi",ki+":\t"+p.getProperty(ki));
          }
-  </cc></pre>
+  ```</pre>
   
   
   <p>
