@@ -20,7 +20,7 @@ tags:
 ---
 这个类主要就是时间到了，自动切换了。
 
-<pre>&lt;cc class="java">package com.i3zhai;
+```javapackage com.i3zhai;
 
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
@@ -92,4 +92,4 @@ public class AlarmReceiver extends BroadcastReceiver
 		}
 	}
 }
-&lt;/cc></pre>
+```

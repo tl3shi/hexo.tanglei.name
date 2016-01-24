@@ -43,7 +43,7 @@ Zend哈希表的内部实现
   
 PHP中使用一个叫Backet的结构体表示桶，同一哈希值的所有桶被组织为一个单链表。哈希表使用HashTable结构体表示。相关源码在zend/Zend_hash.h下：
 
-<pre>&lt;cc lang="C">
+<pre><cc lang="C">
 typedef struct bucket {
     ulong h;                        /* Used for numeric indexing */
     uint nKeyLength;
@@ -73,7 +73,7 @@ typedef struct _hashtable {
     int inconsistent;
 #endif
 } HashTable;
-&lt;/cc></pre>
+```
 
 字段名很清楚的表明其用途，因此不做过多解释。重点明确下面几个字段：Bucket中的“h”用于存储原始key；HashTable中的nTableMask是一个掩码，一般被设为nTableSize – 1，与哈希算法有密切关系，后面讨论哈希算法时会详述；arBuckets指向一个指针数组，其中每个元素是一个指向Bucket链表的头指针。
   
@@ -81,7 +81,7 @@ typedef struct _hashtable {
   
 PHP哈希表最小容量是8（2^3），最大容量是0×80000000（2^31），并向2的整数次幂圆整（即长度会自动扩展为2的整数次幂，如13个元素的哈希表长度为16；100个元素的哈希表长度为128）。nTableMask被初始化为哈希表长度（圆整后）减1。具体代码在zend/Zend\_hash.c的\_zend\_hash\_init函数中，这里截取与本文相关的部分并加上少量注释。
 
-<pre>&lt;cc lang="C">
+<pre><cc lang="C">
 ZEND_API int _zend_hash_init(HashTable *ht, uint nSize, hash_func_t pHashFunction, dtor_func_t pDestructor, zend_bool persistent ZEND_FILE_LINE_DC)
 {
     uint i = 3;
@@ -94,10 +94,10 @@ ZEND_API int _zend_hash_init(HashTable *ht, uint nSize, hash_func_t pHashFunctio
         /* prevent overflow */
         ht->nTableSize = 0x80000000;
     } else {
-        while ((1U &lt;&lt; i) &lt; nSize) {
+        while ((1U << i) < nSize) {
             i++;
         }
-        ht->nTableSize = 1 &lt;&lt; i;
+        ht->nTableSize = 1 << i;
     }
  
     ht->nTableMask = ht->nTableSize - 1;
@@ -106,7 +106,7 @@ ZEND_API int _zend_hash_init(HashTable *ht, uint nSize, hash_func_t pHashFunctio
  
     return SUCCESS;
 }
-&lt;/cc></pre>
+```
 
 值得一提的是PHP向2的整数次幂取圆整方法非常巧妙，可以背下来在需要的时候使用。
   
@@ -122,7 +122,7 @@ Zend HashTable的哈希算法异常简单：
   
 下面是Zend源码中查找哈希表的代码：
 
-<pre>&lt;cc lang="C">
+<pre><cc lang="C">
 ZEND_API int zend_hash_index_find(const HashTable *ht, ulong h, void **pData)
 {
     uint nIndex;
@@ -166,7 +166,7 @@ ZEND_API int zend_hash_find(const HashTable *ht, const char *arKey, uint nKeyLen
     }
     return FAILURE;
 }
-&lt;/cc></pre>
+```
 
 其中zend\_hash\_index\_find用于查找整数key的情况，zend\_hash\_find用于查找字符串key。逻辑基本一致，只是字符串key会通过zend\_inline\_hash\_func转为整数key，zend\_inline\_hash_func封装了[times33](http://blog.csdn.net/chen_alvin/article/details/5846714)算法，具体代码就不贴出了。
   

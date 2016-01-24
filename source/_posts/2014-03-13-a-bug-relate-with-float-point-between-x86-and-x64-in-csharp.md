@@ -28,22 +28,22 @@ tags:
 
 背景就简单点儿说，最近一个项目C#编写，涉及浮点运算，来龙去脉省去，直接看如下代码。
 
-<pre>&lt;cc class="csharp">
+```csharp
 float p3x = 80838.0f;
 float p2y = -2499.0f;
 double v321 = p3x * p2y;
 Console.WriteLine(v321);
-&lt;/cc></pre>
+```
 
 很简单吧，马上笔算下结果为-202014162，没问题，难道C#没有产生这样的结果？不可能吧，开启VisualStudio，copy代码试试，果然结果是-202014162。就这样完了么？显然没有！你把编译时的选项从AnyCPU改成x64试试~(服务器环境正是64位滴哦！！)结果居然边成了-202014160，对没错，就是-202014160。有点不相信，再跑两遍，仍然是-202014160。呃，想通了，因为浮点运算的误差，-202014160这个结果是合理的。嗯，再试试C++。//测试环境Intel(R) i7-3770 CPU, windows OS 64. Visual Studio 2012 默认设置。
 
-<pre>&lt;cc class="cpp">
+```cpp
 float p3x = 80838.0f;
 float p2y = -2499.0f;
 double v321 = p3x * p2y;
 std::cout.precision(15);
-std::cout &lt;&lt; v321 &lt;&lt; std::endl;
-&lt;/cc></pre>
+std::cout << v321 << std::endl;
+```
 
 呃，好像x86、x64都是这个合理的结果-202014160。奇了个怪了。
 
@@ -51,7 +51,7 @@ std::cout &lt;&lt; v321 &lt;&lt; std::endl;
 
 用C++同样的代码，X86，X64（DEBUG下，这个后面会说）下得到一致的结果-202014160，容易理解且也是合理的。原因何在？看下编译后生成的代码(截取关键部分)
 
-<pre>&lt;cc class="asm">
+```asm
 //C# x86 下
 ......
 float p3x = 80838.0f;
@@ -78,7 +78,7 @@ double v321 = p3x * p2y;
 00000069  cvtss2sd    xmm0,xmm0
 0000006d  movsd       mmword ptr [rbp+30h],xmm0
 ......
-&lt;/cc></pre>
+```
 
 C++ x86 /x64下都生成了类似的代码（这也就是为何C++ x86/x64与C#x64结果一致）即都用了先用浮点乘起来（mulss），然后转成double（cvtss2sd）。 从上面的汇编代码可以看出C# X86生成代码用的指令fld/fmul/fstp等。其中fld/fmul/fstp等指令是由**FPU**(float point unit)浮点运算处理器做的，FPU在进行浮点运算时，用了**80位**的寄存器做相关浮点运算，然后再根据是float/double截取成32位或64位。非FPU的情况是用了SSE中128位寄存器(float实际只用了其中的32位，计算时也是以32位计算的)，这就是导致上述问题产生的最终原因，详细分析见文末说明。
 
@@ -100,22 +100,22 @@ Reference：
 
 背景就简单点儿说，最近一个项目C#编写，涉及浮点运算，来龙去脉省去，直接看如下代码。
 
-<pre>&lt;cc class="csharp">
+```csharp
 float p3x = 80838.0f;
 float p2y = -2499.0f;
 double v321 = p3x * p2y;
 Console.WriteLine(v321);
-&lt;/cc></pre>
+```
 
 很简单吧，马上笔算下结果为-202014162，没问题，难道C#没有产生这样的结果？不可能吧，开启VisualStudio，copy代码试试，果然结果是-202014162。就这样完了么？显然没有！你把编译时的选项从AnyCPU改成x64试试~(服务器环境正是64位滴哦！！)结果居然边成了-202014160，对没错，就是-202014160。有点不相信，再跑两遍，仍然是-202014160。呃，想通了，因为浮点运算的误差，-202014160这个结果是合理的。嗯，再试试C++。//测试环境Intel(R) i7-3770 CPU, windows OS 64. Visual Studio 2012 默认设置。
 
-<pre>&lt;cc class="cpp">
+```cpp
 float p3x = 80838.0f;
 float p2y = -2499.0f;
 double v321 = p3x * p2y;
 std::cout.precision(15);
-std::cout &lt;&lt; v321 &lt;&lt; std::endl;
-&lt;/cc></pre>
+std::cout << v321 << std::endl;
+```
 
 呃，好像x86、x64都是这个合理的结果-202014160。奇了个怪了。
 
@@ -123,7 +123,7 @@ std::cout &lt;&lt; v321 &lt;&lt; std::endl;
 
 用C++同样的代码，X86，X64（DEBUG下，这个后面会说）下得到一致的结果-202014160，容易理解且也是合理的。原因何在？看下编译后生成的代码(截取关键部分)
 
-<pre>&lt;cc class="asm">
+```asm
 //C# x86 下
 ......
 float p3x = 80838.0f;
@@ -150,7 +150,7 @@ double v321 = p3x * p2y;
 00000069  cvtss2sd    xmm0,xmm0
 0000006d  movsd       mmword ptr [rbp+30h],xmm0
 ......
-&lt;/cc></pre>
+```
 
 C++ x86 /x64下都生成了类似的代码（这也就是为何C++ x86/x64与C#x64结果一致）即都用了先用浮点乘起来（mulss），然后转成double（cvtss2sd）。 从上面的汇编代码可以看出C# X86生成代码用的指令fld/fmul/fstp等。其中fld/fmul/fstp等指令是由**FPU**(float point unit)浮点运算处理器做的，FPU在进行浮点运算时，用了**80位**的寄存器做相关浮点运算，然后再根据是float/double截取成32位或64位。非FPU的情况是用了SSE中128位寄存器(float实际只用了其中的32位，计算时也是以32位计算的)，这就是导致上述问题产生的最终原因，详细分析见文末说明。
 

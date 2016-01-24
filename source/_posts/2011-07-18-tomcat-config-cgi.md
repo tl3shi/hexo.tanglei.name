@@ -42,9 +42,9 @@ passShellEnvironment &#8211; 是否将shell的环境变量传递给CGI脚本。�
   
 myeclipse新建一个web项目。web.xml内容如下
 
-<pre>&lt;cc lang="xml">
+<pre><cc lang="xml">
 <?xml version="1.0" encoding="UTF-8"?>
-&lt;web-app version="2.4" 
+<web-app version="2.4" 
 	xmlns="http://java.sun.com/xml/ns/j2ee" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
@@ -53,61 +53,61 @@ myeclipse新建一个web项目。web.xml内容如下
 
 
 <!-- CGI servlet configuration -->
-&lt;servlet>
-&lt;servlet-name>cgi&lt;/servlet-name>
-&lt;servlet-class>org.apache.catalina.servlets.CGIServlet&lt;/servlet-class>
-    &lt;init-param>
+<servlet>
+<servlet-name>cgi</servlet-name>
+<servlet-class>org.apache.catalina.servlets.CGIServlet</servlet-class>
+    <init-param>
       
 
 <param-name />
-debug&lt;/param-name>
+debug</param-name>
       
 
 <param-value />
-100&lt;/param-value>
-    &lt;/init-param>
-    &lt;init-param>
+100</param-value>
+    </init-param>
+    <init-param>
       
 
 <param-name />
-cgiPathPrefix&lt;/param-name>
+cgiPathPrefix</param-name>
       
 
 <param-value />
-WEB-INF/cgi&lt;/param-value>
-    &lt;/init-param>
-    &lt;init-param>
+WEB-INF/cgi</param-value>
+    </init-param>
+    <init-param>
       
 
 <param-name />
-executable&lt;/param-name>
+executable</param-name>
       
 
 <param-value />
-cmd.exe /c&lt;/param-value>
-    &lt;/init-param>
-    &lt;init-param>
+cmd.exe /c</param-value>
+    </init-param>
+    <init-param>
       
 
 <param-name />
-passShellEnvironment&lt;/param-name>
+passShellEnvironment</param-name>
       
 
 <param-value />
-true&lt;/param-value>
-    &lt;/init-param>
-    &lt;load-on-startup>5&lt;/load-on-startup>
-&lt;/servlet>
+true</param-value>
+    </init-param>
+    <load-on-startup>5</load-on-startup>
+</servlet>
 
 
 <!-- CGI servlet mapping --> 
-&lt;servlet-mapping>
-    &lt;servlet-name>cgi&lt;/servlet-name>
-    &lt;url-pattern>/cgi-bin/*&lt;/url-pattern>
-&lt;/servlet-mapping>
+<servlet-mapping>
+    <servlet-name>cgi</servlet-name>
+    <url-pattern>/cgi-bin/*</url-pattern>
+</servlet-mapping>
 
-&lt;/web-app>
-&lt;/cc></pre>
+</web-app>
+```
 
 然后构造如下目录：[<img class="aligncenter size-full wp-image-1025" title="tomcat-cgi-directory" src="/wp-content/uploads/2011/07/tomcat-cgi-directory.jpg" alt="TOMCAT配置CGI目录结构" width="400" height="480" data-pinit="registered" />](/wp-content/uploads/2011/07/tomcat-cgi-directory.jpg)
   
@@ -115,7 +115,7 @@ true&lt;/param-value>
   
 其中test.bat
 
-<pre>&lt;cc class="xml">
+```xml
 echo OFF
 echo Content-type: text/html
 echo.
@@ -131,7 +131,7 @@ chdir
 echo ^
 echo ^
 echo ^
-&lt;/cc></pre>
+```
 
 启动tomcat，然后浏览器访问：http://localhost/cgiDemo/cgi-bin/test.bat 看到如下图说明配置成功了
   
@@ -193,7 +193,7 @@ int main(void)
       </p>
       
       
-      <pre>&lt;cc class="html">
+      ```html
 
 
 <FORM ACTION="cgi-bin/add.exe" method="get">
@@ -201,13 +201,13 @@ int main(void)
     请在下面填入乘数和被乘数，按下确定后可以看到结果。 
     		<INPUT NAME="m" SIZE="5" /> 
     		<INPUT NAME="n" SIZE="5" />
-  </P>&lt;/BR> 
+  </P></BR> 
   		
   
   <INPUT TYPE="SUBMIT" VALUE="确定" />
   
 </form>
-&lt;/cc></pre>
+```
       
       
       <p>

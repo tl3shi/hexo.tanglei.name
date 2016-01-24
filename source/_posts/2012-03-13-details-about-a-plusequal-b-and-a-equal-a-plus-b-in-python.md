@@ -26,7 +26,7 @@ tags:
 
 简单点，我想下面这个应该容易理解：
 
-<pre>&lt;cc class="python">
+```python
 >>> a=[1,2,3,4] 
 >>> b=a 
 >>> a+=[5] 
@@ -37,11 +37,11 @@ tags:
 >>> a=a+[5]#a+[5]后有一个新地址，再使a指向这个新地址，因此a不再是以前的a,而b还是以前的那个a//b，所以b不变 
 >>> a,b 
 ([1, 2, 3, 4, 5], [1, 2, 3, 4])
-&lt;/cc></pre>
+```
 
 再看看下面几句代码：
 
-<pre>&lt;cc class="python">
+```python
 >>> a=[[1],[2]] 
 >>> b=[] 
 >>> b+=a[0:1]#这句将列表a中第一个元素的“指针”给了b[0],此时a[0]和b[0]是一样的 
@@ -66,13 +66,13 @@ tags:
 >>> id(b[0]);id(a[0]) #此时，b[0]跟a[0]的地址不一样
 13056672 
 12903888
-&lt;/cc></pre>
+```
 
 有了对上面这些的正确理解，就不难理解<a href="http://www.tanglei.name/a-python-problem-about-a-plusequal-b-and-a-equal-a-plus-b/" target="_blank">前面的提到的问题</a>了。在底层递归中，返回了elements中元素的“指针”，在外层里通过这样调用set[j]  = set[j] +  (elements[i])，没问题，因为elements没变(set[j]指向新的地址而已)。而用set[j] += elements[i]可能会等价于elements[*] += elements[i]就是在原地址中改变内容了。
 
 以上就差不多解释清楚了。期间，还遇到一个问题：看如下代码
 
-<pre>&lt;cc class="python">
+```python
 >>> a=[1,2]#初始化a，为列表[1,2]
 >>> a+='3' #直接+=方式，追加元素”3”
 >>> a
@@ -82,13 +82,13 @@ tags:
 [1, 2, '3', '4']#同样能追加成功，怎么感觉有无[]没有区别啊?
 >>> a+'5'#当然，直接+字符串，就抛异常了。
 Traceback (most recent call last):
-  File "&lt;stdin>", line 1, in &lt;module>
+  File "<stdin>", line 1, in <module>
 TypeError: can only concatenate list (not "str") to list
-&lt;/cc></pre>
+```
 
 要解释这个问题，看看python里的源码即可。知道+=这个操作实际上是调用了\_\_iadd\_\_方法(可以用此重载操作符，<a href="http://stackoverflow.com/questions/1047021/overriding-in-python-iadd-method" target="_blank">stackoverflow上有这个重载+=的问题</a>).而在\_\_iadd\_\_方法内部，是直接调用了extend()方法，而a.extend(‘3’)和a.extend([‘3’])没有区别吗？表面上看来是没有区别的。
 
-<pre>&lt;cc class="python">
+```python
 >>> a=[1,2]
 >>> a.extend('3')
 >>> a
@@ -97,19 +97,19 @@ TypeError: can only concatenate list (not "str") to list
 >>> a
 [1, 2, '3', '3']
 >>>
-&lt;/cc></pre>
+```
 
 而实际上，在extend(arg)方法内部，又去调用了append方法
 
-<pre>&lt;cc class="python">
+```python
 def extend(self, values):
         for v in values:
             self.append(v)
-&lt;/cc></pre>
+```
 
 这样，’3’  和 [‘3’] 就没区别被append进去了。字符串会被当作数组append进去。
 
-<pre>&lt;cc class="python">
+```python
 >>> a
 [1, 2, '3', '3']
 >>> a.extend('abc')
@@ -118,7 +118,7 @@ def extend(self, values):
 >>> a.extend(['23','ab'])
 >>> a
 [1, 2, '3', '3', 'a', 'b', 'c', '23', 'ab']
-&lt;/cc></pre>
+```
 
 现在应该差不多了。
   

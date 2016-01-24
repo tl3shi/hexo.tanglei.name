@@ -21,7 +21,7 @@ tags:
 ---
 在看apriori的算法，决定自己练练手，写写代码。最近又在[学python](http://www.tanglei.name/tag/python/)，所以准备用python实现。其中一个子过程是要求候选项Ck的k项子集。在这个求子集的方法中遇到了问题了，并且很神奇。最开始一直找不到问题所在，当单步调试发现问题所在之处时却倍感神奇。下面用代码示例来说明下这个问题的神奇之处。
 
-<pre>&lt;cc inline="true" class="python">
+<pre><cc inline="true" class="python">
 # coding=UTF-8 
 '''
 Created on Mar 11, 2012
@@ -39,15 +39,15 @@ def getSubset(k,size):
         while i >= k-1 :
             set = getSubset(k-1,i)
             j = 0
-            while j &lt; len(set):
+            while j < len(set):
                 #Attention a+=b  a=a+b  
-&lt;/cc></pre>
+```
 
   <font color="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #set[j] += (elements[i]) #Why Elements change here?</font>
                
   <font color="blue">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set[j] = set[j] + (elements[i])</font>
 
-<pre>&lt;cc inline="true" class="python">
+<pre><cc inline="true" class="python">
                 j += 1
             subset += (set)
             i -= 1
@@ -56,7 +56,7 @@ print("elements:",elements)
 test = getSubset(2,len(elements))
 print(test)
 print("elements",elements)
-&lt;/cc></pre>
+```
 
 本例中是求集合[[&#8216;1&#8217;],[&#8216;2&#8217;],[&#8216;3&#8217;]]的2-itemset子集。 看如上代码中，红色那句先注释掉，用a=a+b的形式，运行结果如下。这个结果是正确的，为{1,3}、{2,3}、{1,2}。
 

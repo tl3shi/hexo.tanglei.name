@@ -20,7 +20,7 @@ tags:
 
 打开安装目录，都懒得新建一个文件了。直接打开Readme.txt。复制下面代码:
 
-<pre>&lt;cc class="c">
+```c
 RAR registration data
 wncn
 Unlimited Company License
@@ -32,7 +32,7 @@ b41bcf56929486b8bcdac33d50ecf7739960627351a9ef03353a0e
 592b327cd80645472f0ee622d1915028a9e05298e593db36384f0f
 f46afd5fed9b0bd095d1788266b81494b976f78fb1c551ca60a054
 b17ad853ab902058b42c6887e1b3d40e0b45abf37de02106056887
-&lt;/cc></pre>
+```
 
 再到Readme.txt，先ctrl+a，再ctrl+V，将以上代码替换掉以前的readme上的无用内容。
 

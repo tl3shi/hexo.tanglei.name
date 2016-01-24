@@ -31,7 +31,7 @@ tags:
 
 效果如下，注释中是运行结果。
 
-<pre>&lt;cc class="php">
+```php
 
 <?
 /**
@@ -93,6 +93,6 @@ var_dump($result);//2=>array1  3=>array2
 var_dump($result);//str1=>array2   字符串key替换
 
 ?>
-&lt;/cc></pre>
+```
 
 注意上例中，就算加了引号(不管单引号还是双引号)的key,外表看是字符串，当是数字字符串也被当作数字处理了

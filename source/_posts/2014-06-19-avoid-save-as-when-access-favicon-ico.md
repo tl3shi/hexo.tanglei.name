@@ -23,7 +23,7 @@ Blog从虚拟主机换到了VPS，网站的favicon.ico图标出现了问题。�
   <div>
     web服务器用的apache的话，解决方案是：apache的配置文件<strong>httpd.conf</strong> 里添加</p> 
     
-    <pre>&lt;cc>AddType image/x-icon .ico&lt;/cc></pre>
+    <pre><cc>AddType image/x-icon .ico```
     
     <div>
       重启apache服务器，再次访问~ 若仍然提示下载~ 则试图让浏览器强制刷新，比如url后面加个随机串
@@ -49,7 +49,7 @@ Blog从虚拟主机换到了VPS，网站的favicon.ico图标出现了问题。�
     若仍然解决不了，则去/etc/mime.types 或者类似的路径去检测下下面这句有没有，若无则添加，重复上面的步骤试试~
   </div>
   
-  <pre>&lt;cc>image/x-icon ico&lt;/cc></pre>
+  <pre><cc>image/x-icon ico```
   
   <div>
     实在不行，我也不知道了~

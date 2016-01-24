@@ -21,7 +21,7 @@ tags:
 
 然后稍微看了下语法，试着写写函数之类的。就有以下判断素数的代码：也试着用pdb调试下(只是玩玩而已，知道有这回事，真正做事情的时候应该还是用IDE吧)
 
-<pre>&lt;cc class="python">
+```python
 import math
 
 _DEBUG=False#True
@@ -48,11 +48,11 @@ for i in range(2,50):
 	if t == 1:
 		print(i,sep=",",end=" ")
 print()
-&lt;/cc></pre>
+```
 
 然后，还记得教程中有说自己写模块。于是就另外写另一个模块，练习输入输出，让用户手动输入数字，再进行判断。
 
-<pre>&lt;cc class="python">
+```python
 # coding=GBK #加上这句支持中文
 import isPrime
 
@@ -62,7 +62,7 @@ if isPrime.isPrime(i) == 1 :
 else:	
 	print(i,"不是一个素数")	
 
-&lt;/cc></pre>
+```
 
 运行结果如下
 

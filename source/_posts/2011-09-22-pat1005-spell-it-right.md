@@ -29,9 +29,9 @@ Each input file contains one test case. Each case occupies one line which contai
   
 自己平时没怎么玩C语言真是遗憾啊。搞个动态分配数组等内存，啥啥都不会，写这些代码也就当熟悉下C语言的语法吧。
 
-<pre>&lt;cc class="C">#include &lt;stdio.h>
-#include &lt;stdlib.h>
-#include &lt;string.h>
+```C#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 int main()
 {
 	int * array;
@@ -43,14 +43,14 @@ int main()
 	array = (int *)malloc(sizeof(int) * (strlen(inputstr)+1));
 	
 	len=strlen(inputstr);
-	for(i=0;i&lt;len;i++)
+	for(i=0;i<len;i++)
 	{
 		if(inputstr[i] != '\0')
 			array[i]=inputstr[i]-'0';
 		else
 			break;
 	}
-	for(i = 0;i&lt;len; i++)
+	for(i = 0;i<len; i++)
 		sum+=array[i];
 //	printf("%d",sum);
 	i=0;
@@ -78,7 +78,7 @@ int main()
 	}
 	
 	return 0;
-}&lt;/cc></pre>
+}```
 
 For each test case, output in one line the digits of the sum in English words. There must be one space between two consecutive words, but no extra space at the end of a line.
 

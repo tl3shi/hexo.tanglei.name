@@ -34,26 +34,26 @@ tags:
 
 手动一个一个添加肯定是比较麻烦的。下面这段代码是搜索所有安装的包的函数，并将这些函数输出到out.txt,就可以自己添加到相应的文本(如上配置文件)里面以实现高亮。
 
-<pre>&lt;cc class="python">
+```python
 # date:2012-4-26
 # Author: tanglei|http://www.tanglei.name
 ###############################################################################
 
 setwd('S:/R/workspace/testR/')
-findfuns &lt;- function(x) {
+findfuns <- function(x) {
 	
 	if(require(x, character.only=TRUE)) {
-		env &lt;- paste("package", x, sep=":")
-		nm &lt;- ls(env, all=TRUE)
+		env <- paste("package", x, sep=":")
+		nm <- ls(env, all=TRUE)
 		nm[unlist(lapply(nm, function(n) exists(n, where=env,
 											mode="function",
 											inherits=FALSE)))]
 	} else character(0)
 }
-z &lt;-  lapply(.packages(all.available = FALSE), findfuns)
+z <-  lapply(.packages(all.available = FALSE), findfuns)
 z=unique(sort(unlist(z)))
 cat(z,file='out.txt',sep=',')
-&lt;/cc></pre>
+```
 
 ### 代码提示自动补全问题
 
@@ -63,16 +63,16 @@ cat(z,file='out.txt',sep=',')
 
 看到图中可以导入导出，试着添加一个然后导出发现先其模版是按照这样的模式
 
-<pre>&lt;cc class="xml">
-<?xml version=”1.0″ encoding=”UTF-8″ standalone=”no”?>&lt;templates>
-&lt;template autoinsert=”true” context=”r-code” deleted=”false” description=”apply” enabled=”true” name=”apply”>apply&lt;/template> 
-&lt;template autoinsert=”true” context=”r-code” deleted=”false” description=”" enabled=”true” name=”cbind”>cbind&lt;/template>
-&lt;/templates>
-&lt;/cc></pre>
+```xml
+<?xml version=”1.0″ encoding=”UTF-8″ standalone=”no”?><templates>
+<template autoinsert=”true” context=”r-code” deleted=”false” description=”apply” enabled=”true” name=”apply”>apply</template> 
+<template autoinsert=”true” context=”r-code” deleted=”false” description=”" enabled=”true” name=”cbind”>cbind</template>
+</templates>
+```
 
 现在需要的就是将所有的函数按照这样的格式写下来即可，导入之后就可以了。用python写个脚本简单完成此功能。
 
-<pre>&lt;cc class="python">
+```python
 # coding=UTF-8
 '''
 Created on Apr 26, 2012
@@ -87,19 +87,19 @@ for line in rfunctions.readlines():
 print(len(functions))
 rout = open('r.functions.templetes.xml','w')
 rfuns = open('r.fun.txt','w')
-rout.write('''<?xml version="1.0" encoding="UTF-8" standalone="no"?>&lt;templates>''')
+rout.write('''<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates>''')
 rout.write('\n')
 for fun in functions:
-    if len(fun)&lt;3 :continue#太短了
-    if fun[0] in ('!','$','.','-','%','&#038;','*','[','+','&lt;','|',':','/','@','&lt;','>') :continue#生成的函数可能以这些开头，过滤掉
-    if fun.count('&lt;')>0:continue#非法字符，xml中解析可能出错
-    strFunc = "&lt;template autoinsert=\"true\" context=\"r-code\" deleted=\"false\" description=\""+str(fun)+"   http://www.tanglei.name,You can modify this sentence by replacing them in the templetes.xml\" enabled=\"true\" name=\""+str(fun)+"\">"+str(fun)+"&lt;/template>\n"
+    if len(fun)<3 :continue#太短了
+    if fun[0] in ('!','$','.','-','%','&#038;','*','[','+','<','|',':','/','@','<','>') :continue#生成的函数可能以这些开头，过滤掉
+    if fun.count('<')>0:continue#非法字符，xml中解析可能出错
+    strFunc = "<template autoinsert=\"true\" context=\"r-code\" deleted=\"false\" description=\""+str(fun)+"   http://www.tanglei.name,You can modify this sentence by replacing them in the templetes.xml\" enabled=\"true\" name=\""+str(fun)+"\">"+str(fun)+"</template>\n"
     rout.write(strFunc)
     rfuns.write(fun)
     rfuns.write('\n')
-rout.write('''&lt;/templates>''')
+rout.write('''</templates>''')
 print('done')
-&lt;/cc></pre>
+```
 
 以上代码将之前安装的包中的函数以固定的格式输出到r.functions.templetes.xml，然后在上图中StatET->Source Editors->R Templates,导入即可实现。效果如下图  
 [<img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="R word completion-1" border="0" alt="R word completion-1" src="/wp-content/uploads/2012/04/Rwordcompletion1_thumb.jpg" width="377" height="141" />](/wp-content/uploads/2012/04/Rwordcompletion1.jpg) 

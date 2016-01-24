@@ -24,7 +24,7 @@ tags:
   
 RVO就是这样的：
 
-<pre>&lt;cc class="cpp">
+```cpp
 C func()
 {
     return C();
@@ -34,21 +34,21 @@ int main(int argc, char **argv)
     C c = func();
     return 0;
 }
-&lt;/cc></pre>
+```
 
 编译器在func()函数中，返回时没有拷贝构造一个C的实例，一般来讲可以这样实现，比如外面调用的时候是用c去接受的，会直接构造c，然后在函数内部修改c的引用。
 
-<pre>&lt;cc class="cpp">
+```cpp
 C func(C &#038;__hidden__)
 {
     __hidden__ = C();
     return;
 }
-&lt;/cc></pre>
+```
 
 NRVO即这样：
 
-<pre>&lt;cc class="cpp">
+```cpp
 C func()
 {
     C c;
@@ -65,24 +65,24 @@ C func(C &#038;__hidden__)
     __hidden__.member = 10;
     return;
 }
-&lt;/cc></pre>
+```
 
 但若函数内部实现有不同return的分支，编译器可能就不知道该怎么优化进而不会优化。其中更详细的内容可以参看 <a href="http://msdn.microsoft.com/en-us/library/ms364057%28VS.80%29.aspx" target="_blank">Named Return Value Optimization in Visual C++ 2005</a>。
 
 在C++中，当一个函数返回类对象时得注意因拷贝构造函数的调用引来的开销，具体见下面的例子。例如某个函数直接 
 
-<pre>&lt;cc class="cpp" inline="true">return Integer(i);&lt;/cc></pre>
+<pre><cc class="cpp" inline="true">return Integer(i);```
 
 创建一个临时Integer对象并返回它（没有copy一份），而 
 
-<pre>&lt;cc class="cpp" inline="true">Integer tmp(i); return tmp;&lt;/cc></pre>
+<pre><cc class="cpp" inline="true">Integer tmp(i); return tmp;```
 
 调用构造函数创建tmp对象;调用copy构造函数将tmp拷贝到外部返回值的存储单元；在tmp的作用域结尾时调用析构函数；这个也是一般来说这样，具体来说也与具体编译器实现相关。
 
 下面的例子分别用Visual Studio 2012中的编译器（默认和O2优化结果不一样哦）和G++4.7.2(mingw)结果。
 
-<pre>&lt;cc class="cpp">
-#include &lt;iostream>
+```cpp
+#include <iostream>
 using namespace std;
 class A
 {
@@ -91,17 +91,17 @@ class A
 
         A(int i):a(i)
         {
-            cout &lt;&lt; "A() :" &lt;&lt; a &lt;&lt; endl;
+            cout << "A() :" << a << endl;
         }
 
         ~A()
         {
-            cout &lt;&lt; "~A()" &lt;&lt; a &lt;&lt; endl;
+            cout << "~A()" << a << endl;
         }
 
         A(const A&#038; x):a(x.a)
         {
-            cout &lt;&lt; "copy A()" &lt;&lt; a &lt;&lt; endl;
+            cout << "copy A()" << a << endl;
         }
 };
 A test1()
@@ -117,10 +117,10 @@ int main()
 {
     A a = test1();
     A b = test2();
-    cout &lt;&lt; "before exit" &lt;&lt; endl;
+    cout << "before exit" << endl;
     return 0;
 }
-&lt;/cc></pre>
+```
 
 [<img style="display: inline;" title="image" src="/wp-content/uploads/2014/04/image_thumb.png" alt="image" width="704" height="337" />](/wp-content/uploads/2014/04/image.png)
 

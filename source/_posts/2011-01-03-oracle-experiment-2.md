@@ -26,7 +26,7 @@ tags:
 
 用到的表以及数据如下所示：
 
-<pre>&lt;cc class="sql">
+```sql
 --药品库存表kc
 create table kc(
 id number(2) primary key, --药品id
@@ -49,13 +49,13 @@ insert into batchkc values (2,'12-1月-04',1000);
 insert into batchkc values (2,'07-6月-04',1000);
 insert into batchkc values (2,'13-8月-04',1000);
 insert into batchkc values (2,'13-12月-05',1000);
-&lt;/cc></pre>
+```
 
 这个还好，至少对每个字段进行了说明。。就比较清晰了。
   
 按照要求写一个存储过程，传入两个参数，一个是药品的名称，另外一个就是要出库的数量。代码如下：
 
-<pre>&lt;cc class="sql" lines="60">
+<pre><cc class="sql" lines="60">
 --chuku.prc
 create or replace procedure chuku(c_ypname varchar2,c_num number)
 as
@@ -98,11 +98,11 @@ begin
        end;
 end;
 /
-&lt;/cc></pre>
+```
 
 上面有注释，应该能看懂吧。然后还得有个触发器，让去update或者delete的时候自动去维护两张表的关系。代码如下：
 
-<pre>&lt;cc class="sql">
+```sql
 create or replace trigger tri_batchkc
 after delete or update on batchkc for each row--行级触发器
 declare
@@ -123,7 +123,7 @@ begin
            end if;
 end;
 /
-&lt;/cc></pre>
+```
 
 实现的效果如下：
   

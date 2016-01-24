@@ -40,10 +40,10 @@ tags:
 
 前面也提到结果是因为Win下换行符和Mac下换行符的不一致的问题，不过思考下输入SampleInput.txt的**输出结果为啥是**?
 
-<pre>&lt;cc>
+<pre><cc>
 :6c|1
 :12dedcba|1
-&lt;/cc></pre>
+```
 
 vim -b file 可以看到^M~ （注意替换^M时输入应该是：ctrl+v,ctrl+m / 也可以用\r）
 
@@ -63,7 +63,7 @@ SampleInput.txt
 
 回到前面的一个疑问，即读取Windows下的那两行并输出结果的问题，来看看结果的第一行 
 
-<pre>&lt;cc inline="true">:6c|1&lt;/cc></pre>
+<pre><cc inline="true">:6c|1```
 
 ，冒号后面的应该是字符串的长度6，可以看出里面除了“abc|1”外，还有那个回车“\r”，这里其实是因为输出缓冲区的问题，IO设计者为了提高效率不会说接受到IO指令就往设备输出，应该是达到一定长度后再统一一次输出。默认情况下标准输入(stdin)和标准输出(stdout)是行级缓冲区，stderr是无缓冲的(不同实现可能不一样)，“abc|1”放到缓冲区了,然后\r，前面也提到效果就当前打印机头(这里就是当前缓冲区输入指针)直接回退到开头，然后再放“:”(覆盖了之前缓冲区里面的值“a”)和长度6(覆盖“b”)于是缓冲区里的数据现在是”:6c|1”，现在遇到了换行符std::endl，换行输出到设备(控制台)。
 
@@ -71,15 +71,15 @@ SampleInput.txt
 
 再举个例子，如下代码应该是直接输出“Hello world.”
 
-<pre>&lt;cc class="cpp">
+```cpp
 //"Hello world."
 void testr()
 {
     char ss[] = "abcd\refgh";
-    cout &lt;&lt; ss &lt;&lt; "1234";
-    cout &lt;&lt; "0000" &lt;&lt; (char)(13) &lt;&lt; "Hello world." &lt;&lt; endl;
+    cout << ss << "1234";
+    cout << "0000" << (char)(13) << "Hello world." << endl;
 }
-&lt;/cc></pre>
+```
 
 另外，提醒下Xcode IDE运行的输出结果跟控制台输出的运行结果是**不一致**的。XCode IDE输出应该是解析到\r就输出了吧，标准控制台的话仍然是跟上面的分析一致。
   

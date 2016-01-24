@@ -58,7 +58,7 @@ JOHN SMITH                     SALARY           �
   
 建表以及数据的sql如下：
 
-<pre>&lt;cc class="sql">
+```sql
 create table pay_table
 (
 NAME	 VARCHAR2(20) NOT NULL ,
@@ -76,13 +76,13 @@ insert into pay_table values('CHRISSY ZOES','SALARY',50000.00,to_date('01-01-04'
 insert into pay_table values('CLODE EVANS','SALARY',42150.00,to_date('01-03-04','DD-MM-YY'),null);
 insert into pay_table values('JOHN SMITH','SALARY',35000.00,to_date('15-06-03','DD-MM-YY'),null);
 insert into pay_table values('KEVIN TROLLBERG','SALARY',27500.00,to_date('15-06-03','DD-MM-YY'),null);
-&lt;/cc></pre>
+```
 
 插入日期时还得注意格式。与当前session中的格式一致。
   
 <!--more-->唉，赵明老师也不给个备注。。各个字段给解释下才行嘛。PREV_PAY现在才发现估计是记录上一次的工资值。当时做的时候还没有注意呢，不管了。也就是个update的语句。下面用存储过程实现如下：
 
-<pre>&lt;cc class="sql" lines="620">"]
+<pre><cc class="sql" lines="620">"]
 create or replace procedure proc_dbtest
 as
 begin
@@ -113,7 +113,7 @@ begin
      close pay_cursor;--关闭
     end;
 end;
-&lt;/cc></pre>
+```
 
 &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
   

@@ -35,7 +35,7 @@ Notification，通知的主体，通过设置其各种属性，来实现通知�
   
 下面的代码就实现了预想中的效果。
 
-<pre>&lt;cc class="java">
+```java
 Intent	intent = new Intent(Intent.ACTION_MAIN);
 			intent.addCategory(Intent.CATEGORY_LAUNCHER);
 			intent.setClass(mContext,mContext.getClass());
@@ -51,4 +51,4 @@ Intent	intent = new Intent(Intent.ACTION_MAIN);
 			//这里发送通知(消息ID,通知对象), 添加通知，第一个参数为自定义的通知唯一标识  
 	        mNotificationManager.notify(NOTIFICATION_ID, mNotification);    
 
-&lt;/cc></pre>
+```

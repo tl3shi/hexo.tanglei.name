@@ -29,11 +29,11 @@ p.s.
   
 这里再推荐下<a href="https://chrome.google.com/webstore/detail/dpplabbmogkhghncfbfdeeokoefdjegm" target="_blank">chrome代理切换插件Proxy SwitchySharp</a>，比较方便可以自己配正则自动切换是否通过代理网络访问网站。可以在线导入配置，如图，导入的URL为： 
 
-<pre>&lt;cc lang="html" inline="true">http://west-chamber-season-3.googlecode.com/files/SwitchyOptions.bak&lt;/cc></pre>
+<pre><cc lang="html" inline="true">http://west-chamber-season-3.googlecode.com/files/SwitchyOptions.bak```
 
 [<img style="display: block; float: none; margin-left: auto; margin-right: auto; border-width: 0px;" title="SwitchySharp代理设置" src="/wp-content/uploads/2012/08/SwitchySharp_thumb.jpg" alt="SwitchySharp代理设置" width="644" height="396" border="0" />](/wp-content/uploads/2012/08/SwitchySharp.jpg)这个Windows 版本更新比较慢，如果你电脑里面有python开发环境的话，可以有个随时获取最新的。可以到此<a href="https://github.com/liruqi/west-chamber-season-3/zipball/master" target="_blank">下载代码</a>，解压缩，或者直接 
 
-<pre>&lt;cc lang="html" inline="true">git clone git://github.com/liruqi/west-chamber-season-3.git&lt;/cc></pre>
+<pre><cc lang="html" inline="true">git clone git://github.com/liruqi/west-chamber-season-3.git```
 
 。进入west-chamber-proxy 文件夹，双击westchamberproxy.py运行，控制台可以看到一些运行状态，别关了。然后就好好的享受自由的墙外生活吧。
 

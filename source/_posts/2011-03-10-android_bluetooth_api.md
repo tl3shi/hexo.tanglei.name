@@ -28,18 +28,18 @@ tags:
 
 2.使用反射机制对BluetoothDevice枚举其所有方法和常量，看看是否存在:
 
-<pre>&lt;cc class="java">
+```java
 static public void printAllInform(Class clsShow) {  
     try {  
         // 取得所有方法  
         Method[] hideMethod = clsShow.getMethods();  
         int i = 0;  
-        for (; i &lt; hideMethod.length; i++) {  
+        for (; i < hideMethod.length; i++) {  
             Log.e("method name", hideMethod[i].getName());  
         }  
         // 取得所有常量  
         Field[] allFields = clsShow.getFields();  
-        for (i = 0; i &lt; allFields.length; i++) {  
+        for (i = 0; i < allFields.length; i++) {  
             Log.e("Field name", allFields[i].getName());  
         }  
     } catch (SecurityException e) {  
@@ -53,11 +53,11 @@ static public void printAllInform(Class clsShow) {
         e.printStackTrace();  
     }  
 } 
-&lt;/cc></pre>
+```
 
 结果如下：
 
-<pre>&lt;cc class="java">
+```java
 11-29 09:19:12.012: method name(452): cancelBondProcess
 11-29 09:19:12.020: method name(452): cancelPairingUserInput
 11-29 09:19:12.020: method name(452): createBond
@@ -91,11 +91,11 @@ static public void printAllInform(Class clsShow) {
 11-29 09:19:12.043: method name(452): wait
 11-29 09:19:12.051: method name(452): wait
 11-29 09:19:12.051: method name(452): wait
-&lt;/cc></pre>
+```
 
 3.如果枚举发现API存在(SDK却隐藏)，则自己实现调用方法：
 
-<pre>&lt;cc class="java">
+```java
 	/**
 	 * 与设备配对 参考源码：platform/packages/apps/Settings.git
 	 * \Settings\src\com\android\settings\bluetooth\CachedBluetoothDevice.java
@@ -115,33 +115,33 @@ static public void printAllInform(Class clsShow) {
 		Boolean returnValue = (Boolean) removeBondMethod.invoke(btDevice);
 		return returnValue.booleanValue();
 	}
-&lt;/cc></pre>
+```
 
 PS:SDK之所以不给出隐藏的API肯定有其原因，也许是出于安全性或者是后续版本兼容性的考虑，因此不能保证隐藏API能在所有Android平台上很好地运行。。。
 
-<pre>&lt;cc class="xml">
+```xml
 <?xml version="1.0" encoding="utf-8"?>
-&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent">
-	&lt;LinearLayout android:id="@+id/LinearLayout01"
+	<LinearLayout android:id="@+id/LinearLayout01"
 		android:layout_height="wrap_content" android:layout_width="fill_parent">
-		&lt;Button android:layout_height="wrap_content" android:id="@+id/btnSearch"
-			android:text="Search" android:layout_width="160dip">&lt;/Button>
-		&lt;Button android:layout_height="wrap_content"
-			android:layout_width="160dip" android:text="Show" android:id="@+id/btnShow">&lt;/Button>
-	&lt;/LinearLayout>
-	&lt;LinearLayout android:id="@+id/LinearLayout02"
-		android:layout_width="wrap_content" android:layout_height="wrap_content">&lt;/LinearLayout>
-	&lt;ListView android:id="@+id/ListView01" android:layout_width="fill_parent"
+		<Button android:layout_height="wrap_content" android:id="@+id/btnSearch"
+			android:text="Search" android:layout_width="160dip"></Button>
+		<Button android:layout_height="wrap_content"
+			android:layout_width="160dip" android:text="Show" android:id="@+id/btnShow"></Button>
+	</LinearLayout>
+	<LinearLayout android:id="@+id/LinearLayout02"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"></LinearLayout>
+	<ListView android:id="@+id/ListView01" android:layout_width="fill_parent"
 		android:layout_height="fill_parent">
-	&lt;/ListView>
-&lt;/LinearLayout>
-&lt;/cc></pre>
+	</ListView>
+</LinearLayout>
+```
 
 工具类ClsUtils.java源码如下：
 
-<pre>&lt;cc class="java">
+```java
 package com.testReflect;
 
 import java.lang.reflect.Field;
@@ -181,12 +181,12 @@ public class ClsUtils {
 			// 取得所有方法
 			Method[] hideMethod = clsShow.getMethods();
 			int i = 0;
-			for (; i &lt; hideMethod.length; i++) {
+			for (; i < hideMethod.length; i++) {
 				Log.e("method name", hideMethod[i].getName());
 			}
 			// 取得所有常量
 			Field[] allFields = clsShow.getFields();
-			for (i = 0; i &lt; allFields.length; i++) {
+			for (i = 0; i < allFields.length; i++) {
 				Log.e("Field name", allFields[i].getName());
 			}
 		} catch (SecurityException e) {
@@ -201,11 +201,11 @@ public class ClsUtils {
 		}
 	}
 }
-&lt;/cc></pre>
+```
 
 主程序testReflect.java的源码如下：
 
-<pre>&lt;cc class="java">
+```java
 package com.testReflect;
 
 import java.util.ArrayList;
@@ -229,8 +229,8 @@ import android.widget.Toast;
 public class testReflect extends Activity {
 	Button btnSearch, btnShow;
 	ListView lvBTDevices;
-	ArrayAdapter&lt;String> adtDevices;
-	List&lt;String> lstDevices = new ArrayList&lt;String>();
+	ArrayAdapter<String> adtDevices;
+	List<String> lstDevices = new ArrayList<String>();
 	BluetoothDevice btDevice;
 	BluetoothAdapter btAdapt;
 
@@ -245,7 +245,7 @@ public class testReflect extends Activity {
 		btnShow.setOnClickListener(new ClickEvent());
 
 		lvBTDevices = (ListView) this.findViewById(R.id.ListView01);
-		adtDevices = new ArrayAdapter&lt;String>(testReflect.this,
+		adtDevices = new ArrayAdapter<String>(testReflect.this,
 				android.R.layout.simple_list_item_1, lstDevices);
 		lvBTDevices.setAdapter(adtDevices);
 		lvBTDevices.setOnItemClickListener(new ItemClickEvent());
@@ -270,7 +270,7 @@ public class testReflect extends Activity {
 			Object[] lstName = b.keySet().toArray();
 
 			// 显示所有收到的消息及其细节
-			for (int i = 0; i &lt; lstName.length; i++) {
+			for (int i = 0; i < lstName.length; i++) {
 				String keyName = lstName[i].toString();
 				Log.e(keyName, String.valueOf(b.get(keyName)));
 			}
@@ -331,7 +331,7 @@ public class testReflect extends Activity {
 				lstDevices.clear();
 				
 				Object[] lstDevice = btAdapt.getBondedDevices().toArray();
-				for (int i = 0; i &lt; lstDevice.length; i++) {
+				for (int i = 0; i < lstDevice.length; i++) {
 					BluetoothDevice device=(BluetoothDevice)lstDevice[i];
 					String str = "已配对|" + device.getName() + "|" + device.getAddress();
 					lstDevices.add(str); // 获取设备名称和mac地址
@@ -351,4 +351,4 @@ public class testReflect extends Activity {
 
 
 }
-&lt;/cc></pre>
+```

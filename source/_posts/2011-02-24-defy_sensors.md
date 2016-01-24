@@ -20,7 +20,7 @@ tags:
 
 直接上代码:
 
-<pre>&lt;cc class="java">
+```java
 package com.i3zhai.blog;
 
 import java.util.Enumeration;
@@ -53,7 +53,7 @@ public class DefySensors extends Activity
 		SensorManager sm = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
 		// 从传感器管理器中获得全部的传感器列表
-		List&lt;Sensor> allSensors = sm.getSensorList(Sensor.TYPE_ALL);
+		List<Sensor> allSensors = sm.getSensorList(Sensor.TYPE_ALL);
 
 		// 显示有多少个传感器
 		tx1.setText("经检测该手机有" + allSensors.size() + "个传感器，他们分别是：\n");
@@ -122,7 +122,7 @@ public class DefySensors extends Activity
 		}
 	}
 }
-&lt;/cc></pre>
+```
 
 layout的XML就不上了，一个textview而已。
   

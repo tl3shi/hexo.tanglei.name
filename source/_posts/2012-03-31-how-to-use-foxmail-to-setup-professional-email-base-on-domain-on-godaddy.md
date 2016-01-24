@@ -23,10 +23,10 @@ tags:
 
 注意客户端配置时接受/发送邮件的服务器不能采取默认的，例如我在foxmail上配置pop3时，默认的pop3服务器是pop.tanglei.me，等。正确的配置应该是：
 
-<pre>&lt;cc class="csharp">
+```csharp
 接受邮件服务器(pop3):pop.secureserver.net
 发送邮件服务器(smtp):smtpout.secureserver.net
-&lt;/cc></pre>
+```
 
 如图所示：
 

@@ -19,7 +19,7 @@ tags:
 ---
 想写一个短信群发器，用于过年过节啊之类的发送短信给亲朋好友。并且是定制的。首先来看下如何发送短信，网上大量参考，自己也测试了下。下面代码只实现了发送短信的功能。没有界面啥可言。
 
-<pre>&lt;cc class="java">
+```java
 package name.tanglei.msgsend;
 
 import android.app.Activity;
@@ -66,15 +66,15 @@ public class msgSendDemo extends Activity {
        m.sendTextMessage(destinationAddress, null, text, sentPi, deliveryPi);
     }
  
-}&lt;/cc></pre>
+}```
 
 当然，直接运行后，可以看到Logcat有代码输出，在虚拟机里面也输出了msg has been sent sucessfully!，明显Activity.RESULT_OK不要是发送短信成功的标识了。先将就吧。在我的defy下也输出同样的效果，但后来10086给回复证明了短信确实是发送出去的。[<img src="/wp-content/uploads/2011/06/android-send-msg-code.jpg" alt="android发送信息源码" title="android发送信息源码" width="320" height="480" class="aligncenter size-full wp-image-932" />](/wp-content/uploads/2011/06/android-send-msg-code.jpg)
   
 当然，要有发送信息的权限，在manifest中得加入
 
-<pre>&lt;cc class="xml">&lt;uses-permission android:name="android.permission.SEND_SMS"/>&lt;/cc></pre>
+```xml<uses-permission android:name="android.permission.SEND_SMS"/>```
 
-<pre>&lt;cc class="java">
+```java
 /**
 *destinationAddress : 目标地址，手机号码
 *scAddress： 短信中心号码，为null时使用缺省短信中心号码。
@@ -83,6 +83,6 @@ public class msgSendDemo extends Activity {
 *deliveryIntent: 如果非空，但短信发送到目标时通知发送者。
 **/
 public final void sendTextMessage(String destinationAddress, String scAddress, String text, PendingIntent sentIntent, PendingIntent deliveryIntent)
-&lt;/cc></pre>
+```
 
 本例中的代码 m.sendTextMessage(destinationAddress, null, text, sentPi, deliveryPi); 改成m.sendTextMessage(destinationAddress, null, text, null, null); 效果完全一样的。后面再调整到底有没法发送成功的监听调整吧。

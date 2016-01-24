@@ -30,11 +30,11 @@ tags:
 
 Google+1默认共提供4个样式的按钮可供选择，您可以自己的需要选择不同的尺寸进行安装，也可以根据官方文章进行自定义设置。基础按钮由两部分组成，一个是必须的JS代码，
 
-<pre>&lt;cc class="javascript">&lt;/cc></pre>
+```javascript```
 
 另一个是根据不同的尺寸生成的不同调用代码，如本站显示效果对应的代码是
 
-<pre>&lt;cc class="javascript">＜g:plusone size=”medium”＞＜/g:plusone＞&lt;/cc></pre>
+```javascript＜g:plusone size=”medium”＞＜/g:plusone＞```
 
 详细情况还可以参见：http://code.google.com/intl/zh-CN/apis/+1button/
   

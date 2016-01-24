@@ -41,12 +41,12 @@ eclipse3.6可以到<a href="http://download.eclipse.org/eclipse/downloads/drops/
 
 在新建好的project上就可以再new一个R-script File，写代码吧。沿用参考的例子：
 
-<pre>&lt;cc class="python">
-prime&lt;-function(n)
+```python
+prime<-function(n)
 {
-    prime1&lt;-function(x)
+    prime1<-function(x)
     {
-        y&lt;-TRUE
+        y<-TRUE
         for(i in (x%/%2):2)
         {
             if(x%%i==0) y=FALSE
@@ -54,16 +54,16 @@ prime&lt;-function(n)
         }
         y
     }
-    x&lt;-c()
+    x<-c()
     for (i in 2:n)
     {
-        if(prime1(i)) x&lt;-c(x,i)
+        if(prime1(i)) x<-c(x,i)
         if(i==n) return(x)
     }
 }
 prime(100)
 prime(1000)
-&lt;/cc></pre>
+```
 
 <pre>然后运行Run，第一次Run可能要进行配置，选择Rterm,默认的RJ可能会因为版本兼容性提示dll不存在之类的。</pre>
 

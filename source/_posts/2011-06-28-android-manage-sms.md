@@ -36,7 +36,7 @@ content://sms/queued        待发送列表
   
 数据库中sms相关的字段如下：
 
-<pre>&lt;cc class="java">_id               一个自增字段，从1开始 
+```java_id               一个自增字段，从1开始 
 thread_id    序号，同一发信人的id相同 
 address      发件人手机号码 
 person        联系人列表里的序号，陌生人为null 
@@ -56,20 +56,20 @@ body                     短信内容
 service_center     短信服务中心号码编号 
 subject                  短信的主题 
 reply_path_present     TP-Reply-Path 
-locked&lt;/cc></pre>
+locked```
 
 检索数据方法很简单： 
 
-<pre>&lt;cc class="java">Uri uri = Uri.parse("content://sms/inbox");         
+```javaUri uri = Uri.parse("content://sms/inbox");         
 Cursor cur = this.managedQuery(uri, null, null, null, null);         
 if (cur.moveToFirst()) {         
     do{     
-    for(int j = 0; j &lt; cur.getColumnCount(); j++){     
+    for(int j = 0; j < cur.getColumnCount(); j++){     
             info = "name:" + cur.getColumnName(j) + "=" + cur.getString(j); 
             Log.i("====>", info); 
         } 
     }while(cur.moveToNext());      
-}&lt;/cc></pre>
+}```
 
 managedQuery最终也要将参数转换为SQL语句向SQLite发送消息，因此参数跟SQL语句很类似，所以可以在查询字段中加入SQL函数，
   
@@ -111,7 +111,7 @@ Url中content://sms 替换成content://sms/ 也成功，但是其它url时程序
   
 <!--more-->
 
-<pre>&lt;cc class="java">
+```java
 sURLMatcher.addURI("sms", null, SMS_ALL); 
 sURLMatcher.addURI("sms", "#", SMS_ALL_ID); 
 sURLMatcher.addURI("sms", "inbox", SMS_INBOX); 
@@ -137,7 +137,7 @@ sURLMatcher.addURI("sms", "status/#", SMS_STATUS_ID);
 sURLMatcher.addURI("sms", "sr_pending", SMS_STATUS_PENDING); 
 sURLMatcher.addURI("sms", "sim", SMS_ALL_SIM); 
 sURLMatcher.addURI("sms", "sim/#", SMS_SIM);
-&lt;/cc></pre>
+```
 
 其中，delete方法中支持的协议为：
   

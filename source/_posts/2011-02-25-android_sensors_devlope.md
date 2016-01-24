@@ -76,21 +76,21 @@ List<Sensor> sensors = mSensorManager.getSensorList(Sensor.TYPE_ORIENTATION);
   
 要与传感器交互，应用程序必须注册以侦听与一个或多个传感器相关的活动。Android中提供了registerListener来注册一个传感器，并提供了unregisterListener来卸载一个传感器。registerListener方法包括3个参数：第1个参数，接收信号的Listener实例；第2个参数，想接收的传感器类型的列表（即上一步创建的List<Sensor>对象）；第3个参数，接收频度。调用之后返回一个布尔值，true表示成功，false表示失败。当然，之后不再使用时，我们还需要卸载。代码如下：
 
-<pre>&lt;cc class="java">
+```java
 //注册传感器  
  Boolean  mRegisteredSensor = mSensorManager.registerListener(this, sensor,   
  SensorManager.SENSOR_DELAY_FASTEST);  
  //卸载传感器  
  mSensorManager.unregisterListener(this);
-&lt;/cc></pre>
+```
 
 其中，SensorEventListener是使用传感器的核心部分，包括以下两个方法必须实现：
   
 onSensorChanged (SensorEvent event) 方法在传感器值更改时调用。该方法只由受此应用程序监视的传感器调用。该方法的参数包括一个SensorEvent对象，该对象主要包括一组浮点数，表示传感器获得的方向、加速度等信息。例如，以下代码可以取得其值：
 
-<pre>&lt;cc class="java">float x = event.values[SensorManager.DATA_X];  
+```javafloat x = event.values[SensorManager.DATA_X];  
 float y = event.values[SensorManager.DATA_Y];  
-float z = event.values[SensorManager.DATA_Z];  &lt;/cc></pre>
+float z = event.values[SensorManager.DATA_Z];  ```
 
 onAccuracyChanged (Sensor sensor,int accuracy) 方法在传感器的精准度发生改变时调用。其参数包括两个整数：一个表示传感器，另一个表示该传感器新的准确值。
   
@@ -98,7 +98,7 @@ onAccuracyChanged (Sensor sensor,int accuracy) 方法在传感器的精准度发
   
 代码清单9-1 第9章\Examples\_09\_01\src\com\yarin\android\Examples\_09\_01\Activity01.java
 
-<pre>&lt;cc class="java">
+```java
 public class Activity01 extends Activity implements SensorEventListener  
 {  
     private boolean         mRegisteredSensor;  
@@ -117,7 +117,7 @@ public class Activity01 extends Activity implements SensorEventListener
         super.onResume();  
         //接收SensorManager的一个列表(Listener)  
         //这里我们指定类型为TYPE_ORIENTATION(方向传感器)  
-        List&lt;Sensor> sensors = mSensorManager.getSensorList  
+        List<Sensor> sensors = mSensorManager.getSensorList  
         (Sensor.TYPE_ORIENTATION);  
         if (sensors.size() > 0)  
         {  
@@ -162,7 +162,7 @@ public class Activity01 extends Activity implements SensorEventListener
         }  
     }  
 } 
-&lt;/cc></pre>
+```
 
 上面的例子中演示了如何获得方向传感器的方向、加速度等信息，我们可以根据得到的数值与上一次得到的数值之间的关系来进行需要的操作。SensorManager中还有很多常量和一些常用的方法，如下：
 

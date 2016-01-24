@@ -21,7 +21,7 @@ tags:
 ---
 看代码看到类似 
 
-<pre>&lt;cc class="php">preg_replace('/[\n\r]/is', '', $str);&lt;/cc></pre>
+```phppreg_replace('/[\n\r]/is', '', $str);```
 
 的东西，没搞明白/is的意思，前面那篇文章也没说。后来查了下才明白是修饰符。看看下面这篇文章,学习下。
 

@@ -45,7 +45,7 @@ For each test case, you should output the sum of a and b in one line. The sum mu
 
 <pre>helloworld类型的，答案如下：</pre>
 
-<pre>&lt;cc class="C">#include &lt;stdio.h>
+```C#include <stdio.h>
 void myprint(int);
 int main()
 {
@@ -67,7 +67,7 @@ void myprint(int num)
 		printf(",");
 		printf("%d%d%d",num/100%10,num/10%10,num%10);
 	}else
-*/	if(num &lt; 0 ) {
+*/	if(num < 0 ) {
 		printf("-");
 		num = - num;
 	}
@@ -86,7 +86,7 @@ void myprint(int num)
 		printf("%d",num);
 	}
 }
-&lt;/cc></pre>
+```
 
 。
   

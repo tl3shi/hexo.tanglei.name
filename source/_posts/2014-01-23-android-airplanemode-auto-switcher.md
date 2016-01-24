@@ -37,23 +37,23 @@ tags:
 
 后来的后来，还是从网上找到了解决方案，不过device必须得root，不然**没办法**搞定。原文来自<a href="http://zipta.ru/2012/11/borba-s-android-4-2/" target="_blank">这里</a>，虽然不知道是哪国语言～但代码还是认识。
 
-<pre>&lt;cc>
+<pre><cc>
 //开启飞行模式
 settings put global airplane_mode_on 1
 am broadcast -a android.intent.action.AIRPLANE_MODE --ez state true
 //关闭飞行模式
 settings put global airplane_mode_on 0
 am broadcast -a android.intent.action.AIRPLANE_MODE --ez state false
-&lt;/cc></pre>
+```
 
 通过adb shell，输入以上两句命令，可以将切换飞行模式。核心问题解决了～剩下的就是需要通过Java代码去调用shell命令，这个不难～不过得注意需要通过root去调用，另外得防止程序卡死～
 
 再后来在<a href="http://stackoverflow.com/questions/15861046/how-to-toggle-airplane-mode-on-android-4-2-using-root" target="_blank">stackoverflow</a>上也有人提到了这个解决方案，并且还给了另外一个解决方案，即通过sqlite去**直接**改变Android的系统配置。数据库位置在/data/data/com.android.providers.settings/databases/settings.db
 
-<pre>&lt;cc>
+<pre><cc>
 sqlite3 /data/data/com.android.providers.settings/databases/settings.db
 insert into global values(null, 'airplane_mode_on', 1); //相应的插入0值，即是取消飞行模式
-&lt;/cc></pre>
+```
 
 当然上面的数据库修改之后要生效，还是必须得发上面的那个broadcast才能生效。
 

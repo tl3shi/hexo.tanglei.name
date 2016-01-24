@@ -18,8 +18,8 @@ tags:
 ---
 在《Effective C++》里提到对内置(C-like)类型在函数传参时pass by value比pass by reference更高效，当用OO的c++自定义类型(存在构造/析构等)pass by reference to const 更好，STL里的迭代器和函数对象是用C指针实现的，因此pass by value更好。至于为什么，下面的代码验证了下。
 
-<pre>&lt;cc class="cpp">
-#include &lt;iostream&gt;
+```cpp
+#include <iostream&gt;
 using namespace std;
 
 int f(int i)
@@ -57,11 +57,11 @@ int main()
     r = inter(x);
     return 0;
 }
-&lt;/cc></pre>
+```
 
 用VS 2012 默认Debug配置下生成的汇编代码如下： 
 
-<pre>&lt;cc class=cpp>
+<pre><cc class=cpp>
      4: int f(int i)
      5: {
 00F343D0  push        ebp 
@@ -87,11 +87,11 @@ int main()
 00F343FD  mov         esp,ebp 
 00F343FF  pop         ebp 
 00F34400  ret
-&lt;/cc></pre>
+```
 
 后面的几个函数，只截取了关键代码了。
 
-<pre>&lt;cc class=cpp>
+<pre><cc class=cpp>
     10: int g(const int &i)
     11: { 
  ...... 
@@ -104,11 +104,11 @@ int main()
 00F344A9  mov         eax,dword ptr [r] 
     14: }
 ......
-&lt;/cc></pre>
+```
 
 [<img class="size-full wp-image-2472 aligncenter" src="/wp-content/uploads/2014/07/1.png" alt="传引用 传指针" width="321" height="151" />](/wp-content/uploads/2014/07/1.png)
 
-<pre>&lt;cc class=cpp>
+<pre><cc class=cpp>
     16: int h(int * p)
     17: {
 ......
@@ -121,11 +121,11 @@ int main()
 00F34549  mov         eax,dword ptr [r] 
     20: }
 ......
-&lt;/cc></pre>
+```
 
 指针跟上面引用一样。 
 
-<pre>&lt;cc class=cpp>
+<pre><cc class=cpp>
     22: int inter(int * &p)
     23: {
 ......
@@ -139,7 +139,7 @@ int main()
 01233DCB  mov         eax,dword ptr [r] 
     26: }
 ......
-&lt;/cc></pre>
+```
 
 [<img class="aligncenter size-full wp-image-2471" title=" " src="/wp-content/uploads/2014/07/2.png" alt="pass by value" width="386" height="106" />](/wp-content/uploads/2014/07/2.png)
   

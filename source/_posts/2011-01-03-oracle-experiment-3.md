@@ -39,11 +39,11 @@ An accurate limiting value results in both performance and memory benefits.
   
 然后课件上有个大概框架如下：
 
-<pre>&lt;cc class="sql">
+```sql
 DECLARE
     t_outtab_type IS TABLE OF input_table%ROWTYPE;
     v_outtab t_outtab_type;
-    CURSOR c_in IS SELECT * FROM input_table WHERE key_col = '&lt;val1>';
+    CURSOR c_in IS SELECT * FROM input_table WHERE key_col = '<val1>';
 BEGIN
     OPEN c_in;
     LOOP
@@ -57,11 +57,11 @@ BEGIN
     CLOSE c_in;
 END;
 /
-&lt;/cc></pre>
+```
 
 就仿造例子写一个吧。实现这个题目意思的存储过程如下所示：
 
-<pre>&lt;cc class="sql">
+```sql
 create or replace procedure fetchPer5fromEmp
 as
 begin
@@ -87,11 +87,11 @@ begin
     end;
 end;
 /
-&lt;/cc></pre>
+```
 
 &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-实现打印的存储过程如下：
 
-<pre>&lt;cc class="sql">
+```sql
 create or replace procedure print_rows(e emp%rowtype)
 as
 begin
@@ -100,7 +100,7 @@ begin
 
 end;
 /
-&lt;/cc></pre>
+```
 
 实现效果如下图所示：
   

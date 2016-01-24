@@ -63,9 +63,9 @@ CS301133 21:45:00 21:58:40</pre>
 
 思路是转换成秒，比较时间。代码如下：
 
-<pre>&lt;cc class="C">#include &lt;stdio.h>
-#include &lt;string.h>
-#include &lt;stdlib.h>
+```C#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 int gettime(char[]);
 int main()
@@ -80,7 +80,7 @@ int main()
 	scanf("%d",&#038;n);
 	maxtime=gettime("00:00:01");
 	mintime=gettime("23:59:59");
-	for(i=0;i&lt;n;i++)
+	for(i=0;i<n;i++)
 	{
 		scanf("%s%s%s",person,time1,time2);
 
@@ -88,7 +88,7 @@ int main()
 			strcpy(inperson,person);
 			mintime = gettime(time1);
 		}
-		if(maxtime&lt;gettime(time2)){
+		if(maxtime<gettime(time2)){
 			strcpy(outperson,person);
 			maxtime = gettime(time2);
 		}
@@ -103,23 +103,23 @@ int gettime(char time[])
 	
 	int i=0,j=0;
 	char t[3];
-	for(i=0;i&lt;2;i++){
+	for(i=0;i<2;i++){
 		t[j++]=time[i];
 	}
 	t[j]='\0';
 	int hour = atoi(t);
 
-	for(i=3,j=0;i&lt;5;i++){
+	for(i=3,j=0;i<5;i++){
 		t[j++]=time[i];
 	}
 	t[j]='\0';
 	int min = atoi(t);
 
-	for(i=6,j=0;i&lt;8;i++){
+	for(i=6,j=0;i<8;i++){
 		t[j++]=time[i];
 	}
 	t[j]='\0';
 	int sec = atoi(t);
 
 	return 3600*hour+min*60+sec;
-}&lt;/cc></pre>
+}```

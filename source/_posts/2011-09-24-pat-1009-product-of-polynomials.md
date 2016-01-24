@@ -44,7 +44,7 @@ For each test case you should output the product of A and B in one line, with th
 
 通过的答案： 
 
-<pre>&lt;cc class="C">#include &lt;stdio.h>
+```C#include <stdio.h>
 int main()
 {
 	float array1[1001],array2[1001],array[2002];
@@ -57,7 +57,7 @@ int main()
 	}
 
 	scanf("%d",&#038;a);
-	for(i=0;i&lt;a;i++){
+	for(i=0;i<a;i++){
 		int exp = 0;
 		float coe = 0.0f;
 		scanf("%d",&#038;exp);
@@ -66,7 +66,7 @@ int main()
 		array1[exp]=coe;
 	}
 	scanf("%d",&#038;b);
-	for(i=0;i&lt;b;i++){
+	for(i=0;i<b;i++){
 		int exp = 0;
 		float coe = 0.0f;
 		scanf("%d",&#038;exp);
@@ -75,9 +75,9 @@ int main()
 		array2[exp]=coe;
 	}
 
-	for(i=0;i&lt;=maxexp1;i++)
+	for(i=0;i<=maxexp1;i++)
 	{
-		for(j=0;j&lt;=maxexp2;j++){
+		for(j=0;j<=maxexp2;j++){
 			array[i+j]+=array1[i]*array2[j];
 		}
 	}
@@ -107,4 +107,4 @@ int main()
 	}
 	return 0;
 }
-&lt;/cc></pre>
+```

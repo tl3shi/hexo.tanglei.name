@@ -116,8 +116,8 @@ Bezier曲线的变差减少性是指如果控制多边形是一个平面图形�
 
 具体而言，实现可以用递归如下：
 
-<pre>&lt;cc class="cpp">
-CP_Vector2D getBezierPoint(vector&lt;CP_Vector2D> controlPoints, double t, int i, int j)
+```cpp
+CP_Vector2D getBezierPoint(vector<CP_Vector2D> controlPoints, double t, int i, int j)
 {
 	if (j == 0)
 	{
@@ -125,21 +125,21 @@ CP_Vector2D getBezierPoint(vector&lt;CP_Vector2D> controlPoints, double t, int i
 	}
 	return getBezierPoint(controlPoints, t, i-1, j-1) * (1-t)+ getBezierPoint(controlPoints, t, i, j-1) * t;
 }
-&lt;/cc></pre>
+```
 
 后来实验发现，递归算法太慢，换成非递归，效果明显好转。
 
-<pre>&lt;cc class="cpp">
-CP_Vector2D getBezierPointNotRecurrent(vector&lt;CP_Vector2D> controlPoints, double t)
+```cpp
+CP_Vector2D getBezierPointNotRecurrent(vector<CP_Vector2D> controlPoints, double t)
 {
-	vector&lt;CP_Vector2D> tempPoints(controlPoints);
-	for (unsigned int i = 1; i &lt;= tempPoints.size(); i++){
-		for (unsigned int j = 0; j &lt; tempPoints.size()-i; j++)
+	vector<CP_Vector2D> tempPoints(controlPoints);
+	for (unsigned int i = 1; i <= tempPoints.size(); i++){
+		for (unsigned int j = 0; j < tempPoints.size()-i; j++)
 			tempPoints[j] = tempPoints[j] * (1-t) + tempPoints[j+1] * t; 
 	}
 	return tempPoints[0];
 }
-&lt;/cc></pre>
+```
 
 代码见<https://github.com/tl3shi/cagd/tree/master/task3>(说明，配图为当前代码演示结果，你现在看到的代码运行结果不是下面展示得到图片)效果如图.
 
@@ -149,7 +149,7 @@ CP_Vector2D getBezierPointNotRecurrent(vector&lt;CP_Vector2D> controlPoints, dou
 
 直接通过上面的定义计算出每个点，然后再画出来。如下所示：
 
-<pre>&lt;cc class="cpp">
+```cpp
 const int maxControlPoint = 4;
 	CP_Vector2D controlPoints[maxControlPoint];
 	controlPoints[0] = CP_Vector2D(0.0, 0.0);
@@ -160,7 +160,7 @@ const int maxControlPoint = 4;
 	glColor3d(1.0, 0, 0);
 	glBegin(GL_LINE_STRIP);
 	double t = 0;
-	for (unsigned int i = 0; i &lt; besierSegment; i++)
+	for (unsigned int i = 0; i < besierSegment; i++)
 	{
 		t += 1.0/besierSegment;
 		CP_Vector2D p = getBezierPoint(controlPoints, t, 3, 3);
@@ -173,11 +173,11 @@ const int maxControlPoint = 4;
 	glColor3d(1.0, 0, 1.0);
 	glBegin(GL_LINE_STRIP);
 	t = 0;
-	for (unsigned int i = 0; i &lt; besierSegment; i++)
+	for (unsigned int i = 0; i < besierSegment; i++)
 	{
 		t += 1.0/besierSegment;
 		CP_Vector2D p;
-		for (unsigned kk = 0 ; kk &lt; maxControlPoint; kk++) 
+		for (unsigned kk = 0 ; kk < maxControlPoint; kk++) 
 		{
 			p += controlPoints[kk] * B(kk, 3, t);
 		}
@@ -187,7 +187,7 @@ const int maxControlPoint = 4;
 
 	glEnd();
 	glFlush();
-&lt;/cc></pre>
+```
 
 结果如图：
 
@@ -227,7 +227,7 @@ Bezier曲面特征网格最外一圈顶点定义Bezier曲面的四条边界：S(
 
 de Casteljau算法：参考<http://www.cs.mtu.edu/~shene/COURSES/cs3621/NOTES/surface/bezier-de-casteljau.html>
 
-<pre>&lt;cc class="pascal">
+```pascal
 Input: a m+1 rows and n+1 columns of control points and (u,v). 
 Output: point on surface p(u,v) 
 Algorithm: 
@@ -238,27 +238,27 @@ begin
 end
 Apply de Casteljau's algorithm to q0(v), q1(v), ..., qm(v) with u; 
 The point obtained is p(u,v);
-&lt;/cc></pre>
+```
 
 想像Bezier曲面由bezier曲线拼接而成，可以先把点给求出来。
 
-<pre>&lt;cc class="cpp">
+```cpp
 besierSegment = 30;
 	const int uNum = 30, vNum = 30;
 	CP_Vector3D bezierPoints [uNum][vNum];
 
-	for (unsigned int u = 0; u &lt; uNum; u++)
+	for (unsigned int u = 0; u < uNum; u++)
 	{
 		t = u * 1.0 / besierSegment;
-		vector&lt;CP_Vector3D> newControl;
-		for (unsigned int k = 0; k &lt; 4; k++)
+		vector<CP_Vector3D> newControl;
+		for (unsigned int k = 0; k < 4; k++)
 		{
 			CP_Vector3D p = getBezierPointNotRecurrent(controlPoints[k], t);
 			newControl.push_back(p);
 		}
 		
 		glBegin(GL_LINE_STRIP);
-		for (unsigned int v = 0; v &lt; vNum; v++)
+		for (unsigned int v = 0; v < vNum; v++)
 		{
 			t = v * 1.0 / besierSegment;
 			CP_Vector3D p = getBezierPointNotRecurrent(newControl, t);
@@ -267,7 +267,7 @@ besierSegment = 30;
 		}
 		glEnd();
 	}
-&lt;/cc></pre>
+```
 
 上面把一条条bezier曲线给画出来了，并求出bezier曲面上的点。然后通过**四边形**(三角形也可以)拼接出来即可，如下图：
 
@@ -275,10 +275,10 @@ besierSegment = 30;
 
 相邻的4个点构成四边形，分别是bezierPoints\[u\]\[v\]，\[u+1\]\[v\]，\[u+1\]\[v+1\]，\[u\]\[v+1\]，遍历即可得到。
 
-<pre>&lt;cc class="cpp">
-for (unsigned u = 0; u &lt; uNum -1; u++)
+```cpp
+for (unsigned u = 0; u < uNum -1; u++)
 	{
-		for(unsigned v = 0; v &lt; vNum - 1; v++ )
+		for(unsigned v = 0; v < vNum - 1; v++ )
 		{  
 			glBegin(GL_QUADS);
 			CP_Vector3D p = bezierPoints[u][v];
@@ -292,7 +292,7 @@ for (unsigned u = 0; u &lt; uNum -1; u++)
 			glEnd();
 		}
 	}
-&lt;/cc></pre>
+```
 
 优化的话，求法向量，加点颜色之类的可以更好看。
 

@@ -38,7 +38,7 @@ tags:
 
 然后写代码测试了下。代码如下：
 
-<pre>&lt;cc class="python">
+```python
 '''
 Created on Mar 9, 2012
 @author: tanglei|www.tanglei.name
@@ -104,7 +104,7 @@ class  E(object):
 
 t=E() #E.new,D.new,D.init
 t.cal(1)
-&lt;/cc></pre>
+```
 
 运行结果如图所示意。
 

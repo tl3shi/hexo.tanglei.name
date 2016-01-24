@@ -160,7 +160,7 @@ tags:
   <span style="font-family: 宋体;"><span style="font-size: small;"><br /> </span></span>
 </div>
 
-<pre>&lt;cc class="sql">SQL> create table t
+```sqlSQL> create table t
   2  (
   3  i number
   4  );
@@ -171,11 +171,11 @@ Commit complete.
 SQL> select * from t;
          I
 ----------
-        10&lt;/cc></pre>
+        10```
 
 Delete删除,然后回滚 
 
-<pre>&lt;cc class="sql">SQL> delete from t;
+```sqlSQL> delete from t;
 1 row deleted.
 SQL> select * from t;
 no rows selected
@@ -185,16 +185,16 @@ Rollback complete.
 SQL> select * from t;
          I
 ----------
-        10&lt;/cc></pre>
+        10```
 
 Truncate截断表,然后回滚. 
 
-<pre>&lt;cc class="sql">SQL> truncate table t;
+```sqlSQL> truncate table t;
 Table truncated.
 SQL> rollback;
 Rollback complete.
 SQL> select * from t;
-no rows selected&lt;/cc></pre>
+no rows selected```
 
 可见delete删除表还可以回滚,而truncate截断表就不能回滚了.(前提是delete操作没有提交)
   
@@ -208,7 +208,7 @@ truncate 语句缺省情况下空间释放,除非使用reuse storage; truncate�
   
 下面对两种操作对比 
 
-<pre>&lt;cc class="sql">SQL> analyze table t estimate statistics;
+```sqlSQL> analyze table t estimate statistics;
 Table analyzed.
 SQL> select segment_name,blocks from dba_segments where segment_name=upper('t');
 SEGMENT_NAME                       BLOCKS
@@ -217,7 +217,7 @@ T                                      24
 SQL> select table_name,blocks,empty_blocks from user_tables where table_name=upper('t');
 TABLE_NAME                         BLOCKS EMPTY_BLOCKS
 ------------------------------ ---------- ------------
-T                                      20            3&lt;/cc></pre>
+T                                      20            3```
 
 USER_TABLES.BLOCKS 列代表该表中曾经使用过得数据库块的数目，即水线。
   
@@ -225,7 +225,7 @@ USER_TABLES.BLOCKS 列代表该表中曾经使用过得数据库块的数目，�
   
 Delete删除表 
 
-<pre>&lt;cc class="sql">SQL> delete from t;
+```sqlSQL> delete from t;
 10000 rows deleted
 SQL> commit;
 Commit complete.
@@ -234,18 +234,18 @@ Table analyzed.
 SQL> select table_name,blocks,empty_blocks from user_tables where table_name=upper('t');
 TABLE_NAME                         BLOCKS EMPTY_BLOCKS
 ------------------------------ ---------- ----------------------------------------------------------------
-T                                      20            3&lt;/cc></pre>
+T                                      20            3```
 
 Truncate截断表 
 
-<pre>&lt;cc class="sql">SQL> truncate table t;
+```sqlSQL> truncate table t;
 Table truncated.
 SQL> analyze table t estimate statistics;
 Table analyzed.
 SQL> select table_name,blocks,empty_blocks from user_tables where table_name=upper('t');
 TABLE_NAME                         BLOCKS EMPTY_BLOCKS
 ------------------------------ ---------- --------------------------------------------------------
-T                                       0            7&lt;/cc></pre>
+T                                       0            7```
 
 可见,delete表,BLOCK(高水线)不变,而truncate表BLOCKS(高水线)变为0
   
@@ -275,7 +275,7 @@ b) 即使HWM以下有空闲的数据库块，键入在插入数据时使用了ap
   
 先在表中插入100000条记录，并打开时间 
 
-<pre>&lt;cc class="sql">SQL> set timing on;
+```sqlSQL> set timing on;
 SQL> begin
   2  for i in 1..100000 loop
   3  insert into t values('10');
@@ -284,17 +284,17 @@ SQL> begin
   6  end;
   7  /
 PL/SQL procedure successfully completed.
-Elapsed: 00:01:12.50&lt;/cc></pre>
+Elapsed: 00:01:12.50```
 
 Delete删除表 
 
-<pre>&lt;cc class="sql">SQL> delete from t;
+```sqlSQL> delete from t;
 100000 rows deleted.
-Elapsed: 00:00:20.09&lt;/cc></pre>
+Elapsed: 00:00:20.09```
 
 Truncate 截断表 
 
-<pre>&lt;cc class="sql">#先把表回滚
+```sql#先把表回滚
 SQL> rollback;
 Rollback complete.
 Elapsed: 00:00:17.36
@@ -305,7 +305,7 @@ SQL> select count(*) from t;
 Elapsed: 00:00:00.01
 SQL> truncate table t;
 Table truncated.
-Elapsed: 00:00:00.20&lt;/cc></pre>
+Elapsed: 00:00:00.20```
 
 可见删除同一个大小的表，delete用了20.09秒，而truncate只用了0.2秒.
 

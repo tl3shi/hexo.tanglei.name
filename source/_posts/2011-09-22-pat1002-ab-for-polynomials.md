@@ -57,7 +57,7 @@ tags:
 
 **解题思路说明：**用大数组，下标是指数，数组里面的值是系数，刚开始始终只对一部分(题意没理解清楚)，在泱泱的帮助下，全部通过。代码如下：
 
-<pre>&lt;cc class="C">#include &lt;stdio.h>
+```C#include <stdio.h>
 int main()
 {
 	float array[1001];
@@ -66,7 +66,7 @@ int main()
 		array[i]=0.0f;
 	}
 	scanf("%d",&#038;a);
-	for(i=0;i&lt;a;i++){
+	for(i=0;i<a;i++){
 		int exp = 0;
 		float coe = 0.0f;
 		scanf("%d",&#038;exp);
@@ -74,7 +74,7 @@ int main()
 		array[exp]=coe;
 	}
 	scanf("%d",&#038;b);
-	for(i=0;i&lt;b;i++){
+	for(i=0;i<b;i++){
 		int exp = 0;
 		float coe = 0.0f;
 		scanf("%d",&#038;exp);
@@ -109,4 +109,4 @@ int main()
 	}	
 	return 0;
 }
-&lt;/cc></pre>
+```

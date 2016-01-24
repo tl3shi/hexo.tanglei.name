@@ -44,7 +44,7 @@ C<sub>K</sub>是L<sub>K</sub>的超集，也就是说，C<sub>K</sub>的成员�
 
 算法伪代码如下：
 
-<pre>&lt;cc lang="vb">
+<pre><cc lang="vb">
 //算法：Apriori
 //输入：D - 事务数据库；min_sup - 最小支持度计数阈值
 //输出：L - D中的频繁项集
@@ -65,7 +65,7 @@ Procedure apriori_gen(Lk-1:frequent(k-1)-itemsets)
       For each项集l1属于Lk-1
               For each项集 l2属于Lk-1
                        If((l1[1]=l2[1])&#038;&#038;( l1[2]=l2[2])&#038;&#038;……..
-&#038;&#038; (l1[k-2]=l2[k-2])&#038;&#038;(l1[k-1]&lt;l2[k-1])) then{
+&#038;&#038; (l1[k-2]=l2[k-2])&#038;&#038;(l1[k-1]<l2[k-1])) then{
                    c=l1连接l2 //连接步：产生候选
                    if has_infrequent_subset(c,Lk-1) then
                        delete c; //剪枝步：删除非频繁候选
@@ -78,7 +78,7 @@ Procedure apriori_gen(Lk-1:frequent(k-1)-itemsets)
             If s不属于Lk-1 then
                Return true;
         Return false;
-&lt;/cc></pre>
+```
 
 举个例子,来源于书中(见参考文献1)的例子。
 
@@ -120,7 +120,7 @@ Procedure apriori_gen(Lk-1:frequent(k-1)-itemsets)
 
 具体而言：因为这几天在学python,所以就用python实现如下。里面有注释，刚开始用python，所以把一些问题也注释在里面了，代码可能不怎么清晰。仅供参考。
 
-<pre>&lt;cc class="python">
+```python
 # coding=UTF-8
 import copy
 import re
@@ -153,7 +153,7 @@ class Item:
             while i >= k-1 :
                 myset = self.getSubset(k-1,i)
                 j = 0
-                while j &lt; len(myset):
+                while j < len(myset):
                     #Attention a+=b  a=a+b  
                     myset[j] +=  [self.elements[i]]   #Why Elements change here?
                     j += 1
@@ -307,7 +307,7 @@ class Apriori:
             item=totalItemsets[0]
             count=0 
             j=0
-            while j&lt;len(totalItemsets):
+            while j<len(totalItemsets):
                 if (item == totalItemsets[j]) :
                     count += 1 
                     totalItemsets.remove(item) #remove the first occurence
@@ -357,7 +357,7 @@ class Apriori:
                 for each_src in self.data:
         #            count = each_src.count(each.elements)#only count the single element,can not be used to count if containing more than 2 elements
         #            need a function like Collection.containAll(Collection) in Java
-                    if len(each_src)&lt;len(each.elements):
+                    if len(each_src)<len(each.elements):
                         pass
                     else:
         #不是必须连续 相等才满足条件，只要元素都在里面即可
@@ -390,11 +390,11 @@ print(ls.get(ls.size()))
 rules = a.ralationRules(ls.get(ls.size()).items,0.5)
 for rule in rules:
     print(rule)
-&lt;/cc></pre>
+```
 
 运行结果如下：
 
-<pre>&lt;cc class="python">
+```python
 -----result--------
 
 1-itemsets :5
@@ -416,7 +416,7 @@ Rule:{'1', '3'}-->{'2'}  confidence:0.5
 Rule:{'3', '2'}-->{'1'}  confidence:0.5
 Rule:{'1', '2'}-->{'3'}  confidence:0.5
 
-&lt;/cc></pre>
+```
 
 **有网友指出，本页代码在其python环境运行结果不正确，因其环境用的是python2.x，而本人用的环境是python3.x，在python3.x中，两个整数相除是得到小数的，而python2.x里是整数，因此导致支持度计算不正确，只需要改正本页代码中的196行和256行将分子转换成浮点即可（例如分别改为t_supp = count\*1.0/self.size，supp = count\*1.0/self.size）。本人初学python，一些细节不清楚，望理解。感谢网友指出。**
 

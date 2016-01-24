@@ -67,7 +67,7 @@ tags:
 
 参考代码如下。
 
-<pre>&lt;cc class="python">
+```python
 '''
 Created on Mar 15, 2012
 @author: tanglei|www.tanglei.name
@@ -286,7 +286,7 @@ if __name__ == '__main__':
     seqNums = aa.sequencePhase(mapNums)
     maxSeqs= aa.maxSeq(seqNums)
     print("The sequential patterns :");print(maxSeqs)
-&lt;/cc></pre>
+```
 
 利用例子中的数据，运行结果如下：
   

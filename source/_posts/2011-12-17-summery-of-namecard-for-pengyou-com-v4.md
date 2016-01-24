@@ -37,8 +37,8 @@ c)         实际的逻辑处理工作，就是取用户的基本信息�
 
 发布到外网后，还遇到了一个bug，就是如果用户设置完全透明，且是白色背景。点击设置名片模版，在[这里可以设置](http://profile.pengyou.com/index.php?mod=profile&view_type=card)，看不到名片信息。后来查是因为这个原因：
 
-<pre>&lt;cc class="php">bool imagecopymerge ( resource $dst_im , resource $src_im , int $dst_x , int $dst_y , int $src_x , int $src_y , int $src_w , int $src_h , int $pct ) Copy a part of src_im onto dst_im starting at the x,y coordinates src_x, src_y with a width of src_w and a height of src_h. The portion defined will be copied onto the x,y coordinates, dst_x and dst_y. pct
-The two images will be merged according to pct which can range from 0 to 100. When pct = 0, no action is taken, when 100 this function behaves identically to imagecopy() for pallete images, while it implements alpha transparency for true colour images.&lt;/cc></pre>
+```phpbool imagecopymerge ( resource $dst_im , resource $src_im , int $dst_x , int $dst_y , int $src_x , int $src_y , int $src_w , int $src_h , int $pct ) Copy a part of src_im onto dst_im starting at the x,y coordinates src_x, src_y with a width of src_w and a height of src_h. The portion defined will be copied onto the x,y coordinates, dst_x and dst_y. pct
+The two images will be merged according to pct which can range from 0 to 100. When pct = 0, no action is taken, when 100 this function behaves identically to imagecopy() for pallete images, while it implements alpha transparency for true colour images.```
 
 <p align="left">
   即将 src_im 图像中坐标从 src_x，src_y 开始，宽度为 src_w，高度为 src_h 的一部分拷贝到 dst_im 图像中坐标为 dst_x 和 dst_y 的位置上。两图像将根据 pct 来决定合并程度，其值范围从 0 到 100。当 pct = 0 时，实际上什么也没做，当为 100 时对于调色板图像本函数和 imagecopy() 完全一样，它对真彩色图像实现了 alpha 透明。我在处理过程中，直接取了用户设置的透明度，忽略了前台CSS透明度和后台php函数处理参数不一致。

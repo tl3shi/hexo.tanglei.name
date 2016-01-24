@@ -40,7 +40,7 @@ tags:
 
 src项目中导出src文件夹成jar，不包含资源文件，资源文件copy到要引用的的其他项目中，但src中不能通过R.id.XXX 获取xml中的布局等。因为打包成class的时候，final int 等死了(具体可以看看gen/xxx.xx.R.java)，在新项目中是不对应的。解决方案就是用**反射**的方法.代码如下.
 
-<pre>&lt;cc class="java">
+```java
 public static int getResourseIdByName(String packageName, String className,
 			String name)
 	{
@@ -53,7 +53,7 @@ public static int getResourseIdByName(String packageName, String className,
 			Class[] classes = r.getClasses();
 			Class desireClass = null;
 
-			for (int i = 0; i &lt; classes.length; i++)
+			for (int i = 0; i < classes.length; i++)
 			{
 				if (classes[i].getName().split("\\$")[1].equals(className))
 				{
@@ -84,7 +84,7 @@ public static int getResourseIdByName(String packageName, String className,
 		return id;
 
 	}
-&lt;/cc></pre>
+```
 
 然后利用int id = getResourceIdByName(context.getPackageName(), &#8220;layout&#8221;, &#8220;main&#8221;);获取layout文件夹下main.xml的配置layout，通过int id = getResourceIdByName(context.getPackageName(), &#8220;string&#8221;, &#8220;text1&#8221;);获取string.xml下key为text1的字符串，通过int id = getResourceIdByName(context.getPackageName(), &#8220;id&#8221;, &#8220;btn&#8221;)获得id为btn的控件等。这个代码利用反射运行时找的。
   

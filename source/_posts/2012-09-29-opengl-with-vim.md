@@ -29,8 +29,8 @@ tags:
 
 3、写个例子.
 
-<pre>&lt;cc class="cpp">
-#include &lt;gl/glut.h>
+```cpp
+#include <gl/glut.h>
 #define WIDTH 400
 #define HEIGHT 400
 
@@ -52,35 +52,35 @@ int main(int argc, char* argv[])
      glutMainLoop();
      return 0;
 }
-&lt;/cc></pre>
+```
 
 4、编译&运行.
   
 直接通过默认的GCC编译参数通不过，报“undefined references”等错误，得加相关参数。GLUT\_DISABLE\_ATEXIT_HACK貌似说的是在glut编译时保证用一样的C run-time libraries (CRTs).
 
-<pre>&lt;cc lang="bash" inline="true">
+<pre><cc lang="bash" inline="true">
 gcc t.cpp -D_STDCALL_SUPPORTED -DGLUT_DISABLE_ATEXIT_HACK -lopengl32 -lglu32 -lglut32 -o t.exe
-&lt;/cc></pre>
+```
 
 运行t.exe即可。
   
 可以配置到VIMRC文件中，map到键盘就方便了，跟一般的C++/C程序区分下，另外加个编译的映射，比如ctrl+alt+F5，运行还是不变。
 
-<pre>&lt;cc lang="bash">
+<pre><cc lang="bash">
 func CompileOpenGLRun()
-    exec "!gcc % -g -o %&lt;.exe -D_STDCALL_SUPPORTED -DGLUT_DISABLE_ATEXIT_HACK -lopengl32 -lglu32 -lglut32 "
+    exec "!gcc % -g -o %<.exe -D_STDCALL_SUPPORTED -DGLUT_DISABLE_ATEXIT_HACK -lopengl32 -lglu32 -lglut32 "
 endfunc
 "定义Run函数
 func Run()
   if &#038;filetype == 'c' || &#038;filetype == 'cpp'
-    exec "!%&lt;.exe"
+    exec "!%<.exe"
   elseif &#038;filetype == 'java'
-    exec "!java %&lt;"
+    exec "!java %<"
   endif
 endfun
-map &lt;C-A-F5> :call CompileOpenGLRun()&lt;CR>
-map &lt;F9> :call Run()&lt;CR>
-&lt;/cc></pre>
+map <C-A-F5> :call CompileOpenGLRun()<CR>
+map <F9> :call Run()<CR>
+```
 
 现在就是ctrl+alt+f5编译，f9运行即可。如果你还不行，试着在文件开始 include <windows.h>,define 一些常量等，详细情况可以参考后面的参考文章。
   

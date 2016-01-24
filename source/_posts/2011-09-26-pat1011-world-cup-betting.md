@@ -74,7 +74,7 @@ tags:
 
 * * *
 
-<pre>&lt;cc class="C">#include &lt;stdio.h>
+```C#include <stdio.h>
 
 int findmax(float a,float b,float c)
 {
@@ -86,12 +86,12 @@ int findmax(float a,float b,float c)
 float round(float origin, int precision)
 {
 	int i=0;
-	for( i = 0; i &lt; precision;i++)
+	for( i = 0; i < precision;i++)
 	{
 		origin = origin * 10;
 	}
 	float result = (float)(int)(origin + 0.5);
-	for( i = 0; i &lt; precision;i++)
+	for( i = 0; i < precision;i++)
 	{
 		result = result / 10;
 	}
@@ -108,11 +108,11 @@ int main()
 	int i=0,j=0;
 	int max;
 	float rmb=1.0f;
-	for(i=0;i&lt;3;i++)
-		for(j=0;j&lt;3;j++)
+	for(i=0;i<3;i++)
+		for(j=0;j<3;j++)
 		scanf("%f",&#038;games[i][j]);
 
-	for(i=0;i&lt;3;i++)
+	for(i=0;i<3;i++)
 	{
 		max = findmax(games[i][0],games[i][1],games[i][2]);
 		if(max == 0) printf("W ");
@@ -128,4 +128,4 @@ int main()
 	printf("%.2f",rmb);
 
 	return 0;
-}&lt;/cc></pre>
+}```

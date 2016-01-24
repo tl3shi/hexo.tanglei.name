@@ -21,8 +21,8 @@ tags:
 ---
 注意C中的struct和C++中的struct是不一样的，c中的struct比较原生，仅仅是将一些属性封装起来构成一个整体，没有OO的相关特性。而c++中的struct是对c中的struct进行扩展(兼容c中的struct)，**具备OO的特性**，其实**c++中的class能干的事情struct几乎都能干_，_**什么继承、多态等都_OK_。直接看下面代码，不同编译器对结果可能不一样：
 
-<pre>&lt;cc class="cpp">
-#include &lt;stdio.h>
+```cpp
+#include <stdio.h>
 struct A
 {
     int a;
@@ -160,7 +160,7 @@ int main()
 
     return 0;
 }
-&lt;/cc></pre>
+```
 
 VisualStudio 2012默认debug和release结果：
 

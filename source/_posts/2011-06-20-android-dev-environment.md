@@ -36,7 +36,7 @@ Iterator
   </p>
   
   
-  <pre>&lt;cc class="java">01-21 12:31:09.872: ERROR/tl3shi(4479): java.vm.version:    1.1.0
+  ```java01-21 12:31:09.872: ERROR/tl3shi(4479): java.vm.version:    1.1.0
 01-21 12:31:09.901: ERROR/tl3shi(4479): java.vendor.url:    http://www.android.com/
 01-21 12:31:09.912: ERROR/tl3shi(4479): java.vm.vendor.url:    http://www.android.com/
 01-21 12:31:09.922: ERROR/tl3shi(4479): user.dir:    /
@@ -75,4 +75,4 @@ Iterator
 01-21 12:31:10.012: ERROR/tl3shi(4479): java.vendor:    The Android Project
 01-21 12:31:10.012: ERROR/tl3shi(4479): java.vm.specification.name:    Dalvik Virtual Machine Specification
 01-21 12:31:10.012: ERROR/tl3shi(4479): java.specification.version:    0.9
-&lt;/cc></pre>
+```

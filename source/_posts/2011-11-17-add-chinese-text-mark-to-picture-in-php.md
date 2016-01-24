@@ -23,14 +23,14 @@ tags:
 
 大致就是：
 
-<pre>&lt;cc class="php">$name='郁闷aaaaaa';//要加的水印文字
+```php$name='郁闷aaaaaa';//要加的水印文字
 $font = './simhei.ttf';//水印字体，Windows\Fonts有，乱码跟这个也有关系
 $im = imagecreatefrompng("./1.png");//载入图片（类似的jpeg/gif方法）
 $red = imagecolorallocate($im, 255, 0, 0);//设置颜色 rgb
 imagettftext($im, 12, 0, 320, 84, $red, $font, $name);//打印水印
 imagepng($im,'test2.png');//输出图片,如果要保存加个保存路径和文件名
 imagedestroy($im);//释放资源
-&lt;/cc></pre>
+```
 
 然后就会发现乱码。
 
@@ -42,7 +42,7 @@ imagedestroy($im);//释放资源
 
 <span class="Apple-style-span" style="font-family: 宋体;">下面给出我测试的几个典型。</span>
 
-<pre>&lt;cc class="php">function test1()
+```phpfunction test1()
 {
 	$content="唐磊leitang";
 	$content = mb_convert_encoding($content, "html-entities","utf-8" );
@@ -75,7 +75,7 @@ function test3(){
 	imagecopymerge($im,$pic,0,0,0,0,250,30,50);
 	imagepng($im,'test3.png');
 }
-&lt;/cc></pre>
+```
 
 <span style="color: black; font-size: 10pt;"><span style="font-family: 宋体;">效果如图：</span><span style="font-family: Courier New;"><br /> </span></span>
 
@@ -143,7 +143,7 @@ Test2                                                  
 
 附上详细方法(参考网上滴)：
 
-<pre>&lt;cc class="php">
+```php
 /**
  * 文字水印
  */
@@ -273,11 +273,11 @@ function setTextWater($imgSrc,$markText,$TextColor,$markPos,$fontSize = 30)
 	
 	return $markedfilename;
 }
-&lt;/cc></pre>
+```
 
 顺便把图片水印的也贴出来：
 
-<pre>&lt;cc class="php">/**
+```php/**
  * 图片水印
  */
 function  setImgWater($imgSrc,$markImg,$markPos)
@@ -315,7 +315,7 @@ function  setImgWater($imgSrc,$markImg,$markPos)
         $markImg_w    = $markImgInfo[0];
         $markImg_h    = $markImgInfo[1];
             
-        if($srcImg_w &lt; $markImg_w || $srcImg_h &lt; $markImg_h)
+        if($srcImg_w < $markImg_w || $srcImg_h < $markImg_h)
         {
         	echo '水印文件比源图片文件都还大';
             return false;
@@ -416,6 +416,6 @@ function  setImgWater($imgSrc,$markImg,$markPos)
 	echo 'success,the watermarked picture is '.$img_water."\n";
 	return true;
 }
-&lt;/cc></pre>
+```
 
 btw,codecolorer这个插件的那个bug还没解决啊。后台写blog时，只要切换一下html到可视化，代码缩进就木有了……

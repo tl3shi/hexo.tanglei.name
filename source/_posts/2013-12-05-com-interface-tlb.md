@@ -28,7 +28,7 @@ COM的目的是跨越编程语言的，比如人家用VB、C#之类的写，然�
   
 下面代码用C#实现了一个”重要”的接口功能，那就是加法。
 
-<pre>&lt;cc class="csharp">
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -54,7 +54,7 @@ namespace comtest
         }
     }
 }
-&lt;/cc></pre>
+```
 
 写好后，右击项目属性，选择“应用程序”，点击“程序集信息”后勾选“使程序集COM可见”。（英文版如下）
 
@@ -100,9 +100,9 @@ ProgramInterface就是刚刚在C#里面声明的那个接口名称，然后加�
   
 调用方完整代码如下：
 
-<pre>&lt;cc class="cpp">
-#include &lt;windows.h>
-#include &lt;iostream>
+```cpp
+#include <windows.h>
+#include <iostream>
 using namespace std;
 
 #import  "D:\cpp\comtest\Release\comtest.tlb" raw_interfaces_only
@@ -110,7 +110,7 @@ using namespace std;
 using namespace comtest;
 int main()
 {
-    cout &lt;&lt; "hello world" &lt;&lt; endl;
+    cout << "hello world" << endl;
     
     HRESULT hr =  CoInitialize(NULL);
     if(hr!=S_OK)
@@ -123,7 +123,7 @@ int main()
     long b = 2;
     long c;
     ptr->add(a, b, &#038;c);
-    cout &lt;&lt; c &lt;&lt; endl;
+    cout << c << endl;
    
 }
 int main1()//this also works
@@ -142,14 +142,14 @@ int main1()//this also works
     if(hr == S_OK)
     {
         ptr->add(a, b, &#038;c);
-        cout &lt;&lt; "result = " &lt;&lt; c;
+        cout << "result = " << c;
     }
     else
     {
-        cout &lt;&lt; "fail" &lt;&lt; endl;
+        cout << "fail" << endl;
     }
 }
-&lt;/cc></pre>
+```
 
 运行就能看到如下结果
 

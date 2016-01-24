@@ -32,9 +32,9 @@ tags:
 
 后来发现微信有自己的分享时的API，就更简单了。随便一个给一个网页，设置好缩略图url，title和描述，以及点击后跳转的url，然后weixin内置浏览器打开的时候就会去调用相应的事件，比如分享给朋友、分享到朋友圈等。
 
-<pre>&lt;cc class="javascript">
+```javascript
 
-&lt;/cc></pre>
+```
 
 api里面有一个appid，以为要向TX申请后才OK，后来发现暂时不填也暂时能OK。效果如下：
 

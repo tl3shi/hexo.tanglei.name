@@ -20,7 +20,7 @@ tags:
 ---
 这是好久以前的代码了，给贴出来。当时拿到defy不久。网上找自动开机啊，或者关机闹钟啊之类的都一个答案。没有。想想自己的电脑，没有自动关机的吧，关机了啥软件也不能运行了。但仔细想，每次开机，手机能定位正确的时间，肯定还是有个啥在运行的，不过要想利用它，估计够呛。不过有定时运行各种软件等。然后好多人建议飞行模式跟关机相比，是最接近的了，就切换飞行模式吧。网上也有相应的软件，不过挂了广告，显然不爽。然后想着自己就写一个，参照了网上各种资源，代码如下。AirPlaneModeActivity 类主要用于获取用户定义的时间，告诉系统。另一个类(二)中会有。
 
-<pre>&lt;cc class="java">package com.i3zhai;
+```javapackage com.i3zhai;
 
 import java.util.Calendar;
 
@@ -236,7 +236,7 @@ public class AirPlaneModeActivity extends Activity
 	public String formatTime(int h, int m)
 	{
 		StringBuffer buf = new StringBuffer();
-		if (h &lt; 10)
+		if (h < 10)
 		{
 			buf.append("0" + h);
 		} else
@@ -245,7 +245,7 @@ public class AirPlaneModeActivity extends Activity
 		}
 		buf.append(" : ");
 
-		if (m &lt; 10)
+		if (m < 10)
 		{
 			buf.append("0" + m);
 		} else
@@ -254,4 +254,4 @@ public class AirPlaneModeActivity extends Activity
 		}
 		return buf.toString();
 	}
-}&lt;/cc></pre>
+}```

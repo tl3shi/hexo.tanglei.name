@@ -40,9 +40,9 @@ fork()函数是用来创建子进程的，当一个程序创建了一个子进�
   
 下面是forktest.c
 
-<pre>&lt;cc class="c">
-#include&lt;stdio.h>
-#include&lt;stdlib.h>
+```c
+#include<stdio.h>
+#include<stdlib.h>
 
 int main(){
 	int c_pid;//记录子进程的ID	
@@ -68,11 +68,11 @@ int main(){
 	wait(&#038;status);
 	return 0;
 }
-&lt;/cc></pre>
+```
 
 然后看看结果。
 
-<pre>&lt;cc class="c">
+```c
 root@tanglei3shi:/home/tl3shi/courseLinux/fork# gcc -o forktest1 forktest1.c
 root@tanglei3shi:/home/tl3shi/courseLinux/fork# ./forktest1
 this is a string,pid=24866父进程正在工作...
@@ -82,15 +82,15 @@ this is a string,pid=24866子进程正在工作...
 子进程的PID是:24867
 父进程的PID是:24866
 root@tanglei3shi:/home/tl3shi/courseLinux/fork# 
-&lt;/cc></pre>
+```
 
 &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;
   
 然后将第一个printf中的换行\n去掉。即把上面的注释部分换下。如下：
 
-<pre>&lt;cc class="c">
-#include&lt;stdio.h>
-#include&lt;stdlib.h>
+```c
+#include<stdio.h>
+#include<stdlib.h>
 
 int main(){
 	int c_pid;//记录子进程的ID	
@@ -116,11 +116,11 @@ int main(){
 	wait(&#038;status);
 	return 0;
 }
-&lt;/cc></pre>
+```
 
 再看结果：
 
-<pre>&lt;cc class="c">
+```c
 root@tanglei3shi:/home/tl3shi/courseLinux/fork# gcc -o forktest1 forktest1.c
 root@tanglei3shi:/home/tl3shi/courseLinux/fork# ./forktest1
 this is a string,pid=25112
@@ -131,7 +131,7 @@ this is a string,pid=25112
 子进程的PID是:25113
 父进程的PID是:25112
 root@tanglei3shi:/home/tl3shi/courseLinux/fork# 
-&lt;/cc></pre>
+```
 
 后面这个结果还容易理解些，关键就是第一次，结果为啥是打印了两次this is a string呢？在注释中也已经说明了。其实也还是只执行了一次。只不过。第一次父进程打印时候，只是把那句话缓存了。再下面if else里面父进程和子进程的第一个printf \n的时候才是输出到屏幕上了。这样理解应该还是比较容易的。那句话只执行了一次。而不是两次。网上有的说法，个人认为是错误的，我这样理解就合情合理啦。
   

@@ -24,7 +24,7 @@ tags:
 
 一步一步来，先了解下python中的函数。
 
-<pre>&lt;cc class="python">
+```python
 def shout(word='hello,world'):
     return word.capitalize() + '!'
 
@@ -42,18 +42,18 @@ del shout
 print shout()
 #会抛异常
 #Traceback (most recent call last):
-#  File "S:\decorator.py", line 18, in &lt;module>
+#  File "S:\decorator.py", line 18, in <module>
 #    print shout()
 #NameError: name 'shout' is not defined
 
 #（当然得注释掉前面的两句代码，或者try catch一下）
 print scream()
 #同样输出：Hello,world!
-&lt;/cc></pre>
+```
 
 python中函数还可以嵌套，即将函数定义在另一个函数里面。例如
 
-<pre>&lt;cc class="python">
+```python
 def talk():
     
     def whisper(word='hello'):
@@ -70,11 +70,11 @@ try:
 except Exception ,e :
     print e
 #输出：name 'whisper' is not defined
-&lt;/cc></pre>
+```
 
 从上面的例子我们已经可以得到，函数可以被赋值给另外的变量，也能在另一个函数里面定义函数。可以推断函数也能返回给另外的函数或者作为参数传递给其他函数。看下面的代码：
 
-<pre>&lt;cc class="python">
+```python
 def getTalk(type='shout'):
     #函数里面定义另外两个函数
     def shout(word='hello,world'):
@@ -91,7 +91,7 @@ def getTalk(type='shout'):
 
 talk = getTalk()
 print talk
-#输出：&lt;function shout at 0x011FCA70>
+#输出：<function shout at 0x011FCA70>
 print talk() #调用函数
 #输出：Hello,world!
 #同样可以这样直接调用
@@ -107,7 +107,7 @@ doBefore(talk)#将前面通过getTalk()得到的函数对象传递给doBefore
 #输出：
 #before calling the func
 #Hello,world!
-&lt;/cc></pre>
+```
 
 &nbsp;
 
@@ -115,7 +115,7 @@ doBefore(talk)#将前面通过getTalk()得到的函数对象传递给doBefore
 
 明白以上的这些，将有助于理解装饰器decorator，其实装饰器decorator就是在不改变函数的本身情况下在函数执行的前后包装另外的代码来改变函数的具体表现行为。有点儿AOP的味道。继续从代码来解释。
 
-<pre>&lt;cc class="python">
+```python
 # 装饰器就是一个将其他函数(也就是被装饰的函数)作为参数的一个function
 def my_shiny_new_decorator(a_function_to_decorate):
 
@@ -152,19 +152,19 @@ a_stand_alone_function_decorated()
 #Before the function runs
 #I am a stand alone function, don't you dare modify me
 #After the function runs
-&lt;/cc></pre>
+```
 
 如果不想调用a\_stand\_alone\_function\_decorated()这个方法，还是钟情于以前的那个名字，方法也简单。重写下a\_stand\_alone_function方法即可。即：
 
-<pre>&lt;cc>a_stand_alone_function = my_shiny_new_decorator(a_stand_alone_function)
+<pre><cc>a_stand_alone_function = my_shiny_new_decorator(a_stand_alone_function)
 a_stand_alone_function()
-#输出还是一样样&lt;/cc></pre>
+#输出还是一样样```
 
 ### decorator揭秘
 
 上面的代码就是装饰器的体现。现在用python中专门的decorator语法就是酱紫滴：
 
-<pre>&lt;cc class="python">
+```python
 @my_shiny_new_decorator
 def another_stand_alone_function():
     print "Leave me alone"
@@ -173,7 +173,7 @@ another_stand_alone_function()
 #Before the function runs
 #Leave me alone
 #After the function runs
-&lt;/cc></pre>
+```
 
 简单来说，@my\_shiny\_new\_decorator就是another\_stand\_alone\_function = my\_shiny\_new\_decorator(another\_stand\_alone\_function)的缩写。
 
@@ -181,12 +181,12 @@ python中的装饰器其实是GoF中的装饰模式的一个变种。像迭代�
 
 装饰器还可以同时使用多个。
 
-<pre>&lt;cc class="python">
+```python
 def bread(func):
     def wrapper():
-        print "&lt;/''''''\>"
+        print "</''''''\>"
         func()
-        print "&lt;\______/>"
+        print "<\______/>"
     return wrapper
 
 def ingredients(func):
@@ -204,11 +204,11 @@ sandwich()
 sandwich = bread(ingredients(sandwich))
 sandwich()
 #输出:
-#&lt;/''''''\>
+#</''''''\>
 # #tomatoes#
 # --ham--
 # ~salad~
-#&lt;\______/>
+#<\______/>
 
 #用python中的decorator语法就是：
 @bread
@@ -218,11 +218,11 @@ def sandwich(food="--ham--"):
 
 sandwich()
 #输出:
-#&lt;/''''''\>
+#</''''''\>
 # #tomatoes#
 # --ham--
 # ~salad~
-#&lt;\______/>
+#<\______/>
 #注意@的顺序。谁在最下面，睡最先被调用。
 #下面的sandwich就奇怪了哈，把salad等放在盘子底下
 @ingredients
@@ -233,17 +233,17 @@ def strange_sandwich(food="--ham--"):
 strange_sandwich()
 #输出:
 ##tomatoes#
-#&lt;/''''''\>
+#</''''''\>
 # --ham--
-#&lt;\______/>
+#<\______/>
 # ~salad~
-&lt;/cc></pre>
+```
 
 ### 被装饰的函数传参
 
 仅仅在包装的函数上将参数传递过来即可。
 
-<pre>&lt;cc class="python">
+```python
 def a_decorator_passing_arguments(function_to_decorate):
     def a_wrapper_accepting_arguments(arg1, arg2):
         print "传进来的参数是：", arg1, arg2
@@ -260,13 +260,13 @@ print_full_name("lei", "tang")
 # 输出:
 #传进来的参数是： lei tang
 #My name is lei tang
-&lt;/cc></pre>
+```
 
 ### 装饰类中的方法
 
 python中的方法和函数差不多，只不过类中的方法的第一个参数是当前对象的引用self。
 
-<pre>&lt;cc class="python">
+```python
 def method_friendly_decorator(method_to_decorate):
     def wrapper(self, lie):
         lie = lie - 3 #减少3
@@ -286,11 +286,11 @@ class Lucy(object):
 l = Lucy()
 l.sayYourAge(-3)#32-3  -3(wrapper中还减了3岁)=26
 #输出: I am 26, what did you think?
-&lt;/cc></pre>
+```
 
 在不知道参数个数的情况下有一种更加通用的传参方法，就是用\*args, \*\*kwargs。\*args代表没有给定默认值的参数列表(arg1,arg2,……)，**kwwars代表有给定默认值(arg1=val1,arg2=val2,……)
 
-<pre>&lt;cc class="python">
+```python
 def a_decorator_passing_arbitrary_arguments(function_to_decorate):
     # 包装器接受任意参数
     def a_wrapper_accepting_arbitrary_arguments(*args, **kwargs):
@@ -348,21 +348,21 @@ m.sayYourAge(8)
 m.sayYourAge(lie=-8)#注意看下面print出的**kwargs区别
 #输出
 #Do I have args?:
-#(&lt;__main__.Mary object at 0x01228430>, 8)
+#(<__main__.Mary object at 0x01228430>, 8)
 #{}
 #I am 39, what did you think ?
 #Do I have args?:
-#(&lt;__main__.Mary object at 0x01228430>,)
+#(<__main__.Mary object at 0x01228430>,)
 #{'lie': -8}
 #I am 23, what did you think ?
 
-&lt;/cc></pre>
+```
 
 ### 将参数传给装饰函数
 
 因为装饰函数本身要将一个函数作为参数传递进来，那怎么把参数传给装饰函数呢？其实不能直接将函数传递给装饰函数。但也有解决方案，先看下面的例子
 
-<pre>&lt;cc class="python">
+```python
 # 装饰器函数也是function
 def my_decorator(func):
     print "I am a ordinary function"
@@ -385,9 +385,9 @@ def lazy_function():
 
 #输出:  I am a ordinary function
 #当@的时候，就告诉python去调用装饰器函数。这个@后的标签很重要，直接指向装饰器
-&lt;/cc></pre>
+```
 
-<pre>&lt;cc class="python">
+```python
 def decorator_maker():
 
     print "我是构造装饰器的工人，当你让我构造装饰器时，我被执行一次 "
@@ -429,11 +429,11 @@ decorated_function()
 #输出:
 #我是包装被装饰函数的包装器，当被装饰函数调用时，我也被执行作为包装器，我的职责是将被装饰的函数结果返回
 #我是被装饰的函数
-&lt;/cc></pre>
+```
 
 用标记间隔下，整个输出如下：
 
-<pre>&lt;cc class="python">
+```python
 我是构造装饰器的工人，当你让我构造装饰器时，我被执行一次
 作为构造装饰器的工人，我得返回装饰器
 0
@@ -442,11 +442,11 @@ decorated_function()
 1
 我是包装被装饰函数的包装器，当被装饰函数调用时，我也被执行，作为包装器，我的职责是将被装饰的函数结果返回
 我是被装饰的函数
-&lt;/cc></pre>
+```
 
 省略中间步骤，如下
 
-<pre>&lt;cc class="python">
+```python
 #省略中间步骤，如下
 def decorated_function():
     print "我是被装饰的函数"
@@ -461,11 +461,11 @@ decorated_function()
 #输出:
 #我是包装被装饰函数的包装器，当被装饰函数调用时，我也被执行，作为包装器，我的职责是将被装饰的函数结果返回
 #我是被装饰的函数
-&lt;/cc></pre>
+```
 
 可以更短
 
-<pre>&lt;cc class="python">
+```python
 @decorator_maker()
 def decorated_function():
     print "我是被装饰的函数"
@@ -479,11 +479,11 @@ decorated_function()
 #输出:
 #我是包装被装饰函数的包装器，当被装饰函数调用时，我也被执行，作为包装器，我的职责是将被装饰的函数结果返回
 #我是被装饰的函数
-&lt;/cc></pre>
+```
 
 上面@后面是一个函数调用，调用函数当然可以传递参数。就是在上面的@decorator_maker()括号里面加上参数而已。
 
-<pre>&lt;cc class="python">
+```python
 # -*- coding: utf-8 -*-
 def decorator_maker_with_arguments(decorator_arg1, decorator_arg2):
 
@@ -539,7 +539,7 @@ decorated_function_with_arguments(c2, "Lucy")
 #	- 来自函数调用: Pony Lucy
 #我可以传递给被装饰的函数
 #被装饰的函数，我只能看到自己的参数: Pony Lucy
-&lt;/cc></pre>
+```
 
 通过这种方案就可以实现往装饰器里面传递参数了，甚至可以用上面的\*args, \**kwargs来传递任意参数。值得注意的是**装饰器只被调用了一次，当python在import当前脚本的时候调用。**不能在后面再动态的设置传递的参数，当import xx的时候，被decorated的函数已经被装饰好了，不能再变了。
 

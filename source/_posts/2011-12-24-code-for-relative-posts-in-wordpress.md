@@ -29,18 +29,18 @@ tags:
 
 曾想,这里的随机是有点不爽,此时展示同分类目录下的文章要比这个好吧. 于是想法取出当前文章所在同分类下的文章,开始是试图找一个sql语句把所有的文章的tag中都将本文所在的分类目录加进去,但这样似乎有点不符合逻辑.看之前用代码实现的相关文章的源代码:查看随机文章时调用如下的函数
 
-<pre>&lt;cc class="php">
+```php
 function wp_get_random_posts ($limitclause="") {
  global $wpdb, $post;
 
  $q = "SELECT ID, post_title, post_content,post_excerpt, post_date, comment_count FROM $wpdb->posts WHERE post_status = 'publish' AND post_type = 'post' AND ID != $post->ID ORDER BY RAND() $limitclause";
  return $wpdb->get_results($q);
 }
-&lt;/cc></pre>
+```
 
 首先要获取当前文章所在的分类目录的ID,为了方便管理调试wordpress,我的机子上也配好了wordpress环境了.随时配置下host就能正常访问本地的博客.通过各种关键字试图搜索(wordpress下所有文件递归关键字，eg: wp\_get\_post_category啊之类)显示分类目录的ID,最后找到这个函数
 
-<pre>&lt;cc class="php">
+```php
 /**
  * Return or Print Category ID.
  *
@@ -64,14 +64,14 @@ function the_category_ID($echo = true) {
 
 	return $cat;
 }
-&lt;/cc></pre>
+```
 
 不过意思好像是废弃了，就直接调用这个函数吧
 
-<pre>&lt;cc>
+<pre><cc>
 $categories = get_the_category();
 $cat = $categories[0]->term_id;
-&lt;/cc></pre>
+```
 
 就得到当前分类目录的ID，然后就是调试sql了。先打印出来试试，正确的。
   
@@ -81,7 +81,7 @@ $cat = $categories[0]->term_id;
 
 本地sql数据库调试出来结果来再改。写成一个函数
 
-<pre>&lt;cc class="php">
+```php
 function wp_get_category_posts ($limitclause="") { 
  global $wpdb, $post; 
 
@@ -92,11 +92,11 @@ $cid = $categories[0]->term_id;
  $q = "SELECT ID, post_title, post_content,post_excerpt, post_date, comment_count FROM $wpdb->posts WHERE post_status = 'publish' AND post_type = 'post' AND ID != $post->ID AND ID in (select object_id  from wp_term_relationships where term_taxonomy_id = ( select term_taxonomy_id from wp_term_taxonomy where term_id = $cid )) ORDER BY RAND() $limitclause"; 
  return $wpdb->get_results($q); 
 }
-&lt;/cc></pre>
+```
 
 下面的显示
 
-<pre>&lt;cc class="php">
+```php
 //不存在相关日志则显示随机日志 
  if (!$related_posts) 
  {
@@ -125,6 +125,6 @@ $cid = $categories[0]->term_id;
 	 } 
  }
 
-&lt;/cc></pre>
+```
 
 然后得到的效果就是现在这个样子了。

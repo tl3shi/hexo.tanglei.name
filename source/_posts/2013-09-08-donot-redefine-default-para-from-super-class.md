@@ -20,8 +20,8 @@ tags:
 ---
 直接上代码，如下，你觉得应该输出什么？
 
-<pre>&lt;cc class="cpp">
-#include &lt;iostream>
+```cpp
+#include <iostream>
 using namespace std;
 class Shape
 {
@@ -29,7 +29,7 @@ class Shape
         //virtual void draw(const string color="red") = 0;
         virtual void draw(const string color="red")
         {
-            cout &lt;&lt; "shape draw :" &lt;&lt; color &lt;&lt; endl;
+            cout << "shape draw :" << color << endl;
         }
 };
 
@@ -38,7 +38,7 @@ class Rectangle : public Shape
     public:
         virtual void draw(const string color="green")
         {
-            cout &lt;&lt; "rectangle draw : " &lt;&lt; color &lt;&lt; endl;
+            cout << "rectangle draw : " << color << endl;
         }
 };
 
@@ -47,7 +47,7 @@ class Circle : public Shape
     public:
     virtual void draw(const string color)
     {
-        cout &lt;&lt; "circle draw : " &lt;&lt; color &lt;&lt; endl;
+        cout << "circle draw : " << color << endl;
     }
 };
 
@@ -62,14 +62,14 @@ int main()
     return 0;
 }
 
-&lt;/cc></pre>
+```
 
 答案是：
 
-<pre>&lt;cc class="python">
+```python
 circle draw : xx
 rectangle draw : green
-&lt;/cc></pre>
+```
 
 若真是这样，就没必要这里post一篇了。奇怪的是真实情况输出第二行是，rectangle draw : **red** ~~居然是样子~！
 
