@@ -20,7 +20,7 @@ tags:
 </p>
 
 <center>
-  <a href="http://www.tanglei.name/wp-content/uploads/2011/08/Sosospider.jpg"><img class="size-full wp-image-1094 aligncenter" title="Sosospider" src="http://www.tanglei.name/wp-content/uploads/2011/08/Sosospider.jpg" alt="soso爬虫" width="893" height="873" /></a>
+  <a href="/wp-content/uploads/2011/08/Sosospider.jpg"><img class="size-full wp-image-1094 aligncenter" title="Sosospider" src="/wp-content/uploads/2011/08/Sosospider.jpg" alt="soso爬虫" width="893" height="873" /></a>
 </center>&nbsp;
 
 过不了几分钟，SOSO的同事就RTX就联系我了，我本来已经把域名做了301了。为了弄个究竟，就取消了301.让他们帮忙查下。正如以前说的那样，发帖的机器人肯定也占了不少流量。现在我把站点停止注册，等个几天再看看流量情况。
@@ -28,5 +28,5 @@ tags:
 他们给出的解释是：
 
 <center>
-  <br /> <a href="http://www.tanglei.name/wp-content/uploads/2011/08/spider+1.jpg"><br /> <img class="size-full wp-image-1095 aligncenter" title="spider+1" src="http://www.tanglei.name/wp-content/uploads/2011/08/spider+1.jpg" alt="" width="640" height="228" /></a>
+  <br /> <a href="/wp-content/uploads/2011/08/spider+1.jpg"><br /> <img class="size-full wp-image-1095 aligncenter" title="spider+1" src="/wp-content/uploads/2011/08/spider+1.jpg" alt="" width="640" height="228" /></a>
 </center>等几天再看看流量情况。现在已经停止注册了。再看看如果是Sosospider的话，就只有robots禁掉先。没流量啊

@@ -17,7 +17,7 @@ tags:
 
 看看里面的冗余数据，太吓人了。
 
-[<img class="alignleft size-full wp-image-155" title="wordpress-bak" src="http://www.tanglei.name/wp-content/uploads/2010/12/wordpress-bak.png" alt="" width="1119" height="729" />](http://www.tanglei.name/wp-content/uploads/2010/12/wordpress-bak.png)
+[<img class="alignleft size-full wp-image-155" title="wordpress-bak" src="/wp-content/uploads/2010/12/wordpress-bak.png" alt="" width="1119" height="729" />](/wp-content/uploads/2010/12/wordpress-bak.png)
 
  一篇文章，里面有N多冗余数据，我觉得这点wordpress开可以优化下，比如最开始是把一些数据自动保存在数据库里面，当有更新版本的自动保存的数据时，应该去执行一条delete数据，把以前的数据删掉。
 

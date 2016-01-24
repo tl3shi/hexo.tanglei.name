@@ -20,5 +20,5 @@ tags:
 转眼就4年了……呃，不写了，不感叹了。加油吧。重庆29中的童鞋们，高2008级的童鞋们，都雄起哈……
 
 <p style="text-align: center;">
-  <a href="http://www.tanglei.name/wp-content/uploads/2011/05/cq29-cet-4.jpg" target="_blank"><img class="size-full wp-image-727 aligncenter" title="cq29-cet-4" src="http://www.tanglei.name/wp-content/uploads/2011/05/cq29-cet-4.jpg" alt="重庆29中王婆婆带领大家学英语" width="485" height="324" /></a>
+  <a href="/wp-content/uploads/2011/05/cq29-cet-4.jpg" target="_blank"><img class="size-full wp-image-727 aligncenter" title="cq29-cet-4" src="/wp-content/uploads/2011/05/cq29-cet-4.jpg" alt="重庆29中王婆婆带领大家学英语" width="485" height="324" /></a>
 </p>

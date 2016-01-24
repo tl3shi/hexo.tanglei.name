@@ -20,29 +20,29 @@ tags:
 先在Win7中新建一个计算机到计算机的无线局域网。步骤如下图所示： 
 
 
-	![](http://www.tanglei.name/wp-content/uploads/2011/06/062611_1324_1.png) 
+![](/wp-content/uploads/2011/06/062611_1324_1.png) 
 
 设置密码。 
 
 
-	![](http://www.tanglei.name/wp-content/uploads/2011/06/062611_1324_2.png) 
+![](/wp-content/uploads/2011/06/062611_1324_2.png) 
 
 最好将自己这个无线网络手动设置IP，别自动获取。 
 
 
-	![](http://www.tanglei.name/wp-content/uploads/2011/06/062611_1324_3.png) 
+![](/wp-content/uploads/2011/06/062611_1324_3.png) 
 
 无线建好后，就能看到无线网络处于待连接状态。 
 
 然后就是将自己能上网的有线网络共享。 
 
 
-	![](http://www.tanglei.name/wp-content/uploads/2011/06/062611_1324_4.png) 
+![](/wp-content/uploads/2011/06/062611_1324_4.png) 
 
 另外一台XP系统的机子，手动设置如下IP。默认网关和DNS是刚才共享的那台机子的IP。这样设置后，然后去连，发现就能连上了。OK，可以上网了就。 
 
-![](http://www.tanglei.name/wp-content/uploads/2011/06/062611_1324_5.jpg)<span style="font-family:宋体; font-size:12pt"><br /> </span>
+![](/wp-content/uploads/2011/06/062611_1324_5.jpg)<span style="font-family:宋体; font-size:12pt"><br /> </span>
 
 然后就可以去连了…… 
 
-![](http://www.tanglei.name/wp-content/uploads/2011/06/062611_1324_6.jpg)<span style="font-family:宋体; font-size:12pt"><br /> </span>
+![](/wp-content/uploads/2011/06/062611_1324_6.jpg)<span style="font-family:宋体; font-size:12pt"><br /> </span>

@@ -20,7 +20,7 @@ tags:
 这两天收到汉得 和 群硕的offer了。不过还不知道去哪呀。群硕公司大，不过抠门了点吧。去汉得实习的哥哥姐姐啊，说汉得好，去群硕实习的哥哥姐姐啊，说群硕好。
 
 <div id="attachment_603" style="width: 310px" class="wp-caption aligncenter">
-  <a href="http://www.tanglei.name/wp-content/uploads/2011/05/sh-hand.jpg"><img class="size-medium wp-image-603" title="汉得实习待遇" src="http://www.tanglei.name/wp-content/uploads/2011/05/sh-hand-300x224.jpg" alt="汉得实习待遇" width="300" height="224" /></a>
+  <a href="/wp-content/uploads/2011/05/sh-hand.jpg"><img class="size-medium wp-image-603" title="汉得实习待遇" src="/wp-content/uploads/2011/05/sh-hand-300x224.jpg" alt="汉得实习待遇" width="300" height="224" /></a>
   
   <p class="wp-caption-text">
     汉得实习待遇
@@ -30,7 +30,7 @@ tags:
 汉得吧，给XXXRMB，一个月。后面跟项目了据说还好点。那天负责招聘中南的姚经理请我们喝咖啡，说了下待遇问题。XXXRMB，好多年都没变了，呃……怎么能不变呢。物价也飞涨啊，实习待遇也该涨点啊。不过配的电脑8G内存的标配还不错呀，我的电脑现在4g，啊呵呵。
 
 <div id="attachment_605" style="width: 310px" class="wp-caption aligncenter">
-  <a href="http://www.tanglei.name/wp-content/uploads/2011/05/wh-qunshuo.jpg"><img class="size-medium wp-image-605" title="武汉群硕" src="http://www.tanglei.name/wp-content/uploads/2011/05/wh-qunshuo-300x135.jpg" alt="武汉群硕实习待遇" width="300" height="135" /></a>
+  <a href="/wp-content/uploads/2011/05/wh-qunshuo.jpg"><img class="size-medium wp-image-605" title="武汉群硕" src="/wp-content/uploads/2011/05/wh-qunshuo-300x135.jpg" alt="武汉群硕实习待遇" width="300" height="135" /></a>
   
   <p class="wp-caption-text">
     武汉群硕实习待遇
@@ -40,7 +40,7 @@ tags:
 武汉群硕吧，感觉跟面试我的Kenny挺合得来的，也想跟着他去玩玩iOS的开发呢，配苹果啊之类多爽……不过给2*XXX，不包吃住，不给力啊。
 
 <div id="attachment_604" style="width: 310px" class="wp-caption aligncenter">
-  <a href="http://www.tanglei.name/wp-content/uploads/2011/05/sh-qunshuo.jpg"><img class="size-medium wp-image-604" title="上海群硕实习待遇" src="http://www.tanglei.name/wp-content/uploads/2011/05/sh-qunshuo-300x123.jpg" alt="上海群硕实习待遇" width="300" height="123" /></a>
+  <a href="/wp-content/uploads/2011/05/sh-qunshuo.jpg"><img class="size-medium wp-image-604" title="上海群硕实习待遇" src="/wp-content/uploads/2011/05/sh-qunshuo-300x123.jpg" alt="上海群硕实习待遇" width="300" height="123" /></a>
   
   <p class="wp-caption-text">
     上海群硕实习待遇

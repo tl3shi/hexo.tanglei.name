@@ -135,4 +135,4 @@ tags:
 > > > > 
 > > > > 待续…… 
 > > > > 
-> > > > 以上内容PDF版本请到此下载：[保研相关问题汇总](http://www.tanglei.name/wp-content/blogresources/baoyan-csu2thu-tanglei.name.pdf "保研相关问题汇总")
+> > > > 以上内容PDF版本请到此下载：[保研相关问题汇总](/wp-content/blogresources/baoyan-csu2thu-tanglei.name.pdf "保研相关问题汇总")

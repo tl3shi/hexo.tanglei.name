@@ -129,7 +129,7 @@ tags:
     </div>
 
 
-	![](http://www.tanglei.name/wp-content/uploads/2011/06/061411_0234_11.png) 
+![](/wp-content/uploads/2011/06/061411_0234_11.png) 
 
 ### <span style="font-size:15pt"> 配置审计报告<br /> </span>
 

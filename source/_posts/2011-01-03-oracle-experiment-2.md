@@ -127,7 +127,7 @@ end;
 
 实现的效果如下：
   
-[<img class="alignleft size-medium wp-image-282" title="chuku" src="http://www.tanglei.name/wp-content/uploads/2011/01/chuku-259x300.jpg" alt="" width="259" height="300" />](http://www.tanglei.name/wp-content/uploads/2011/01/chuku.jpg)
+[<img class="alignleft size-medium wp-image-282" title="chuku" src="/wp-content/uploads/2011/01/chuku-259x300.jpg" alt="" width="259" height="300" />](/wp-content/uploads/2011/01/chuku.jpg)
   
 注意的是，为了实验中的方便。这里在存储过程中都没有去commit，免得一会又得重新@导入数据。
   

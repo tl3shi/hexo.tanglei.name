@@ -34,7 +34,7 @@ tags:
 
 举个例子：
 
-[<img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="AprioriAll算法" border="0" alt="AprioriAll算法" src="http://www.tanglei.name/wp-content/uploads/2012/03/image2.png" />](http://www.tanglei.name/wp-content/uploads/2012/03/image2.png) 
+[<img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="AprioriAll算法" border="0" alt="AprioriAll算法" src="/wp-content/uploads/2012/03/image2.png" />](/wp-content/uploads/2012/03/image2.png) 
 
 以上为输入序列数据文件，此文件代表5个custom的购买记录，每行代表一个basket，用空行将custom间隔开。表示成的序列seqences为：
 
@@ -358,7 +358,7 @@ The sequential patterns :
   
 【BUT】在参考文献提到的原论文中也有没有理解到的地方，后面再找时间向高手咨询咨询。例如文章中的
   
-[<img src="http://www.tanglei.name/wp-content/uploads/2012/03/aprioriall_in_paper.jpg" alt="aprioriall算法例子" title="aprioriall_in_paper" width="657" height="169" class="aligncenter size-full wp-image-2027" />](http://www.tanglei.name/wp-content/uploads/2012/03/aprioriall_in_paper.jpg)
+[<img src="/wp-content/uploads/2012/03/aprioriall_in_paper.jpg" alt="aprioriall算法例子" title="aprioriall_in_paper" width="657" height="169" class="aligncenter size-full wp-image-2027" />](/wp-content/uploads/2012/03/aprioriall_in_paper.jpg)
   
 从中可以看出，明显[{1}{2,3,4}]和[{1}{5}]是最大的频繁序列，如果这个时候再根据mapping后跟我得到的结果应该是一样的。不知道是不是再根据map返回原始的数据的时候得经过处理，即将得到的[[&#8217;30 &#8216;], [&#8217;40&#8217;], [&#8217;70 &#8216;], [&#8217;40&#8217;, &#8217;70 &#8216;]]直接合并成 [[&#8217;30 &#8216;], [&#8217;40&#8217;, &#8217;70 &#8216;]]，这样就比较符合预期的结果。但是……这个过程在原文中也并没有讲呀。。。还不知道怎么解释比较合理，期待哪位高手帮忙解释下……
   

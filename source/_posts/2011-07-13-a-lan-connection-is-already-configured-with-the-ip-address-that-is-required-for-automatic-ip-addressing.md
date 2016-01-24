@@ -28,4 +28,4 @@ tags:
 
 5、可以更改网卡A的IP为<span style="color: #e06666;">192.168</span>.<span style="color: #ff0000;">1</span>.<span style="color: #ea9999;">1-254</span>这个网段的地址。
 
-然后我IPConfig了一下，恰恰酒店提供的IP就是192.168.0.*这个网段的，悲剧了，这个不能改啊，改了，我的都不能上网了。试试WIN7嘛，重启进了WIN7系统。结果能成功共享了，但他的MAC 还是不能连上我新建的临时计算机-计算机的网络。什么手动IP,自动IP啊，设置密码啊，防火墙啊，杀毒软件啊等等都考虑过了。还是不成功。最后想到过宏杰之前介绍过一个软件connectify，下载安装，就可以了。我的defy也能连上。呵呵[<img class="aligncenter size-full wp-image-981" title="connectify-me" src="http://www.tanglei.name/wp-content/uploads/2011/07/connectify-me.jpg" alt="无法启动Internet连接共享" width="296" height="446" />](http://www.tanglei.name/wp-content/uploads/2011/07/connectify-me.jpg)
+然后我IPConfig了一下，恰恰酒店提供的IP就是192.168.0.*这个网段的，悲剧了，这个不能改啊，改了，我的都不能上网了。试试WIN7嘛，重启进了WIN7系统。结果能成功共享了，但他的MAC 还是不能连上我新建的临时计算机-计算机的网络。什么手动IP,自动IP啊，设置密码啊，防火墙啊，杀毒软件啊等等都考虑过了。还是不成功。最后想到过宏杰之前介绍过一个软件connectify，下载安装，就可以了。我的defy也能连上。呵呵[<img class="aligncenter size-full wp-image-981" title="connectify-me" src="/wp-content/uploads/2011/07/connectify-me.jpg" alt="无法启动Internet连接共享" width="296" height="446" />](/wp-content/uploads/2011/07/connectify-me.jpg)

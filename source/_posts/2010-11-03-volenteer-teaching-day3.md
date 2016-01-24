@@ -26,7 +26,7 @@ tags:
   </p>
   
   <p class="MsoNormal" style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
-    <span lang="EN-US"><a href="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/3-1.png" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/3-1.png" alt="图片" width="494" height="360" /></a></span>
+    <span lang="EN-US"><a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/3-1.png" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/3-1.png" alt="图片" width="494" height="360" /></a></span>
   </p>
   
   <p class="MsoNormal" style="text-indent: 21pt; margin: 0cm 0cm 0pt;">

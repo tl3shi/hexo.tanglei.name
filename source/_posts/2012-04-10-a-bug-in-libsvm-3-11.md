@@ -50,4 +50,4 @@ tags:
 > 
 > **原因**是在python3中使用了新类型bytes，用来表示二进制数据和编码文本，str和bytes不能混合，需要时，必须进行显示的转换，转换方法是str.encode()(str->bytes)和bytes.decode()(bytes->str).<a href="http://docs.python.org/release/3.0.1/whatsnew/3.0.html" target="_blank">官网说法猛击这里</a>。以前的strings变成了unicode,在libsvm的C/C++实现中用的char*(DLL里面的),就不兼容了。所以总提示参数错误。 
 > 
-> 附上<a href="http://www.tanglei.name/wp-content/blogresources/libsvmtest.rar" target="_blank">libsvm的入门实例</a>（115网盘网络紧张好像提取不了，iask居然慢慢审核，只有放在自己空间了）（压缩包解压密码:www.tanglei.name）
+> 附上<a href="/wp-content/blogresources/libsvmtest.rar" target="_blank">libsvm的入门实例</a>（115网盘网络紧张好像提取不了，iask居然慢慢审核，只有放在自己空间了）（压缩包解压密码:www.tanglei.name）

@@ -108,7 +108,7 @@ t.cal(1)
 
 运行结果如图所示意。
 
-[<img style="display: inline; border: 0px;" title="python_init__new__method 1" src="http://www.tanglei.name/wp-content/uploads/2012/03/python_init__new__method1_thumb.jpg" alt="python_init__new__method 1" width="641" height="341" border="0" data-pinit="registered" />](http://www.tanglei.name/wp-content/uploads/2012/03/python_init__new__method1.jpg)
+[<img style="display: inline; border: 0px;" title="python_init__new__method 1" src="/wp-content/uploads/2012/03/python_init__new__method1_thumb.jpg" alt="python_init__new__method 1" width="641" height="341" border="0" data-pinit="registered" />](/wp-content/uploads/2012/03/python_init__new__method1.jpg)
 
 解释下运行结果：
 

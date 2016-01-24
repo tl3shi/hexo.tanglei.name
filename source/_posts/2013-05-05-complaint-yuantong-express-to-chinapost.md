@@ -22,9 +22,9 @@ tags:
 
 然后这次就又去邮政局网站投诉，效果也很明显。连忙打电话抱歉啊之类的，现在打电话的态度跟我之前打过去问的态度真实截然不同啊，然后还发短信之类的(如下图右)，短信记录能看到我是30号反馈让其下午送的，结果答应了又没送~
 
-[<img style="background-image: none; float: left; padding-top: 0px; padding-left: 0px; margin: 2px 0px 5px 10px; display: inline; padding-right: 0px; border: 0px;" title="image" src="http://www.tanglei.name/wp-content/uploads/2013/05/image_thumb.png" alt="image" width="464" height="432" align="left" border="0" />](http://www.tanglei.name/wp-content/uploads/2013/05/image.png)
+[<img style="background-image: none; float: left; padding-top: 0px; padding-left: 0px; margin: 2px 0px 5px 10px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/05/image_thumb.png" alt="image" width="464" height="432" align="left" border="0" />](/wp-content/uploads/2013/05/image.png)
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="http://www.tanglei.name/wp-content/uploads/2013/05/image_thumb1.png" alt="image" width="238" height="435" border="0" />](http://www.tanglei.name/wp-content/uploads/2013/05/image1.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/05/image_thumb1.png" alt="image" width="238" height="435" border="0" />](/wp-content/uploads/2013/05/image1.png)
 
 知道客户投诉了，他们才道歉啊解释啊等等。没投诉之前呢，态度完全不一样啊~估计这个投诉数量啊之类跟对快递公司很重要吧，maybe投诉多了，罚钱啊或者就不允许其经营快递啊之类的。
 

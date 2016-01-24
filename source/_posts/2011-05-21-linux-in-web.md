@@ -14,7 +14,7 @@ tags:
   - Linux
   - web
 ---
-转自：http://coolshell.cn/articles/4722.html 只能说，太牛了……膜拜！如果你是用的chrome11或者firefox，那你就可以直接在下面敲linux命令执行了。看看我执行的效果图。[![web-linux](http://www.tanglei.name/wp-content/uploads/2011/05/web-linux.png "web-linux")](http://www.tanglei.name/wp-content/uploads/2011/05/web-linux.png)
+转自：http://coolshell.cn/articles/4722.html 只能说，太牛了……膜拜！如果你是用的chrome11或者firefox，那你就可以直接在下面敲linux命令执行了。看看我执行的效果图。[![web-linux](/wp-content/uploads/2011/05/web-linux.png "web-linux")](/wp-content/uploads/2011/05/web-linux.png)
 
 一个叫Fabrice Bellard的程序员写了一段Javascript在Web浏览器中启动Linux（<a onclick="pageTracker._trackPageview('/outgoing/bellard.org/jslinux/?referer=http%3A%2F%2Fcoolshell.cn%2F');" href="http://bellard.org/jslinux/" target="_blank">原网页</a>，我把这个网页iframe在了下面），目前，你**只能使用Firefox 4和Chrome
   

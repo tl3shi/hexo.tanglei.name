@@ -23,4 +23,4 @@ tags:
 
 晚上做了一件愚蠢的事情，因为办理了新号嘛，得群发短信告诉大家。然后就试了试自己的可定制的群发软件，选了部分人，可不能整个通讯录发啊，500多好人。都50多块了。保险起见，没选太多。万一出问题呢。结果最后果然出问题了。发出去，发件箱现实正常。有的回短信一个问号“？”,有的回短信直接说：“你是谁啊？把我的电话号码发给我干嘛？”……最后才想起，唉，开始代码写错了的，就一个参数，本来是getSmsContent(),结果写成了getSmsTelNo().后来在模拟器测出来了的，改了代码后可以正常运行，但真机里跑的应用还是之前没有改代码之前的。o(︶︿︶)o 唉，这下爽了，本来告诉人家是我的最新的号码，结果把对方的号码通过短信发给了对方。丢脸啊……关键是，开始以为办的手机套餐是包含了200条短信的，结果刚才查了下，还不包含，既扣费了，花钱了，还没有达到目的。于是只有重新改了下参数，重新群发了下。幸好当时选的联系人不多，不然我就亏大了。唉，凡事都得小心为妙啊。
 
-[<img class="aligncenter size-full wp-image-1017" title="msgTools-bug-by-careless" src="http://www.tanglei.name/wp-content/uploads/2011/07/msgTools-bug-by-careless.jpg" alt="可定制的短信群发工具bug" width="400" height="356" />](http://www.tanglei.name/wp-content/uploads/2011/07/msgTools-bug-by-careless.jpg)
+[<img class="aligncenter size-full wp-image-1017" title="msgTools-bug-by-careless" src="/wp-content/uploads/2011/07/msgTools-bug-by-careless.jpg" alt="可定制的短信群发工具bug" width="400" height="356" />](/wp-content/uploads/2011/07/msgTools-bug-by-careless.jpg)

@@ -37,11 +37,11 @@ vim下有个latex的插件~用着还不错~貌似那个IDE都没代码提示之�
 
 例如: 输入”table + F5” 出现下面的代码
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image" src="http://www.tanglei.name/wp-content/uploads/2015/03/Image_thumb1.png" alt="Image" width="273" height="169" border="0" />](http://www.tanglei.name/wp-content/uploads/2015/03/Image2.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image" src="/wp-content/uploads/2015/03/Image_thumb1.png" alt="Image" width="273" height="169" border="0" />](/wp-content/uploads/2015/03/Image2.png)
 
 再比如自动插入标签：ctrl+n
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(1)" src="http://www.tanglei.name/wp-content/uploads/2015/03/Image1_thumb1.png" alt="Image(1)" width="228" height="168" border="0" />](http://www.tanglei.name/wp-content/uploads/2015/03/Image11.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(1)" src="/wp-content/uploads/2015/03/Image1_thumb1.png" alt="Image(1)" width="228" height="168" border="0" />](/wp-content/uploads/2015/03/Image11.png)
 
 其他相关技巧啥的直接看help吧.
 

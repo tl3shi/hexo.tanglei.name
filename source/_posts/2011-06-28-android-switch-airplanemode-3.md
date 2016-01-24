@@ -20,7 +20,7 @@ tags:
 ---
 界面就比较丑了，不过现在我机子里面都还在用呢。呵呵
   
-[<img src="http://www.tanglei.name/wp-content/uploads/2011/06/airplane-mode-switch.jpg" alt="android自动切换飞行模式" title="android自动切换飞行模式" width="320" height="480" class="aligncenter size-full wp-image-925" />](http://www.tanglei.name/wp-content/uploads/2011/06/airplane-mode-switch.jpg)
+[<img src="/wp-content/uploads/2011/06/airplane-mode-switch.jpg" alt="android自动切换飞行模式" title="android自动切换飞行模式" width="320" height="480" class="aligncenter size-full wp-image-925" />](/wp-content/uploads/2011/06/airplane-mode-switch.jpg)
   
 xml布局代码如下： 
 

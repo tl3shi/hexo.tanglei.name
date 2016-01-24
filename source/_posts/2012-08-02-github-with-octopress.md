@@ -23,7 +23,7 @@ tags:
 截图留念：
 
 <p align="center">
-  <img title="github和octopress配置" src="http://www.tanglei.name/wp-content/uploads/2012/07/name_006.jpeg" alt="github和octopress配置" />
+  <img title="github和octopress配置" src="/wp-content/uploads/2012/07/name_006.jpeg" alt="github和octopress配置" />
 </p>
 
 下面说说过程吧。

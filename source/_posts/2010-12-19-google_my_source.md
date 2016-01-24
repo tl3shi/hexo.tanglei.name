@@ -18,7 +18,7 @@ tags:
 
 如图示：
 
-[<img class="alignleft size-full wp-image-91" title="爱山寨google收录" src="http://www.tanglei.name/wp-content/uploads/2010/12/爱山寨google收录.jpg" alt="" width="777" height="709" />](http://www.tanglei.name/wp-content/uploads/2010/12/爱山寨google收录.jpg)
+[<img class="alignleft size-full wp-image-91" title="爱山寨google收录" src="/wp-content/uploads/2010/12/爱山寨google收录.jpg" alt="" width="777" height="709" />](/wp-content/uploads/2010/12/爱山寨google收录.jpg)
   
 
   

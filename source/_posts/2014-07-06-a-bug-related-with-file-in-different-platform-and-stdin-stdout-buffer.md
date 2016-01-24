@@ -28,15 +28,15 @@ tags:
 
 下图SampleInput是U盘copy到mac上的文本文件(Windows环境下生成的)，SampleInput2.txt是在mac下打开SampleInput.txt的内容，然后copy再保存的，**表面**内容是一样的。
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image" src="http://www.tanglei.name/wp-content/uploads/2014/07/Image_thumb.jpg" alt="Image" width="375" height="245" border="0" />](http://www.tanglei.name/wp-content/uploads/2014/07/Image.jpg)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image" src="/wp-content/uploads/2014/07/Image_thumb.jpg" alt="Image" width="375" height="245" border="0" />](/wp-content/uploads/2014/07/Image.jpg)
 
 然后看下面的代码，就是读取文件里面的前两行并输出。
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(1)" src="http://www.tanglei.name/wp-content/uploads/2014/07/Image1_thumb.jpg" alt="Image(1)" width="417" height="249" border="0" />](http://www.tanglei.name/wp-content/uploads/2014/07/Image1.jpg)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(1)" src="/wp-content/uploads/2014/07/Image1_thumb.jpg" alt="Image(1)" width="417" height="249" border="0" />](/wp-content/uploads/2014/07/Image1.jpg)
 
 (g++编译)运行结果：
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(2)" src="http://www.tanglei.name/wp-content/uploads/2014/07/Image2_thumb.jpg" alt="Image(2)" width="384" height="119" border="0" />](http://www.tanglei.name/wp-content/uploads/2014/07/Image2.jpg)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(2)" src="/wp-content/uploads/2014/07/Image2_thumb.jpg" alt="Image(2)" width="384" height="119" border="0" />](/wp-content/uploads/2014/07/Image2.jpg)
 
 前面也提到结果是因为Win下换行符和Mac下换行符的不一致的问题，不过思考下输入SampleInput.txt的**输出结果为啥是**?
 
@@ -47,17 +47,17 @@ tags:
 
 vim -b file 可以看到^M~ （注意替换^M时输入应该是：ctrl+v,ctrl+m / 也可以用\r）
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(3)" src="http://www.tanglei.name/wp-content/uploads/2014/07/Image3_thumb.jpg" alt="Image(3)" width="569" height="100" border="0" />](http://www.tanglei.name/wp-content/uploads/2014/07/Image3.jpg)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(3)" src="/wp-content/uploads/2014/07/Image3_thumb.jpg" alt="Image(3)" width="569" height="100" border="0" />](/wp-content/uploads/2014/07/Image3.jpg)
 
 vim 打开后,通过命令 **:%!xxd** 可以查看文件二进制格式，【新技能Get】。
 
 SampleInput2.txt
   
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(4)" src="http://www.tanglei.name/wp-content/uploads/2014/07/Image4_thumb.jpg" alt="Image(4)" width="473" height="72" border="0" />](http://www.tanglei.name/wp-content/uploads/2014/07/Image4.jpg)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(4)" src="/wp-content/uploads/2014/07/Image4_thumb.jpg" alt="Image(4)" width="473" height="72" border="0" />](/wp-content/uploads/2014/07/Image4.jpg)
 
 SampleInput.txt
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(5)" src="http://www.tanglei.name/wp-content/uploads/2014/07/Image5_thumb.jpg" alt="Image(5)" width="491" height="67" border="0" />](http://www.tanglei.name/wp-content/uploads/2014/07/Image5.jpg)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(5)" src="/wp-content/uploads/2014/07/Image5_thumb.jpg" alt="Image(5)" width="491" height="67" border="0" />](/wp-content/uploads/2014/07/Image5.jpg)
 
 查看ASCii表，0a(10)换行, 0d(13)回车，&#8221;回车&#8221;是告诉打字机把打印头定位在左边界；&#8221;换行&#8221;，告诉打字机把纸向下移一行（参考[回车与换行](http://www.ruanyifeng.com/blog/2006/04/post_213.html)：原文说windows行末是\r\n, linux/unix是\n, 而mac是\r，不过从上面可以看出我的mac osx也是\n, Ruanyifeng06年post的这篇，应该是Apple做了改变和unix/linux保持一致了吧?）。
 
@@ -83,7 +83,7 @@ void testr()
 
 另外，提醒下Xcode IDE运行的输出结果跟控制台输出的运行结果是**不一致**的。XCode IDE输出应该是解析到\r就输出了吧，标准控制台的话仍然是跟上面的分析一致。
   
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(6)" src="http://www.tanglei.name/wp-content/uploads/2014/07/Image6_thumb.jpg" alt="Image(6)" width="435" height="118" border="0" />](http://www.tanglei.name/wp-content/uploads/2014/07/Image6.jpg)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(6)" src="/wp-content/uploads/2014/07/Image6_thumb.jpg" alt="Image(6)" width="435" height="118" border="0" />](/wp-content/uploads/2014/07/Image6.jpg)
 
 Ref:
 

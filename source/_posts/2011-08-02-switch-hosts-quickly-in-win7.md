@@ -34,12 +34,12 @@ cacls %windir%/system32/drivers/etc/hosts /E /G "User Account Name":W&lt;/cc></p
       先以管理员身份运行这两个命令：如图：
     </div>
     
-    ![](http://www.tanglei.name/wp-content/uploads/2011/08/080211_1432_hosts1.png)</li> 
+   ![](/wp-content/uploads/2011/08/080211_1432_hosts1.png)</li> 
     
       * <div style="text-align: justify;">
           然后准备好不同环境的hosts文件。以及写简单的命令。如图：外网hosts不用配，我里面就一个井号#。命令也简单：copy .\host214.txt C:\WINDOWS\system32\drivers\etc\hosts
         </div></ul> 
     
-    ![WIN7下快速切换hosts方法](http://www.tanglei.name/wp-content/uploads/2011/08/080211_1432_hosts2.png)
+   ![WIN7下快速切换hosts方法](/wp-content/uploads/2011/08/080211_1432_hosts2.png)
     
     OK。现在可以实现快速切换了。不过每次都右键以管理员身份运行才可以。我是木权限设置自动以管理员身份运行滴啦。

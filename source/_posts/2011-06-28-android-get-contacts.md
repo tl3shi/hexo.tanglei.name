@@ -55,7 +55,7 @@ tags:
 }
 &lt;/cc></pre>
 
-效果如下[<img src="http://www.tanglei.name/wp-content/uploads/2011/06/android-get-contact.jpg" alt="android获取通讯录" title="android获取联系人" width="243" height="325" class="aligncenter size-full wp-image-945" />](http://www.tanglei.name/wp-content/uploads/2011/06/android-get-contact.jpg)
+效果如下[<img src="/wp-content/uploads/2011/06/android-get-contact.jpg" alt="android获取通讯录" title="android获取联系人" width="243" height="325" class="aligncenter size-full wp-image-945" />](/wp-content/uploads/2011/06/android-get-contact.jpg)
   
 原以为想到，直接将显示的每一个item小的那个字段直接搞成电话号码就行了。现在看来我为啥会那样想呢。。自己手机里的一个联系人有2个电话也是常有的事情啊，那得现实哪个？所以报错啊之类就很正常了。
   

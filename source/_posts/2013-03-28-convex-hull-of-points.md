@@ -22,7 +22,7 @@ tags:
 
 求出凸包是计算几何当中一个经典的问题，也是贯穿这整个计算几何的学科。如下图所示，最外层的那个圈就是这些点集的凸包。凸包上的那些点称为极点，如果找出了所有的极点，那么，凸包也就求出来了。极点的可以用这种方式来进行判断，点集P中任意一个点s，如果存在另外的三个不同的点p,q,r构成的三角形将s包围住，那么这个点s就不是极点，反之就是极点。于是也就有了第一个算法：
   
-<img src="http://www.tanglei.name/wp-content/uploads/2013/03/032813_1505_1.png" alt="凸包" align="left" /></br>
+<img src="/wp-content/uploads/2013/03/032813_1505_1.png" alt="凸包" align="left" /></br>
 
 <pre>&lt;cc class="pascal">
 Mark All points in Set P as extreme;
@@ -188,7 +188,7 @@ until pi = p0
 
 是否能够继续优化下去，将算法复杂度再次提高？或者Convex Hull的解法是否有一个下界?下面的算法就是一个总体复杂度O(nlgn)的算法，已经有人证明，这个是凸包问题的下界。不能再继续优化了。下面就看看著名的O(nlgn)的Graham Scan算法。
 
-![](http://www.tanglei.name/wp-content/uploads/2013/03/032813_1505_2.png)![](http://www.tanglei.name/wp-content/uploads/2013/03/032813_1505_3.png)
+![](/wp-content/uploads/2013/03/032813_1505_2.png)![](/wp-content/uploads/2013/03/032813_1505_3.png)
 
 算法思路如下：首先仍然是找到最左下角的点，然后按照极角排序，如上图所示，编上号1——n，然后从第三个点开始，依次看该点是否在前两个点构成的直线的左边(3是否在有向线段12的左边,4是否在有向线段23的左边，依次类推),上例中，到第5个点时，发现5不在34的左边，则回退一个，连接35，到第6个点时，发现6也不在前两个点35(此时4已经被排除)构成的有向线段的左边,再回退，看6仍然不在23的左边，继续回退，直到发现6在12的左边，此时连接26……就按照这样走下去，完成了整个凸包的构成。从具体实现上可以用两个栈来实现，算法如下所示：
 
@@ -265,6 +265,6 @@ while (!T.empty()) do
 
 最后自己实现了下以上几个算法，用MFC+OPENGL如图。注意实现时细节的处理，比如按照极角排序等，若考虑算法鲁棒性，得处理多点共线、重点等情况(本文未考虑)。
 
-![](http://www.tanglei.name/wp-content/uploads/2013/03/032813_1505_4.png)
+![](/wp-content/uploads/2013/03/032813_1505_4.png)
 
 参考资料：[邓俊辉](http://www.csai.tsinghua.edu.cn/iar/members/dengjunhui_en.htm) 《计算几何》</div>

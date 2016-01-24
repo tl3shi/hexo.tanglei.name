@@ -28,7 +28,7 @@ tags:
 
 水长城门票全票45RMB，学生票22。之所以叫水长城，因为长城底下有个湖，可以游船、快艇、水陆两用车等，因此还有各种其他套票等。目前为止，去过的长城有八达岭，居庸关，再加上**水长城**。**八达岭**雄伟壮观，**居庸关**陡峭险峻，这两个很出名，因此游客很多，而水长城名气较低，人不多，并且周围有湖除了爬长城外还能游船/快艇/水~若既想怕长城又担心拥挤，则水长城是个不错的去处，夏天还能玩玩水抓抓鱼之类的~
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="water-great-wall" src="http://www.tanglei.name/wp-content/uploads/2014/04/water-great-wall_thumb.png" alt="water-great-wall" width="1028" height="681" border="0" />](http://www.tanglei.name/wp-content/uploads/2014/04/water-great-wall.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="water-great-wall" src="/wp-content/uploads/2014/04/water-great-wall_thumb.png" alt="water-great-wall" width="1028" height="681" border="0" />](/wp-content/uploads/2014/04/water-great-wall.png)
 
 附上照片一张：远处的是长城，环湖是山。旅行线路环湖而行，有长城片段直接“断”到湖里~
 

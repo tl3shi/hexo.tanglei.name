@@ -25,7 +25,7 @@ tags:
   
 类图如图所示
   
-[<img src="http://www.tanglei.name/wp-content/uploads/2010/12/simplefactory1.png" alt="" title="simplefactory" width="480" height="320" class="alignleft size-full wp-image-28" />](http://www.tanglei.name/wp-content/uploads/2010/12/simplefactory1.png)
+[<img src="/wp-content/uploads/2010/12/simplefactory1.png" alt="" title="simplefactory" width="480" height="320" class="alignleft size-full wp-image-28" />](/wp-content/uploads/2010/12/simplefactory1.png)
   
 下面还是通过一个例子来说明吧
   
@@ -33,7 +33,7 @@ tags:
   
 使用简单工厂模式设计一个可以创建不同几何形状(Shape)的绘图工具类，如可创建圆形(Circle)、方形(Rectangle)和三角形(Triangle) 对象，每个几何图形都要有绘制draw()和擦除erase()两个方法，要求在绘制不支持的几何图形时，提示一个UnsupportedShapeException，绘制类图并编程实现。
   
-[<img src="http://www.tanglei.name/wp-content/uploads/2010/12/sfdemo.png" alt="" title="sfdemo" width="380" height="380" class="alignleft size-full wp-image-29" />](http://www.tanglei.name/wp-content/uploads/2010/12/sfdemo.png)
+[<img src="/wp-content/uploads/2010/12/sfdemo.png" alt="" title="sfdemo" width="380" height="380" class="alignleft size-full wp-image-29" />](/wp-content/uploads/2010/12/sfdemo.png)
 
 shape类：
   

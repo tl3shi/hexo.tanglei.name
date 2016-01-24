@@ -17,11 +17,11 @@ tags:
 o(︶︿︶)o 唉，原本来打算想6月底就去深圳实习的。就给tencent给了封邮件过去。申请提前。然后给我回复了。。。
 
 <p style="text-align: center;">
-  <a href="http://www.tanglei.name/wp-content/uploads/2011/06/tencent-response-my-time-consult.jpg"><img class="aligncenter size-medium wp-image-782" title="tencent-response-my-time-consult" src="http://www.tanglei.name/wp-content/uploads/2011/06/tencent-response-my-time-consult-300x130.jpg" alt="腾讯实习咨询" width="300" height="130" /></a>
+  <a href="/wp-content/uploads/2011/06/tencent-response-my-time-consult.jpg"><img class="aligncenter size-medium wp-image-782" title="tencent-response-my-time-consult" src="/wp-content/uploads/2011/06/tencent-response-my-time-consult-300x130.jpg" alt="腾讯实习咨询" width="300" height="130" /></a>
 </p>
 
 <p style="text-align: left;">
-  然后今天来了实习报道指引。<a href="http://www.tanglei.name/wp-content/uploads/2011/06/tencent-time-to-sign.jpg"><img class="aligncenter size-medium wp-image-783" title="tencent-time-to-sign" src="http://www.tanglei.name/wp-content/uploads/2011/06/tencent-time-to-sign-300x89.jpg" alt="腾讯实习报道" width="300" height="89" /></a>
+  然后今天来了实习报道指引。<a href="/wp-content/uploads/2011/06/tencent-time-to-sign.jpg"><img class="aligncenter size-medium wp-image-783" title="tencent-time-to-sign" src="/wp-content/uploads/2011/06/tencent-time-to-sign-300x89.jpg" alt="腾讯实习报道" width="300" height="89" /></a>
 </p>
 
 o(︶︿︶)o 唉，这个时间段还真不爽。学校6.18号就没事了。可以离校了。7月13号才去呀。跟陈哥联系了下，我到时候到那边会用到php开发，还给我发了php的手册，让我有空了解下。然后再说有空看下《unix网络编程》，后面开发环境在linux下。有空研究下吧。

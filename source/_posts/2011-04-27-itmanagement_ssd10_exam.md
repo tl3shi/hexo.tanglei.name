@@ -113,7 +113,7 @@ d. 会计科目表，以便确定完工估算。
 
 8、下面的网络图中，关键路径是哪条?（ A  ）
 
-[<img class="alignleft size-medium wp-image-559" title="itmanagement" src="http://www.tanglei.name/wp-content/uploads/2011/04/itmanagement-300x121.png" alt="IT项目管理模拟试题" width="300" height="121" />](http://www.tanglei.name/wp-content/uploads/2011/04/itmanagement.png)
+[<img class="alignleft size-medium wp-image-559" title="itmanagement" src="/wp-content/uploads/2011/04/itmanagement-300x121.png" alt="IT项目管理模拟试题" width="300" height="121" />](/wp-content/uploads/2011/04/itmanagement.png)
 
 a.  开始-A-B-C-D-结束
 

@@ -52,7 +52,7 @@ D = c E^d ;D是开发时间(月) ，c和d是经验常数
 
 其中，a,b,c,d为经验常数，其取值见下表
 
-[<img class="size-medium wp-image-553 alignleft" title="cocomo1" src="http://www.tanglei.name/wp-content/uploads/2011/04/cocomo1-300x80.png" alt="CoCoMo1" width="300" height="80" />](http://www.tanglei.name/wp-content/uploads/2011/04/cocomo1.png)
+[<img class="size-medium wp-image-553 alignleft" title="cocomo1" src="/wp-content/uploads/2011/04/cocomo1-300x80.png" alt="CoCoMo1" width="300" height="80" />](/wp-content/uploads/2011/04/cocomo1.png)
 
 **中间CoCoMo模型**
 
@@ -60,7 +60,7 @@ E = a (kLOC)^b *EAF
 
 其中，E表示工作量(人月)，EAF表示工作量调节因子，a,b为经验常数，其取值见下表
 
-[<img class="alignleft size-full wp-image-554" title="cocomo2" src="http://www.tanglei.name/wp-content/uploads/2011/04/cocomo2.png" alt="CoCoMo" width="155" height="92" />](http://www.tanglei.name/wp-content/uploads/2011/04/cocomo2.png)
+[<img class="alignleft size-full wp-image-554" title="cocomo2" src="/wp-content/uploads/2011/04/cocomo2.png" alt="CoCoMo" width="155" height="92" />](/wp-content/uploads/2011/04/cocomo2.png)
 
 **EAF的取值**(考虑15个因素)
 

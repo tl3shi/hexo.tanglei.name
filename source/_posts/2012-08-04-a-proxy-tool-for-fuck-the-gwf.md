@@ -31,13 +31,13 @@ p.s.
 
 <pre>&lt;cc lang="html" inline="true">http://west-chamber-season-3.googlecode.com/files/SwitchyOptions.bak&lt;/cc></pre>
 
-[<img style="display: block; float: none; margin-left: auto; margin-right: auto; border-width: 0px;" title="SwitchySharp代理设置" src="http://www.tanglei.name/wp-content/uploads/2012/08/SwitchySharp_thumb.jpg" alt="SwitchySharp代理设置" width="644" height="396" border="0" />](http://www.tanglei.name/wp-content/uploads/2012/08/SwitchySharp.jpg)这个Windows 版本更新比较慢，如果你电脑里面有python开发环境的话，可以有个随时获取最新的。可以到此<a href="https://github.com/liruqi/west-chamber-season-3/zipball/master" target="_blank">下载代码</a>，解压缩，或者直接 
+[<img style="display: block; float: none; margin-left: auto; margin-right: auto; border-width: 0px;" title="SwitchySharp代理设置" src="/wp-content/uploads/2012/08/SwitchySharp_thumb.jpg" alt="SwitchySharp代理设置" width="644" height="396" border="0" />](/wp-content/uploads/2012/08/SwitchySharp.jpg)这个Windows 版本更新比较慢，如果你电脑里面有python开发环境的话，可以有个随时获取最新的。可以到此<a href="https://github.com/liruqi/west-chamber-season-3/zipball/master" target="_blank">下载代码</a>，解压缩，或者直接 
 
 <pre>&lt;cc lang="html" inline="true">git clone git://github.com/liruqi/west-chamber-season-3.git&lt;/cc></pre>
 
 。进入west-chamber-proxy 文件夹，双击westchamberproxy.py运行，控制台可以看到一些运行状态，别关了。然后就好好的享受自由的墙外生活吧。
 
-[<img style="display: block; float: none; margin-left: auto; margin-right: auto; border: 0px;" title="proxy-fuck-gfw-facebook" src="http://www.tanglei.name/wp-content/uploads/2012/08/proxyfuckgfwfacebook_thumb.jpg" alt="proxy-fuck-gfw-facebook" width="635" height="484" border="0" />](http://www.tanglei.name/wp-content/uploads/2012/08/proxyfuckgfwfacebook.jpg)
+[<img style="display: block; float: none; margin-left: auto; margin-right: auto; border: 0px;" title="proxy-fuck-gfw-facebook" src="/wp-content/uploads/2012/08/proxyfuckgfwfacebook_thumb.jpg" alt="proxy-fuck-gfw-facebook" width="635" height="484" border="0" />](/wp-content/uploads/2012/08/proxyfuckgfwfacebook.jpg)
 
 ### Linux环境下
 
@@ -51,6 +51,6 @@ p.s.
 
 该开源项目目前由<a href="http://liruqi.info" target="_blank">LIRUQI</a>维护，其blog主页样式也不常见哦。
 
-[<img style="display: block; float: none; margin-left: auto; margin-right: auto; border: 0px;" title="image" src="http://www.tanglei.name/wp-content/uploads/2012/08/image_thumb.png" alt="image" width="644" height="389" border="0" />](http://www.tanglei.name/wp-content/uploads/2012/08/image.png)
+[<img style="display: block; float: none; margin-left: auto; margin-right: auto; border: 0px;" title="image" src="/wp-content/uploads/2012/08/image_thumb.png" alt="image" width="644" height="389" border="0" />](/wp-content/uploads/2012/08/image.png)
   
 [注意]，请遵守相关法律法规，此办法的用途[只能]用于浏览“健康”网页，供学习交流使用。:)

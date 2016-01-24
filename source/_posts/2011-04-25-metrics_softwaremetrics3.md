@@ -301,7 +301,7 @@ The module be rejected if its V exceed 20 or if it has more than 50 statements�
         </p>
         
         <p>
-          <img class="alignnone" title="数据结构" src="http://www.tanglei.name/wp-content/uploads/2011/04/Software%20Metrics.files//image008.gif" alt="" width="413" height="69" />
+          <img class="alignnone" title="数据结构" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image008.gif" alt="" width="413" height="69" />
         </p>
         
         <p>

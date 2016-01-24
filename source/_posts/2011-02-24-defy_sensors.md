@@ -128,10 +128,10 @@ layout的XML就不上了，一个textview而已。
   
 效果如下：得到6个传感器……
   
-[<img src="http://www.tanglei.name/wp-content/uploads/2011/03/defy_sensors.png" alt="" title="defy_sensors" width="236" height="447" class="aligncenter size-full wp-image-356" />](http://www.tanglei.name/wp-content/uploads/2011/03/defy_sensors.png)
+[<img src="/wp-content/uploads/2011/03/defy_sensors.png" alt="" title="defy_sensors" width="236" height="447" class="aligncenter size-full wp-image-356" />](/wp-content/uploads/2011/03/defy_sensors.png)
   
 
   
 系统参数啊环境变量之类的：
   
-[<img src="http://www.tanglei.name/wp-content/uploads/2011/02/defy_envir-1024x585.jpg" alt="" title="defy_envir" width="1024" height="585" class="aligncenter size-large wp-image-361" />](http://www.tanglei.name/wp-content/uploads/2011/02/defy_envir.jpg)
+[<img src="/wp-content/uploads/2011/02/defy_envir-1024x585.jpg" alt="" title="defy_envir" width="1024" height="585" class="aligncenter size-large wp-image-361" />](/wp-content/uploads/2011/02/defy_envir.jpg)

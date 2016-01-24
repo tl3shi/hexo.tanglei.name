@@ -22,8 +22,8 @@ tags:
 
 北戴河其实也挺小的，没几个景点。鸽子窝公园，联峰山(我去时，还封山，不对外开放)，还有什么老虎石海上公园之类的，其实就是海边玩啊之类。可以租个自行车，然后沿着海边骑。南戴河有个娱乐中心，跟什么欢乐谷啊之类的差不了多少，这次也就没去了。特色之处可能就有个滑沙，滑草。后来被一出租车司机坑去金沙湾沙雕展之类的地方去了(当时说的是想去滑沙滑草)，比较远，都到昌黎了，司机宁愿5元/人帮你拉过去，然后他拿回扣。60的门票(原价75，学生8折)，里面有些沙雕，有滑沙滑草的地方都很小，草还是塑料的，然后就是靠近海边，玩海水。
 
-[<img style="display: inline; border: 0px;" title="鸽子窝公园+金沙湾海滩" src="http://www.tanglei.name/wp-content/uploads/2012/05/thumb.jpg" alt="鸽子窝公园+金沙湾海滩" width="644" height="484" border="0" data-pinit="registered" />](http://www.tanglei.name/wp-content/uploads/2012/05/53ded0e01d21.jpg)
+[<img style="display: inline; border: 0px;" title="鸽子窝公园+金沙湾海滩" src="/wp-content/uploads/2012/05/thumb.jpg" alt="鸽子窝公园+金沙湾海滩" width="644" height="484" border="0" data-pinit="registered" />](/wp-content/uploads/2012/05/53ded0e01d21.jpg)
 
 后来又在住的家庭旅馆附近的集发观光园玩了几个小时。话说这里还要划算些，让家庭旅馆的老板帮忙去买票（完全帮忙，老板自己应该没回扣），只要15RMB，原价是30，不卖学生票。里面有水果采摘，不过买采摘的水果比较贵。有一些娱乐项目，这里面的滑草气派多了，真草，面积还大。免费的还比较多，什么“走钢丝”之类的，还有蹦极，应该很刺激，不过得60RMB/次。没去玩……
 
-[<img style="display: inline; border: 0px;" title="集发观光园" src="http://www.tanglei.name/wp-content/uploads/2012/05/thumb1.jpg" alt="集发观光园" width="644" height="484" border="0" data-pinit="registered" />](http://www.tanglei.name/wp-content/uploads/2012/05/59d48c4fa81c.jpg)
+[<img style="display: inline; border: 0px;" title="集发观光园" src="/wp-content/uploads/2012/05/thumb1.jpg" alt="集发观光园" width="644" height="484" border="0" data-pinit="registered" />](/wp-content/uploads/2012/05/59d48c4fa81c.jpg)

@@ -26,7 +26,7 @@ tags:
 
 此时我直接通过电脑A通过windows自带的远程桌面连接工具练过去，运行。
 
-[<img class="alignnone" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="http://www.tanglei.name/wp-content/uploads/2013/11/image_thumb.png" alt="image" width="565" height="280" border="0" />](http://www.tanglei.name/wp-content/uploads/2013/11/image.png)
+[<img class="alignnone" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/11/image_thumb.png" alt="image" width="565" height="280" border="0" />](/wp-content/uploads/2013/11/image.png)
 
 得到这样的结果，就是没有cuda相应的支持，而实际上，我直接通过本地执行时能够正常运行的。现在的问题是采取怎样的方式能够正常跑电脑B上的程序，就像自己本人在电脑B所在地本地操控电脑B一样。
 
@@ -40,25 +40,25 @@ tags:
 
 2、在电脑B上通过QQ B申请远程协助QQ A。
 
-[<img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="http://www.tanglei.name/wp-content/uploads/2013/11/image_thumb1.png" alt="image" width="465" height="581" border="0" />](http://www.tanglei.name/wp-content/uploads/2013/11/image1.png)
+[<img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/11/image_thumb1.png" alt="image" width="465" height="581" border="0" />](/wp-content/uploads/2013/11/image1.png)
 
 <p style="text-align: left;">
   3、电脑A上 QQ A接受邀请。
 </p>
 
-[<img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="http://www.tanglei.name/wp-content/uploads/2013/11/image_thumb2.png" alt="image" width="671" height="534" border="0" />](http://www.tanglei.name/wp-content/uploads/2013/11/image2.png)
+[<img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/11/image_thumb2.png" alt="image" width="671" height="534" border="0" />](/wp-content/uploads/2013/11/image2.png)
 
 此时已经建立好连接了。并也能通过QQ的远程协助控制电脑B了。
 
 4、**关键，**在windows自带的远程桌面连接工具中通过在电脑B上<a href="https://gist.github.com/tl3shi/7462590" target="_blank">运行如下脚本</a>。没有的话，copy一个过去。
 
-[<img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="http://www.tanglei.name/wp-content/uploads/2013/11/image_thumb3.png" alt="image" width="502" height="276" border="0" />](http://www.tanglei.name/wp-content/uploads/2013/11/image3.png)
+[<img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/11/image_thumb3.png" alt="image" width="502" height="276" border="0" />](/wp-content/uploads/2013/11/image3.png)
 
 注意得以管理员身份运行。运行后，此时通过windows远程连接的会话会断开。现在只能通过QQ的远程协助操作电脑B了。
 
 5、下面就是见证奇迹的时刻了。
 
-[<img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="http://www.tanglei.name/wp-content/uploads/2013/11/image_thumb4.png" alt="image" width="571" height="554" border="0" />](http://www.tanglei.name/wp-content/uploads/2013/11/image4.png)
+[<img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/11/image_thumb4.png" alt="image" width="571" height="554" border="0" />](/wp-content/uploads/2013/11/image4.png)
 
 现在能够检测到电脑B上的显卡对cuda 支持。
 

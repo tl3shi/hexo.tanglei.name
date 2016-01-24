@@ -58,19 +58,19 @@ namespace comtest
 
 写好后，右击项目属性，选择“应用程序”，点击“程序集信息”后勾选“使程序集COM可见”。（英文版如下）
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image002" src="http://www.tanglei.name/wp-content/uploads/2013/12/clip_image002_thumb.jpg" alt="clip_image002" width="558" height="366" border="0" />](http://www.tanglei.name/wp-content/uploads/2013/12/clip_image002.jpg)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image002" src="/wp-content/uploads/2013/12/clip_image002_thumb.jpg" alt="clip_image002" width="558" height="366" border="0" />](/wp-content/uploads/2013/12/clip_image002.jpg)
 
 然后选择”生成”tab，勾选“为COM互操作注册”。（英文版如下）
 
 [
   
-<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image004" src="http://www.tanglei.name/wp-content/uploads/2013/12/clip_image004_thumb.jpg" alt="clip_image004" width="558" height="408" border="0" />](http://www.tanglei.name/wp-content/uploads/2013/12/clip_image004.jpg)
+<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image004" src="/wp-content/uploads/2013/12/clip_image004_thumb.jpg" alt="clip_image004" width="558" height="408" border="0" />](/wp-content/uploads/2013/12/clip_image004.jpg)
 
 然后生成，生成可能失败，提示权限不够，然后以管理员身份运行再生成。
 
 [
   
-<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image006" src="http://www.tanglei.name/wp-content/uploads/2013/12/clip_image006_thumb.jpg" alt="clip_image006" width="557" height="41" border="0" />](http://www.tanglei.name/wp-content/uploads/2013/12/clip_image006.jpg)
+<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image006" src="/wp-content/uploads/2013/12/clip_image006_thumb.jpg" alt="clip_image006" width="557" height="41" border="0" />](/wp-content/uploads/2013/12/clip_image006.jpg)
 
 如下消息看到成功生成了Dll。
 
@@ -80,7 +80,7 @@ namespace comtest
 
 [
   
-<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image007" src="http://www.tanglei.name/wp-content/uploads/2013/12/clip_image007_thumb.png" alt="clip_image007" width="570" height="127" border="0" />](http://www.tanglei.name/wp-content/uploads/2013/12/clip_image007.png)
+<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image007" src="/wp-content/uploads/2013/12/clip_image007_thumb.png" alt="clip_image007" width="570" height="127" border="0" />](/wp-content/uploads/2013/12/clip_image007.png)
 
 调用放可以直接import这个tlb文件后，直接写一个空的main函数，
 
@@ -90,7 +90,7 @@ namespace comtest
 
 [
   
-<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image008" src="http://www.tanglei.name/wp-content/uploads/2013/12/clip_image008_thumb.png" alt="clip_image008" width="429" height="181" border="0" />](http://www.tanglei.name/wp-content/uploads/2013/12/clip_image008.png)
+<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image008" src="/wp-content/uploads/2013/12/clip_image008_thumb.png" alt="clip_image008" width="429" height="181" border="0" />](/wp-content/uploads/2013/12/clip_image008.png)
 
 调用方式可以是这样：
 
@@ -155,7 +155,7 @@ int main1()//this also works
 
 [
   
-<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="http://www.tanglei.name/wp-content/uploads/2013/12/image_thumb.png" alt="image" width="174" height="67" border="0" />](http://www.tanglei.name/wp-content/uploads/2013/12/image.png)
+<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/12/image_thumb.png" alt="image" width="174" height="67" border="0" />](/wp-content/uploads/2013/12/image.png)
 
 &nbsp;
 

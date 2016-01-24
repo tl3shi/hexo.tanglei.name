@@ -81,13 +81,13 @@ function test3(){
 
 <span style="color: black; font-family: Courier New; font-size: 10pt;">Test1<br /> </span>
 
-![](http://www.tanglei.name/wp-content/uploads/2011/11/111711_1141_Php1.png)
+![](/wp-content/uploads/2011/11/111711_1141_Php1.png)
 
 Test2                                                            Test3
 
-<img class="alignleft" title="php中文水印乱码" src="http://www.tanglei.name/wp-content/uploads/2011/11/111711_1141_Php2.png" alt="php中文水印乱码" width="172" height="245" />
+<img class="alignleft" title="php中文水印乱码" src="/wp-content/uploads/2011/11/111711_1141_Php2.png" alt="php中文水印乱码" width="172" height="245" />
 
-![](http://www.tanglei.name/wp-content/uploads/2011/11/111711_1141_Php3.png)
+![](/wp-content/uploads/2011/11/111711_1141_Php3.png)
 
 &nbsp;
 
@@ -101,7 +101,7 @@ Test2                                                  
 
   *  <span style="color: #660000; background-color: yellow;">$name </span><span style="color: black; background-color: yellow;">= iconv(</span><span style="color: #008200; background-color: yellow;">&#8216;UTF-8&#8217;</span><span style="color: black; background-color: yellow;">, </span><span style="color: #008200; background-color: yellow;">&#8216;GB18030//IGNORE&#8217;</span><span style="color: black; background-color: yellow;">, </span><span style="color: #660000; background-color: yellow;">$name</span><span style="color: black; background-color: yellow;">);</span>
 
-![](http://www.tanglei.name/wp-content/uploads/2011/11/111711_1141_Php4.png)
+![](/wp-content/uploads/2011/11/111711_1141_Php4.png)
 
 &nbsp;
 
@@ -111,7 +111,7 @@ Test2                                                  
 
 <span style="font-family: Courier New; font-size: 10pt;"><span style="color: #660000; background-color: yellow;">$font</span><span style="color: black; background-color: yellow;">=</span><span style="color: #008200; background-color: yellow;">&#8220;./simhei.ttf&#8221;</span><span style="color: black; background-color: yellow;">;</span></span>
 
-![](http://www.tanglei.name/wp-content/uploads/2011/11/111711_1141_Php5.png)
+![](/wp-content/uploads/2011/11/111711_1141_Php5.png)
 
   *   <span style="color: #660000; font-family: Courier New;">$name</span><span style="color: black; font-family: Courier New;">=</span><span style="color: #008200;"><span style="font-family: Courier New;">&#8216;</span><span style="font-family: 宋体;">唐磊</span><span style="font-family: Courier New;">leitang&#8217;</span></span><span style="font-family: Courier New;"><span>;</span></span>
 
@@ -119,7 +119,7 @@ Test2                                                  
 
 <span style="font-size: 10pt;"><span style="color: #660000; font-family: Courier New;">$font </span><span style="color: black; font-family: Courier New;">= </span><span style="color: #008200; font-family: Courier New;">&#8216;./arial.ttf&#8217;</span><span style="color: black; font-family: Courier New;">;</span><span style="color: gray;"><span style="font-family: Courier New;">//</span><span style="font-family: 宋体;">水印字体</span><span style="font-family: Courier New;"><br /> </span></span></span>
 
-![](http://www.tanglei.name/wp-content/uploads/2011/11/111711_1141_Php6.png)
+![](/wp-content/uploads/2011/11/111711_1141_Php6.png)
 
 &nbsp;
 
@@ -129,7 +129,7 @@ Test2                                                  
 
 <span style="font-size: 10pt;"><span style="color: #660000; font-family: Courier New;">$font </span><span style="color: black; font-family: Courier New;">= </span><span style="color: #008200; font-family: Courier New;">&#8216;./simhei.ttf&#8217;</span><span style="color: black; font-family: Courier New;">;</span><span style="color: gray;"><span style="font-family: Courier New;">//</span><span style="font-family: 宋体;">水印字体</span><span style="font-family: Courier New;"><br /> </span></span></span>
 
-![](http://www.tanglei.name/wp-content/uploads/2011/11/111711_1141_Php7.png)
+![](/wp-content/uploads/2011/11/111711_1141_Php7.png)
 
   *  <span style="color: #660000; font-family: Courier New;">$name</span><span style="color: black; font-family: Courier New;">=</span><span style="color: #008200;"><span style="font-family: Courier New;">&#8216;</span><span style="font-family: 宋体;">唐磊</span><span style="font-family: Courier New;">leitang&#8217;</span></span><span style="font-family: Courier New;"><span>;</span></span>
 
@@ -137,7 +137,7 @@ Test2                                                  
 
 <span style="font-size: 10pt;"><span style="color: #660000; font-family: Courier New;">$font </span><span style="color: black; font-family: Courier New;">= </span><span style="color: #008200; font-family: Courier New;">&#8216;./simhei.ttf&#8217;</span><span style="color: black; font-family: Courier New;">;</span><span style="color: gray;"><span style="font-family: Courier New;">//</span><span style="font-family: 宋体;">水印字体</span><span style="font-family: Courier New;"><br /> </span></span></span>
 
-![](http://www.tanglei.name/wp-content/uploads/2011/11/111711_1141_Php8.png)
+![](/wp-content/uploads/2011/11/111711_1141_Php8.png)
 
 &nbsp;
 

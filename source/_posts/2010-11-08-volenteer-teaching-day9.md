@@ -18,7 +18,7 @@ tags:
   - 龙场镇
 ---
 <p class="MsoNormal" style="margin: 0cm 0cm 0pt;">
-  <span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">今天</span><span lang="EN-US"><span style="font-family: Times New Roman;">,</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">我起的比较早了</span><span lang="EN-US"><span style="font-family: Times New Roman;">. <a href="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-1.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-1.jpg" alt="图片" width="482" height="361" /></a></span></span>
+  <span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">今天</span><span lang="EN-US"><span style="font-family: Times New Roman;">,</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">我起的比较早了</span><span lang="EN-US"><span style="font-family: Times New Roman;">. <a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-1.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-1.jpg" alt="图片" width="482" height="361" /></a></span></span>
 </p>
 
 <p class="MsoNormal" style="margin: 0cm 0cm 0pt;">
@@ -30,7 +30,7 @@ tags:
 </p>
 
 <p class="MsoNormal" style="margin: 0cm 0cm 0pt;">
-  <span lang="EN-US"><span style="mso-tab-count: 1;"><span style="font-family: Times New Roman;"><br /> </span></span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">昨晚</span><span lang="EN-US"><span style="font-family: Times New Roman;">,</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">小罗还提出了</span><span lang="EN-US"><span style="font-family: Times New Roman;">,</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">老是让他洗碗呢</span><span lang="EN-US"><span style="font-family: Times New Roman;">.</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">看来现在那些女生也不会再叫他洗碗了</span><span lang="EN-US"><span style="font-family: Times New Roman;">.</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">我就自觉点吧</span><span lang="EN-US"><span style="font-family: Times New Roman;">.</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">洗碗吧</span><span lang="EN-US"><span style="font-family: Times New Roman;">.</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">不过居然下午去家访的途中</span><span lang="EN-US"><span style="font-family: Times New Roman;">,</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">居然小高还不信碗是我洗滴</span><span lang="EN-US"><span style="font-family: Times New Roman;">.</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">唉</span><span lang="EN-US"><span style="font-family: Times New Roman;">,<a href="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-2.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-2.jpg" alt="图片" width="670" height="502" /></a></span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">伤心啊</span><span lang="EN-US"><span style="font-family: Times New Roman;">.</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">我</span><span lang="EN-US"><span style="font-family: Times New Roman;">.</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">其实</span><span lang="EN-US"><span style="font-family: Times New Roman;">,</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">我有他们想想中的那么懒嘛</span><span lang="EN-US"><span style="font-family: Times New Roman;">?</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">不就是早上起床起的比较晚了点嘛</span><span lang="EN-US"><span style="font-family: Times New Roman;">.</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">其他的还行吧</span><span lang="EN-US"><span style="font-family: Times New Roman;">.</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">看</span><span lang="EN-US"><span style="font-family: Times New Roman;">,</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">今天衣服也是我自己洗滴</span><span lang="EN-US"><span style="font-family: Times New Roman;">.<a href="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-3.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-3.jpg" alt="图片" width="670" height="502" /></a></span></span>
+  <span lang="EN-US"><span style="mso-tab-count: 1;"><span style="font-family: Times New Roman;"><br /> </span></span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">昨晚</span><span lang="EN-US"><span style="font-family: Times New Roman;">,</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">小罗还提出了</span><span lang="EN-US"><span style="font-family: Times New Roman;">,</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">老是让他洗碗呢</span><span lang="EN-US"><span style="font-family: Times New Roman;">.</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">看来现在那些女生也不会再叫他洗碗了</span><span lang="EN-US"><span style="font-family: Times New Roman;">.</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">我就自觉点吧</span><span lang="EN-US"><span style="font-family: Times New Roman;">.</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">洗碗吧</span><span lang="EN-US"><span style="font-family: Times New Roman;">.</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">不过居然下午去家访的途中</span><span lang="EN-US"><span style="font-family: Times New Roman;">,</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">居然小高还不信碗是我洗滴</span><span lang="EN-US"><span style="font-family: Times New Roman;">.</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">唉</span><span lang="EN-US"><span style="font-family: Times New Roman;">,<a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-2.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-2.jpg" alt="图片" width="670" height="502" /></a></span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">伤心啊</span><span lang="EN-US"><span style="font-family: Times New Roman;">.</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">我</span><span lang="EN-US"><span style="font-family: Times New Roman;">.</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">其实</span><span lang="EN-US"><span style="font-family: Times New Roman;">,</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">我有他们想想中的那么懒嘛</span><span lang="EN-US"><span style="font-family: Times New Roman;">?</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">不就是早上起床起的比较晚了点嘛</span><span lang="EN-US"><span style="font-family: Times New Roman;">.</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">其他的还行吧</span><span lang="EN-US"><span style="font-family: Times New Roman;">.</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">看</span><span lang="EN-US"><span style="font-family: Times New Roman;">,</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">今天衣服也是我自己洗滴</span><span lang="EN-US"><span style="font-family: Times New Roman;">.<a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-3.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-3.jpg" alt="图片" width="670" height="502" /></a></span></span>
 </p>
 
 <p class="MsoNormal" style="margin: 0cm 0cm 0pt;">
@@ -42,66 +42,66 @@ tags:
 </p>
 
 <p class="MsoNormal" style="margin: 0cm 0cm 0pt;">
-  <span lang="EN-US"><a href="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-4.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-4.jpg" alt="图片" width="670" height="502" /></a></p> 
+  <span lang="EN-US"><a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-4.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-4.jpg" alt="图片" width="670" height="502" /></a></p> 
   
   <p>
-    <a href="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-5.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-5.jpg" alt="图片" width="670" height="502" /></a>
+    <a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-5.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-5.jpg" alt="图片" width="670" height="502" /></a>
   </p>
   
   <p>
-    <a href="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-6.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-6.jpg" alt="图片" width="670" height="502" /></a>
+    <a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-6.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-6.jpg" alt="图片" width="670" height="502" /></a>
   </p>
   
   <p>
-    <a href="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-7.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-7.jpg" alt="图片" width="670" height="502" /></a>
+    <a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-7.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-7.jpg" alt="图片" width="670" height="502" /></a>
   </p>
   
   <p>
-    <a href="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-8.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-8.jpg" alt="图片" width="670" height="502" /></a>
+    <a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-8.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-8.jpg" alt="图片" width="670" height="502" /></a>
   </p>
   
   <p>
-    <a href="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-9.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-9.jpg" alt="图片" width="670" height="502" /></a>
+    <a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-9.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-9.jpg" alt="图片" width="670" height="502" /></a>
   </p>
   
   <p>
-    <a href="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-10.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-10.jpg" alt="图片" width="670" height="502" /></a>
+    <a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-10.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-10.jpg" alt="图片" width="670" height="502" /></a>
   </p>
   
   <p>
-    <a href="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-11.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-11.jpg" alt="图片" width="670" height="502" /></a>
+    <a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-11.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-11.jpg" alt="图片" width="670" height="502" /></a>
   </p>
   
   <p>
-    <a href="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-12.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-12.jpg" alt="图片" width="670" height="502" /></a>
+    <a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-12.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-12.jpg" alt="图片" width="670" height="502" /></a>
   </p>
   
   <p>
-    <a href="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-13.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-13.jpg" alt="图片" width="670" height="502" /></a>
+    <a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-13.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-13.jpg" alt="图片" width="670" height="502" /></a>
   </p>
   
   <p>
-    <a href="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-14.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-14.jpg" alt="图片" width="670" height="502" /></a>
+    <a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-14.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-14.jpg" alt="图片" width="670" height="502" /></a>
   </p>
   
   <p>
-    <a href="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-15.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-15.jpg" alt="图片" width="670" height="502" /></a>
+    <a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-15.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-15.jpg" alt="图片" width="670" height="502" /></a>
   </p>
   
   <p>
-    <a href="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-16.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-16.jpg" alt="图片" width="670" height="502" /></a>
+    <a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-16.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-16.jpg" alt="图片" width="670" height="502" /></a>
   </p>
   
   <p>
-    <a href="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-17.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-17.jpg" alt="图片" width="670" height="502" /></a>
+    <a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-17.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-17.jpg" alt="图片" width="670" height="502" /></a>
   </p>
   
   <p>
-    <a href="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-18.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-18.jpg" alt="图片" width="670" height="502" /></a>
+    <a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-18.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-18.jpg" alt="图片" width="670" height="502" /></a>
   </p>
   
   <p>
-    <a href="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-19.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="http://www.tanglei.name/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-19.jpg" alt="图片" width="670" height="502" /></a>
+    <a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-19.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-19.jpg" alt="图片" width="670" height="502" /></a>
   </p>
   
   <p>

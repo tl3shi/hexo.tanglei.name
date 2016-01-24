@@ -17,7 +17,7 @@ tags:
 
 I3theme里面的确集成了gravatar，估计版本间有问题吧。调用的方法不一致，导致最后显示不了头像。<?php echo get\_avatar( $comment, 50 ); ?>这个句代码能正确显示出来。而i3theme本身还有个if else的判断是否有gravatar，却没有显示出来。应该是版本兼容问题。但出现的头像很突然的&#8221;立“在那里，不太好看。又改了下显示的静态内容，若XX在XX时间对你说 啊之类的话。这加了之后，发现与真正评论的内容有不很容易区分，于是又加了个hr，能区分了，但多个评论内容之间区分又不怎么明显，看comments。php源码，是传统的分奇偶数有不同的CSS，自己的DIV +CSS确实不咋样，就懒得去花时间改了，要是可以的话改改奇偶数的评论的背景CSS就好了，以区分各个评论之间的内容。搞了好久，才勉强出现了现在的这个样子。然而就在上传至blog.i3zhai.com的时候出现了问题。因为我加的表情路径<img src=&#8221;wp-includes/images/smilies/icon\_question.gif&#8221; alt=&#8221;&#8221; />，而本机直接访问就是localhost/wordpress/wp-includes/……就能访问到表情位置了。传至web后，当然不是真正的路径。出现了如下的错误;
 
-[<img class="alignleft size-full wp-image-100" title="bug" src="http://www.tanglei.name/wp-content/uploads/2010/12/bug.jpg" alt="" width="785" height="221" />](http://www.tanglei.name/wp-content/uploads/2010/12/bug.jpg)
+[<img class="alignleft size-full wp-image-100" title="bug" src="/wp-content/uploads/2010/12/bug.jpg" alt="" width="785" height="221" />](/wp-content/uploads/2010/12/bug.jpg)
 
 才发现，这个问题还能暴露godaddy空间的路径啊。有闲心的话，还可以研究下攻击到挂在godaddy上的同IP的其他网站呢。呵呵。……
 

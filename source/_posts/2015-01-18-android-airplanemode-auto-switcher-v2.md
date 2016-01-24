@@ -30,23 +30,23 @@ tags:
 
   * 主界面：模仿了某闹钟的界面,将所有任务列表展现出来，默认添加两个任务，凌晨零点打开飞行模式，清晨六点半关闭飞行模式。右上角有一个“添加”新任务按钮，然后就是菜单。菜单第二项是立即开启/关闭飞行模式，当前状态为正常时，点击则跳转至文末(图5中)5s倒计时切换提示，当前为飞行模式时，点击回到正常模式。
 
-<a href="http://www.tanglei.name/wp-content/uploads/2015/01/1-main.jpg" target="_blank"><img style="background-image: none; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; display: block; padding-right: 0px; margin-right: auto; border: 0px;" title="图1" src="http://www.tanglei.name/wp-content/uploads/2015/01/1-main_thumb.jpg" alt="android自动切换飞行模式" width="644" height="380" border="0" /></a>
+<a href="/wp-content/uploads/2015/01/1-main.jpg" target="_blank"><img style="background-image: none; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; display: block; padding-right: 0px; margin-right: auto; border: 0px;" title="图1" src="/wp-content/uploads/2015/01/1-main_thumb.jpg" alt="android自动切换飞行模式" width="644" height="380" border="0" /></a>
 
   * 任务详情：从主界面点“添加”按钮或者长按某个任务“编辑”“查看”按钮进入任务详情界面，点击“时间”可调整任务执行的时间，可设置任务名称，任务类型“打开”表示该任务到期后会执行飞行模式，“关闭”表示任务到时候会关闭飞行模式，下面的重复表示该任务以怎样的方式进行重复，点亮表示选择（示例中表示每周2和周4重复），设置好后点击左上角“保存任务”，右上角菜单“放弃”。
 
-<a href="http://www.tanglei.name/wp-content/uploads/2015/01/2-taskdetail.png" target="_blank"><img style="background-image: none; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; display: block; padding-right: 0px; margin-right: auto; border: 0px;" title="图2" src="http://www.tanglei.name/wp-content/uploads/2015/01/2-taskdetail_thumb.png" alt="Android自动切换飞行模式" width="644" height="382" border="0" /></a>
+<a href="/wp-content/uploads/2015/01/2-taskdetail.png" target="_blank"><img style="background-image: none; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; display: block; padding-right: 0px; margin-right: auto; border: 0px;" title="图2" src="/wp-content/uploads/2015/01/2-taskdetail_thumb.png" alt="Android自动切换飞行模式" width="644" height="382" border="0" /></a>
 
   * 开启/关闭及删除任务：在主界面中，点击每个任务右边的button可以切换选中任务的状态，状态为开启时，会提示该任务下次执行的时间；需要删除某个任务时长按该任务，在弹出菜单中(图1-右)中选中删除，点击确定即可。主界面菜单中点击“查看运行日志”可以查看只应用安装以来软件运行的每个任务状态，当记录太多时，可以选择从菜单中清除日志(图中有英文是我测试国际化的东东，原谅丑了点)。
 
-<a href="http://www.tanglei.name/wp-content/uploads/2015/01/3-enable-delete-log.png" target="_blank"><img style="background-image: none; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; display: block; padding-right: 0px; margin-right: auto; border: 0px;" title="图3" src="http://www.tanglei.name/wp-content/uploads/2015/01/3-enable-delete-log_thumb.png" alt="Android自动切换飞行模式" width="644" height="382" border="0" /></a>
+<a href="/wp-content/uploads/2015/01/3-enable-delete-log.png" target="_blank"><img style="background-image: none; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; display: block; padding-right: 0px; margin-right: auto; border: 0px;" title="图3" src="/wp-content/uploads/2015/01/3-enable-delete-log_thumb.png" alt="Android自动切换飞行模式" width="644" height="382" border="0" /></a>
 
   * 反馈/更新：从主页面菜单中“意见反馈”可进入“意见反馈”界面，你可以填写联系信息让我更方便与你取得联系，输入“吐槽意见”后发送，我在UMeng后台就可以看到并给予回复，最快的话其实你是可以跟上一个版本中一样直接给我发邮件，“关于”样子如下图(中)，懒得写直接用了上个版本的About, 但加了版本信息，可以直接点连接给我邮件。每次启动的时候，你在**Wifi状态**下的话，程序会自动检测是否有更新的版本，有的话会提示你更新。//其实这几个功能把整个App的大小扩大了不少，原来只有几十k的应用现在变成了1.5M. 只是试着用用[之前东家](http://www.tanglei.name/aop-in-python/)的产品。
 
-[<img style="background-image: none; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; display: block; padding-right: 0px; margin-right: auto; border: 0px;" title="4-umeng-tools" src="http://www.tanglei.name/wp-content/uploads/2015/01/4-umeng-tools_thumb.png" alt="4-umeng-tools" width="644" height="378" border="0" />](http://www.tanglei.name/wp-content/uploads/2015/01/4-umeng-tools.png)
+[<img style="background-image: none; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; display: block; padding-right: 0px; margin-right: auto; border: 0px;" title="4-umeng-tools" src="/wp-content/uploads/2015/01/4-umeng-tools_thumb.png" alt="4-umeng-tools" width="644" height="378" border="0" />](/wp-content/uploads/2015/01/4-umeng-tools.png)
 
   * 其他：还是跟前一个版本一样，因为>4.2 要Root权限，所以当下图左出现时，得点“授权”, 用户在操作手机时，时间到了会有5s的犹豫时间，可以直接确定或者取消当前当次的任务。最右边那个是一个简单的帮助内容，其实本文还是更详细啦。
 
-<a href="http://www.tanglei.name/wp-content/uploads/2015/01/others.png" target="_blank"><img style="background-image: none; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; display: block; padding-right: 0px; margin-right: auto; border: 0px;" title="图4" src="http://www.tanglei.name/wp-content/uploads/2015/01/others_thumb.png" alt="Android定时切换飞行模式" width="644" height="383" border="0" /></a>
+<a href="/wp-content/uploads/2015/01/others.png" target="_blank"><img style="background-image: none; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; display: block; padding-right: 0px; margin-right: auto; border: 0px;" title="图4" src="/wp-content/uploads/2015/01/others_thumb.png" alt="Android定时切换飞行模式" width="644" height="383" border="0" /></a>
 
 <div>
 </div>

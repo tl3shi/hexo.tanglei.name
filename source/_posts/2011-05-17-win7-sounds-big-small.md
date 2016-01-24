@@ -34,7 +34,7 @@ tags:
 如下图：
 
 <div id="attachment_662" style="width: 232px" class="wp-caption aligncenter">
-  <a href="http://www.tanglei.name/wp-content/uploads/2011/05/d.png"><img class="size-medium wp-image-662" title="win7声音忽大忽小" src="http://www.tanglei.name/wp-content/uploads/2011/05/d-222x300.png" alt="" width="222" height="300" /></a>
+  <a href="/wp-content/uploads/2011/05/d.png"><img class="size-medium wp-image-662" title="win7声音忽大忽小" src="/wp-content/uploads/2011/05/d-222x300.png" alt="" width="222" height="300" /></a>
   
   <p class="wp-caption-text">
     声音忽大忽小

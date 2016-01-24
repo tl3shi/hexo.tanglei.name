@@ -19,7 +19,7 @@ tags:
 不得不吐槽下Xcode的debug功能实在是弱爆了～ 网上也不止我一个人吐槽～废话不多说，看图
 
 <div>
-  <a href="http://www.tanglei.name/wp-content/uploads/2014/07/xcode-debug.jpg"><img class="size-full wp-image-2505 aligncenter" title="xcode-debug" src="http://www.tanglei.name/wp-content/uploads/2014/07/xcode-debug.jpg" alt="" width="1081" height="825" /></a>
+  <a href="/wp-content/uploads/2014/07/xcode-debug.jpg"><img class="size-full wp-image-2505 aligncenter" title="xcode-debug" src="/wp-content/uploads/2014/07/xcode-debug.jpg" alt="" width="1081" height="825" /></a>
 </div>
 
 看上图的一段调试代码～我不吐槽xcode从用户交互等易用性，TA的可用性都简直。。。

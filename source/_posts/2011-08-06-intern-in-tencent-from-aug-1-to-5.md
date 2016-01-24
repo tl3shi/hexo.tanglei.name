@@ -31,7 +31,7 @@ tags:
 </p>
 
 <p style="margin-left: 10pt;">
-  <img src="http://www.tanglei.name/wp-content/uploads/2011/08/080611_1138_81851.png" alt="" /><span style="color: black; font-family: 宋体; font-size: 12pt;"><br /> </span>
+  <img src="/wp-content/uploads/2011/08/080611_1138_81851.png" alt="" /><span style="color: black; font-family: 宋体; font-size: 12pt;"><br /> </span>
 </p>
 
 <p style="margin-left: 10pt;">
@@ -47,5 +47,5 @@ tags:
 </p>
 
 <p style="margin-left: 10pt;">
-  <img src="http://www.tanglei.name/wp-content/uploads/2011/08/080611_1138_81852.png" alt="" /><span style="color: black; font-family: 宋体; font-size: 12pt;"><br /> </span>
+  <img src="/wp-content/uploads/2011/08/080611_1138_81852.png" alt="" /><span style="color: black; font-family: 宋体; font-size: 12pt;"><br /> </span>
 </p>

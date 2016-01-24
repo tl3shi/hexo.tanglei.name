@@ -36,21 +36,21 @@ android的apk文件反编译用到的工具：
 
 下面看看过程：
 
-  1. 反编译得到源代码，直接将apk文件后缀改成rar,用winrar解压即可得到classes.dex，然后通过dex2jar工具就能得到java的源代码。[<img style="display: block; float: none; margin-left: auto; margin-right: auto; border-width: 0px;" title="apk反编译dex2jar" src="http://www.tanglei.name/wp-content/uploads/2012/04/dex2jar_thumb.jpg" alt="apk反编译dex2jar" width="652" height="93" border="0" />](http://www.tanglei.name/wp-content/uploads/2012/04/dex2jar.jpg)
-  2. 然后用jd-gui查看编译后的源代码。看样子好像确实是山寨的，不过可能因为二者版本不一致导致的？我想可能不大。下图左边为网上能下载到的开发商是**halfbriakin**发布的软件，在什么豌豆荚啊应用汇啊等等能下到，其介绍敢说哦什么Android官方无广告版本正式发布，只能说在放P了。下图右是我到google play下的，官网的免费版本。能看出来开发商是**halfbriakin**这个版本多了个上面那个包。[<img style="display: block; float: none; margin-left: auto; margin-right: auto; border-width: 0px;" title="fruitninjafree广告" src="http://www.tanglei.name/wp-content/uploads/2012/04/fruitninjafree_thumb.jpg" alt="fruitninjafree广告" width="711" height="319" border="0" data-pinit="registered" />](http://www.tanglei.name/wp-content/uploads/2012/04/fruitninjafree.jpg)
+  1. 反编译得到源代码，直接将apk文件后缀改成rar,用winrar解压即可得到classes.dex，然后通过dex2jar工具就能得到java的源代码。[<img style="display: block; float: none; margin-left: auto; margin-right: auto; border-width: 0px;" title="apk反编译dex2jar" src="/wp-content/uploads/2012/04/dex2jar_thumb.jpg" alt="apk反编译dex2jar" width="652" height="93" border="0" />](/wp-content/uploads/2012/04/dex2jar.jpg)
+  2. 然后用jd-gui查看编译后的源代码。看样子好像确实是山寨的，不过可能因为二者版本不一致导致的？我想可能不大。下图左边为网上能下载到的开发商是**halfbriakin**发布的软件，在什么豌豆荚啊应用汇啊等等能下到，其介绍敢说哦什么Android官方无广告版本正式发布，只能说在放P了。下图右是我到google play下的，官网的免费版本。能看出来开发商是**halfbriakin**这个版本多了个上面那个包。[<img style="display: block; float: none; margin-left: auto; margin-right: auto; border-width: 0px;" title="fruitninjafree广告" src="/wp-content/uploads/2012/04/fruitninjafree_thumb.jpg" alt="fruitninjafree广告" width="711" height="319" border="0" data-pinit="registered" />](/wp-content/uploads/2012/04/fruitninjafree.jpg)
   3. 怀疑类似一些请求广告的url写在资源xml文件中，因此得解码资源文件。android的xml资源文件解码有两种方法
 
-  * 用<a href="http://ishare.iask.sina.com.cn/f/19218022.html" target="_blank">AXMLPrinter2</a>.如下图命令后,打开t.xml文件可以看到AdnroidManifest的内容。<img style="display: block; float: none; margin-left: auto; margin-right: auto; border-width: 0px;" title="android反编译资源xml文件" src="http://www.tanglei.name/wp-content/uploads/2012/04/androidxml_thumb.jpg" alt="android反编译资源xml文件" width="657" height="42" border="0" />
+  * 用<a href="http://ishare.iask.sina.com.cn/f/19218022.html" target="_blank">AXMLPrinter2</a>.如下图命令后,打开t.xml文件可以看到AdnroidManifest的内容。<img style="display: block; float: none; margin-left: auto; margin-right: auto; border-width: 0px;" title="android反编译资源xml文件" src="/wp-content/uploads/2012/04/androidxml_thumb.jpg" alt="android反编译资源xml文件" width="657" height="42" border="0" />
   * 用apktool,如图。直接打开各个目录下的xml文件即可看到
 
-[<img style="display: block; float: none; margin-left: auto; margin-right: auto; border-width: 0px;" title="android资源文件反编译apktool" src="http://www.tanglei.name/wp-content/uploads/2012/04/androidapktool_thumb.jpg" alt="android资源文件反编译apktool" width="654" height="183" border="0" data-pinit="registered" />](http://www.tanglei.name/wp-content/uploads/2012/04/androidapktool.jpg)
+[<img style="display: block; float: none; margin-left: auto; margin-right: auto; border-width: 0px;" title="android资源文件反编译apktool" src="/wp-content/uploads/2012/04/androidapktool_thumb.jpg" alt="android资源文件反编译apktool" width="654" height="183" border="0" data-pinit="registered" />](/wp-content/uploads/2012/04/androidapktool.jpg)
 
 结果找了下，好像什么请求广告的url之类没写在string.xml等文件里面。还是看源代码吧。
 
 查了下，’山寨’版本(暂且这么叫吧)的切水果，除了官方版本的广告外(google ads,意大利的游戏广告企业<a href="http://www.beintoo.com" target="_blank">beintoo</a>，移动广告服务商<a href="www.admob.com/A" target="_blank">admob</a>和<a href="www.mobclix.com" target="_blank">moblix</a>)，还有多余的那个包<a href="www.domob.cn/" target="_blank">domob</a>(国内的手机广告服务商多盟)，找了下没有找到相关的绑定的ID(也不深究了)。感到奇怪的是，水果忍者发布出来的源码里面出现了好多这种废弃的代码，不知道是程序员懒还是怎么着。自我感觉发布的时候还是把废弃代码给删掉吧，能减轻体重呢。<span style="color: #ff0000;">【更新：感谢网友的指出，之前根本没想到这些代码有可能是反编译失败/出错产生的，让大家见笑了】</span>
 
-[<img style="display: block; float: none; margin-left: auto; margin-right: auto; border-width: 0px;" title="切水果程序员废弃代码" src="http://www.tanglei.name/wp-content/uploads/2012/04/thumb.jpg" alt="切水果程序员废弃代码" width="644" height="373" border="0" data-pinit="registered" />](http://www.tanglei.name/wp-content/uploads/2012/04/4acb83313de3.jpg)另外看“山寨”的源码也有这种废弃的代码：
+[<img style="display: block; float: none; margin-left: auto; margin-right: auto; border-width: 0px;" title="切水果程序员废弃代码" src="/wp-content/uploads/2012/04/thumb.jpg" alt="切水果程序员废弃代码" width="644" height="373" border="0" data-pinit="registered" />](/wp-content/uploads/2012/04/4acb83313de3.jpg)另外看“山寨”的源码也有这种废弃的代码：
 
-[<img style="display: block; float: none; margin-left: auto; margin-right: auto; border: 0px;" title="水果忍着恶心代码恶心广告" src="http://www.tanglei.name/wp-content/uploads/2012/04/image_thumb1.png" alt="水果忍着恶心代码恶心广告" width="666" height="446" border="0" data-pinit="registered" />](http://www.tanglei.name/wp-content/uploads/2012/04/image1.png)现在就不知道是到底是出自原来的程序员之手呢还是说山寨的过程中，copy了这些代码。
+[<img style="display: block; float: none; margin-left: auto; margin-right: auto; border: 0px;" title="水果忍着恶心代码恶心广告" src="/wp-content/uploads/2012/04/image_thumb1.png" alt="水果忍着恶心代码恶心广告" width="666" height="446" border="0" data-pinit="registered" />](/wp-content/uploads/2012/04/image1.png)现在就不知道是到底是出自原来的程序员之手呢还是说山寨的过程中，copy了这些代码。
 
 不管怎么说，如果这个开发商**halfbriakin**是来自官网也好，不是也罢，你这个广告也弹得太恶心了。  看了这么久也没什么确切的结论，反正我是卸载了这个app。

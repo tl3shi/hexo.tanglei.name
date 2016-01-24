@@ -24,5 +24,5 @@ windows下有<a href="http://www.tanglei.name/publish-a-blog-easily-and-quickly-
 发个截图，纪念下。
 
 <p style="text-align: center;">
-  <a href="http://www.tanglei.name/wp-content/uploads/2012/07/name_003.jpeg" target="_blank"><img class="aligncenter" title="blogilo-ubuntu-wordpress工具" src="http://www.tanglei.name/wp-content/uploads/2012/07/name_003.jpeg" alt="blogilo-ubuntu-wordpress工具" width="683" height="474" /></a>
+  <a href="/wp-content/uploads/2012/07/name_003.jpeg" target="_blank"><img class="aligncenter" title="blogilo-ubuntu-wordpress工具" src="/wp-content/uploads/2012/07/name_003.jpeg" alt="blogilo-ubuntu-wordpress工具" width="683" height="474" /></a>
 </p>

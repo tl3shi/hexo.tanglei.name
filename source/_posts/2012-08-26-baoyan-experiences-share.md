@@ -20,13 +20,13 @@ tags:
 
 以下本人保研时的一些材料。
 
-保研个人陈述：<del>http://www.tanglei.name/wp-content/blogresources/experiences-in-baoyan/csu-tanglei-statements.pdf</del>
+保研个人陈述：<del>/wp-content/blogresources/experiences-in-baoyan/csu-tanglei-statements.pdf</del>
 
-保研的简历：<del>http://www.tanglei.name/wp-content/blogresources/experiences-in-baoyan/csu-tanglei-resume.pdf</del>
+保研的简历：<del>/wp-content/blogresources/experiences-in-baoyan/csu-tanglei-resume.pdf</del>
 
-保研的专家推荐信1：<del>http://www.tanglei.name/wp-content/blogresources/experiences-in-baoyan/expert-recommendation-1.pdf</del>
+保研的专家推荐信1：<del>/wp-content/blogresources/experiences-in-baoyan/expert-recommendation-1.pdf</del>
 
-保研的专家推荐信2：<del>http://www.tanglei.name/wp-content/blogresources/experiences-in-baoyan/expert-recommendation-2.pdf</del>
+保研的专家推荐信2：<del>/wp-content/blogresources/experiences-in-baoyan/expert-recommendation-2.pdf</del>
 
 **上面链接已失效，需要的童鞋请留下邮箱，我会发送给你。**
   

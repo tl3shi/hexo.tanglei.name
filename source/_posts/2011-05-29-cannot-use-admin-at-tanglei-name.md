@@ -24,7 +24,7 @@ tags:
   </div>
   
   <div>
-    <span style="color: #000080; font-family: Verdana; font-size: x-small;"><a href="http://www.tanglei.name/wp-content/uploads/2011/05/1.jpg"><img class="size-full wp-image-731 aligncenter" title="1" src="http://www.tanglei.name/wp-content/uploads/2011/05/1.jpg" alt="" width="419" height="261" /></a><br /> </span>
+    <span style="color: #000080; font-family: Verdana; font-size: x-small;"><a href="/wp-content/uploads/2011/05/1.jpg"><img class="size-full wp-image-731 aligncenter" title="1" src="/wp-content/uploads/2011/05/1.jpg" alt="" width="419" height="261" /></a><br /> </span>
   </div>
   
   <div style="text-align: left;">
@@ -32,5 +32,5 @@ tags:
   </div>
   
   <div style="text-align: left;">
-    <span style="color: #000080; font-family: Verdana; font-size: x-small;"><a href="http://www.tanglei.name/wp-content/uploads/2011/05/2.jpg"><img class="aligncenter size-full wp-image-732" title="2" src="http://www.tanglei.name/wp-content/uploads/2011/05/2.jpg" alt="" width="507" height="336" /></a><br /> </span>
+    <span style="color: #000080; font-family: Verdana; font-size: x-small;"><a href="/wp-content/uploads/2011/05/2.jpg"><img class="aligncenter size-full wp-image-732" title="2" src="/wp-content/uploads/2011/05/2.jpg" alt="" width="507" height="336" /></a><br /> </span>
   </div>

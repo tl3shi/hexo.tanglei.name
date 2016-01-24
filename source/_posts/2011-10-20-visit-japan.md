@@ -23,9 +23,9 @@ tags:
 
 20号凌晨4点多就起床出发了,到达首都机场,准备出发. 08：30-12：50     CA181  北京→东京.8点半是北京时间出发,12点50是东京时间到达.所以基本上就是3个半小时的样子.下了飞机,日本给人的感觉就是净. 全程由王(晓梅)姐(导游)带团。看看路面上的，几乎没啥灰尘，路上行驶的车辆，轮胎也是跟刚洗车后的一样干净。路上没有看到任何垃圾，马路上也没有垃圾桶之类的。
 
-[<img class="size-medium wp-image-1210 alignleft" title="japan_bus" src="http://www.tanglei.name/wp-content/uploads/2011/10/japan_bus1-300x225.jpg" alt="丰田助学金访日交流代表团" width="300" height="225" />](http://www.tanglei.name/wp-content/uploads/2011/10/japan_bus1.jpg)
+[<img class="size-medium wp-image-1210 alignleft" title="japan_bus" src="/wp-content/uploads/2011/10/japan_bus1-300x225.jpg" alt="丰田助学金访日交流代表团" width="300" height="225" />](/wp-content/uploads/2011/10/japan_bus1.jpg)
 
-去早稻田大学访问交流时顺便去了趟教学楼，看看他们的垃圾桶吧。这么长一排。[<img class="alignright size-medium wp-image-1211" title="japan_wasde" src="http://www.tanglei.name/wp-content/uploads/2011/10/japan_wasde-300x168.jpg" alt="丰田助学金访日交流" width="300" height="168" />](http://www.tanglei.name/wp-content/uploads/2011/10/japan_wasde.jpg)
+去早稻田大学访问交流时顺便去了趟教学楼，看看他们的垃圾桶吧。这么长一排。[<img class="alignright size-medium wp-image-1211" title="japan_wasde" src="/wp-content/uploads/2011/10/japan_wasde-300x168.jpg" alt="丰田助学金访日交流" width="300" height="168" />](/wp-content/uploads/2011/10/japan_wasde.jpg)
   
 后来去丰田市内环境教育设施参观时，才知道一些细节问题：垃圾分类回收。周一是仍什么种类的垃圾，周二周三是收什么时候的垃圾，家里产生的垃圾各种分类后放到指定的地点。哪怕一个矿泉水瓶在仍垃圾时，标准做法也要瓶盖扔一个桶，塑料瓶仍另一个桶，外面的塑料包装纸还得再仍一个垃圾桶。当然估计很多人这点也是没有做到的。不过确实人家的环境好，这是毋容置疑滴。
 

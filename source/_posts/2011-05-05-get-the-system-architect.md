@@ -18,7 +18,7 @@ tags:
 感谢石文海同学，今天帮忙去把证给领回来了。红色的外壳，不怎么好看啊。
 
 <div id="attachment_624" style="width: 310px" class="wp-caption aligncenter">
-  <a href="http://www.tanglei.name/wp-content/uploads/2011/05/Software-Architect-outer.jpg"><img class="size-medium wp-image-624" title="Software Architect-outer" src="http://www.tanglei.name/wp-content/uploads/2011/05/Software-Architect-outer-300x224.jpg" alt="系统架构设计师证书外壳" width="300" height="224" /></a>
+  <a href="/wp-content/uploads/2011/05/Software-Architect-outer.jpg"><img class="size-medium wp-image-624" title="Software Architect-outer" src="/wp-content/uploads/2011/05/Software-Architect-outer-300x224.jpg" alt="系统架构设计师证书外壳" width="300" height="224" /></a>
   
   <p class="wp-caption-text">
     系统架构设计师证书外壳
@@ -26,7 +26,7 @@ tags:
 </div>
 
 <div id="attachment_623" style="width: 310px" class="wp-caption aligncenter">
-  <a href="http://www.tanglei.name/wp-content/uploads/2011/05/System-Architect.jpg"><img class="size-medium wp-image-623" title="System Architect" src="http://www.tanglei.name/wp-content/uploads/2011/05/System-Architect-300x224.jpg" alt="系统架构设计师证" width="300" height="224" /></a>
+  <a href="/wp-content/uploads/2011/05/System-Architect.jpg"><img class="size-medium wp-image-623" title="System Architect" src="/wp-content/uploads/2011/05/System-Architect-300x224.jpg" alt="系统架构设计师证" width="300" height="224" /></a>
   
   <p class="wp-caption-text">
     系统架构设计师证
@@ -39,8 +39,8 @@ tags:
 
 刚翻了下以前的设计师证书，也看看，留个纪念给自己。
 
-[<img class="aligncenter size-medium wp-image-625" title="Software Architect-outer" src="http://www.tanglei.name/wp-content/uploads/2011/05/Software-Architect-outer1-300x224.jpg" alt="软件设计师证书外壳" width="300" height="224" />](http://www.tanglei.name/wp-content/uploads/2011/05/Software-Architect-outer1.jpg)
+[<img class="aligncenter size-medium wp-image-625" title="Software Architect-outer" src="/wp-content/uploads/2011/05/Software-Architect-outer1-300x224.jpg" alt="软件设计师证书外壳" width="300" height="224" />](/wp-content/uploads/2011/05/Software-Architect-outer1.jpg)
 
 里面就差不多了。就是内容不一样而已。
 
-[<img class="aligncenter size-medium wp-image-626" title="Software Architect" src="http://www.tanglei.name/wp-content/uploads/2011/05/Software-Architect-300x224.jpg" alt="软件设计师证书" width="300" height="224" />](http://www.tanglei.name/wp-content/uploads/2011/05/Software-Architect.jpg)
+[<img class="aligncenter size-medium wp-image-626" title="Software Architect" src="/wp-content/uploads/2011/05/Software-Architect-300x224.jpg" alt="软件设计师证书" width="300" height="224" />](/wp-content/uploads/2011/05/Software-Architect.jpg)

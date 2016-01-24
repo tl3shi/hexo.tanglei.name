@@ -19,4 +19,4 @@ tags:
 
 我赶紧查看，是JS报错，提示说没有权限。具体情况是这样子的,当前页面有一个表单，另外还包含一个iframe，当点击一个按钮时，submit，但设置target是这个iframe，然后呢，在firefox下，没有任何问题，服务器能成功响应，但IE下就报错，说没有权限。后来网上查，说这个是因为不能跨域访问。服务器返回JS里面加一句话就可以了<span style="font-size:10pt">document.domain=xx,例如我遇到的这个问题就采用下面的方法解决了<br /> </span>
 
-![](http://www.tanglei.name/wp-content/uploads/2011/08/080611_1139_JS1.png)
+![](/wp-content/uploads/2011/08/080611_1139_JS1.png)

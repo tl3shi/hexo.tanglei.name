@@ -48,7 +48,7 @@ tags:
 </p>
 
 <div id="attachment_1328" style="width: 310px" class="wp-caption aligncenter">
-  <a href="http://www.tanglei.name/wp-content/uploads/2011/12/search_everything+1.jpg"><img class=" wp-image-1328 " title="search_everything,含有搜索本地文件软件包" src="http://www.tanglei.name/wp-content/uploads/2011/12/search_everything+1-300x271.jpg" alt="search_everything,含有搜索本地文件软件包" width="300" height="271" /></a>
+  <a href="/wp-content/uploads/2011/12/search_everything+1.jpg"><img class=" wp-image-1328 " title="search_everything,含有搜索本地文件软件包" src="/wp-content/uploads/2011/12/search_everything+1-300x271.jpg" alt="search_everything,含有搜索本地文件软件包" width="300" height="271" /></a>
   
   <p class="wp-caption-text">
     search_everything,含有搜索本地文件软件包
@@ -60,7 +60,7 @@ tags:
 第二个：结束文件占用进程的工具。
 
 <div id="attachment_1327" style="width: 310px" class="wp-caption aligncenter">
-  <a href="http://www.tanglei.name/wp-content/uploads/2011/12/unlock+1.jpg"><img class=" wp-image-1327 " title="unlock，含有文件占用进程结束软件包" src="http://www.tanglei.name/wp-content/uploads/2011/12/unlock+1-300x238.jpg" alt="unlock，含有文件占用进程结束软件包" width="300" height="238" /></a>
+  <a href="/wp-content/uploads/2011/12/unlock+1.jpg"><img class=" wp-image-1327 " title="unlock，含有文件占用进程结束软件包" src="/wp-content/uploads/2011/12/unlock+1-300x238.jpg" alt="unlock，含有文件占用进程结束软件包" width="300" height="238" /></a>
   
   <p class="wp-caption-text">
     unlock，含有文件占用进程结束软件包

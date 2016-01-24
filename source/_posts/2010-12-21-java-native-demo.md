@@ -181,8 +181,8 @@ nat.sayHello();
 
 再在控制台下执行javac Test.java java Test就能看到结果了。
   
-[<img class="size-full wp-image-125 aligncenter" title="native" src="http://www.tanglei.name/wp-content/uploads/2010/12/native1.png" alt="" width="339" height="163" />](http://www.tanglei.name/wp-content/uploads/2010/12/native1.png)
+[<img class="size-full wp-image-125 aligncenter" title="native" src="/wp-content/uploads/2010/12/native1.png" alt="" width="339" height="163" />](/wp-content/uploads/2010/12/native1.png)
   
-[](http://www.tanglei.name/wp-content/uploads/2010/12/native.zip)
+[](/wp-content/uploads/2010/12/native.zip)
 
-[文章例子中的源代码SRC下载](http://www.tanglei.name/wp-content/uploads/2010/12/native.zip)
+[文章例子中的源代码SRC下载](/wp-content/uploads/2010/12/native.zip)

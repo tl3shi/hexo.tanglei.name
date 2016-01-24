@@ -21,25 +21,25 @@ tags:
 
 首先编辑好你想要发布的博客内容，在word07里面，图片啊，字体格式啊自己先排好。如：
 
-![](http://www.tanglei.name/wp-content/uploads/2011/06/061411_0313_Word07wordp1.png)
+![](/wp-content/uploads/2011/06/061411_0313_Word07wordp1.png)
 
 编辑好后，点击开始按钮的发布按钮，如图所示：
 
-![](http://www.tanglei.name/wp-content/uploads/2011/06/061411_0313_Word07wordp2.png)
+![](/wp-content/uploads/2011/06/061411_0313_Word07wordp2.png)
 
 然后出现的界面：可以输入标题啊等再调整下格式之类的。
 
-![](http://www.tanglei.name/wp-content/uploads/2011/06/061411_0313_Word07wordp3.png)
+![](/wp-content/uploads/2011/06/061411_0313_Word07wordp3.png)
 
 然后就是关联博客的帐号了：
 
 点击上面按钮上的管理帐户:刚开始没有，则新建一个，选择博客的服务提供商
 
-![](http://www.tanglei.name/wp-content/uploads/2011/06/061411_0313_Word07wordp4.png)
+![](/wp-content/uploads/2011/06/061411_0313_Word07wordp4.png)
 
 如本站wordpress然后下一步，输入博客的站点地址，然后再输入你后台登陆的用户名和密码
 
-![](http://www.tanglei.name/wp-content/uploads/2011/06/061411_0313_Word07wordp5.png)
+![](/wp-content/uploads/2011/06/061411_0313_Word07wordp5.png)
 
 若用户名密码等正确就会提示注册成功。
 
@@ -47,12 +47,12 @@ tags:
 
 还可以插入当前待发布的文章的类别。
 
-![](http://www.tanglei.name/wp-content/uploads/2011/06/061411_0313_Word07wordp6.png)
+![](/wp-content/uploads/2011/06/061411_0313_Word07wordp6.png)
 
 最后发布即可，然后去你的站点就可以看到了。发布过程中，会不时的弹出对话框现实正在联系博客服务商，怀疑是在上传图片内容时的验证过程。
 
 当然为了做SEO，还要对文章做一些稍微的修改，例如添加tag标签啊，url重命名啊。图片的url就改不了了。上传的时候就默认用时间啊等命名了。当然有闲心还可以编辑下图片的alt属性啊等等。为了快就没那个必要了。
 
-这个是本人采用这种方式发布第一篇博客时录制的视频，exe的文件，无毒，放心。[点我下载](http://www.tanglei.name/wp-content/uploads/2011/06/word发布wordpress.zip)[word07发布blog教程wordpress](http://www.tanglei.name/wp-content/uploads/2011/06/word发布wordpress.zip)。
+这个是本人采用这种方式发布第一篇博客时录制的视频，exe的文件，无毒，放心。[点我下载](/wp-content/uploads/2011/06/word发布wordpress.zip)[word07发布blog教程wordpress](/wp-content/uploads/2011/06/word发布wordpress.zip)。
 
 &nbsp;

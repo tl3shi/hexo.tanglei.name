@@ -50,7 +50,7 @@ R. Glass：优秀度，通过软件的一系列属性描述的一个产品优秀
 
  ****
 
-<img class="alignnone" title="ISO9126" src="http://www.tanglei.name/wp-content/uploads/2011/04/Software%20Metrics.files//image016.gif" alt="" width="317" height="270" />
+<img class="alignnone" title="ISO9126" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image016.gif" alt="" width="317" height="270" />
 
 6个特性，27个子特性
 
@@ -117,7 +117,7 @@ R. Glass：优秀度，通过软件的一系列属性描述的一个产品优秀
 
 ### Boehm software Quality Model
 
-<img class="alignnone" title="Boehm" src="http://www.tanglei.name/wp-content/uploads/2011/04/Software%20Metrics.files//image018.gif" alt="" width="329" height="246" />
+<img class="alignnone" title="Boehm" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image018.gif" alt="" width="329" height="246" />
 
  ****
 
@@ -125,7 +125,7 @@ R. Glass：优秀度，通过软件的一系列属性描述的一个产品优秀
 
 ### McCall’s Quality Model (1978)
 
-<img class="alignnone" title="McCall" src="http://www.tanglei.name/wp-content/uploads/2011/04/Software%20Metrics.files//image020.gif" alt="" width="123" height="227" />
+<img class="alignnone" title="McCall" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image020.gif" alt="" width="123" height="227" />
 
  ****
 
@@ -156,14 +156,14 @@ Optimizing: Measures used to improve process/product.
 优化级：持续改进过程/产品。
 
 <p style="text-align: center;">
-  <a href="http://www.tanglei.name/wp-content/uploads/2011/04/cmm.png"><img class="size-medium wp-image-528 aligncenter" title="cmm" src="http://www.tanglei.name/wp-content/uploads/2011/04/cmm-300x217.png" alt="" width="300" height="217" /></a>
+  <a href="/wp-content/uploads/2011/04/cmm.png"><img class="size-medium wp-image-528 aligncenter" title="cmm" src="/wp-content/uploads/2011/04/cmm-300x217.png" alt="" width="300" height="217" /></a>
 </p>
 
 ### Portability
 
 “A set of attributes that bear on the capability of software to be transferred from one environment to another.”
 
-<img class="alignnone" title="可移植" src="http://www.tanglei.name/wp-content/uploads/2011/04/Software%20Metrics.files//image022.gif" alt="" width="401" height="70" />
+<img class="alignnone" title="可移植" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image022.gif" alt="" width="401" height="70" />
 
 ### Reliability
 
@@ -191,13 +191,13 @@ Good usability includes:
 
 ### The MUSiC project
 
-<img class="alignnone" title="Music" src="http://www.tanglei.name/wp-content/uploads/2011/04/Software%20Metrics.files//image026.jpg" alt="" width="269" height="158" />
+<img class="alignnone" title="Music" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image026.jpg" alt="" width="269" height="158" />
 
  ****
 
 ### Maintainability
 
-<img class="alignnone" title="可维护性" src="http://www.tanglei.name/wp-content/uploads/2011/04/Software%20Metrics.files//image028.jpg" alt="" width="281" height="198" />
+<img class="alignnone" title="可维护性" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image028.jpg" alt="" width="281" height="198" />
 
  ****
 

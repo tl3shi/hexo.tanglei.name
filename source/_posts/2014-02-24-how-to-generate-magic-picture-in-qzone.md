@@ -18,7 +18,7 @@ tags:
 ---
 在浏览自己的QQ空间的时候，时不时会看到有这样的图片，图片里面的内容包含自己的QQ号码，昵称和头像信息，然后就是&#8221;恭喜发财&#8221;啊,&#8221;转发送祝福&#8221;啊之类的(以此来推广产品啊获取流量等)。
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="qq transfer" src="http://www.tanglei.name/wp-content/uploads/2014/02/qq-transfer_thumb.png" alt="qq transfer" width="244" height="216" border="0" />](http://www.tanglei.name/wp-content/uploads/2014/02/qq-transfer.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="qq transfer" src="/wp-content/uploads/2014/02/qq-transfer_thumb.png" alt="qq transfer" width="244" height="216" border="0" />](/wp-content/uploads/2014/02/qq-transfer.png)
 
 今天就探了个究竟。其实大概也能想到，这张图片是动态生成的，关键就是怎么获取自己的帐号信息。
   
@@ -32,7 +32,7 @@ tags:
 
 效果可以到这里看：进[这个日志](http://user.qzone.qq.com/410454274/blog/1393078235)，然后分享，再自己的个人中心查看自己分享的状态~类似下面这样
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="http://www.tanglei.name/wp-content/uploads/2014/02/image_thumb.png" alt="image" width="230" height="244" border="0" />](http://www.tanglei.name/wp-content/uploads/2014/02/image.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2014/02/image_thumb.png" alt="image" width="230" height="244" border="0" />](/wp-content/uploads/2014/02/image.png)
 
 之所以点击进去后没有了，是因为你点击进去后，我就获取不到当前浏览者(你)的QQ号码了~ 在你的个人中心能看到，是因为能从这个请求的refere得到你的QQ号~
   

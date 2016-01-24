@@ -19,7 +19,7 @@ tags:
 
 下面地图：
 
-<img src="http://www.tanglei.name/wp-content/uploads/2012/04/041212_0131_1.png" alt="清华附近出租单间" data-pinit="registered" />
+<img src="/wp-content/uploads/2012/04/041212_0131_1.png" alt="清华附近出租单间" data-pinit="registered" />
 
 因本学期在清华做毕设，4月底回本科学校准备答辩等事情，因此转租单间。房屋到期2012年7月14日。说明，需要交700元押金，到期后原房东退回。4月底(28号(if 我搬了))可入住，到7月14号共2个半月。一共只需2300元，(加上700元押金，需要一次性交清3000元整)。
 
@@ -29,7 +29,7 @@ tags:
 
 最后附上室内一两张照片，
 
-<img src="http://www.tanglei.name/wp-content/uploads/2012/04/041212_0131_2.png" alt="清华附近出租单间" data-pinit="registered" />
+<img src="/wp-content/uploads/2012/04/041212_0131_2.png" alt="清华附近出租单间" data-pinit="registered" />
 
 同意以上条件者，欢迎看房。看房时间，晚上7点后。如果你方便发邮件，白天**最好**用邮件联系：<admin@tanglei.name>
 

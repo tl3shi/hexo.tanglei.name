@@ -82,7 +82,7 @@ Procedure apriori_gen(Lk-1:frequent(k-1)-itemsets)
 
 举个例子,来源于书中(见参考文献1)的例子。
 
-[<img style="display: inline; margin-left: 0px; margin-right: 0px; border: 0px;" title="apriori算法" src="http://www.tanglei.name/wp-content/uploads/2012/03/image_thumb1.png" alt="apriori算法" width="137" height="163" border="0" data-pinit="registered" />](http://www.tanglei.name/wp-content/uploads/2012/03/image1.png)
+[<img style="display: inline; margin-left: 0px; margin-right: 0px; border: 0px;" title="apriori算法" src="/wp-content/uploads/2012/03/image_thumb1.png" alt="apriori算法" width="137" height="163" border="0" data-pinit="registered" />](/wp-content/uploads/2012/03/image1.png)
 
 如图中所示,有9个事务，其算法流程如下：
 

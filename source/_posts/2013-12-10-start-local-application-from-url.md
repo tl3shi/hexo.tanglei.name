@@ -52,7 +52,7 @@ Windows Registry Editor Version 5.00
 
 HKEY…ROOT后的foo就是协议，其中a.exe为上面应用程序的路径。浏览器输入这样的地址就可以启动“[foo://xxx](foo://hello/?helo "foo://hello/?helo") ”就可以启动，比如输入“[foo://hello/?helo](foo://hello/?helo "foo://hello/?helo")” 回车，会有是否允许网站打开本地程序的安全提示，允许后就是这样的结果。
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="http://www.tanglei.name/wp-content/uploads/2013/12/image_thumb1.png" alt="image" width="394" height="185" border="0" />](http://www.tanglei.name/wp-content/uploads/2013/12/image1.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/12/image_thumb1.png" alt="image" width="394" height="185" border="0" />](/wp-content/uploads/2013/12/image1.png)
   
 以上针对Windows、IE可行，其他平台或者浏览器应该有类似的方案，可以参考以下参考资料。
   

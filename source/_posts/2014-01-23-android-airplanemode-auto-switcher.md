@@ -59,7 +59,7 @@ insert into global values(null, 'airplane_mode_on', 1); //相应的插入0值，
 
 下面是我写的小程序的界面：
 
-[<img class="size-large wp-image-2294" title="Android 自动定时切换飞行模式-android-airplanemode-auto-switcher" src="http://www.tanglei.name/wp-content/uploads/2014/01/android-airplanemode-auto-switcher-1024x456.png" alt="android自动切换飞行模式" width="1024" height="456" />](http://www.tanglei.name/wp-content/uploads/2014/01/android-airplanemode-auto-switcher.png)
+[<img class="size-large wp-image-2294" title="Android 自动定时切换飞行模式-android-airplanemode-auto-switcher" src="/wp-content/uploads/2014/01/android-airplanemode-auto-switcher-1024x456.png" alt="android自动切换飞行模式" width="1024" height="456" />](/wp-content/uploads/2014/01/android-airplanemode-auto-switcher.png)
 
 使用方法如下：
 
@@ -69,7 +69,7 @@ insert into global values(null, 'airplane_mode_on', 1); //相应的插入0值，
 
 注意：针对Android4.2及其以上的版本，手机需要ROOT才OK，且建议添加到信任程序列表。4.2之前的版本是木有问题的。
 
-欢迎有兴趣的同学<del datetime="2014-01-27T08:22:26+00:00">下载1</del> [下载2](http://www.tanglei.name/wp-content/uploads/2014/01/airplanemode_auto_switcher.apk_v0.2.zip)试用，有建议/意见欢迎留言反馈～
+欢迎有兴趣的同学<del datetime="2014-01-27T08:22:26+00:00">下载1</del> [下载2](/wp-content/uploads/2014/01/airplanemode_auto_switcher.apk_v0.2.zip)试用，有建议/意见欢迎留言反馈～
 
 TODO：
 

@@ -20,7 +20,7 @@ N久没更新我的相册和地图了.才发现原来我服务器换了一个环
 
 贴图留念下.
 
-[<img title="photos" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; display: block; padding-right: 0px; border-top-width: 0px; margin-right: auto" border="0" alt="photos" src="http://www.tanglei.name/wp-content/uploads/2013/04/photos_thumb.jpg" width="644" height="342" />](http://www.tanglei.name/wp-content/uploads/2013/04/photos.jpg)
+[<img title="photos" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; display: block; padding-right: 0px; border-top-width: 0px; margin-right: auto" border="0" alt="photos" src="/wp-content/uploads/2013/04/photos_thumb.jpg" width="644" height="342" />](/wp-content/uploads/2013/04/photos.jpg)
 
 相册啥时候有空再打整打整.
 

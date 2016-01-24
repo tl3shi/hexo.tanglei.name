@@ -28,4 +28,4 @@ tags:
 
 毕业了，有的直接奔赴工作岗位，有的趁此机会到处旅游一番，大多还是先回趟家吧，4年前从家里来的长沙，来到中南，4年后又返回老家，此时应该是别有一番滋味吧。
   
-<img src="http://www.tanglei.name/wp-content/uploads/2012/06/graduation.jpg" alt="学位授予仪式" height="320" width="480" />
+<img src="/wp-content/uploads/2012/06/graduation.jpg" alt="学位授予仪式" height="320" width="480" />

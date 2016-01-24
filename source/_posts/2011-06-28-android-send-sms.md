@@ -68,7 +68,7 @@ public class msgSendDemo extends Activity {
  
 }&lt;/cc></pre>
 
-当然，直接运行后，可以看到Logcat有代码输出，在虚拟机里面也输出了msg has been sent sucessfully!，明显Activity.RESULT_OK不要是发送短信成功的标识了。先将就吧。在我的defy下也输出同样的效果，但后来10086给回复证明了短信确实是发送出去的。[<img src="http://www.tanglei.name/wp-content/uploads/2011/06/android-send-msg-code.jpg" alt="android发送信息源码" title="android发送信息源码" width="320" height="480" class="aligncenter size-full wp-image-932" />](http://www.tanglei.name/wp-content/uploads/2011/06/android-send-msg-code.jpg)
+当然，直接运行后，可以看到Logcat有代码输出，在虚拟机里面也输出了msg has been sent sucessfully!，明显Activity.RESULT_OK不要是发送短信成功的标识了。先将就吧。在我的defy下也输出同样的效果，但后来10086给回复证明了短信确实是发送出去的。[<img src="/wp-content/uploads/2011/06/android-send-msg-code.jpg" alt="android发送信息源码" title="android发送信息源码" width="320" height="480" class="aligncenter size-full wp-image-932" />](/wp-content/uploads/2011/06/android-send-msg-code.jpg)
   
 当然，要有发送信息的权限，在manifest中得加入
 

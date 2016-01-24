@@ -60,4 +60,4 @@ tags:
 
 测试效果如下：
   
-[<img src="http://www.tanglei.name/wp-content/uploads/2011/06/android-msg-into-sendbox.jpg" alt="android保存以发送短信" title="android保存以发送短信" width="725" height="309" class="aligncenter size-full wp-image-939" />](http://www.tanglei.name/wp-content/uploads/2011/06/android-msg-into-sendbox.jpg)
+[<img src="/wp-content/uploads/2011/06/android-msg-into-sendbox.jpg" alt="android保存以发送短信" title="android保存以发送短信" width="725" height="309" class="aligncenter size-full wp-image-939" />](/wp-content/uploads/2011/06/android-msg-into-sendbox.jpg)

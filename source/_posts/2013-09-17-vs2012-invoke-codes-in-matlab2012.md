@@ -41,6 +41,6 @@ tags:
   
 > (Note: the above 4 files are for 64-bit version of Matlab)
 
-根据自己的安装环境修改下bat文件里面的相关路径(path,include,lib)，若上面链接失效，这里提供一份本地备份的可以在这里下载：[matlab2012_vs2012](http://www.tanglei.name/wp-content/uploads/2013/09/matlab2012_vs2012.rar)
+根据自己的安装环境修改下bat文件里面的相关路径(path,include,lib)，若上面链接失效，这里提供一份本地备份的可以在这里下载：[matlab2012_vs2012](/wp-content/uploads/2013/09/matlab2012_vs2012.rar)
 
 引用自墙外：[Matlab 2012b mex setup with VS2012](http://jimdavid.blogspot.com/2012/12/matlab-2012b-mex-setup-with-vs2012.html)

@@ -60,11 +60,11 @@ print("elements",elements)
 
 本例中是求集合[[&#8216;1&#8217;],[&#8216;2&#8217;],[&#8216;3&#8217;]]的2-itemset子集。 看如上代码中，红色那句先注释掉，用a=a+b的形式，运行结果如下。这个结果是正确的，为{1,3}、{2,3}、{1,2}。
 
-[<img style="display: inline; border: 0px;" title="clip_image002" src="http://www.tanglei.name/wp-content/uploads/2012/03/clip_image002_thumb1.jpg" alt="clip_image002" width="457" height="95" border="0" />](http://www.tanglei.name/wp-content/uploads/2012/03/clip_image0022.jpg)
+[<img style="display: inline; border: 0px;" title="clip_image002" src="/wp-content/uploads/2012/03/clip_image002_thumb1.jpg" alt="clip_image002" width="457" height="95" border="0" />](/wp-content/uploads/2012/03/clip_image0022.jpg)
 
 若将代码中换成a+=b的形式，即去掉蓝色代码部分，换成红色的代码。意料中，应该结果一样。但实际结果却出乎意料。
 
-[<img style="display: inline; border: 0px;" title="python_a =b_a=a b 1" src="http://www.tanglei.name/wp-content/uploads/2012/03/python_ab_aab1_thumb.jpg" alt="python_a =b_a=a b 1" width="558" height="112" border="0" data-pinit="registered" />](http://www.tanglei.name/wp-content/uploads/2012/03/python_ab_aab1.jpg)
+[<img style="display: inline; border: 0px;" title="python_a =b_a=a b 1" src="/wp-content/uploads/2012/03/python_ab_aab1_thumb.jpg" alt="python_a =b_a=a b 1" width="558" height="112" border="0" data-pinit="registered" />](/wp-content/uploads/2012/03/python_ab_aab1.jpg)
 
 不但子集没求对，就连原始的集合elements都被改变了。看了好久搞不定是哪里出了问题了。之前对a+=b和a=a+b的印象仅仅停留在涉及一个强制类型转换的原因，难道这个也是吗？搞不懂，像高人求助……
 

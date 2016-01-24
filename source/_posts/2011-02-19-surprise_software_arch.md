@@ -43,7 +43,7 @@ tags:
 
 。。果然发现了自己的名字
 
-<img class="aligncenter size-medium wp-image-322" title="suprise_software_arch" src="http://www.tanglei.name/wp-content/uploads/2011/02/suprise_software_arch-300x175.jpg" alt="" width="500" height="300" /> 惊喜啊。
+<img class="aligncenter size-medium wp-image-322" title="suprise_software_arch" src="/wp-content/uploads/2011/02/suprise_software_arch-300x175.jpg" alt="" width="500" height="300" /> 惊喜啊。
 
 本来能过就比较意外了。主要是论文太没底了。上午的基础知识和下午的案例分析都感觉还一般般。
 

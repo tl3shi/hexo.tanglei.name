@@ -109,7 +109,7 @@ true&lt;/param-value>
 &lt;/web-app>
 &lt;/cc></pre>
 
-然后构造如下目录：[<img class="aligncenter size-full wp-image-1025" title="tomcat-cgi-directory" src="http://www.tanglei.name/wp-content/uploads/2011/07/tomcat-cgi-directory.jpg" alt="TOMCAT配置CGI目录结构" width="400" height="480" data-pinit="registered" />](http://www.tanglei.name/wp-content/uploads/2011/07/tomcat-cgi-directory.jpg)
+然后构造如下目录：[<img class="aligncenter size-full wp-image-1025" title="tomcat-cgi-directory" src="/wp-content/uploads/2011/07/tomcat-cgi-directory.jpg" alt="TOMCAT配置CGI目录结构" width="400" height="480" data-pinit="registered" />](/wp-content/uploads/2011/07/tomcat-cgi-directory.jpg)
   
 注意结构，web-inf下面有个CGI，在web.xml配置的目录结构，当然也可以改相应的配置文件与目录结构对应即可。
   
@@ -135,7 +135,7 @@ echo ^
 
 启动tomcat，然后浏览器访问：http://localhost/cgiDemo/cgi-bin/test.bat 看到如下图说明配置成功了
   
-[<img class="aligncenter size-medium wp-image-1026" title="tomcat-cgi-demo" src="http://www.tanglei.name/wp-content/uploads/2011/07/tomcat-cgi-demo.jpg" alt="TOmcat配置CGI" width="600" height="334" data-pinit="registered" />](http://www.tanglei.name/wp-content/uploads/2011/07/tomcat-cgi-demo.jpg)
+[<img class="aligncenter size-medium wp-image-1026" title="tomcat-cgi-demo" src="/wp-content/uploads/2011/07/tomcat-cgi-demo.jpg" alt="TOmcat配置CGI" width="600" height="334" data-pinit="registered" />](/wp-content/uploads/2011/07/tomcat-cgi-demo.jpg)
   
 
   
@@ -271,14 +271,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       
       
       <p>
-        <a href="http://www.tanglei.name/wp-content/uploads/2011/07/tomcat-config-cgi-run-cpp.jpg"><img class="aligncenter size-medium wp-image-1027" title="tomcat-config-cgi-run-cpp" src="http://www.tanglei.name/wp-content/uploads/2011/07/tomcat-config-cgi-run-cpp.jpg" alt="Tomcat配置CGI运行C程序" width="600" height="266" data-pinit="registered" /></a>
+        <a href="/wp-content/uploads/2011/07/tomcat-config-cgi-run-cpp.jpg"><img class="aligncenter size-medium wp-image-1027" title="tomcat-config-cgi-run-cpp" src="/wp-content/uploads/2011/07/tomcat-config-cgi-run-cpp.jpg" alt="Tomcat配置CGI运行C程序" width="600" height="266" data-pinit="registered" /></a>
         
       </p>
       
       
       <p>
         输入数据结果现实:<br />
-        <a href="http://www.tanglei.name/wp-content/uploads/2011/07/tomcat-cgi-cpp-result.jpg"><img class="aligncenter size-medium wp-image-1028" title="tomcat-cgi-cpp-result" src="http://www.tanglei.name/wp-content/uploads/2011/07/tomcat-cgi-cpp-result.jpg" alt="Tomcat配置CGI运行Exe文件"   data-pinit="registered" /></a>
+        <a href="/wp-content/uploads/2011/07/tomcat-cgi-cpp-result.jpg"><img class="aligncenter size-medium wp-image-1028" title="tomcat-cgi-cpp-result" src="/wp-content/uploads/2011/07/tomcat-cgi-cpp-result.jpg" alt="Tomcat配置CGI运行Exe文件"   data-pinit="registered" /></a>
       </p>
       
       

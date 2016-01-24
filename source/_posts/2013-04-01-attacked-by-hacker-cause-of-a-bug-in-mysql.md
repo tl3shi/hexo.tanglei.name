@@ -19,15 +19,15 @@ tags:
 ---
 今天早上来实验室突然就上不网，换ip能上网，实验室网管告诉我之前的IP有问题，已经被校网络中心给被封调。其实昨晚就被封了，难怪昨晚在寝室连不上我实验室电脑的。
 
-[<img title="clip_image002" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px; display: inline" border="0" alt="clip_image002" src="http://www.tanglei.name/wp-content/uploads/2013/04/clip_image002_thumb.jpg" width="369" height="484" />](http://www.tanglei.name/wp-content/uploads/2013/04/clip_image002.jpg)
+[<img title="clip_image002" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px; display: inline" border="0" alt="clip_image002" src="/wp-content/uploads/2013/04/clip_image002_thumb.jpg" width="369" height="484" />](/wp-content/uploads/2013/04/clip_image002.jpg)
 
 查看Windows日志，看有没有异常情况，结果发现这个mysql貌似比较可疑。如下图示：
 
-[<img title="clip_image004" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px; display: inline" border="0" alt="clip_image004" src="http://www.tanglei.name/wp-content/uploads/2013/04/clip_image004_thumb.jpg" width="445" height="191" />](http://www.tanglei.name/wp-content/uploads/2013/04/clip_image004.jpg)
+[<img title="clip_image004" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px; display: inline" border="0" alt="clip_image004" src="/wp-content/uploads/2013/04/clip_image004_thumb.jpg" width="445" height="191" />](/wp-content/uploads/2013/04/clip_image004.jpg)
 
 查了下这个IP贵州省遵义市等莫名其妙的地方，还有其他的一些IP也是莫名其妙的其他地方。然后google了下mysql有啥漏洞
 
-[<img title="clip_image006" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px; display: inline" border="0" alt="clip_image006" src="http://www.tanglei.name/wp-content/uploads/2013/04/clip_image006_thumb.jpg" width="372" height="484" />](http://www.tanglei.name/wp-content/uploads/2013/04/clip_image006.jpg)
+[<img title="clip_image006" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px; display: inline" border="0" alt="clip_image006" src="/wp-content/uploads/2013/04/clip_image006_thumb.jpg" width="372" height="484" />](/wp-content/uploads/2013/04/clip_image006.jpg)
 
 猜测，是由于mysql的bug引起的。上图有一个bug描述如下：
 
@@ -49,23 +49,23 @@ MySQL versions from 5.1.63, 5.5.24, 5.6.6 are not.
 
 然后查看下注册表有没有被自动启动的异常程序，发现一个。
 
-[<img title="clip_image008" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px; display: inline" border="0" alt="clip_image008" src="http://www.tanglei.name/wp-content/uploads/2013/04/clip_image008_thumb.jpg" width="523" height="129" />](http://www.tanglei.name/wp-content/uploads/2013/04/clip_image008.jpg)
+[<img title="clip_image008" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px; display: inline" border="0" alt="clip_image008" src="/wp-content/uploads/2013/04/clip_image008_thumb.jpg" width="523" height="129" />](/wp-content/uploads/2013/04/clip_image008.jpg)
 
 暂且用用QQ的杀毒功能全盘扫描下，发现一些风险，管不了那么多了删了再说。
 
-[<img title="clip_image010" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px; display: inline" border="0" alt="clip_image010" src="http://www.tanglei.name/wp-content/uploads/2013/04/clip_image010_thumb.jpg" width="490" height="241" />](http://www.tanglei.name/wp-content/uploads/2013/04/clip_image010.jpg)
+[<img title="clip_image010" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px; display: inline" border="0" alt="clip_image010" src="/wp-content/uploads/2013/04/clip_image010_thumb.jpg" width="490" height="241" />](/wp-content/uploads/2013/04/clip_image010.jpg)
 
-[<img title="clip_image012" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px; display: inline" border="0" alt="clip_image012" src="http://www.tanglei.name/wp-content/uploads/2013/04/clip_image012_thumb.jpg" width="237" height="244" />](http://www.tanglei.name/wp-content/uploads/2013/04/clip_image012.jpg)
+[<img title="clip_image012" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px; display: inline" border="0" alt="clip_image012" src="/wp-content/uploads/2013/04/clip_image012_thumb.jpg" width="237" height="244" />](/wp-content/uploads/2013/04/clip_image012.jpg)
 
 后来网管告诉我这个IP出口流量过大，很大很异常，才被学校网络中心工作人员给封了。上面的日志看到貌似尝试从我的PC去扫描同网段的其他电脑。
 
 然后查看了下我的上网记录，对比下平时的出流量和这两天的。
 
-[<img title="clip_image014" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px; display: inline" border="0" alt="clip_image014" src="http://www.tanglei.name/wp-content/uploads/2013/04/clip_image014_thumb.jpg" width="225" height="93" />](http://www.tanglei.name/wp-content/uploads/2013/04/clip_image014.jpg)
+[<img title="clip_image014" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px; display: inline" border="0" alt="clip_image014" src="/wp-content/uploads/2013/04/clip_image014_thumb.jpg" width="225" height="93" />](/wp-content/uploads/2013/04/clip_image014.jpg)
 
-[<img title="clip_image016" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px; display: inline" border="0" alt="clip_image016" src="http://www.tanglei.name/wp-content/uploads/2013/04/clip_image016_thumb.jpg" width="225" height="103" />](http://www.tanglei.name/wp-content/uploads/2013/04/clip_image016.jpg)
+[<img title="clip_image016" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px; display: inline" border="0" alt="clip_image016" src="/wp-content/uploads/2013/04/clip_image016_thumb.jpg" width="225" height="103" />](/wp-content/uploads/2013/04/clip_image016.jpg)
 
-[<img title="clip_image018" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px; display: inline" border="0" alt="clip_image018" src="http://www.tanglei.name/wp-content/uploads/2013/04/clip_image018_thumb.jpg" width="557" height="89" />](http://www.tanglei.name/wp-content/uploads/2013/04/clip_image018.jpg)
+[<img title="clip_image018" style="border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px; display: inline" border="0" alt="clip_image018" src="/wp-content/uploads/2013/04/clip_image018_thumb.jpg" width="557" height="89" />](/wp-content/uploads/2013/04/clip_image018.jpg)
 
 攻击者我机器作为跳板在扫描校内各个网段。发了大量数据包，校网络中心的工作人员前来查看问题。也无非就是说说中毒了，让勤杀病毒。
 

@@ -19,7 +19,7 @@ tags:
 
 还是跟2011的年终总结一样，看看2012的元旦的QQ状态……
 
-[<img title="2012-mood" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; float: left; padding-top: 0px; padding-left: 0px; margin: 2px 10px 5px 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="2012-mood" align="left" src="http://www.tanglei.name/wp-content/uploads/2013/01/2012-mood_thumb.jpg" width="497" height="160" />](http://www.tanglei.name/wp-content/uploads/2013/01/2012-mood.jpg)
+[<img title="2012-mood" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; float: left; padding-top: 0px; padding-left: 0px; margin: 2px 10px 5px 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="2012-mood" align="left" src="/wp-content/uploads/2013/01/2012-mood_thumb.jpg" width="497" height="160" />](/wp-content/uploads/2013/01/2012-mood.jpg)
 
 呃，居然没有。去年元旦貌似去[香港玩](http://www.tanglei.name/my-travel-to-hongkong/)了，当时还在TX实习，从状态可以看出是在抢票，准备从TX离职回家过年了。看时间刚好一年过去了，2012.1.12[办离职手续](http://www.tanglei.name/end-up-with-my-internship-in-tencent/)，参加完部门年会1.13走人了。
 

@@ -34,7 +34,7 @@ tags:
         </p>
         
         <p>
-          <span style="color: #333333;"><span style="font-family: Arial;"><span style="color: #333333; font-family: Arial;"><img src="http://www.tanglei.name/wp-content/uploads/2011/07/070311_1501_MSMIUIandro1.png" alt="" /></span><br /> </span></span>
+          <span style="color: #333333;"><span style="font-family: Arial;"><span style="color: #333333; font-family: Arial;"><img src="/wp-content/uploads/2011/07/070311_1501_MSMIUIandro1.png" alt="" /></span><br /> </span></span>
         </p>
         
         <p style="background: #f5f1e8;">
@@ -42,7 +42,7 @@ tags:
         </p>
         
         <p>
-          <span style="color: #333333;"><span style="font-family: Arial;"><span style="font-family: Arial;"><img src="http://www.tanglei.name/wp-content/uploads/2011/07/070311_1501_MSMIUIandro2.png" alt="" /></span><br /> </span></span>
+          <span style="color: #333333;"><span style="font-family: Arial;"><span style="font-family: Arial;"><img src="/wp-content/uploads/2011/07/070311_1501_MSMIUIandro2.png" alt="" /></span><br /> </span></span>
         </p>
         
         <p style="background: #f5f1e8;">
@@ -50,7 +50,7 @@ tags:
         </p>
         
         <p>
-          <img src="http://www.tanglei.name/wp-content/uploads/2011/07/070311_1501_MSMIUIandro3.png" alt="" /><span style="color: #333333; font-family: Arial;"><br /> </span>
+          <img src="/wp-content/uploads/2011/07/070311_1501_MSMIUIandro3.png" alt="" /><span style="color: #333333; font-family: Arial;"><br /> </span>
         </p>
         
         <p style="background: #f5f1e8;">
@@ -58,7 +58,7 @@ tags:
         </p>
         
         <p>
-          <span style="color: #333333;"><span style="font-family: Arial;"><span style="font-family: Arial;"><img src="http://www.tanglei.name/wp-content/uploads/2011/07/070311_1501_MSMIUIandro4.png" alt="" /></span><br /> </span></span>
+          <span style="color: #333333;"><span style="font-family: Arial;"><span style="font-family: Arial;"><img src="/wp-content/uploads/2011/07/070311_1501_MSMIUIandro4.png" alt="" /></span><br /> </span></span>
         </p>
         
         <p style="background: #f5f1e8;">
@@ -66,7 +66,7 @@ tags:
         </p>
         
         <p>
-          <span style="color: #333333;"><span style="font-family: Arial;"><span style="font-family: Arial;"><img src="http://www.tanglei.name/wp-content/uploads/2011/07/070311_1501_MSMIUIandro5.png" alt="" /></span><br /> </span></span>
+          <span style="color: #333333;"><span style="font-family: Arial;"><span style="font-family: Arial;"><img src="/wp-content/uploads/2011/07/070311_1501_MSMIUIandro5.png" alt="" /></span><br /> </span></span>
         </p>
         
         <p style="background: #f5f1e8;">
@@ -78,7 +78,7 @@ tags:
         </p>
         
         <p>
-          <span style="color: #333333;"><span style="font-family: Arial;"><span style="font-family: Arial;"><img src="http://www.tanglei.name/wp-content/uploads/2011/07/070311_1501_MSMIUIandro6.png" alt="" /></span><br /> </span></span>
+          <span style="color: #333333;"><span style="font-family: Arial;"><span style="font-family: Arial;"><img src="/wp-content/uploads/2011/07/070311_1501_MSMIUIandro6.png" alt="" /></span><br /> </span></span>
         </p>
         
         <p style="background: #f5f1e8;">
@@ -86,7 +86,7 @@ tags:
         </p>
         
         <p>
-          <span style="color: #333333;"><span style="font-family: Arial;"><span style="font-family: Arial;"><img src="http://www.tanglei.name/wp-content/uploads/2011/07/070311_1501_MSMIUIandro7.png" alt="" /></span><br /> </span></span>
+          <span style="color: #333333;"><span style="font-family: Arial;"><span style="font-family: Arial;"><img src="/wp-content/uploads/2011/07/070311_1501_MSMIUIandro7.png" alt="" /></span><br /> </span></span>
         </p>
         
         <p style="background: #f5f1e8;">

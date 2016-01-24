@@ -20,7 +20,7 @@ tags:
 
 回到石柱县城里，在幺叔家，记着开着电脑。打开foxmail，收取所有邮箱的邮件。计算机系统应用来了，说文章已处理完毕，请上网查询处理意见。连忙打开网站，看到这个html页面后，那个才叫happy呀。
 
-[<img class="aligncenter size-full wp-image-898" title="c-s-a-accept-me" src="http://www.tanglei.name/wp-content/uploads/2011/06/c-s-a-accept-me.jpg" alt="计算机系统应用结果" width="663" height="219" />](http://www.tanglei.name/wp-content/uploads/2011/06/c-s-a-accept-me.jpg)
+[<img class="aligncenter size-full wp-image-898" title="c-s-a-accept-me" src="/wp-content/uploads/2011/06/c-s-a-accept-me.jpg" alt="计算机系统应用结果" width="663" height="219" />](/wp-content/uploads/2011/06/c-s-a-accept-me.jpg)
 
 附件里面详细说
 

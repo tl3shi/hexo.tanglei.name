@@ -15,7 +15,7 @@ tags:
   - SCM复习资料
   - SCM考试
 ---
-[<img class="aligncenter size-medium wp-image-801" title="SCM-activity" src="http://www.tanglei.name/wp-content/uploads/2011/06/SCM-activity-300x191.jpg" alt="配置管理活动" width="300" height="191" />](http://www.tanglei.name/wp-content/uploads/2011/06/SCM-activity.jpg)
+[<img class="aligncenter size-medium wp-image-801" title="SCM-activity" src="/wp-content/uploads/2011/06/SCM-activity-300x191.jpg" alt="配置管理活动" width="300" height="191" />](/wp-content/uploads/2011/06/SCM-activity.jpg)
 
 **1)** 制定配置管理计划: 参加项目规划—>规划配置管理任务—>形成配置管理计划—>评审配置计划. ******配置管理计划的主要内容：**
 

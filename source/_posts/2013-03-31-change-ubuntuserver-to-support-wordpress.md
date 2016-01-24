@@ -21,7 +21,7 @@ tags:
 今天突然发现博客主机流量超过了15G而被停调了。 
 
 
-	![流量超标](http://www.tanglei.name/wp-content/uploads/2013/03/033013_1646_ubuntuw1.png) 
+![流量超标](/wp-content/uploads/2013/03/033013_1646_ubuntuw1.png) 
 
 于是就换了主机了，换了一台ubuntu主机。过程如下： 
 
@@ -34,7 +34,7 @@ tags:
     安装好后，会自动启动service. 
 
 
-	![](http://www.tanglei.name/wp-content/uploads/2013/03/033013_1646_ubuntuw2.png) 
+![](/wp-content/uploads/2013/03/033013_1646_ubuntuw2.png) 
 
   1. <div>
       安装php运行环境
@@ -44,12 +44,12 @@ tags:
 &lt;/cc></pre>
 
 
-	![](http://www.tanglei.name/wp-content/uploads/2013/03/033013_1646_ubuntuw3.png) 
+![](/wp-content/uploads/2013/03/033013_1646_ubuntuw3.png) 
 
 验证下php环境，ok. 
 
 
-	![wordpress 运行环境](http://www.tanglei.name/wp-content/uploads/2013/03/033013_1646_ubuntuw4.png) 
+![wordpress 运行环境](/wp-content/uploads/2013/03/033013_1646_ubuntuw4.png) 
 
   1. <div>
       配置虚拟主机.
@@ -58,26 +58,26 @@ tags:
     修改Httpd.conf，将wordpress放到相应目录. 发现木有mysql驱动. 
 
 
-	![php mysql 驱动](http://www.tanglei.name/wp-content/uploads/2013/03/033013_1646_ubuntuw5.png) 
+![php mysql 驱动](/wp-content/uploads/2013/03/033013_1646_ubuntuw5.png) 
 
 <pre>&lt;cc class="cpp">sudo apt-get install php5-mysql
 service apache2 stop/start
 &lt;/cc></pre>
 
 
-	![mysql远程访问](http://www.tanglei.name/wp-content/uploads/2013/03/033013_1646_ubuntuw6.png) 
+![mysql远程访问](/wp-content/uploads/2013/03/033013_1646_ubuntuw6.png) 
 
 配置正确，没有给远程访问的权限，将localhost 改为%，Connected! 
 
 改hosts后，能够访问。 
 
 
-	![wordpress设置固定链接无效的解决办法](http://www.tanglei.name/wp-content/uploads/2013/03/033013_1646_ubuntuw7.png) 
+![wordpress设置固定链接无效的解决办法](/wp-content/uploads/2013/03/033013_1646_ubuntuw7.png) 
 
 不过里面的链接失效。 
 
 
-	![wordpress设置固定链接无效的解决办法](http://www.tanglei.name/wp-content/uploads/2013/03/033013_1646_ubuntuw8.png) 
+![wordpress设置固定链接无效的解决办法](/wp-content/uploads/2013/03/033013_1646_ubuntuw8.png) 
 
 我这个固定链接是采用.htaccess方式，查了下是因为apache没有开启rewrite模块支持，于是 
 

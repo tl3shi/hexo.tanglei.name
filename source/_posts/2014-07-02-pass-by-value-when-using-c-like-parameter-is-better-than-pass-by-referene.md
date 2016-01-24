@@ -106,7 +106,7 @@ int main()
 ......
 &lt;/cc></pre>
 
-[<img class="size-full wp-image-2472 aligncenter" src="http://www.tanglei.name/wp-content/uploads/2014/07/1.png" alt="传引用 传指针" width="321" height="151" />](http://www.tanglei.name/wp-content/uploads/2014/07/1.png)
+[<img class="size-full wp-image-2472 aligncenter" src="/wp-content/uploads/2014/07/1.png" alt="传引用 传指针" width="321" height="151" />](/wp-content/uploads/2014/07/1.png)
 
 <pre>&lt;cc class=cpp>
     16: int h(int * p)
@@ -141,7 +141,7 @@ int main()
 ......
 &lt;/cc></pre>
 
-[<img class="aligncenter size-full wp-image-2471" title=" " src="http://www.tanglei.name/wp-content/uploads/2014/07/2.png" alt="pass by value" width="386" height="106" />](http://www.tanglei.name/wp-content/uploads/2014/07/2.png)
+[<img class="aligncenter size-full wp-image-2471" title=" " src="/wp-content/uploads/2014/07/2.png" alt="pass by value" width="386" height="106" />](/wp-content/uploads/2014/07/2.png)
   
 从汇编代码可以看出，为啥内置类型作为函数参数传递时更高效。 
 

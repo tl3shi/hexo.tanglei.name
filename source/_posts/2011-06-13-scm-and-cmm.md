@@ -32,7 +32,7 @@ Affected groups and individuals are informed of the status and content of softwa
 
 **三库管理：**三库的概念源自CMM/CMMI，即开发库、受控库和产品库。配置项在三库之间迁移，一级比一级的控制更严格。从CMM的角度来看，对开发库的管理并没有要求，但是对受控库和产品库是需要进行管理的。
 
-[<img class="aligncenter size-medium wp-image-811" title="scm-cmm-three-repository" src="http://www.tanglei.name/wp-content/uploads/2011/06/scm-cmm-three-repository-300x190.jpg" alt="软件配置管理-三库管理" width="300" height="190" />](http://www.tanglei.name/wp-content/uploads/2011/06/scm-cmm-three-repository.jpg)
+[<img class="aligncenter size-medium wp-image-811" title="scm-cmm-three-repository" src="/wp-content/uploads/2011/06/scm-cmm-three-repository-300x190.jpg" alt="软件配置管理-三库管理" width="300" height="190" />](/wp-content/uploads/2011/06/scm-cmm-three-repository.jpg)
 
 **开发库**：存放开发过程中需要保留的各种信息，供开发人员专用。
 

@@ -27,41 +27,41 @@ tags:
 
 /data/data/com.android.providers.telephony/databases/mmssms.db
 
-[<img style="display: inline; border: 0px;" title="clip_image002" src="http://www.tanglei.name/wp-content/uploads/2012/03/clip_image002_thumb.jpg" alt="clip_image002" width="644" height="67" border="0" hspace="12" />](http://www.tanglei.name/wp-content/uploads/2012/03/clip_image002.jpg)
+[<img style="display: inline; border: 0px;" title="clip_image002" src="/wp-content/uploads/2012/03/clip_image002_thumb.jpg" alt="clip_image002" width="644" height="67" border="0" hspace="12" />](/wp-content/uploads/2012/03/clip_image002.jpg)
 
 OK，在滴。然后就是想的直接用命令cp或者copy命令复制到sdcard上，取回到电脑里。结果悲催的是居然木有cp命令。然后网上查询得到下面这个方法。可以用[dd命令](http://baike.baidu.com/view/3568252.htm)(链接百科详解)。(说是cat命令重定向输出也可以).
 
 现在已经将系统目录下的数据库copy到sdcard了。
 
-[<img style="display: inline; border: 0px;" title="clip_image004" src="http://www.tanglei.name/wp-content/uploads/2012/03/clip_image004_thumb.jpg" alt="clip_image004" width="644" height="143" border="0" hspace="12" data-pinit="registered" />](http://www.tanglei.name/wp-content/uploads/2012/03/clip_image004.jpg)
+[<img style="display: inline; border: 0px;" title="clip_image004" src="/wp-content/uploads/2012/03/clip_image004_thumb.jpg" alt="clip_image004" width="644" height="143" border="0" hspace="12" data-pinit="registered" />](/wp-content/uploads/2012/03/clip_image004.jpg)
 
 然后退出adb调试器。(我不知道怎么在adb调试器里面直接将文件导出到数据库)用adb pull命令导出(之前只用过这种adb push 和adb pull 等)。
 
-[<img style="display: inline; border: 0px;" title="clip_image006" src="http://www.tanglei.name/wp-content/uploads/2012/03/clip_image006_thumb.jpg" alt="clip_image006" width="644" height="91" border="0" />](http://www.tanglei.name/wp-content/uploads/2012/03/clip_image006.jpg)
+[<img style="display: inline; border: 0px;" title="clip_image006" src="/wp-content/uploads/2012/03/clip_image006_thumb.jpg" alt="clip_image006" width="644" height="91" border="0" />](/wp-content/uploads/2012/03/clip_image006.jpg)
 
 OK，已经将数据库拿到电脑上了。
 
 打开sqlite命令，查看数据库。
 
-[<img style="display: inline; border: 0px;" title="clip_image008" src="http://www.tanglei.name/wp-content/uploads/2012/03/clip_image008_thumb.jpg" alt="clip_image008" width="644" height="112" border="0" data-pinit="registered" />](http://www.tanglei.name/wp-content/uploads/2012/03/clip_image008.jpg)
+[<img style="display: inline; border: 0px;" title="clip_image008" src="/wp-content/uploads/2012/03/clip_image008_thumb.jpg" alt="clip_image008" width="644" height="112" border="0" data-pinit="registered" />](/wp-content/uploads/2012/03/clip_image008.jpg)
 
 看该数据库下的表。很明显sms是保存短信的，直接select就能知道短信内容。(涉及到电话号码，就给划掉了)
 
-[<img style="display: inline; border: 0px;" title="clip_image010" src="http://www.tanglei.name/wp-content/uploads/2012/03/clip_image010_thumb.jpg" alt="clip_image010" width="644" height="144" border="0" data-pinit="registered" />](http://www.tanglei.name/wp-content/uploads/2012/03/clip_image010.jpg)
+[<img style="display: inline; border: 0px;" title="clip_image010" src="/wp-content/uploads/2012/03/clip_image010_thumb.jpg" alt="clip_image010" width="644" height="144" border="0" data-pinit="registered" />](/wp-content/uploads/2012/03/clip_image010.jpg)
 
 乱码，不着急。将查询结果导出到文件。
 
 .output是改变输出。返回标准输出。.output stdout
 
-[<img style="display: inline; border: 0px;" title="clip_image012" src="http://www.tanglei.name/wp-content/uploads/2012/03/clip_image012_thumb.jpg" alt="clip_image012" width="644" height="62" border="0" />](http://www.tanglei.name/wp-content/uploads/2012/03/clip_image012.jpg)
+[<img style="display: inline; border: 0px;" title="clip_image012" src="/wp-content/uploads/2012/03/clip_image012_thumb.jpg" alt="clip_image012" width="644" height="62" border="0" />](/wp-content/uploads/2012/03/clip_image012.jpg)
 
 再select一遍。已经在当前目录下生生成查询结果的文件。
 
-[<img style="display: inline; border: 0px;" title="clip_image014" src="http://www.tanglei.name/wp-content/uploads/2012/03/clip_image014_thumb.jpg" alt="clip_image014" width="644" height="67" border="0" hspace="12" />](http://www.tanglei.name/wp-content/uploads/2012/03/clip_image014.jpg)
+[<img style="display: inline; border: 0px;" title="clip_image014" src="/wp-content/uploads/2012/03/clip_image014_thumb.jpg" alt="clip_image014" width="644" height="67" border="0" hspace="12" />](/wp-content/uploads/2012/03/clip_image014.jpg)
 
 直接打开，即可。
 
-[<img style="display: inline; border: 0px;" title="clip_image015" src="http://www.tanglei.name/wp-content/uploads/2012/03/clip_image015_thumb.jpg" alt="clip_image015" width="644" height="194" border="0" data-pinit="registered" />](http://www.tanglei.name/wp-content/uploads/2012/03/clip_image015.jpg)
+[<img style="display: inline; border: 0px;" title="clip_image015" src="/wp-content/uploads/2012/03/clip_image015_thumb.jpg" alt="clip_image015" width="644" height="194" border="0" data-pinit="registered" />](/wp-content/uploads/2012/03/clip_image015.jpg)
 
 参考资料：
 

@@ -39,7 +39,7 @@ tags:
 如何把一个散点集合剖分成不均匀的三角形网格，这就是散点集的三角剖分问题，散点集的三角剖分，对数值分析以及图形学来说，都是极为重要的一项预处理技术。该问题图示如下：
 
 <p style="text-align: center; background: white;">
-  <img src="http://www.tanglei.name/wp-content/uploads/2012/11/110712_1636_Delaunay1.png" alt="" /><span style="color: #333333; font-family: Tahoma;"><br /> </span>
+  <img src="/wp-content/uploads/2012/11/110712_1636_Delaunay1.png" alt="" /><span style="color: #333333; font-family: Tahoma;"><br /> </span>
 </p>
 
 #### 1.1 三角剖分定义
@@ -69,12 +69,12 @@ Delaunay三角剖分：如果点集V的一个三角剖分T只包含Delaunay边�
 1、空圆特性：Delaunay三角网是唯一的（任意四点不能共圆），在Delaunay三角形网中任一三角形的外接圆范围内不会有其它点存在。如下图所示：
 
 <p style="text-align: center;">
-  <a title="查看图片" href="http://baike.baidu.com/albums/1691145/1691145/0/0.html" target="_blank"><span style="color: #136ec2; font-size: 1pt;">  </span></a><img src="http://www.tanglei.name/wp-content/uploads/2012/11/110712_1636_Delaunay2.jpg" alt="" />
+  <a title="查看图片" href="http://baike.baidu.com/albums/1691145/1691145/0/0.html" target="_blank"><span style="color: #136ec2; font-size: 1pt;">  </span></a><img src="/wp-content/uploads/2012/11/110712_1636_Delaunay2.jpg" alt="" />
 </p>
 
 2、最大化最小角特性：在散点集可能形成的三角剖分中，Delaunay三角剖分所形成的三角形的最小角最大。从这个意义上讲，Delaunay 三角网是&#8221;最接近于规则化的&#8221;的三角网。具体的说是指在两个相邻的三角形构成凸四边形的对角线，在相互交换后，六个内角的最小角不再增大。(_如果将三角网中的每个三角形的最小角进行升序排列，则Delaunay三角网的排列得到的数值最大，从这个意义上讲，Delaunay三角网是&#8221;最接近于规则化&#8221;的三角网。_)如下图所示：
 
-<a title="查看图片" href="http://baike.baidu.com/albums/1691145/1691145/0/0.html" target="_blank"><span style="color: #136ec2; font-family: Arial; font-size: 1pt;">  </span></a>![](http://www.tanglei.name/wp-content/uploads/2012/11/110712_1636_Delaunay3.jpg)
+<a title="查看图片" href="http://baike.baidu.com/albums/1691145/1691145/0/0.html" target="_blank"><span style="color: #136ec2; font-family: Arial; font-size: 1pt;">  </span></a>![](/wp-content/uploads/2012/11/110712_1636_Delaunay3.jpg)
 
 最大化最小角特性是区分平面点集Delaunay三角剖分于高维点集所特有的性质。正式这一特性，delaunay剖分总是能尽可能避免病态三角形的出现，自动向等边三角形靠近，注意仅适用于平面点集，三维或者更高的delaunay三角剖分不具有相应的性质 (周知.三角剖分算法研究[D].哈尔滨理工大学,2007.)<span style="color: #333333; font-family: Tahoma;"><br /> </span>
 
@@ -99,7 +99,7 @@ Delaunay三角剖分：如果点集V的一个三角剖分T只包含Delaunay边�
   
 ** 
 
-![](http://www.tanglei.name/wp-content/uploads/2012/11/110712_1636_Delaunay4.jpg)
+![](/wp-content/uploads/2012/11/110712_1636_Delaunay4.jpg)
 
 ### <span style="text-align: justify;">2.Delaunay剖分的算法</span>
 
@@ -172,7 +172,7 @@ Bowyer-Watson算法和Lawson 算法**区别和联系**。
       <span style="font-size: 10pt;">remove super triangle<br /> </span>
     </div>
 
-![](http://www.tanglei.name/wp-content/uploads/2012/11/110712_1636_Delaunay5.png)
+![](/wp-content/uploads/2012/11/110712_1636_Delaunay5.png)
 
 #### 3.2 Lawson Algorithm
 
@@ -202,9 +202,9 @@ Bowyer-Watson算法和Lawson 算法**区别和联系**。
       <span style="font-size: 10pt;">remove super triangle<br /> </span>
     </div>
 
-![](http://www.tanglei.name/wp-content/uploads/2012/11/110712_1636_Delaunay6.png)
+![](/wp-content/uploads/2012/11/110712_1636_Delaunay6.png)
 
-![](http://www.tanglei.name/wp-content/uploads/2012/11/110712_1636_Delaunay7.png)
+![](/wp-content/uploads/2012/11/110712_1636_Delaunay7.png)
 
 参考资料：
 

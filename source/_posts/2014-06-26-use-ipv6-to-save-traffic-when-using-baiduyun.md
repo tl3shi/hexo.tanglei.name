@@ -40,7 +40,7 @@ tags:
 
 最后效果如下：
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image" src="http://www.tanglei.name/wp-content/uploads/2014/06/Image_thumb.png" alt="Image" width="669" height="718" border="0" />](http://www.tanglei.name/wp-content/uploads/2014/06/Image.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image" src="/wp-content/uploads/2014/06/Image_thumb.png" alt="Image" width="669" height="718" border="0" />](/wp-content/uploads/2014/06/Image.png)
 
 主要修改goagent配置goagent.ini (我的是v3.0.2,截至2014-6-26的最新版本是v3.1.8, 对应的要改为profile = ipv6)
 
@@ -53,11 +53,11 @@ hosts = 2404:6800:4005:c00::64|2404:6800:4005:c00::65|2404:6800:4005:c00::5e|240
 
 这是用代理访问http://ip.chinaz.com 可以看到代理的ip~ 若不是自己的ip，则成功了。
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(1)" src="http://www.tanglei.name/wp-content/uploads/2014/06/Image1_thumb.png" alt="Image(1)" width="644" height="185" border="0" />](http://www.tanglei.name/wp-content/uploads/2014/06/Image1.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(1)" src="/wp-content/uploads/2014/06/Image1_thumb.png" alt="Image(1)" width="644" height="185" border="0" />](/wp-content/uploads/2014/06/Image1.png)
 
 百度网盘/百度云管家设置代理
   
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(2)" src="http://www.tanglei.name/wp-content/uploads/2014/06/Image2_thumb.png" alt="Image(2)" width="499" height="109" border="0" />](http://www.tanglei.name/wp-content/uploads/2014/06/Image2.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(2)" src="/wp-content/uploads/2014/06/Image2_thumb.png" alt="Image(2)" width="499" height="109" border="0" />](/wp-content/uploads/2014/06/Image2.png)
 
 速度：几十k ~ 几百k 不等. 木有ipv4直接下载速度快啊， 我ipv4直接下载速度能达3M呢~
 
