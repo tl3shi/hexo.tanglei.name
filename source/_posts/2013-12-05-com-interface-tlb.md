@@ -62,15 +62,11 @@ namespace comtest
 
 然后选择”生成”tab，勾选“为COM互操作注册”。（英文版如下）
 
-[
-  
-<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image004" src="/wp-content/uploads/2013/12/clip_image004_thumb.jpg" alt="clip_image004" width="558" height="408" border="0" />](/wp-content/uploads/2013/12/clip_image004.jpg)
+[ <img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image004" src="/wp-content/uploads/2013/12/clip_image004_thumb.jpg" alt="clip_image004" width="558" height="408" border="0" />](/wp-content/uploads/2013/12/clip_image004.jpg)
 
 然后生成，生成可能失败，提示权限不够，然后以管理员身份运行再生成。
 
-[
-  
-<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image006" src="/wp-content/uploads/2013/12/clip_image006_thumb.jpg" alt="clip_image006" width="557" height="41" border="0" />](/wp-content/uploads/2013/12/clip_image006.jpg)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image006" src="/wp-content/uploads/2013/12/clip_image006_thumb.jpg" alt="clip_image006" width="557" height="41" border="0" />](/wp-content/uploads/2013/12/clip_image006.jpg)
 
 如下消息看到成功生成了Dll。
 
@@ -78,19 +74,15 @@ namespace comtest
 
 生成的dll就可以给另外的人调用了。调用方需要用regasm注册一下生成tlb文件。
 
-[
-  
-<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image007" src="/wp-content/uploads/2013/12/clip_image007_thumb.png" alt="clip_image007" width="570" height="127" border="0" />](/wp-content/uploads/2013/12/clip_image007.png)
+[ <img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image007" src="/wp-content/uploads/2013/12/clip_image007_thumb.png" alt="clip_image007" width="570" height="127" border="0" />](/wp-content/uploads/2013/12/clip_image007.png)
 
-调用放可以直接import这个tlb文件后，直接写一个空的main函数，
+调用方可以直接import这个tlb文件后，直接写一个空的main函数，
 
-<pre>#import  "D:\cpp\comtest\Release\comtest.tlb" raw_interfaces_only</pre>
+``#import  "D:\cpp\comtest\Release\comtest.tlb" raw_interfaces_only``
 
 然后生成，这样build后可以生成一个comtest.tlh 文件，visual studio 就能智能提示。
 
-[
-  
-<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image008" src="/wp-content/uploads/2013/12/clip_image008_thumb.png" alt="clip_image008" width="429" height="181" border="0" />](/wp-content/uploads/2013/12/clip_image008.png)
+[ <img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image008" src="/wp-content/uploads/2013/12/clip_image008_thumb.png" alt="clip_image008" width="429" height="181" border="0" />](/wp-content/uploads/2013/12/clip_image008.png)
 
 调用方式可以是这样：
 
@@ -153,11 +145,8 @@ int main1()//this also works
 
 运行就能看到如下结果
 
-[
-  
-<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/12/image_thumb.png" alt="image" width="174" height="67" border="0" />](/wp-content/uploads/2013/12/image.png)
+[ <img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/12/image_thumb.png" alt="image" width="174" height="67" border="0" />](/wp-content/uploads/2013/12/image.png)
 
-&nbsp;
 
 Reference：
 

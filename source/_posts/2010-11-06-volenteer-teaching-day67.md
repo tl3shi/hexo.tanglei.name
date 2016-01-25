@@ -1,6 +1,6 @@
 ---
 id: 211
-title: '支教第六&#038;七天-云南赶集2'
+title: 支教第六-七天-云南赶集2
 date: 2010-11-06T13:14:16+00:00
 author: tanglei
 layout: post

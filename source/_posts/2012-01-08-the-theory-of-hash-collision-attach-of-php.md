@@ -43,7 +43,7 @@ Zend哈希表的内部实现
   
 PHP中使用一个叫Backet的结构体表示桶，同一哈希值的所有桶被组织为一个单链表。哈希表使用HashTable结构体表示。相关源码在zend/Zend_hash.h下：
 
-<pre>```C
+```C
 typedef struct bucket {
     ulong h;                        /* Used for numeric indexing */
     uint nKeyLength;
@@ -81,7 +81,7 @@ typedef struct _hashtable {
   
 PHP哈希表最小容量是8（2^3），最大容量是0×80000000（2^31），并向2的整数次幂圆整（即长度会自动扩展为2的整数次幂，如13个元素的哈希表长度为16；100个元素的哈希表长度为128）。nTableMask被初始化为哈希表长度（圆整后）减1。具体代码在zend/Zend\_hash.c的\_zend\_hash\_init函数中，这里截取与本文相关的部分并加上少量注释。
 
-<pre>```C
+```C
 ZEND_API int _zend_hash_init(HashTable *ht, uint nSize, hash_func_t pHashFunction, dtor_func_t pDestructor, zend_bool persistent ZEND_FILE_LINE_DC)
 {
     uint i = 3;
@@ -122,7 +122,7 @@ Zend HashTable的哈希算法异常简单：
   
 下面是Zend源码中查找哈希表的代码：
 
-<pre>```C
+```C
 ZEND_API int zend_hash_index_find(const HashTable *ht, ulong h, void **pData)
 {
     uint nIndex;

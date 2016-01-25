@@ -156,9 +156,11 @@ a_stand_alone_function_decorated()
 
 如果不想调用a\_stand\_alone\_function\_decorated()这个方法，还是钟情于以前的那个名字，方法也简单。重写下a\_stand\_alone_function方法即可。即：
 
-<pre><cc>a_stand_alone_function = my_shiny_new_decorator(a_stand_alone_function)
+```python
+a_stand_alone_function = my_shiny_new_decorator(a_stand_alone_function)
 a_stand_alone_function()
-#输出还是一样样```
+#输出还是一样样
+```
 
 ### decorator揭秘
 

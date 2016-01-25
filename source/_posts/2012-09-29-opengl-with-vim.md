@@ -58,15 +58,13 @@ int main(int argc, char* argv[])
   
 直接通过默认的GCC编译参数通不过，报“undefined references”等错误，得加相关参数。GLUT\_DISABLE\_ATEXIT_HACK貌似说的是在glut编译时保证用一样的C run-time libraries (CRTs).
 
-<pre><cc lang="bash" inline="true">
-gcc t.cpp -D_STDCALL_SUPPORTED -DGLUT_DISABLE_ATEXIT_HACK -lopengl32 -lglu32 -lglut32 -o t.exe
-```
+``gcc t.cpp -D_STDCALL_SUPPORTED -DGLUT_DISABLE_ATEXIT_HACK -lopengl32 -lglu32 -lglut32 -o t.exe ``
 
 运行t.exe即可。
   
 可以配置到VIMRC文件中，map到键盘就方便了，跟一般的C++/C程序区分下，另外加个编译的映射，比如ctrl+alt+F5，运行还是不变。
 
-<pre>```bash
+```bash
 func CompileOpenGLRun()
     exec "!gcc % -g -o %<.exe -D_STDCALL_SUPPORTED -DGLUT_DISABLE_ATEXIT_HACK -lopengl32 -lglu32 -lglut32 "
 endfunc

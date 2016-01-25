@@ -44,7 +44,7 @@ C<sub>K</sub>是L<sub>K</sub>的超集，也就是说，C<sub>K</sub>的成员�
 
 算法伪代码如下：
 
-<pre>```vb
+```vb
 //算法：Apriori
 //输入：D - 事务数据库；min_sup - 最小支持度计数阈值
 //输出：L - D中的频繁项集
