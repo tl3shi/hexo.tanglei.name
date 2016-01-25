@@ -21,7 +21,7 @@ tags:
 ---
 百度云/网盘网页版的话直接改hosts即可，网传hosts如下:
 
-<pre><cc>2400:da00::dbf:0:6666 p.baidupcs.com 
+```2400:da00::dbf:0:6666 p.baidupcs.com 
 2400:da00::dbf:0:6666 nj.baidupcs.com 
 2400:da00::dbf:0:6666 bj.baidupcs.com 
 2400:da00::dbf:0:6666 qd.baidupcs.com 

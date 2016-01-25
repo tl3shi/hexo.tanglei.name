@@ -37,7 +37,7 @@ tags:
 
 后来的后来，还是从网上找到了解决方案，不过device必须得root，不然**没办法**搞定。原文来自<a href="http://zipta.ru/2012/11/borba-s-android-4-2/" target="_blank">这里</a>，虽然不知道是哪国语言～但代码还是认识。
 
-<pre><cc>
+```
 //开启飞行模式
 settings put global airplane_mode_on 1
 am broadcast -a android.intent.action.AIRPLANE_MODE --ez state true
@@ -50,7 +50,7 @@ am broadcast -a android.intent.action.AIRPLANE_MODE --ez state false
 
 再后来在<a href="http://stackoverflow.com/questions/15861046/how-to-toggle-airplane-mode-on-android-4-2-using-root" target="_blank">stackoverflow</a>上也有人提到了这个解决方案，并且还给了另外一个解决方案，即通过sqlite去**直接**改变Android的系统配置。数据库位置在/data/data/com.android.providers.settings/databases/settings.db
 
-<pre><cc>
+```
 sqlite3 /data/data/com.android.providers.settings/databases/settings.db
 insert into global values(null, 'airplane_mode_on', 1); //相应的插入0值，即是取消飞行模式
 ```

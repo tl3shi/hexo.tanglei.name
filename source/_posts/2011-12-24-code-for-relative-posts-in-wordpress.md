@@ -68,7 +68,7 @@ function the_category_ID($echo = true) {
 
 不过意思好像是废弃了，就直接调用这个函数吧
 
-<pre><cc>
+```
 $categories = get_the_category();
 $cat = $categories[0]->term_id;
 ```
