@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 编译器在func()函数中，返回时没有拷贝构造一个C的实例，一般来讲可以这样实现，比如外面调用的时候是用c去接受的，会直接构造c，然后在函数内部修改c的引用。
 
 ```cpp
-C func(C &#038;__hidden__)
+C func(C &__hidden__)
 {
     __hidden__ = C();
     return;
@@ -58,7 +58,7 @@ C func()
 }
 
 //优化后 
-C func(C &#038;__hidden__)
+C func(C &__hidden__)
 {
     __hidden__ = C();
     __hidden__.method();
@@ -99,7 +99,7 @@ class A
             cout << "~A()" << a << endl;
         }
 
-        A(const A&#038; x):a(x.a)
+        A(const A& x):a(x.a)
         {
             cout << "copy A()" << a << endl;
         }

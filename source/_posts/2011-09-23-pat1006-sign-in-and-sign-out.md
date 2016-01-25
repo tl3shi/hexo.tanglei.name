@@ -77,7 +77,7 @@ int main()
 	char person[16];
 	char time1[9],time2[9];
 	//printf("%d",gettime("00:01:28"));
-	scanf("%d",&#038;n);
+	scanf("%d",&n);
 	maxtime=gettime("00:00:01");
 	mintime=gettime("23:59:59");
 	for(i=0;i<n;i++)

@@ -43,7 +43,7 @@ tags:
 
 <img src="http://www.tanglei.name/photos/content/Macao/SAM_1848.jpg" alt="澳门游" width="440" height="586" />
 
-在转移阵地的途中，据说是一个设计家结合中葡 的观念设计滴如下：观音&#038;圣母？
+在转移阵地的途中，据说是一个设计家结合中葡 的观念设计滴如下：观音&圣母？
 
 <img src="http://www.tanglei.name/photos/content/Macao/SAM_1939.jpg" alt="澳门游" width="614" height="461" />
 

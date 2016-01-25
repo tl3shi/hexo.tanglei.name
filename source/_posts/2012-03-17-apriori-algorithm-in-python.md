@@ -64,8 +64,8 @@ Return L=所有的频繁集；
 Procedure apriori_gen(Lk-1:frequent(k-1)-itemsets)
       For each项集l1属于Lk-1
               For each项集 l2属于Lk-1
-                       If((l1[1]=l2[1])&#038;&#038;( l1[2]=l2[2])&#038;&#038;……..
-&#038;&#038; (l1[k-2]=l2[k-2])&#038;&#038;(l1[k-1]<l2[k-1])) then{
+                       If((l1[1]=l2[1])&&( l1[2]=l2[2])&&……..
+&& (l1[k-2]=l2[k-2])&&(l1[k-1]<l2[k-1])) then{
                    c=l1连接l2 //连接步：产生候选
                    if has_infrequent_subset(c,Lk-1) then
                        delete c; //剪枝步：删除非频繁候选

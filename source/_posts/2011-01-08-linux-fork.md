@@ -65,7 +65,7 @@ int main(){
 		printf("子进程的PID是:%d\n",c_pid);
 	}
 
-	wait(&#038;status);
+	wait(&status);
 	return 0;
 }
 ```
@@ -113,7 +113,7 @@ int main(){
 		printf("子进程的PID是:%d\n",c_pid);
 	}
 
-	wait(&#038;status);
+	wait(&status);
 	return 0;
 }
 ```

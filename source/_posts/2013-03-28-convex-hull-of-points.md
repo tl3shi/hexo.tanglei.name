@@ -163,7 +163,7 @@ until pi = p0
         for (unsigned int i = 1; i < points.size(); i++)
         {
             if(points[i].m_y < points[ltl].m_y || 
-               (points[i].m_y == points[ltl].m_y &#038;&#038; points[i].m_x < points[ltl].m_x))
+               (points[i].m_y == points[ltl].m_y && points[i].m_x < points[ltl].m_x))
                ltl = i;
         }
         vector<CP_Vector2D> convexPoints;
@@ -173,7 +173,7 @@ until pi = p0
             int q = -1;
             for(unsigned int k = 0; k < points.size(); k++)
             {
-                if( (k != p) &#038;&#038;  (q < 0 || !to_left(points[k], points[p], points[q])))
+                if( (k != p) &&  (q < 0 || !to_left(points[k], points[p], points[q])))
                     q = k;//update q if k lies in right of pq
             }
             if(ltl == q)
@@ -213,7 +213,7 @@ while (!T.empty()) do
         for (unsigned int i = 1; i < points.size(); i++)
         {
             if(points[i].m_y < points[ltl].m_y || 
-                (points[i].m_y == points[ltl].m_y &#038;&#038; points[i].m_x < points[ltl].m_x))
+                (points[i].m_y == points[ltl].m_y && points[i].m_x < points[ltl].m_x))
                 ltl = i;
         }
 

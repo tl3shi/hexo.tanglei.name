@@ -171,7 +171,7 @@ int main(void)
   错误！数据没有被输入或者数据传输有问题"); 
   	//sscanf 类似正则表达式 以固定的格式为输入源，而scanf从标准输入获得输入源 
   	//成功则返回参数数目 
-  	else if( sscanf(data,"m=%ld&#038;n=%ld",&#038;m,&#038;n) != 2) 
+  	else if( sscanf(data,"m=%ld&n=%ld",&m,&n) != 2) 
   		printf("
   
   <P>

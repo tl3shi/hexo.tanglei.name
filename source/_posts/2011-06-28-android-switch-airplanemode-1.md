@@ -66,11 +66,11 @@ public class AirPlaneModeActivity extends Activity
 		int sm = preferences.getInt("startMinute", -1);
 		int eh = preferences.getInt("endHour", -1);
 		int em = preferences.getInt("endMinute", -1);
-		if (sh != -1 &#038;&#038; sm != -1)
+		if (sh != -1 && sm != -1)
 		{
 			startTimeBtn.setText(formatTime(sh, sm));
 		}
-		if (eh != -1 &#038;&#038; em != -1)
+		if (eh != -1 && em != -1)
 		{
 			endTimeBtn.setText(formatTime(eh, em));
 		}

@@ -43,4 +43,4 @@ tags:
   
 记住这两个重要的网页：[2011年软件学院校外推荐免试直硕拟录取名单](http://www.tsinghua.edu.cn/publish/soft/3649/2011/20110929172848279367829/20110929172848279367829_.html)
   
-&nbsp;&nbsp;[2012年清华大学接收外校推荐免试攻读博士（硕士）学位研究生拟预录取名单公示](http://yz.tsinghua.edu.cn/docinfo/board/boarddetail.jsp?columnId=025&#038;parentColumnId=0&#038;itemSeq=3513)(姓氏顺序排名)
+&nbsp;&nbsp;[2012年清华大学接收外校推荐免试攻读博士（硕士）学位研究生拟预录取名单公示](http://yz.tsinghua.edu.cn/docinfo/board/boarddetail.jsp?columnId=025&parentColumnId=0&itemSeq=3513)(姓氏顺序排名)

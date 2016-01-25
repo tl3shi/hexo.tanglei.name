@@ -114,7 +114,7 @@ int main()
     long a = 1;
     long b = 2;
     long c;
-    ptr->add(a, b, &#038;c);
+    ptr->add(a, b, &c);
     cout << c << endl;
    
 }
@@ -133,7 +133,7 @@ int main1()//this also works
     hr = ptr.CreateInstance(__uuidof(Program), NULL, CLSCTX_ALL);
     if(hr == S_OK)
     {
-        ptr->add(a, b, &#038;c);
+        ptr->add(a, b, &c);
         cout << "result = " << c;
     }
     else

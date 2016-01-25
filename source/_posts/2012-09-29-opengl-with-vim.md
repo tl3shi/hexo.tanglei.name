@@ -44,11 +44,11 @@ void myDisplay(void)
 
 int main(int argc, char* argv[])
 {
-     glutInit(&#038;argc, argv);
+     glutInit(&argc, argv);
      glutInitDisplayMode(GLUT_RGBA | GLUT_SINGLE);
      glutInitWindowSize(WIDTH, HEIGHT);
      glutCreateWindow("OpenGL-HelloWorld");
-     glutDisplayFunc(&#038;myDisplay);
+     glutDisplayFunc(&myDisplay);
      glutMainLoop();
      return 0;
 }
@@ -70,9 +70,9 @@ func CompileOpenGLRun()
 endfunc
 "定义Run函数
 func Run()
-  if &#038;filetype == 'c' || &#038;filetype == 'cpp'
+  if &filetype == 'c' || &filetype == 'cpp'
     exec "!%<.exe"
-  elseif &#038;filetype == 'java'
+  elseif &filetype == 'java'
     exec "!java %<"
   endif
 endfun

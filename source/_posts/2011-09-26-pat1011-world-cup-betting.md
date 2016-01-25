@@ -110,7 +110,7 @@ int main()
 	float rmb=1.0f;
 	for(i=0;i<3;i++)
 		for(j=0;j<3;j++)
-		scanf("%f",&#038;games[i][j]);
+		scanf("%f",&games[i][j]);
 
 	for(i=0;i<3;i++)
 	{

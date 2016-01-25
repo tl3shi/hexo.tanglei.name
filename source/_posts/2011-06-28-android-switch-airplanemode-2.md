@@ -63,7 +63,7 @@ public class AlarmReceiver extends BroadcastReceiver
 		{
 			ContentResolver cr = context.getContentResolver();
 			if (state
-					&#038;&#038; System.getString(cr, System.AIRPLANE_MODE_ON)
+					&& System.getString(cr, System.AIRPLANE_MODE_ON)
 							.equals("0"))
 			{
 				Toast.makeText(context, "正在转飞行模式", Toast.LENGTH_LONG).show();
@@ -78,7 +78,7 @@ public class AlarmReceiver extends BroadcastReceiver
 				intent.putExtra("state", true);
 				context.sendBroadcast(intent);
 			} else if (!state
-					&#038;&#038; System.getString(cr, System.AIRPLANE_MODE_ON)
+					&& System.getString(cr, System.AIRPLANE_MODE_ON)
 							.equals("1"))
 			{
 				System.putString(cr, System.AIRPLANE_MODE_ON, "0");

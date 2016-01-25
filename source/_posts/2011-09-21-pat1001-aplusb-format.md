@@ -51,7 +51,7 @@ int main()
 {
 	int a , b ;
 	int sum;
-	scanf("%d%d",&#038;a,&#038;b);
+	scanf("%d%d",&a,&b);
 	sum = a + b;
 	myprint(sum);
 	return 0;

@@ -56,21 +56,21 @@ int main()
 		array[j]=0.0f;
 	}
 
-	scanf("%d",&#038;a);
+	scanf("%d",&a);
 	for(i=0;i<a;i++){
 		int exp = 0;
 		float coe = 0.0f;
-		scanf("%d",&#038;exp);
-		scanf("%f",&#038;coe);
+		scanf("%d",&exp);
+		scanf("%f",&coe);
 		if(exp>maxexp1) maxexp1=exp;
 		array1[exp]=coe;
 	}
-	scanf("%d",&#038;b);
+	scanf("%d",&b);
 	for(i=0;i<b;i++){
 		int exp = 0;
 		float coe = 0.0f;
-		scanf("%d",&#038;exp);
-		scanf("%f",&#038;coe);
+		scanf("%d",&exp);
+		scanf("%f",&coe);
 		if(exp>maxexp2) maxexp2=exp;
 		array2[exp]=coe;
 	}

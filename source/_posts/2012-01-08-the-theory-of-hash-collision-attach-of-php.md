@@ -112,13 +112,13 @@ ZEND_API int _zend_hash_init(HashTable *ht, uint nSize, hash_func_t pHashFunctio
   
 Zend HashTable的哈希算法异常简单：
   
-**hash(key)=key&#038;nTableMask**
+**hash(key)=key&nTableMask**
   
 即简单将数据的原始key与HashTable的nTableMask进行按位与即可。
   
 如果原始key为字符串，则首先使用Times33算法将字符串转为整形再与nTableMask按位与。
   
-**hash(strkey)=times33(strkey)&#038;nTableMask**
+**hash(strkey)=times33(strkey)&nTableMask**
   
 下面是Zend源码中查找哈希表的代码：
 
@@ -130,11 +130,11 @@ ZEND_API int zend_hash_index_find(const HashTable *ht, ulong h, void **pData)
  
     IS_CONSISTENT(ht);
  
-    nIndex = h &#038; ht->nTableMask;
+    nIndex = h & ht->nTableMask;
  
     p = ht->arBuckets[nIndex];
     while (p != NULL) {
-        if ((p->h == h) &#038;&#038; (p->nKeyLength == 0)) {
+        if ((p->h == h) && (p->nKeyLength == 0)) {
             *pData = p->pData;
             return SUCCESS;
         }
@@ -152,11 +152,11 @@ ZEND_API int zend_hash_find(const HashTable *ht, const char *arKey, uint nKeyLen
     IS_CONSISTENT(ht);
  
     h = zend_inline_hash_func(arKey, nKeyLength);
-    nIndex = h &#038; ht->nTableMask;
+    nIndex = h & ht->nTableMask;
  
     p = ht->arBuckets[nIndex];
     while (p != NULL) {
-        if ((p->h == h) &#038;&#038; (p->nKeyLength == nKeyLength)) {
+        if ((p->h == h) && (p->nKeyLength == nKeyLength)) {
             if (!memcmp(p->arKey, arKey, nKeyLength)) {
                 *pData = p->pData;
                 return SUCCESS;
@@ -176,15 +176,15 @@ ZEND_API int zend_hash_find(const HashTable *ht, const char *arKey, uint nKeyLen
   
 知道了PHP内部哈希表的算法，就可以利用其原理构造用于攻击的数据。一种最简单的方法是利用掩码规律制造碰撞。上文提到Zend HashTable的长度nTableSize会被圆整为2的整数次幂，假设我们构造一个2^16的哈希表，则nTableSize的二进制表示为：1 0000 0000 0000 0000，而nTableMask = nTableSize – 1为：0 1111 1111 1111 1111。接下来，可以以0为初始值，以2^16为步长，制造足够多的数据，可以得到如下推测：
 
-0000 0000 0000 0000 0000 &#038; 0 1111 1111 1111 1111 = 0
+0000 0000 0000 0000 0000 & 0 1111 1111 1111 1111 = 0
   
-0001 0000 0000 0000 0000 &#038; 0 1111 1111 1111 1111 = 0
+0001 0000 0000 0000 0000 & 0 1111 1111 1111 1111 = 0
   
-0010 0000 0000 0000 0000 &#038; 0 1111 1111 1111 1111 = 0
+0010 0000 0000 0000 0000 & 0 1111 1111 1111 1111 = 0
   
-0011 0000 0000 0000 0000 &#038; 0 1111 1111 1111 1111 = 0
+0011 0000 0000 0000 0000 & 0 1111 1111 1111 1111 = 0
   
-0100 0000 0000 0000 0000 &#038; 0 1111 1111 1111 1111 = 0
+0100 0000 0000 0000 0000 & 0 1111 1111 1111 1111 = 0
   
 ……
   

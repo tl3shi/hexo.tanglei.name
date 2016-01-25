@@ -49,7 +49,7 @@ tags:
 <center>
   <br /> 
   
-  <embed src="http://www.tudou.com/v/_yyUft1S2G0/&#038;resourceId=0_05_05_99&#038;bid=05/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="480" height="400">
+  <embed src="http://www.tudou.com/v/_yyUft1S2G0/&resourceId=0_05_05_99&bid=05/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="480" height="400">
   </embed>
   
   <br />
