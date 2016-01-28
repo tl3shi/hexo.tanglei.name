@@ -34,11 +34,11 @@ published: true
 
 这里也分享下我在写这个ppt时遇到的一些关于latex、beamer等问题。
 
-- 改变footnote大小 ```\setbeamerfont{footnote}{size=\tiny}```
-- 改变caption大小 ```\setbeamerfont{caption}{size=\scriptsize}```
-- 设置caption自动标号 ```\setbeamertemplate{caption}[numbered]```
-- 设置subfig的label大小 ```\usepackage[caption=false,font=scriptsize]{subfig}```
-- 目录文字大小 ```\setbeamerfont{subsection in toc}{size=\footnotesize}```
+- 改变footnote大小 ``\setbeamerfont{footnote}{size=\tiny}``
+改变caption大小 ```\setbeamerfont{caption}{size=\scriptsize}```
+设置caption自动标号 ```\setbeamertemplate{caption}[numbered]```
+设置subfig的label大小 ```\usepackage[caption=false,font=scriptsize]{subfig}```
+目录文字大小 ```\setbeamerfont{subsection in toc}{size=\footnotesize}```
 - 目录章节控制  ```\tableofcontents[sections={<1-5>}]```
 - 是否显示note \setbeameroption{show notes} %un-comment to see the notes 
 - 公式中的粗体斜体问题 ```\usepackage[BoldFont,SlantFont]{xeCJK}```
