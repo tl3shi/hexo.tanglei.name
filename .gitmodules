@@ -1,3 +1,9 @@
 [submodule "themes/landscape"]
 	path = themes/landscape
 	url = https://github.com/hexojs/hexo-theme-landscape.git
+[submodule "themes/jacman"]
+	path = themes/jacman
+    url = git@github.com:tl3shi/jacman.git
+[submodule "themes/maupassant"]
+	path = themes/maupassant
+    url = git@github.com:tl3shi/maupassant-hexo.git
