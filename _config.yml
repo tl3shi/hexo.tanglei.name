@@ -71,5 +71,6 @@ theme: maupassant
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:tangleithu/tangleithu.github.com.git
+  #repo: git@github.com:tangleithu/tangleithu.github.com.git
+  repo: git@github.com:tl3shi/hexo.tanglei.name.git
   branch: gh-pages
