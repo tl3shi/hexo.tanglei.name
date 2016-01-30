@@ -3,7 +3,7 @@
 	url = https://github.com/hexojs/hexo-theme-landscape.git
 [submodule "themes/jacman"]
 	path = themes/jacman
-    url = https://github.com/tl3shi/jacman.git
+	url = https://github.com/tl3shi/jacman.git
 [submodule "themes/maupassant"]
 	path = themes/maupassant
-    url = https://github.com/tl3shi/maupassant-hexo.git
+	url = https://github.com/tl3shi/maupassant-hexo.git
