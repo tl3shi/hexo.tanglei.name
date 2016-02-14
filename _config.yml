@@ -7,12 +7,12 @@ title: tanglei's blog|唐磊的个人博客
 subtitle: 记录我的学习、生活、工作。
 description: 中南大学|清华大学软件学院唐磊的博客,主攻软件工程,数据挖掘,这里记录了我的学习，生活和工作
 author: tanglei
-language:
+language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://hexo.tanglei.name
+url: http://www.tanglei.name
 root: /
 #permalink: :year/:month/:day/:title/
 permalink: blog/:title.html
@@ -66,11 +66,12 @@ pagination_dir: page
 ## Themes: http://hexo.io/themes/
 #theme: jacman
 theme: maupassant
+#theme: landscape 
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  #repo: git@github.com:tangleithu/tangleithu.github.com.git
-  repo: git@github.com:tl3shi/hexo.tanglei.name.git
-  branch: gh-pages
+  repo: git@github.com:tangleithu/tangleithu.github.com.git
+  #repo: git@github.com:tl3shi/hexo.tanglei.name.git
+  branch: master 
