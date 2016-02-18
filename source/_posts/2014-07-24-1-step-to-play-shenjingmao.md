@@ -1,6 +1,6 @@
 ---
 id: 2519
-title: '围住神经猫 1步玩法-&#8220;作弊&#8221;'
+title: 围住神经猫1步玩法-"作弊"
 date: 2014-07-24T23:15:26+00:00
 author: tanglei
 layout: post
@@ -33,7 +33,54 @@ tags:
 后来发现微信有自己的分享时的API，就更简单了。随便一个给一个网页，设置好缩略图url，title和描述，以及点击后跳转的url，然后weixin内置浏览器打开的时候就会去调用相应的事件，比如分享给朋友、分享到朋友圈等。
 
 ```javascript
-
+<script>
+var imgUrl = "http://1251001823.cdn.myqcloud.com/1251001823/wechat/mao80.jpg";
+var lineLink = "http://1251001823.cdn.myqcloud.com/1251001823/wechat/sjm/launcher";
+var descContent = '在9×9范围内的格子中，使用色块围住白色神经猫。';
+var shareTitle = '我用了1步围住神经猫，击败99%的人，你能超过我吗？';
+var appid = '';
+function shareFriend() {
+    WeixinJSBridge.invoke('sendAppMessage',{
+        "appid": appid,
+        "img_url": imgUrl,
+        "img_width": "200",
+        "img_height": "200",
+        "link": lineLink,
+        "desc": descContent,
+        "title": shareTitle
+    }, function(res) {
+    })
+}
+function shareTimeline() {
+    WeixinJSBridge.invoke('shareTimeline',{
+        "img_url": imgUrl,
+        "img_width": "200",
+        "img_height": "200",
+        "link": lineLink,
+        "desc": descContent,
+        "title": shareTitle
+    }, function(res) {
+    });
+}
+function shareWeibo() {
+    WeixinJSBridge.invoke('shareWeibo',{
+        "content": descContent,
+        "url": lineLink,
+    }, function(res) {
+    });
+}
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    WeixinJSBridge.on('menu:share:appmessage', function(argv){
+        shareFriend();
+    });
+    WeixinJSBridge.on('menu:share:timeline', function(argv){
+        shareTimeline();
+    });
+    WeixinJSBridge.on('menu:share:weibo', function(argv){
+        shareWeibo();
+    });
+}, false);
+</script>
 ```
 
 api里面有一个appid，以为要向TX申请后才OK，后来发现暂时不填也暂时能OK。效果如下：
