@@ -21,15 +21,10 @@ tags:
 先贴出相关的协议：
   
 content://sms/inbox        收件箱
-  
 content://sms/sent        已发送
-  
 content://sms/draft        草稿
-  
 content://sms/outbox        发件箱
-  
 content://sms/failed        发送失败
-  
 content://sms/queued        待发送列表
 
 在模拟器上Outbox没有查询到数据，在模拟器上找了老半天也没找到发件箱，很郁闷。
