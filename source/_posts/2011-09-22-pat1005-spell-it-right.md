@@ -29,7 +29,8 @@ Each input file contains one test case. Each case occupies one line which contai
   
 自己平时没怎么玩C语言真是遗憾啊。搞个动态分配数组等内存，啥啥都不会，写这些代码也就当熟悉下C语言的语法吧。
 
-```C#include <stdio.h>
+```C#
+include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 int main()
@@ -78,7 +79,8 @@ int main()
 	}
 	
 	return 0;
-}```
+}
+```
 
 For each test case, output in one line the digits of the sum in English words. There must be one space between two consecutive words, but no extra space at the end of a line.
 

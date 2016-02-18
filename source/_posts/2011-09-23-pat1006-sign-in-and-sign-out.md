@@ -63,7 +63,8 @@ CS301133 21:45:00 21:58:40</pre>
 
 思路是转换成秒，比较时间。代码如下：
 
-```C#include <stdio.h>
+```C
+#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
@@ -122,4 +123,5 @@ int gettime(char time[])
 	int sec = atoi(t);
 
 	return 3600*hour+min*60+sec;
-}```
+}
+```

@@ -55,7 +55,7 @@ insert into batchkc values (2,'13-12月-05',1000);
   
 按照要求写一个存储过程，传入两个参数，一个是药品的名称，另外一个就是要出库的数量。代码如下：
 
-<pre><cc class="sql" lines="60">
+```sql
 --chuku.prc
 create or replace procedure chuku(c_ypname varchar2,c_num number)
 as

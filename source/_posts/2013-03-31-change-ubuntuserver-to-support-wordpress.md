@@ -29,7 +29,7 @@ tags:
       安装web服务器.
     </div>
     
-    ```cppsudo apt-get install apache2```
+    ``sudo apt-get install apache2``
     
     安装好后，会自动启动service. 
 
@@ -40,8 +40,7 @@ tags:
       安装php运行环境
     </div>
     
-    <pre><cc class="cpp" inline="true">sudo apt-get install php5
-```
+    ``sudo apt-get install php5 ``
 
 
 ![](/wp-content/uploads/2013/03/033013_1646_ubuntuw3.png) 
@@ -60,7 +59,8 @@ tags:
 
 ![php mysql 驱动](/wp-content/uploads/2013/03/033013_1646_ubuntuw5.png) 
 
-```cppsudo apt-get install php5-mysql
+```bash
+sudo apt-get install php5-mysql
 service apache2 stop/start
 ```
 
@@ -81,7 +81,8 @@ service apache2 stop/start
 
 我这个固定链接是采用.htaccess方式，查了下是因为apache没有开启rewrite模块支持，于是 
 
-```cppln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/
+```bash
+ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/
 ```
 
 重启apache服务。访问即可。 

@@ -36,7 +36,8 @@ content://sms/queued        待发送列表
   
 数据库中sms相关的字段如下：
 
-```java_id               一个自增字段，从1开始 
+```plain
+java_id               一个自增字段，从1开始 
 thread_id    序号，同一发信人的id相同 
 address      发件人手机号码 
 person        联系人列表里的序号，陌生人为null 
@@ -56,11 +57,13 @@ body                     短信内容
 service_center     短信服务中心号码编号 
 subject                  短信的主题 
 reply_path_present     TP-Reply-Path 
-locked```
+locked
+```
 
 检索数据方法很简单： 
 
-```javaUri uri = Uri.parse("content://sms/inbox");         
+```java
+Uri uri = Uri.parse("content://sms/inbox");         
 Cursor cur = this.managedQuery(uri, null, null, null, null);         
 if (cur.moveToFirst()) {         
     do{     
@@ -69,7 +72,8 @@ if (cur.moveToFirst()) {
             Log.i("====>", info); 
         } 
     }while(cur.moveToNext());      
-}```
+}
+```
 
 managedQuery最终也要将参数转换为SQL语句向SQLite发送消息，因此参数跟SQL语句很类似，所以可以在查询字段中加入SQL函数，
   

@@ -57,7 +57,8 @@ tags:
 
 **解题思路说明：**用大数组，下标是指数，数组里面的值是系数，刚开始始终只对一部分(题意没理解清楚)，在泱泱的帮助下，全部通过。代码如下：
 
-```C#include <stdio.h>
+```C
+#include <stdio.h>
 int main()
 {
 	float array[1001];

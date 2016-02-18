@@ -31,7 +31,8 @@ $row =  mysql_fetch_array($result)
   
 　 
 
-```javaMySQL在Linux下数据库名、表名、列名、别名大小写规则是这样的：
+>
+MySQL在Linux下数据库名、表名、列名、别名大小写规则是这样的：
 　　1、数据库名与表名是严格区分大小写的；
 　　2、表的别名是严格区分大小写的；
 　　3、列名与列的别名在所有的情况下均是忽略大小写的；
@@ -43,6 +44,6 @@ $row =  mysql_fetch_array($result)
 　　lower_case_table_names = 1
 　　参数解释：
 　　0：区分大小写
-　　1：不区分大小写```
+　　1：不区分大小写
 
 然后就觉得奇怪了不区分大小写，为啥。后来测试了下终于发现原因了。原来是msyql_query这个方法的原因，select的是str1，那么必须得通过str2作为key去获得相应的value，这里的str2必须equals，而不是equalsIgnorecase.也就是说，结果集里面必须**跟sql语句中select的大小写保持一致**才能取出来。

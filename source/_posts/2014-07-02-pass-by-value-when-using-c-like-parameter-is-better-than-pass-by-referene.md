@@ -61,7 +61,7 @@ int main()
 
 用VS 2012 默认Debug配置下生成的汇编代码如下： 
 
-<pre><cc class=cpp>
+```cpp
      4: int f(int i)
      5: {
 00F343D0  push        ebp 
@@ -91,7 +91,7 @@ int main()
 
 后面的几个函数，只截取了关键代码了。
 
-<pre><cc class=cpp>
+```
     10: int g(const int &i)
     11: { 
  ...... 
@@ -108,7 +108,7 @@ int main()
 
 [<img class="size-full wp-image-2472 aligncenter" src="/wp-content/uploads/2014/07/1.png" alt="传引用 传指针" width="321" height="151" />](/wp-content/uploads/2014/07/1.png)
 
-<pre><cc class=cpp>
+```
     16: int h(int * p)
     17: {
 ......
@@ -125,7 +125,7 @@ int main()
 
 指针跟上面引用一样。 
 
-<pre><cc class=cpp>
+```    
     22: int inter(int * &p)
     23: {
 ......

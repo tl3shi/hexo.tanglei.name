@@ -74,7 +74,8 @@ tags:
 
 * * *
 
-```C#include <stdio.h>
+```C
+#include <stdio.h>
 
 int findmax(float a,float b,float c)
 {
@@ -128,4 +129,5 @@ int main()
 	printf("%.2f",rmb);
 
 	return 0;
-}```
+}
+```

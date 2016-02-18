@@ -21,7 +21,7 @@ tags:
 ---
 在看apriori的算法，决定自己练练手，写写代码。最近又在[学python](http://www.tanglei.name/tag/python/)，所以准备用python实现。其中一个子过程是要求候选项Ck的k项子集。在这个求子集的方法中遇到了问题了，并且很神奇。最开始一直找不到问题所在，当单步调试发现问题所在之处时却倍感神奇。下面用代码示例来说明下这个问题的神奇之处。
 
-<pre><cc inline="true" class="python">
+```python
 # coding=UTF-8 
 '''
 Created on Mar 11, 2012
@@ -47,7 +47,7 @@ def getSubset(k,size):
                
   <font color="blue">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set[j] = set[j] + (elements[i])</font>
 
-<pre><cc inline="true" class="python">
+```python
                 j += 1
             subset += (set)
             i -= 1

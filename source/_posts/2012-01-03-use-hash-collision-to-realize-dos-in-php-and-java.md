@@ -35,7 +35,8 @@ $startTime = microtime(true);
   
 $array = array();
   
-for ($key = 0, $maxKey = ($size &#8211; 1) * $size; $key <= $maxKey; $key += $size) { $array[$key] = 0; } $endTime = microtime(true); echo 'Inserting ', $size, ' evil elements took ', $endTime - $startTime, ' seconds', "\n"; $startTime = microtime(true); $array = array(); for ($key = 0, $maxKey = $size - 1; $key <= $maxKey; ++$key) { $array[$key] = 0; } $endTime = microtime(true); echo 'Inserting ', $size, ' good elements took ', $endTime - $startTime, ' seconds', "\n"; //http://www.laruence.com/2011/12/30/2435.html ```
+for ($key = 0, $maxKey = ($size &#8211; 1) * $size; $key <= $maxKey; $key += $size) { $array[$key] = 0; } $endTime = microtime(true); echo 'Inserting ', $size, ' evil elements took ', $endTime - $startTime, ' seconds', "\n"; $startTime = microtime(true); $array = array(); for ($key = 0, $maxKey = $size - 1; $key <= $maxKey; ++$key) { $array[$key] = 0; } $endTime = microtime(true); echo 'Inserting ', $size, ' good elements took ', $endTime - $startTime, ' seconds', "\n"; //http://www.laruence.com/2011/12/30/2435.html 
+```
   
 运行结果如下：
   
@@ -71,4 +72,5 @@ long startTime = Calendar.getInstance().getTimeInMillis();
 	  
 long index = 0L ;
 	  
-for(long i = 0L ; i < size; i++) { map.put(i, "0"); index++; } long endTime = Calendar.getInstance().getTimeInMillis(); System.out.println(index + " values, test 1 : " + (endTime-startTime)); System.out.println("\---\---\---\---\---\---\---\---\---\---\---\---\----"); startTime = Calendar.getInstance().getTimeInMillis(); index = 0L ; for(Long i = 0L ; i < (size-1)*size; i+=size) { map2.put(i, "0"); index++; } endTime = Calendar.getInstance().getTimeInMillis(); System.out.println(index + " values ,test 2 : " + (endTime-startTime)); } ```
+for(long i = 0L ; i < size; i++) { map.put(i, "0"); index++; } long endTime = Calendar.getInstance().getTimeInMillis(); System.out.println(index + " values, test 1 : " + (endTime-startTime)); System.out.println("\---\---\---\---\---\---\---\---\---\---\---\---\----"); startTime = Calendar.getInstance().getTimeInMillis(); index = 0L ; for(Long i = 0L ; i < (size-1)*size; i+=size) { map2.put(i, "0"); index++; } endTime = Calendar.getInstance().getTimeInMillis(); System.out.println(index + " values ,test 2 : " + (endTime-startTime)); } 
+```

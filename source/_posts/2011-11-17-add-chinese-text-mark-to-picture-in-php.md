@@ -23,7 +23,8 @@ tags:
 
 大致就是：
 
-```php$name='郁闷aaaaaa';//要加的水印文字
+```php
+$name='郁闷aaaaaa';//要加的水印文字
 $font = './simhei.ttf';//水印字体，Windows\Fonts有，乱码跟这个也有关系
 $im = imagecreatefrompng("./1.png");//载入图片（类似的jpeg/gif方法）
 $red = imagecolorallocate($im, 255, 0, 0);//设置颜色 rgb
@@ -42,7 +43,8 @@ imagedestroy($im);//释放资源
 
 <span class="Apple-style-span" style="font-family: 宋体;">下面给出我测试的几个典型。</span>
 
-```phpfunction test1()
+```php
+function test1()
 {
 	$content="唐磊leitang";
 	$content = mb_convert_encoding($content, "html-entities","utf-8" );
@@ -277,7 +279,8 @@ function setTextWater($imgSrc,$markText,$TextColor,$markPos,$fontSize = 30)
 
 顺便把图片水印的也贴出来：
 
-```php/**
+```php
+/**
  * 图片水印
  */
 function  setImgWater($imgSrc,$markImg,$markPos)

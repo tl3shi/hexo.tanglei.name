@@ -18,7 +18,8 @@ tags:
 ---
 前面讲的发送短信就这样吧。能发就行了。不考虑啥性能效率的问题的话，就一个for循环就群发了。至于我想象当中的定制的消息的话，就是获取联系人，匹配短信模版，正则替换得到定制的独一无二的短信。现在就是要获取联系人。最简单的方法就是如下
 
-```javapublic class SimpleContact extends ListActivity
+```java
+public class SimpleContact extends ListActivity
 {
 
 	/* 
@@ -61,7 +62,9 @@ tags:
   
 看看query方法的签名：
 
-```javapublic final Cursor query (Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) ```
+```java
+public final Cursor query (Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) 
+```
 
 API如下解释
 
@@ -91,7 +94,8 @@ A Cursor object, which is positioned before the first entry, or null
   
 看来我的直接通过那样来获取每个联系人姓名及其手机号码的梦想是泡汤了。还得这样做才行。 
 
-```javapublic void getContact(){   
+```java
+public void getContact(){   
      //获得所有的联系人   
     Cursor cur = getContentResolver().query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null);   
     //循环遍历   
@@ -128,12 +132,15 @@ A Cursor object, which is positioned before the first entry, or null
            } while (cur.moveToNext());   
   
     }   
-    }```
+    }
+```
 
 若只想要得到手机号码，在第3个参数上面也说了，加where条件即可。
 
-```javaCursor phones = mContext.getContentResolver().query(
+```java
+Cursor phones = mContext.getContentResolver().query(
                                 ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
                                 null,
                                 ContactsContract.CommonDataKinds.Phone.CONTACT_ID
-                                                + " = " + contactId +" and "+ContactsContract.CommonDataKinds.Phone.TYPE+"="+ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE, null, null);```
+                                                + " = " + contactId +" and "+ContactsContract.CommonDataKinds.Phone.TYPE+"="+ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE, null, null);
+```

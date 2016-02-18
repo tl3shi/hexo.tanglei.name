@@ -82,7 +82,7 @@ insert into pay_table values('KEVIN TROLLBERG','SALARY',27500.00,to_date('15-06-
   
 <!--more-->唉，赵明老师也不给个备注。。各个字段给解释下才行嘛。PREV_PAY现在才发现估计是记录上一次的工资值。当时做的时候还没有注意呢，不管了。也就是个update的语句。下面用存储过程实现如下：
 
-<pre><cc class="sql" lines="620">"]
+```sql
 create or replace procedure proc_dbtest
 as
 begin

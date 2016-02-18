@@ -24,7 +24,8 @@ tags:
   
 xml布局代码如下： 
 
-```xml<?xml version="1.0" encoding="utf-8"?>
+```xml
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
@@ -100,7 +101,8 @@ xml布局代码如下：
 
 manifest文件：
 
-```xml<?xml version="1.0" encoding="utf-8"?>
+```xml
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.i3zhai"
       android:versionCode="1"
@@ -125,4 +127,5 @@ manifest文件：
 	<uses-permission android:name="android.permission.WRITE_SETTINGS" />
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 	<uses-permission android:name="android.permission.WAKE_LOCK" />
-</manifest> ```
+</manifest> 
+```

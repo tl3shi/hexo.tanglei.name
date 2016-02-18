@@ -45,7 +45,8 @@ For each test case, you should output the sum of a and b in one line. The sum mu
 
 <pre>helloworld类型的，答案如下：</pre>
 
-```C#include <stdio.h>
+```c
+#include <stdio.h>
 void myprint(int);
 int main()
 {

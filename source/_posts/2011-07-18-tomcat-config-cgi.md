@@ -141,7 +141,7 @@ echo ^
   
 再写个C语言的程序：add.cpp
 
-<cc class="C">
+```cpp
 #include <stdio.h> 
 #include <stdlib.h> 
 
@@ -150,62 +150,33 @@ int main(void)
 	char *data; 
 	long m,n; 
  	 
-     printf("%s","Content-Type:text/html;charset=gb2312\n\n");
-	printf("
-
-<TITLE>
-  乘法结果
-</TITLE> "); 
-	printf("
-
-<H3>
-  乘法结果
-</H3> "); 
-
+    printf("%s","Content-Type:text/html;charset=gb2312\n\n");
+	printf(" <TITLE> 乘法结果 </TITLE> "); 
+	printf(" <H3> 乘法结果 </H3> "); 
 	data = getenv("QUERY_STRING"); 
-
 	if(data == NULL) 
-		printf("
-
-<P>
-  错误！数据没有被输入或者数据传输有问题"); 
+		printf(" <P> 错误！数据没有被输入或者数据传输有问题"); 
   	//sscanf 类似正则表达式 以固定的格式为输入源，而scanf从标准输入获得输入源 
   	//成功则返回参数数目 
   	else if( sscanf(data,"m=%ld&n=%ld",&m,&n) != 2) 
-  		printf("
-  
-  <P>
-    错误！输入数据非法。表单中输入的必须是数字。"); 	
+  		printf(" <P> 错误！输入数据非法。表单中输入的必须是数字。"); 	
     	else 
-    		printf("
-    
-    <P>
-      %ld * %ld = %ld。<br />",m,n,m*n); 
+    		printf(" <P> %ld * %ld = %ld。<br />",m,n,m*n); 
       	return 0; 
       }
+```
       
-      ```</pre>
+编译连接成可执行文件。在上图中已经显示出来。<br />
+有个html的表单：
       
-      
-      <p>
-        编译连接成可执行文件。在上图中已经显示出来。<br />
-        有个html的表单：
-      </p>
-      
-      
-      ```html
-
-
+```html
 <FORM ACTION="cgi-bin/add.exe" method="get">
   <P>
     请在下面填入乘数和被乘数，按下确定后可以看到结果。 
     		<INPUT NAME="m" SIZE="5" /> 
     		<INPUT NAME="n" SIZE="5" />
   </P></BR> 
-  		
-  
   <INPUT TYPE="SUBMIT" VALUE="确定" />
-  
 </form>
 ```
       
@@ -214,36 +185,20 @@ int main(void)
         我的首页是为了测get post两种情况写的代码如下：
       </p>
       
-      
-      <cc class="java">
+```java     
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
-
-  
-  
-  
   <%=basePath%>
- 	 
-
 <center>
   get:
-    	
 </center>
-  	
-
 <hr size="4" color="red" />
-
 <center>
   post  得通过另外的方式才行  先得到Content-length:
-    	
 </center>
-  		
-  		
-
 <hr size="4" color="red" />
 
 <center>
@@ -256,13 +211,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		
     
     <INPUT TYPE="SUBMIT" VALUE="确定" /> 
-    		
-    
     <center>
       </FORM > 
         </body>
       </html>
-      ```</pre>
+```
       
       
       <p>

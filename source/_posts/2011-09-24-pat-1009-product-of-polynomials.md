@@ -44,7 +44,8 @@ For each test case you should output the product of A and B in one line, with th
 
 通过的答案： 
 
-```C#include <stdio.h>
+```C
+#include <stdio.h>
 int main()
 {
 	float array1[1001],array2[1001],array[2002];

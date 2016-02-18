@@ -71,11 +71,11 @@ C func(C &__hidden__)
 
 在C++中，当一个函数返回类对象时得注意因拷贝构造函数的调用引来的开销，具体见下面的例子。例如某个函数直接 
 
-<pre><cc class="cpp" inline="true">return Integer(i);```
+``return Integer(i);``
 
 创建一个临时Integer对象并返回它（没有copy一份），而 
 
-<pre><cc class="cpp" inline="true">Integer tmp(i); return tmp;```
+``Integer tmp(i); return tmp;``
 
 调用构造函数创建tmp对象;调用copy构造函数将tmp拷贝到外部返回值的存储单元；在tmp的作用域结尾时调用析构函数；这个也是一般来说这样，具体来说也与具体编译器实现相关。
 

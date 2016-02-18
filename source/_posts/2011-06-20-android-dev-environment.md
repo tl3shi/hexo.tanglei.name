@@ -18,25 +18,19 @@ tags:
 ---
 今天收拾桌面，看到这个文档，以前搞开发时用的。maybe大家用的着。下面环境变量是我的水货机子defy，买了之后的，android 2.1update1系统的环境变量。由如下代码产生
 
-<pre><cc class="java">
+```java
 Properties p = System.getProperties();
-Iterator
-
-<Object>
-  k = p.keySet().iterator();
-  while(k.hasNext()){
+Iterator k = p.keySet().iterator();
+while(k.hasNext()){
   	String ki = (String) k.next();
   	Log.e("tl3shi",ki+":\t"+p.getProperty(ki));
-         }
-  ```</pre>
+}
+```
   
+ 下面是从logcat中输出的：
   
-  <p>
-    下面是从logcat中输出的：
-  </p>
-  
-  
-  ```java01-21 12:31:09.872: ERROR/tl3shi(4479): java.vm.version:    1.1.0
+```java
+01-21 12:31:09.872: ERROR/tl3shi(4479): java.vm.version:    1.1.0
 01-21 12:31:09.901: ERROR/tl3shi(4479): java.vendor.url:    http://www.android.com/
 01-21 12:31:09.912: ERROR/tl3shi(4479): java.vm.vendor.url:    http://www.android.com/
 01-21 12:31:09.922: ERROR/tl3shi(4479): user.dir:    /

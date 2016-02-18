@@ -27,7 +27,7 @@ in your Java class, you mark the methods you wish to implement outside of Java w
 
 再查了些资料，就写了如下的代码。这个代码又是helloworld。唉，继续helloworld吧。用java去调用一个用C实现的方法。
 
-<pre><cc class="java" lines="-1">
+```java
 /**
 * project_name：nativeTest
 *  Description:

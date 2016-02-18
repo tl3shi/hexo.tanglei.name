@@ -91,8 +91,7 @@ onSensorChanged (SensorEvent event) 方法在传感器值更改时调用。该�
 ```java
 float x = event.values[SensorManager.DATA_X];  
 float y = event.values[SensorManager.DATA_Y];  
-float z = event.values[SensorManager.DATA_Z];  
-```
+float z = event.values[SensorManager.DATA_Z];  ```
 
 onAccuracyChanged (Sensor sensor,int accuracy) 方法在传感器的精准度发生改变时调用。其参数包括两个整数：一个表示传感器，另一个表示该传感器新的准确值。
   

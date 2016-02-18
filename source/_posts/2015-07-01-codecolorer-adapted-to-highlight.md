@@ -35,7 +35,7 @@ published: true
 
 
 codecolorer之前的代码区域基本上都是通过``[cc lang="java"]java code[/cc]``实现的，hightlight可以自定义html标签，
-所以大致只需要将原来的文章中所有的``[cc]``` 替换成``<cc>``即可，不能用hightlight默认的``<pre><code></code><pre>``，这个又会跟pandoc的冲突(其实也可以，后面会说怎么自定义让哪些文章启用highlight)。
+所以大致只需要将原来的文章中所有的``[cc]`` 替换成``<cc>``即可，不能用hightlight默认的``<pre><code></code><pre>``，这个又会跟pandoc的冲突(其实也可以，后面会说怎么自定义让哪些文章启用highlight)。
 
 在将代码高亮插件codecolorer替换为highlight过程中，遇到的主要问题是：
 
@@ -99,74 +99,56 @@ Demo 见[这里](/codecolorer-adapted-to-highlight/highlighttest.html)。
 mysql replace没有正则匹配，一个一个来了。
 
 ```sql
-UPDATE wp_posts SET post_content = REPLACE( post_content, '[/cc]', '```</pre>' ) where ID in 
+UPDATE wp_posts SET post_content = REPLACE( post_content, '[/cc]', '\`\`\`</pre>' ) where ID in 
 (SELECT ID FROM wp_posts WHERE post_content LIKE '%[/cc]%');
 ```
 当试图用以上sql进行查询更新时，提示 "You can't specify target table 'wp_posts' for update in FROM clause"，因为这样对同一个表操作会冲突，中间加一个临时表解决问题。[^2]
 
 ```sql
-UPDATE wp_posts SET post_content = REPLACE( post_content, '[/cc]', '```</pre>' ) where ID in 
+UPDATE wp_posts SET post_content = REPLACE( post_content, '[/cc]', '\`\`\`</pre>' ) where ID in 
 (SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[/cc]%') as tmp);
 ```
 
 
-```sql
-UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="python"]', '<pre><cc class="python">' ) where ID in 
-( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="python"]%') as tmp);  /*8 rows*/
-
-UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="php"]', '<pre><cc class="php">' ) where ID in 
-( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="php"]%') as tmp); /*8 rows*/
-
-UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="cpp"]', '<pre><cc class="cpp">' ) where ID in 
-( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="cpp"]%') as tmp); /*6*/ 
-
-UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="java"]', '<pre><cc class="java">' ) where ID in 
-( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="java"]%') as tmp); /*16*/
-
-UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="c#"]', '<pre><cc class="csharp">' ) where ID 
-in ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="c#"]%') as tmp); /*4*/
-
-UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="c++"]', '<pre><cc class="cpp">' ) where ID in 
-( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="c++"]%') as tmp); /*6*/
-
-UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="html"]', '<pre><cc class="html">' ) where ID 
-in ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="html"]%') as tmp); /*1*/
-
-UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="xml"]', '<pre><cc class="xml">' ) where ID 
-in ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="xml"]%') as tmp); /*5*/
-
-UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="C"]', '<pre><cc class="C">' ) where ID in 
-( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="C"]%') as tmp); /*10*/
-
-UPDATE wp_posts SET post_content = REPLACE( post_content, '[/cc]', '```</pre>' ) where ID in 
-( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[/cc]%') as tmp); 
-/*66*/
-
-UPDATE wp_posts SET post_content = REPLACE( post_content, '<code', '<pre><cc' ) where ID in 
-( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%<code%') as tmp); /*11*/
-
-UPDATE wp_posts SET post_content = REPLACE( post_content, '</code>', '```</pre>' ) where ID in 
-( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%</code>%') as tmp); /*11*/
-
-UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="sql"]', '<pre><cc class="sql">' ) where ID in 
-( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="sql"]%') as tmp); /*5*/
-
-UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="c"]', '<pre><cc class="c">' ) where ID 
-in ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="c"]%') as tmp); /*4*/
-
-UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="javascript"]', '<pre><cc class="javascript">' ) where ID 
-in ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="javascript"]%') as tmp); /*2*/
- 
-UPDATE wp_posts SET post_content = REPLACE( post_content, "[cc lang='python']", '<pre><cc class="python">' ) where ID in 
-( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE "%[cc lang='python']%") as tmp); /*2*/
- 
-INSERT INTO wp_postmeta (post_id, meta_key, meta_value) 
-SELECT wp_posts.ID, 'enable_highlight', 
-'<link rel="stylesheet" href="/wp-content/blogresources/highlightconfig/highlight.default.min.css">
-<script src="/wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script>
-<script src="/wp-content/blogresources/highlightconfig/enable_highlight.js"></script>' 
-FROM wp_posts WHERE wp_posts.ID in (SELECT ID FROM wp_posts WHERE wp_posts.post_content LIKE '%```</pre>%');
-```
+    UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="python"]', '<pre><cc class="python">' ) where ID in 
+    ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="python"]%') as tmp);  /*8 rows*/
+    UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="php"]', '<pre><cc class="php">' ) where ID in 
+    ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="php"]%') as tmp); /*8 rows*/
+    UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="cpp"]', '<pre><cc class="cpp">' ) where ID in 
+    ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="cpp"]%') as tmp); /*6*/ 
+    UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="java"]', '<pre><cc class="java">' ) where ID in 
+    ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="java"]%') as tmp); /*16*/
+    UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="c#"]', '<pre><cc class="csharp">' ) where ID 
+    in ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="c#"]%') as tmp); /*4*/
+    UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="c++"]', '<pre><cc class="cpp">' ) where ID in 
+    ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="c++"]%') as tmp); /*6*/
+    UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="html"]', '<pre><cc class="html">' ) where ID 
+    in ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="html"]%') as tmp); /*1*/
+    UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="xml"]', '<pre><cc class="xml">' ) where ID 
+    in ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="xml"]%') as tmp); /*5*/
+    UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="C"]', '<pre><cc class="C">' ) where ID in 
+    ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="C"]%') as tmp); /*10*/
+    UPDATE wp_posts SET post_content = REPLACE( post_content, '[/cc]', '\`\`\`</pre>' ) where ID in 
+    ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[/cc]%') as tmp); 
+    /*66*/
+    UPDATE wp_posts SET post_content = REPLACE( post_content, '<code', '<pre><cc' ) where ID in 
+    ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%<code%') as tmp); /*11*/
+    UPDATE wp_posts SET post_content = REPLACE( post_content, '</code>', '\`\`\`</pre>' ) where ID in 
+    ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%</code>%') as tmp); /*11*/
+    UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="sql"]', '<pre><cc class="sql">' ) where ID in 
+    ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="sql"]%') as tmp); /*5*/
+    UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="c"]', '<pre><cc class="c">' ) where ID 
+    in ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="c"]%') as tmp); /*4*/
+    UPDATE wp_posts SET post_content = REPLACE( post_content, '[cc lang="javascript"]', '<pre><cc class="javascript">' ) where ID 
+    in ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE '%[cc lang="javascript"]%') as tmp); /*2*/
+    UPDATE wp_posts SET post_content = REPLACE( post_content, "[cc lang='python']", '<pre><cc class="python">' ) where ID in 
+    ( SELECT ID FROM (SELECT ID FROM wp_posts WHERE post_content LIKE "%[cc lang='python']%") as tmp); /*2*/
+    INSERT INTO wp_postmeta (post_id, meta_key, meta_value) 
+    SELECT wp_posts.ID, 'enable_highlight', 
+    '<link rel="stylesheet" href="/wp-content/blogresources/highlightconfig/highlight.default.min.css">
+    <script src="/wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script>
+    <script src="/wp-content/blogresources/highlightconfig/enable_highlight.js"></script>' 
+    FROM wp_posts WHERE wp_posts.ID in (SELECT ID FROM wp_posts WHERE wp_posts.post_content LIKE '%```</pre>%');
 
 参考文献：
 

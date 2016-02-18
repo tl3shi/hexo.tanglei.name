@@ -20,7 +20,8 @@ tags:
 ---
 这个类主要就是时间到了，自动切换了。
 
-```javapackage com.i3zhai;
+```java
+package com.i3zhai;
 
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
