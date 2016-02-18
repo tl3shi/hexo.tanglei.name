@@ -88,9 +88,11 @@ List<Sensor> sensors = mSensorManager.getSensorList(Sensor.TYPE_ORIENTATION);
   
 onSensorChanged (SensorEvent event) 方法在传感器值更改时调用。该方法只由受此应用程序监视的传感器调用。该方法的参数包括一个SensorEvent对象，该对象主要包括一组浮点数，表示传感器获得的方向、加速度等信息。例如，以下代码可以取得其值：
 
-```javafloat x = event.values[SensorManager.DATA_X];  
+```java
+float x = event.values[SensorManager.DATA_X];  
 float y = event.values[SensorManager.DATA_Y];  
-float z = event.values[SensorManager.DATA_Z];  ```
+float z = event.values[SensorManager.DATA_Z];  
+```
 
 onAccuracyChanged (Sensor sensor,int accuracy) 方法在传感器的精准度发生改变时调用。其参数包括两个整数：一个表示传感器，另一个表示该传感器新的准确值。
   

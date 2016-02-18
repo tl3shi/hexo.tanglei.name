@@ -44,4 +44,4 @@ define('WP_SITEURL', $tangleisiteurl);
 
 效果如下
 
-![](./binding-domain-to-plugin-of-mobile-theme/m.tanglei.name.preview.png)
+![](/binding-domain-to-plugin-of-mobile-theme/m.tanglei.name.preview.png)
