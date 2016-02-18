@@ -35,25 +35,25 @@ published: true
 这里也分享下我在写这个ppt时遇到的一些关于latex、beamer等问题。
 
 - 改变footnote大小 ``\setbeamerfont{footnote}{size=\tiny}``
-改变caption大小 ```\setbeamerfont{caption}{size=\scriptsize}```
-设置caption自动标号 ```\setbeamertemplate{caption}[numbered]```
-设置subfig的label大小 ```\usepackage[caption=false,font=scriptsize]{subfig}```
-目录文字大小 ```\setbeamerfont{subsection in toc}{size=\footnotesize}```
-- 目录章节控制  ```\tableofcontents[sections={<1-5>}]```
+- 改变caption大小 ``\setbeamerfont{caption}{size=\scriptsize}``
+- 设置caption自动标号 ``\setbeamertemplate{caption}[numbered]``
+- 设置subfig的label大小 ``\usepackage[caption=false,font=scriptsize]{subfig}``
+- 目录文字大小 ``\setbeamerfont{subsection in toc}{size=\footnotesize}``
+- 目录章节控制  ``\tableofcontents[sections={<1-5>}]``
 - 是否显示note \setbeameroption{show notes} %un-comment to see the notes 
-- 公式中的粗体斜体问题 ```\usepackage[BoldFont,SlantFont]{xeCJK}```
-- 参考文献的图标改成文字[^3] ```\setbeamertemplate{bibliography item}[text]``` [ref](http://tex.stackexchange.com/questions/68080/beamer-bibliography-icon) 
-- 参考文献字体大小 ```\renewcommand*{\bibfont}{\footnotesize}```
-- 参考文献格式 ```\usepackage[backend=bibtex,sorting=none]{biblatex}```
+- 公式中的粗体斜体问题 ``\usepackage[BoldFont,SlantFont]{xeCJK}``
+- 参考文献的图标改成文字[^3] ``\setbeamertemplate{bibliography item}[text]`` [ref](http://tex.stackexchange.com/questions/68080/beamer-bibliography-icon) 
+- 参考文献字体大小 ``\renewcommand*{\bibfont}{\footnotesize}``
+- 参考文献格式 ``\usepackage[backend=bibtex,sorting=none]{biblatex}``
 - beamer单页上要引用多次reference：
      - 避免重复的的footnote[^4][ref](http://tex.stackexchange.com/questions/35043/reference-different-places-to-the-same-footnote)
      - autocite的方式 
-- xelatex 编译提示 ```** WARNING ** Version of PDF file (1.5) is newer than version limit specification ```，需要编译时加参数选项 ```xelatex -output-driver="xdvipdfmx -V 5"  source.tex ```, 具体根据 version版本改相应参数；
+- xelatex 编译提示 ``** WARNING ** Version of PDF file (1.5) is newer than version limit specification ``，需要编译时加参数选项 ``xelatex -output-driver="xdvipdfmx -V 5"  source.tex ``, 具体根据 version版本改相应参数；
 - xelatex mac下中文乱码，
 两种方法： 
-	- 编译不过， 提示*SIMKAI.TTF*找不到, 可以按照[此文](http://albertcn.blog.163.com/blog/static/2094201452013521105128316/)[^5]修改```/usr/local/texlive/2014/texmf-dist/tex/latex/ctex/fontset/ctex-xecjk-winfonts.def ``` 文件即可;
-	- 不修改全局的上面那个文件，当前文件使用nofonts选项，如 	```\documentclass[a4paper,nofonts]{article}```， 然后自定义类型如```\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{SimSun}``` 再编译即可，或者```\setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi_GB2312}]{SimSun} ``` 改成本机有的;
-	- 若编译过了，还是乱码，记得看你tex源文件的编码，是不是UTF-8。```set fileencoding=utf-8```
+	- 编译不过， 提示*SIMKAI.TTF*找不到, 可以按照[此文](http://albertcn.blog.163.com/blog/static/2094201452013521105128316/)[^5]修改``/usr/local/texlive/2014/texmf-dist/tex/latex/ctex/fontset/ctex-xecjk-winfonts.def `` 文件即可;
+	- 不修改全局的上面那个文件，当前文件使用nofonts选项，如 	``\documentclass[a4paper,nofonts]{article}``， 然后自定义类型如``\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{SimSun}`` 再编译即可，或者``\setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi_GB2312}]{SimSun} `` 改成本机有的;
+	- 若编译过了，还是乱码，记得看你tex源文件的编码，是不是UTF-8。``set fileencoding=utf-8``
 - PPT章节切换时添加目录 
 
 	```
@@ -71,7 +71,7 @@ published: true
 答辩时用beamer有不好的方式就是:
 
 - beamer 动画不好做，我答辩时准备嵌入动画，复杂也不太容易，另一个可选的方案是简单的动画做成gif动图，外部浏览器打开等；所以如果你希望自己的PPT足够绚丽多姿，那还是用MS的Office更好;
-- beamer 排练计时不太方便，演讲时看备注也不那么方便，这里有一个用```\note```做双屏注释的教程，还不是那么容易;[^2]
+- beamer 排练计时不太方便，演讲时看备注也不那么方便，这里有一个用``\note``做双屏注释的教程，还不是那么容易;[^2]
 - beamer 制作过程中也没PPT那么简单，不满足*WYSIWYG*, 时不时还报错什么的难得debug; 
 
 总之在选latex做PPT时还是要好好考虑一下，当然写论文排版什么的力推latex。就酱。
