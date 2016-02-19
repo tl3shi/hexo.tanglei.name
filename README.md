@@ -1,4 +1,3 @@
 # hexo.tanglei.name
-hexo.tanglei.name
+www.tanglei.name
 
-test
