@@ -19,5 +19,6 @@ install:
 script:
 - hexo clean
 - hexo g
-- cd .deploy && git add -A . && git commit -m "commit from travis" 
-- git push --force "https://23d3d1866b4b2c8428aa669ee3c9ea8967231eb3@github.com/tl3shi/hexo.tanglei.name" master:gh-pages 
+- mkdir .deploy && cp -R public/ .deploy/ && cd .deploy
+- git init && git add -A . && git commit -m "commit from travis" 
+- git push --force "https://23d3d1866b4b2c8428aa669ee3c9ea8967231eb3@github.com/tl3shi/hexo.tanglei.name.git" master:gh-pages 
