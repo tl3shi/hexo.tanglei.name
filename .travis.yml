@@ -1,7 +1,6 @@
 branches:
   only:
   - master
-
 language: node_js
 
 sudo: false
@@ -10,12 +9,6 @@ node_js:
     - 'stable'
 
 before_install:
-- openssl aes-256-cbc -K $encrypted_26b4962af0e7_key -iv $encrypted_26b4962af0e7_iv
-  -in doc/travis.enc -out ~/.ssh/id_rsa -d
-- chmod 600 ~/.ssh/id_rsa
-- eval $(ssh-agent)
-- ssh-add ~/.ssh/id_rsa
-- cp doc/ssh_config ~/.ssh/config
 - git config --global user.name "tangleithu"
 - git config --global user.email travis@tanglei.name
 - git clone --recursive -b master git@github.com:tl3shi/hexo.tanglei.name .deploy_git
