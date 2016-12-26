@@ -5,7 +5,6 @@ date: 2011-10-26T22:06:07+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1239
-permalink: visit-japan-with-toyota
 duoshuo_thread_id:
   - 1351844048792453201
 categories:
@@ -30,19 +29,19 @@ tags:
 ——东北师范大学 颜世莉
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AC/C8/C8.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AC/C8/C8.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AC/C8/C8.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AC/C8/C8.jpg" alt=""  /></a>
 </p>
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AC/AE/AE.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AC/AE/AE.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AC/AE/AE.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AC/AE/AE.jpg" alt=""  /></a>
 </p>
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AC/AF/AF.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AC/AF/AF.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AC/AF/AF.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AC/AF/AF.jpg" alt=""  /></a>
 </p>
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AC/B0/B0.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AC/B0/B0.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AC/B0/B0.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AC/B0/B0.jpg" alt=""  /></a>
 </p>
 
 其实，丰田公司与访日团学子的缘分远不止这些。一次资助，改变了一个年轻人的人生道路；一次访问，启迪了学生们对未来的梦想；一份真情，培养了更多对社会充满感恩之心的有用之才。这些意义，远非几分钟的广告所能比拟。
@@ -52,5 +51,5 @@ tags:
 是啊，只要人人都献出一点爱，世界将变成美好的人间……
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AC/C9/C9.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AC/C9/C9.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AC/C9/C9.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AC/C9/C9.jpg" alt=""  /></a>
 </p>

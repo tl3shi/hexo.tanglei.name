@@ -5,7 +5,6 @@ date: 2011-04-20T13:49:50+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=494
-permalink: ruankao_database4
 duoshuo_thread_id:
   - 1351844048792453241
 categories:
@@ -13,9 +12,6 @@ categories:
   - 软考
 tags:
   - 关系数据库
-  - 关系范式
-  - 函数依赖
-  - 规范化理论
 ---
 **1.7****关系数据库规范化理论** ****
 

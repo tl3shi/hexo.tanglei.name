@@ -5,7 +5,6 @@ date: 2012-07-23T00:39:37+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1881
-permalink: aop-in-python
 duoshuo_thread_id:
   - 1351844048792453290
 enable_highlight:
@@ -16,10 +15,9 @@ categories:
 tags:
   - AOP
   - decorator
-  - log
   - python
 ---
-背景：之前在腾讯实习的时候做了相关接口监控报送状态时写了<a href="http://www.tanglei.name/aop-in-php/" target="_blank">PHP中的AOP</a> ，这几天在UMeng实习要做到一个log模块，之前的类似代码是这样的：
+背景：之前在腾讯实习的时候做了相关接口监控报送状态时写了<a href="/blog/aop-in-php.html" target="_blank">PHP中的AOP</a> ，这几天在UMeng实习要做到一个log模块，之前的类似代码是这样的：
 
 ```python
 def getnewcomments(request ):

@@ -5,16 +5,12 @@ date: 2011-04-26T02:34:16+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=543
-permalink: metrics_oometrics
 duoshuo_thread_id:
   - 1351844048792453191
 categories:
   - 软件度量及其应用
 tags:
-  - CK
-  - LK
   - 软件度量
-  - 面向对象软件度量
 ---
 ## Object-Oriented Metrics
 
@@ -82,7 +78,7 @@ Higher values indicate class in hierarchy that does not conform to th
 
 CK量度组由Chidamber和Kemerer提出，他们建议使用6种基于类设计的量度，通称为CK量度组。
 
-[<img class="aligncenter size-full wp-image-544" title="ck" src="/wp-content/uploads/2011/04/ck.png" alt="CK Metrics" width="285" height="179" />](/wp-content/uploads/2011/04/ck.png)
+[<img class="aligncenter size-full wp-image-544" title="ck" src="/wp-content/uploads/2011/04/ck.png" alt="CK Metrics"  />](/wp-content/uploads/2011/04/ck.png)
 
 ### WMC
 
@@ -94,7 +90,7 @@ WMC=∑Ci (i=1～n)
 
 计算：类中方法数量之和。
 
-[<img class="aligncenter size-full wp-image-545" title="wmc" src="/wp-content/uploads/2011/04/wmc.png" alt="WMC" width="295" height="231" />](/wp-content/uploads/2011/04/wmc.png)
+[<img class="aligncenter size-full wp-image-545" title="wmc" src="/wp-content/uploads/2011/04/wmc.png" alt="WMC"  />](/wp-content/uploads/2011/04/wmc.png)
 
 WMC 4 shopping\_cart = 2;WMC 4 Credit\_Card = 1
 
@@ -140,7 +136,7 @@ RS = { methodA1, methodA2, methodB1, methodC1}
 
 RFC = 4
 
-[<img class="aligncenter size-full wp-image-546" title="rfc-demo" src="/wp-content/uploads/2011/04/rfc-demo.png" alt="RFC Metrics" width="232" height="167" />](/wp-content/uploads/2011/04/rfc-demo.png)
+[<img class="aligncenter size-full wp-image-546" title="rfc-demo" src="/wp-content/uploads/2011/04/rfc-demo.png" alt="RFC Metrics"  />](/wp-content/uploads/2011/04/rfc-demo.png)
 
 ### LCOM
 
@@ -174,13 +170,13 @@ LCOM = 0 otherwise
 
 例子：
 
-[<img class="aligncenter size-medium wp-image-547" title="LCOM" src="/wp-content/uploads/2011/04/LCOM-300x155.png" alt="LCOM Metrics" width="300" height="155" />](/wp-content/uploads/2011/04/LCOM.png)
+[<img class="aligncenter size-medium wp-image-547" title="LCOM" src="/wp-content/uploads/2011/04/LCOM.png" alt="LCOM Metrics"  />](/wp-content/uploads/2011/04/LCOM.png)
 
 ## MOOD metrics
 
 PPT介绍得就太复杂了。了解下
 
-[<img class="aligncenter size-full wp-image-548" title="MOOD" src="/wp-content/uploads/2011/04/MOOD.png" alt="MOOD Metrics" width="275" height="225" />](/wp-content/uploads/2011/04/MOOD.png)
+[<img class="aligncenter size-full wp-image-548" title="MOOD" src="/wp-content/uploads/2011/04/MOOD.png" alt="MOOD Metrics"  />](/wp-content/uploads/2011/04/MOOD.png)
 
 1995年,Brito等人针对面向对象属性提出一套称之为MOOD的度量算法集。MOOD度量是另一个著名的度量体系,它从封装性、继承性、耦合性和多性等四个方面给出了面向对象软件六个度量指标。MOOD反映出面向对象的特点,并给出了形式化的度量公式,具有很好的可操作性。
 

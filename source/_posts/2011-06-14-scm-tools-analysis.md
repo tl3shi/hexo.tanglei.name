@@ -5,13 +5,11 @@ date: 2011-06-14T18:32:34+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=848
-permalink: scm-tools-analysis
 duoshuo_thread_id:
   - 1351844048792453437
 categories:
   - 软件配置管理
 tags:
-  - SCM工具对比
   - 软件配置管理工具
 ---
 软件配置管理的重要性已被大多数软件及相关企业所认识，而配置管理工具的使用是实施配置管理的重要部分。本文对目前较为流行的配置管理工具VSS,CVS,ClearCase,StarTeam做出比较分析。

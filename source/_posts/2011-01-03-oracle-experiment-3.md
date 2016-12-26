@@ -5,7 +5,6 @@ date: 2011-01-03T04:46:57+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=286
-permalink: oracle-experiment-3
 duoshuo_thread_id:
   - 1351844048792453166
 enable_highlight:
@@ -14,9 +13,7 @@ enable_highlight:
 categories:
   - 数据库应用
 tags:
-  - bulk collect
-  - emp
-  - oracle
+  - Oracle
   - 存储过程
 ---
 接着看第三个题目吧。题目描述如下：
@@ -104,7 +101,7 @@ end;
 
 实现效果如下图所示：
   
-[<img src="/wp-content/uploads/2011/01/fetchper5fromemp-285x300.jpg" alt="" title="fetchper5fromemp" width="285" height="300" class="alignleft size-medium wp-image-287" />](/wp-content/uploads/2011/01/fetchper5fromemp.jpg)
+[<img src="/wp-content/uploads/2011/01/fetchper5fromemp.jpg" alt="" title="fetchper5fromemp"  class="alignleft size-medium wp-image-287" />](/wp-content/uploads/2011/01/fetchper5fromemp.jpg)
   
 注意limit的使用。
         

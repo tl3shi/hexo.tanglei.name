@@ -1,28 +1,25 @@
 ---
 title: 将代码高亮插件codecolorer替换为highlight
-permalink: codecolorer-adapted-to-highlight
 date: 2015-07-01
 layout: post
 tags: 
     - 经验技巧 
-    - codecolorer 
-    - highlight 
-    - 代码高亮 
-    - wordpress plugin
+    - Wordpress 
+    - Plugin
 categories: 
-    - wordpress
+    - Wordpress
     - 经验技巧 
     - 我做站长 
 published: true
 ---
 
-最近在写一个wordpress小的客户端发布工具，就是直接写markdown，然后转为html发布到wordpress，为什么要写?
+最近在写一个Wordpress小的客户端发布工具，就是直接写markdown，然后转为html发布到Wordpress，为什么要写?
 
-- 不太想换之前已有的blogs，试过相应的工具将已有的wordpress blog转为markdown，效果不是很好。//直接用github+jekyll之类的静态站点
-- wordpress已有的支持markdown的插件貌似都不怎么理想，想兼容之前的比较麻烦，特别是用了代码高亮之类的插件//用wordpress已有的支持markdown的插件
+- 不太想换之前已有的blogs，试过相应的工具将已有的Wordpress blog转为markdown，效果不是很好。//直接用github+jekyll之类的静态站点
+- Wordpress已有的支持markdown的插件貌似都不怎么理想，想兼容之前的比较麻烦，特别是用了代码高亮之类的插件//用Wordpress已有的支持markdown的插件
 
 所以就写了，目前的技术方案是：
-``本地markdown+pandoc——>html——>wordpress-xmlrpc——>wordpress server``
+``本地markdown+pandoc——>html——>Wordpress-xmlrpc——>Wordpress server``
 这样的好处是：
 
 - 仅仅要对已有的blog进行细小的改动即可，即改下那些po了代码的文章；
@@ -40,7 +37,7 @@ codecolorer之前的代码区域基本上都是通过``[cc lang="java"]java code
 在将代码高亮插件codecolorer替换为highlight过程中，遇到的主要问题是：
 
 - codecolorer之前的代码区域仅用``[cc]``标签包围，highlight自定义标签时，换行符会出现问题。``hljs.configure({useBR: true});`` 不生效，参见[hightligth讨论](https://github.com/isagalaev/highlight.js/issues/860)，结果是要求code中需要包含``<br>``标签，这不扯么。。。解决方法是手动通过js添加``<br>``。
-- 换行符问题解决了，代码缩进有出现问题了。囧。后来想想还是手动在``<cc>``周围添加``<pre>``吧。 //注意在前端加时``<cc>``区域中间的内容会被wordpress 给添加一些``<br/><p>``之类的标签切这个标签可能会添加得不合理比如代码的一部分和代码以上的文字在一个p里面，会导致选择器选择cc不能全部选到，这个禁用即可(这样可能导致之前的文章排版不太正确)，方法是主题中``the_content('Continue reading &raquo;');``替换为``echo $post->post_content;``。在后端即数据库端加就不用管。所以还是直接数据库添加较好。
+- 换行符问题解决了，代码缩进有出现问题了。囧。后来想想还是手动在``<cc>``周围添加``<pre>``吧。 //注意在前端加时``<cc>``区域中间的内容会被Wordpress 给添加一些``<br/><p>``之类的标签切这个标签可能会添加得不合理比如代码的一部分和代码以上的文字在一个p里面，会导致选择器选择cc不能全部选到，这个禁用即可(这样可能导致之前的文章排版不太正确)，方法是主题中``the_content('Continue reading &raquo;');``替换为``echo $post->post_content;``。在后端即数据库端加就不用管。所以还是直接数据库添加较好。
 
 
 代码如下:
@@ -68,9 +65,9 @@ codecolorer之前的代码区域基本上都是通过``[cc lang="java"]java code
 </script>
 ```
 
-Demo 见[这里](/codecolorer-adapted-to-highlight/highlighttest.html)。
+Demo 见[这里](/resources/codecolorer-adapted-to-highlight/highlighttest.html)。
 
-然后就是使这些js代码应用到之前的所有文章中，直接添加到每篇含有代码的文章中的正文里容易被wordpress过滤转义掉，且加载的顺序不正确也会导致代码高亮出现问题，如果加在全站的header中有造成不必要的浪费，幸好wordpress提供了给每篇文章自定义的功能，wordpress后台发布文章时有个自定义栏目，可以给每篇文章加个标签，然后wp加载的时候根据这篇文章的标签采用不同的逻辑加载。方法可以参考[在 WordPress 指定页面加载指定 JavaScript 或 CSS 代码](http://loo2k.com/blog/wordpress-page-javascript-css-code/)[^1]
+然后就是使这些js代码应用到之前的所有文章中，直接添加到每篇含有代码的文章中的正文里容易被Wordpress过滤转义掉，且加载的顺序不正确也会导致代码高亮出现问题，如果加在全站的header中有造成不必要的浪费，幸好Wordpress提供了给每篇文章自定义的功能，Wordpress后台发布文章时有个自定义栏目，可以给每篇文章加个标签，然后wp加载的时候根据这篇文章的标签采用不同的逻辑加载。方法可以参考[在 WordPress 指定页面加载指定 JavaScript 或 CSS 代码](http://loo2k.com/blog/Wordpress-page-javascript-css-code/)[^1]
 
 最后就是修改那些含有代码的文章，修改``[cc]``标签，给文章添加自定义字段。sql语句如下：
 自定义条目：enable_highlight
@@ -99,7 +96,7 @@ Demo 见[这里](/codecolorer-adapted-to-highlight/highlighttest.html)。
 mysql replace没有正则匹配，一个一个来了。
 
 ```sql
-UPDATE wp_posts SET post_content = REPLACE( post_content, '[/cc]', '\`\`\`</pre>' ) where ID in 
+UPDATE wp_posts SET post_content = REPLACE( post_content, '[/cc]', '```</pre>' ) where ID in 
 (SELECT ID FROM wp_posts WHERE post_content LIKE '%[/cc]%');
 ```
 当试图用以上sql进行查询更新时，提示 "You can't specify target table 'wp_posts' for update in FROM clause"，因为这样对同一个表操作会冲突，中间加一个临时表解决问题。[^2]
@@ -150,6 +147,6 @@ FROM wp_posts WHERE wp_posts.ID in (SELECT ID FROM wp_posts WHERE wp_posts.post_
 
 参考文献：
 
-[^1]: [在 WordPress 指定页面加载指定 JavaScript 或 CSS 代码](http://loo2k.com/blog/wordpress-page-javascript-css-code/) 
+[^1]: [在 WordPress 指定页面加载指定 JavaScript 或 CSS 代码](http://loo2k.com/blog/Wordpress-page-javascript-css-code/) 
 [^2]: [MySQL #1093 - You can't specify target table 'giveaways' for update in FROM clause](http://stackoverflow.com/questions/8333376/mysql-1093-you-cant-specify-target-table-giveaways-for-update-in-from-clau)
   

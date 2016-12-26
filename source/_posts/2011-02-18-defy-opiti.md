@@ -5,18 +5,14 @@ date: 2011-02-18T06:57:44+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=311
-permalink: defy-opiti
 duoshuo_thread_id:
   - 1351844048792453387
 categories:
-  - android
+  - Android
   - MyLife
   - 玩玩手机
 tags:
   - Defy
-  - MB525
-  - 系统程序
-  - 误删
 ---
 买了DEFY，发现里面有很多app自己用不了。琢磨着删掉。系统自带的uninstall工具不行。有android system app romover可以用。参照了网上有关人士的总结。删除前肯定得做备份啊……………………………
 
@@ -264,7 +260,7 @@ tags:
 
 其中开始删掉了内置的短信程序<span style="color: #0000ff;">Conversation.apk和</span><span style="color: #0000ff;">Messaging.apk </span> <span style="color: #0000ff;">。后发现删除后没办法接受彩信。还有哪个什么</span>BlurEmailEngin也是不能删除的[BlurEmailEngine删除对文本信息有影响：自动退出。第三方程序不会退出,但不能收到彩信]。当晚删除了手机报就没有收到了。内置的信息程序没办法看手机报，只能看到第一页。所以装了第三方Go短信。但删除<span style="color: #0000ff;">Conversation后，以前的信息通过Go短信直接能读取到 。就是没办法收新的短信。新消息来的时候能提到短信提示音，就是看不到内容。当时急了，还好备份了。于是有将备份的</span><span style="color: #0000ff;">Conversation短信和</span><span style="color: #0000ff;">Messaging.apk   给重新安装下。发现直接按照普通程序安装总是安装失败。于是直接移动到/system/app下还是不行。后来用android开发工具ddms才发现原来权限不对。</span>
 
-<span style="color: #0000ff;"><a href="/wp-content/uploads/2011/02/误删.png"><img class="aligncenter size-medium wp-image-312" title="误删" src="/wp-content/uploads/2011/02/wushan.png" alt="" width="600" height="360" /></a><br /> </span>
+<span style="color: #0000ff;"><a href="/wp-content/uploads/2011/02/误删.png"><img class="aligncenter size-medium wp-image-312" title="误删" src="/wp-content/uploads/2011/02/wushan.png" alt=""  /></a><br /> </span>
 
 <span style="color: #0000ff;">于是将权限修改为其他系统程序一样的权限110100100.然后重启机子就OK了。</span>
 

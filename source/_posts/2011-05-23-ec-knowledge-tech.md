@@ -5,17 +5,12 @@ date: 2011-05-23T17:57:38+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=706
-permalink: ec-knowledge-tech
 duoshuo_thread_id:
   - 1351844048792453444
 categories:
   - SoftwareEngineering
 tags:
-  - 万维网
-  - 域名
-  - 服务器
   - 电子商务
-  - 网站空间
   - 虚拟主机
 ---
 **一、** **万维网概述**

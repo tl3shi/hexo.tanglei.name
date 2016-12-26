@@ -5,14 +5,12 @@ date: 2011-12-21T20:22:12+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1320
-permalink: introduce-my-right-click-menu
 duoshuo_thread_id:
   - 1351844048792453282
 categories:
   - Windows
   - 经验技巧
 tags:
-  - 右键菜单
   - 经验技巧
 ---
 <p align="left">
@@ -20,7 +18,7 @@ tags:
 </p>
 
 <p align="left">
-  <img class="alignnone" title="右键菜单" src="http://i1123.photobucket.com/albums/l549/tl3shi/right-click1.jpg" alt="" width="526" height="600" />
+  <img class="alignnone" title="右键菜单" src="http://i1123.photobucket.com/albums/l549/tl3shi/right-click1.jpg" alt=""  />
 </p>
 
 <p align="left">
@@ -48,7 +46,7 @@ tags:
 </p>
 
 <div id="attachment_1328" style="width: 310px" class="wp-caption aligncenter">
-  <a href="/wp-content/uploads/2011/12/search_everything+1.jpg"><img class=" wp-image-1328 " title="search_everything,含有搜索本地文件软件包" src="/wp-content/uploads/2011/12/search_everything+1-300x271.jpg" alt="search_everything,含有搜索本地文件软件包" width="300" height="271" /></a>
+  <a href="/wp-content/uploads/2011/12/search_everything+1.jpg"><img class=" wp-image-1328 " title="search_everything,含有搜索本地文件软件包" src="/wp-content/uploads/2011/12/search_everything+1.jpg" alt="search_everything,含有搜索本地文件软件包"  /></a>
   
   <p class="wp-caption-text">
     search_everything,含有搜索本地文件软件包
@@ -60,7 +58,7 @@ tags:
 第二个：结束文件占用进程的工具。
 
 <div id="attachment_1327" style="width: 310px" class="wp-caption aligncenter">
-  <a href="/wp-content/uploads/2011/12/unlock+1.jpg"><img class=" wp-image-1327 " title="unlock，含有文件占用进程结束软件包" src="/wp-content/uploads/2011/12/unlock+1-300x238.jpg" alt="unlock，含有文件占用进程结束软件包" width="300" height="238" /></a>
+  <a href="/wp-content/uploads/2011/12/unlock+1.jpg"><img class=" wp-image-1327 " title="unlock，含有文件占用进程结束软件包" src="/wp-content/uploads/2011/12/unlock+1.jpg" alt="unlock，含有文件占用进程结束软件包"  /></a>
   
   <p class="wp-caption-text">
     unlock，含有文件占用进程结束软件包

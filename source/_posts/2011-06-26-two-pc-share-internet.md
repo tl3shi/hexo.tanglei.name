@@ -4,8 +4,7 @@ title: 两台电脑通过无线共享有线上网
 date: 2011-06-26T21:24:27+00:00
 author: tanglei
 layout: post
-guid: http://www.tanglei.name/%e4%b8%a4%e5%8f%b0%e7%94%b5%e8%84%91%e9%80%9a%e8%bf%87%e6%97%a0%e7%ba%bf%e5%85%b1%e4%ba%ab%e6%9c%89%e7%ba%bf%e4%b8%8a%e7%bd%91/
-permalink: two-pc-share-internet
+guid: /blog/%e4%b8%a4%e5%8f%b0%e7%94%b5%e8%84%91%e9%80%9a%e8%bf%87%e6%97%a0%e7%ba%bf%e5%85%b1%e4%ba%ab%e6%9c%89%e7%ba%bf%e4%b8%8a%e7%bd%91.html
 duoshuo_thread_id:
   - 1351844048792453323
 categories:

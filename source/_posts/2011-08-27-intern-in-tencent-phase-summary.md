@@ -5,16 +5,13 @@ date: 2011-08-27T13:13:20+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1135
-permalink: intern-in-tencent-phase-summary
 duoshuo_thread_id:
   - 1351844048792453127
 categories:
   - 实习那些事儿
 tags:
   - 实习总结
-  - 实习报告
   - 实习日记
-  - 腾讯实习生留用考核
 ---
 收到了留用考核的通知，再加上学校的要交各种实习报告，实习总结，实习日记等。就小结了一下。
 

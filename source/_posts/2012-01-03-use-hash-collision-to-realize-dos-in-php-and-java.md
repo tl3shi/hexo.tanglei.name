@@ -4,8 +4,6 @@ title: 通过构造Hash冲突实现PHP/Java等语言的拒绝服务攻击
 date: 2012-01-03T23:58:26+00:00
 author: tanglei
 layout: post
-guid: http://www.tanglei.name/?p=1392
-permalink: use-hash-collision-to-realize-dos-in-php-and-java
 duoshuo_thread_id:
   - 1351844048792453140
 enable_highlight:
@@ -20,22 +18,27 @@ categories:
 tags:
   - DDOS
   - DOS
-  - Hash Collision
-  - Hash冲突
-  - 拒绝服务
   - 网络安全
 ---
 前几天看到公司php群谈到这篇博文[通过构造Hash冲突实现各种语言的拒绝服务攻击](http://www.laruence.com/2011/12/29/2412.html),说的是在PHP中，使用hash来存储k-v数据, 包括常用的来自用户的POST数据, 攻击者可以通过构造请求头, 并伴随POST大量的特殊的”k”值(根据每个语言的Hash算法不同而定制), 使得语言底层保存POST数据的Hash表因为”冲突”(碰撞)而退化成链表. 这样一来, 如果数据量足够大, 那么就可以使得语言在计算, 查找, 插入的时候, 造成大量的CPU占用, 从而实现拒绝服务攻击. 举个例子：如下代码中：
   
 ```php
-  
 $size = pow(2, 16); // 16 is just an example, could also be 15 or 17
-  
 $startTime = microtime(true);
-  
 $array = array();
-  
-for ($key = 0, $maxKey = ($size &#8211; 1) * $size; $key <= $maxKey; $key += $size) { $array[$key] = 0; } $endTime = microtime(true); echo 'Inserting ', $size, ' evil elements took ', $endTime - $startTime, ' seconds', "\n"; $startTime = microtime(true); $array = array(); for ($key = 0, $maxKey = $size - 1; $key <= $maxKey; ++$key) { $array[$key] = 0; } $endTime = microtime(true); echo 'Inserting ', $size, ' good elements took ', $endTime - $startTime, ' seconds', "\n"; //http://www.laruence.com/2011/12/30/2435.html 
+for ($key = 0, $maxKey = ($size &#8211; 1) * $size; $key <= $maxKey; $key += $size) {
+    $array[$key] = 0; 
+} 
+$endTime = microtime(true); 
+echo 'Inserting ', $size, ' evil elements took ', $endTime - $startTime, ' seconds', "\n";
+$startTime = microtime(true);
+$array = array();
+for ($key = 0, $maxKey = $size - 1; $key <= $maxKey; ++$key) { 
+    $array[$key] = 0;
+} 
+$endTime = microtime(true);
+echo 'Inserting ', $size, ' good elements took ', $endTime - $startTime, ' seconds', "\n";
+//http://www.laruence.com/2011/12/30/2435.html 
 ```
   
 运行结果如下：
@@ -57,20 +60,26 @@ Laruence说其他语言的比如java也中招了。有待达人给例子解释�
 测试代码如下：
 
 ```java
-  
-public static void testHashmap()
-  
-{
-	  
-HashMap<Long, String> map = new HashMap<Long,String>();
-	  
-HashMap<Long, String> map2 = new HashMap<Long,String>();
-	  
-double size = Math.pow(2D, 20D);
-	  
-long startTime = Calendar.getInstance().getTimeInMillis();
-	  
-long index = 0L ;
-	  
-for(long i = 0L ; i < size; i++) { map.put(i, "0"); index++; } long endTime = Calendar.getInstance().getTimeInMillis(); System.out.println(index + " values, test 1 : " + (endTime-startTime)); System.out.println("\---\---\---\---\---\---\---\---\---\---\---\---\----"); startTime = Calendar.getInstance().getTimeInMillis(); index = 0L ; for(Long i = 0L ; i < (size-1)*size; i+=size) { map2.put(i, "0"); index++; } endTime = Calendar.getInstance().getTimeInMillis(); System.out.println(index + " values ,test 2 : " + (endTime-startTime)); } 
+public static void testHashmap() {
+    HashMap<Long, String> map = new HashMap<Long,String>();
+    HashMap<Long, String> map2 = new HashMap<Long,String>();
+    double size = Math.pow(2D, 20D);
+    long startTime = Calendar.getInstance().getTimeInMillis();
+    long index = 0L ;
+    for(long i = 0L ; i < size; i++) {
+       map.put(i, "0");
+       index++;
+    } 
+    long endTime = Calendar.getInstance().getTimeInMillis();
+    System.out.println(index + " values, test 1 : " + (endTime-startTime));
+    System.out.println("\---\---\---\---\---\---\---\---\---\---\---\---\----");
+    startTime = Calendar.getInstance().getTimeInMillis();
+    index = 0L ;
+    for(Long i = 0L ; i < (size-1)*size; i+=size) { 
+        map2.put(i, "0");
+        index++;
+    } 
+    endTime = Calendar.getInstance().getTimeInMillis();
+    System.out.println(index + " values ,test 2 : " + (endTime-startTime));
+} 
 ```

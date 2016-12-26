@@ -5,20 +5,17 @@ date: 2012-08-02T12:40:42+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1890
-permalink: github-with-octopress
 duoshuo_thread_id:
   - 1351844048792453407
 categories:
-  - wordpress
+  - Wordpress
   - 我做站长
 tags:
-  - blog
   - git
   - github
-  - helloWorld
-  - octopress
+  - HelloWorld
 ---
-前面讲过[github写博客](http://www.tanglei.name/use-github-to-make-hello-world/)，然后可以绑定独立域名(方法也很简单，添加A记录只想github的page服务：207.97.227.245，上传一个CNAME内容为你的顶级域名的文件到你的代码库中)。由于手上还有一个tanglei.me域名，<del>今天</del>(其实是7.25,在[ubuntu下用blogilo发布](http://www.tanglei.name/use-blogilo-to-post-wordpress-blog-in-ubuntu/)成草稿了，直到今天8.3才发布出来)就试着配置了下环境。效果可以<a href="http://tanglei.me/blog/2012/07/25/hello-world/" target="_blank">看看这里</a>。
+前面讲过[github写博客](/blog/use-github-to-make-hello-world.html)，然后可以绑定独立域名(方法也很简单，添加A记录只想github的page服务：207.97.227.245，上传一个CNAME内容为你的顶级域名的文件到你的代码库中)。由于手上还有一个tanglei.me域名，<del>今天</del>(其实是7.25,在[ubuntu下用blogilo发布](/blog/use-blogilo-to-post-Wordpress-blog-in-ubuntu.html)成草稿了，直到今天8.3才发布出来)就试着配置了下环境。效果可以<a href="http://tanglei.me/blog/2012/07/25/hello-world/" target="_blank">看看这里</a>。
 
 截图留念：
 

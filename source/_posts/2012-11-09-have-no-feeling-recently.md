@@ -5,16 +5,13 @@ date: 2012-11-09T00:50:04+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2021
-permalink: have-no-feeling-recently
 duoshuo_thread_id:
   - 1351844048792453255
 categories:
   - MyLife
   - 清华大学
 tags:
-  - 学术
   - 总结
-  - 自我调节
 ---
 话说，从8月份开学到现在，貌似自己都没啥状态，做什么事情没有激情，总感觉似乎缺少点儿什么。
 

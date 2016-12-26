@@ -5,16 +5,13 @@ date: 2011-04-17T14:05:00+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=469
-permalink: ruankao_multi_media2
 duoshuo_thread_id:
   - 1351844048792453451
 categories:
   - 软考
 tags:
-  - 数据压缩
-  - 编码技术标准
 ---
-上接：[http://www.tanglei.name/ruankao\_multi\_media1/](http://www.tanglei.name/ruankao_multi_media1/)
+上接：[/blog/ruankao\_multi\_media1.html](/blog/ruankao_multi_media1.html)
 
 **1.5****数据压缩和编码技术标准**
 

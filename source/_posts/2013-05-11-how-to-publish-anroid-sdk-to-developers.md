@@ -5,20 +5,14 @@ date: 2013-05-11T00:50:45+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2164
-permalink: how-to-publish-anroid-sdk-to-developers
 duoshuo_thread_id:
   - 1351844048792453485
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - android
+  - Android
 tags:
-  - android
-  - jar
-  - layout
-  - 发布sdk
-  - 打包
-  - 资源文件
+  - Android
 ---
 在Android开发过程中，我们经常会有这种需求，需要将自己开发一个类库打包成jar包以供他人(其他人一般指开发者)调用，而不是直接打包apk文件供最终用户使用。在打包成jar后，你往往会自己先测试一下看jar包能不能直接使用，这时就会常常有如下的几个问题：
 
@@ -96,11 +90,11 @@ public static int getResourseIdByName(String packageName, String className,
 
 新建一个类库项目，如命名nebula_sdk.
 
-[<img style="display: inline; border: 0px;" title="clip_image002" src="/wp-content/uploads/2013/05/clip_image002_thumb.jpg" alt="clip_image002" width="330" height="283" border="0" />](/wp-content/uploads/2013/05/clip_image002.jpg)[<img style="display: inline; border: 0px;" title="clip_image004" src="/wp-content/uploads/2013/05/clip_image004_thumb.jpg" alt="clip_image004" width="342" height="294" border="0" />](/wp-content/uploads/2013/05/clip_image004.jpg)
+[<img title="clip_image002" src="/wp-content/uploads/2013/05/clip_image002_thumb.jpg" alt="clip_image002"  />](/wp-content/uploads/2013/05/clip_image002.jpg)[<img title="clip_image004" src="/wp-content/uploads/2013/05/clip_image004_thumb.jpg" alt="clip_image004"  />](/wp-content/uploads/2013/05/clip_image004.jpg)
 
 发布出去后，开发者需要将上面提到的nebula_sdk作为library引用进来。如下图.
 
-[<img style="display: inline; border: 0px;" title="clip_image006" src="/wp-content/uploads/2013/05/clip_image006_thumb.jpg" alt="clip_image006" width="374" height="513" border="0" />](/wp-content/uploads/2013/05/clip_image006.jpg)
+[<img title="clip_image006" src="/wp-content/uploads/2013/05/clip_image006_thumb.jpg" alt="clip_image006"  />](/wp-content/uploads/2013/05/clip_image006.jpg)
 
 因此得到了**两种android下发布sdk方案**：
 

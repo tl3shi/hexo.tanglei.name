@@ -5,18 +5,17 @@ date: 2011-06-28T11:38:02+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=920
-permalink: android-switch-airplanemode-1
 duoshuo_thread_id:
   - 1351844048792453167
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - android
+  - Android
   - coding小工具
 tags:
-  - android关机闹钟
-  - android自动切换飞行模式
-  - android自动开机
+  - Android关机闹钟
+  - Android自动切换飞行模式
+  - Android自动开机
 ---
 这是好久以前的代码了，给贴出来。当时拿到defy不久。网上找自动开机啊，或者关机闹钟啊之类的都一个答案。没有。想想自己的电脑，没有自动关机的吧，关机了啥软件也不能运行了。但仔细想，每次开机，手机能定位正确的时间，肯定还是有个啥在运行的，不过要想利用它，估计够呛。不过有定时运行各种软件等。然后好多人建议飞行模式跟关机相比，是最接近的了，就切换飞行模式吧。网上也有相应的软件，不过挂了广告，显然不爽。然后想着自己就写一个，参照了网上各种资源，代码如下。AirPlaneModeActivity 类主要用于获取用户定义的时间，告诉系统。另一个类(二)中会有。
 

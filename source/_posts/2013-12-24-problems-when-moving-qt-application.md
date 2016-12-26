@@ -5,7 +5,6 @@ date: 2013-12-24T22:10:12+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2263
-permalink: problems-when-moving-qt-application
 duoshuo_thread_id:
   - 1351844048792453495
 categories:
@@ -14,8 +13,7 @@ categories:
   - 敲敲代码
 tags:
   - c++
-  - QT
-  - windows
+  - Windows
 ---
 Untitled Blog Post NameUntitled Blog Post NameUntitled Blog Post Name
 

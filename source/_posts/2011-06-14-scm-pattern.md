@@ -4,18 +4,12 @@ title: 软件配置管理模式
 date: 2011-06-14T11:38:00+00:00
 author: tanglei
 layout: post
-guid: http://www.tanglei.name/%e8%bd%af%e4%bb%b6%e9%85%8d%e7%bd%ae%e7%ae%a1%e7%90%86%e6%a8%a1%e5%bc%8f/
-permalink: scm-pattern
+guid: /blog/%e8%bd%af%e4%bb%b6%e9%85%8d%e7%bd%ae%e7%ae%a1%e7%90%86%e6%a8%a1%e5%bc%8f.html
 duoshuo_thread_id:
   - 1351844048792453288
 categories:
   - 软件配置管理
 tags:
-  - 主线
-  - 储存库
-  - 冒烟测试
-  - 每日构建
-  - 私有工作区
 ---
 <span style="font-size:12pt"><strong>相关概念：<br /> </strong></span>
 

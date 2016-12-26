@@ -5,14 +5,11 @@ date: 2011-08-19T22:11:49+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1115
-permalink: programmers-to-make-b-likely
 duoshuo_thread_id:
   - 1351844048792453266
 categories:
   - 网络文摘
 tags:
-  - 程序员
-  - 装B
 ---
 <span style="color: #888888;">在公司KM平台看到一篇文章，这篇文章属于外部转载，不存在机密信息。所以贴出来木事。</span>
 

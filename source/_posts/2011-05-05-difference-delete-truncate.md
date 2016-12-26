@@ -5,7 +5,6 @@ date: 2011-05-05T03:13:52+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=607
-permalink: difference-delete-truncate
 duoshuo_thread_id:
   - 1351844048792453179
 enable_highlight:
@@ -14,9 +13,7 @@ enable_highlight:
 categories:
   - 数据库应用
 tags:
-  - delete
-  - oracle
-  - truncate
+  - Oracle
 ---
 刚才去做了一个公司的实习生招聘笔试题目，其中有Oracle delete和 truncate区别，记得以前赵明老师讲过一点，只是有点印象，具体想不出来了。网上查了下。发现下面这篇文章不错，遂转之。
 

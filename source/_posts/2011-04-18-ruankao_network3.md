@@ -5,15 +5,12 @@ date: 2011-04-18T12:04:19+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=477
-permalink: ruankao_network3
 duoshuo_thread_id:
   - 1351844048792453332
 categories:
   - 软考
 tags:
-  - OSI
   - TCP/IP
-  - 子网掩码
 ---
 **2****．计算机网络重点和难点：******
 

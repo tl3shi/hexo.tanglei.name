@@ -5,7 +5,6 @@ date: 2010-11-04T13:05:01+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=205
-permalink: volenteer-teaching-day4
 duoshuo_thread_id:
   - 1351844048792453210
 categories:
@@ -50,10 +49,10 @@ tags:
 </p>
 
 <p class="MsoNormal" style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
-  <span style="font-family: 宋体; mso-ascii-font-family: 'Times New  Roman'; mso-hansi-font-family: 'Times New Roman';"><a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/4-1.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/4-1.jpg" alt="图片" /></a></span>
+  <span style="font-family: 宋体; mso-ascii-font-family: 'Times New  Roman'; mso-hansi-font-family: 'Times New Roman';"><a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/4-1.jpg" target="_blank"><img src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/4-1.jpg" alt="图片" /></a></span>
 </p>
 
-<img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/4-2.jpg" alt="图片" width="477" height="350" />
+<img src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/4-2.jpg" alt="图片"  />
 
 还有，下午我居然睡了好大一个下午。 <span lang="EN-US"></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New  Roman'; mso-hansi-font-family: 'Times New Roman';">抱着那本</span><span lang="EN-US"><span style="font-family: Times New  Roman;">J2ME</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New  Roman';">的书就入睡了。不知道</span> <span style="font-family: Times New Roman;"></span><span style="font-family: 宋体; mso-ascii-font- family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">谁还帮我盖了个被套呢。</span><span lang="EN-US"><span style="font-family: Times New Roman;">O()</span></span><span style="font-family: 宋体; mso-ascii- font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">︿︶</span><span lang="EN-US"><span style="font-family: Times  New Roman;">)o </span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New  Roman';">唉，本来，是想自己抽空可以看看这些书的，自己还有那个创新性实验项目呢，唉，看来这个暑假我自己的进度很慢啊。</span>
 
@@ -62,7 +61,7 @@ tags:
 </p>
 
 <p class="MsoNormal" style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
-  <span style="font-family: 宋体; mso-ascii-font-family: 'Times New  Roman'; mso-hansi-font-family: 'Times New Roman';"><a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/4-3.jpg" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/4-3.jpg" alt="图片" width="484" height="357" /></a></span>
+  <span style="font-family: 宋体; mso-ascii-font-family: 'Times New  Roman'; mso-hansi-font-family: 'Times New Roman';"><a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/4-3.jpg" target="_blank"><img src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/4-3.jpg" alt="图片"  /></a></span>
 </p>
 
 <p class="MsoNormal" style="text-indent: 21pt; margin: 0cm 0cm 0pt;">

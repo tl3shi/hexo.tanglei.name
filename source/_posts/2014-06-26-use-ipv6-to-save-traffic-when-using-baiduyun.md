@@ -5,7 +5,6 @@ date: 2014-06-26T20:36:19+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2453
-permalink: use-ipv6-to-save-traffic-when-using-baiduyun
 duoshuo_thread_id:
   - 1351844048792453506
 enable_highlight:
@@ -14,8 +13,6 @@ categories:
   - Windows
   - 经验技巧
 tags:
-  - ipv6
-  - 校园网
   - 百度云管家
   - 百度网盘
 ---
@@ -42,7 +39,7 @@ tags:
 
 最后效果如下：
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image" src="/wp-content/uploads/2014/06/Image_thumb.png" alt="Image" width="669" height="718" border="0" />](/wp-content/uploads/2014/06/Image.png)
+[<img title="Image" src="/wp-content/uploads/2014/06/Image_thumb.png" alt="Image"  />](/wp-content/uploads/2014/06/Image.png)
 
 主要修改goagent配置goagent.ini (我的是v3.0.2,截至2014-6-26的最新版本是v3.1.8, 对应的要改为profile = ipv6)
 
@@ -56,11 +53,11 @@ hosts = 2404:6800:4005:c00::64|2404:6800:4005:c00::65|2404:6800:4005:c00::5e|240
 
 这是用代理访问http://ip.chinaz.com 可以看到代理的ip~ 若不是自己的ip，则成功了。
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(1)" src="/wp-content/uploads/2014/06/Image1_thumb.png" alt="Image(1)" width="644" height="185" border="0" />](/wp-content/uploads/2014/06/Image1.png)
+[<img title="Image(1)" src="/wp-content/uploads/2014/06/Image1_thumb.png" alt="Image(1)"  />](/wp-content/uploads/2014/06/Image1.png)
 
 百度网盘/百度云管家设置代理
   
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(2)" src="/wp-content/uploads/2014/06/Image2_thumb.png" alt="Image(2)" width="499" height="109" border="0" />](/wp-content/uploads/2014/06/Image2.png)
+[<img title="Image(2)" src="/wp-content/uploads/2014/06/Image2_thumb.png" alt="Image(2)"  />](/wp-content/uploads/2014/06/Image2.png)
 
 速度：几十k ~ 几百k 不等. 木有ipv4直接下载速度快啊， 我ipv4直接下载速度能达3M呢~
 

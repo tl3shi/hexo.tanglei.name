@@ -5,17 +5,14 @@ date: 2012-03-28T23:23:07+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1664
-permalink: an-example-for-beginning-to-learn-libsvm
 duoshuo_thread_id:
   - 1351844048792453358
 categories:
   - 数据挖掘
 tags:
-  - helloWorld
+  - HelloWorld
   - libsvm
   - SVM
-  - 支持向量机
-  - 毕业设计
 ---
 搜索<a href="http://zh.wikipedia.org/wiki/SVM" target="_blank">SVM</a>入门，收录排名最前的应该就是这几篇文章了：<a href="http://www.blogjava.net/zhenandaci/archive/2009/02/13/254519.html" target="_blank">SVM 入门资料</a>。具体什么原理貌似挺高深的，我也没怎么去看其中的原理。这里我说的<a href="http://www.csie.ntu.edu.tw/~cjlin/libsvm/" target="_blank">LibSvm</a>就是SVM其中一个解决方案的软件包。
 
@@ -63,13 +60,13 @@ options:
 
 **svm-scale –s save-filename datafilename >scalefilename**
 
-[<img style="display: inline; border: 0px;" title="clip_image002" src="/wp-content/uploads/2012/03/clip_image002_thumb3.jpg" alt="clip_image002" width="580" height="50" border="0" />](/wp-content/uploads/2012/03/clip_image0024.jpg)
+[<img title="clip_image002" src="/wp-content/uploads/2012/03/clip_image002_thumb3.jpg" alt="clip_image002"  />](/wp-content/uploads/2012/03/clip_image0024.jpg)
 
 在利用下面的命令对另外的数据以已有的规则(规则文件**saved-filename**)进行缩放。
 
 **svm-scale –r saved-filename datafilename >scalefilename**
 
-[<img style="display: inline; margin-left: 0px; margin-right: 0px; border: 0px;" title="clip_image004" src="/wp-content/uploads/2012/03/clip_image004_thumb1.jpg" alt="clip_image004" width="579" height="43" border="0" hspace="12" />](/wp-content/uploads/2012/03/clip_image0041.jpg)
+[<img title="clip_image004" src="/wp-content/uploads/2012/03/clip_image004_thumb1.jpg" alt="clip_image004"  hspace="12" />](/wp-content/uploads/2012/03/clip_image0041.jpg)
 
 **(3) 选定核函数**
 
@@ -81,7 +78,7 @@ options:
 
 svm-train [options] training\_set\_file [model_file]
 
-[<img style="display: inline; border: 0px;" title="clip_image006" src="/wp-content/uploads/2012/03/clip_image006_thumb1.jpg" alt="clip_image006" width="580" height="111" border="0" data-pinit="registered" />](/wp-content/uploads/2012/03/clip_image0061.jpg)
+[<img title="clip_image006" src="/wp-content/uploads/2012/03/clip_image006_thumb1.jpg" alt="clip_image006"  data-pinit="registered" />](/wp-content/uploads/2012/03/clip_image0061.jpg)
   
 将第二步中生成的缩放后测试数据训练成模型保存在allPatterns.model文件当中。其中的参数，我暂时也不懂。可以到[这里详细了解](http://www.csie.ntu.edu.tw/~cjlin/libsvm/faq.html#f401)。
 
@@ -95,7 +92,7 @@ Usage: svm-predict [options] test\_file model\_file output_file
 
 options:-b probability_estimates: whether to predict probability estimates, 0 or 1 (default 0); for one-class SVM only 0 is supported
 
-[<img style="display: inline; border: 0px;" title="clip_image008" src="/wp-content/uploads/2012/03/clip_image008_thumb1.jpg" alt="clip_image008" width="580" height="106" border="0" hspace="12" data-pinit="registered" />](/wp-content/uploads/2012/03/clip_image0081.jpg)
+[<img title="clip_image008" src="/wp-content/uploads/2012/03/clip_image008_thumb1.jpg" alt="clip_image008"  hspace="12" data-pinit="registered" />](/wp-content/uploads/2012/03/clip_image0081.jpg)
 
 如上所示，第一次用的是由第二步中进行缩放的测试集文件test.scale得到的预测结果是100%，第二次运行的是没有缩放的，得到的结果是90%。预测的结果保存在predict.out，里面直接是测试集中每个记录的分类，是属于哪个label。
 

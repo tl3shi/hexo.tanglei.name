@@ -5,14 +5,11 @@ date: 2011-05-13T11:08:55+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=644
-permalink: tencent-sencond-interview-result
 duoshuo_thread_id:
   - 1351844048792453133
 categories:
   - 实习那些事儿
 tags:
-  - 2011腾讯实习生
-  - 腾讯二面结果
   - 腾讯面经
 ---
 <div>

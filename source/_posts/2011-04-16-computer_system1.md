@@ -5,7 +5,6 @@ date: 2011-04-16T12:04:32+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=439
-permalink: computer_system1
 duoshuo_thread_id:
   - 1351844048792453298
 categories:
@@ -13,7 +12,6 @@ categories:
   - 软考
 tags:
   - 系统架构师
-  - 计算机系统
   - 软件设计师
 ---
 这两天整理了下电脑，发现自己之前考软件设计师啊，系统架构师啊之类用到的一些资料，现在决定把它稍微整理下，放到网上了。其实也都是来自网络的。也就转载下吧相当于。

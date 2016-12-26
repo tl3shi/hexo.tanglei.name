@@ -5,15 +5,12 @@ date: 2011-08-06T19:39:58+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1105
-permalink: js-error-no-permission
 duoshuo_thread_id:
   - 1351844048792453278
 categories:
   - PHP
 tags:
-  - JS错误
   - 没有权限
-  - 跨域访问
 ---
 在写后台管理的时候一直用过得firefox做开发调试，写得挺顺利的，后来Leaner准备将测试的数据删除，添加点像样的数据时，一点删除就报错了。然后就…… 
 

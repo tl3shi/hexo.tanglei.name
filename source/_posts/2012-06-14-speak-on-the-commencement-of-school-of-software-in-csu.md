@@ -5,15 +5,12 @@ date: 2012-06-14T16:59:03+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1811
-permalink: speak-on-the-commencement-of-school-of-software-in-csu
 duoshuo_thread_id:
   - 1351844048792453276
 categories:
   - 软件学院
 tags:
   - 中南大学软件学院
-  - 学位授予
-  - 毕业生代表
   - 演讲稿
 ---
 尊敬的院领导、各位老师，亲爱的同学们：
@@ -44,7 +41,7 @@ tags:
 
 融入中南大学，实现人生理想。我们见证着中南的崛起，也正在**创造**中南的崛起；青春不毕业，没有什么不可以！
 
-**中南很牛很厉害，培养了[刘路——全国最年轻的教授](http://www.tanglei.name/the-yongest-professor-in-central-south-university/)。**
+**中南很牛很厉害，培养了[刘路——全国最年轻的教授](/blog/the-yongest-professor-in-central-south-university.html)。**
 
 **中南软件很牛很厉害。外包大赛的赛场上，我们力战上交，一与清华试比高！** 
 

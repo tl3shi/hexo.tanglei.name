@@ -5,17 +5,14 @@ date: 2011-04-16T12:16:38+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=442
-permalink: computer_system2-2
 duoshuo_thread_id:
   - 1351844048792453368
 categories:
   - 软考
 tags:
-  - 中央处理器CPU
-  - 存储器系统
   - 输入/输出系统
 ---
-上接<http://www.tanglei.name/computer_system1/>
+上接</blog/computer_system1.html>
 
 **1.3****存储器系统：**
 

@@ -5,14 +5,12 @@ date: 2011-04-22T15:20:24+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=504
-permalink: software-measurement
 duoshuo_thread_id:
   - 1351844048792453343
 categories:
   - SoftwareEngineering
   - 软件度量及其应用
 tags:
-  - 测量尺度类型
   - 软件度量
 ---
 下周三《软件度量及其应用》就要考试了，今天看了下PPT，总结了下。PPT是英文的，就当是再此熟悉下英语单词吧。第一章是讲测量的相关概念滴。

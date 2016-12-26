@@ -5,17 +5,13 @@ date: 2011-04-20T13:45:05+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=490
-permalink: ruankao_database
 duoshuo_thread_id:
   - 1351844048792453275
 categories:
   - 数据库应用
   - 软考
 tags:
-  - DDL
-  - DML
-  - SQL
-  - 数据库设计
+  - 数据库
 ---
 **1.5****关系数据库SQL语言** ****
 

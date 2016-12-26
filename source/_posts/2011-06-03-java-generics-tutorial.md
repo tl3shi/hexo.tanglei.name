@@ -5,16 +5,13 @@ date: 2011-06-03T14:30:14+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=748
-permalink: java-generics-tutorial
 duoshuo_thread_id:
   - 1351844048792453390
 categories:
   - JAVA
 tags:
-  - java
-  - java基础
-  - 泛型
-  - 泛型优缺点
+  - Java
+  - Java基础
 ---
 转自：<span style="font-weight: bold;"><a href="http://www.jobbole.com/entry.php/885-Java%E6%B3%9B%E5%9E%8B%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B">Java泛型简明教程</a></span>
   
@@ -157,7 +154,7 @@ sum += i;
 
 <div>
   <p>
-    <img class="thumbnail" style="border-style: initial; border-color: initial; border-image: initial; border-width: 0px;" title="Java泛型简明教程" src="http://wkee.net/qee/wordpress/wp-content/uploads/2011/06/type-hierarchy.png" alt="Java泛型简明教程" border="0" />
+    <img class="thumbnail" style="border-style: initial; border-color: initial; border-image: initial; border-width: 0px;" title="Java泛型简明教程" src="http://wkee.net/qee/Wordpress/wp-content/uploads/2011/06/type-hierarchy.png" alt="Java泛型简明教程" border="0" />
   </p>
 </div>
 

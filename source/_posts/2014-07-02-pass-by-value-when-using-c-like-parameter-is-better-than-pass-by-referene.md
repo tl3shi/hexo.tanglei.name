@@ -5,21 +5,17 @@ date: 2014-07-02T23:21:39+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2461
-permalink: pass-by-value-when-using-c-like-parameter-is-better-than-pass-by-referene
 duoshuo_thread_id:
   - 1351844048792453507
 categories:
   - c++
 tags:
-  - effective c++
-  - 传参
   - 性能优化
-  - 读书笔记
 ---
 在《Effective C++》里提到对内置(C-like)类型在函数传参时pass by value比pass by reference更高效，当用OO的c++自定义类型(存在构造/析构等)pass by reference to const 更好，STL里的迭代器和函数对象是用C指针实现的，因此pass by value更好。至于为什么，下面的代码验证了下。
 
 ```cpp
-#include <iostream&gt;
+#include <iostream>
 using namespace std;
 
 int f(int i)
@@ -91,7 +87,7 @@ int main()
 
 后面的几个函数，只截取了关键代码了。
 
-```
+```asm
     10: int g(const int &i)
     11: { 
  ...... 
@@ -106,9 +102,9 @@ int main()
 ......
 ```
 
-[<img class="size-full wp-image-2472 aligncenter" src="/wp-content/uploads/2014/07/1.png" alt="传引用 传指针" width="321" height="151" />](/wp-content/uploads/2014/07/1.png)
+[<img class="size-full wp-image-2472 aligncenter" src="/wp-content/uploads/2014/07/1.png" alt="传引用 传指针"  />](/wp-content/uploads/2014/07/1.png)
 
-```
+```asm
     16: int h(int * p)
     17: {
 ......
@@ -125,7 +121,7 @@ int main()
 
 指针跟上面引用一样。 
 
-```    
+```asm    
     22: int inter(int * &p)
     23: {
 ......
@@ -141,7 +137,7 @@ int main()
 ......
 ```
 
-[<img class="aligncenter size-full wp-image-2471" title=" " src="/wp-content/uploads/2014/07/2.png" alt="pass by value" width="386" height="106" />](/wp-content/uploads/2014/07/2.png)
+[<img class="aligncenter size-full wp-image-2471" title=" " src="/wp-content/uploads/2014/07/2.png" alt="pass by value"  />](/wp-content/uploads/2014/07/2.png)
   
 从汇编代码可以看出，为啥内置类型作为函数参数传递时更高效。 
 

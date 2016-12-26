@@ -5,7 +5,6 @@ date: 2010-11-29T12:24:27+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=254
-permalink: volenteer-teaching-in-guizhou-jieye
 duoshuo_thread_id:
   - 1351842949280825459
 categories:
@@ -14,7 +13,6 @@ tags:
   - 中南大学
   - 丰田助学
   - 感恩的心
-  - 手语
   - 贵州支教
   - 铜厂小学
   - 龙场镇

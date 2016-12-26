@@ -5,27 +5,23 @@ date: 2014-01-23T00:05:31+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2293
-permalink: android-airplanemode-auto-switcher
 duoshuo_thread_id:
   - 1351844048792453497
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - android
+  - Android
   - coding小工具
 tags:
-  - android
-  - Android 4.2
-  - AutoSwitcher
-  - WRITE_SECURE_SETTINGS
+  - Android
   - 没有权限
   - 飞行模式
 ---
-<span style="color: #ff0000;">2015-01-18 (AutoSwitcher1.0)之后的<a href="http://www.tanglei.name/android-airplanemode-auto-switcher-v2/">更新说明文档<span style="color: #ff0000;">在这里</span></a>。<a href="http://www.tanglei.name/android-airplanemode-auto-switcher-v2/"><span style="color: #000000;">http://www.tanglei.name/android-airplanemode-auto-switcher-v2/</span></a><span style="color: #333300;">//2015-01-18 update</span></span>
+<span style="color: #ff0000;">2015-01-18 (AutoSwitcher1.0)之后的<a href="/blog/android-airplanemode-auto-switcher-v2.html">更新说明文档<span style="color: #ff0000;">在这里</span></a>。<a href="/blog/android-airplanemode-auto-switcher-v2.html"><span style="color: #000000;">/blog/android-airplanemode-auto-switcher-v2.html</span></a><span style="color: #333300;">//2015-01-18 update</span></span>
 
 **UPDATE:** 代码托管在[GitHub](https://github.com/tl3shi/AirPlanModeSwitcher)上了, 欢迎有兴趣的童鞋加入一起完善。
   
-之前写过一个[Android手机根据时间设定自动切换飞行模式的代码](http://www.tanglei.name/android-switch-airplanemode-3/)，这次换了个屌丝红米手机之后安装后发现用不了。于是决定重新写一个。
+之前写过一个[Android手机根据时间设定自动切换飞行模式的代码](/blog/android-switch-airplanemode-3.html)，这次换了个屌丝红米手机之后安装后发现用不了。于是决定重新写一个。
 
 整个功能要实现的话思路很清晰，只要改变一下系统配置(System.AIRPLANE\_MODE\_ON)，发送一个通知即可。但发现Android的权限设置没有以前那么开放了。从**Android 4.2**开始([SDK API 17](http://developer.android.com/about/versions/android-4.2.html))，设备的这些属性是只读的，官网上说：
 
@@ -59,7 +55,7 @@ insert into global values(null, 'airplane_mode_on', 1); //相应的插入0值，
 
 下面是我写的小程序的界面：
 
-[<img class="size-large wp-image-2294" title="Android 自动定时切换飞行模式-android-airplanemode-auto-switcher" src="/wp-content/uploads/2014/01/android-airplanemode-auto-switcher-1024x456.png" alt="android自动切换飞行模式" width="1024" height="456" />](/wp-content/uploads/2014/01/android-airplanemode-auto-switcher.png)
+[<img class="size-large wp-image-2294" title="Android 自动定时切换飞行模式-android-airplanemode-auto-switcher" src="/wp-content/uploads/2014/01/android-airplanemode-auto-switcher.png" alt="android自动切换飞行模式"  />](/wp-content/uploads/2014/01/android-airplanemode-auto-switcher.png)
 
 使用方法如下：
 

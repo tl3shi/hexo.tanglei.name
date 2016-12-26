@@ -5,16 +5,12 @@ date: 2011-06-10T09:29:42+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=791
-permalink: android-baseband-signal
 duoshuo_thread_id:
   - 1351844048792453299
 categories:
-  - android
+  - Android
   - 玩玩手机
 tags:
-  - Android手机信号
-  - 基带信号
-  - 手机基带
 ---
 今天看桌面上有一个记事本，发现有用。就贴出来吧。然后再删掉。得整理下电脑了。
   

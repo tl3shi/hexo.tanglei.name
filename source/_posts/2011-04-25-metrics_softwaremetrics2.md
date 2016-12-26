@@ -5,28 +5,18 @@ date: 2011-04-25T10:52:55+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=521
-permalink: metrics_softwaremetrics2
 duoshuo_thread_id:
   - 1351844048792453253
 categories:
   - 软件度量及其应用
 tags:
-  - Feature Point
-  - "Halstead's"
-  - LoC
-  - Object Point
-  - Use-case Point
-  - 功能性
-  - 对象点
-  - 控制流
+  - Halstead
   - 数据流结构
-  - 特征点
-  - 用例点
   - 软件度量
   - 软件结构度量
 ---
 <address>
-  上接：<a href="http://www.tanglei.name/metrics_softwaremetrics1/">http://www.tanglei.name/metrics_softwaremetrics1/</a>
+  上接：<a href="/blog/metrics_softwaremetrics1.html">/blog/metrics_softwaremetrics1.html</a>
 </address>
 
 ## Measuring Internal Product Attributes: Size

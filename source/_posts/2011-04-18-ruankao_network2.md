@@ -5,19 +5,14 @@ date: 2011-04-18T11:54:04+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=474
-permalink: ruankao_network2
 duoshuo_thread_id:
   - 1351844048792453450
 categories:
   - 软考
 tags:
-  - B/S
-  - C/S
-  - 广域网
   - 网络安全
-  - 网络管理
 ---
-上接：<http://www.tanglei.name/ruankao_network1/>
+上接：</blog/ruankao_network1.html>
 
 **1.5****广域网技术******
 

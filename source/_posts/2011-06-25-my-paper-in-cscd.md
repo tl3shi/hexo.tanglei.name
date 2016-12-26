@@ -5,13 +5,11 @@ date: 2011-06-25T19:25:51+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=897
-permalink: my-paper-in-cscd
 duoshuo_thread_id:
   - 1351844048792453147
 categories:
   - MyLife
 tags:
-  - 本科生发表论文
   - 核心期刊
 ---
 **<span style="color: #ff0000;">纠正下，《计算机系统应用》在2010年后就没有被CSCD收录了。至于中文核心期刊，开始是听说的，后来查证了下是北大04版本的计算机类中文核心期刊。这blog发表之后好久就没管了，感谢楼下的某大学讲师WJQ拍砖，因此在此做出声明。</span>**
@@ -20,7 +18,7 @@ tags:
 
 回到石柱县城里，在幺叔家，记着开着电脑。打开foxmail，收取所有邮箱的邮件。计算机系统应用来了，说文章已处理完毕，请上网查询处理意见。连忙打开网站，看到这个html页面后，那个才叫happy呀。
 
-[<img class="aligncenter size-full wp-image-898" title="c-s-a-accept-me" src="/wp-content/uploads/2011/06/c-s-a-accept-me.jpg" alt="计算机系统应用结果" width="663" height="219" />](/wp-content/uploads/2011/06/c-s-a-accept-me.jpg)
+[<img class="aligncenter size-full wp-image-898" title="c-s-a-accept-me" src="/wp-content/uploads/2011/06/c-s-a-accept-me.jpg" alt="计算机系统应用结果"  />](/wp-content/uploads/2011/06/c-s-a-accept-me.jpg)
 
 附件里面详细说
 
@@ -34,6 +32,6 @@ tags:
 
 编辑部要求寄回回执，打印稿等。还要作者的身份证号码。email向陈院长要身份证号码的时候，他还祝贺了一下。呵呵，这还得感谢陈院长啊，至少我当时有勇气投稿也是得到院长大人的肯定才敢投出去的。当时院长回复我的邮件说<span style="color: #000080; font-family: Verdana; font-size: x-small;">总体说不错，本科生写的这样可以了。我的建议如下：……此次省略几十个字。<span style="color: #000000;">多谢院长的肯定呀，</span></span>要是叶(柏龙)总喷我在前的话，我看我是没勇气了。因为曾锋老师啊，刘伟老师啊都说我这文章有点，，意思就是“垃圾”。还好他们没向叶总那么喷我，说让我试试。呵呵:-)
 
-我现在把修改稿发给曾锋老师帮忙看下，让帮忙改下，他的意见是缩短页数，节约版面费。200元/面。呵呵。辛苦曾锋老师了，他一直很认真很细心很仔细。之前我说[微型机与应用录用我的文章时](http://www.tanglei.name/my-paper-to-be-accepted/)，这边计算机系统应用还没结果，曾锋老师也是说等结果吧。因为这个计算机系统应用是[CSCD](http://sdb.csdl.ac.cn/)啊，中文核心期刊呢。质量不错呀。
+我现在把修改稿发给曾锋老师帮忙看下，让帮忙改下，他的意见是缩短页数，节约版面费。200元/面。呵呵。辛苦曾锋老师了，他一直很认真很细心很仔细。之前我说[微型机与应用录用我的文章时](/blog/my-paper-to-be-accepted.html)，这边计算机系统应用还没结果，曾锋老师也是说等结果吧。因为这个计算机系统应用是[CSCD](http://sdb.csdl.ac.cn/)啊，中文核心期刊呢。质量不错呀。
 
 不管怎么说，等我把这稿件寄回编辑部的时候，这件事情也总算告一段落了。

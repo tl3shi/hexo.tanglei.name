@@ -5,7 +5,6 @@ date: 2011-03-07T15:25:39+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=338
-permalink: passport_in3days
 duoshuo_thread_id:
   - 1351844048792453366
 categories:
@@ -13,8 +12,6 @@ categories:
   - 旅游
 tags:
   - 丰田助学
-  - 护照
-  - 日本交流
 ---
 呃，前面几天回了趟重庆，得抱怨下，这个blog本来按照以前的计划是常常写写，回顾下自己的学习生活。但现在这几天忙啊忙啊。
   

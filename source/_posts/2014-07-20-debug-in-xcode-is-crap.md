@@ -5,21 +5,18 @@ date: 2014-07-20T11:15:45+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2504
-permalink: debug-in-xcode-is-crap
 duoshuo_thread_id:
   - 1351844048792453509
 categories:
   - c++
   - 经验技巧
 tags:
-  - debug
   - mac
-  - xcode
 ---
 不得不吐槽下Xcode的debug功能实在是弱爆了～ 网上也不止我一个人吐槽～废话不多说，看图
 
 <div>
-  <a href="/wp-content/uploads/2014/07/xcode-debug.jpg"><img class="size-full wp-image-2505 aligncenter" title="xcode-debug" src="/wp-content/uploads/2014/07/xcode-debug.jpg" alt="" width="1081" height="825" /></a>
+  <a href="/wp-content/uploads/2014/07/xcode-debug.jpg"><img class="size-full wp-image-2505 aligncenter" title="xcode-debug" src="/wp-content/uploads/2014/07/xcode-debug.jpg" alt=""  /></a>
 </div>
 
 看上图的一段调试代码～我不吐槽xcode从用户交互等易用性，TA的可用性都简直。。。

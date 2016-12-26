@@ -5,15 +5,13 @@ date: 2010-12-22T14:58:50+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=144
-permalink: javakeywords_volatile
 duoshuo_thread_id:
   - 1351844048792453389
 categories:
   - JAVA
 tags:
-  - java
-  - java基础
-  - volatile
+  - Java
+  - Java基础
 ---
 前面讲过了native了。继续看看volatile关键字吧。参考了下<http://www.javamex.com/tutorials/synchronization_volatile.shtml>上面的文章。
 

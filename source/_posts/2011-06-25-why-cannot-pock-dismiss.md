@@ -5,7 +5,6 @@ date: 2011-06-25T22:59:42+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=900
-permalink: why-cannot-pock-dismiss
 duoshuo_thread_id:
   - 1351844048792453206
 categories:

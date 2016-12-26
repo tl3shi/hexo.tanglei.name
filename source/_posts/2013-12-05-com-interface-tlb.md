@@ -5,7 +5,6 @@ date: 2013-12-05T11:19:04+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2248
-permalink: com-interface-tlb
 duoshuo_thread_id:
   - 1351844048792453493
 enable_highlight:
@@ -16,9 +15,7 @@ categories:
   - 敲敲代码
 tags:
   - c++
-  - COM接口
-  - helloWorld
-  - tlb文件
+  - HelloWorld
 ---
 > 最近一个合作973项目，需要调用人家的接口。对方给了一个dll文件和函数接口说明，然后我就视图通过传统生成的dll，loadlibrary去查找函数指针，通过函数指针去调用，失败。后来才发现人家给的dll不是一个一般的dll而是一个com接口，需要注册啊之类的。
 
@@ -58,15 +55,15 @@ namespace comtest
 
 写好后，右击项目属性，选择“应用程序”，点击“程序集信息”后勾选“使程序集COM可见”。（英文版如下）
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image002" src="/wp-content/uploads/2013/12/clip_image002_thumb.jpg" alt="clip_image002" width="558" height="366" border="0" />](/wp-content/uploads/2013/12/clip_image002.jpg)
+[<img title="clip_image002" src="/wp-content/uploads/2013/12/clip_image002_thumb.jpg" alt="clip_image002"  />](/wp-content/uploads/2013/12/clip_image002.jpg)
 
 然后选择”生成”tab，勾选“为COM互操作注册”。（英文版如下）
 
-[ <img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image004" src="/wp-content/uploads/2013/12/clip_image004_thumb.jpg" alt="clip_image004" width="558" height="408" border="0" />](/wp-content/uploads/2013/12/clip_image004.jpg)
+[ <img title="clip_image004" src="/wp-content/uploads/2013/12/clip_image004_thumb.jpg" alt="clip_image004"  />](/wp-content/uploads/2013/12/clip_image004.jpg)
 
 然后生成，生成可能失败，提示权限不够，然后以管理员身份运行再生成。
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image006" src="/wp-content/uploads/2013/12/clip_image006_thumb.jpg" alt="clip_image006" width="557" height="41" border="0" />](/wp-content/uploads/2013/12/clip_image006.jpg)
+[<img title="clip_image006" src="/wp-content/uploads/2013/12/clip_image006_thumb.jpg" alt="clip_image006"  />](/wp-content/uploads/2013/12/clip_image006.jpg)
 
 如下消息看到成功生成了Dll。
 
@@ -74,7 +71,7 @@ namespace comtest
 
 生成的dll就可以给另外的人调用了。调用方需要用regasm注册一下生成tlb文件。
 
-[ <img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image007" src="/wp-content/uploads/2013/12/clip_image007_thumb.png" alt="clip_image007" width="570" height="127" border="0" />](/wp-content/uploads/2013/12/clip_image007.png)
+[ <img title="clip_image007" src="/wp-content/uploads/2013/12/clip_image007_thumb.png" alt="clip_image007"  />](/wp-content/uploads/2013/12/clip_image007.png)
 
 调用方可以直接import这个tlb文件后，直接写一个空的main函数，
 
@@ -82,7 +79,7 @@ namespace comtest
 
 然后生成，这样build后可以生成一个comtest.tlh 文件，visual studio 就能智能提示。
 
-[ <img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="clip_image008" src="/wp-content/uploads/2013/12/clip_image008_thumb.png" alt="clip_image008" width="429" height="181" border="0" />](/wp-content/uploads/2013/12/clip_image008.png)
+[ <img title="clip_image008" src="/wp-content/uploads/2013/12/clip_image008_thumb.png" alt="clip_image008"  />](/wp-content/uploads/2013/12/clip_image008.png)
 
 调用方式可以是这样：
 
@@ -145,12 +142,12 @@ int main1()//this also works
 
 运行就能看到如下结果
 
-[ <img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/12/image_thumb.png" alt="image" width="174" height="67" border="0" />](/wp-content/uploads/2013/12/image.png)
+[ <img title="image" src="/wp-content/uploads/2013/12/image_thumb.png" alt="image"  />](/wp-content/uploads/2013/12/image.png)
 
 
 Reference：
 
-[1]Excel 调用c# 生成的dll <https://richnewman.wordpress.com/2007/04/15/a-beginner%E2%80%99s-guide-to-calling-a-net-library-from-excel/>
+[1]Excel 调用c# 生成的dll <https://richnewman.Wordpress.com/2007/04/15/a-beginner%E2%80%99s-guide-to-calling-a-net-library-from-excel/>
   
 [2]Com 组件介绍 <http://www.cppblog.com/3522021224/archive/2007/06/22/26803.html>
   

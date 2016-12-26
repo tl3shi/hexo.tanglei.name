@@ -1,11 +1,10 @@
 ---
 id: 2094
-title: 换主机风波-ubuntu配置wordpress
+title: 换主机风波-ubuntu配置Wordpress
 date: 2013-03-31T00:46:24+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2094
-permalink: change-ubuntuserver-to-support-wordpress
 duoshuo_thread_id:
   - 1351844048792453271
 enable_highlight:
@@ -14,8 +13,7 @@ categories:
   - 我做站长
 tags:
   - Ubuntu
-  - wordpress
-  - 固定链接失效
+  - Wordpress
   - 虚拟主机
 ---
 今天突然发现博客主机流量超过了15G而被停调了。 
@@ -48,13 +46,13 @@ tags:
 验证下php环境，ok. 
 
 
-![wordpress 运行环境](/wp-content/uploads/2013/03/033013_1646_ubuntuw4.png) 
+![Wordpress 运行环境](/wp-content/uploads/2013/03/033013_1646_ubuntuw4.png) 
 
   1. <div>
       配置虚拟主机.
     </div>
     
-    修改Httpd.conf，将wordpress放到相应目录. 发现木有mysql驱动. 
+    修改Httpd.conf，将Wordpress放到相应目录. 发现木有mysql驱动. 
 
 
 ![php mysql 驱动](/wp-content/uploads/2013/03/033013_1646_ubuntuw5.png) 
@@ -72,12 +70,12 @@ service apache2 stop/start
 改hosts后，能够访问。 
 
 
-![wordpress设置固定链接无效的解决办法](/wp-content/uploads/2013/03/033013_1646_ubuntuw7.png) 
+![Wordpress设置固定链接无效的解决办法](/wp-content/uploads/2013/03/033013_1646_ubuntuw7.png) 
 
 不过里面的链接失效。 
 
 
-![wordpress设置固定链接无效的解决办法](/wp-content/uploads/2013/03/033013_1646_ubuntuw8.png) 
+![Wordpress设置固定链接无效的解决办法](/wp-content/uploads/2013/03/033013_1646_ubuntuw8.png) 
 
 我这个固定链接是采用.htaccess方式，查了下是因为apache没有开启rewrite模块支持，于是 
 
@@ -93,4 +91,4 @@ ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/
 
 参考资料： 
 
-[wordpress设置固定链接无效的解决办法](http://kpjack.blog.51cto.com/627289/327354)
+[Wordpress设置固定链接无效的解决办法](http://kpjack.blog.51cto.com/627289/327354)

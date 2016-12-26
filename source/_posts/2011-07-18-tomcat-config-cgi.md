@@ -5,7 +5,6 @@ date: 2011-07-18T17:36:55+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1024
-permalink: tomcat-config-cgi
 duoshuo_thread_id:
   - 1351844048792453202
 enable_highlight:
@@ -14,11 +13,8 @@ categories:
   - JAVA
   - 实习那些事儿
 tags:
-  - cgi
-  - java
-  - java支持CGI
-  - tomcat
-  - TOMCAT配置CGI
+  - Java
+  - Java支持CGI
 ---
 腾讯实习的培训布置的作用中需要用Qzhttp+FastCGI+TTC架构写demo.网上参照了下,最后成功在Tomcat下配置CGI并实现简单例子.
   
@@ -109,7 +105,7 @@ true</param-value>
 </web-app>
 ```
 
-然后构造如下目录：[<img class="aligncenter size-full wp-image-1025" title="tomcat-cgi-directory" src="/wp-content/uploads/2011/07/tomcat-cgi-directory.jpg" alt="TOMCAT配置CGI目录结构" width="400" height="480" data-pinit="registered" />](/wp-content/uploads/2011/07/tomcat-cgi-directory.jpg)
+然后构造如下目录：[<img class="aligncenter size-full wp-image-1025" title="tomcat-cgi-directory" src="/wp-content/uploads/2011/07/tomcat-cgi-directory.jpg" alt="TOMCAT配置CGI目录结构"  data-pinit="registered" />](/wp-content/uploads/2011/07/tomcat-cgi-directory.jpg)
   
 注意结构，web-inf下面有个CGI，在web.xml配置的目录结构，当然也可以改相应的配置文件与目录结构对应即可。
   
@@ -135,7 +131,7 @@ echo ^
 
 启动tomcat，然后浏览器访问：http://localhost/cgiDemo/cgi-bin/test.bat 看到如下图说明配置成功了
   
-[<img class="aligncenter size-medium wp-image-1026" title="tomcat-cgi-demo" src="/wp-content/uploads/2011/07/tomcat-cgi-demo.jpg" alt="TOmcat配置CGI" width="600" height="334" data-pinit="registered" />](/wp-content/uploads/2011/07/tomcat-cgi-demo.jpg)
+[<img class="aligncenter size-medium wp-image-1026" title="tomcat-cgi-demo" src="/wp-content/uploads/2011/07/tomcat-cgi-demo.jpg" alt="TOmcat配置CGI"  data-pinit="registered" />](/wp-content/uploads/2011/07/tomcat-cgi-demo.jpg)
   
 
   
@@ -224,7 +220,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       
       
       <p>
-        <a href="/wp-content/uploads/2011/07/tomcat-config-cgi-run-cpp.jpg"><img class="aligncenter size-medium wp-image-1027" title="tomcat-config-cgi-run-cpp" src="/wp-content/uploads/2011/07/tomcat-config-cgi-run-cpp.jpg" alt="Tomcat配置CGI运行C程序" width="600" height="266" data-pinit="registered" /></a>
+        <a href="/wp-content/uploads/2011/07/tomcat-config-cgi-run-cpp.jpg"><img class="aligncenter size-medium wp-image-1027" title="tomcat-config-cgi-run-cpp" src="/wp-content/uploads/2011/07/tomcat-config-cgi-run-cpp.jpg" alt="Tomcat配置CGI运行C程序"  data-pinit="registered" /></a>
         
       </p>
       
@@ -236,5 +232,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       
       
       <p>
-        差不多了。现在我又有一种方法通过java等运行C可执行文件了。之前用<a href="http://www.tanglei.name/java-native-demo/">native也写过helloworld的例子</a>。
+        差不多了。现在我又有一种方法通过java等运行C可执行文件了。之前用<a href="/blog/java-native-demo.html">native也写过helloworld的例子</a>。
       </p>

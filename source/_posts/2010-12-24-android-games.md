@@ -5,16 +5,13 @@ date: 2010-12-24T02:01:37+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=171
-permalink: android-games
 duoshuo_thread_id:
   - 1351844048792453305
 categories:
-  - android
+  - Android
   - 网络文摘
 tags:
-  - android
-  - apk
-  - Game
+  - Android
 ---
 Google Android智能手机平台自从发布后空前成功，有<span style="color: #670e1a;">众多的应用软件</span>，同时也吸引了越来越多的用户和开发者加入其阵营，其流行和普及的程度已经逼近苹果的iPhone手机平台。
 

@@ -5,14 +5,11 @@ date: 2012-06-27T16:25:18+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1821
-permalink: graduation
 duoshuo_thread_id:
   - 1351844048792453180
 categories:
   - MyLife
 tags:
-  - 毕业
-  - 离别
 ---
 写下这个题目的时候，我已经在家了。
 

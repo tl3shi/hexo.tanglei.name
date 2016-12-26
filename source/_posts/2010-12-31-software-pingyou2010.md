@@ -5,14 +5,12 @@ date: 2010-12-31T13:19:06+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=264
-permalink: software-pingyou2010
 duoshuo_thread_id:
   - 1351844048792453463
 categories:
   - 软件0804
 tags:
   - 中南大学软件学院
-  - 评优
   - 软件0804
 ---
 今年咱班取得不错的成绩啊。下面是公式结果。咱班的我就红色加粗突出一下啦。。

@@ -5,7 +5,6 @@ date: 2011-11-02T22:16:03+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1219
-permalink: come-back-to-tencent
 duoshuo_thread_id:
   - 1351844048792453383
 categories:

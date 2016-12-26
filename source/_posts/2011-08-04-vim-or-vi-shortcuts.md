@@ -5,14 +5,12 @@ date: 2011-08-04T22:20:45+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1082
-permalink: vim-or-vi-shortcuts
 duoshuo_thread_id:
   - 1351844048792453417
 categories:
-  - 'Linux&amp;Ubuntu'
+  - 'Linux'
 tags:
   - Linux
-  - Vim快捷键
   - 快捷键
 ---
 最近常用到VI，苦于有些命令还得去查，这里网上找了份，不错。记录下来。收藏了。

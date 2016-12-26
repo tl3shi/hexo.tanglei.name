@@ -1,14 +1,9 @@
 ---
 title: 分享一个清华主题的beamer模版
-permalink: share-beamer-with-tsinghua-theme
 date: 2015-06-25
 layout: post
 tags: 
-    - latex 
-    - beamer 
-    - tsinghua 
-    - 学位论文答辩 
-    - ppt 模版
+    - Latex 
 categories: 
     - MyLife 
     - 清华大学 
@@ -19,16 +14,12 @@ published: true
 
 我在原文“一个清华的beamer主题[^1]”的基础上添加了中文支持，修改了封面，下图封面的是效果图。完整的效果可以看[这里](https://github.com/tl3shi/THUBeamer/blob/master/tanglei_thesis_report.pdf)。
 
-<center>
-![Tisnghua-beamer学位论文答辩PPT封面](/share-beamer-with-tsinghua-theme/tanglei_thesis_report-0.png)
-</center>
+![Tisnghua-beamer学位论文答辩PPT封面](/resources/share-beamer-with-tsinghua-theme/tanglei_thesis_report-0.png)
 
 此外，我修改后的这个latex beamer模版还集成了一些常用的功能，跟原文相比增加了比如：(1) 页码显示，这是答辩过程中常用的；(2) 参考文献的引用方式引用页脚注和尾页集中同步展示；(3) 示例中还包括也些算法的引用等。CS等相关专业可以直接copy改改就用，省得自己再去查。
 
-<center>
-![](/share-beamer-with-tsinghua-theme/tanglei_thesis_report-1.png)
-![](/share-beamer-with-tsinghua-theme/tanglei_thesis_report-2.png)
-</center>
+![](/resources/share-beamer-with-tsinghua-theme/tanglei_thesis_report-1.png)
+![](/resources/share-beamer-with-tsinghua-theme/tanglei_thesis_report-2.png)
 
 感兴趣的同学可以从 [这里fork或者下载：THUBeamer](https://github.com/tl3shi/THUBeamer)，其中 [tanglei_thesis_report.tex](https://github.com/tl3shi/THUBeamer/blob/master/tanglei_thesis_report.tex) 为我自己学位论文答辩用到的PPT的精简版，[tsinghua_test.tex](https://github.com/tl3shi/THUBeamer/blob/master/tsinghua_test.tex)为原来版本的简单修改，你可以根据兴趣选择参考的模版。
 
@@ -47,7 +38,6 @@ published: true
 - 参考文献格式 ``\usepackage[backend=bibtex,sorting=none]{biblatex}``
 - beamer单页上要引用多次reference：
      - 避免重复的的footnote[^4][ref](http://tex.stackexchange.com/questions/35043/reference-different-places-to-the-same-footnote)
-     - autocite的方式 
 - xelatex 编译提示 ``** WARNING ** Version of PDF file (1.5) is newer than version limit specification ``，需要编译时加参数选项 ``xelatex -output-driver="xdvipdfmx -V 5"  source.tex ``, 具体根据 version版本改相应参数；
 - xelatex mac下中文乱码，
 两种方法： 
@@ -56,17 +46,17 @@ published: true
 	- 若编译过了，还是乱码，记得看你tex源文件的编码，是不是UTF-8。``set fileencoding=utf-8``
 - PPT章节切换时添加目录 
 
-	```
-	\AtBeginSubsection[] {
-	  \frame<handout:0> {
-	  \frametitle{目录}
-	  %  \begin{multicols}{2}
-	  \tableofcontents[current,currentsubsection,sections={<1-5>}]
-	  %\end{multicols}
-	    }
-	    \addtocounter{framenumber}{-1}  %目录页不计算页码
-	  }
-	```
+```latex
+\AtBeginSubsection[] {
+  \frame<handout:0> {
+  \frametitle{目录}
+  %  \begin{multicols}{2}
+  \tableofcontents[current,currentsubsection,sections={<1-5>}]
+  %\end{multicols}
+    }
+    \addtocounter{framenumber}{-1}  %目录页不计算页码
+  }
+```
 
 答辩时用beamer有不好的方式就是:
 

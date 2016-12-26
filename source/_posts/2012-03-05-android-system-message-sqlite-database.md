@@ -5,17 +5,14 @@ date: 2012-03-05T14:02:34+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1499
-permalink: android-system-message-sqlite-database
 duoshuo_thread_id:
   - 1351844048792453295
 categories:
   - 玩玩手机
   - 经验技巧
 tags:
-  - adb
-  - android
+  - Android
   - sqlite
-  - 系统短信
 ---
 一个朋友过来，准备玩玩Ta的android手机，给我之前还要拿回去看看，结果是ta把短信加密了(第三方短信)，怕我知道ta的啥见不得人的秘密。o(∩_∩)o 哈哈。TA威胁我说加密了，看我怎么看。结果我说要是我能看呢。ta威胁我说不行，我就非得试试。直接的思路是，他的手机已经root过，我应该能直接拿到sqlite数据库。（其他方法比如下对应软件的破解解密爆破等没试过）。
 
@@ -27,41 +24,41 @@ tags:
 
 /data/data/com.android.providers.telephony/databases/mmssms.db
 
-[<img style="display: inline; border: 0px;" title="clip_image002" src="/wp-content/uploads/2012/03/clip_image002_thumb.jpg" alt="clip_image002" width="644" height="67" border="0" hspace="12" />](/wp-content/uploads/2012/03/clip_image002.jpg)
+[<img title="clip_image002" src="/wp-content/uploads/2012/03/clip_image002_thumb.jpg" alt="clip_image002"  hspace="12" />](/wp-content/uploads/2012/03/clip_image002.jpg)
 
 OK，在滴。然后就是想的直接用命令cp或者copy命令复制到sdcard上，取回到电脑里。结果悲催的是居然木有cp命令。然后网上查询得到下面这个方法。可以用[dd命令](http://baike.baidu.com/view/3568252.htm)(链接百科详解)。(说是cat命令重定向输出也可以).
 
 现在已经将系统目录下的数据库copy到sdcard了。
 
-[<img style="display: inline; border: 0px;" title="clip_image004" src="/wp-content/uploads/2012/03/clip_image004_thumb.jpg" alt="clip_image004" width="644" height="143" border="0" hspace="12" data-pinit="registered" />](/wp-content/uploads/2012/03/clip_image004.jpg)
+[<img title="clip_image004" src="/wp-content/uploads/2012/03/clip_image004_thumb.jpg" alt="clip_image004"  hspace="12" data-pinit="registered" />](/wp-content/uploads/2012/03/clip_image004.jpg)
 
 然后退出adb调试器。(我不知道怎么在adb调试器里面直接将文件导出到数据库)用adb pull命令导出(之前只用过这种adb push 和adb pull 等)。
 
-[<img style="display: inline; border: 0px;" title="clip_image006" src="/wp-content/uploads/2012/03/clip_image006_thumb.jpg" alt="clip_image006" width="644" height="91" border="0" />](/wp-content/uploads/2012/03/clip_image006.jpg)
+[<img title="clip_image006" src="/wp-content/uploads/2012/03/clip_image006_thumb.jpg" alt="clip_image006"  />](/wp-content/uploads/2012/03/clip_image006.jpg)
 
 OK，已经将数据库拿到电脑上了。
 
 打开sqlite命令，查看数据库。
 
-[<img style="display: inline; border: 0px;" title="clip_image008" src="/wp-content/uploads/2012/03/clip_image008_thumb.jpg" alt="clip_image008" width="644" height="112" border="0" data-pinit="registered" />](/wp-content/uploads/2012/03/clip_image008.jpg)
+[<img title="clip_image008" src="/wp-content/uploads/2012/03/clip_image008_thumb.jpg" alt="clip_image008"  data-pinit="registered" />](/wp-content/uploads/2012/03/clip_image008.jpg)
 
 看该数据库下的表。很明显sms是保存短信的，直接select就能知道短信内容。(涉及到电话号码，就给划掉了)
 
-[<img style="display: inline; border: 0px;" title="clip_image010" src="/wp-content/uploads/2012/03/clip_image010_thumb.jpg" alt="clip_image010" width="644" height="144" border="0" data-pinit="registered" />](/wp-content/uploads/2012/03/clip_image010.jpg)
+[<img title="clip_image010" src="/wp-content/uploads/2012/03/clip_image010_thumb.jpg" alt="clip_image010"  data-pinit="registered" />](/wp-content/uploads/2012/03/clip_image010.jpg)
 
 乱码，不着急。将查询结果导出到文件。
 
 .output是改变输出。返回标准输出。.output stdout
 
-[<img style="display: inline; border: 0px;" title="clip_image012" src="/wp-content/uploads/2012/03/clip_image012_thumb.jpg" alt="clip_image012" width="644" height="62" border="0" />](/wp-content/uploads/2012/03/clip_image012.jpg)
+[<img title="clip_image012" src="/wp-content/uploads/2012/03/clip_image012_thumb.jpg" alt="clip_image012"  />](/wp-content/uploads/2012/03/clip_image012.jpg)
 
 再select一遍。已经在当前目录下生生成查询结果的文件。
 
-[<img style="display: inline; border: 0px;" title="clip_image014" src="/wp-content/uploads/2012/03/clip_image014_thumb.jpg" alt="clip_image014" width="644" height="67" border="0" hspace="12" />](/wp-content/uploads/2012/03/clip_image014.jpg)
+[<img title="clip_image014" src="/wp-content/uploads/2012/03/clip_image014_thumb.jpg" alt="clip_image014"  hspace="12" />](/wp-content/uploads/2012/03/clip_image014.jpg)
 
 直接打开，即可。
 
-[<img style="display: inline; border: 0px;" title="clip_image015" src="/wp-content/uploads/2012/03/clip_image015_thumb.jpg" alt="clip_image015" width="644" height="194" border="0" data-pinit="registered" />](/wp-content/uploads/2012/03/clip_image015.jpg)
+[<img title="clip_image015" src="/wp-content/uploads/2012/03/clip_image015_thumb.jpg" alt="clip_image015"  data-pinit="registered" />](/wp-content/uploads/2012/03/clip_image015.jpg)
 
 参考资料：
 

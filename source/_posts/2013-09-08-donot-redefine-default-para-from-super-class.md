@@ -5,7 +5,6 @@ date: 2013-09-08T13:10:41+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2199
-permalink: donot-redefine-default-para-from-super-class
 duoshuo_thread_id:
   - 1351844048792453488
 enable_highlight:
@@ -16,7 +15,6 @@ categories:
 tags:
   - c++
   - OOP
-  - 继承
 ---
 直接上代码，如下，你觉得应该输出什么？
 

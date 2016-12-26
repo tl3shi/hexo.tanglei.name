@@ -5,21 +5,12 @@ date: 2010-12-25T16:25:36+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=185
-permalink: software-architecture-exam
 duoshuo_thread_id:
   - 1351844048792453247
 categories:
   - 软件体系结构
 tags:
-  - DIP
-  - ISP
-  - LoD
-  - LSP
-  - OCP
-  - SRP
-  - UML
   - 软件体系结构
-  - 面向对象设计原则
 ---
 **<span style="font-size: 24.0pt; font-family: 宋体;">目录</span>**
 
@@ -273,7 +264,7 @@ tags:
   </p>
   
   <p class="MsoNormal">
-    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image001.jpg" alt="" hspace="12" width="305" height="146" align="left" /><span style="font-family: 宋体;">“用户”（</span><span lang="EN-US">user</span><span style="font-family: 宋体;">）是一种泛称，它可细分为“客户”（</span><span lang="EN-US">customer</span><span style="font-family: 宋体;">）、“最终用户”（</span><span lang="EN-US">the end user</span><span style="font-family: 宋体;">）和“间接用户”（或称为关系人）。掏钱买软件的用户称为客户，而真正操作软件的用户叫最终用户。客户与最终用户可能是同一个人也可能不是同一个人。</span>
+    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image001.jpg" alt="" hspace="12"  align="left" /><span style="font-family: 宋体;">“用户”（</span><span lang="EN-US">user</span><span style="font-family: 宋体;">）是一种泛称，它可细分为“客户”（</span><span lang="EN-US">customer</span><span style="font-family: 宋体;">）、“最终用户”（</span><span lang="EN-US">the end user</span><span style="font-family: 宋体;">）和“间接用户”（或称为关系人）。掏钱买软件的用户称为客户，而真正操作软件的用户叫最终用户。客户与最终用户可能是同一个人也可能不是同一个人。</span>
   </p>
   
   <p class="MsoNormal">
@@ -537,7 +528,7 @@ tags:
   </p>
   
   <p class="MsoNormal" style="margin-left: 10.5pt;">
-    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image002.jpg" alt="" hspace="12" width="408" height="114" align="left" /><span style="font-family: 宋体;">过滤器风格的连接件就象是数据流传输的管道，将一个过滤器的输出传到另一个过滤器的输入</span>
+    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image002.jpg" alt="" hspace="12"  align="left" /><span style="font-family: 宋体;">过滤器风格的连接件就象是数据流传输的管道，将一个过滤器的输出传到另一个过滤器的输入</span>
   </p>
   
   <p class="MsoNormal" style="margin-left: 10.5pt;">
@@ -569,7 +560,7 @@ tags:
   </p>
   
   <p class="MsoNormal" style="margin-left: 10.5pt;">
-    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image003.gif" alt="" hspace="12" width="324" height="106" align="left" /><span style="font-family: 宋体;">对象通过函数和过程的调用来进行交互</span>
+    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image003.gif" alt="" hspace="12"  align="left" /><span style="font-family: 宋体;">对象通过函数和过程的调用来进行交互</span>
   </p>
   
   <h3>
@@ -621,7 +612,7 @@ tags:
   </h3>
   
   <p class="MsoNormal">
-    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image004.jpg" alt="" hspace="12" width="333" height="129" align="left" /><span style="font-family: 宋体;">构件：中心数据结构（仓库）和一些独立构件的集合</span>
+    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image004.jpg" alt="" hspace="12"  align="left" /><span style="font-family: 宋体;">构件：中心数据结构（仓库）和一些独立构件的集合</span>
   </p>
   
   <p class="MsoNormal">
@@ -641,7 +632,7 @@ tags:
   </h3>
   
   <p class="MsoNormal" style="margin-left: 10.5pt;">
-    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image005.gif" alt="" hspace="12" width="327" height="102" align="left" /><span style="font-family: 宋体;">源自于控制理论中的模型框架，将事务处理看成<strong>输入、加工、输出、反馈、再输入</strong>的一个持续的过程模型。</span>
+    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image005.gif" alt="" hspace="12"  align="left" /><span style="font-family: 宋体;">源自于控制理论中的模型框架，将事务处理看成<strong>输入、加工、输出、反馈、再输入</strong>的一个持续的过程模型。</span>
   </p>
   
   <p class="MsoNormal" style="margin-left: 10.5pt;">
@@ -661,7 +652,7 @@ tags:
   </p>
   
   <p class="MsoNormal" style="margin-left: 10.5pt;">
-    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image006.jpg" alt="" hspace="12" width="331" height="162" align="left" /><span style="font-family: 宋体;">构件的顶部应连接到某连接件的底部，构件的底部则应连接到某连接件的顶部，而<strong>构件与构件之间的直接连接是不允许的；</strong></span>
+    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image006.jpg" alt="" hspace="12"  align="left" /><span style="font-family: 宋体;">构件的顶部应连接到某连接件的底部，构件的底部则应连接到某连接件的顶部，而<strong>构件与构件之间的直接连接是不允许的；</strong></span>
   </p>
   
   <p class="MsoNormal" style="margin-left: 10.5pt;">
@@ -733,7 +724,7 @@ tags:
   </p>
   
   <p class="MsoNormal">
-    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image007.jpg" alt="" hspace="12" width="405" height="292" align="left" /><span style="font-family: 宋体;">处理流程</span>
+    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image007.jpg" alt="" hspace="12"  align="left" /><span style="font-family: 宋体;">处理流程</span>
   </p>
   
   <p class="MsoNormal" style="margin-left: 21.0pt;">
@@ -837,11 +828,11 @@ tags:
   </p>
   
   <p class="MsoNormal">
-    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image008.jpg" alt="" hspace="12" width="252" height="240" align="left" /><span style="font-family: 宋体;">处理流程</span><span lang="EN-US"><br /> </span><span style="font-family: 宋体;">物理结构</span>
+    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image008.jpg" alt="" hspace="12"  align="left" /><span style="font-family: 宋体;">处理流程</span><span lang="EN-US"><br /> </span><span style="font-family: 宋体;">物理结构</span>
   </p>
   
   <p class="MsoNormal">
-    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image009.jpg" alt="" hspace="12" width="288" height="256" align="left" />
+    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image009.jpg" alt="" hspace="12"  align="left" />
   </p>
   
   <p class="MsoNormal">
@@ -945,7 +936,7 @@ tags:
   </p>
   
   <p class="MsoNormal">
-    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image010.gif" alt="" hspace="12" width="205" height="80" align="left" /><span style="font-family: 宋体;">用户视图：以用户的观点表示系统的目标，它是所有视图的核心，该视图描述系统的需求。</span><span lang="EN-US"> </span>
+    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image010.gif" alt="" hspace="12"  align="left" /><span style="font-family: 宋体;">用户视图：以用户的观点表示系统的目标，它是所有视图的核心，该视图描述系统的需求。</span><span lang="EN-US"> </span>
   </p>
   
   <p class="MsoNormal">
@@ -1481,7 +1472,7 @@ tags:
   </p>
   
   <p class="MsoNormal">
-    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image011.jpg" alt="" hspace="12" width="384" height="300" align="left" />
+    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image011.jpg" alt="" hspace="12"  align="left" />
   </p>
   
   <p class="MsoNormal">
@@ -1617,7 +1608,7 @@ tags:
   </p>
   
   <p class="MsoNormal">
-    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image012.gif" alt="" hspace="12" width="482" height="91" align="left" />
+    <img src="/wp-content/blogresources/softwareArchitecture_exam-files/image012.gif" alt="" hspace="12"  align="left" />
   </p>
   
   <p class="MsoNormal">

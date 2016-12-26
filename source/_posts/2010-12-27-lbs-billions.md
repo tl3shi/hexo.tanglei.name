@@ -5,15 +5,11 @@ date: 2010-12-27T10:14:54+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=194
-permalink: lbs-billions
 duoshuo_thread_id:
   - 1351844048792453135
 categories:
-  - 移动领域
   - 网络文摘
 tags:
-  - LBS.位置服务
-  - 移动
 ---
 _根据市场研究公司ABI
   

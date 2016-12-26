@@ -5,7 +5,6 @@ date: 2011-01-03T03:49:39+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=272
-permalink: oracle-experiment-1
 duoshuo_thread_id:
   - 1351842949280825461
 enable_highlight:
@@ -14,9 +13,8 @@ enable_highlight:
 categories:
   - 数据库应用
 tags:
-  - oracle
+  - Oracle
   - 存储过程
-  - 日期函数
 ---
 这两天做了oracle的实验了。第一题目描述如下：
 

@@ -5,14 +5,12 @@ date: 2011-05-21T15:54:55+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=683
-permalink: linux-in-web
 duoshuo_thread_id:
   - 1351844048792453292
 categories:
   - 开开眼界
 tags:
   - Linux
-  - web
 ---
 转自：http://coolshell.cn/articles/4722.html 只能说，太牛了……膜拜！如果你是用的chrome11或者firefox，那你就可以直接在下面敲linux命令执行了。看看我执行的效果图。[![web-linux](/wp-content/uploads/2011/05/web-linux.png "web-linux")](/wp-content/uploads/2011/05/web-linux.png)
 

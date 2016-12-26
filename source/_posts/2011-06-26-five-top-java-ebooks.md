@@ -5,14 +5,11 @@ date: 2011-06-26T14:47:00+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=904
-permalink: five-top-java-ebooks
 duoshuo_thread_id:
   - 1351844048792453399
 categories:
   - JAVA
 tags:
-  - Java教程
-  - Java电子书
 ---
 转自：<http://www.mkyong.com/featured/top-5-free-java-ebooks/>
 

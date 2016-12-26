@@ -5,17 +5,15 @@ date: 2011-06-10T12:05:22+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=800
-permalink: scm-activities
 duoshuo_thread_id:
   - 1351844048792453126
 categories:
   - 软件配置管理
 tags:
-  - SCM基本活动
   - SCM复习资料
   - SCM考试
 ---
-[<img class="aligncenter size-medium wp-image-801" title="SCM-activity" src="/wp-content/uploads/2011/06/SCM-activity-300x191.jpg" alt="配置管理活动" width="300" height="191" />](/wp-content/uploads/2011/06/SCM-activity.jpg)
+[<img class="aligncenter size-medium wp-image-801" title="SCM-activity" src="/wp-content/uploads/2011/06/SCM-activity.jpg" alt="配置管理活动"  />](/wp-content/uploads/2011/06/SCM-activity.jpg)
 
 **1)** 制定配置管理计划: 参加项目规划—>规划配置管理任务—>形成配置管理计划—>评审配置计划. ******配置管理计划的主要内容：**
 

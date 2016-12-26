@@ -5,13 +5,11 @@ date: 2011-06-25T18:50:07+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=893
-permalink: 2nd-google-android-competition
 duoshuo_thread_id:
   - 1351844048792453161
 categories:
-  - android
+  - Android
 tags:
-  - Android挑战赛
   - Google
 ---
 第一届，宏杰石文海他们都传应用了，还有得包用。呵呵，这次也去提交下。

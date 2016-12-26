@@ -5,14 +5,11 @@ date: 2011-04-18T11:51:37+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=472
-permalink: ruankao_network1
 duoshuo_thread_id:
   - 1351844048792453365
 categories:
   - 软考
 tags:
-  - 局域网
-  - 网络协议
   - 计算机网络
 ---
 **1****、计算机网络知识**

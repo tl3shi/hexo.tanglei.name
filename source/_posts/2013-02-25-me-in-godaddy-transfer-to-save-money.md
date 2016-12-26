@@ -5,7 +5,6 @@ date: 2013-02-25T23:54:03+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2050
-permalink: me-in-godaddy-transfer-to-save-money
 duoshuo_thread_id:
   - 1351844048792453388
 categories:
@@ -13,8 +12,6 @@ categories:
   - 经验技巧
 tags:
   - godaddy
-  - 优惠码
-  - 域名续费
 ---
 <font size="3">之前的tanglei.me域名直接在godaddy续费得$19.98，我等穷屌丝续费不起，就准备放弃了，后偶然看到</font>[<font size="3">dangfan有省钱招数</font>](http://dangfan.me/godaddy-me.html)<font size="3">，现全文转载如下：</font>
 

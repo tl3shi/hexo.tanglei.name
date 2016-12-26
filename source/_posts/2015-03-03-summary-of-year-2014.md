@@ -5,7 +5,6 @@ date: 2015-03-03T00:09:19+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2589
-permalink: summary-of-year-2014
 duoshuo_thread_id:
   - 1351844048792453516
 categories:
@@ -24,7 +23,7 @@ tags:
 
 再然后暑假期间码代码的过程中，有公司招实习生，就面了面。拿了阿里+腾讯+网宿的Offer, 最后还是没时间得做项目没去成。 呃，网易游戏的实习生面试把我挂了. 要当初好好准备下也许现在工作就定了去网易游戏了(网易游戏实习转正的Offer**一般**比校招高)。也怪自己对实习没准备，没太重视没太在意(期间还有项目去清软英泰坐班啊，也没时间啊)。
 
-再然后就是找工作了。[这里](http://www.tanglei.name/the-first-accepted-offer-in-life/)专门记录了下面试的公司及感受, 在这里就不多说了。
+再然后就是找工作了。[这里](/blog/the-first-accepted-offer-in-life.html)专门记录了下面试的公司及感受, 在这里就不多说了。
 
 再后来人品爆发，得了个2014年清华[研究生国家奖学金](http://yjsy.cic.tsinghua.edu.cn/download.jsp?attachSeq=6570)，期间还出了点梗(意外)，不过最后还是得了。一方面有几篇水文，另一方面帮Boss们码了不少代码啊。
 

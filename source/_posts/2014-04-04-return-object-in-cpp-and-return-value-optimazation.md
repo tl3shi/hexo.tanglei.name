@@ -5,7 +5,6 @@ date: 2014-04-04T17:44:27+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2385
-permalink: return-object-in-cpp-and-return-value-optimazation
 duoshuo_thread_id:
   - 1351844048792453501
 enable_highlight:
@@ -13,12 +12,8 @@ enable_highlight:
 categories:
   - c++
 tags:
-  - cpp
   - OOP
-  - RVO
   - 性能优化
-  - 拷贝构造函数
-  - 返回值优化
 ---
 <font size="4" color="red">update</font> 这应该属于Named Return Value Optimization(NRVO)或者Return Value Optimization(RVO)返回值优化的范畴。
   
@@ -122,11 +117,11 @@ int main()
 }
 ```
 
-[<img style="display: inline;" title="image" src="/wp-content/uploads/2014/04/image_thumb.png" alt="image" width="704" height="337" />](/wp-content/uploads/2014/04/image.png)
+[<img title="image" src="/wp-content/uploads/2014/04/image_thumb.png" alt="image" />](/wp-content/uploads/2014/04/image.png)
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2014/04/image_thumb1.png" alt="image" width="708" height="312" border="0" />](/wp-content/uploads/2014/04/image1.png)
+[<img title="image" src="/wp-content/uploads/2014/04/image_thumb1.png" alt="image"  />](/wp-content/uploads/2014/04/image1.png)
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2014/04/image_thumb2.png" alt="image" width="502" height="137" border="0" />](/wp-content/uploads/2014/04/image2.png)
+[<img title="image" src="/wp-content/uploads/2014/04/image_thumb2.png" alt="image"  />](/wp-content/uploads/2014/04/image2.png)
 
 可以看出，编译器面对这样的情况都做了相关的优化，VS2012自带的编译器默认情况下才能看到copy 构造函数的调用。
 

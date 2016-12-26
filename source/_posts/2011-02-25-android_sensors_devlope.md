@@ -5,15 +5,14 @@ date: 2011-02-25T13:49:18+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=358
-permalink: android_sensors_devlope
 duoshuo_thread_id:
   - 1351844048792453314
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - android
+  - Android
 tags:
-  - android
+  - Android
   - 传感器
 ---
 本文节选于机械工业出版社推出的《Android应用开发揭秘》一书，作者为杨丰盛。本书内容全面，详细讲解了Android框架、Android组件、用户界面开发、游戏开发、数据存储、多媒体开发和网络开发等基础知识，而且还深入阐述了传感器、语音识别、桌面组件开发、Android游戏引擎设计、Android应用优化、OpenGL等高级知识。另外，本书还全面介绍了如何利用原生的C/C++（NDK）和Python、Lua等脚本语言（Android Scripting Environment）来开发Android应用，并以迭代的方式重现了各种常用的Android应用和经典Android游戏的开发全过程。

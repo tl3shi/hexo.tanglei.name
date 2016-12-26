@@ -5,7 +5,6 @@ date: 2012-07-24T21:38:23+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1884
-permalink: decorator-in-python
 duoshuo_thread_id:
   - 1351844048792453229
 enable_highlight:
@@ -16,7 +15,6 @@ tags:
   - AOP
   - decorator
   - python
-  - 装饰器
 ---
 前面写python的AOP解决方案时提到了decorator，这篇文章就详细的来整理下python的装饰器——decorator。
 

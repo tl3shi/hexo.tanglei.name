@@ -5,17 +5,14 @@ date: 2015-03-27T19:36:40+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2638
-permalink: install-vim-latex-suite-in-mac-osx
 duoshuo_thread_id:
   - 1351844048792453518
 categories:
   - 经验技巧
 tags:
-  - latex
-  - latex-suite
-  - mac osx
+  - Latex
+  - Latex-suite
   - vim
-  - 插件
 ---
 最近写毕业论文~嗯~痛苦的过程~ 因为之前开题报告~水的论文都是latex，所以决定毕业论文仍然用latex，就不用在乎学校繁琐格式的排版了，模版的话当然就用<a href="https://github.com/xueruini/thuthesis.git" target="_blank">thutheis</a>.
 
@@ -37,11 +34,11 @@ vim下有个latex的插件~用着还不错~貌似那个IDE都没代码提示之�
 
 例如: 输入”table + F5” 出现下面的代码
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image" src="/wp-content/uploads/2015/03/Image_thumb1.png" alt="Image" width="273" height="169" border="0" />](/wp-content/uploads/2015/03/Image2.png)
+[<img title="Image" src="/wp-content/uploads/2015/03/Image_thumb1.png" alt="Image" border="0" />](/wp-content/uploads/2015/03/Image2.png)
 
 再比如自动插入标签：ctrl+n
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(1)" src="/wp-content/uploads/2015/03/Image1_thumb1.png" alt="Image(1)" width="228" height="168" border="0" />](/wp-content/uploads/2015/03/Image11.png)
+[<img title="Image(1)" src="/wp-content/uploads/2015/03/Image1_thumb1.png" alt="Image(1)" border="0" />](/wp-content/uploads/2015/03/Image11.png)
 
 其他相关技巧啥的直接看help吧.
 

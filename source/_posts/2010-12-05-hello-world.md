@@ -11,13 +11,12 @@ excerpt: |
   我承认hello world 对于学软件工程专业的学生来说确实有一种特殊的含义。
 layout: post
 guid: http://www.tanglei.name/?p=1
-permalink: hello-world
 duoshuo_thread_id:
   - 1351842949280825345
 categories:
   - MyLife
 tags:
-  - helloWorld
+  - HelloWorld
 ---
 好吧。
 

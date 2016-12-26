@@ -5,7 +5,6 @@ date: 2012-03-20T22:47:59+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1597
-permalink: the-yongest-professor-in-central-south-university
 duoshuo_thread_id:
   - 1351844048792453297
 categories:
@@ -13,12 +12,10 @@ categories:
   - 网络文摘
 tags:
   - 中南大学
-  - 最年轻教授
-  - 牛人
 ---
 中南大学数学科学与计算技术学院2008级本科生-刘嘉忆（本名刘路）,太牛X了，牛B得一发不可收拾啊。转载下<http://hn.rednet.cn/c/2012/03/20/2555600.htm>
 
-[<img style="display: inline; margin-left: 0px; margin-right: 0px" title="中南大学校长张尧学为刘路（右）颁发100万元奖金" alt="中南大学校长张尧学为刘路（右）颁发100万元奖金" align="right" src="/wp-content/uploads/2012/03/image_thumb3.png" width="240" height="168" />](/wp-content/uploads/2012/03/image3.png) 
+[<img title="中南大学校长张尧学为刘路（右）颁发100万元奖金" alt="中南大学校长张尧学为刘路（右）颁发100万元奖金" align="right" src="/wp-content/uploads/2012/03/image_thumb3.png"  />](/wp-content/uploads/2012/03/image3.png) 
 
 **相关链接：**[中南大学本科生破解国际数学难题](http://hn.rednet.cn/c/2011/10/08/2392501.htm)
 

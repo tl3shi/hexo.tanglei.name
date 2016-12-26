@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="百度地图,百度地图API，百度地图自定义工具，百度地图所见即所得工具" />
+<meta name="description" content="地图显示我去过的地方，地图展示位置" />
+<title>唐磊|我去过的地方</title>
+<!--引用百度地图API-->
+<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+<script type="text/javascript" src="//api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</head>
+
+<body>
+  <!--百度地图容器-->
+  <div style="width:697px;height:550px;border:#ccc solid 1px;" id="dituContent"></div>
+</body>
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(119.589768,31.996634);//定义一个中心点坐标
+        map.centerAndZoom(point,5);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+	var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+	map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+	var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+	map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+	var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+	map.addControl(ctrl_sca);
+    }
+    
+    //标注点数组
+    var markerArr = [{title:"出生",content:"重庆市石柱县",point:"108.277225|30.208928",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ,{title:"三年-高中(no.29)",content:"重庆第29中学",point:"106.510467|29.555716",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ,{title:"四年-中南大学",content:"在中南大学待了差不多4年",point:"112.998381|28.145957",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ,{title:"贵州-威宁县-支教",content:"<a href= '//www.tanglei.name/category/my-life/volenteer-teaching-in-guizhou/'  target=_blank>贵州支教行-感动-体验</a>",point:"104.547156|26.651192",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		  ,{title:"腾讯-实习",content:"2011.6--2012.1<a href='//www.tanglei.name/tag/%e8%85%be%e8%ae%af%e5%ae%9e%e4%b9%a0/'&nbsp;target='_blank'>深圳腾讯总部实习</a>",point:"113.94207|22.54645",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		,{title:"武汉-面腾讯",content:"腾讯实习生笔试+面试-<br/>顺便旅游",point:"114.365584|30.535143",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ,{title:"厦门-旅游",content:"2010暑假，厦门旅游，老姐那待了半个月",point:"118.0967|24.496071",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ,{title:"广州-旅游",content:"1、丰田助学金获得者广州行<br/>2、<a href='//www.tanglei.name/come-back-from-chengdu-to-travel-with-tencent/' target='_blank'>腾讯部门旅游-番禺长隆</a><br/>3、南方医科大学同学玩",point:"113.276892|23.141851",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ,{title:"香港-旅游",content:"香港一日游",point:"114.192448|22.304286",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ,{title:"澳门-旅游",content:"澳门一日游",point:"113.581306|22.149029",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+         ,{title:"北京",content:"1、2010年国庆-北京旅游<br/>2、2012年大四上学期，清华保研面试，下学期，清华做毕设<br/>3、3年研究生<br/>4、工作",point:"116.409336|39.934809",isOpen:1,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ,{title:"日本-旅游",content:"丰田助学金获得者代表-<br/>访日交流【东京、名古屋】",point:"139.201287|36.634958",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		,{title:"南京-旅游",content:"大四下期开学时，前往南京旅游",point:"118.780107|32.060847",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ,{title:"成都-软件大赛&旅游",content:"成都-软件大赛。组委会给报销路费，从腾讯请假前往旅游",point:"104.048472|30.703477",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		,{title:"杭州",content:"1、高2时一次走亲戚<br/>2、大三暑假保研面浙大",point:"120.16677|30.284695",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ,{title:"北戴河-旅游",content:"12年5月北戴河-旅游",point:"119.485358|39.843214",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ,{title:"济南-旅游",content:"2013-清明，济南-旅游:趵突泉,大明湖",point:"117.022886|36.667637",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ,{title:"泰山-旅游",content:"2013-清明，泰山旅游",point:"117.093363|36.266957",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ,{title:"石家庄-旅游",content:"2013清明：石家庄市,井陉县,苍岩山,",point:"114.151985|37.83701",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+         ,{title:"上海-旅游",content:"2012国庆,上海-旅游,",point:"121.477838|31.247186",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+         ,{title:"王军婚礼",content:"csu0804第一个结婚的",point:"106.93286|30.356805",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+         ,{title:"西安旅游",content:"2013-11<br/>Alice&nbsp;&&nbsp;旺财",point:"108.947743|34.273965",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+         ,{title:"毕业旅行",content:"2015-06&nbsp;毕业旅行之大西北游(兰州-西宁-茶卡盐湖-青海湖-祁连山-张掖)",point:"103.840979|36.073847",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+         ,{title:"毕业旅行",content:"2015-06&nbsp;毕业旅行之大西北游(兰州-西宁-茶卡盐湖-青海湖-祁连山-张掖)",point:"101.785706|36.629501",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+         ,{title:"毕业旅行",content:"2015-06&nbsp;毕业旅行之大西北游(兰州-西宁-茶卡盐湖-青海湖-祁连山-张掖)",point:"100.459743|38.991457",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+         ,{title:"毕业旅行",content:"2015-06&nbsp;毕业旅行之大西北游(兰州-西宁-茶卡盐湖-青海湖-祁连山-张掖)",point:"99.792017|36.991999",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+         ,{title:"越南10日游",content:"胡志明–美奈–大叻–芽庄–会安–(岘港)—河内<br/><a href='//www.tanglei.name/travel-to-vietnam/' target='_blank'>越南游记</a>",point:"105.63086|21.145952",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+         ];
+    // 数据从这里获得tanglei http://api.map.baidu.com/lbsapi/creatmap/ 
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+			var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+			var iw = createInfoWindow(i);
+			var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+			marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+			
+			(function(){
+				var index = i;
+				var _iw = createInfoWindow(i);
+				var _marker = marker;
+				_marker.addEventListener("click",function(){
+				    this.openInfoWindow(_iw);
+			    });
+			    _iw.addEventListener("open",function(){
+				    _marker.getLabel().hide();
+			    })
+			    _iw.addEventListener("close",function(){
+				    _marker.getLabel().show();
+			    })
+				label.addEventListener("click",function(){
+				    _marker.openInfoWindow(_iw);
+			    })
+				if(!!json.isOpen){
+					label.hide();
+					_marker.openInfoWindow(_iw);
+				}
+			})()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    
+	 //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("//app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();//创建和初始化地图
+</script>
+</html>

@@ -1,31 +1,28 @@
 ---
 id: 1332
-title: wordpress纯代码实现相关文章
+title: Wordpress纯代码实现相关文章
 date: 2011-12-24T01:19:08+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1332
-permalink: code-for-relative-posts-in-wordpress
 duoshuo_thread_id:
   - 1351844048792453177
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - wordpress
+  - Wordpress
 tags:
-  - wordpress
-  - 相关文章
-  - 纯代码实现
+  - Wordpress
 ---
-看其他人的wordpress站点等都有相关文章，所以自己也弄了个。之前装了个插件，不过感觉不怎么样，如图。<a href="http://s1123.photobucket.com/albums/l549/tl3shi/?action=view&current=1.jpg" target="_blank"><img src="http://i1123.photobucket.com/albums/l549/tl3shi/1.jpg" alt="Photobucket" border="0" /></a>
+看其他人的Wordpress站点等都有相关文章，所以自己也弄了个。之前装了个插件，不过感觉不怎么样，如图。<a href="http://s1123.photobucket.com/albums/l549/tl3shi/?action=view&current=1.jpg" target="_blank"><img src="http://i1123.photobucket.com/albums/l549/tl3shi/1.jpg" alt="Photobucket" border="0" /></a>
   
-用户体验不好，放在侧边栏去了。于是网上找代码实现相关文章的。本文也是参照[这篇文章](http://www.92app.com/related-posts-wordpress.html)的，
+用户体验不好，放在侧边栏去了。于是网上找代码实现相关文章的。本文也是参照[这篇文章](http://www.92app.com/related-posts-Wordpress.html)的，
 
-<img class="alignnone" title="代码实现相关文章" src="http://i1123.photobucket.com/albums/l549/tl3shi/1-2.jpg" alt="" width="491" height="356" />
+<img class="alignnone" title="代码实现相关文章" src="http://i1123.photobucket.com/albums/l549/tl3shi/1-2.jpg" alt=""  />
 
-访问[支教第十天-感恩的心](http://www.tanglei.name/volenteer-teaching-day10/),效果上图1，因其标签比较丰富,可以提取到相同tag的,但遇到这种情况例如:之前发过的一篇:
+访问[支教第十天-感恩的心](/blog/volenteer-teaching-day10.html),效果上图1，因其标签比较丰富,可以提取到相同tag的,但遇到这种情况例如:之前发过的一篇:
 
-[技术贴-把妹高手谈如何跟刚搭讪认识的妹子发短信](http://www.tanglei.name/tell-you-how-to-get-a-girl/)时,因为tag没有没有设置或者其他没有相关的tag于此匹配,此时就只能展示随机文章了,上图2.
+[技术贴-把妹高手谈如何跟刚搭讪认识的妹子发短信](/blog/tell-you-how-to-get-a-girl.html)时,因为tag没有没有设置或者其他没有相关的tag于此匹配,此时就只能展示随机文章了,上图2.
 
 曾想,这里的随机是有点不爽,此时展示同分类目录下的文章要比这个好吧. 于是想法取出当前文章所在同分类下的文章,开始是试图找一个sql语句把所有的文章的tag中都将本文所在的分类目录加进去,但这样似乎有点不符合逻辑.看之前用代码实现的相关文章的源代码:查看随机文章时调用如下的函数
 
@@ -38,7 +35,7 @@ function wp_get_random_posts ($limitclause="") {
 }
 ```
 
-首先要获取当前文章所在的分类目录的ID,为了方便管理调试wordpress,我的机子上也配好了wordpress环境了.随时配置下host就能正常访问本地的博客.通过各种关键字试图搜索(wordpress下所有文件递归关键字，eg: wp\_get\_post_category啊之类)显示分类目录的ID,最后找到这个函数
+首先要获取当前文章所在的分类目录的ID,为了方便管理调试Wordpress,我的机子上也配好了Wordpress环境了.随时配置下host就能正常访问本地的博客.通过各种关键字试图搜索(Wordpress下所有文件递归关键字，eg: wp\_get\_post_category啊之类)显示分类目录的ID,最后找到这个函数
 
 ```php
 /**

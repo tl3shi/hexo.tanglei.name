@@ -5,7 +5,6 @@ date: 2013-11-14T15:04:07+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2230
-permalink: how-to-run-gpu-programs-using-remote-connection
 duoshuo_thread_id:
   - 1351844048792453492
 categories:
@@ -13,12 +12,9 @@ categories:
   - 敲敲代码
   - 经验技巧
 tags:
-  - GPU
   - opengl
   - 经验技巧
   - 计算机图形学
-  - 远程控制
-  - 远程桌面
 ---
 有时候往往需要通过远程桌面连接进行coding工作，像一般的比如web之类的可能不需要GPU等支持的coding工作直接用windows远程桌面连接编码然后debug即可，而一些需要依靠显卡支持的工作如渲染、cuda等GPU操作时，往往远程桌面连接debug会失败。因为当用远程桌面连接电脑B时，比如本来电脑B是具有牛X显卡，驱动啥之类都没有问题，但此时用另外一台电脑A远程连接过去，在B上跑需要GPU支持的程序，如需要用到Opengl3.X的功能或者cuda，而此时B检测到是远程连接过来的，就不会给予相应的支持或者说没有相应的驱动能够使得远程连接过来的也能支持。啊。。晕了。意思就是说可能此时只能驱动OpenGL1.X,程序就会crash掉。下面用个实例来说吧。
 
@@ -26,7 +22,7 @@ tags:
 
 此时我直接通过电脑A通过windows自带的远程桌面连接工具练过去，运行。
 
-[<img class="alignnone" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/11/image_thumb.png" alt="image" width="565" height="280" border="0" />](/wp-content/uploads/2013/11/image.png)
+[<img class="alignnone" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/11/image_thumb.png" alt="image"  />](/wp-content/uploads/2013/11/image.png)
 
 得到这样的结果，就是没有cuda相应的支持，而实际上，我直接通过本地执行时能够正常运行的。现在的问题是采取怎样的方式能够正常跑电脑B上的程序，就像自己本人在电脑B所在地本地操控电脑B一样。
 
@@ -40,25 +36,25 @@ tags:
 
 2、在电脑B上通过QQ B申请远程协助QQ A。
 
-[<img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/11/image_thumb1.png" alt="image" width="465" height="581" border="0" />](/wp-content/uploads/2013/11/image1.png)
+[<img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/11/image_thumb1.png" alt="image"  />](/wp-content/uploads/2013/11/image1.png)
 
 <p style="text-align: left;">
   3、电脑A上 QQ A接受邀请。
 </p>
 
-[<img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/11/image_thumb2.png" alt="image" width="671" height="534" border="0" />](/wp-content/uploads/2013/11/image2.png)
+[<img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/11/image_thumb2.png" alt="image"  />](/wp-content/uploads/2013/11/image2.png)
 
 此时已经建立好连接了。并也能通过QQ的远程协助控制电脑B了。
 
 4、**关键，**在windows自带的远程桌面连接工具中通过在电脑B上<a href="https://gist.github.com/tl3shi/7462590" target="_blank">运行如下脚本</a>。没有的话，copy一个过去。
 
-[<img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/11/image_thumb3.png" alt="image" width="502" height="276" border="0" />](/wp-content/uploads/2013/11/image3.png)
+[<img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/11/image_thumb3.png" alt="image"  />](/wp-content/uploads/2013/11/image3.png)
 
 注意得以管理员身份运行。运行后，此时通过windows远程连接的会话会断开。现在只能通过QQ的远程协助操作电脑B了。
 
 5、下面就是见证奇迹的时刻了。
 
-[<img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/11/image_thumb4.png" alt="image" width="571" height="554" border="0" />](/wp-content/uploads/2013/11/image4.png)
+[<img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/11/image_thumb4.png" alt="image"  />](/wp-content/uploads/2013/11/image4.png)
 
 现在能够检测到电脑B上的显卡对cuda 支持。
 

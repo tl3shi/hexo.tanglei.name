@@ -5,16 +5,11 @@ date: 2011-06-13T09:54:06+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=814
-permalink: scm-functions-and-uses
 duoshuo_thread_id:
   - 1351844048792453273
 categories:
   - 软件配置管理
 tags:
-  - SCM功能
-  - 变更管理
-  - 基线管理
-  - 软件配置管理流程
 ---
 ### 软件配置管理功能
 

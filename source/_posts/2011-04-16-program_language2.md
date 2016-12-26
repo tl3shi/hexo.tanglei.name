@@ -5,7 +5,6 @@ date: 2011-04-16T12:52:01+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=454
-permalink: program_language2
 duoshuo_thread_id:
   - 1351844048792453456
 categories:
@@ -13,7 +12,7 @@ categories:
 tags:
   - 编译原理
 ---
-上接：<http://www.tanglei.name/program_language1/>
+上接：</blog/program_language1.html>
 
 以下内容就是编译原理了。
 

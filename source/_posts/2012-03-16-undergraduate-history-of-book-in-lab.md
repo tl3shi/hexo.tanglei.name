@@ -5,14 +5,11 @@ date: 2012-03-16T21:04:16+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1543
-permalink: undergraduate-history-of-book-in-lab
 duoshuo_thread_id:
   - 1351844048792453348
 categories:
   - MyLife
 tags:
-  - 书单
-  - 借书
   - 本科生
 ---
 看到<a href="http://www.lihui.info/undergraduate-library-reading-history/" target="_blank">李辉同学</a>晒出了本科的借书单，我也好奇的来看看我本科期间到底借了些啥书。

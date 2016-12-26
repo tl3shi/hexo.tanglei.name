@@ -5,15 +5,11 @@ date: 2011-03-10T12:56:37+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=343
-permalink: project_in_middle
 duoshuo_thread_id:
   - 1351844048792453460
 categories:
   - MyLife
 tags:
-  - 中期检查
-  - 团队合作
-  - 项目
 ---
 最近一段时间一直在忙，忙项目的中期检查，如果中期检查都不过，那就丢脸了。不仅给自己丢脸，也给院长大人丢脸啊。于是，从这学期开学后，我就找院长要了实验室的钥匙，找了两台台式机。我想，把5个人都聚在一起肯定效率高很多吧。前面几天，大家都很累，很感谢他们为这个项目所做出的努力。
 

@@ -5,7 +5,6 @@ date: 2010-12-19T06:36:51+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=92
-permalink: google_my_source
 duoshuo_thread_id:
   - 1351844048792453336
 categories:
@@ -18,7 +17,7 @@ tags:
 
 如图示：
 
-[<img class="alignleft size-full wp-image-91" title="爱山寨google收录" src="/wp-content/uploads/2010/12/爱山寨google收录.jpg" alt="" width="777" height="709" />](/wp-content/uploads/2010/12/爱山寨google收录.jpg)
+[<img class="alignleft size-full wp-image-91" title="爱山寨google收录" src="/wp-content/uploads/2010/12/爱山寨google收录.jpg" alt=""  />](/wp-content/uploads/2010/12/爱山寨google收录.jpg)
   
 
   

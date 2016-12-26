@@ -5,7 +5,6 @@ date: 2012-03-29T23:01:16+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1667
-permalink: libsvm-in-python
 duoshuo_thread_id:
   - 1351844048792453254
 categories:
@@ -14,9 +13,8 @@ tags:
   - libsvm
   - python
   - SVM
-  - 分类
 ---
-前面说了[windows命令行使用libsvm](http://www.tanglei.name/an-example-for-beginning-to-learn-libsvm/)，现在需要用python去调用。一种方法是用python去进行系统调用windows的exe程序。另外一种方法就是通过libsvm的python接口去调用。这里说的是第二种方法，即通过调用libsvm的python接口。
+前面说了[windows命令行使用libsvm](/blog/an-example-for-beginning-to-learn-libsvm.html)，现在需要用python去调用。一种方法是用python去进行系统调用windows的exe程序。另外一种方法就是通过libsvm的python接口去调用。这里说的是第二种方法，即通过调用libsvm的python接口。
 
 配置好环境后，这里就是说把dll文件(libsvm-3.11\windows\ libsvm.dll)copy到WINDOWS\system32\中。分为以下几个步骤，跟之前相比貌似少了scale阶段。这里利用libsvm-3.11\python下的svm.py和svmutil.py两个模块，其实其目录下有个README也讲了用法了。
 
@@ -30,7 +28,7 @@ tags:
 
 <span style="color: #000000;">就搞不懂了。待解决……</span>
 
-**问题已经解决**,详情参考：[libsvm(v3.11)中的一个bug(python3兼容性引擎的)](http://www.tanglei.name/a-bug-in-libsvm-3.11/)
+**问题已经解决**,详情参考：[libsvm(v3.11)中的一个bug(python3兼容性引擎的)](/blog/a-bug-in-libsvm-3.11.html)
   
 另外，[附python的libsvm的helloworld级别入门实例](/wp-content/blogresources/libsvmtest.rar)(解压密码:www.tanglei.name)。
   

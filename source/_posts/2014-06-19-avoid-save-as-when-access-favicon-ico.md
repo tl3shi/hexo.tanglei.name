@@ -5,7 +5,6 @@ date: 2014-06-19T13:21:38+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2434
-permalink: avoid-save-as-when-access-favicon-ico
 duoshuo_thread_id:
   - 1351844048792453505
 enable_highlight:
@@ -14,10 +13,8 @@ categories:
   - 我做站长
 tags:
   - APACHE
-  - config
-  - favicon.ico
 ---
-Blog从虚拟主机换到了VPS，网站的favicon.ico图标出现了问题。用浏览器访问 <http://www.tanglei.name/favicon.ico> 总提示下载/保存（另存为……）.
+Blog从虚拟主机换到了VPS，网站的favicon.ico图标出现了问题。用浏览器访问 </blog/favicon.ico> 总提示下载.html保存（另存为……）.
 
 <div>
   <div>
@@ -30,7 +27,7 @@ Blog从虚拟主机换到了VPS，网站的favicon.ico图标出现了问题。�
     </div>
     
     <div>
-      <a href="http://www.tanglei.name/favicon.ico?123">http://www.tanglei.name/favicon.ico?123</a>
+      <a href="/blog/favicon.ico?123">http:.html/www.tanglei.name/favicon.ico?123</a>
     </div>
     
     <div>

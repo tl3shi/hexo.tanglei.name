@@ -5,14 +5,11 @@ date: 2011-04-16T12:39:05+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=449
-permalink: computer_system4
 duoshuo_thread_id:
   - 1351844048792453457
 categories:
   - 软考
 tags:
-  - 数学基础知识
-  - 离散数学
 ---
 **1.9** **数学基础知识**
 

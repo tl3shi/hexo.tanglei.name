@@ -5,18 +5,17 @@ date: 2011-06-28T11:41:48+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=922
-permalink: android-switch-airplanemode-2
 duoshuo_thread_id:
   - 1351844048792453193
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - android
+  - Android
   - coding小工具
 tags:
-  - android关机闹钟
-  - android自动切换飞行模式
-  - android自动开机
+  - Android关机闹钟
+  - Android自动切换飞行模式
+  - Android自动开机
 ---
 这个类主要就是时间到了，自动切换了。
 

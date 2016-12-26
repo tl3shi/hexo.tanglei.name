@@ -5,7 +5,6 @@ date: 2010-12-31T12:56:50+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=258
-permalink: test-exam-unhappy
 duoshuo_thread_id:
   - 1351844048792453203
 categories:

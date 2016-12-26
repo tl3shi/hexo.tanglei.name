@@ -1,17 +1,12 @@
 ---
 title: jQuery Ajax请求下载文件资源
-permalink: jquery-ajax-post-to-download-a-file 
 date: 2015-07-23
 layout: post
-tags: 
-    - work 
-    - scala 
-    - jquery 
-    - 前端 
 categories: 
     - 工作那些事儿
     - 敲敲代码 
     - Scala 
+tags: [Work, Scala]
 published: true 
 ---
 

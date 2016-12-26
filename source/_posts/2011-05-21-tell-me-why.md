@@ -5,18 +5,15 @@ date: 2011-05-21T10:16:09+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=679
-permalink: tell-me-why
 duoshuo_thread_id:
   - 1351844048792453189
 categories:
   - MyLife
 tags:
-  - tell me why
-  - 反战
 ---
 高中的时候听过，今天突然又听了下，的确很……
 
-<embed src="http://player.youku.com/player.php/sid/XMTU4NTk5MTMy/v.swf" quality="high" width="480" height="400" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash">
+<embed src="http://player.youku.com/player.php/sid/XMTU4NTk5MTMy/v.swf" quality="high"  align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash">
 </embed>
 
 歌词

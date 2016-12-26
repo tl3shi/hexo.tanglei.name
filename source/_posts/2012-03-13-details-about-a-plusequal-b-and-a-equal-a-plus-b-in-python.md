@@ -5,7 +5,6 @@ date: 2012-03-13T23:20:14+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1528
-permalink: details-about-a-plusequal-b-and-a-equal-a-plus-b-in-python
 duoshuo_thread_id:
   - 1351844048792453178
 enable_highlight:
@@ -16,9 +15,8 @@ tags:
   - a+=b
   - a=a+b
   - python
-  - __iadd__
 ---
-在上一篇文章中谈到了我碰到的<a href="http://www.tanglei.name/a-python-problem-about-a-plusequal-b-and-a-equal-a-plus-b/" target="_blank">关于python里a+=b和a=a+b</a>问题。在<a href="http://www.zhihu.com/question/20114936" target="_blank">知乎</a>上也问了这个问题，看了各位大侠的解释，现在似乎明白了，得赶紧记下来总结下，不然以后又忘了。
+在上一篇文章中谈到了我碰到的<a href="/blog/a-python-problem-about-a-plusequal-b-and-a-equal-a-plus-b.html" target="_blank">关于python里a+=b和a=a+b</a>问题。在<a href="http://www.zhihu.com/question/20114936" target="_blank">知乎</a>上也问了这个问题，看了各位大侠的解释，现在似乎明白了，得赶紧记下来总结下，不然以后又忘了。
 
 总体上讲，a+=b是改变了a原始的值，而a=a+b是计算出a+b后，a在指向那个值。这个也跟a和b的类型有关。当a和b是int或者string不可改变的时候，二者效果一样。后面给出详细解释。
 
@@ -68,7 +66,7 @@ tags:
 12903888
 ```
 
-有了对上面这些的正确理解，就不难理解<a href="http://www.tanglei.name/a-python-problem-about-a-plusequal-b-and-a-equal-a-plus-b/" target="_blank">前面的提到的问题</a>了。在底层递归中，返回了elements中元素的“指针”，在外层里通过这样调用set[j]  = set[j] +  (elements[i])，没问题，因为elements没变(set[j]指向新的地址而已)。而用set[j] += elements[i]可能会等价于elements[*] += elements[i]就是在原地址中改变内容了。
+有了对上面这些的正确理解，就不难理解<a href="/blog/a-python-problem-about-a-plusequal-b-and-a-equal-a-plus-b.html" target="_blank">前面的提到的问题</a>了。在底层递归中，返回了elements中元素的“指针”，在外层里通过这样调用set[j]  = set[j] +  (elements[i])，没问题，因为elements没变(set[j]指向新的地址而已)。而用set[j] += elements[i]可能会等价于elements[*] += elements[i]就是在原地址中改变内容了。
 
 以上就差不多解释清楚了。期间，还遇到一个问题：看如下代码
 

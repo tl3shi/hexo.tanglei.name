@@ -5,16 +5,14 @@ date: 2011-05-02T05:16:54+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=592
-permalink: it-management-exam2
 duoshuo_thread_id:
   - 1351844048792453200
 categories:
   - 软件项目管理
 tags:
-  - IT项目管理模拟试题
   - IT项目管理考试
 ---
-上接：**<a title="查看此文：IT项目管理考试资料整理(一)" rel="bookmark" href="http://www.tanglei.name/it-management-exam1/">IT项目管理考试资料整理(一)</a>**
+上接：**<a title="查看此文：IT项目管理考试资料整理(一)" rel="bookmark" href="/blog/it-management-exam1.html">IT项目管理考试资料整理(一)</a>**
 
 **三． 判断题**
 

@@ -5,7 +5,6 @@ date: 2012-03-08T23:19:57+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1508
-permalink: start-to-learn-python
 duoshuo_thread_id:
   - 1351844048792453344
 enable_highlight:
@@ -13,9 +12,7 @@ enable_highlight:
 categories:
   - python
 tags:
-  - pyc文件
   - python
-  - __pycache__目录
 ---
 说学python已经好久了，这两天终于看了下。最开始还是别人推荐的简明python教程：[chm版本下载](http://ishare.iask.sina.com.cn/f/8343136.html),[在线版本](http://sebug.net/paper/python/)，这个版本是2.x版本滴了，机子上装了3.2的，难怪自己开始想打印hello world都不行。因为教程里说的是，直接print ‘hello world’，结果提示语法错误。后来才知道，print在3.x版本里面已经是一个函数，应该用print(‘hello world!’)这样才可以，我就说怎么连hello world都不行。该教程的[英文版本滴可以参考这里](http://www.swaroopch.com/notes/Python)。
 
@@ -66,7 +63,7 @@ else:
 
 运行结果如下
 
-[<img style="display: inline; border: 0px;" title="image" src="/wp-content/uploads/2012/03/image_thumb.png" alt="image" width="393" height="136" border="0" data-pinit="registered" />](/wp-content/uploads/2012/03/image.png)
+[<img title="image" src="/wp-content/uploads/2012/03/image_thumb.png" alt="image"  data-pinit="registered" />](/wp-content/uploads/2012/03/image.png)
 
 突然发现，跟codes同目录下居然有个\_\_pycache\_\_的目录，下于isPrime.cpython-32.pyc这个文件。后来网上查了查，才大致弄明白了。
 

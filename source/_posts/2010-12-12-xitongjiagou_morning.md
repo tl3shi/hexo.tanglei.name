@@ -12,7 +12,6 @@ excerpt: |
        D.但降低了系统的可靠性和可移植性，不适用于分布式系统
 layout: post
 guid: http://www.tanglei.name/?p=44
-permalink: xitongjiagou_morning
 duoshuo_thread_id:
   - 1351844048792453219
 categories:

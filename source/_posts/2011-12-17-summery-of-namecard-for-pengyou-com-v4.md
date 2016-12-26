@@ -5,7 +5,6 @@ date: 2011-12-17T15:37:18+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1313
-permalink: summery-of-namecard-for-pengyou-com-v4
 duoshuo_thread_id:
   - 1351844048792453393
 enable_highlight:
@@ -14,12 +13,8 @@ categories:
   - 实习那些事儿
 tags:
   - php图片水印
-  - php文字水印
-  - 苦逼程序员
-  - 透明水印
-  - 需求变更
 ---
-最近的几天的主要工作就是朋友网V4版本[推出的名片](http://www.pengyou.com/leitang?view_type=card)分享发feeds。因为前台是DIV+CSS展示，前台截图生成图片不是那么的容易。因而交给后台来处理。其实后台也不容易啊。需要一个字一个字的画上去，之前也做了相关的[图片加文字](http://www.tanglei.name/add-chinese-text-mark-to-picture-in-php/)的工作。现在需要做的就是把文字内容和图片内容(用户头像)拼到大背景上去。然而有几个难点：
+最近的几天的主要工作就是朋友网V4版本[推出的名片](http://www.pengyou.com/leitang?view_type=card)分享发feeds。因为前台是DIV+CSS展示，前台截图生成图片不是那么的容易。因而交给后台来处理。其实后台也不容易啊。需要一个字一个字的画上去，之前也做了相关的[图片加文字](/blog/add-chinese-text-mark-to-picture-in-php.html)的工作。现在需要做的就是把文字内容和图片内容(用户头像)拼到大背景上去。然而有几个难点：
 
 a)         能得到的图片，包括用户的头像信息，和用户设置的自定义的图片信息都是url，图片是存储在存储平台那边的，当然浏览器端要获得相应的图片非常简单，请求链接即可返回图片数据，然后后台服务器就不是那么简单了，没有DNS等解析，无法通过链接得到相应的图片数据，直接IP不可能，那么多图片不是存储在一台服务器上。后来采取的解决方案是通过代理，用一台代理机器，有DNS等服务器去请求，再将数据返回，通过curl去下载图片到服务器，进而再进行相应的拼图操作。
 
@@ -61,7 +56,7 @@ The two images will be merged according to pct which can range from 0 to 100. Wh
 </p>
 
 <p align="left">
-  <img class="alignnone" src="http://i1123.photobucket.com/albums/l549/tl3shi/namecard.jpg" alt="" width="618" height="908" />
+  <img class="alignnone" src="http://i1123.photobucket.com/albums/l549/tl3shi/namecard.jpg" alt=""  />
 </p>
 
 <p align="left">

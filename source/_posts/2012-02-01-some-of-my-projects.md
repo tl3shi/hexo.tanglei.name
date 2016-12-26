@@ -5,15 +5,12 @@ date: 2012-02-01T17:25:30+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1440
-permalink: some-of-my-projects
 duoshuo_thread_id:
   - 1351844048792453354
 categories:
   - 敲敲代码
 tags:
-  - java
-  - 简历
-  - 项目经验
+  - Java
 ---
 <p align="left">
   好久就说把自己以前做过(或者参与)的小玩意整理下，现在终于开始行动了。
@@ -90,11 +87,11 @@ tags:
 <span style="text-align: center;">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;部分界面长成这个样子：</span>
 
 <p style="text-align: center;">
-  <img class="aligncenter" title="IChat聊天系统" src="http://i1123.photobucket.com/albums/l549/tl3shi/my-projects/ichat-0.jpg" alt="Java聊天工具,视频聊天,语音聊天,群聊" width="614" height="371" data-pinit="registered" />
+  <img class="aligncenter" title="IChat聊天系统" src="http://i1123.photobucket.com/albums/l549/tl3shi/my-projects/ichat-0.jpg" alt="Java聊天工具,视频聊天,语音聊天,群聊"  data-pinit="registered" />
 </p>
 
 <p style="text-align: center;">
-  <img class="aligncenter" title="IChat聊天系统" src="http://i1123.photobucket.com/albums/l549/tl3shi/my-projects/ichat-1.jpg" alt="Java视频聊天,群聊,Java仿QQ聊天代码" width="638" height="358" data-pinit="registered" />
+  <img class="aligncenter" title="IChat聊天系统" src="http://i1123.photobucket.com/albums/l549/tl3shi/my-projects/ichat-1.jpg" alt="Java视频聊天,群聊,Java仿QQ聊天代码"  data-pinit="registered" />
 </p>
 
 有个基本功能的演示视频，可以<a href="http://115.com/lb/5lba33adil7y# ichat聊天系统核心功能演示.rar  115网盘礼包码：5lba33adil7y" target="_blank">点这里</a>下载看看(解压密码：tanglei.name)。
@@ -118,7 +115,7 @@ tags:
 &#8212;&#8212;&#8212;&#8211;部分界面长酱紫：
 
 <p style="text-align: center;">
-  <img class="aligncenter" title="SNS" src="http://i1123.photobucket.com/albums/l549/tl3shi/my-projects/xiaomii.jpg" alt="J2EE SNS系统" width="613" height="371" data-pinit="registered" />
+  <img class="aligncenter" title="SNS" src="http://i1123.photobucket.com/albums/l549/tl3shi/my-projects/xiaomii.jpg" alt="J2EE SNS系统"  data-pinit="registered" />
 </p>
 
 <p style="text-align: center;">
@@ -126,10 +123,10 @@ tags:
 </p>
 
 <p style="text-align: center;">
-  <img class="alignleft" title="中南教务山寨版" src="http://i1123.photobucket.com/albums/l549/tl3shi/my-projects/xiaomii2.jpg" alt="" width="460" height="379" data-pinit="registered" />
+  <img class="alignleft" title="中南教务山寨版" src="http://i1123.photobucket.com/albums/l549/tl3shi/my-projects/xiaomii2.jpg" alt=""  data-pinit="registered" />
 </p>
 
-<img class="alignright" title="中南教务山寨版" src="http://i1123.photobucket.com/albums/l549/tl3shi/my-projects/csu-jwc.jpg" alt="" width="497" height="394" data-pinit="registered" />
+<img class="alignright" title="中南教务山寨版" src="http://i1123.photobucket.com/albums/l549/tl3shi/my-projects/csu-jwc.jpg" alt=""  data-pinit="registered" />
 
 &nbsp;
 

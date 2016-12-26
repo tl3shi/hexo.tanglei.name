@@ -5,15 +5,12 @@ date: 2011-05-02T04:10:33+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=590
-permalink: it-management-exam1
 duoshuo_thread_id:
   - 1351844048792453446
 categories:
   - 软件项目管理
 tags:
   - IT项目管理考试
-  - 模拟试题
-  - 考点总结
 ---
 本资料结合07级哥哥姐姐们的资料，配合自己理解整理而成……
 

@@ -5,23 +5,20 @@ date: 2011-03-30T15:11:20+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=372
-permalink: sperk_in_kexie
 duoshuo_thread_id:
   - 1351844048792453301
 categories:
   - MyLife
   - 软件学院
 tags:
-  - 发言
   - 大学生科协
   - 成立大会
   - 演讲稿
-  - 科学技术协会
   - 软件学院
 ---
 辛苦了几天，今天下午大学生科协成立大会终于搞定了。o(︶︿︶)o 唉。感觉09级不给力啊。。。我的任务是搞定国际报告厅的140人。羊和麦和冰还是挺好的，听说我压力大主动提出凑人数。哈哈。在此感谢感谢。彭佳真文笔真不错啊。我的发言稿全是她写的，我就稍微改了点。呵呵。
 
-[<img class="aligncenter size-full wp-image-373" title="speak_in_kexie" src="/wp-content/uploads/2011/03/speak_in_kexie.jpg" alt="" width="726" height="591" data-pinit="registered" />](/wp-content/uploads/2011/03/speak_in_kexie.jpg)
+[<img class="aligncenter size-full wp-image-373" title="speak_in_kexie" src="/wp-content/uploads/2011/03/speak_in_kexie.jpg" alt=""  data-pinit="registered" />](/wp-content/uploads/2011/03/speak_in_kexie.jpg)
 
 以下全文:
 

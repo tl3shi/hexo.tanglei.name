@@ -5,14 +5,12 @@ date: 2011-08-28T19:20:02+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1143
-permalink: csu-software-note-for-software08-on-the-7th-term
 duoshuo_thread_id:
   - 1351844048792453428
 categories:
   - 软件学院
 tags:
   - 中南大学软件学院
-  - 大三上教学安排
 ---
 【**学院网站没贴，我帮忙贴一下。另外，通知是5月份出来的，我咋就现在才知道呢？都9月份了……**】
 

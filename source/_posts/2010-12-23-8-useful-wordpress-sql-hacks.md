@@ -5,16 +5,14 @@ date: 2010-12-23T04:13:02+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=161
-permalink: 8-useful-wordpress-sql-hacks
 duoshuo_thread_id:
   - 1351844048792453153
 categories:
-  - wordpress
+  - Wordpress
 tags:
-  - wordpress
-  - 优化
+  - Wordpress
 ---
-已下内容转自<a href="http://www.smashingmagazine.com/2008/12/18/8-useful-wordpress-sql-hacks" target="_blank">http://www.smashingmagazine.com/2008/12/18/8-useful-wordpress-sql-hacks</a>收藏着吧，网上也有翻译版本。训练下英文阅读能力，我就转原版的。
+已下内容转自<a href="http://www.smashingmagazine.com/2008/12/18/8-useful-Wordpress-sql-hacks" target="_blank">http://www.smashingmagazine.com/2008/12/18/8-useful-Wordpress-sql-hacks</a>收藏着吧，网上也有翻译版本。训练下英文阅读能力，我就转原版的。
   
 **1. Creating a Backup of Your Database**
   

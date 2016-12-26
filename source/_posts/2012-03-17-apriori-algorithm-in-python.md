@@ -5,7 +5,6 @@ date: 2012-03-17T14:27:23+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1550
-permalink: apriori-algorithm-in-python
 duoshuo_thread_id:
   - 1351844048792453270
 enable_highlight:
@@ -15,11 +14,7 @@ categories:
   - 我不会算法
   - 数据挖掘
 tags:
-  - apriori性质
-  - association rule
-  - datamining
   - python
-  - 关联规则
   - 数据挖掘
 ---
 Apriori algorithm是关联规则里一项基本算法。是由Rakesh Agrawal和Ramakrishnan Srikant两位在1994年提出的布尔关联规则的频繁项集挖掘算法(详情：<a href="http://rakesh.agrawal-family.com/papers/vldb94apriori.pdf" target="_blank">Fast Algorithms for Mining Association Rules</a>)。算法的名字是因为算法基于先验知识(prior knowledge).根据前一次找到的频繁项来生成本次的频繁项。关联规则的目的在于在一个数据集中找出项之间的关系，也称之为购物蓝分析 (market basket analysis)。例如，购买佳能的顾客，有70%的可能也会买在一个月之类买HP打印机。这其中最有名的例子就是&#8221;<a href="http://baike.baidu.com/view/1978239.htm" target="_blank">尿布和啤酒</a>&#8220;的故事了。
@@ -82,13 +77,13 @@ Procedure apriori_gen(Lk-1:frequent(k-1)-itemsets)
 
 举个例子,来源于书中(见参考文献1)的例子。
 
-[<img style="display: inline; margin-left: 0px; margin-right: 0px; border: 0px;" title="apriori算法" src="/wp-content/uploads/2012/03/image_thumb1.png" alt="apriori算法" width="137" height="163" border="0" data-pinit="registered" />](/wp-content/uploads/2012/03/image1.png)
+[<img title="apriori算法" src="/wp-content/uploads/2012/03/image_thumb1.png" alt="apriori算法"  data-pinit="registered" />](/wp-content/uploads/2012/03/image1.png)
 
 如图中所示,有9个事务，其算法流程如下：
 
 ![apriori算法,关联规则,数据挖掘](http://i1123.photobucket.com/albums/l549/tl3shi/apriori.jpg)
 
-以上就有了频繁项集，然后根据得到的频繁项集和给定置信度算关联规则。置信度其实是一个条件概率。关联规则产生就是根据每个生成的频繁项集，产生其所有非空子集，然后根据子集和原来的事务库中循环比较。大于给定重复次数的就是满足条件的。例如针对频繁集{I1，I2，I5}。可以产生哪些关联规则？该频繁集的非空真子集（求子集的具体方法在前面<a href="http://www.tanglei.name/a-python-problem-about-a-plusequal-b-and-a-equal-a-plus-b/" target="_blank">python中a+=b和a=a+b的问题</a>中已经阐述）有{I1，I2}，{I1，I5}，{I2，I5}，{I1 }，{I2}和{I5}，对应置信度如下：
+以上就有了频繁项集，然后根据得到的频繁项集和给定置信度算关联规则。置信度其实是一个条件概率。关联规则产生就是根据每个生成的频繁项集，产生其所有非空子集，然后根据子集和原来的事务库中循环比较。大于给定重复次数的就是满足条件的。例如针对频繁集{I1，I2，I5}。可以产生哪些关联规则？该频繁集的非空真子集（求子集的具体方法在前面<a href="/blog/a-python-problem-about-a-plusequal-b-and-a-equal-a-plus-b.html" target="_blank">python中a+=b和a=a+b的问题</a>中已经阐述）有{I1，I2}，{I1，I5}，{I2，I5}，{I1 }，{I2}和{I5}，对应置信度如下：
 
 <p align="center">
   I1&&I2->I5 confidence=2/4=50%

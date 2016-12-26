@@ -5,14 +5,11 @@ date: 2010-12-25T02:04:43+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=182
-permalink: choose-bigorsmall-corp
 duoshuo_thread_id:
   - 1351842949280825451
 categories:
   - 网络文摘
 tags:
-  - 企业文化
-  - 就业
 ---
 以下内容转自<http://blog.csdn.net/chgaowei/archive/2010/12/22/6092654.aspx>，文章内容并不代表本人观点。仅供参考。
 

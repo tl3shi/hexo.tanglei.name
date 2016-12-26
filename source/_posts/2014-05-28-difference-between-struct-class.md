@@ -5,7 +5,6 @@ date: 2014-05-28T23:08:01+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2425
-permalink: difference-between-struct-class
 duoshuo_thread_id:
   - 1351844048792453504
 enable_highlight:
@@ -14,12 +13,12 @@ categories:
   - c++
 tags:
   - c++
-  - class
   - OOP
-  - struct
-  - 基础
 ---
-注意C中的struct和C++中的struct是不一样的，c中的struct比较原生，仅仅是将一些属性封装起来构成一个整体，没有OO的相关特性。而c++中的struct是对c中的struct进行扩展(兼容c中的struct)，**具备OO的特性**，其实**c++中的class能干的事情struct几乎都能干_，_**什么继承、多态等都_OK_。直接看下面代码，不同编译器对结果可能不一样：
+
+
+注意C中的struct和C++中的struct是不一样的，c中的struct比较原生，仅仅是将一些属性封装起来构成一个整体，没有OO的相关特性。而c++中的struct是对c中的struct进行扩展(兼容c中的struct)，**具备OO的特性**，
+其实**c++中的class能干的事情struct几乎都能干**,  什么继承、多态等都OK。直接看下面代码，不同编译器对结果可能不一样：
 
 ```cpp
 #include <stdio.h>
@@ -164,15 +163,15 @@ int main()
 
 VisualStudio 2012默认debug和release结果：
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(8)[4]" src="/wp-content/uploads/2014/05/Image84_thumb.png" alt="Image(8)[4]" width="172" height="245" border="0" />](/wp-content/uploads/2014/05/Image84.png)[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="73028934dad360862f6ed22a22a35c24" src="/wp-content/uploads/2014/05/73028934dad360862f6ed22a22a35c24_thumb.png" alt="73028934dad360862f6ed22a22a35c24" width="167" height="250" border="0" />](/wp-content/uploads/2014/05/73028934dad360862f6ed22a22a35c24.png)
+[<img title="Image(8)[4]" src="/wp-content/uploads/2014/05/Image84_thumb.png" alt="Image(8)[4]"  />](/wp-content/uploads/2014/05/Image84.png)[<img title="73028934dad360862f6ed22a22a35c24" src="/wp-content/uploads/2014/05/73028934dad360862f6ed22a22a35c24_thumb.png" alt="73028934dad360862f6ed22a22a35c24"  />](/wp-content/uploads/2014/05/73028934dad360862f6ed22a22a35c24.png)
 
 G++ 4.5.3, 默认和O2(g++ -O2 structtest.cpp)结果：
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="600b675239e56d6d70ac255f68e353f5" src="/wp-content/uploads/2014/05/600b675239e56d6d70ac255f68e353f5_thumb.png" alt="600b675239e56d6d70ac255f68e353f5" width="168" height="230" border="0" />](/wp-content/uploads/2014/05/600b675239e56d6d70ac255f68e353f5.png)[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="44e877ad37f3a2a6f5a77577dfb4adc5" src="/wp-content/uploads/2014/05/44e877ad37f3a2a6f5a77577dfb4adc5_thumb.png" alt="44e877ad37f3a2a6f5a77577dfb4adc5" width="208" height="235" border="0" />](/wp-content/uploads/2014/05/44e877ad37f3a2a6f5a77577dfb4adc5.png)
+[<img title="600b675239e56d6d70ac255f68e353f5" src="/wp-content/uploads/2014/05/600b675239e56d6d70ac255f68e353f5_thumb.png" alt="600b675239e56d6d70ac255f68e353f5"  />](/wp-content/uploads/2014/05/600b675239e56d6d70ac255f68e353f5.png)[<img title="44e877ad37f3a2a6f5a77577dfb4adc5" src="/wp-content/uploads/2014/05/44e877ad37f3a2a6f5a77577dfb4adc5_thumb.png" alt="44e877ad37f3a2a6f5a77577dfb4adc5"  />](/wp-content/uploads/2014/05/44e877ad37f3a2a6f5a77577dfb4adc5.png)
 
 mac下的g++(Apple LLVM version 5.1 (clang-503.0.40) (based on LLVM 3.4svn))无优化和O2结果
   
-[<img src="/wp-content/uploads/2014/05/struct-and-class.png" alt="" title="struct-and-class" width="338" height="302" class="aligncenter size-full wp-image-2430" />](/wp-content/uploads/2014/05/struct-and-class.png)
+[<img src="/wp-content/uploads/2014/05/struct-and-class.png" alt="" title="struct-and-class"  class="aligncenter size-full wp-image-2430" />](/wp-content/uploads/2014/05/struct-and-class.png)
 
 不同编译器结果不一样主要是体现在printf函数实现(有空再研究下)下以及C c3的未初始化（注意c2和c3的区别）～ 这也告诉我们一定要注意初始化啊～未初始化的值是未定义的，啥结果可能都有。
 

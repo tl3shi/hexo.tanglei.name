@@ -5,7 +5,6 @@ date: 2011-04-21T13:33:31+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=483
-permalink: software_metrics
 duoshuo_thread_id:
   - 1351844048792453411
 categories:

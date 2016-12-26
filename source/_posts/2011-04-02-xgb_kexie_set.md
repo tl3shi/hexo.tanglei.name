@@ -5,13 +5,11 @@ date: 2011-04-02T03:39:44+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=386
-permalink: xgb_kexie_set
 duoshuo_thread_id:
   - 1351844048792453245
 categories:
   - 软件学院
 tags:
-  - 中南大学学工网
   - 大学生科协
 ---
 为了丰富博客内容，再转，转自中南大学学工网：<http://www.qgzxol.com/xuegong/xgw/NewsSystem/Files/2011-3-31/5785.shtml>

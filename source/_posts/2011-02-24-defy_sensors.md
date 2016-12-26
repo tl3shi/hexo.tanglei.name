@@ -5,13 +5,12 @@ date: 2011-02-24T13:41:48+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=355
-permalink: defy_sensors
 duoshuo_thread_id:
   - 1351844048792453304
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - android
+  - Android
 tags:
   - Defy
   - 传感器
@@ -128,10 +127,10 @@ layout的XML就不上了，一个textview而已。
   
 效果如下：得到6个传感器……
   
-[<img src="/wp-content/uploads/2011/03/defy_sensors.png" alt="" title="defy_sensors" width="236" height="447" class="aligncenter size-full wp-image-356" />](/wp-content/uploads/2011/03/defy_sensors.png)
+[<img src="/wp-content/uploads/2011/03/defy_sensors.png" alt="" title="defy_sensors"  class="aligncenter size-full wp-image-356" />](/wp-content/uploads/2011/03/defy_sensors.png)
   
 
   
 系统参数啊环境变量之类的：
   
-[<img src="/wp-content/uploads/2011/02/defy_envir-1024x585.jpg" alt="" title="defy_envir" width="1024" height="585" class="aligncenter size-large wp-image-361" />](/wp-content/uploads/2011/02/defy_envir.jpg)
+[<img src="/wp-content/uploads/2011/02/defy_envir.jpg" alt="" title="defy_envir"  class="aligncenter size-large wp-image-361" />](/wp-content/uploads/2011/02/defy_envir.jpg)

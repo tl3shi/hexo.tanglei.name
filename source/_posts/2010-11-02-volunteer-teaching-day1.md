@@ -5,7 +5,6 @@ date: 2010-11-02T12:42:16+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=196
-permalink: volunteer-teaching-day1
 duoshuo_thread_id:
   - 1351844048792453172
 categories:
@@ -32,7 +31,7 @@ tags:
   </p>
   
   <p style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
-    <span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';"><a href="http://b52.photo.store.qq.com/http_imgload.cgi?/rurl4_b=2c11debae43b8b1219e113bd2e3da22f6e1b397d20b5751c1c1083c644f90af38b0eaa8fbf57a7be92a7c12257c6dab19832f5976b919893db092d04a91ecf19c7d78a62ee1764894b3cdc9fe544fbd3611a631e&a=46&b=52" target="_blank"><img style="width: 551px; background: none transparent scroll repeat 0% 0%; height: 411px;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/1-2.JPG" alt="图片" width="48" height="48" /></a><a href="http://b51.photo.store.qq.com/http_imgload.cgi?/rurl4_b=2c11debae43b8b1219e113bd2e3da22fbbca4c3a8975294854a7f8fdc53eaf61fb23c0350c4b4cde36721124f856a0c4997ecca6f54dafc92edbeb6befae7c5bc3441e1f265b9c956872ff727427030e4dff20c8&a=46&b=51" target="_blank"></a></span>
+    <span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';"><a href="http://b52.photo.store.qq.com/http_imgload.cgi?/rurl4_b=2c11debae43b8b1219e113bd2e3da22f6e1b397d20b5751c1c1083c644f90af38b0eaa8fbf57a7be92a7c12257c6dab19832f5976b919893db092d04a91ecf19c7d78a62ee1764894b3cdc9fe544fbd3611a631e&a=46&b=52" target="_blank"><img src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/1-2.JPG" alt="图片"  /></a><a href="http://b51.photo.store.qq.com/http_imgload.cgi?/rurl4_b=2c11debae43b8b1219e113bd2e3da22fbbca4c3a8975294854a7f8fdc53eaf61fb23c0350c4b4cde36721124f856a0c4997ecca6f54dafc92edbeb6befae7c5bc3441e1f265b9c956872ff727427030e4dff20c8&a=46&b=51" target="_blank"></a></span>
   </p>
   
   <p style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
@@ -60,7 +59,7 @@ tags:
   </p>
   
   <p style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
-    <span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';"><a href="http://b45.photo.store.qq.com/http_imgload.cgi?/rurl4_b=2c11debae43b8b1219e113bd2e3da22f9a634d9c372a2ab211fbe9258cd4d2c84b4f8ab3fe414ac53fa308c7216842c9386fe92992d877332340e416b9e7758883c7bc633b5383509b093d2110e78587e1ca8b81&a=49&b=45" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/1-3.JPG" alt="图片" width="552" height="414" /></a></span>
+    <span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';"><a href="http://b45.photo.store.qq.com/http_imgload.cgi?/rurl4_b=2c11debae43b8b1219e113bd2e3da22f9a634d9c372a2ab211fbe9258cd4d2c84b4f8ab3fe414ac53fa308c7216842c9386fe92992d877332340e416b9e7758883c7bc633b5383509b093d2110e78587e1ca8b81&a=49&b=45" target="_blank"><img src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/1-3.JPG" alt="图片"  /></a></span>
   </p>
   
   <p style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
@@ -68,7 +67,7 @@ tags:
   </p>
   
   <p style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
-    <span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';"><a href="http://b47.photo.store.qq.com/http_imgload.cgi?/rurl4_b=2c11debae43b8b1219e113bd2e3da22fbaabb6749a87ec771522429e27291b37825c6fb479eaa9fb8c470aa6e368f5bca5b2031a6c780ff3cca358c839b2cafc02f92bc6a0198069ba87bc3c173839f8bdce6b40&a=49&b=47" target="_blank"><img style="width: 545px; background: none transparent scroll repeat 0% 0%; height: 410px;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/1-4.JPG" alt="图片" width="48" height="48" /></a></span><span lang="EN-US"> </span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';"> </span>
+    <span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';"><a href="http://b47.photo.store.qq.com/http_imgload.cgi?/rurl4_b=2c11debae43b8b1219e113bd2e3da22fbaabb6749a87ec771522429e27291b37825c6fb479eaa9fb8c470aa6e368f5bca5b2031a6c780ff3cca358c839b2cafc02f92bc6a0198069ba87bc3c173839f8bdce6b40&a=49&b=47" target="_blank"><img src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/1-4.JPG" alt="图片"  /></a></span><span lang="EN-US"> </span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';"> </span>
   </p>
   
   <p style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
@@ -80,7 +79,7 @@ tags:
   </p>
   
   <p>
-    <a href="http://b50.photo.store.qq.com/http_imgload.cgi?/rurl4_b=2c11debae43b8b1219e113bd2e3da22f003a608739191a0d1e646eb408810749006b0c9a6ff9ee0018a008fb96504899c36569b0735edd6c9991fcc4beeb655266cfa70d5fa76cf3041a4098e377748deeb1fe09&a=45&b=50" target="_blank"><img style="width: 549px; background: none transparent scroll repeat 0% 0%; height: 405px;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/1-5.JPG" alt="图片" width="48" height="48" /></a><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';"> </span>
+    <a href="http://b50.photo.store.qq.com/http_imgload.cgi?/rurl4_b=2c11debae43b8b1219e113bd2e3da22f003a608739191a0d1e646eb408810749006b0c9a6ff9ee0018a008fb96504899c36569b0735edd6c9991fcc4beeb655266cfa70d5fa76cf3041a4098e377748deeb1fe09&a=45&b=50" target="_blank"><img src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/1-5.JPG" alt="图片"  /></a><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';"> </span>
   </p>
   
   <p>
@@ -109,7 +108,7 @@ tags:
   
   <p style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
     <p style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
-      <span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';"><a href="http://b47.photo.store.qq.com/http_imgload.cgi?/rurl4_b=2c11debae43b8b1219e113bd2e3da22fc3fd3dffc2d3af8e47297ab0befe5f35d5530dfe971a49af0404f20b30836174ab4d672f71bf38b281088a9ff998b9ba913e59773e116aa48b4466c152c39479bf0ffd93&a=50&b=47" target="_blank"><img style="width: 542px; background: none transparent scroll repeat 0% 0%; height: 408px;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/1-6.JPG" alt="图片" width="48" height="48" /></a></span>
+      <span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';"><a href="http://b47.photo.store.qq.com/http_imgload.cgi?/rurl4_b=2c11debae43b8b1219e113bd2e3da22fc3fd3dffc2d3af8e47297ab0befe5f35d5530dfe971a49af0404f20b30836174ab4d672f71bf38b281088a9ff998b9ba913e59773e116aa48b4466c152c39479bf0ffd93&a=50&b=47" target="_blank"><img src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/1-6.JPG" alt="图片"  /></a></span>
     </p>
     
     <p style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
@@ -117,7 +116,7 @@ tags:
     </p>
     
     <p style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
-      <span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';"><a href="http://b47.photo.store.qq.com/http_imgload.cgi?/rurl4_b=2c11debae43b8b1219e113bd2e3da22f8109e76afa9eec9c7cf9897e0364b44964549f6e4edff96c4bfefbaa71d56b0b06f449ca01a640a8adbe0187cf3ec5c613929b5cbfbcae7f2e34e644c89af8e505529ddc&a=50&b=47" target="_blank"><img style="width: 548px; background: none transparent scroll repeat 0% 0%; height: 365px;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/1-7.JPG" alt="图片" width="48" height="48" /></a></span>
+      <span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';"><a href="http://b47.photo.store.qq.com/http_imgload.cgi?/rurl4_b=2c11debae43b8b1219e113bd2e3da22f8109e76afa9eec9c7cf9897e0364b44964549f6e4edff96c4bfefbaa71d56b0b06f449ca01a640a8adbe0187cf3ec5c613929b5cbfbcae7f2e34e644c89af8e505529ddc&a=50&b=47" target="_blank"><img src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/1-7.JPG" alt="图片"  /></a></span>
     </p>
     
     <p style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
@@ -161,7 +160,7 @@ tags:
     </p>
     
     <p style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
-      <a href="http://b51.photo.store.qq.com/http_imgload.cgi?/rurl4_b=2c11debae43b8b1219e113bd2e3da22fe8f5536fffa742492e694f064e6cde2114b45cff4e436f1ae9fd7eff7ca15540eb34986d9e09e09b74476881a36598026d597cf74c8beb802130798d46a96340eca12061&a=52&b=51" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/1-8.JPG" alt="图片" width="549" height="361" /></a>
+      <a href="http://b51.photo.store.qq.com/http_imgload.cgi?/rurl4_b=2c11debae43b8b1219e113bd2e3da22fe8f5536fffa742492e694f064e6cde2114b45cff4e436f1ae9fd7eff7ca15540eb34986d9e09e09b74476881a36598026d597cf74c8beb802130798d46a96340eca12061&a=52&b=51" target="_blank"><img src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/1-8.JPG" alt="图片"  /></a>
     </p>
     
     <p style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
@@ -173,7 +172,7 @@ tags:
     </p>
     
     <p style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
-      <span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">下午我睡过去了。我们的小赵老师给大家上了语文课了。还给大家拍了全家福。一说我们会把照片寄过来。大家对很喜欢照相。<a href="http://b39.photo.store.qq.com/http_imgload.cgi?/rurl4_b=2c11debae43b8b1219e113bd2e3da22fcc5dffe1a03c34dc7ea14c4af90209fbe3dd8feefc49f9070d5b9089a5e6bf842aee4c9e1358107c6336d66733cb6c0f595a3811bb88e572bd7c26b7078d7442569e36c8&a=51&b=39" target="_blank"><img style="width: 559px; background: none transparent scroll repeat 0% 0%; height: 411px;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/1-9.JPG" alt="图片" width="48" height="48" /></a></span>
+      <span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">下午我睡过去了。我们的小赵老师给大家上了语文课了。还给大家拍了全家福。一说我们会把照片寄过来。大家对很喜欢照相。<a href="http://b39.photo.store.qq.com/http_imgload.cgi?/rurl4_b=2c11debae43b8b1219e113bd2e3da22fcc5dffe1a03c34dc7ea14c4af90209fbe3dd8feefc49f9070d5b9089a5e6bf842aee4c9e1358107c6336d66733cb6c0f595a3811bb88e572bd7c26b7078d7442569e36c8&a=51&b=39" target="_blank"><img src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/1-9.JPG" alt="图片"  /></a></span>
     </p>
     
     <p style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
@@ -182,7 +181,7 @@ tags:
     
     <p style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
       <p style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
-        <span lang="EN-US"><span style="font-family: &amp;amp;"><a href="http://b50.photo.store.qq.com/http_imgload.cgi?/rurl4_b=2c11debae43b8b1219e113bd2e3da22fbc3733576a23ade0f7daa094475a8058ec3e004bd5eb68ec983a0c95d8f22a9808280febd6dc8af56e73b9600d89a80dd77d39846c86e13dcd47fc453b28ae852fda687f&a=52&b=50" target="_blank"><img style="width: 544px; background: none transparent scroll repeat 0% 0%; height: 399px;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/1-10.JPG" alt="图片" width="48" height="48" /></a></span></span>
+        <span lang="EN-US"><span style="font-family: &amp;amp;"><a href="http://b50.photo.store.qq.com/http_imgload.cgi?/rurl4_b=2c11debae43b8b1219e113bd2e3da22fbc3733576a23ade0f7daa094475a8058ec3e004bd5eb68ec983a0c95d8f22a9808280febd6dc8af56e73b9600d89a80dd77d39846c86e13dcd47fc453b28ae852fda687f&a=52&b=50" target="_blank"><img src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/1-10.JPG" alt="图片"  /></a></span></span>
       </p>
       
       <p style="text-indent: 21pt; margin: 0cm 0cm 0pt;">

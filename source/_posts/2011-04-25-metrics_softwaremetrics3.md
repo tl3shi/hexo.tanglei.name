@@ -5,20 +5,17 @@ date: 2011-04-25T10:53:00+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=516
-permalink: metrics_softwaremetrics3
 duoshuo_thread_id:
   - 1351844048792453412
 categories:
   - 软件度量及其应用
 tags:
-  - McCabe
-  - 控制流结构
   - 数据流结构
   - 软件度量
   - 软件结构度量
 ---
 <address>
-  上接：<a href="http://www.tanglei.name/metrics_softwaremetrics1/">http://www.tanglei.name/metrics_softwaremetrics2/</a>
+  上接：<a href="/blog/metrics_softwaremetrics1.html">/blog/metrics_softwaremetrics2.html</a>
 </address>
 
 ## Measuring Internal Product Attributes: Structure
@@ -301,7 +298,7 @@ The module be rejected if its V exceed 20 or if it has more than 50 statements�
         </p>
         
         <p>
-          <img class="alignnone" title="数据结构" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image008.gif" alt="" width="413" height="69" />
+          <img class="alignnone" title="数据结构" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image008.gif" alt=""  />
         </p>
         
         <p>

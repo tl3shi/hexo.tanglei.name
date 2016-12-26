@@ -5,7 +5,6 @@ date: 2011-01-03T04:20:55+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=281
-permalink: oracle-experiment-2
 duoshuo_thread_id:
   - 1351844048792453183
 enable_highlight:
@@ -14,9 +13,8 @@ enable_highlight:
 categories:
   - 数据库应用
 tags:
-  - oracle
+  - Oracle
   - 存储过程
-  - 触发器
 ---
 第二个题目主要考查了触发器以及存储过程的使用，题目描述如下：
   
@@ -127,7 +125,7 @@ end;
 
 实现的效果如下：
   
-[<img class="alignleft size-medium wp-image-282" title="chuku" src="/wp-content/uploads/2011/01/chuku-259x300.jpg" alt="" width="259" height="300" />](/wp-content/uploads/2011/01/chuku.jpg)
+[<img class="alignleft size-medium wp-image-282" title="chuku" src="/wp-content/uploads/2011/01/chuku.jpg" alt=""  />](/wp-content/uploads/2011/01/chuku.jpg)
   
 注意的是，为了实验中的方便。这里在存储过程中都没有去commit，免得一会又得重新@导入数据。
   

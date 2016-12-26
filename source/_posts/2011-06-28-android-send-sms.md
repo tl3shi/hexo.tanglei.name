@@ -5,7 +5,6 @@ date: 2011-06-28T13:21:46+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=931
-permalink: android-send-sms
 duoshuo_thread_id:
   - 1351844048792453260
 enable_highlight:
@@ -13,9 +12,7 @@ enable_highlight:
 categories:
   - coding小工具
 tags:
-  - android源码
   - coding小工具
-  - 发送短信
 ---
 想写一个短信群发器，用于过年过节啊之类的发送短信给亲朋好友。并且是定制的。首先来看下如何发送短信，网上大量参考，自己也测试了下。下面代码只实现了发送短信的功能。没有界面啥可言。
 
@@ -66,13 +63,16 @@ public class msgSendDemo extends Activity {
        m.sendTextMessage(destinationAddress, null, text, sentPi, deliveryPi);
     }
  
-}```
+}
+```
 
-当然，直接运行后，可以看到Logcat有代码输出，在虚拟机里面也输出了msg has been sent sucessfully!，明显Activity.RESULT_OK不要是发送短信成功的标识了。先将就吧。在我的defy下也输出同样的效果，但后来10086给回复证明了短信确实是发送出去的。[<img src="/wp-content/uploads/2011/06/android-send-msg-code.jpg" alt="android发送信息源码" title="android发送信息源码" width="320" height="480" class="aligncenter size-full wp-image-932" />](/wp-content/uploads/2011/06/android-send-msg-code.jpg)
+当然，直接运行后，可以看到Logcat有代码输出，在虚拟机里面也输出了msg has been sent sucessfully!，明显Activity.RESULT_OK不要是发送短信成功的标识了。先将就吧。在我的defy下也输出同样的效果，但后来10086给回复证明了短信确实是发送出去的。[<img src="/wp-content/uploads/2011/06/android-send-msg-code.jpg" alt="android发送信息源码" title="android发送信息源码"  class="aligncenter size-full wp-image-932" />](/wp-content/uploads/2011/06/android-send-msg-code.jpg)
   
 当然，要有发送信息的权限，在manifest中得加入
 
-```xml<uses-permission android:name="android.permission.SEND_SMS"/>```
+```xml
+<uses-permission android:name="android.permission.SEND_SMS"/>
+```
 
 ```java
 /**

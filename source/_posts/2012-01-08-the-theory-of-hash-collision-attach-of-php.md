@@ -5,7 +5,6 @@ date: 2012-01-08T19:37:47+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1397
-permalink: the-theory-of-hash-collision-attach-of-php
 duoshuo_thread_id:
   - 1351844048792453221
 enable_highlight:
@@ -19,7 +18,7 @@ tags:
   - PHP
   - 网络安全
 ---
-前一篇文章说了[通过构造Hash冲突实现PHP/Java等语言的拒绝服务攻击](http://www.tanglei.name/use-hash-collision-to-realize-dos-in-php-and-java/)，今天看到一篇文章，或许能帮助解答上一篇文章中的遗留问题。现在转过来学习下。原文见:<http://www.codinglabs.org/html/hash-collisions-attack-on-php.html>
+前一篇文章说了[通过构造Hash冲突实现PHP/Java等语言的拒绝服务攻击](/blog/use-hash-collision-to-realize-dos-in-php-and-java.html)，今天看到一篇文章，或许能帮助解答上一篇文章中的遗留问题。现在转过来学习下。原文见:<http://www.codinglabs.org/html/hash-collisions-attack-on-php.html>
 
 最近哈希表碰撞攻击（Hashtable collisions as DOS attack）的话题不断被提起，各种语言纷纷中招。本文结合PHP内核源码，聊一聊这种攻击的原理及实现。
 
@@ -192,11 +191,11 @@ ZEND_API int zend_hash_find(const HashTable *ht, const char *arKey, uint nKeyLen
   
 **_[估计这个就是为什么我上一篇文章中提到的java为啥不灵的原因所在]_**
 
-下面是利用这个原理写的一段攻击代码：**_代码和效果见[前一篇文章](http://www.tanglei.name/use-hash-collision-to-realize-dos-in-php-and-java/)，可以看出两种方法插入N个元素的时间在O(N)水平，而另一段攻击代码则需O(N^2)的时间去插入N个元素。_**
+下面是利用这个原理写的一段攻击代码：**_代码和效果见[前一篇文章](/blog/use-hash-collision-to-realize-dos-in-php-and-java.html)，可以看出两种方法插入N个元素的时间在O(N)水平，而另一段攻击代码则需O(N^2)的时间去插入N个元素。_**
   
 POST攻击
   
-当然，一般情况下很难遇到攻击者可以直接修改PHP代码的情况，但是攻击者仍可以通过一些方法间接构造哈希表来进行攻击。例如PHP会将接收到的HTTP POST请求中的数据构造为$_POST，而这是一个Array，内部就是通过Zend HashTable表示，因此攻击者只要构造一个含有大量碰撞key的post请求，就可以达到攻击的目的。**_具体做法可以参考[前一篇文章](http://www.tanglei.name/use-hash-collision-to-realize-dos-in-php-and-java/)。_**
+当然，一般情况下很难遇到攻击者可以直接修改PHP代码的情况，但是攻击者仍可以通过一些方法间接构造哈希表来进行攻击。例如PHP会将接收到的HTTP POST请求中的数据构造为$_POST，而这是一个Array，内部就是通过Zend HashTable表示，因此攻击者只要构造一个含有大量碰撞key的post请求，就可以达到攻击的目的。**_具体做法可以参考[前一篇文章](/blog/use-hash-collision-to-realize-dos-in-php-and-java.html)。_**
 
 **防护**
   

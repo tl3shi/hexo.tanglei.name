@@ -5,18 +5,14 @@ date: 2014-03-11T21:15:15+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2343
-permalink: example-show-3-times-handshaking-of-tcp-in-mac-or-windows
 duoshuo_thread_id:
   - 1351844048792453499
 categories:
-  - 'Linux&amp;Ubuntu'
+  - 'Linux'
   - SoftwareEngineering
   - Windows
 tags:
-  - 3次握手
   - TCP/IP
-  - tcpdump
-  - windump
   - 计算机网络
 ---
 Mac OS系统10.9.1，安装[Wireshark](http://www.wireshark.org/download.html)，后不能跑，提示安装X11，到这里安装[XQuartz](http://xquartz.macosforge.org/landing/)即可。
@@ -25,11 +21,11 @@ TIPS：安装XQuartz 后，重新启动Wireshark，让选择X11，这是去选/A
 
 然后抓包～跟windows一样了。下图是访问[tanglei.me](http://tanglei.me/)抓包，用的github pages搭建的博客，访问IP是192.30.252.153(or 154)，看到这个IP，为了看得更清楚，可以利用下Filter。Wireshark功能很强大的说。
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Image" src="/wp-content/uploads/2014/03/Image_thumb.png" alt="Image" width="930" height="695" border="0" />](/wp-content/uploads/2014/03/Image.png)
+[<img title="Image" src="/wp-content/uploads/2014/03/Image_thumb.png" alt="Image"  />](/wp-content/uploads/2014/03/Image.png)
 
 如下图是建立连接时的3次握手～其中,SYN=Synchronize Sequence Numbers, ACK=Acknowledgement Number
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Image(1)" src="/wp-content/uploads/2014/03/Image1_thumb.png" alt="Image(1)" width="914" height="112" border="0" />](/wp-content/uploads/2014/03/Image1.png)
+[<img title="Image(1)" src="/wp-content/uploads/2014/03/Image1_thumb.png" alt="Image(1)"  />](/wp-content/uploads/2014/03/Image1.png)
 
   1. Client(本机192.168.1.100)发起TCP请求, 发送序号为x(=0)的SYN包;  ——SYN(x)
   2. Server(Github 192.30.252.153)收到连接请求，给出响应ACK(x+1=1),同时携带一个序号Seq,y(=0);  —— SYN(y)+ACK(x+1)
@@ -41,7 +37,7 @@ TIPS：安装XQuartz 后，重新启动Wireshark，让选择X11，这是去选/A
 
 再来看看断开连接的4次握手(挥手)。
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Image(3)" src="/wp-content/uploads/2014/03/Image3_thumb.png" alt="Image(3)" width="927" height="196" border="0" />](/wp-content/uploads/2014/03/Image3.png)
+[<img title="Image(3)" src="/wp-content/uploads/2014/03/Image3_thumb.png" alt="Image(3)"  />](/wp-content/uploads/2014/03/Image3.png)
 
 这里是Github作为Client主动发起关闭连接的请求，这里的FIN=FINish
 
@@ -92,6 +88,6 @@ windump: listening on \Device\NPF_{84E79A70-5025-44D2-AB45-24F3203D00D6}
 
 画个图描述下3/4次握手是什么样的.
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="image" src="/wp-content/uploads/2014/03/image_thumb.png" alt="image" width="539" height="287" border="0" />](/wp-content/uploads/2014/03/image.png)
+[<img title="image" src="/wp-content/uploads/2014/03/image.png" alt="image"  />](/wp-content/uploads/2014/03/image.png)
 
 以前计算机网络课还详细学了下TCP/UDP的协议，这些数据包是怎么组织放在某个位之类的，时间久了都忘了啊～

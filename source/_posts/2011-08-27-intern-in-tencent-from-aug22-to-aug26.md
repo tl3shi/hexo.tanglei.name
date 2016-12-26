@@ -5,7 +5,6 @@ date: 2011-08-27T16:16:48+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1138
-permalink: intern-in-tencent-from-aug22-to-aug26
 duoshuo_thread_id:
   - 1351844048792453243
 categories:

@@ -5,7 +5,6 @@ date: 2011-10-02T13:50:16+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1156
-permalink: the-way-to-postgraduate-in-csu
 duoshuo_thread_id:
   - 1351844048792453188
 categories:
@@ -13,7 +12,6 @@ categories:
 tags:
   - 中南大学软件学院
   - 保研
-  - 保研政策
 ---
 看着上篇日志已经是上个月了。自己从腾讯深圳回到学校，再忙保研的事情，再到最后现在差不多定下来，也一直没有更新过blog。现在在北京，有点时间，也写写吧。
 

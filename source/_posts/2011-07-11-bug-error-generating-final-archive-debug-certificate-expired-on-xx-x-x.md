@@ -5,13 +5,11 @@ date: 2011-07-11T12:15:16+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=970
-permalink: bug-error-generating-final-archive-debug-certificate-expired-on-xx-x-x
 duoshuo_thread_id:
   - 1351844048792453432
 categories:
-  - android
+  - Android
 tags:
-  - android调试证书过期
   - bug
 ---
 今天网上down了一个android源码，导入eclipse，build总是出错，提示：Error generating final archive: Debug certificate expired on 11-7-7 上午11:42!

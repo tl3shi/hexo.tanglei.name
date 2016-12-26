@@ -4,8 +4,7 @@ title: 8-1—8-5实习工作记录
 date: 2011-08-06T19:39:01+00:00
 author: tanglei
 layout: post
-guid: http://www.tanglei.name/8-1%e2%80%948-5%e5%ae%9e%e4%b9%a0%e5%b7%a5%e4%bd%9c%e8%ae%b0%e5%bd%95/
-permalink: intern-in-tencent-from-aug-1-to-5
+guid: /blog/8-1%e2%80%948-5%e5%ae%9e%e4%b9%a0%e5%b7%a5%e4%bd%9c%e8%ae%b0%e5%bd%95.html
 duoshuo_thread_id:
   - 1351844048792453239
 categories:
@@ -23,7 +22,7 @@ tags:
 </p>
 
 <p style="margin-left: 10pt;">
-  <span style="color: black; font-family: 宋体; font-size: 12pt;">后来原因是，<a href="http://www.tanglei.name/js-error-no-permission/" target="_blank">不能跨域访问</a>。界面用户体验下增强点。<br /> </span>
+  <span style="color: black; font-family: 宋体; font-size: 12pt;">后来原因是，<a href="/blog/js-error-no-permission.html" target="_blank">不能跨域访问</a>。界面用户体验下增强点。<br /> </span>
 </p>
 
 <p style="margin-left: 10pt;">

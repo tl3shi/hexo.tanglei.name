@@ -5,7 +5,6 @@ date: 2011-08-04T22:40:01+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1090
-permalink: regular-expression-modifiers
 duoshuo_thread_id:
   - 1351844048792453421
 enable_highlight:
@@ -15,9 +14,6 @@ categories:
 tags:
   - PHP
   - 正则表达式
-  - 正则表达式修饰符
-  - 贪婪匹配
-  - 贪婪模式
 ---
 看代码看到类似 
 

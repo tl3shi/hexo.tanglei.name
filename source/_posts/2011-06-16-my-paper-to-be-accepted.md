@@ -5,7 +5,6 @@ date: 2011-06-16T15:49:31+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=856
-permalink: my-paper-to-be-accepted
 duoshuo_thread_id:
   - 1351844048792453425
 categories:
@@ -17,11 +16,11 @@ tags:
 ---
 今天手机在充电的时候突然收到一个短信，是没有打通的来电提醒，010-82306085，然后网上查了下是北京信息产业部电子第六研究所，就想想，以前估计投过论文。然后再查查，到了微型机与应用的编辑部联系方式。再登陆网站，果然是，拟录用的状态。
 
-[<img class="aligncenter size-medium wp-image-857" title="micro-computer-and-its-applications-luyong" src="/wp-content/uploads/2011/06/micro-computer-and-its-applications-luyong-300x91.jpg" alt="微型机与应用-录用" width="300" height="91" />](/wp-content/uploads/2011/06/micro-computer-and-its-applications-luyong.jpg)
+[<img class="aligncenter size-medium wp-image-857" title="micro-computer-and-its-applications-luyong" src="/wp-content/uploads/2011/06/micro-computer-and-its-applications-luyong.jpg" alt="微型机与应用-录用"  />](/wp-content/uploads/2011/06/micro-computer-and-its-applications-luyong.jpg)
 
 然后就是看这个期刊的质量了，首先查是不是核心期刊。它自己介绍说“《微型机与应用》为全国优秀科技期刊，被“万方数据—数字化期刊群”、“中国知网-中国期刊全文数据库”、“中国知网-中国科技期刊精品数据库”等重要数据库收录 ，并为《中国学术期刊综合评价数据库》来源期刊，历年被《中国无线电电子学文摘》、《中国电子科技文摘》等收录”。网上的有的说是，然后问了下曾锋老师，他就说不是CSCD的。我查了下，估计这个期刊以前算是核心期刊，然后现在质量变差了还是。下面这个图是从CSCD官方数据库查出来的。
 
-[<img class="aligncenter size-medium wp-image-858" title="CSCD-微型机与应用" src="/wp-content/uploads/2011/06/CSCD-微型机与应用-300x91.jpg" alt="" width="300" height="91" />](/wp-content/uploads/2011/06/CSCD-微型机与应用.jpg)到05年就不被CSCD收录了。要不要发表出去呢？曾锋老师说发表算了。然后我就说计算机系统应用一个月了，还没有出结果。然后他查了下，计算机系统应用是CSCD，叫我再等等。那就再等等吧。
+[<img class="aligncenter size-medium wp-image-858" title="CSCD-微型机与应用" src="/wp-content/uploads/2011/06/CSCD-微型机与应用.jpg" alt=""  />](/wp-content/uploads/2011/06/CSCD-微型机与应用.jpg)到05年就不被CSCD收录了。要不要发表出去呢？曾锋老师说发表算了。然后我就说计算机系统应用一个月了，还没有出结果。然后他查了下，计算机系统应用是CSCD，叫我再等等。那就再等等吧。
 
 下面copy网上的计算机类核心期刊排名，估计过时了吧。
 

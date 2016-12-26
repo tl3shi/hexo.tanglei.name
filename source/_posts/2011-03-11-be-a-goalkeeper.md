@@ -4,8 +4,7 @@ title: 当守门员还是有潜力滴
 date: 2011-03-11T11:54:03+00:00
 author: tanglei
 layout: post
-guid: http://www.tanglei.name/%e5%bd%93%e5%ae%88%e9%97%a8%e5%91%98%e8%bf%98%e6%98%af%e6%9c%89%e6%bd%9c%e5%8a%9b%e6%bb%b4/
-permalink: be-a-goalkeeper
+guid: /blog/%e5%bd%93%e5%ae%88%e9%97%a8%e5%91%98%e8%bf%98%e6%98%af%e6%9c%89%e6%bd%9c%e5%8a%9b%e6%bb%b4.html
 duoshuo_thread_id:
   - 1351844048792453171
 categories:

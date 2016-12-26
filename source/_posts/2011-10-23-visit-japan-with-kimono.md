@@ -5,7 +5,6 @@ date: 2011-10-23T22:09:00+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1242
-permalink: visit-japan-with-kimono
 duoshuo_thread_id:
   - 1351844048792453223
 categories:
@@ -24,15 +23,15 @@ tags:
 穿和服、泡温泉、睡榻榻米、品尝正宗日餐……也许这是很多从大山里走出来的孩子从不敢想象的，今天，这些都成了现实。23日傍晚，中国宋庆龄基金会“丰田助学基金”项目访日交流团一行入住富士山脚下的温泉宾馆，20多名来自中国中西部地区的学子们得以有机会亲身感受这些独具特色的生活体验。
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/30/30.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AA/30/30.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/30/30.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AA/30/30.jpg" alt=""  /></a>
 </p>
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/31/31.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AA/31/31.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/31/31.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AA/31/31.jpg" alt=""  /></a>
 </p>
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/32/32.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AA/32/32.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/32/32.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AA/32/32.jpg" alt=""  /></a>
 </p>
 
 <p style="text-indent: 0px;" align="center">
@@ -48,7 +47,7 @@ tags:
 他们是一群普通而又不普通的年轻人。说他们普通，是因为他们有着和同龄人一样的朝气与梦想，而他们的不普通，在于他们大多在极端艰苦的生活条件下，玉汝于成，自强不息，成长为国家的栋梁之才。在参加此次交流活动22名学生中，2名已被确定保送攻读北京大学、清华大学的研究生，多名学生被保送到本校研究生部就读。他们没有辜负“丰田助学基金”对他们的资助，在体验了“受助”的幸福后，他们正在慢慢学着“自助”，甚至“助人”，用一颗感恩之心，体会给予的快乐。
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/35/35.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AA/35/35.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/35/35.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AA/35/35.jpg" alt=""  /></a>
 </p>
 
 学子感言：

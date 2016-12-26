@@ -5,15 +5,11 @@ date: 2011-05-10T15:54:45+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=641
-permalink: 2011-tencent-sencond-interview
 duoshuo_thread_id:
   - 1351844048792453132
 categories:
   - 实习那些事儿
 tags:
-  - 2011腾讯实习生
-  - 腾讯二面
-  - 腾讯技术二面
   - 腾讯面经
 ---
 本来开始以为要今天晚上给打点话通知我一面结果和何时参加二面滴。结果昨晚12点左右的时候接到电话通知我今天下午4点参加2面。这次打电话哥们用座机打滴，听语气就感觉没有昨天那哥们好了。

@@ -5,18 +5,15 @@ date: 2011-01-08T13:50:35+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=303
-permalink: linux-fork
 duoshuo_thread_id:
   - 1351844048792453317
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - 'Linux&amp;Ubuntu'
+  - 'Linux'
 tags:
-  - fork
   - Linux
-  - 进程
 ---
 今天写实验报告。遇到了fork函数。网上看了下。总结如下：
   

@@ -5,7 +5,6 @@ date: 2011-04-13T08:29:18+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=431
-permalink: eclipse_metric
 duoshuo_thread_id:
   - 1351844048792453281
 categories:
@@ -18,7 +17,7 @@ tags:
 软件度量的课就要这么完了，都还没有感觉呀。要检查项目，用了eclipse的插件，metrics感觉还不错。不过有的结果不知道啥意思，网上查了下，结合自己的理解，在这里记下来了，分享了。刚开始准备就在图片里面写写了事，不过有的太长了。还是另外再加些内容吧。
 
 <p style="text-align: center;">
-  <a href="/wp-content/uploads/2011/04/eclipse_metrics.jpg" target="_blank"><img class="aligncenter size-medium wp-image-432" title="eclipse_metrics" src="/wp-content/uploads/2011/04/eclipse_metrics-300x144.jpg" alt="" width="300" height="144" /></a>
+  <a href="/wp-content/uploads/2011/04/eclipse_metrics.jpg" target="_blank"><img class="aligncenter size-medium wp-image-432" title="eclipse_metrics" src="/wp-content/uploads/2011/04/eclipse_metrics.jpg" alt=""  /></a>
 </p>
 
 主要参考内容来自：<http://metrics.sourceforge.net/>

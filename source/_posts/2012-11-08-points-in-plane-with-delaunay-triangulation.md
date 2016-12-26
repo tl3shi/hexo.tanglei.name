@@ -5,16 +5,11 @@ date: 2012-11-08T00:36:23+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2018
-permalink: points-in-plane-with-delaunay-triangulation
 duoshuo_thread_id:
   - 1351844048792453264
 categories:
   - 计算机图形学
 tags:
-  - bowyer-watson
-  - delaunay
-  - lawson
-  - 三角剖分
 ---
 <p style="text-align: justify;">
   <span style="font-size: 10pt;">作业中遇到三角剖分的问题，关键字&#8221;三角剖分&#8221;出来最多的就是&#8221;Delaunay&#8221;三角剖分，整理了下相关资料，记录备忘。<br /> </span>

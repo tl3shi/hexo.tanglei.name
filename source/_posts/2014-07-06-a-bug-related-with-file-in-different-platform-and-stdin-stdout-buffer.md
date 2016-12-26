@@ -5,7 +5,6 @@ date: 2014-07-06T15:02:44+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2494
-permalink: a-bug-related-with-file-in-different-platform-and-stdin-stdout-buffer
 duoshuo_thread_id:
   - 1351844048792453508
 enable_highlight:
@@ -15,10 +14,6 @@ categories:
   - Windows
   - 敲敲代码
 tags:
-  - 微软秋令营
-  - 换行符
-  - 缓冲区
-  - 跨平台
 ---
 此坑是参加微软秋令营活动下午编程测试时踩上的，编程测试题目本身不算难，难的是……对于没有ACM之类比赛的同学来说，要按照其要求读入输入和输出相应格式的结果来说就呵呵了。一个小算法总共可能花40分钟的时间，有30分钟的时间是用来解决输入输出的。对于平时在实验室写项目的同学来说，应该不会有太多的机会去写底层std io 和 file io，应该都封装好了，写具体逻辑吧。 不过从另外一个方面也说明了自己基础还是掌握得不牢固呀~比如不记得控制精度输出的函数等之类的。另外提醒下做类似的题目得小心输入输出格式及下面要讲到的缓冲区的问题。
 
@@ -28,15 +23,15 @@ tags:
 
 下图SampleInput是U盘copy到mac上的文本文件(Windows环境下生成的)，SampleInput2.txt是在mac下打开SampleInput.txt的内容，然后copy再保存的，**表面**内容是一样的。
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image" src="/wp-content/uploads/2014/07/Image_thumb.jpg" alt="Image" width="375" height="245" border="0" />](/wp-content/uploads/2014/07/Image.jpg)
+[<img title="Image" src="/wp-content/uploads/2014/07/Image_thumb.jpg" alt="Image"  />](/wp-content/uploads/2014/07/Image.jpg)
 
 然后看下面的代码，就是读取文件里面的前两行并输出。
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(1)" src="/wp-content/uploads/2014/07/Image1_thumb.jpg" alt="Image(1)" width="417" height="249" border="0" />](/wp-content/uploads/2014/07/Image1.jpg)
+[<img title="Image(1)" src="/wp-content/uploads/2014/07/Image1_thumb.jpg" alt="Image(1)"  />](/wp-content/uploads/2014/07/Image1.jpg)
 
 (g++编译)运行结果：
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(2)" src="/wp-content/uploads/2014/07/Image2_thumb.jpg" alt="Image(2)" width="384" height="119" border="0" />](/wp-content/uploads/2014/07/Image2.jpg)
+[<img title="Image(2)" src="/wp-content/uploads/2014/07/Image2_thumb.jpg" alt="Image(2)"  />](/wp-content/uploads/2014/07/Image2.jpg)
 
 前面也提到结果是因为Win下换行符和Mac下换行符的不一致的问题，不过思考下输入SampleInput.txt的**输出结果为啥是**?
 
@@ -47,17 +42,17 @@ tags:
 
 vim -b file 可以看到^M~ （注意替换^M时输入应该是：ctrl+v,ctrl+m / 也可以用\r）
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(3)" src="/wp-content/uploads/2014/07/Image3_thumb.jpg" alt="Image(3)" width="569" height="100" border="0" />](/wp-content/uploads/2014/07/Image3.jpg)
+[<img title="Image(3)" src="/wp-content/uploads/2014/07/Image3_thumb.jpg" alt="Image(3)"  />](/wp-content/uploads/2014/07/Image3.jpg)
 
 vim 打开后,通过命令 **:%!xxd** 可以查看文件二进制格式，【新技能Get】。
 
 SampleInput2.txt
   
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(4)" src="/wp-content/uploads/2014/07/Image4_thumb.jpg" alt="Image(4)" width="473" height="72" border="0" />](/wp-content/uploads/2014/07/Image4.jpg)
+[<img title="Image(4)" src="/wp-content/uploads/2014/07/Image4_thumb.jpg" alt="Image(4)"  />](/wp-content/uploads/2014/07/Image4.jpg)
 
 SampleInput.txt
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(5)" src="/wp-content/uploads/2014/07/Image5_thumb.jpg" alt="Image(5)" width="491" height="67" border="0" />](/wp-content/uploads/2014/07/Image5.jpg)
+[<img title="Image(5)" src="/wp-content/uploads/2014/07/Image5_thumb.jpg" alt="Image(5)"  />](/wp-content/uploads/2014/07/Image5.jpg)
 
 查看ASCii表，0a(10)换行, 0d(13)回车，&#8221;回车&#8221;是告诉打字机把打印头定位在左边界；&#8221;换行&#8221;，告诉打字机把纸向下移一行（参考[回车与换行](http://www.ruanyifeng.com/blog/2006/04/post_213.html)：原文说windows行末是\r\n, linux/unix是\n, 而mac是\r，不过从上面可以看出我的mac osx也是\n, Ruanyifeng06年post的这篇，应该是Apple做了改变和unix/linux保持一致了吧?）。
 
@@ -79,7 +74,7 @@ void testr()
 
 另外，提醒下Xcode IDE运行的输出结果跟控制台输出的运行结果是**不一致**的。XCode IDE输出应该是解析到\r就输出了吧，标准控制台的话仍然是跟上面的分析一致。
   
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Image(6)" src="/wp-content/uploads/2014/07/Image6_thumb.jpg" alt="Image(6)" width="435" height="118" border="0" />](/wp-content/uploads/2014/07/Image6.jpg)
+[<img title="Image(6)" src="/wp-content/uploads/2014/07/Image6_thumb.jpg" alt="Image(6)"  />](/wp-content/uploads/2014/07/Image6.jpg)
 
 Ref:
 

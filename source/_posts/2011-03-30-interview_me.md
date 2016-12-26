@@ -5,16 +5,13 @@ date: 2011-03-30T15:00:01+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=369
-permalink: interview_me
 duoshuo_thread_id:
   - 1351844048792453307
 categories:
   - MyLife
   - 软件学院
 tags:
-  - 唐磊
   - 软件学院
-  - 采访
 ---
 高调的转载下学院网站的报道……以下内容转自：“<a href="http://software.csu.edu.cn/SoftwareSite/article.do?atcID=764" target="_blank">http://software.csu.edu.cn/SoftwareSite/article.do?atcID=764</a>”
 
@@ -26,7 +23,7 @@ tags:
 
 3月17日晚６点，唐磊本人于百忙之中接受了笔者的采访。
 
-[<img class="aligncenter size-full wp-image-370" title="interview_me" src="/wp-content/uploads/2011/03/interview_me.jpg" alt="" width="432" height="322" />](/wp-content/uploads/2011/03/interview_me.jpg)
+[<img class="aligncenter size-full wp-image-370" title="interview_me" src="/wp-content/uploads/2011/03/interview_me.jpg" alt=""  />](/wp-content/uploads/2011/03/interview_me.jpg)
 
 采访过程中，笔者了解到唐磊同学的家境并不是很宽裕，但是他并没有以此为借口来放纵自己，而是以此来激励自己上进。一进大学他便明确了自己在大学期间的目标，“读大学，坚决不用家里的一分钱”，其中所包含的困难与压力可想而知。他说：“大学第一年真的很困难。”但在艰难的条件下，他逆流而上，将压力转化为动力。学习上，他满怀兴趣、认真刻苦地学习专业课知识；工作中，他踏实负责地做好班里的工作；生活上，他不忘发展自己的兴趣爱好，联系志同道合的同学一起学吹笛子。正是这种坚毅勇敢、兢兢业业、积极向上的精神，使他在学习、工作、生活三方面齐头并进，成为德、智、体全面发展的优秀大学生。大一时他便已经成功获得了多项奖学金，不仅使他渡过了经济上的难关，也是对他付出的一种肯定。他笑着对我们说：“到现在我真的做到了没用家里的一分钱读大学。”而在微笑背后，他身上那种常人难有的坚持与乐观，以及他所承受的压力和在这过程中所付出的汗水都是值得我们深思和学习的。
 

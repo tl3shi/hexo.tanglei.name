@@ -5,7 +5,6 @@ date: 2011-10-22T21:58:58+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1227
-permalink: visit-japan-feel-japanese-curlture
 duoshuo_thread_id:
   - 1351844048792453196
 categories:
@@ -26,19 +25,19 @@ tags:
 走出国会议事堂，天空中飘起濛濛细雨，但这丝毫不会影响学子们兴奋的心情。
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/27/27.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AA/27/27.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/27/27.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AA/27/27.jpg" alt=""  /></a>
 </p>
 
 皇居是江户幕府历代将军的住所，现在是日本天皇及其家眷的住所。皇居周围有护城河环绕，皇居外的松树被修剪得造型精致，展现出蓬勃的朝气。
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/28/28.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AA/28/28.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/28/28.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AA/28/28.jpg" alt=""  /></a>
 </p>
 
 浅草寺是东京都内最古老的寺庙，建于628年，这里保留了传统的日本寺庙建筑形式与佛教仪式。浅草寺内，从洗涤、熏香、膜拜到抽签、祈福，可以完整体验一次日本的传统信仰文化，因此前来游玩的访客络绎不绝。
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/29/29.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AA/29/29.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/29/29.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AA/29/29.jpg" alt=""  /></a>
 </p>
 
     学子感言：

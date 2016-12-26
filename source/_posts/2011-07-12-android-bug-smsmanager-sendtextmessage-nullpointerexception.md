@@ -5,15 +5,12 @@ date: 2011-07-12T13:45:54+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=972
-permalink: android-bug-smsmanager-sendtextmessage-nullpointerexception
 duoshuo_thread_id:
   - 1351844048792453192
 categories:
   - coding小工具
 tags:
-  - android
-  - 短信发送
-  - 空指针异常
+  - Android
 ---
 昨晚继续写我的短信群发小工具，但遇到manager.sendTextMessage(info.getTelephone(), null, info.getSmsContent(), sentPi, null);总是报空指针。
 

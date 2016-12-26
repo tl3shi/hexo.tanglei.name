@@ -5,7 +5,6 @@ date: 2011-06-28T16:34:38+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=944
-permalink: android-get-contacts
 duoshuo_thread_id:
   - 1351844048792453434
 enable_highlight:
@@ -13,8 +12,6 @@ enable_highlight:
 categories:
   - coding小工具
 tags:
-  - android获取通讯录
-  - 获取联系人信息
 ---
 前面讲的发送短信就这样吧。能发就行了。不考虑啥性能效率的问题的话，就一个for循环就群发了。至于我想象当中的定制的消息的话，就是获取联系人，匹配短信模版，正则替换得到定制的独一无二的短信。现在就是要获取联系人。最简单的方法就是如下
 
@@ -56,7 +53,7 @@ public class SimpleContact extends ListActivity
 }
 ```
 
-效果如下[<img src="/wp-content/uploads/2011/06/android-get-contact.jpg" alt="android获取通讯录" title="android获取联系人" width="243" height="325" class="aligncenter size-full wp-image-945" />](/wp-content/uploads/2011/06/android-get-contact.jpg)
+效果如下[<img src="/wp-content/uploads/2011/06/android-get-contact.jpg" alt="android获取通讯录" title="android获取联系人"  class="aligncenter size-full wp-image-945" />](/wp-content/uploads/2011/06/android-get-contact.jpg)
   
 原以为想到，直接将显示的每一个item小的那个字段直接搞成电话号码就行了。现在看来我为啥会那样想呢。。自己手机里的一个联系人有2个电话也是常有的事情啊，那得现实哪个？所以报错啊之类就很正常了。
   

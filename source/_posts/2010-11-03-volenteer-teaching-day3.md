@@ -5,7 +5,6 @@ date: 2010-11-03T12:57:52+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=202
-permalink: volenteer-teaching-day3
 duoshuo_thread_id:
   - 1351844048792453234
 categories:
@@ -26,7 +25,7 @@ tags:
   </p>
   
   <p class="MsoNormal" style="text-indent: 21pt; margin: 0cm 0cm 0pt;">
-    <span lang="EN-US"><a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/3-1.png" target="_blank"><img style="background: none transparent scroll repeat 0% 0%;" src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/3-1.png" alt="图片" width="494" height="360" /></a></span>
+    <span lang="EN-US"><a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/3-1.png" target="_blank"><img src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/3-1.png" alt="图片"  /></a></span>
   </p>
   
   <p class="MsoNormal" style="text-indent: 21pt; margin: 0cm 0cm 0pt;">

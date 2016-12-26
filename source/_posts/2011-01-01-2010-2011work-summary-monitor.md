@@ -5,14 +5,12 @@ date: 2011-01-01T11:19:31+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=268
-permalink: 2010-2011work-summary-monitor
 duoshuo_thread_id:
   - 1351844048792453190
 categories:
   - 软件0804
 tags:
   - 工作总结
-  - 班长
   - 软件0804
 ---
 <p style="text-align: center;">

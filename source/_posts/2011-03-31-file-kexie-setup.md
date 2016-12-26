@@ -5,14 +5,12 @@ date: 2011-03-31T15:03:09+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=377
-permalink: file-kexie-setup
 duoshuo_thread_id:
   - 1351844048792453392
 categories:
   - 软件学院
 tags:
   - 大学生科协
-  - 文件
   - 软件学院
 ---
 ## 关于成立软件学院大学生科学技术协会的决定

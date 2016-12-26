@@ -5,14 +5,12 @@ date: 2011-06-06T17:26:38+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=765
-permalink: cmm-exam-choose
 duoshuo_thread_id:
   - 1351844048792453302
 categories:
   - SoftwareEngineering
 tags:
   - CMM
-  - CMM考点
   - 软件能力成熟度模型
   - 软件过程改进
 ---

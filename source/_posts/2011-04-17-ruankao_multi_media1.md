@@ -5,16 +5,11 @@ date: 2011-04-17T13:58:56+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=467
-permalink: ruankao_multi_media1
 duoshuo_thread_id:
   - 1351844048792453452
 categories:
   - 软考
 tags:
-  - 图形和图像
-  - 多媒体
-  - 视频
-  - 音频
 ---
 **1****、多媒体知识：**
 

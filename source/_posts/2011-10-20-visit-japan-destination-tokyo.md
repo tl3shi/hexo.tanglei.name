@@ -5,7 +5,6 @@ date: 2011-10-20T19:35:14+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1215
-permalink: visit-japan-destination-tokyo
 duoshuo_thread_id:
   - 1351844048792453205
 categories:
@@ -28,15 +27,15 @@ tags:
 对于不少受助学生来说，这是他们第一次出国、第一次乘坐飞机，心中有大大的兴奋，也有些小小的忐忑。在机场，学子们与中国宋庆龄基金会基金部副部长李晓峰、丰田汽车（中国）投资有限公司公益活动课课长范广宁会合，照下第一张全家福。美好的日本之旅，就要开始啦~~
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/15/15.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AA/15/15.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/15/15.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AA/15/15.jpg" alt=""  /></a>
 </p>
 
 抵达东京的第一站，就是参观东京丰田本部，与丰田公司社会贡献部的员工交流。倾心的交谈，热情的合影，大大拉近了彼此的距离，“丰田助学基金”似乎早已让大家成为一家人~~
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/16/16.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AA/16/16.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/16/16.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AA/16/16.jpg" alt=""  /></a>
 </p>
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/17/17.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AA/17/17.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/17/17.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AA/17/17.jpg" alt=""  /></a>
 </p>

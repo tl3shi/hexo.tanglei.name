@@ -5,7 +5,6 @@ date: 2010-12-22T13:37:58+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=141
-permalink: softarchexa
 duoshuo_thread_id:
   - 1351844048792453466
 categories:

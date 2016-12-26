@@ -5,7 +5,6 @@ date: 2011-10-23T22:03:13+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1236
-permalink: visit-japan-touch-fuji-mount
 duoshuo_thread_id:
   - 1351844048792453250
 categories:
@@ -28,19 +27,19 @@ tags:
 </p>
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/2D/2D.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AA/2D/2D.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/2D/2D.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AA/2D/2D.jpg" alt=""  /></a>
 </p>
 
 途中，交流团一行经过日本旅游胜地大涌谷。大涌谷是大约40万年前箱根火山活动的末期，神山的北山腹发生的火山大喷发形成的火山口遗迹。大涌谷地上的泉水大部分是有毒的，现在，大涌谷每天仍在不断地由地下喷出大量水蒸气和火山瓦斯，走近大涌谷一带就会闻到扑鼻的硫黄臭味。
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/2E/2E.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AA/2E/2E.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/2E/2E.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AA/2E/2E.jpg" alt=""  /></a>
 </p>
 
 大涌谷有种特产——黑玉子，就是黑鸡蛋。黑鸡蛋是用温泉蒸煮的，蛋黄比其他的鸡蛋都要鲜美。据日本传说，吃一枚黑鸡蛋可以延寿7年，大家都来尝尝鲜~
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/2F/2F.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AA/2F/2F.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/2F/2F.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AA/2F/2F.jpg" alt=""  /></a>
 </p>
 
     学子感言：

@@ -8,13 +8,11 @@ excerpt: |
   It's simple But very chongshiable【充实able】.o(∩_∩)o 哈哈
 layout: post
 guid: http://www.tanglei.name/?p=11
-permalink: mylife_simple
 duoshuo_thread_id:
   - 1351844048792453231
 categories:
   - MyLife
 tags:
-  - life
 ---
 that&#8217;s my life.
   

@@ -5,14 +5,11 @@ date: 2012-02-22T21:59:12+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1457
-permalink: renren-uses-plain-code
 duoshuo_thread_id:
   - 1351844048792453143
 categories:
   - 经验技巧
 tags:
-  - 人人网
-  - 明文传输
   - 网络安全
   - 腾讯
 ---
@@ -20,7 +17,7 @@ tags:
 
 随便用google的开发人员工具抓包就能看到，当然你也可以用httpwatch，firedebug，fiddler等等抓包看看。
 
-<img class="alignnone" title="人人网V.S腾讯密码传输" src="http://i1123.photobucket.com/albums/l549/tl3shi/renren_tencent1.jpg" alt="" width="677" height="417" data-pinit="registered" />
+<img class="alignnone" title="人人网V.S腾讯密码传输" src="http://i1123.photobucket.com/albums/l549/tl3shi/renren_tencent1.jpg" alt=""  data-pinit="registered" />
 
 可以看到，人人网登陆虽然用POST传输，也能看到提交的form表单，用户名和密码。图中下半部分是我抓webQQ的登陆时提交的表单。其实，腾讯所有的产品，其登陆都由统一的部门管理。其他产品例如朋友网，腾讯微博根本就不知道用户输入的密码是什么，其判断是否登陆成功只能通过cookie来判断，你也可以试试，禁用浏览器的coockie，再去登陆类似朋友网，腾讯微博之类的，看是否能登陆成功。
 

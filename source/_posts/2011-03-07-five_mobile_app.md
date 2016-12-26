@@ -5,18 +5,12 @@ date: 2011-03-07T13:22:23+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=349
-permalink: five_mobile_app
 duoshuo_thread_id:
   - 1351844048792453330
 categories:
   - 业界动态
   - 开开眼界
 tags:
-  - bump
-  - Google Goggles
-  - My Name Is E
-  - SnapDat
-  - 名片
 ---
 以下内容转自：http://android.guao.hk/tag/bump
 
@@ -42,7 +36,7 @@ tags:
   </p>
   
   <p style="text-align: center;">
-    <strong><a href="http://android.guao.hk/wp-content/uploads/2011/01/business-cards-01.jpg"><img class="size-full wp-image-9970 aligncenter" title="business cards 01" src="http://android.guao.hk/wp-content/uploads/2011/01/business-cards-01.jpg" alt="" width="408" height="329" /></a></strong>
+    <strong><a href="http://android.guao.hk/wp-content/uploads/2011/01/business-cards-01.jpg"><img class="size-full wp-image-9970 aligncenter" title="business cards 01" src="http://android.guao.hk/wp-content/uploads/2011/01/business-cards-01.jpg" alt=""  /></a></strong>
   </p>
   
   <p>
@@ -74,7 +68,7 @@ tags:
   </p>
   
   <p style="text-align: center;">
-    <a href="http://android.guao.hk/wp-content/uploads/2011/01/business-cards-02.jpg"><img class="size-full wp-image-9971 aligncenter" title="business cards 02" src="http://android.guao.hk/wp-content/uploads/2011/01/business-cards-02.jpg" alt="" width="450" height="222" /></a>
+    <a href="http://android.guao.hk/wp-content/uploads/2011/01/business-cards-02.jpg"><img class="size-full wp-image-9971 aligncenter" title="business cards 02" src="http://android.guao.hk/wp-content/uploads/2011/01/business-cards-02.jpg" alt=""  /></a>
   </p>
   
   <p>
@@ -98,7 +92,7 @@ tags:
   </p>
   
   <p>
-    <strong><img class="aligncenter size-full wp-image-9972" title="business cards 03" src="http://android.guao.hk/wp-content/uploads/2011/01/business-cards-03.jpg" alt="" width="208" height="190" /></strong>
+    <strong><img class="aligncenter size-full wp-image-9972" title="business cards 03" src="http://android.guao.hk/wp-content/uploads/2011/01/business-cards-03.jpg" alt=""  /></strong>
   </p>
   
   <p>
@@ -134,7 +128,7 @@ tags:
   </p>
   
   <p>
-    <strong><img class="aligncenter size-full wp-image-9973" title="business cards 04" src="http://android.guao.hk/wp-content/uploads/2011/01/business-cards-04.jpg" alt="" width="250" height="204" /></strong>
+    <strong><img class="aligncenter size-full wp-image-9973" title="business cards 04" src="http://android.guao.hk/wp-content/uploads/2011/01/business-cards-04.jpg" alt=""  /></strong>
   </p>
   
   <p>
@@ -166,7 +160,7 @@ tags:
   </p>
   
   <p>
-    <strong><img class="aligncenter size-full wp-image-9974" title="business cards 05" src="http://android.guao.hk/wp-content/uploads/2011/01/business-cards-05.jpg" alt="" width="489" height="310" /></strong>
+    <strong><img class="aligncenter size-full wp-image-9974" title="business cards 05" src="http://android.guao.hk/wp-content/uploads/2011/01/business-cards-05.jpg" alt=""  /></strong>
   </p>
   
   <p>

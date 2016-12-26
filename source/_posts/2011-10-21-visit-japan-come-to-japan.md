@@ -5,7 +5,6 @@ date: 2011-10-21T21:55:14+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1224
-permalink: visit-japan-come-to-japan
 duoshuo_thread_id:
   - 1351844048792453213
 categories:
@@ -25,7 +24,7 @@ tags:
 21日上午，中国宋庆龄基金会“丰田助学基金”项目访日交流团到龟甲万酱油工厂参观。这家创始于17世纪千叶县野田市的酱油厂，至今仍然采用野田300年来一直遵守的酿造方法制造酱油。
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/1A/1A.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AA/1A/1A.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/1A/1A.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AA/1A/1A.jpg" alt=""  /></a>
 </p>
 
 随后，交流团一行来到宫崎骏美术馆，欣赏这位艺术大师的精美创作。
@@ -37,15 +36,15 @@ tags:
 下午，交流团的学子们来到日本知名的早稻田大学，参观校园，并与那里的学生交流。近3个小时的交流，拉近了中日学生间的距离。正如南昌大学的海龙所说，大家仿佛已经成了“哥们儿”，融洽的交流氛围让置身其中的人们无不感到亲切和温暖。
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/1C/1C.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AA/1C/1C.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/1C/1C.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AA/1C/1C.jpg" alt=""  /></a>
 </p>
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/1D/1D.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AA/1D/1D.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/1D/1D.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AA/1D/1D.jpg" alt=""  /></a>
 </p>
 
 <p style="text-indent: 0px;" align="center">
-  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/1E/1E.jpg" target="_blank"><img style="width: 500px; height: 333px;" src="http://misc.home.news.cn/public/images/original/00/40/AA/1E/1E.jpg" alt="" width="500" height="333" border="0" /></a>
+  <a href="http://misc.home.news.cn/public/images/original/00/40/AA/1E/1E.jpg" target="_blank"><img src="http://misc.home.news.cn/public/images/original/00/40/AA/1E/1E.jpg" alt=""  /></a>
 </p>
 
 学子感言：

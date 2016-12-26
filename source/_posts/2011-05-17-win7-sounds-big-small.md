@@ -5,15 +5,12 @@ date: 2011-05-17T10:02:00+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=661
-permalink: win7-sounds-big-small
 duoshuo_thread_id:
   - 1351844048792453182
 categories:
   - Windows
   - 经验技巧
 tags:
-  - win7
-  - 音频设备
 ---
 正在听歌，然后发现QQ来消息了，歌声突然变小了。然后插入耳机，再取出，声音又还原了。刚开始一直在想是哪里出问题了。驱动啥的有问题还是其他。后来网上一查，才发现原来我已经out了。
 
@@ -34,7 +31,7 @@ tags:
 如下图：
 
 <div id="attachment_662" style="width: 232px" class="wp-caption aligncenter">
-  <a href="/wp-content/uploads/2011/05/d.png"><img class="size-medium wp-image-662" title="win7声音忽大忽小" src="/wp-content/uploads/2011/05/d-222x300.png" alt="" width="222" height="300" /></a>
+  <a href="/wp-content/uploads/2011/05/d.png"><img class="size-medium wp-image-662" title="win7声音忽大忽小" src="/wp-content/uploads/2011/05/d.png" alt=""  /></a>
   
   <p class="wp-caption-text">
     声音忽大忽小

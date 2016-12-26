@@ -5,14 +5,11 @@ date: 2011-04-25T04:07:47+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=512
-permalink: metrics_softwaremetrics1
 duoshuo_thread_id:
   - 1351844048792453396
 categories:
   - 软件度量及其应用
 tags:
-  - FP
-  - Function Points
   - 软件度量
 ---
 ##  基本概念
@@ -97,7 +94,7 @@ tags:
 
             难以度量，但由内部属性所决定
 
-** <img class="alignnone" title="两个层次" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image002.gif" alt="" width="389" height="210" />**
+** <img class="alignnone" title="两个层次" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image002.gif" alt=""  />**
 
 ## Function Points
 
@@ -123,7 +120,7 @@ Number of **external interfaces**: All machine-readable interfaces (e.g. data f
 
 **例题：**
 
-** <img class="alignnone" title="demo" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image004.gif" alt="" width="317" height="216" /><img class="alignnone" title="anwser" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image006.jpg" alt="" width="305" height="189" />**
+** <img class="alignnone" title="demo" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image004.gif" alt=""  /><img class="alignnone" title="anwser" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image006.jpg" alt=""  />**
 
 ## Steps to Useful Software Metrics
 

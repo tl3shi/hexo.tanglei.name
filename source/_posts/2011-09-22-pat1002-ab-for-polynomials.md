@@ -5,7 +5,6 @@ date: 2011-09-22T14:04:15+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1162
-permalink: pat1002-ab-for-polynomials
 duoshuo_thread_id:
   - 1351844048792453427
 enable_highlight:

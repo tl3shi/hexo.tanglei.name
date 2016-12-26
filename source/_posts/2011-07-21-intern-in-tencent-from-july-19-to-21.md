@@ -4,8 +4,7 @@ title: 腾讯实习日志-7.19—7.21
 date: 2011-07-21T23:23:29+00:00
 author: tanglei
 layout: post
-guid: http://www.tanglei.name/%e8%85%be%e8%ae%af%e5%ae%9e%e4%b9%a0%e6%97%a5%e5%bf%97-7-19%e2%80%947-21/
-permalink: intern-in-tencent-from-july-19-to-21
+guid: /blog/%e8%85%be%e8%ae%af%e5%ae%9e%e4%b9%a0%e6%97%a5%e5%bf%97-7-19%e2%80%947-21.html
 duoshuo_thread_id:
   - 1351844048792453148
 categories:

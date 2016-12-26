@@ -5,15 +5,11 @@ date: 2011-04-16T12:34:22+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=446
-permalink: computer_system3
 duoshuo_thread_id:
   - 1351844048792453224
 categories:
   - 软考
 tags:
-  - 可靠性评价
-  - 计算机体系结构
-  - 计算机的安全
 ---
 **1.6** **计算机总线结构** 
 

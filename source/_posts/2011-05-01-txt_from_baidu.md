@@ -5,22 +5,19 @@ date: 2011-05-01T08:50:38+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=579
-permalink: txt_from_baidu
 duoshuo_thread_id:
   - 1351844048792453362
 categories:
   - 经验技巧
 tags:
-  - 免费获取百度文库内容
-  - 破解百度文库
 ---
 刚YY问我有没有百度文库帐号，希望下载里面一个word文档。但得5个积分。。我也没有啊。最开始是试图搜索其他网络资源。docin文档有破解软件直接就可以得到了。但还是搜不到。然后就想……提交一个请求到百度文库之后，百度文库已经把相应的内容响应返回给客户端了。然后在页面上是以flash的方式展示出来滴。于是就试图找到那个flash文件。到浏览器的临时文件夹下面，为了方便。在提交请求之前先扇出以前的临时文件，然后提交请求。在去临时文件目录查找刚刚这一次请求产生的临时文件。不过看了下，没有flash文件。只有两个相关连滴，如图所示：
 
-[<img class="size-medium wp-image-580" title="wk" src="/wp-content/uploads/2011/05/wk-300x80.jpg" alt="破解百度文库" width="300" height="80" />](/wp-content/uploads/2011/05/wk.jpg)
+[<img class="size-medium wp-image-580" title="wk" src="/wp-content/uploads/2011/05/wk.jpg" alt="破解百度文库"  />](/wp-content/uploads/2011/05/wk.jpg)
 
 然后想了下，应该就是这个文件是保存了相应的内容了。猜想估计经过百度处理，进行加密啊之类的。展示在html页面的时候再逆向解析出来。结果……居然没有加密。直接copy出来。用记事本之类的文本工具就能现实出来了：
 
-[<img class="size-medium wp-image-581" title="baid" src="/wp-content/uploads/2011/05/baid-300x108.jpg" alt="免费获取百度文库" width="300" height="108" />](/wp-content/uploads/2011/05/baid.jpg)
+[<img class="size-medium wp-image-581" title="baid" src="/wp-content/uploads/2011/05/baid.jpg" alt="免费获取百度文库"  />](/wp-content/uploads/2011/05/baid.jpg)
 
 这样一个json格式{&#8220;totalPage&#8221;:&#8221;4&#8243;,&#8221;fromPage&#8221;:&#8221;1&#8243;,&#8221;toPage&#8221;:&#8221;4&#8243;}数据，是用来展示的时候解析时调用的吧。
 

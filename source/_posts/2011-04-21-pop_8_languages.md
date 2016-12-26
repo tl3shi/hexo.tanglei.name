@@ -5,14 +5,11 @@ date: 2011-04-21T04:03:09+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=480
-permalink: pop_8_languages
 duoshuo_thread_id:
   - 1351844048792453256
 categories:
   - 网络文摘
 tags:
-  - 企业
-  - 编程语言
 ---
 以下内容转自：<http://www.jobbole.com/content.php/1078>
 

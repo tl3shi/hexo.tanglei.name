@@ -5,7 +5,6 @@ date: 2013-01-13T00:57:55+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2037
-permalink: summary-of-year-2012
 duoshuo_thread_id:
   - 1351844048792453265
 categories:
@@ -19,9 +18,9 @@ tags:
 
 还是跟2011的年终总结一样，看看2012的元旦的QQ状态……
 
-[<img title="2012-mood" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; float: left; padding-top: 0px; padding-left: 0px; margin: 2px 10px 5px 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="2012-mood" align="left" src="/wp-content/uploads/2013/01/2012-mood_thumb.jpg" width="497" height="160" />](/wp-content/uploads/2013/01/2012-mood.jpg)
+[<img title="2012-mood" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; float: left; padding-top: 0px; padding-left: 0px; margin: 2px 10px 5px 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="2012-mood" align="left" src="/wp-content/uploads/2013/01/2012-mood_thumb.jpg"  />](/wp-content/uploads/2013/01/2012-mood.jpg)
 
-呃，居然没有。去年元旦貌似去[香港玩](http://www.tanglei.name/my-travel-to-hongkong/)了，当时还在TX实习，从状态可以看出是在抢票，准备从TX离职回家过年了。看时间刚好一年过去了，2012.1.12[办离职手续](http://www.tanglei.name/end-up-with-my-internship-in-tencent/)，参加完部门年会1.13走人了。
+呃，居然没有。去年元旦貌似去[香港玩](/blog/my-travel-to-hongkong.html)了，当时还在TX实习，从状态可以看出是在抢票，准备从TX离职回家过年了。看时间刚好一年过去了，2012.1.12[办离职手续](/blog/end-up-with-my-internship-in-tencent.html)，参加完部门年会1.13走人了。
 
 再后来就是大四下学期了……到THU跟着春哥做毕设，持续了3个月左右吧，写关于序列数据挖掘的一个分类问题，实验差不多在THU写完滴，然后回csu总结毕业论文，得到杨柳老师的悉心指导，但始终没有成就感，一直到后来感觉不能这样白白的写了毕设就完，于是写了一篇小论文，投了个CSCD的中文核心，到最后得以录用(这学期春哥帮忙报销了版面费滴)，毕设论文的事情终于告一段落，虽然现在看来文章真的很水，跟周围大牛的论文根本根本没法比，也不好意思提起……但符合了当时的自己预期目标，也算给自己一个交待吧。
 
@@ -29,7 +28,7 @@ tags:
 
 * * *
 
-从一入学就开始纠结了导师问题，[数据挖掘也就转成了图形学](http://www.tanglei.name/from-datamining-to-graphics/)，现早已成为定局，当初说着自己努努力吧，到现在貌似自己在专业上也没增加多少东东。代码也没写多少，课程也没上好，o(︶︿︶)o 唉，总之悲催滴说。入学的英语考试没过85，孤独的上了一学期英语课(寝室两个考研过来的哥们都免修呀)，还是考研好，考研数学，英语都有基础呀。贾哥的《高等数值分析》课程吧，真没学懂什么，导致最后考试吧，因为没有理解，考前死记硬背真没有效果，还不知道能给多少分。再说说11号的数据挖掘考试吧，唉，总共40分的题目还剩下10多分的题目都没做到交卷时间了，然后就老老实实的交卷了，想着少10分而已嘛，不至于不及格，唉，别提伤心事了。
+从一入学就开始纠结了导师问题，[数据挖掘也就转成了图形学](/blog/from-datamining-to-graphics.html)，现早已成为定局，当初说着自己努努力吧，到现在貌似自己在专业上也没增加多少东东。代码也没写多少，课程也没上好，o(︶︿︶)o 唉，总之悲催滴说。入学的英语考试没过85，孤独的上了一学期英语课(寝室两个考研过来的哥们都免修呀)，还是考研好，考研数学，英语都有基础呀。贾哥的《高等数值分析》课程吧，真没学懂什么，导致最后考试吧，因为没有理解，考前死记硬背真没有效果，还不知道能给多少分。再说说11号的数据挖掘考试吧，唉，总共40分的题目还剩下10多分的题目都没做到交卷时间了，然后就老老实实的交卷了，想着少10分而已嘛，不至于不及格，唉，别提伤心事了。
 
 然后这学期搞了个笛子协会，联合硕姐，与明，HCC等人把THU的笛箫业余爱好者交流的平台搭建起来了，协会成立时间较晚，仅仅搞了一次笛箫团购并没有其他的活动(加上THU场地问题，冬天寒冷)。自己开始还坚持练笛有一段时间，到期末也没练了。自己的笛子水平吧，可能还是有一点点儿的提高，自己心有余力而不足，想着把笛子协会壮大，而自己真的精力有限，水平有限。下学期开学初还得好好研究研究。
 

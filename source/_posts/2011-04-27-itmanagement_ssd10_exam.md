@@ -5,15 +5,12 @@ date: 2011-04-27T06:21:38+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=558
-permalink: itmanagement_ssd10_exam
 duoshuo_thread_id:
   - 1351844048792453329
 categories:
   - 软件项目管理
 tags:
   - IT项目管理考试
-  - SSD10
-  - 模拟试卷
 ---
 软件度量已经考试完毕了。没啥感觉，就那样。接下来就是项目管理了。感谢李魏宏同学共享的试卷。试卷如下：
 
@@ -113,7 +110,7 @@ d. 会计科目表，以便确定完工估算。
 
 8、下面的网络图中，关键路径是哪条?（ A  ）
 
-[<img class="alignleft size-medium wp-image-559" title="itmanagement" src="/wp-content/uploads/2011/04/itmanagement-300x121.png" alt="IT项目管理模拟试题" width="300" height="121" />](/wp-content/uploads/2011/04/itmanagement.png)
+[<img class="alignleft size-medium wp-image-559" title="itmanagement" src="/wp-content/uploads/2011/04/itmanagement.png" alt="IT项目管理模拟试题"  />](/wp-content/uploads/2011/04/itmanagement.png)
 
 a.  开始-A-B-C-D-结束
 

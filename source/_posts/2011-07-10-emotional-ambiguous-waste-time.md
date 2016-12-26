@@ -5,14 +5,11 @@ date: 2011-07-10T23:00:55+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=966
-permalink: emotional-ambiguous-waste-time
 duoshuo_thread_id:
   - 1351844048792453361
 categories:
   - MyLife
 tags:
-  - 暧昧
-  - 青春岁月
 ---
 一个文学院的哥们写的，感觉蛮不错的。转过来。看看。
 

@@ -5,7 +5,6 @@ date: 2010-12-21T15:33:37+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=124
-permalink: java-native-demo
 duoshuo_thread_id:
   - 1351844048792453309
 enable_highlight:
@@ -13,9 +12,8 @@ enable_highlight:
 categories:
   - JAVA
 tags:
-  - java
-  - java基础
-  - native
+  - Java
+  - Java基础
 ---
 研究了下java native方法的例子。网上看了下资料。
   
@@ -181,7 +179,7 @@ nat.sayHello();
 
 再在控制台下执行javac Test.java java Test就能看到结果了。
   
-[<img class="size-full wp-image-125 aligncenter" title="native" src="/wp-content/uploads/2010/12/native1.png" alt="" width="339" height="163" />](/wp-content/uploads/2010/12/native1.png)
+[<img class="size-full wp-image-125 aligncenter" title="native" src="/wp-content/uploads/2010/12/native1.png" alt=""  />](/wp-content/uploads/2010/12/native1.png)
   
 [](/wp-content/uploads/2010/12/native.zip)
 

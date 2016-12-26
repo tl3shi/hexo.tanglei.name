@@ -5,15 +5,12 @@ date: 2011-05-23T18:06:08+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=710
-permalink: search-engine
 duoshuo_thread_id:
   - 1351844048792453293
 categories:
   - SoftwareEngineering
 tags:
-  - 搜索引擎
   - 电子商务
-  - 网络蜘蛛
 ---
 **一、 搜索引擎定义**
   
@@ -39,7 +36,7 @@ l  特点是查找的准确率比较高。
 
 4)         垂直搜索引擎——专注于特定的搜索领域和搜索需求(旅游、机票etc)，在其特定的搜索领域有更好的用户体验。相比通用搜索动辄数千台检索服务器，垂直搜索需要的硬件成本低、用户需求特定、查询的方式多样。Eg:搜驴(chinaevery.com)
 
-**三、**搜索引擎******工作原理** **[<img class="aligncenter size-full wp-image-711" title="search-engine" src="/wp-content/uploads/2011/05/search-engine.jpg" alt="搜索引擎" width="552" height="250" />](/wp-content/uploads/2011/05/search-engine.jpg)**
+**三、**搜索引擎******工作原理** **[<img class="aligncenter size-full wp-image-711" title="search-engine" src="/wp-content/uploads/2011/05/search-engine.jpg" alt="搜索引擎"  />](/wp-content/uploads/2011/05/search-engine.jpg)**
   
 1)         抓取网页：Spider/Crawler/Robot顺着网页中的超链接，连续地抓取网页，被抓取的网页被称之为网页快照。
   

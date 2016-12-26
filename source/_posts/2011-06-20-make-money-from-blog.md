@@ -4,17 +4,15 @@ title: 从blog上赚取的第一桶金
 date: 2011-06-20T20:04:18+00:00
 author: tanglei
 layout: post
-guid: http://www.tanglei.name/%e4%bb%8eblog%e4%b8%8a%e8%b5%9a%e5%8f%96%e7%9a%84%e7%ac%ac%e4%b8%80%e6%a1%b6%e9%87%91/
-permalink: make-money-from-blog
+guid: /blog/%e4%bb%8eblog%e4%b8%8a%e8%b5%9a%e5%8f%96%e7%9a%84%e7%ac%ac%e4%b8%80%e6%a1%b6%e9%87%91.html
 duoshuo_thread_id:
   - 1351844048792453395
 categories:
   - MyLife
-  - wordpress
+  - Wordpress
   - 我做站长
 tags:
-  - wordpress赚钱
-  - 博客赚钱
+  - Wordpress赚钱
 ---
 这两天认识一个新朋友C瓜哥，说起来还真有缘，同是重庆老乡，同是搞计算机滴，不过他计科，我软件而已。跟这他学了不少东西啊。呵呵。
 

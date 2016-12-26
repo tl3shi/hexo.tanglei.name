@@ -5,7 +5,6 @@ date: 2011-07-18T20:58:01+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1035
-permalink: mysql_query_case_sensitive
 duoshuo_thread_id:
   - 1351844048792453279
 enable_highlight:
@@ -14,10 +13,7 @@ enable_highlight:
 categories:
   - PHP
 tags:
-  - Mysql
-  - mysql_query
   - PHP
-  - 大小写区分
 ---
 今天写php代码的时候，发现一个问题，因为我的数据库是用mysqlfront建的，自动添加的字段是Id作为主键。然后我在查询的时候写了这样的代码：
 

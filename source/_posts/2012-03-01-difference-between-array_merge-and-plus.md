@@ -5,7 +5,6 @@ date: 2012-03-01T22:58:22+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1472
-permalink: difference-between-array_merge-and-plus
 duoshuo_thread_id:
   - 1351844048792453340
 enable_highlight:
@@ -13,9 +12,7 @@ enable_highlight:
 categories:
   - PHP
 tags:
-  - array_merge
   - PHP
-  - 数组
 ---
 今天看到群里在讨论php中的array_merge()和+的区别。以前没注意过，今天自己写个例子测试了下，在此备注一下。
   

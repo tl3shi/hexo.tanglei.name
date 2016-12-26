@@ -5,17 +5,13 @@ date: 2011-04-20T13:57:10+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=496
-permalink: ruankao_database5
 duoshuo_thread_id:
   - 1351844048792453267
 categories:
   - 数据库应用
   - 软考
 tags:
-  - 封锁协议
-  - 数据库保护
-  - 数据库安全
-  - 数据库故障
+  - 数据库
 ---
 **1.8****数据库保护******
 

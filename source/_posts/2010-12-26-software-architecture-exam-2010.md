@@ -5,7 +5,6 @@ date: 2010-12-26T13:37:57+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=190
-permalink: software-architecture-exam-2010
 duoshuo_thread_id:
   - 1351844048792453370
 categories:

@@ -5,7 +5,6 @@ date: 2011-08-20T17:26:10+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1125
-permalink: new-version-foxmail-import-old-email-accounts
 duoshuo_thread_id:
   - 1351844048792453240
 categories:
@@ -13,14 +12,12 @@ categories:
   - 经验技巧
 tags:
   - Foxmail
-  - foxmail7导入邮箱
-  - foxmail导入帐号
 ---
 看到foxmail 7 发布了。之前在笔记本上都是用的foxmail，现在换公司电脑了，用outlook，然后那么多帐号又懒得一个一个设置。然后foxmail 7 说是已经支持exchange，然后我就下了安装在公司电脑上，还好安装之后就自动导入了outlook的设置，过滤设置也OK。然后就是希望能够把以前的哪些帐号导入。
 
 在笔记本上用foxmail，本想着直接通过在线升级解决问题，但未成功。然后手动下载安装，安装时，提示说不能直接覆盖以前的目录，因为数据结构等都很大的变化。但我硬是覆盖安装了。运气好，能够导入所有的帐号。
   
-<img class="alignleft" src="/wp-content/uploads/2011/08/082011_0925_foxmail71.png" alt="" width="127" height="176" />
+<img class="alignleft" src="/wp-content/uploads/2011/08/082011_0925_foxmail71.png" alt=""  />
 
 然后就试着想导出帐号设置，再导入到公司的电脑里面，这样就不用我天天开一次笔记本收一次邮件了。结果悲剧的是居然没有导出功能。还试着将什么accounts.cfg之类的配置文件copy到公司电脑中企图能够导入，最终失败。再然后试着将foxmail 7 整个目拷到公司电脑，停止掉以前安装的foxmail7的应用程序，直接点击这个copy过来的相当于绿色版本的，居然能够运行成功，于是乎，就成功的把这些帐号导过来了。然后再试着将以前公司电脑的foxmail7文件夹改名，copy过来的程序仍能够正常运行，再delete掉之前安装的foxmail7. 现在就解决我的帐号导入问题了。
   

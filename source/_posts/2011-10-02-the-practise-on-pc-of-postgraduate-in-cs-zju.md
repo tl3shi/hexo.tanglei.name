@@ -5,16 +5,13 @@ date: 2011-10-02T15:42:04+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1184
-permalink: the-practise-on-pc-of-postgraduate-in-cs-zju
 duoshuo_thread_id:
   - 1351844048792453232
 categories:
   - MyLife
 tags:
   - 保研
-  - 研究生面试
   - 计算机复试
-  - 计算机推免生面试
 ---
 回忆下。25号，在06级学姐王静帮忙下，租了留学生公寓一间房。计算机官网上说的是98单间，180标准间的，结果硬是只租到了标准间。泱泱就睡王静学姐寝室，我就只有……第二天就退房了，想着就算26号走不了，也自己找个去找下有没有便宜的。
 

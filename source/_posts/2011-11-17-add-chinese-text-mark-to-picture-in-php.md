@@ -5,7 +5,6 @@ date: 2011-11-17T19:41:58+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1286
-permalink: add-chinese-text-mark-to-picture-in-php
 duoshuo_thread_id:
   - 1351844048792453420
 enable_highlight:
@@ -15,9 +14,6 @@ categories:
   - 实习那些事儿
 tags:
   - PHP
-  - php中文图片水印
-  - php中文水印乱码
-  - php文字水印乱码
 ---
 昨天接到一个新需求，给图片加文字。用于感恩节还是圣诞节之类的哦。也就是图片加文字水印。网上查了下，很多相关的内容。英文是很好解决滴，不过中文可搞死我了。
 
@@ -87,7 +83,7 @@ function test3(){
 
 Test2                                                            Test3
 
-<img class="alignleft" title="php中文水印乱码" src="/wp-content/uploads/2011/11/111711_1141_Php2.png" alt="php中文水印乱码" width="172" height="245" />
+<img class="alignleft" title="php中文水印乱码" src="/wp-content/uploads/2011/11/111711_1141_Php2.png" alt="php中文水印乱码"  />
 
 ![](/wp-content/uploads/2011/11/111711_1141_Php3.png)
 

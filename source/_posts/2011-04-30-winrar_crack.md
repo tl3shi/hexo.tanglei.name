@@ -5,7 +5,6 @@ date: 2011-04-30T07:54:14+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=571
-permalink: winrar_crack
 duoshuo_thread_id:
   - 1351844048792453209
 enable_highlight:
@@ -14,7 +13,6 @@ enable_highlight:
 categories:
   - 经验技巧
 tags:
-  - winrar破解
 ---
 之前XP里装的winrar都是破解版本滴。由于XP休眠出了点问题，所以现在一般用win7系统。打开压缩文件，常常弹出购买窗口。郁闷……于是破解……简单……
 

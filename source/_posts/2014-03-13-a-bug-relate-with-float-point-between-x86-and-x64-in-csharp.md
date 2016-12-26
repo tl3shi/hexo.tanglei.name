@@ -5,7 +5,6 @@ date: 2014-03-13T23:49:29+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2358
-permalink: a-bug-relate-with-float-point-between-x86-and-x64-in-csharp
 duoshuo_thread_id:
   - 1351844048792453500
 enable_highlight:
@@ -16,13 +15,6 @@ categories:
 tags:
   - bug
   - c++
-  - FPU
-  - x64
-  - x86
-  - 汇编
-  - 浮点乘法
-  - 浮点数
-  - 误差
 ---
 **<font color="red">【update】在<a href="http://coolshell.cn/articles/11235.html">coolshell上本文(一个浮点数跨平台产生的问题)</a>被吐槽了下，在此说明：本文强调的是“合理”结果为什么被“正确”结果替换的原因；另float/double有各自的应用场景，自己应该在速度/精度上有一个权衡；后文说的解决方案是希望产生合理的结果(-202014160)而非正确的结果，不是说想通过编译参数来提高精度。求别吐槽我不知道直接用double就能得到正确且合理的结果了。若带来误解还请原谅～</font>**
 

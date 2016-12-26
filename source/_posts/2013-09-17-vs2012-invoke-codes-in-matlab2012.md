@@ -5,14 +5,12 @@ date: 2013-09-17T23:25:57+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=2200
-permalink: vs2012-invoke-codes-in-matlab2012
 duoshuo_thread_id:
   - 1351844048792453489
 categories:
   - 敲敲代码
 tags:
   - c++
-  - matlab
   - VS2012
 ---
 网上一大片此类文章，这里主要说下matlab(R2012a)或者2012b版本中还没有兼容VS2012，因此提供以下几个配置文件。以解决在通过matlab提供的编译生成dll时的工具会不兼容VS2012的问题。只需要加入以下几个配置文件即可。

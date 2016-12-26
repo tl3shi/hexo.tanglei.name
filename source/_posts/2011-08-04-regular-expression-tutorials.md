@@ -5,13 +5,11 @@ date: 2011-08-04T22:31:03+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1087
-permalink: regular-expression-tutorials
 duoshuo_thread_id:
   - 1351844048792453430
 categories:
   - 敲敲代码
 tags:
-  - regular expression
   - 正则表达式
 ---
 时不时会用到，网上找滴，整理下，收藏下吧。

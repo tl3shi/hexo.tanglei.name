@@ -5,15 +5,12 @@ date: 2012-04-12T09:32:00+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1702
-permalink: rent-a-single-room-near-the-east-gate-of-yuanmingyuan-park
 duoshuo_thread_id:
   - 1351844048792453356
 categories:
   - MyLife
 tags:
-  - 毕业设计
   - 租房
-  - 转租
 ---
 地址:圆明园东门(公交站)旁边圆明园东里1号楼2单元104，紧邻清华大学，小区到清华(北门)骑车3分钟左右。走路应该10多分钟吧(我没走过)。周围是北体，圆明园，清华附中。
 

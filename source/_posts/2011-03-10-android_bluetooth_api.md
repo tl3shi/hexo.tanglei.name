@@ -5,18 +5,14 @@ date: 2011-03-10T09:39:56+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=340
-permalink: android_bluetooth_api
 duoshuo_thread_id:
   - 1351844048792453151
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - android
+  - Android
 tags:
-  - android
-  - bluetooth
-  - 反射
-  - 蓝牙
+  - Android
 ---
 今天看了篇文章，思想值得学习呀。要学会用反射……
 

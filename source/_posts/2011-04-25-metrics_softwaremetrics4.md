@@ -5,21 +5,15 @@ date: 2011-04-25T11:07:04+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=525
-permalink: metrics_softwaremetrics4
 duoshuo_thread_id:
   - 1351844048792453371
 categories:
   - 软件度量及其应用
 tags:
-  - Henry and Kafura’s Metrics
-  - Shepperd’s Metrics
-  - 信息流
-  - 内聚
-  - 耦合
   - 软件度量
 ---
 <address>
-  上接：<a href="http://www.tanglei.name/metrics_softwaremetrics3/">http://www.tanglei.name/metrics_softwaremetrics3/</a>
+  上接：<a href="/blog/metrics_softwaremetrics3.html">/blog/metrics_softwaremetrics3.html</a>
 </address>
 
 ## Modularity and Information Flow Attributes
@@ -72,7 +66,7 @@ C(S) is the median value of the set  {c(Di, Dj):1<=i<j<=n}
 
 The cohesion of a module is the extent to which its individual components are needed to perform the same task.模块的内聚说的是它为了完成某个相同的任务，内部组件联合的强度。
 
-<img class="alignnone" title="内聚" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image010.gif" alt="" width="473" height="169" />
+<img class="alignnone" title="内聚" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image010.gif" alt=""  />
 
 功能内聚：模块完成独立良好定义的功能。(这是最强的内聚，指模块内所有元素共同完成一个功能，缺一不可)
 
@@ -124,7 +118,7 @@ Information flow complexity(M)= length(M)\*((fan-in(M)\*(fan-out(M))<sup>2</sup>
 
 Shepperd complexity (M)= ((fan-in(M)*(fan-out(M))<sup>2</sup>
 
-<img class="alignnone" title="shepperd" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image014.gif" alt="" width="449" height="85" />
+<img class="alignnone" title="shepperd" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image014.gif" alt=""  />
 
 Shepperd宣称他的方法是在原有的基础上有改进滴：我们的度量特征是它们消除信息和控制流的模糊性，集中在信息流的度量上，而henry和kafura度量是不能做到的
 

@@ -5,17 +5,14 @@ date: 2011-04-07T15:15:39+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=412
-permalink: android_notification
 duoshuo_thread_id:
   - 1351844048792453458
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - android
+  - Android
 tags:
-  - android
-  - Notification
-  - 通知栏
+  - Android
 ---
 项目需要，当按手机home键时，出现通知栏，从通知栏图标点击快速返回上一个应用的界面。
   

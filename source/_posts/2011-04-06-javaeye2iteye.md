@@ -5,16 +5,12 @@ date: 2011-04-06T10:54:12+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=407
-permalink: javaeye2iteye
 duoshuo_thread_id:
   - 1351844048792453459
 categories:
   - 业界动态
   - 网络文摘
 tags:
-  - iteye
-  - javaeye
-  - 改域名
 ---
 几天不上javaeye了。才发现javaeye已经被重定向至ITeye了。看原因才知道。。以下内容转自：<http://www.iteye.com/news/20605>
 

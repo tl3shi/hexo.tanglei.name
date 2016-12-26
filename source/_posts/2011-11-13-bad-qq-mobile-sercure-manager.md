@@ -5,13 +5,11 @@ date: 2011-11-13T00:16:57+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1255
-permalink: bad-qq-mobile-sercure-manager
 duoshuo_thread_id:
   - 1351844048792453384
 categories:
   - 实习那些事儿
 tags:
-  - QQ手机管家
   - wifi自动关闭
   - 腾讯实习
 ---
@@ -19,7 +17,7 @@ tags:
 
 我是昨天刚安装的手机QQ管家，还没有使用连wifi，今天回到学校了。在寝室，想连下wifi，出现问题了。一般都是直接打开桌面有个快捷方式，启动wifi，然后连寝室的无线路由。不过等一会没连上，打开手机自带网络管理工具，启用wifi。扫描，连接，还是没连上。没连上也就算了。居然wifi自动关闭了。坑爹啊。想，以前就算信号不好，也不会自动关闭啊？再回想，可能就是这个手机管家出的问题了。打开QQ手机管家的网络管理功能，界面如图所示。有个功能还好，就是关闭网络连接的功能，以避免网络流量超了后很贵。
 
-<img class="alignnone" title="qq手机管家" src="http://i1123.photobucket.com/albums/l549/tl3shi/qqsecure-fuck.jpg" alt="qq手机管家自动关闭wifi" width="456" height="600" />
+<img class="alignnone" title="qq手机管家" src="http://i1123.photobucket.com/albums/l549/tl3shi/qqsecure-fuck.jpg" alt="qq手机管家自动关闭wifi"  />
 
 我就试用了关闭移动网路数据服务，结果果然不能上网了。然后由于不能连wifi，只能卸载了。但是卸载前，我忘了取消这个关闭网络数据服务了。于是悲剧的是我卸载后，不能上网了。试着改了下接入点，还是不行(以前的H(3.5G)或者3G的信号，直接消失了，如图)。笨方法吧。重新安装下QQ手机管家。于是重新安装，又自动可以连了。再卸载之。
 

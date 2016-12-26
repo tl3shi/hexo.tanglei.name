@@ -5,15 +5,12 @@ date: 2011-06-08T15:35:12+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=779
-permalink: scm-conception-goals
 duoshuo_thread_id:
   - 1351844048792453438
 categories:
   - 软件配置管理
 tags:
   - SCM复习资料
-  - SCM概念
-  - SCM目标
   - 软件配置管理考试
 ---
 **1          概述**

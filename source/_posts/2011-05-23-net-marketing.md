@@ -5,17 +5,12 @@ date: 2011-05-23T18:02:28+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=708
-permalink: net-marketing
 duoshuo_thread_id:
   - 1351844048792453121
 categories:
   - SoftwareEngineering
 tags:
-  - 4Cs
-  - 4Ps
   - 电子商务
-  - 网络营销方式
-  - 营销理论
 ---
 **1** **网络营销概述**
 

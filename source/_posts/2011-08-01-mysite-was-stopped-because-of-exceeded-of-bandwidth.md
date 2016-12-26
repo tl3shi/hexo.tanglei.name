@@ -5,14 +5,12 @@ date: 2011-08-01T21:01:51+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1056
-permalink: mysite-was-stopped-because-of-exceeded-of-bandwidth
 duoshuo_thread_id:
   - 1351844048792453431
 categories:
   - 我做站长
 tags:
   - 垃圾蜘蛛
-  - 超流量
 ---
 上个月最后几天，博客访问不了。难怪那天YY说我网站打不开，忙于上班，没怎么去看。估计服务器不稳定吧。后来科神发消息，说流量超了。访问网站出现如下提示： 
 

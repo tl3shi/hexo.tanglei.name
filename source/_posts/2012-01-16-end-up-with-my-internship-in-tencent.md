@@ -5,7 +5,6 @@ date: 2012-01-16T15:02:45+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1417
-permalink: end-up-with-my-internship-in-tencent
 duoshuo_thread_id:
   - 1351844048792453139
 categories:
@@ -17,7 +16,7 @@ tags:
 ---
 现在我已经是坐在学校的寝室里面写以下这些文字了.然后当时去武汉面试时的场景仍记忆犹新.
 
-回想,2011年7月13号[入职腾讯报道](http://www.tanglei.name/intern-in-tencent-checkin/),到我办理离职2012年1月13日,刚好半年的时间(中途请假2月回校保研).回想这半年来，自己的收获蛮大的。
+回想,2011年7月13号[入职腾讯报道](/blog/intern-in-tencent-checkin.html),到我办理离职2012年1月13日,刚好半年的时间(中途请假2月回校保研).回想这半年来，自己的收获蛮大的。
 
 离职前，往往要跟团队说声道别，发离职邮件：
 
@@ -69,7 +68,7 @@ tags:
 >   </p>
 >   
 >   <p>
->     <img class="alignnone" src="http://i1123.photobucket.com/albums/l549/tl3shi/leave_tencent1.jpg" alt="" width="677" height="219" data-pinit="registered" />
+>     <img class="alignnone" src="http://i1123.photobucket.com/albums/l549/tl3shi/leave_tencent1.jpg" alt=""  data-pinit="registered" />
 >   </p>
 >   
 >   <p>

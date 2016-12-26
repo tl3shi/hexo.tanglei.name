@@ -5,15 +5,12 @@ date: 2011-06-10T11:58:54+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=796
-permalink: scm-phase-flow
 duoshuo_thread_id:
   - 1351844048792453125
 categories:
   - 软件配置管理
 tags:
   - SCM考试
-  - SCM职责
-  - SCM阶段
   - 软件配置管理复习
 ---
 **阶段划分:** 软件研发项目一般可以划分为三个阶段：计划阶段、开发阶段和维护阶段。然而从软件配置管理的角度来看，后两个阶段所涉及的活动是一致，所以就把它们合二为一，成为“项目开发和维护”阶段。
@@ -64,4 +61,4 @@ tags:
 
 下面有个活动图描述了软件配置管理角色职责
 
-[<img class="aligncenter size-medium wp-image-797" title="SCM-flow" src="/wp-content/uploads/2011/06/SCM-flow-300x282.jpg" alt="软件配置管理角色职责" width="300" height="282" />](/wp-content/uploads/2011/06/SCM-flow.jpg)
+[<img class="aligncenter size-medium wp-image-797" title="SCM-flow" src="/wp-content/uploads/2011/06/SCM-flow.jpg" alt="软件配置管理角色职责"  />](/wp-content/uploads/2011/06/SCM-flow.jpg)

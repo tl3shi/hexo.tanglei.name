@@ -5,16 +5,16 @@ date: 2011-06-21T11:35:53+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=880
-permalink: programmer-health-problems
 duoshuo_thread_id:
   - 1351844048792453130
 categories:
   - 网络文摘
 tags:
-  - "Programmer's Health"
-  - 程序员健康
+  - 程序员
+  - 健康
 ---
-今天网上看到一篇文章，感觉蛮好的，看下英文原版的吧，多联系下英文。最下面也放出了
+
+今天网上看到一篇文章，感觉蛮好的，看下英文原版的吧，多练习下英文。最下面也放出了
 
 由yeeyan翻译的。原文如下：
 

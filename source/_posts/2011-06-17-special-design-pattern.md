@@ -5,7 +5,6 @@ date: 2011-06-17T08:30:05+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=860
-permalink: special-design-pattern
 duoshuo_thread_id:
   - 1351844048792453155
 categories:
@@ -13,7 +12,6 @@ categories:
   - 设计模式
 tags:
   - 反模式
-  - 另类设计模式
 ---
 转自：<http://coolshell.cn/articles/4844.html> 另类设计模式，还不是我前看的反模式。但大概意思就差不多了吧。原文如下：
 

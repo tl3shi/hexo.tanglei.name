@@ -5,7 +5,6 @@ date: 2011-04-19T13:41:43+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=485
-permalink: ruankao_database1
 duoshuo_thread_id:
   - 1351844048792453377
 categories:
@@ -13,8 +12,6 @@ categories:
   - 软考
 tags:
   - 数据库
-  - 数据库系统结构
-  - 数据模型
 ---
 软考当中设计到数据库的主要有下面几个方面：
 

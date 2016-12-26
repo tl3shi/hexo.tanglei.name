@@ -5,14 +5,11 @@ date: 2011-07-03T22:08:37+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=947
-permalink: my-routine-to-sz-tencent
 duoshuo_thread_id:
   - 1351844048792453373
 categories:
   - 实习那些事儿
 tags:
-  - 实习行程
-  - 重庆到深圳
 ---
 最开始，还在说要去贵州支教滴。现在也不用我去了。有老大亲自带队，不用我了。呵呵。
 

@@ -5,13 +5,11 @@ date: 2011-04-16T12:48:58+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=452
-permalink: program_language1
 duoshuo_thread_id:
   - 1351844048792453204
 categories:
   - 软考
 tags:
-  - 程序语言
   - 编译原理
 ---
 前面几篇，都讲了计算机相关基础知识，下面的内容是程序语言部分，大部分是编译原理课程上滴内容。唉，提起编译原理就是我的痛啊，只考了约70分啊。痛心……

@@ -5,7 +5,6 @@ date: 2012-09-29T14:28:41+00:00
 author: tanglei
 layout: post
 guid: http://www.tanglei.name/?p=1948
-permalink: opengl-with-vim
 duoshuo_thread_id:
   - 1351844048792453149
 enable_highlight:
@@ -13,7 +12,6 @@ enable_highlight:
 categories:
   - 计算机图形学
 tags:
-  - MinGW
   - opengl
   - vim
 ---
