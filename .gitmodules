@@ -9,4 +9,4 @@
 	url = https://github.com/tl3shi/maupassant-hexo.git
 [submodule "themes/next"]
 	path = themes/next
-    url = https://github.com/tl3shi/hexo-theme-next.git
+    url = git@github.com:tl3shi/hexo-theme-next.git
