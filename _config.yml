@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: tanglei's blog|唐磊的个人博客
+title: 唐磊的个人博客
 subtitle: 记录我的学习、生活、工作。
-description: 中南大学|清华大学软件学院唐磊的博客,主攻软件工程,数据挖掘,这里记录了我的学习，生活和工作
+description: 中南大学|清华大学软件学院唐磊的博客, 后台开发, 主攻软件工程, 数据挖掘, 这里记录了我的学习, 生活和工作
 author: tanglei
 language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://www.tanglei.name
+url: http://hexo.tanglei.name
 root: /
 #permalink: :year/:month/:day/:title/
 permalink: blog/:title.html
@@ -29,13 +29,13 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :year/:month/:day/:title.md # File name of new posts
+new_post_name: :year-:month-:day-:title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: true
+post_asset_folder: false
 relative_link: false 
 future: true
 highlight:
@@ -45,7 +45,7 @@ highlight:
   tab_replace:
 
 # Category & Tag
-default_category: uncategorized
+default_category: default
 category_map:
 tag_map:
 
