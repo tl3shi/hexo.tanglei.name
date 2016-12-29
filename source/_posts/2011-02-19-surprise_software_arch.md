@@ -10,7 +10,6 @@ duoshuo_thread_id:
 categories:
   - SoftwareEngineering
 tags:
-  - 2010系统架构师
   - 系统架构师
   - 软考
 ---

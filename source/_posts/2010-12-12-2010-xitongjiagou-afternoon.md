@@ -23,10 +23,9 @@ duoshuo_thread_id:
   - 1351844048792453228
 categories:
   - SoftwareEngineering
-  - 软考
 tags:
-  - 2010系统架构师
-  - 下午试题
+  - 系统架构师
+  - 软考
 ---
 试题一（共25分）
   
