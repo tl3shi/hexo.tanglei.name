@@ -3,7 +3,7 @@ title: 长白山旅游
 layout: post
 author: alice && tanglei
 categories: 
-  - MyLife
+  - 旅游
 tags: 
   - 旅游
   - 玩遍中国

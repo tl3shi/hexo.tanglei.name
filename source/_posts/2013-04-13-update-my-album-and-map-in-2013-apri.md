@@ -8,10 +8,9 @@ guid: http://www.tanglei.name/?p=2128
 duoshuo_thread_id:
   - 1351844048792453184
 categories:
-  - MyLife
+  - 旅游
 tags:
   - 旅游
-  - 生活
   - 足迹
 ---
 

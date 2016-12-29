@@ -2,7 +2,6 @@
 title: 张家界旅游
 layout: post
 categories: 
-    - MyLife
     - 旅游
 tags: 
     - 旅游 

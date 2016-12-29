@@ -8,7 +8,10 @@ guid: http://www.tanglei.name/?p=258
 duoshuo_thread_id:
   - 1351844048792453203
 categories:
-  - MyLife
+  - 课程学习
+tags: 
+  - 考试
+  - 软件测试
 ---
 o(︶︿︶)o 唉，今天上午考的软件测试。很郁闷很郁闷啊。
 

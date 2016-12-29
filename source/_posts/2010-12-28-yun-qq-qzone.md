@@ -8,7 +8,7 @@ guid: http://www.tanglei.name/?p=238
 duoshuo_thread_id:
   - 1351844048792453217
 categories:
-  - default
+  - 经验技巧
 tags:
   - 我做站长
 ---
