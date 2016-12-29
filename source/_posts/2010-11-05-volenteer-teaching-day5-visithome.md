@@ -10,11 +10,9 @@ duoshuo_thread_id:
 categories:
   - 贵州支教行
 tags:
-  - 中南大学
   - 丰田助学
   - 贵州支教
   - 铜厂小学
-  - 龙场镇
 ---
 <p class="MsoNormal" style="margin: 0cm 0cm 0pt;">
   <span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font -family: 'Times New Roman';"> 今天是支教第五天</span><span lang="EN-US"><span style="font-family: Times New Roman;">.</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">现在虽然已经是凌晨过了</span>

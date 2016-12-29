@@ -12,8 +12,6 @@ categories:
 tags:
   - 丰田助学
   - 贵州支教
-  - 铜厂小学
-  - 龙场镇
 ---
 <div id="blogDetailDiv" style="font-size: 16px;">
   <p class="MsoNormal" style="text-align: center; margin: 0cm 0cm 0pt;">

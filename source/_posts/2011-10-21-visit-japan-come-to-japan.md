@@ -8,10 +8,9 @@ guid: http://www.tanglei.name/?p=1224
 duoshuo_thread_id:
   - 1351844048792453213
 categories:
-  - MyLife
+  - 旅游
 tags:
-  - 丰田助学金
-  - 宋庆龄基金会
+  - 丰田助学
   - 旅游
   - 访日交流
 ---

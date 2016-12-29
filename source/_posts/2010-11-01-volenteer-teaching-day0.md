@@ -10,11 +10,9 @@ duoshuo_thread_id:
 categories:
   - 贵州支教行
 tags:
-  - 中南大学
   - 丰田助学
   - 贵州支教
   - 铜厂小学
-  - 龙场镇
 ---
 <div id="blogDetailDiv" style="font-size: 16px;">
   <p class="MsoNormal" style="text-align: left;">

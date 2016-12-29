@@ -8,10 +8,11 @@ guid: http://www.tanglei.name/?p=338
 duoshuo_thread_id:
   - 1351844048792453366
 categories:
-  - MyLife
   - 旅游
 tags:
   - 丰田助学
+  - 访日交流
+  - 旅游
 ---
 呃，前面几天回了趟重庆，得抱怨下，这个blog本来按照以前的计划是常常写写，回顾下自己的学习生活。但现在这几天忙啊忙啊。
   

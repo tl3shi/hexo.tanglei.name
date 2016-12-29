@@ -10,11 +10,9 @@ duoshuo_thread_id:
 categories:
   - 贵州支教行
 tags:
-  - 中南大学
   - 丰田助学
   - 贵州支教
   - 铜厂小学
-  - 龙场镇
 ---
 <p class="MsoNormal" style="margin: 0cm 0cm 0pt;">
   <span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">今天</span><span lang="EN-US"><span style="font-family: Times New Roman;">,</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">我起的比较早了</span><span lang="EN-US"><span style="font-family: Times New Roman;">. <a href="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-1.jpg" target="_blank"><img src="/wp-content/blogresources/volenteer-teaching-In-GuiZhou/9-1.jpg" alt="图片"  /></a></span></span>
