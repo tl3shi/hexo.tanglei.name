@@ -8,9 +8,10 @@ guid: http://www.tanglei.name/?p=99
 duoshuo_thread_id:
   - 1351844048792453146
 categories:
-  - Wordpress
+  - 经验技巧
 tags:
   - Wordpress
+  - 我做站长
 ---
 看到人家blog搞得比较炫，对比下自己的。比较朴实了。所以今天优化了下我的blog.评论添加了表情支持。和显示评论增加了头像。期间也遇到了不少问题。网上一查WordPress 评论头像设置方法。一大堆。我也按照方法设置了。注册了gravatar头像。然后去评论人家blog时，就能显示到我的头像了。但回头看看自己的，不行。本机架设了Wordpress自己给自己留言。还是不行。然后查原因，我用的主题i3theme集成了gravatar头像了呀。还是不行。看了这篇文章《WordPress如何显示日志评论者的头像》http://blog.newchen.com/post/454，又按照他说说的方法本机测试了。出现了我的头像。开始位置放得不对，没有在循环里面去，所以导致只能显示我的一个头像。（因为都是本机测试，只能显示本人的绑定的email的头像了）。然后寻找放到循环里面去了就OK了。
 

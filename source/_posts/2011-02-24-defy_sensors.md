@@ -10,10 +10,10 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - Android
+  - 经验技巧
 tags:
   - Defy
-  - 传感器
+  - Android
 ---
 项目需要，买android手机，入手defy。先测试下defy的传感器。。
 

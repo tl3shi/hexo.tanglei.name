@@ -8,8 +8,7 @@ guid: http://www.tanglei.name/?p=349
 duoshuo_thread_id:
   - 1351844048792453330
 categories:
-  - 业界动态
-  - 开开眼界
+  - 网络文摘
 tags:
 ---
 以下内容转自：http://android.guao.hk/tag/bump

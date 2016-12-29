@@ -8,9 +8,9 @@ guid: http://www.tanglei.name/?p=292
 duoshuo_thread_id:
   - 1351844048792453173
 categories:
-  - 数据库应用
-  - 网络文摘
+  - 课程学习
 tags:
+  - 数据库
 ---
 **第一范式（1NF）：在关系模式R中的每一个具体关系r中，如果每个属性值 都是不可再分的最小数据单位，则称R是第一范式的关系。<span>（字段不可分）</span>**
 

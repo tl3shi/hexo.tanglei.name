@@ -8,8 +8,7 @@ guid: http://www.tanglei.name/?p=180
 duoshuo_thread_id:
   - 1351844048792453216
 categories:
-  - Android
-  - 业界动态
+  - 网络文摘
 tags:
   - Android
   - Windows

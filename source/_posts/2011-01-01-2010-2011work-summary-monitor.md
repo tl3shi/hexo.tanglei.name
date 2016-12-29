@@ -8,9 +8,9 @@ guid: http://www.tanglei.name/?p=268
 duoshuo_thread_id:
   - 1351844048792453190
 categories:
-  - 软件0804
+  - 社会工作
 tags:
-  - 工作总结
+  - 总结
   - 软件0804
 ---
 <p style="text-align: center;">

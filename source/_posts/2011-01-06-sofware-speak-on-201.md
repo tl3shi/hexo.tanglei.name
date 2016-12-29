@@ -8,7 +8,7 @@ guid: http://www.tanglei.name/?p=295
 duoshuo_thread_id:
   - 1351844048792453397
 categories:
-  - 软件0804
+  - 社会工作
 tags:
   - 中南大学
   - 先进班集体

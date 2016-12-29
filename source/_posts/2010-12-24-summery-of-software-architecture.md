@@ -8,8 +8,10 @@ guid: http://www.tanglei.name/?p=175
 duoshuo_thread_id:
   - 1351844048792453154
 categories:
-  - 软件工程
+  - 课程学习
+tags:
   - 软件体系结构
+  - 软件工程
 ---
 软件体系结构的定义有多种，常见如下：
 

@@ -14,9 +14,10 @@ guid: http://www.tanglei.name/?p=1
 duoshuo_thread_id:
   - 1351842949280825345
 categories:
-  - MyLife
+  - 课程学习
 tags:
   - HelloWorld
+  - 我做站长
 ---
 好吧。
 

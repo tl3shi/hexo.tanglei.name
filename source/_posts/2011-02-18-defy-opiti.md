@@ -8,11 +8,10 @@ guid: http://www.tanglei.name/?p=311
 duoshuo_thread_id:
   - 1351844048792453387
 categories:
-  - Android
-  - MyLife
-  - 玩玩手机
+  - 经验技巧
 tags:
   - Defy
+  - Android
 ---
 买了DEFY，发现里面有很多app自己用不了。琢磨着删掉。系统自带的uninstall工具不行。有android system app romover可以用。参照了网上有关人士的总结。删除前肯定得做备份啊……………………………
 

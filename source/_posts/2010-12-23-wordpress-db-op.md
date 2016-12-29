@@ -8,8 +8,10 @@ guid: http://www.tanglei.name/?p=154
 duoshuo_thread_id:
   - 1351844048792453251
 categories:
-  - Wordpress
+  - 经验技巧
 tags:
+  - Wordpress
+  - 我做站长
 ---
 今天是准备来给<a title="我的博客" href="http://www.tanglei.name" target="_self">blog.i3zhai.com</a>上的数据库备份的。就用navicat连接了数据库服务器，看了下里面的数据。发现了好多冗余数据。特别是posts张表，数据冗余很大，因为向在后台写文章的时候，有自动保存啊，什么修订版啊之类的。好像之前还听说有什么优化数据库的插件。我想，作为一个搞开发的人来说，这点东西还要去搞啥插件就太……。。所以就手动优化了下。
 

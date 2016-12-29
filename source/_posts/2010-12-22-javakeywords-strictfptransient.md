@@ -8,10 +8,9 @@ guid: http://www.tanglei.name/?p=150
 duoshuo_thread_id:
   - 1351844048792453199
 categories:
-  - JAVA
+  - 课程学习
 tags:
   - Java
-  - Java基础
 ---
 前面已经整理了java中的不常见关键字native,volatile,就一气呵成，把另外两个也整一下。
 

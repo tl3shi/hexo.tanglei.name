@@ -13,7 +13,7 @@ guid: http://www.tanglei.name/?p=9
 duoshuo_thread_id:
   - 1351844048792453469
 categories:
-  - 设计模式
+  - 课程学习
 tags:
   - 设计模式
 ---

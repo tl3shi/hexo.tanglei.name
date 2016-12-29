@@ -11,10 +11,10 @@ guid: http://www.tanglei.name/?p=84
 duoshuo_thread_id:
   - 1351844048792453280
 categories:
-  - JAVA
+  - 课程学习
 tags:
   - J2EE
-  - 考点
+  - JAVA
   - 考试
 ---
 1、 JAVA的环境配置

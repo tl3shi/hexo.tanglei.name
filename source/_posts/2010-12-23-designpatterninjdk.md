@@ -8,8 +8,7 @@ guid: http://www.tanglei.name/?p=164
 duoshuo_thread_id:
   - 1351842949280825450
 categories:
-  - JAVA
-  - 设计模式
+  - 课程学习
 tags:
   - Java
   - 设计模式

@@ -8,10 +8,9 @@ guid: http://www.tanglei.name/?p=144
 duoshuo_thread_id:
   - 1351844048792453389
 categories:
-  - JAVA
+  - 课程学习
 tags:
   - Java
-  - Java基础
 ---
 前面讲过了native了。继续看看volatile关键字吧。参考了下<http://www.javamex.com/tutorials/synchronization_volatile.shtml>上面的文章。
 

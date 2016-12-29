@@ -8,11 +8,11 @@ guid: http://www.tanglei.name/?p=331
 duoshuo_thread_id:
   - 1351844048792453400
 categories:
-  - 'Linux'
-  - MyLife
+  - 经验技巧
 tags:
   - Linux
-  - 启动菜单
+  - Ubuntu
+  - Windows
 ---
 前面谈到，为了让自己的电脑4g充分利用。也试试用用WINDOWS7，好久没用过WINDOWS7了，记得上一次用还是WIndows7出测试版的时候，通过虚拟光驱装了一个玩玩呢，不稳定，后来就一直没用过。据说现在很稳定了，也装来玩玩。不过64位的系统还不是很大众化。
 

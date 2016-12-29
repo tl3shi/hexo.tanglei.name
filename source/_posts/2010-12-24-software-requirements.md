@@ -8,8 +8,9 @@ guid: http://www.tanglei.name/?p=177
 duoshuo_thread_id:
   - 1351844048792453269
 categories:
-  - 软件体系结构
+  - 课程学习
 tags:
+  - 软件体系结构
 ---
 **需求的基本概念**
 

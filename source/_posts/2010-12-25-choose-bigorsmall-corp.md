@@ -9,7 +9,6 @@ duoshuo_thread_id:
   - 1351842949280825451
 categories:
   - 网络文摘
-tags:
 ---
 以下内容转自<http://blog.csdn.net/chgaowei/archive/2010/12/22/6092654.aspx>，文章内容并不代表本人观点。仅供参考。
 

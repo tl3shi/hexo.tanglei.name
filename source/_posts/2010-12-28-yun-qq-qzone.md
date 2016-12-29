@@ -8,8 +8,9 @@ guid: http://www.tanglei.name/?p=238
 duoshuo_thread_id:
   - 1351844048792453217
 categories:
-  - MyLife
+  - default
 tags:
+  - 我做站长
 ---
 郁闷啊。就在刚才不到1个小时前，我才发了这篇[随便说](/blog/say-easily.html)说的日志，现在 就……
 

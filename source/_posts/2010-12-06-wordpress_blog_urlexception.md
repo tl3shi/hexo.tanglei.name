@@ -16,10 +16,10 @@ guid: http://www.tanglei.name/?p=14
 duoshuo_thread_id:
   - 1351844048792453208
 categories:
-  - Wordpress
   - 经验技巧
 tags:
   - Wordpress
+  - 我做站长
 ---
 将以前的[www.i3zhai.com](http://www.i3zhai.com)换成了二级域名了blog.i3zhai.com
 

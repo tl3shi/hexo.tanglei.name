@@ -8,10 +8,10 @@ guid: http://www.tanglei.name/?p=92
 duoshuo_thread_id:
   - 1351844048792453336
 categories:
-  - 我做站长
+  - 经验技巧
 tags:
   - SEO
-  - 经验技巧
+  - 我做站长
 ---
 前两天在本机用apache搭建了php的web服务器，然后用了phpwind建站用于本机测试。期望与本机添加好数据后上传至Internet。找了几个朋友一起添加了数据。现在已经上传至internet。并与<http://www.i3zhai.com>绑定。期间向google submit了url。一定时间后搜索关键字。出现了意想不到的结果。
 

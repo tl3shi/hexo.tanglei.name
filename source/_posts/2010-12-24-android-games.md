@@ -8,7 +8,6 @@ guid: http://www.tanglei.name/?p=171
 duoshuo_thread_id:
   - 1351844048792453305
 categories:
-  - Android
   - 网络文摘
 tags:
   - Android

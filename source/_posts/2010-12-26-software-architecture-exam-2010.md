@@ -8,7 +8,7 @@ guid: http://www.tanglei.name/?p=190
 duoshuo_thread_id:
   - 1351844048792453370
 categories:
-  - 软件体系结构
+  - 课程学习
 tags:
   - 系统架构设计师
   - 软件体系结构
