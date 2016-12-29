@@ -8,7 +8,7 @@ guid: http://www.tanglei.name/?p=765
 duoshuo_thread_id:
   - 1351844048792453302
 categories:
-  - SoftwareEngineering
+  - 课程学习
 tags:
   - CMM
   - 软件能力成熟度模型

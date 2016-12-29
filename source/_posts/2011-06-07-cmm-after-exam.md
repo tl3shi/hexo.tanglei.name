@@ -9,7 +9,7 @@ duoshuo_thread_id:
   - 1351844048792453237
 categories:
   - MyLife
-  - SoftwareEngineering
+  - 课程学习
 tags:
   - CMM
 ---

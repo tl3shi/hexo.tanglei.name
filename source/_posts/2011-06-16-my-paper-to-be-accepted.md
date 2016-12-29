@@ -8,8 +8,7 @@ guid: http://www.tanglei.name/?p=856
 duoshuo_thread_id:
   - 1351844048792453425
 categories:
-  - MyLife
-  - SoftwareEngineering
+  - 课程学习
 tags:
   - 核心期刊
   - 论文

@@ -8,7 +8,7 @@ guid: http://www.tanglei.name/?p=321
 duoshuo_thread_id:
   - 1351844048792453462
 categories:
-  - SoftwareEngineering
+  - 课程学习
 tags:
   - 系统架构师
   - 软考

@@ -8,11 +8,9 @@ guid: http://www.tanglei.name/?p=308
 duoshuo_thread_id:
   - 1351844048792453170
 categories:
-  - SoftwareEngineering
+  - 课程学习
 tags:
-  - 2010系统架构师
-  - 上午试题
-  - 下午试题
+  - 系统架构师
   - 考试
   - 论文
   - 软件体系结构

@@ -8,7 +8,7 @@ guid: http://www.tanglei.name/?p=724
 duoshuo_thread_id:
   - 1351844048792453442
 categories:
-  - SoftwareEngineering
+  - 课程学习
 tags:
   - 电子商务
 ---

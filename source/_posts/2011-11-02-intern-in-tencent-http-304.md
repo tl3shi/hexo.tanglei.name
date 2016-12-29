@@ -8,7 +8,7 @@ guid: http://www.tanglei.name/?p=1221
 duoshuo_thread_id:
   - 1351844048792453337
 categories:
-  - SoftwareEngineering
+  - 课程学习
   - 实习那些事儿
 tags:
 ---

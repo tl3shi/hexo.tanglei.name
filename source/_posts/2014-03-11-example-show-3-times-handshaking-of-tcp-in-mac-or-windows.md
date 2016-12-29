@@ -8,13 +8,13 @@ guid: http://www.tanglei.name/?p=2343
 duoshuo_thread_id:
   - 1351844048792453499
 categories:
-  - 'Linux'
-  - SoftwareEngineering
-  - Windows
+  - 经验技巧
 tags:
   - TCP/IP
   - 计算机网络
+  - Mac
 ---
+
 Mac OS系统10.9.1，安装[Wireshark](http://www.wireshark.org/download.html)，后不能跑，提示安装X11，到这里安装[XQuartz](http://xquartz.macosforge.org/landing/)即可。
 
 TIPS：安装XQuartz 后，重新启动Wireshark，让选择X11，这是去选/Applications/Utilities/XQuartz.app（默认位置），启动得比较久，得有点耐心，若不懂可参考这里[installing wireshark on mac osx10.8 mountainlion](http://blog.israeltorres.org/home/write-ups/installingwiresharkonmacosx108mountainlion) 和 [cannot run wireshark in mac os x moutain-loin](http://ask.wireshark.org/questions/12140/cant-run-wireshark-in-mac-os-x-mountain-lion).

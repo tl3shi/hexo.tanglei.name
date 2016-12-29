@@ -8,7 +8,7 @@ guid: http://www.tanglei.name/?p=431
 duoshuo_thread_id:
   - 1351844048792453281
 categories:
-  - SoftwareEngineering
+  - 课程学习
 tags:
   - eclipse插件
   - Metrics

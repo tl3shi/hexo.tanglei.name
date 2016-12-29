@@ -8,11 +8,11 @@ guid: http://www.tanglei.name/?p=439
 duoshuo_thread_id:
   - 1351844048792453298
 categories:
-  - SoftwareEngineering
-  - 软考
+  - 课程学习
 tags:
   - 系统架构师
   - 软件设计师
+  - 软考
 ---
 这两天整理了下电脑，发现自己之前考软件设计师啊，系统架构师啊之类用到的一些资料，现在决定把它稍微整理下，放到网上了。其实也都是来自网络的。也就转载下吧相当于。
 
