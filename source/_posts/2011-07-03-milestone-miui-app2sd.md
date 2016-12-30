@@ -4,13 +4,13 @@ title: MS里程碑MIUI(android2.3)刷app2sd
 date: 2011-07-03T23:02:03+00:00
 author: tanglei
 layout: post
-guid: /blog/ms%e9%87%8c%e7%a8%8b%e7%a2%91miuiandroid2-3%e5%88%b7app2sd.html
 duoshuo_thread_id:
   - 1351844048792453433
 categories:
+  - 经验技巧
+tags:
   - Android
   - 玩玩手机
-tags:
 ---
 上次帮幺叔的里程碑刷了MIUI的系统了.都到2.3了.我的defy都还在2.2呢.然后应要求要做app2sd,因为里程碑就200M的机身内存,他装了应用多了,剩下内存就40M了.所以还得做.然后网上看了好多教程,都试过,好多都不成功.有说用什么用的PLUS工具箱1.96A CM专版，一次成功的啊.等等我都试过还不行.最后看到一篇帖子,成功了.
 

@@ -8,9 +8,9 @@ guid: http://www.tanglei.name/?p=997
 duoshuo_thread_id:
   - 1351844048792453123
 categories:
-  - PHP
+  - 除臭虫
 tags:
-  - APACHE
+  - Apache
   - PHP
 ---
 前面说到XAMPP安装后配环境时出现了问题就是这个，说也奇怪，刚开始安装完毕后，就能正常访问到XAMPP的首页，让选择语言。当我在eclipse里面新建一个工作空间到htdocs后就不行了，访问就一直拒绝。这奇怪啊，我eclipse搞个工作空间到htdocs里面有啥影响啊。这个问题出现的原因未解。有时候出现的一些莫名其妙的问题是无法解释的。

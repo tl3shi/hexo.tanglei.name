@@ -9,9 +9,9 @@ duoshuo_thread_id:
   - 1351844048792453307
 categories:
   - MyLife
-  - 软件学院
 tags:
   - 软件学院
+  - 总结
 ---
 高调的转载下学院网站的报道……以下内容转自：“<a href="http://software.csu.edu.cn/SoftwareSite/article.do?atcID=764" target="_blank">http://software.csu.edu.cn/SoftwareSite/article.do?atcID=764</a>”
 

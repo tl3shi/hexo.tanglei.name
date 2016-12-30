@@ -2,12 +2,11 @@
 title: 分享一个清华主题的beamer模版
 date: 2015-06-25
 layout: post
+categories: 
+    - 经验技巧
 tags: 
     - Latex 
-categories: 
-    - MyLife 
-    - 清华大学 
-published: true
+    - 清华大学
 ---
 
 在这里分享一个清华主题的latex beamer模版，我硕士学位论文答辩就是用的这个，我从[这里](http://far.tooold.cn/post/latex/beamertsinghua)改编的，感谢原作者。这还有[另外一个中文beamer模版](https://github.com/forhappy/aliyun-pk-report-2012)供参考。

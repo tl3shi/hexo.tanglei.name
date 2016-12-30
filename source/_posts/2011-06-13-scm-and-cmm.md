@@ -8,10 +8,13 @@ guid: http://www.tanglei.name/?p=810
 duoshuo_thread_id:
   - 1351844048792453285
 categories:
-  - 软件配置管理
+  - 课程学习
 tags:
+  - 软件配置管理
+  - CMM
 ---
-###### 软件配置管理与CMM/CMMI
+
+## 软件配置管理与CMM/CMMI
 
 ###### <span style="font-size: 13px; font-weight: normal;">CMM/CMMI将软件配置管理的活动分为6个方面：SCM过程管理、软件配置标识、软件配置控制、软件配置状态统计、软件配置审计、软件发布管理和交付；</span>
 

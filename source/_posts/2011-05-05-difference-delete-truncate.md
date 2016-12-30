@@ -11,9 +11,10 @@ enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - 数据库应用
+  - 课程学习
 tags:
   - Oracle
+  - 数据库
 ---
 刚才去做了一个公司的实习生招聘笔试题目，其中有Oracle delete和 truncate区别，记得以前赵明老师讲过一点，只是有点印象，具体想不出来了。网上查了下。发现下面这篇文章不错，遂转之。
 

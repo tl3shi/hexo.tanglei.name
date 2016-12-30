@@ -10,6 +10,7 @@ duoshuo_thread_id:
 categories:
   - 计算机图形学
 tags:
+  - 计算机图形学
 ---
 <p style="text-align: justify;">
   <span style="font-size: 10pt;">作业中遇到三角剖分的问题，关键字&#8221;三角剖分&#8221;出来最多的就是&#8221;Delaunay&#8221;三角剖分，整理了下相关资料，记录备忘。<br /> </span>

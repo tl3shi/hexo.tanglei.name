@@ -8,9 +8,10 @@ guid: http://www.tanglei.name/?p=781
 duoshuo_thread_id:
   - 1351844048792453214
 categories:
-  - 实习那些事儿
+  - 工作那些事儿
 tags:
-  - 腾讯实习生
+  - 腾讯
+  - 实习
 ---
 o(︶︿︶)o 唉，原本来打算想6月底就去深圳实习的。就给tencent给了封邮件过去。申请提前。然后给我回复了。。。
 

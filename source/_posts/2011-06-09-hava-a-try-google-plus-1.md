@@ -11,9 +11,10 @@ enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
+  - 经验技巧
+tags:
   - Wordpress
   - 我做站长
-tags:
 ---
 之前看到消息说google正式启用Google+1按钮，测试期间订阅邮件的用户均收到Google发送的通知邮件。目前Google的搜索结果已正式添加此按钮，当用户登录Google账户后进行搜索均可利用条目右侧的按钮对搜索结果进行推荐。站长及博客主均可安放Google+1按钮到其网页以方便用户进行推荐。Google+1按钮是会影响网站排名，看官方解释：
 

@@ -8,9 +8,11 @@ guid: http://www.tanglei.name/?p=454
 duoshuo_thread_id:
   - 1351844048792453456
 categories:
-  - 软考
+  - 课程学习
 tags:
   - 编译原理
+  - 软考
+  - 程序语言
 ---
 上接：</blog/program_language1.html>
 

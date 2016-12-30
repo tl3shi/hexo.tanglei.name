@@ -10,8 +10,10 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - Android
+  - coding小工具
 tags:
+  - Android
+  - Java
 ---
 写android群发消息的小工具，涉及到短信管理，这篇文章写得不错，转载了[android 中短信管理](http://www.cnblogs.com/GnagWang/archive/2011/01/06/1929075.html)。
 

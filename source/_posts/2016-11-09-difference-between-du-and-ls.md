@@ -2,7 +2,7 @@
 title: 由一次磁盘告警引发的血案 -- du 和 ls 的区别
 layout: post
 categories: 
-  - 经验技巧
+  - 除臭虫
 tags: 
   - 经验技巧
   - Linux

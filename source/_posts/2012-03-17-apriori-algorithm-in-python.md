@@ -10,11 +10,9 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - python
   - 我不会算法
-  - 数据挖掘
 tags:
-  - python
+  - Python
   - 数据挖掘
 ---
 Apriori algorithm是关联规则里一项基本算法。是由Rakesh Agrawal和Ramakrishnan Srikant两位在1994年提出的布尔关联规则的频繁项集挖掘算法(详情：<a href="http://rakesh.agrawal-family.com/papers/vldb94apriori.pdf" target="_blank">Fast Algorithms for Mining Association Rules</a>)。算法的名字是因为算法基于先验知识(prior knowledge).根据前一次找到的频繁项来生成本次的频繁项。关联规则的目的在于在一个数据集中找出项之间的关系，也称之为购物蓝分析 (market basket analysis)。例如，购买佳能的顾客，有70%的可能也会买在一个月之类买HP打印机。这其中最有名的例子就是&#8221;<a href="http://baike.baidu.com/view/1978239.htm" target="_blank">尿布和啤酒</a>&#8220;的故事了。

@@ -10,8 +10,7 @@ duoshuo_thread_id:
 categories:
   - 数据挖掘
 tags:
-  - libsvm
-  - python
+  - Python
   - SVM
 ---
 前面说了[windows命令行使用libsvm](/blog/an-example-for-beginning-to-learn-libsvm.html)，现在需要用python去调用。一种方法是用python去进行系统调用windows的exe程序。另外一种方法就是通过libsvm的python接口去调用。这里说的是第二种方法，即通过调用libsvm的python接口。

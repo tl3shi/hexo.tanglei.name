@@ -8,12 +8,11 @@ guid: http://www.tanglei.name/?p=2230
 duoshuo_thread_id:
   - 1351844048792453492
 categories:
-  - Windows
-  - 敲敲代码
   - 经验技巧
 tags:
-  - opengl
-  - 经验技巧
+  - OpenGL
+  - Windows
+  - 敲敲代码
   - 计算机图形学
 ---
 有时候往往需要通过远程桌面连接进行coding工作，像一般的比如web之类的可能不需要GPU等支持的coding工作直接用windows远程桌面连接编码然后debug即可，而一些需要依靠显卡支持的工作如渲染、cuda等GPU操作时，往往远程桌面连接debug会失败。因为当用远程桌面连接电脑B时，比如本来电脑B是具有牛X显卡，驱动啥之类都没有问题，但此时用另外一台电脑A远程连接过去，在B上跑需要GPU支持的程序，如需要用到Opengl3.X的功能或者cuda，而此时B检测到是远程连接过来的，就不会给予相应的支持或者说没有相应的驱动能够使得远程连接过来的也能支持。啊。。晕了。意思就是说可能此时只能驱动OpenGL1.X,程序就会crash掉。下面用个实例来说吧。

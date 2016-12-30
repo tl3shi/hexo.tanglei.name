@@ -10,8 +10,10 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - python
+  - 经验技巧
 tags:
+  - Python
+keywords:
   - a+=b
   - a=a+b
   - python

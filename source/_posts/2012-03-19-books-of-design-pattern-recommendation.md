@@ -8,7 +8,7 @@ guid: http://www.tanglei.name/?p=1575
 duoshuo_thread_id:
   - 1351844048792453249
 categories:
-  - 设计模式
+  - 课程学习
 tags:
   - OOP
   - 设计模式

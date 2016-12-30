@@ -8,9 +8,9 @@ guid: http://www.tanglei.name/?p=661
 duoshuo_thread_id:
   - 1351844048792453182
 categories:
-  - Windows
   - 经验技巧
 tags:
+  - Windows
 ---
 正在听歌，然后发现QQ来消息了，歌声突然变小了。然后插入耳机，再取出，声音又还原了。刚开始一直在想是哪里出问题了。驱动啥的有问题还是其他。后来网上一查，才发现原来我已经out了。
 

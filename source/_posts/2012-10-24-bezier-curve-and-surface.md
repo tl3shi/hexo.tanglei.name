@@ -12,7 +12,7 @@ enable_highlight:
 categories:
   - 计算机图形学
 tags:
-  - opengl
+  - OpenGL
   - 计算机图形学
 ---
 将按照如下目录记录在学习bezier曲线曲面的相关知识.

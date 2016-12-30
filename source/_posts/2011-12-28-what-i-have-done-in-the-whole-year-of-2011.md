@@ -10,8 +10,7 @@ duoshuo_thread_id:
 categories:
   - MyLife
 tags:
-  - 回忆录
-  - 年终总结
+  - 总结
 ---
 看到[海坡](http://haipo.me/)写了2011年年终总结，感觉自己也得来写一写，回忆一下2011.
 

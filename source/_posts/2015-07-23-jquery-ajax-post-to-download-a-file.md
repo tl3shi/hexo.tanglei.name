@@ -3,10 +3,10 @@ title: jQuery Ajax请求下载文件资源
 date: 2015-07-23
 layout: post
 categories: 
-    - 工作那些事儿
-    - 敲敲代码 
-    - Scala 
-tags: [Work, Scala]
+  - 工作那些事儿
+tags: 
+  - 敲敲代码 
+  - Scala 
 published: true 
 ---
 

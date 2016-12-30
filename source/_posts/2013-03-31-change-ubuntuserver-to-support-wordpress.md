@@ -10,10 +10,11 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - 我做站长
+  - 经验技巧
 tags:
   - Ubuntu
   - Wordpress
+  - 我做站长
   - 虚拟主机
 ---
 今天突然发现博客主机流量超过了15G而被停调了。 

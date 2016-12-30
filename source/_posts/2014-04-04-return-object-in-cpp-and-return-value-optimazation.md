@@ -10,10 +10,11 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - c++
+  - 学到老
 tags:
   - OOP
   - 性能优化
+  - C++
 ---
 <font size="4" color="red">update</font> 这应该属于Named Return Value Optimization(NRVO)或者Return Value Optimization(RVO)返回值优化的范畴。
   

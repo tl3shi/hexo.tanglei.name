@@ -8,9 +8,11 @@ guid: http://www.tanglei.name/?p=893
 duoshuo_thread_id:
   - 1351844048792453161
 categories:
-  - Android
+  - 网络文摘
 tags:
   - Google
+  - 编程比赛
+  - Android
 ---
 第一届，宏杰石文海他们都传应用了，还有得包用。呵呵，这次也去提交下。
 

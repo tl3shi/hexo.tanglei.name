@@ -8,8 +8,11 @@ guid: http://www.tanglei.name/?p=446
 duoshuo_thread_id:
   - 1351844048792453224
 categories:
-  - 软考
+  - 课程学习
 tags:
+  - 系统架构师
+  - 软件设计师
+  - 软考
 ---
 **1.6** **计算机总线结构** 
 

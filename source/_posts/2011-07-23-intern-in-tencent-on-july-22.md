@@ -8,7 +8,7 @@ guid: http://www.tanglei.name/?p=1048
 duoshuo_thread_id:
   - 1351844048792453274
 categories:
-  - 实习那些事儿
+  - 工作那些事儿
 tags:
   - 腾讯实习日志
 ---

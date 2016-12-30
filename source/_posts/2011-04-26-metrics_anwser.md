@@ -8,7 +8,7 @@ guid: http://www.tanglei.name/?p=539
 duoshuo_thread_id:
   - 1351844048792453187
 categories:
-  - 软件度量及其应用
+  - 课程学习
 tags:
   - 软件度量
 ---

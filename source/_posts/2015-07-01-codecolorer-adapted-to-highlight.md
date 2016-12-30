@@ -4,8 +4,6 @@ date: 2015-07-01
 layout: post
 tags: 
     - 经验技巧 
-    - Wordpress 
-    - Plugin
 categories: 
     - Wordpress
     - 经验技巧 

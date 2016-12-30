@@ -10,11 +10,9 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - Android
   - coding小工具
 tags:
   - Android
-  - 没有权限
   - 飞行模式
 ---
 <span style="color: #ff0000;">2015-01-18 (AutoSwitcher1.0)之后的<a href="/blog/android-airplanemode-auto-switcher-v2.html">更新说明文档<span style="color: #ff0000;">在这里</span></a>。<a href="/blog/android-airplanemode-auto-switcher-v2.html"><span style="color: #000000;">/blog/android-airplanemode-auto-switcher-v2.html</span></a><span style="color: #333300;">//2015-01-18 update</span></span>

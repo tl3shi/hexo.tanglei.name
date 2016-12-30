@@ -8,10 +8,11 @@ guid: http://www.tanglei.name/?p=1082
 duoshuo_thread_id:
   - 1351844048792453417
 categories:
-  - 'Linux'
+  - 学到老
 tags:
   - Linux
-  - 快捷键
+  - 工具
+  - Vim
 ---
 最近常用到VI，苦于有些命令还得去查，这里网上找了份，不错。记录下来。收藏了。
   

@@ -8,10 +8,10 @@ guid: http://www.tanglei.name/?p=494
 duoshuo_thread_id:
   - 1351844048792453241
 categories:
-  - 数据库应用
-  - 软考
+  - 课程学习
 tags:
-  - 关系数据库
+  - 软考
+  - 数据库
 ---
 **1.7****关系数据库规范化理论** ****
 

@@ -8,9 +8,9 @@ guid: http://www.tanglei.name/?p=565
 duoshuo_thread_id:
   - 1351844048792453406
 categories:
-  - 开开眼界
+  - 网络文摘
 tags:
-  - interesting
+  - 网络安全
 ---
 <div id="OSChina_News_17563" class="NewsContent TextContent">
   <p>

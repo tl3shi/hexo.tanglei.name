@@ -5,7 +5,9 @@ categories:
   - 经验技巧
 tags: 
   - 经验技巧
+  - 工具
   - Mac
+  - 程序员
 ---
 
 在前面一篇文章["Mac 软件推荐续(!程序猿篇)"](http://www.tanglei.name/blog/app-in-mac-for-common.html) (文章取名装X失败, 悲伤)中, 我已经介绍了一些大众化的软件, 当然作为程序猿的你也应该参考参考. 

@@ -8,9 +8,10 @@ guid: http://www.tanglei.name/?p=1440
 duoshuo_thread_id:
   - 1351844048792453354
 categories:
-  - 敲敲代码
+  - coding小工具
 tags:
   - Java
+  - 总结
 ---
 <p align="left">
   好久就说把自己以前做过(或者参与)的小玩意整理下，现在终于开始行动了。

@@ -8,8 +8,10 @@ guid: http://www.tanglei.name/?p=469
 duoshuo_thread_id:
   - 1351844048792453451
 categories:
-  - 软考
+  - 课程学习
 tags:
+  - 多媒体
+  - 软考
 ---
 上接：[/blog/ruankao\_multi\_media1.html](/blog/ruankao_multi_media1.html)
 

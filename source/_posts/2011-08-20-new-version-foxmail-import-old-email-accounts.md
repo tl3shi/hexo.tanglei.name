@@ -8,7 +8,6 @@ guid: http://www.tanglei.name/?p=1125
 duoshuo_thread_id:
   - 1351844048792453240
 categories:
-  - 实习那些事儿
   - 经验技巧
 tags:
   - Foxmail

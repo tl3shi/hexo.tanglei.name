@@ -12,6 +12,8 @@ enable_highlight:
 categories:
   - coding小工具
 tags:
+  - Android
+  - Java
 ---
 前面讲了，[单纯的发送一条短信](/blog/android-send-sms.html)，看android官方APIDemo说的也是通过RESULT_OK代表发送成功。官方代码如下： 
 

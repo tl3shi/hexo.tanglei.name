@@ -8,9 +8,11 @@ guid: http://www.tanglei.name/?p=442
 duoshuo_thread_id:
   - 1351844048792453368
 categories:
-  - 软考
+  - 课程学习
 tags:
-  - 输入/输出系统
+  - 系统架构师
+  - 软件设计师
+  - 软考
 ---
 上接</blog/computer_system1.html>
 

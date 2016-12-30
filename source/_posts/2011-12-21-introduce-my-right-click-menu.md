@@ -8,10 +8,10 @@ guid: http://www.tanglei.name/?p=1320
 duoshuo_thread_id:
   - 1351844048792453282
 categories:
-  - Windows
   - 经验技巧
 tags:
-  - 经验技巧
+  - Windows
+  - 工具
 ---
 <p align="left">
   下面的就是我的右键菜单。如图所示：

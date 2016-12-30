@@ -8,9 +8,10 @@ guid: /blog/%e4%b8%a4%e5%8f%b0%e7%94%b5%e8%84%91%e9%80%9a%e8%bf%87%e6%97%a0%e7%b
 duoshuo_thread_id:
   - 1351844048792453323
 categories:
-  - Windows
+  - 经验技巧
 tags:
   - 共享上网
+  - Windows
 ---
 有时候有两台电脑，但只有一根网线，就可以采取如下方法让2个本都上网了。具体过程如下： 
 

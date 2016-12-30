@@ -8,11 +8,10 @@ guid: http://www.tanglei.name/?p=2263
 duoshuo_thread_id:
   - 1351844048792453495
 categories:
-  - c++
-  - Windows
-  - 敲敲代码
+  - 经验技巧
 tags:
-  - c++
+  - C++
+  - 敲敲代码
   - Windows
 ---
 Untitled Blog Post NameUntitled Blog Post NameUntitled Blog Post Name

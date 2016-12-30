@@ -8,10 +8,9 @@ guid: http://www.tanglei.name/?p=2583
 duoshuo_thread_id:
   - 1351844048792453515
 categories:
-  - Android
   - coding小工具
-  - 敲敲代码
 tags:
+  - 敲敲代码
   - Android
   - 飞行模式
 ---

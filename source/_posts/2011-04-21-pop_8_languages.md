@@ -10,6 +10,7 @@ duoshuo_thread_id:
 categories:
   - 网络文摘
 tags:
+  - 编程语言
 ---
 以下内容转自：<http://www.jobbole.com/content.php/1078>
 

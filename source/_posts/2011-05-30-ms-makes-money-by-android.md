@@ -8,10 +8,10 @@ guid: http://www.tanglei.name/?p=740
 duoshuo_thread_id:
   - 1351844048792453165
 categories:
-  - Android
-  - 业界动态
+  - 网络文摘
 tags:
   - 微软
+  - Android
 ---
 昨天看了一篇文章。说是微软靠android赚钱比自己的windows phone还多。说的是HTC每生产一部android手机都得向MS给5dollars。今天去找那篇文章还没找到。昨晚回寝室，问段晴去武汉笔微软怎么样时，段晴也说看到了。说的就是因为android侵权，MS收取专利费，举个例子来说，Fat格式的存储卡 就是微软的专利。现在的手机不都得有存储卡么。李开复先生在自己的微博说：微软从Android赚的钱比Windows Phone多!HTC答应付出5美金专利费一台，只算 HTC 一家3000万台就要付出1亿五千万美元的专利费，而Windows Phone第一季度只有3000万的授权费。明年Android可以达到3-4亿台，一台10美金(据说微软在HTC后要涨价)，好多钱啊!
   

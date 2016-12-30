@@ -12,8 +12,9 @@ enable_highlight:
 categories:
   - 计算机图形学
 tags:
-  - opengl
-  - vim
+  - OpenGL
+  - 计算机图形学
+  - Vim
 ---
 一般的OpenGL教程都没有用VS等开发环境，直接用glut.h中相关定义来实现窗口显示、事件绑定等操作。之前用配置了环境VIM编写C、C++等程序，直接写OpenGL程序编译运行等不能直接操作，还需一定的配置。<a href="http://www.mingw.org/wiki/HOWTO_Use_Mark_J_Kilgards_OpenGL_Utility_Toolkit_GLUT_with_MinGW" target="_blank">MinGW官网也给出了解决方案</a>，参照此结合其他资源给出了自己的解决方法，记录以供查阅。(cygwin应该也是类似的配置)
 

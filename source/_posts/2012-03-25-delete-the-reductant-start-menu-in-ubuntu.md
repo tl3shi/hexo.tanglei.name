@@ -8,12 +8,10 @@ guid: http://www.tanglei.name/?p=1629
 duoshuo_thread_id:
   - 1351844048792453294
 categories:
-  - 'Linux'
   - 经验技巧
 tags:
   - Linux
   - Ubuntu
-  - 启动菜单
 ---
 上次<a href="/blog/my-ubuntu10-10.html" target="_blank">装了ubuntu</a>(3个系统,windows xp,64-位win7,ubuntu)后好久没用了。今天突然跟google一样抽风进去看看，才发现，原来我的ubuntu下有那么多启动项。（又查了下图中的[PAE](http://baike.baidu.com/view/493711.htm)//Physical Address Extension，效果是使32位系统用4g内存）
 

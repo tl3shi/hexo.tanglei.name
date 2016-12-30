@@ -10,6 +10,7 @@ duoshuo_thread_id:
 categories:
   - MyLife
 tags:
+  - 总结
 ---
 写下这个题目的时候，我已经在家了。
 

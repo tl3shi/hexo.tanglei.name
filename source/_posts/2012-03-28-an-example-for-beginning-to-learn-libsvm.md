@@ -8,10 +8,10 @@ guid: http://www.tanglei.name/?p=1664
 duoshuo_thread_id:
   - 1351844048792453358
 categories:
-  - 数据挖掘
+  - 经验技巧
 tags:
   - HelloWorld
-  - libsvm
+  - 数据挖掘
   - SVM
 ---
 搜索<a href="http://zh.wikipedia.org/wiki/SVM" target="_blank">SVM</a>入门，收录排名最前的应该就是这几篇文章了：<a href="http://www.blogjava.net/zhenandaci/archive/2009/02/13/254519.html" target="_blank">SVM 入门资料</a>。具体什么原理貌似挺高深的，我也没怎么去看其中的原理。这里我说的<a href="http://www.csie.ntu.edu.tw/~cjlin/libsvm/" target="_blank">LibSvm</a>就是SVM其中一个解决方案的软件包。

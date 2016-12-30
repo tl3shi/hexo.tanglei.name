@@ -6,7 +6,6 @@ tags:
     - 旅游 
     - 玩遍中国 
 categories: 
-    - MyLife 
     - 旅游
 published: true
 ---

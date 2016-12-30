@@ -8,9 +8,10 @@ guid: http://www.tanglei.name/?p=2391
 duoshuo_thread_id:
   - 1351844048792453502
 categories:
-  - MyLife
+  - 旅游
 tags:
   - 旅游
+  - 玩遍中国
 ---
 北京出发先到怀柔，然后乘坐“怀柔——水长城”专线到达黄花城水长城景区。
 

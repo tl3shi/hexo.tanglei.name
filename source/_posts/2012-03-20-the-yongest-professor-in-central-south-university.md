@@ -8,7 +8,6 @@ guid: http://www.tanglei.name/?p=1597
 duoshuo_thread_id:
   - 1351844048792453297
 categories:
-  - 名人名事
   - 网络文摘
 tags:
   - 中南大学

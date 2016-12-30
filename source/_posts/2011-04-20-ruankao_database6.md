@@ -8,9 +8,10 @@ guid: http://www.tanglei.name/?p=498
 duoshuo_thread_id:
   - 1351844048792453261
 categories:
-  - 数据库应用
-  - 软考
+  - 课程学习
 tags:
+  - 软考
+  - 数据库
 ---
 **1.9****数据仓库与分布式数据库**
 

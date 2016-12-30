@@ -10,10 +10,10 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - python
+  - 学到老
 tags:
   - OOP
-  - python
+  - Python
 ---
 前面说已经开是[学习python了](/blog/start-to-learn-python.html)，然后随便看了下语法，就看到了OO了。结果发现这个\_\_init\_\_()和\_\_new\_\_()方法才有些神奇。引用官方API的解释
 

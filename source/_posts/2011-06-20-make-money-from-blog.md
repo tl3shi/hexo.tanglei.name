@@ -9,10 +9,9 @@ duoshuo_thread_id:
   - 1351844048792453395
 categories:
   - MyLife
+tags:
   - Wordpress
   - 我做站长
-tags:
-  - Wordpress赚钱
 ---
 这两天认识一个新朋友C瓜哥，说起来还真有缘，同是重庆老乡，同是搞计算机滴，不过他计科，我软件而已。跟这他学了不少东西啊。呵呵。
 

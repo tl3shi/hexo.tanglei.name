@@ -11,11 +11,10 @@ enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - 数据挖掘
-  - 敲敲代码
+  - 学到老
 tags:
-  - eclipse
-  - eclipse插件
+  - Eclipse
+  - 数据挖掘
   - R语言
 ---
 之前开发用惯了eclipse(从Java,JS,android到php,python等)，现在准备接触下R，还是想用eclipse，不想再去花时间熟悉另外的IDE。 

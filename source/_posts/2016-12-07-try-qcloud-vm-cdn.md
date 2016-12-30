@@ -5,7 +5,7 @@ categories:
   - 经验技巧
 tags: 
   - 经验技巧
-  - docker
+  - 云服务
   - Linux
 ---
 

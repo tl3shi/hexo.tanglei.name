@@ -8,9 +8,11 @@ guid: http://www.tanglei.name/?p=972
 duoshuo_thread_id:
   - 1351844048792453192
 categories:
-  - coding小工具
+  - 除臭虫
 tags:
   - Android
+  - coding小工具
+  - Java
 ---
 昨晚继续写我的短信群发小工具，但遇到manager.sendTextMessage(info.getTelephone(), null, info.getSmsContent(), sentPi, null);总是报空指针。
 

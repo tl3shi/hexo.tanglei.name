@@ -5,8 +5,6 @@ layout: post
 categories:
   - MyLife
 tags:
-  - 回忆录
-  - 年终总结
   - 总结
 ---
 

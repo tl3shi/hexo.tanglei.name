@@ -8,12 +8,10 @@ guid: http://www.tanglei.name/?p=1929
 duoshuo_thread_id:
   - 1351844048792453357
 categories:
-  - 清华大学
+  - MyLife
 tags:
   - 清华大学
-  - 爱好
   - 笛子
-  - 笛子协会
 ---
 RT。
 

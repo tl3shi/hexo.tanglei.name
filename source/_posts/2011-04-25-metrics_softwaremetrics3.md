@@ -8,8 +8,10 @@ guid: http://www.tanglei.name/?p=516
 duoshuo_thread_id:
   - 1351844048792453412
 categories:
-  - 软件度量及其应用
+  - 课程学习
 tags:
+  - 软件度量
+keywords:
   - 数据流结构
   - 软件度量
   - 软件结构度量

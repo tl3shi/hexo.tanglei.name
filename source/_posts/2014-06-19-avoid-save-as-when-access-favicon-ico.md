@@ -10,9 +10,10 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - 我做站长
+ - 经验技巧
 tags:
-  - APACHE
+  - Apache
+  - 我做站长
 ---
 Blog从虚拟主机换到了VPS，网站的favicon.ico图标出现了问题。用浏览器访问 </blog/favicon.ico> 总提示下载.html保存（另存为……）.
 

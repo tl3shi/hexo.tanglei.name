@@ -10,10 +10,10 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - python
-  - 数据挖掘
+  - 经验技巧
 tags:
-  - python
+  - Python
+  - 数据挖掘
 ---
 在看apriori的算法，决定自己练练手，写写代码。最近又在[学python](/tag/#python)，所以准备用python实现。其中一个子过程是要求候选项Ck的k项子集。在这个求子集的方法中遇到了问题了，并且很神奇。最开始一直找不到问题所在，当单步调试发现问题所在之处时却倍感神奇。下面用代码示例来说明下这个问题的神奇之处。
 

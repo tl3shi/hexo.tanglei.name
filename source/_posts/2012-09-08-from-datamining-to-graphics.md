@@ -11,6 +11,7 @@ categories:
   - MyLife
 tags:
   - 数据挖掘
+  - 计算机图形学
 ---
 之前<a href="/blog/cannot-learn-datamining-in-my-master-life.html" target="_blank">这篇文章</a>说了自己专业方向于数据挖掘无缘了，貌似自己从开始就冥冥之中注定搞图形学了？自己在<a href="/blog/postgraduate-interview-in-zju.html" target="_blank">浙大保研复试</a>时就被浙大的搞图形学的童若峰老师给看重，被拉到其实验室交流了一下。当时就表态自己对图形学貌似不怎么感兴趣。
 

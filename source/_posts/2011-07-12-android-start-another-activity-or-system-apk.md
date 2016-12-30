@@ -10,10 +10,10 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - Android
   - coding小工具
 tags:
   - Android
+  - Java
 ---
 写短信群发小工具，当发送成功后，想跳动到系统自带的已发送或者发件箱，网上搜了下。开始关键字没输好，搜不到，结果用一个apk启动另一个apk就搜到了。
 

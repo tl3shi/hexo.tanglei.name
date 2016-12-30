@@ -8,10 +8,9 @@ guid: http://www.tanglei.name/?p=748
 duoshuo_thread_id:
   - 1351844048792453390
 categories:
-  - JAVA
+  - 课程学习
 tags:
   - Java
-  - Java基础
 ---
 转自：<span style="font-weight: bold;"><a href="http://www.jobbole.com/entry.php/885-Java%E6%B3%9B%E5%9E%8B%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B">Java泛型简明教程</a></span>
   

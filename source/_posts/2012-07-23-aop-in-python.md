@@ -10,12 +10,11 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - python
-  - 实习那些事儿
+  - 工作那些事儿
 tags:
   - AOP
-  - decorator
-  - python
+  - Python
+  - 设计模式
 ---
 背景：之前在腾讯实习的时候做了相关接口监控报送状态时写了<a href="/blog/aop-in-php.html" target="_blank">PHP中的AOP</a> ，这几天在UMeng实习要做到一个log模块，之前的类似代码是这样的：
 

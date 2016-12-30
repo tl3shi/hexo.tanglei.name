@@ -8,9 +8,10 @@ guid: http://www.tanglei.name/?p=730
 duoshuo_thread_id:
   - 1351844048792453369
 categories:
-  - 我做站长
+  - 经验技巧
 tags:
   - Foxmail
+  - 我做站长
 ---
 <p style="text-align: center;">
   <div style="text-align: left;">

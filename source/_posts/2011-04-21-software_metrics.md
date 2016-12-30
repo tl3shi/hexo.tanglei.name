@@ -9,9 +9,7 @@ duoshuo_thread_id:
   - 1351844048792453411
 categories:
   - 课程学习
-  - 软件度量及其应用
 tags:
-  - Metrics
   - 考点
   - 软件度量
 ---

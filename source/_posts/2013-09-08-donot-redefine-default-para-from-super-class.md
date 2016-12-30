@@ -10,10 +10,9 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - c++
-  - 敲敲代码
+  - 学到老
 tags:
-  - c++
+  - C++
   - OOP
 ---
 直接上代码，如下，你觉得应该输出什么？

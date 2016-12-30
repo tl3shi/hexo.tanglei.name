@@ -8,13 +8,12 @@ guid: http://www.tanglei.name/?p=1087
 duoshuo_thread_id:
   - 1351844048792453430
 categories:
-  - 敲敲代码
+  - 学到老
 tags:
   - 正则表达式
 ---
 时不时会用到，网上找滴，整理下，收藏下吧。
   
-
 
 <hr size="1" />
 

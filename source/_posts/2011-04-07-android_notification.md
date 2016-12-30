@@ -10,9 +10,10 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - Android
+  - 经验技巧
 tags:
   - Android
+  - Java
 ---
 项目需要，当按手机home键时，出现通知栏，从通知栏图标点击快速返回上一个应用的界面。
   

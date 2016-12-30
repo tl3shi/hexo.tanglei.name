@@ -8,8 +8,12 @@ guid: http://www.tanglei.name/?p=1061
 duoshuo_thread_id:
   - 1351844048792453378
 categories:
-  - 实习那些事儿
+  - 工作那些事儿
 tags:
+  - 腾讯
+  - 实习
+  - 工作日志
+keywords:
   - 腾讯实习日记
   - 腾讯实习生
 ---

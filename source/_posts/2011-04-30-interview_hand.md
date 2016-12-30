@@ -8,8 +8,7 @@ guid: http://www.tanglei.name/?p=567
 duoshuo_thread_id:
   - 1351844048792453349
 categories:
-  - MyLife
-  - 实习那些事儿
+  - 工作那些事儿
 tags:
   - 实习
   - 面试

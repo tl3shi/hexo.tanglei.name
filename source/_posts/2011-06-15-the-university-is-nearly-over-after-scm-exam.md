@@ -9,9 +9,9 @@ duoshuo_thread_id:
   - 1351844048792453436
 categories:
   - MyLife
-  - 软件配置管理
 tags:
-  - 软件配置管理考试
+  - 软件配置管理
+  - 考试
 ---
 今天考完大学的最后一门考试了。Software Configuration Management总体感觉还不错啦。当然就除了第一个题目SCM在CMMI里属于哪一级，在CMM里面属于repeatable第二级，选项中没有可重复计，只有个defined，是除了初始级后的低点的级别了，就选它了。没想到结果最后是已管理级。好吧，刚才又查了下，错了。CMMI里面的managed是第2级别，defined是第三级，第四级别是 Quantitatively Managed。
 

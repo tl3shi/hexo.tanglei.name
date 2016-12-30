@@ -8,10 +8,8 @@ guid: http://www.tanglei.name/?p=521
 duoshuo_thread_id:
   - 1351844048792453253
 categories:
-  - 软件度量及其应用
+  - 课程学习
 tags:
-  - Halstead
-  - 数据流结构
   - 软件度量
   - 软件结构度量
 ---

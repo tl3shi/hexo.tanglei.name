@@ -8,7 +8,7 @@ guid: http://www.tanglei.name/?p=787
 duoshuo_thread_id:
   - 1351844048792453268
 categories:
-  - 名人名事
+  - 网络文摘
 ---
 转自：[infoq](http://www.infoq.com/cn/news/2011/06/Erich-Gamma-Visual-Studio)
 

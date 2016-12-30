@@ -10,8 +10,7 @@ duoshuo_thread_id:
 categories:
   - 经验技巧
 tags:
-  - mac
-  - OS
+  - Mac
 ---
 前两天把mac air升级到最新版Mavericks,10.9版后，发现finder无法用，重启啊什么都不行。最后才发现原来是金山快盘惹的祸。
 

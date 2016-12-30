@@ -10,6 +10,8 @@ duoshuo_thread_id:
 categories:
   - 软考
 tags:
+  - 多媒体
+  - 软考
 ---
 **1****、多媒体知识：**
 

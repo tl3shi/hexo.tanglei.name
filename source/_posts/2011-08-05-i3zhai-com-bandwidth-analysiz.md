@@ -8,10 +8,10 @@ guid: http://www.tanglei.name/?p=1093
 duoshuo_thread_id:
   - 1351844048792453429
 categories:
-  - 实习那些事儿
-  - 我做站长
+  - 经验技巧
 tags:
-  - 垃圾蜘蛛
+  - 搜索引擎
+  - 我做站长
 ---
 <p align="left">
   前面<a href="/blog/mysite-was-stopped-because-of-exceeded-of-bandwidth.html">一篇文章说i3zhai的论坛流量超</a>了，这两天试试用putty去连远程linux，发现了里面的log。惊奇的发现了。Sosospider这么夸张。就在公司OA发了篇帖子，响应挺快滴。

@@ -8,7 +8,7 @@ guid: http://www.tanglei.name/?p=683
 duoshuo_thread_id:
   - 1351844048792453292
 categories:
-  - 开开眼界
+  - 网络文摘
 tags:
   - Linux
 ---

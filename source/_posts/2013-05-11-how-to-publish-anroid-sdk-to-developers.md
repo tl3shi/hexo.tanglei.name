@@ -10,9 +10,10 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - Android
+  - 经验技巧
 tags:
   - Android
+  - Java
 ---
 在Android开发过程中，我们经常会有这种需求，需要将自己开发一个类库打包成jar包以供他人(其他人一般指开发者)调用，而不是直接打包apk文件供最终用户使用。在打包成jar后，你往往会自己先测试一下看jar包能不能直接使用，这时就会常常有如下的几个问题：
 

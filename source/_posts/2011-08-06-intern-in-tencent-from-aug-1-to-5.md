@@ -8,8 +8,12 @@ guid: /blog/8-1%e2%80%948-5%e5%ae%9e%e4%b9%a0%e5%b7%a5%e4%bd%9c%e8%ae%b0%e5%bd%9
 duoshuo_thread_id:
   - 1351844048792453239
 categories:
-  - 实习那些事儿
+  - 工作那些事儿
 tags:
+  - 腾讯
+  - 实习
+  - 工作日志
+keywords:
   - 实习日志
   - 腾讯实习日记
 ---

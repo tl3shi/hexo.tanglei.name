@@ -9,9 +9,10 @@ duoshuo_thread_id:
   - 1351844048792453410
 categories:
   - MyLife
-  - 软件学院
 tags:
   - 保研
+  - 面试
+keywords:
   - 计算机保研
   - 软件工程
 ---

@@ -8,9 +8,11 @@ guid: http://www.tanglei.name/?p=647
 duoshuo_thread_id:
   - 1351844048792453131
 categories:
-  - 实习那些事儿
+  - 工作那些事儿
 tags:
-  - 腾讯面经
+  - 腾讯
+  - 实习
+  - 面试
 ---
 <div>
   <p>

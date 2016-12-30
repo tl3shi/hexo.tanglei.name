@@ -4,12 +4,10 @@ date: 2015-06-26
 layout: post
 tags: 
     - 经验技巧 
-    - Wordpress 
-    - Plugin
 categories: 
     - 经验技巧 
     - 我做站长 
-    - Wordpress
+    - Wordpress 
 published: True
 ---
 

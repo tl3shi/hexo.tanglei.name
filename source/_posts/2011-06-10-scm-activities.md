@@ -8,10 +8,11 @@ guid: http://www.tanglei.name/?p=800
 duoshuo_thread_id:
   - 1351844048792453126
 categories:
-  - 软件配置管理
+  - 课程学习
 tags:
-  - SCM复习资料
-  - SCM考试
+  - SCM
+  - 软件配置管理
+  - 考试
 ---
 [<img class="aligncenter size-medium wp-image-801" title="SCM-activity" src="/wp-content/uploads/2011/06/SCM-activity.jpg" alt="配置管理活动"  />](/wp-content/uploads/2011/06/SCM-activity.jpg)
 

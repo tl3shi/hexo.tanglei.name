@@ -8,10 +8,10 @@ guid: http://www.tanglei.name/?p=1811
 duoshuo_thread_id:
   - 1351844048792453276
 categories:
-  - 软件学院
+  - MyLife
 tags:
-  - 中南大学软件学院
-  - 演讲稿
+  - 中南大学
+  - 软件学院
 ---
 尊敬的院领导、各位老师，亲爱的同学们：
 

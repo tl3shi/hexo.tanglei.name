@@ -6,7 +6,7 @@ categories:
   - MyLife
 tags:
   - Wordpress
-  - Blog
+  - 我做站长
 ---
 
 ### 起因

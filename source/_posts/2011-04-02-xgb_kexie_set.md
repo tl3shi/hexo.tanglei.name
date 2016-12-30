@@ -8,9 +8,10 @@ guid: http://www.tanglei.name/?p=386
 duoshuo_thread_id:
   - 1351844048792453245
 categories:
-  - 软件学院
+  - 社会工作
 tags:
   - 大学生科协
+  - 软件学院
 ---
 为了丰富博客内容，再转，转自中南大学学工网：<http://www.qgzxol.com/xuegong/xgw/NewsSystem/Files/2011-3-31/5785.shtml>
 

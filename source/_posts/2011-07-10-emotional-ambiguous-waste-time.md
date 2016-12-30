@@ -8,7 +8,7 @@ guid: http://www.tanglei.name/?p=966
 duoshuo_thread_id:
   - 1351844048792453361
 categories:
-  - MyLife
+  - 网络文摘
 tags:
 ---
 一个文学院的哥们写的，感觉蛮不错的。转过来。看看。

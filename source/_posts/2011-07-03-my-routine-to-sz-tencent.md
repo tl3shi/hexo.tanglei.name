@@ -8,8 +8,10 @@ guid: http://www.tanglei.name/?p=947
 duoshuo_thread_id:
   - 1351844048792453373
 categories:
-  - 实习那些事儿
+  - 工作那些事儿
 tags:
+  - 腾讯
+  - 实习
 ---
 最开始，还在说要去贵州支教滴。现在也不用我去了。有老大亲自带队，不用我了。呵呵。
 

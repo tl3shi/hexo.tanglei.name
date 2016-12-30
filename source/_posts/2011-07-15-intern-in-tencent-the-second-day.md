@@ -8,9 +8,11 @@ guid: /blog/%e8%85%be%e8%ae%af%e5%ae%9e%e4%b9%a0-%e7%ac%ac%e4%ba%8c%e5%a4%a9.htm
 duoshuo_thread_id:
   - 1351844048792453374
 categories:
-  - 实习那些事儿
+  - 工作那些事儿
 tags:
-  - 腾讯实习生
+  - 腾讯
+  - 实习
+  - 工作日志
 ---
 今天8点10多分左右被Carmelo叫起来，然后去搭去腾大的班车。这张没拍好，明天准备好了再重新拍一张远点的。 
 

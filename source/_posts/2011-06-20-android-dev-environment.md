@@ -10,9 +10,10 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - Android
+  - 经验技巧
 tags:
   - Android
+  - 玩玩手机
 ---
 今天收拾桌面，看到这个文档，以前搞开发时用的。maybe大家用的着。下面环境变量是我的水货机子defy，买了之后的，android 2.1update1系统的环境变量。由如下代码产生
 

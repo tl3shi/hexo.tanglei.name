@@ -8,10 +8,10 @@ guid: http://www.tanglei.name/?p=2504
 duoshuo_thread_id:
   - 1351844048792453509
 categories:
-  - c++
   - 经验技巧
 tags:
-  - mac
+  - Mac
+  - C++
 ---
 不得不吐槽下Xcode的debug功能实在是弱爆了～ 网上也不止我一个人吐槽～废话不多说，看图
 

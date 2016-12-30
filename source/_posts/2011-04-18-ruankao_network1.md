@@ -8,8 +8,9 @@ guid: http://www.tanglei.name/?p=472
 duoshuo_thread_id:
   - 1351844048792453365
 categories:
-  - 软考
+  - 课程学习
 tags:
+  - 软考
   - 计算机网络
 ---
 **1****、计算机网络知识**

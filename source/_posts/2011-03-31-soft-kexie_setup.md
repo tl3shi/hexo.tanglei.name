@@ -8,9 +8,9 @@ guid: http://www.tanglei.name/?p=375
 duoshuo_thread_id:
   - 1351844048792453352
 categories:
-  - 软件学院
+  - 社会工作
 tags:
-  - 成立大会
+  - 大学生科协
   - 软件学院
 ---
 以下转自：http://software.csu.edu.cn/SoftwareSite/article.do?atcID=778

@@ -9,9 +9,9 @@ duoshuo_thread_id:
   - 1351844048792453487
 categories:
   - MyLife
-  - 清华大学
 tags:
-  - 回忆录
+  - 总结
+  - 清华大学
 ---
 说来惭愧~blog 一直荒废,眼看8月就没了,所以赶紧在9月来临时,post一篇.
 

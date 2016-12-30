@@ -8,9 +8,10 @@ guid: http://www.tanglei.name/?p=970
 duoshuo_thread_id:
   - 1351844048792453432
 categories:
-  - Android
+  - 除臭虫
 tags:
   - bug
+  - Android
 ---
 今天网上down了一个android源码，导入eclipse，build总是出错，提示：Error generating final archive: Debug certificate expired on 11-7-7 上午11:42!
 

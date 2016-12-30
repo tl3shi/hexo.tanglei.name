@@ -10,11 +10,11 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - c++
+  - 经验技巧
+tags:
+  - C++
   - Windows
   - 敲敲代码
-tags:
-  - c++
   - HelloWorld
 ---
 > 最近一个合作973项目，需要调用人家的接口。对方给了一个dll文件和函数接口说明，然后我就视图通过传统生成的dll，loadlibrary去查找函数指针，通过函数指针去调用，失败。后来才发现人家给的dll不是一个一般的dll而是一个com接口，需要注册啊之类的。

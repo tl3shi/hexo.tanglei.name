@@ -11,9 +11,10 @@ enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - PHP
+  - 除臭虫
 tags:
   - PHP
+  - Mysql
 ---
 今天写php代码的时候，发现一个问题，因为我的数据库是用mysqlfront建的，自动添加的字段是Id作为主键。然后我在查询的时候写了这样的代码：
 

@@ -8,12 +8,10 @@ guid: http://www.tanglei.name/?p=1502
 duoshuo_thread_id:
   - 1351844048792453128
 categories:
-  - Wordpress
   - 经验技巧
 tags:
   - Wordpress
-  - Wordpress博客
-  - writer
+  - 我做站长
 ---
 在WordPress上写博客，网速不理想的情况下，上传图片的时候会很慢，并且需要一张一张添加图片。之前写过怎么[用word07快速发布Wordpress博客](/blog/publish-a-blog-easily-and-quickly-with-good-style.html) ，因为现在用的XP系统(另外的一个WIN7系统里装的office07)，里面没装word07，是用的office03，写一篇含有截图较多的博客，就不是很方便。WPS有个插件说可以发布博客(有时候XP也得打开下docx之类的，so该系统里就装了个wps)，结果试了试，又不行。后来据说Windows live writer可以，就试了试。安装了下writer(比较小)，没有装office07及以上滴童鞋推荐使用。
 

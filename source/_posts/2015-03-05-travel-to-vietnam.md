@@ -8,7 +8,7 @@ guid: http://www.tanglei.name/?p=2630
 duoshuo_thread_id:
   - 1351844048792453517
 categories:
-  - MyLife
+  - 旅游
 tags:
   - 旅游
   - 玩遍世界

@@ -10,10 +10,11 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - c++
-  - Windows
-  - 敲敲代码
+  - 除臭虫
 tags:
+  - C++
+  - Windows
+  - Mac
 ---
 此坑是参加微软秋令营活动下午编程测试时踩上的，编程测试题目本身不算难，难的是……对于没有ACM之类比赛的同学来说，要按照其要求读入输入和输出相应格式的结果来说就呵呵了。一个小算法总共可能花40分钟的时间，有30分钟的时间是用来解决输入输出的。对于平时在实验室写项目的同学来说，应该不会有太多的机会去写底层std io 和 file io，应该都封装好了，写具体逻辑吧。 不过从另外一个方面也说明了自己基础还是掌握得不牢固呀~比如不记得控制精度输出的函数等之类的。另外提醒下做类似的题目得小心输入输出格式及下面要讲到的缓冲区的问题。
 

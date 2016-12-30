@@ -10,11 +10,9 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - python
   - 我不会算法
-  - 数据挖掘
 tags:
-  - python
+  - Python
   - 数据挖掘
 ---
 &#160;&#160;&#160;&#160;&#160; 序列数据是非常重要的一种，在很多领域里面都频繁出现，例如：医药，商业，财政，客户行为，教育，安全等等。相关研究可以大致将序列数据的挖掘分为两类，发现序列模式和挖掘周期模式。Agrawal 等人<sup>[1]</sup>首次提出了挖掘频繁序列模式，利用支持度的概念来发现频繁模式，AprioriALL算法也是一种基于Apriori性质的算法，采用逐层搜索的算法来挖掘模式。<a href="http://rakesh.agrawal-family.com/papers/icde95seq.pdf" target="_blank">这篇论文</a>本身还讲了另外基于Apriori的变种序列模式挖掘算法，AprioriSome和DynamicSome。下面将根据这篇论文和结合自己的理解来说明下AprioriAll算法。总体来说，自我感觉这个AprioriAll算法相当于利用了两次前面提到的<a href="/blog/apriori-algorithm-in-python.html" target="_blank">Apriori算法</a>，中间包含一个频繁项的映射Map。区别在于其**支持度的定义有所区分**：本文所述的序列模式的支持度是指支持某特定某次的**custom数量**，而前面提到的关联规则Apriori算法中的支持度是在项集的交易数量上（就是下面的**baskets数量**）。

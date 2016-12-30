@@ -10,14 +10,16 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - PHP
+  - 学到老
 tags:
   - PHP
   - 正则表达式
 ---
 看代码看到类似 
 
-```phppreg_replace('/[\n\r]/is', '', $str);```
+```php
+preg_replace('/[\n\r]/is', '', $str);
+```
 
 的东西，没搞明白/is的意思，前面那篇文章也没说。后来查了下才明白是修饰符。看看下面这篇文章,学习下。
 

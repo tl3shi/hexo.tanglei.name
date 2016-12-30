@@ -8,9 +8,9 @@ guid: http://www.tanglei.name/?p=791
 duoshuo_thread_id:
   - 1351844048792453299
 categories:
-  - Android
-  - 玩玩手机
+  - 经验技巧
 tags:
+  - Android
 ---
 今天看桌面上有一个记事本，发现有用。就贴出来吧。然后再删掉。得整理下电脑了。
   

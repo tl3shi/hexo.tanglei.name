@@ -8,8 +8,10 @@ guid: /blog/%e8%bd%af%e4%bb%b6%e9%85%8d%e7%bd%ae%e7%ae%a1%e7%90%86%e6%a8%a1%e5%b
 duoshuo_thread_id:
   - 1351844048792453288
 categories:
-  - 软件配置管理
+  - 课程学习
 tags:
+  - 软件配置管理
+  - SCM
 ---
 <span style="font-size:12pt"><strong>相关概念：<br /> </strong></span>
 

@@ -8,8 +8,10 @@ guid: http://www.tanglei.name/?p=599
 duoshuo_thread_id:
   - 1351844048792453324
 categories:
-  - 实习那些事儿
+  - 工作那些事儿
 tags:
+  - 实习
+  - 面试
 ---
 暴露这些是件不道德的事情～～所以关键部位打码～
 

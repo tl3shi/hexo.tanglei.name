@@ -8,8 +8,9 @@ guid: http://www.tanglei.name/?p=904
 duoshuo_thread_id:
   - 1351844048792453399
 categories:
-  - JAVA
+  - 网络文摘
 tags:
+  - Java
 ---
 转自：<http://www.mkyong.com/featured/top-5-free-java-ebooks/>
 

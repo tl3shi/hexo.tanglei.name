@@ -8,7 +8,6 @@ guid: http://www.tanglei.name/?p=502
 duoshuo_thread_id:
   - 1351844048792453448
 categories:
-  - 业界动态
   - 网络文摘
 tags:
   - Google

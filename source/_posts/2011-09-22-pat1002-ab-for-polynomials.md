@@ -11,11 +11,16 @@ enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
   - 我不会算法
-tags:
+tags: 
+  - 保研
+  - 考试
+  - 算法
+keywords:
   - PAT
   - ZOJ
-  - 保研复试
+  - 保研
   - 浙大机试
+  - 计算机复试
 ---
 继续做吧。题目如下：
 

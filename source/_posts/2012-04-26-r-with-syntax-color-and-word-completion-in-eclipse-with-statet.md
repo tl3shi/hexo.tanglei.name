@@ -11,11 +11,9 @@ enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - 敲敲代码
   - 经验技巧
 tags:
-  - eclipse
-  - eclipse插件
+  - Eclipse
   - R语言
 ---
 前面讲过<a href="/blog/how-to-use-eclipse-to-program-in-r.html" target="_blank">如何在eclipse中配置R语言的开发环境插件</a>，这两天写了几句代码发现一些自带的函数没有高亮显示，也没有自动补全，对于经常用eclipse做开发的童鞋来说很不习惯啊。于是网上搜了下+自己研究了下，搞定。

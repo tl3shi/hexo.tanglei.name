@@ -8,8 +8,10 @@ guid: http://www.tanglei.name/?p=814
 duoshuo_thread_id:
   - 1351844048792453273
 categories:
-  - 软件配置管理
+  - 课程学习
 tags:
+  - 软件配置管理
+  - SCM
 ---
 ### 软件配置管理功能
 

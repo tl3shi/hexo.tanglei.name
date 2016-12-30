@@ -10,9 +10,11 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - Android
   - coding小工具
 tags:
+  - Android
+  - Java 
+keywords: 
   - Android关机闹钟
   - Android自动切换飞行模式
   - Android自动开机

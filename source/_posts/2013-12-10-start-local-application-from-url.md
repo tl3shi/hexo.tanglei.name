@@ -10,10 +10,10 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - Windows
-  - 敲敲代码
+  - 经验技巧
 tags:
   - Windows
+  - 敲敲代码
 ---
 常见的诸如网页点击某个链接启动了本地的迅雷、Q旋风等下载工具，亦或者是在某网页点击某QQ头像弹出本地QQ。其实方法比较简单，就是windows下注册表里面写好了，如果浏览器的开头（协议标识符）是tencent://之类的就打开QQ，其他也类似。下面给一个例子。
 

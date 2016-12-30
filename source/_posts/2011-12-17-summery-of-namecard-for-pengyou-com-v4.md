@@ -10,9 +10,9 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - 实习那些事儿
+  - 工作那些事儿
 tags:
-  - php图片水印
+  - PHP
 ---
 最近的几天的主要工作就是朋友网V4版本[推出的名片](http://www.pengyou.com/leitang?view_type=card)分享发feeds。因为前台是DIV+CSS展示，前台截图生成图片不是那么的容易。因而交给后台来处理。其实后台也不容易啊。需要一个字一个字的画上去，之前也做了相关的[图片加文字](/blog/add-chinese-text-mark-to-picture-in-php.html)的工作。现在需要做的就是把文字内容和图片内容(用户头像)拼到大背景上去。然而有几个难点：
 

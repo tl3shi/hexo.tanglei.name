@@ -6,6 +6,7 @@ categories:
 tags: 
   - 经验技巧
   - 面试
+  - 程序员
 ---
 
 ![一线码农](/resources/talking-about-the-basic-quality-for-frontline-coder-from-an-interview-problem/coder.jpg)

@@ -8,11 +8,9 @@ guid: http://www.tanglei.name/?p=1306
 duoshuo_thread_id:
   - 1351844048792453405
 categories:
-  - MyLife
-  - 实习那些事儿
   - 旅游
 tags:
-  - 成都软件大赛
+  - 编程比赛
   - 旅游
   - 玩遍中国
 ---

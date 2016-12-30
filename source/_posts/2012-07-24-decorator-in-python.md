@@ -10,11 +10,11 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - python
+  - 学到老
 tags:
   - AOP
-  - decorator
-  - python
+  - 设计模式
+  - Python
 ---
 前面写python的AOP解决方案时提到了decorator，这篇文章就详细的来整理下python的装饰器——decorator。
 

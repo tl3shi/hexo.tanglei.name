@@ -8,7 +8,7 @@ guid: http://www.tanglei.name/?p=1272
 duoshuo_thread_id:
   - 1351844048792453426
 categories:
-  - 实习那些事儿
+  - 工作那些事儿
 tags:
   - wifi自动关闭
   - 腾讯实习

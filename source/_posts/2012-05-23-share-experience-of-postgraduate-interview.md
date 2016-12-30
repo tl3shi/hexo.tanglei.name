@@ -8,10 +8,11 @@ guid: http://www.tanglei.name/?p=1796
 duoshuo_thread_id:
   - 1351844048792453321
 categories:
-  - 软件学院
+  - 经验技巧
 tags:
   - 保研
-  - 经验
+  - 面试
+keywords:
   - 计算机保研
 ---
 前几天分别给大一、大二大三的做了一个有关保研的经验交流。讲了一些我自己的看法和经验。

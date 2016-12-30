@@ -2,11 +2,11 @@
 title: 入手传说中的 HHKB Pro2 Type-S 
 layout: post
 categories: 
-  - MyLife
+  - 经验技巧
 tags: 
   - MyLife
   - 快捷键
-  - 经验技巧
+  - 工具
 ---
 
 今年生日给自己入手了一个生日礼物了, 那就是传说中的程序猿键盘 -- HHKB. 

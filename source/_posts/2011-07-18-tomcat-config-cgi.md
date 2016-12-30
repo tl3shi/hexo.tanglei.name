@@ -10,11 +10,12 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - JAVA
-  - 实习那些事儿
+  - 工作那些事儿
 tags:
   - Java
-  - Java支持CGI
+  - 腾讯
+  - 实习
+  - 工作日志
 ---
 腾讯实习的培训布置的作用中需要用Qzhttp+FastCGI+TTC架构写demo.网上参照了下,最后成功在Tomcat下配置CGI并实现简单例子.
   

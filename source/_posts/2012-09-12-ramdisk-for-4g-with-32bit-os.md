@@ -8,10 +8,11 @@ guid: http://www.tanglei.name/?p=1945
 duoshuo_thread_id:
   - 1351844048792453331
 categories:
-  - Windows
   - 经验技巧
 tags:
   - 经验技巧
+  - Windows
+  - 工具
 ---
 > 今天清理了下电脑，把以前安装的oracle9i，weblogic等卸载了，因为得安装VS，突然发现自己电脑4g内存，现在32的系统没有效利用起来，以前就用过ramdisk将内存虚拟成硬盘一方面有效利用内存，另一方面做某些事情时可以快点儿。
 

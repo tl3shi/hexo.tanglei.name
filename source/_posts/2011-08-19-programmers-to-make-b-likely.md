@@ -10,6 +10,7 @@ duoshuo_thread_id:
 categories:
   - 网络文摘
 tags:
+  - 程序员
 ---
 <span style="color: #888888;">在公司KM平台看到一篇文章，这篇文章属于外部转载，不存在机密信息。所以贴出来木事。</span>
 

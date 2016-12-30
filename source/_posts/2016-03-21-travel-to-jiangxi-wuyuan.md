@@ -3,7 +3,7 @@ title: 婺源之旅
 author: tanglei
 layout: post
 categories:
-  - MyLife
+  - 旅游
 tags:
   - 旅游
   - 玩遍中国

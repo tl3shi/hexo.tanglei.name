@@ -8,7 +8,7 @@ guid: http://www.tanglei.name/?p=377
 duoshuo_thread_id:
   - 1351844048792453392
 categories:
-  - 软件学院
+  - 社会工作
 tags:
   - 大学生科协
   - 软件学院

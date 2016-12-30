@@ -11,10 +11,10 @@ enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - Linux
-  - 实习那些事儿
+  - 工作那些事儿
 tags:
   - Linux
+  - Shell
 ---
 今天导师分了一个任务，让我算1000个QQ号的所有好友和可能认识的人的相册数量和照片数量，并把相册的封面信息等输出到文件，每个Q号一个文件。结果写出来了，跑了9个多小时了，还没跑完，因为想看到实时输出文件名数量等的状态，是前台运行的，要回家了，不能就一直前台嘛，于是查了下后台运行，且退出当前shell，进程不死，下面这篇文章是搜出来滴，转载了。注意，刚开始转后台进程时，我居然一个不小心按了 ctrl+c，于是挺掉了。还好输入的文件列表能知道当前处理到哪个QQ号码了，重新把剩下的跑一次。
   

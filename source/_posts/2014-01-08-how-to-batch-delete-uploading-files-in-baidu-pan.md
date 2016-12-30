@@ -8,13 +8,11 @@ guid: http://www.tanglei.name/?p=2287
 duoshuo_thread_id:
   - 1351844048792453496
 categories:
-  - Windows
   - 经验技巧
 tags:
-  - sqlite
+  - Sqlite
+  - Windows
   - 百度
-  - 百度云管家
-  - 百度网盘
 ---
 百度网盘给了2T的空间，得好好利用起来。   <img class="wlEmoticon wlEmoticon-smile" style="border-style: none;" src="/wp-content/uploads/2014/01/wlEmoticon-smile.png" alt="微笑" />但是。。。。
 

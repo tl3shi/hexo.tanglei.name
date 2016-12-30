@@ -11,8 +11,7 @@ categories:
   - 经验技巧
 tags:
   - Latex
-  - Latex-suite
-  - vim
+  - Vim
 ---
 最近写毕业论文~嗯~痛苦的过程~ 因为之前开题报告~水的论文都是latex，所以决定毕业论文仍然用latex，就不用在乎学校繁琐格式的排版了，模版的话当然就用<a href="https://github.com/xueruini/thuthesis.git" target="_blank">thutheis</a>.
 

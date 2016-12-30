@@ -8,9 +8,10 @@ guid: http://www.tanglei.name/?p=1037
 duoshuo_thread_id:
   - 1351844048792453257
 categories:
-  - 'Linux'
+  - 经验技巧
 tags:
   - Linux
+  - 工具
 ---
 公司开发机跟本机交互，通常用SecureCRT。
   

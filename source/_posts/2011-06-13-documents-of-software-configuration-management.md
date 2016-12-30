@@ -8,9 +8,10 @@ guid: /blog/documents-of-software-configuration-management.html
 duoshuo_thread_id:
   - 1351844048792453162
 categories:
+  - 课程学习
+tags:
   - 软件工程
   - 软件配置管理
-tags:
 ---
 ### <span style="font-size:15pt">软件配置管理计划 </span>
 	  

@@ -8,9 +8,9 @@ guid: http://www.tanglei.name/?p=485
 duoshuo_thread_id:
   - 1351844048792453377
 categories:
-  - 数据库应用
-  - 软考
+  - 课程学习
 tags:
+  - 软考
   - 数据库
 ---
 软考当中设计到数据库的主要有下面几个方面：

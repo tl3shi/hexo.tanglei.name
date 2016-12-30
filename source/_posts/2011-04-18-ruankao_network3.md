@@ -8,8 +8,10 @@ guid: http://www.tanglei.name/?p=477
 duoshuo_thread_id:
   - 1351844048792453332
 categories:
-  - 软考
+  - 课程学习
 tags:
+  - 软考
+  - 计算机网络
   - TCP/IP
 ---
 **2****．计算机网络重点和难点：******

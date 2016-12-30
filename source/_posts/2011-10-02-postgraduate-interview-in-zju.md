@@ -9,11 +9,17 @@ duoshuo_thread_id:
   - 1351844048792453163
 categories:
   - MyLife
-tags:
+tags: 
   - 保研
-  - 计算机保研
-  - 计算机复试
+  - 考试
   - 面试
+keywords:
+  - PAT
+  - ZOJ
+  - 保研
+  - 浙大机试
+  - 计算机复试
+  - 计算机保研
 ---
 前面一篇blog谈到了[浙大计算机院的机试](/blog/the-practise-on-pc-of-postgraduate-in-cs-zju.html)，下面是面试经历：
 

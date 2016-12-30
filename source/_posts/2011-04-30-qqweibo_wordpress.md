@@ -8,9 +8,10 @@ guid: http://www.tanglei.name/?p=573
 duoshuo_thread_id:
   - 1351844048792453422
 categories:
-  - Wordpress
+  - 经验技巧
 tags:
   - Wordpress
+  - 我做站长
 ---
 将腾讯的微博加到Wordpress，想想也就是一句代码的问题。进了腾讯的官方微博看看。有个[腾讯微博秀](http://open.t.qq.com/websites/show/)。“使用微博秀，将生成的代码放置到你的博客、网站或是其它支持html代码的位置，就能向网页访问者展示你在腾讯微博的最新广播和听众。”可以生成代码。
   

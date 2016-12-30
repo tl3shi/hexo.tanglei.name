@@ -8,9 +8,10 @@ guid: http://www.tanglei.name/?p=590
 duoshuo_thread_id:
   - 1351844048792453446
 categories:
-  - 软件项目管理
+  - 课程学习
 tags:
-  - IT项目管理考试
+  - 项目管理
+  - 考试
 ---
 本资料结合07级哥哥姐姐们的资料，配合自己理解整理而成……
 

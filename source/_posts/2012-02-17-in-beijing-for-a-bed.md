@@ -9,7 +9,6 @@ duoshuo_thread_id:
   - 1351844048792453284
 categories:
   - MyLife
-  - 清华大学
 tags:
   - 清华大学
   - 租房

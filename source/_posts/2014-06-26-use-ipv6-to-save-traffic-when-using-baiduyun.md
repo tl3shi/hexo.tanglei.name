@@ -10,11 +10,10 @@ duoshuo_thread_id:
 enable_highlight:
   - '<link rel="stylesheet" href="../wp-content/blogresources/highlightconfig/highlight.default.min.css"><script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script><script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>'
 categories:
-  - Windows
   - 经验技巧
 tags:
-  - 百度云管家
-  - 百度网盘
+  - 百度
+  - Windows
 ---
 百度云/网盘网页版的话直接改hosts即可，网传hosts如下:
 

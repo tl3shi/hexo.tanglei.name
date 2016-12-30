@@ -9,9 +9,9 @@ duoshuo_thread_id:
   - 1351844048792453155
 categories:
   - 网络文摘
-  - 设计模式
 tags:
   - 反模式
+  - 设计模式
 ---
 转自：<http://coolshell.cn/articles/4844.html> 另类设计模式，还不是我前看的反模式。但大概意思就差不多了吧。原文如下：
 

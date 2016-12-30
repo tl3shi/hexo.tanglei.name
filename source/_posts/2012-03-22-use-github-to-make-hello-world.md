@@ -8,11 +8,10 @@ guid: http://www.tanglei.name/?p=1612
 duoshuo_thread_id:
   - 1351844048792453296
 categories:
-  - 我做站长
   - 经验技巧
 tags:
-  - git
-  - github
+  - 我做站长
+  - GitHub
   - HelloWorld
 ---
 上次不知道是谁问我有否考虑把博客迁移到github上，今天无意间又碰到了关于这个问题，于是就试了试。用github首先得安装SCM工具Git，还记得上一次接触Git，还是在上<a href="/blog/category.htmlsoftware-engineering/software-configuration-management/" target="_blank">软件配置管理</a>课的时候讲<a href="/blog/scm-tools.html" target="_blank">软件配置管理工具</a>时遇到的，有关git的教程，这个讲得比较好[Git中文教程](http://progit.org/book/zh/)。

@@ -12,12 +12,11 @@ enable_highlight:
     <script src="../wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"></script>
     <script src="../wp-content/blogresources/highlightconfig/enable_highlight.js"></script>
 categories:
-  - JAVA
-  - PHP
-  - 实习那些事儿
+  - 工作那些事儿
 tags:
   - DDOS
-  - DOS
+  - Java
+  - PHP
   - 网络安全
 ---
 前几天看到公司php群谈到这篇博文[通过构造Hash冲突实现各种语言的拒绝服务攻击](http://www.laruence.com/2011/12/29/2412.html),说的是在PHP中，使用hash来存储k-v数据, 包括常用的来自用户的POST数据, 攻击者可以通过构造请求头, 并伴随POST大量的特殊的”k”值(根据每个语言的Hash算法不同而定制), 使得语言底层保存POST数据的Hash表因为”冲突”(碰撞)而退化成链表. 这样一来, 如果数据量足够大, 那么就可以使得语言在计算, 查找, 插入的时候, 造成大量的CPU占用, 从而实现拒绝服务攻击. 举个例子：如下代码中：

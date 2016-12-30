@@ -8,9 +8,9 @@ guid: http://www.tanglei.name/?p=496
 duoshuo_thread_id:
   - 1351844048792453267
 categories:
-  - 数据库应用
-  - 软考
+  - 课程学习
 tags:
+  - 软考
   - 数据库
 ---
 **1.8****数据库保护******

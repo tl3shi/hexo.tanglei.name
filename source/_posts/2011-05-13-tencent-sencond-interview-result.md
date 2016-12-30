@@ -8,9 +8,11 @@ guid: http://www.tanglei.name/?p=644
 duoshuo_thread_id:
   - 1351844048792453133
 categories:
-  - 实习那些事儿
+  - 工作那些事儿
 tags:
-  - 腾讯面经
+  - 腾讯
+  - 实习
+  - 面试
 ---
 <div>
   按照之前的计划是，<span style="font-family: 'Times New Roman';">11</span><span style="font-family: 宋体;">号，我，科神，还有宏杰回长沙的。中午宏杰有同学请吃饭了，我还是建议临走前再去问问，到底我的二面结果和宏杰的一面结果啥时候能出。约</span><span style="font-family: 'Times New Roman';">10</span><span style="font-family: 宋体;">点多的样子吧，我们退了房间，去珞珈山酒店，先去找之前的面试官，结果我的面试官和宏杰的面试官都没找到。然后去</span><span style="font-family: 'Times New Roman';">6</span><span style="font-family: 宋体;">楼会议厅问</span><span style="font-family: 'Times New Roman';">hr</span><span style="font-family: 宋体;">，结果最晚啥时候通知。结果悲剧的是，</span><span style="font-family: 'Times New Roman';">hr</span><span style="font-family: 宋体;">竟然说一面结果都通知了，然后二面结果也是没打电话估计就没戏了。然后我就跟宏杰说，这下可以放心的走了。走到半路，我就想不对劲啊，王向不</span><span style="font-family: 'Times New Roman';">11</span><span style="font-family: 宋体;">号下午还二面么。怎么就会二面结果都通知了呢。然后我再返回问那个</span><span style="font-family: 'Times New Roman';">hr</span><span style="font-family: 宋体;">，她说没明白我的意思，因为我又问了一面结果，又问了二面结果。她就说二面结果没完全出来，叫再等。我等还是不等呢……结果我再次折返到面我二面的那个房间，这是有人了，里面还有个人在面试，等了一会，他面完之后，我进去问之前说过官挺大的那哥们，我就说啥时候能出结果啊，因为我们外地嘛……有的同学就返回长沙了。他就有些不耐烦了。说我们会尽快通知，你也可以先回去，这个问题还是你自己好好把握吧。其实还是自己当时没有注意说话的艺术啊，应该问问他手下还有多少人二面没面啊，他手下二面面完大概啥时候啊之类的。然后在姐姐飞信上说，她就说那估计也没戏了，都在叫回长沙了。她也建议回长沙算了。然后我就跟宏杰下楼……宏杰就直接去找他同学了。</span></p> 

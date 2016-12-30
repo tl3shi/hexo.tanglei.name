@@ -11,7 +11,6 @@ categories:
   - MyLife
 tags:
   - 总结
-  - 生活
 ---
 其实,近况就是过得稀里糊涂.
 

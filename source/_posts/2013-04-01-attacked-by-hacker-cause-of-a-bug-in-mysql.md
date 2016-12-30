@@ -8,10 +8,11 @@ guid: http://www.tanglei.name/?p=2121
 duoshuo_thread_id:
   - 1351844048792453194
 categories:
-  - Windows
   - 经验技巧
 tags:
   - 网络安全
+  - Windows
+  - 清华大学
 ---
 今天早上来实验室突然就上不网，换ip能上网，实验室网管告诉我之前的IP有问题，已经被校网络中心给被封调。其实昨晚就被封了，难怪昨晚在寝室连不上我实验室电脑的。
 

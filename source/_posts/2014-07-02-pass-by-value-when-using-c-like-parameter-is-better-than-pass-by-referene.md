@@ -8,8 +8,9 @@ guid: http://www.tanglei.name/?p=2461
 duoshuo_thread_id:
   - 1351844048792453507
 categories:
-  - c++
+  - 学到老
 tags:
+  - C++
   - 性能优化
 ---
 在《Effective C++》里提到对内置(C-like)类型在函数传参时pass by value比pass by reference更高效，当用OO的c++自定义类型(存在构造/析构等)pass by reference to const 更好，STL里的迭代器和函数对象是用C指针实现的，因此pass by value更好。至于为什么，下面的代码验证了下。

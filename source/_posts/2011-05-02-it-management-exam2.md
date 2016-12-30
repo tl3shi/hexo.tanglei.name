@@ -8,9 +8,10 @@ guid: http://www.tanglei.name/?p=592
 duoshuo_thread_id:
   - 1351844048792453200
 categories:
-  - 软件项目管理
+  - 课程学习
 tags:
-  - IT项目管理考试
+  - 项目管理
+  - 考试
 ---
 上接：**<a title="查看此文：IT项目管理考试资料整理(一)" rel="bookmark" href="/blog/it-management-exam1.html">IT项目管理考试资料整理(一)</a>**
 

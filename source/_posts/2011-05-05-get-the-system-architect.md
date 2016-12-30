@@ -8,11 +8,10 @@ guid: http://www.tanglei.name/?p=622
 duoshuo_thread_id:
   - 1351844048792453306
 categories:
-  - MyLife
-  - 软考
+  - 课程学习
 tags:
   - 软考
-  - 软考
+  - 系统架构师
 ---
 感谢石文海同学，今天帮忙去把证给领回来了。红色的外壳，不怎么好看啊。
 

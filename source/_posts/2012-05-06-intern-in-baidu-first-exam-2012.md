@@ -8,10 +8,9 @@ guid: http://www.tanglei.name/?p=1770
 duoshuo_thread_id:
   - 1351844048792453138
 categories:
-  - 实习那些事儿
+  - 工作那些事儿
 tags:
   - 实习
-  - 实习生
   - 百度
   - 笔试
 ---

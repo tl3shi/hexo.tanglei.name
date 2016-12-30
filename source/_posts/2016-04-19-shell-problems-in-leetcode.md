@@ -2,12 +2,11 @@
 title: leetcode中的shell问题
 layout: post
 categories: 
-  - Linux
+  - 学到老
 tags: 
   - Linux 
   - Shell
-  - Leetcode
-  - 命令行
+  - 工具
 ---
 
 最近重温了一下 ``awk, sed, tr`` 等命令，然后发现leetcode中还有几道专门关于shell的题目[shell in leetcode](https://leetcode.com/problemset/shell/)， 于是就也做了一下。下面是几道题目的解决方案。
