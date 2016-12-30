@@ -2,9 +2,9 @@
 title: 将代码高亮插件codecolorer替换为highlight
 date: 2015-07-01
 layout: post
-tags: 
-    - 经验技巧 
 categories: 
+    - 经验技巧 
+tags: 
     - Wordpress
     - 经验技巧 
     - 我做站长 

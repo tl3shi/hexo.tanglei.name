@@ -11,6 +11,7 @@ categories:
   - 软件体系结构
 tags:
   - 软件体系结构
+  - 考试
 ---
 **<span style="font-size: 24.0pt; font-family: 宋体;">目录</span>**
 

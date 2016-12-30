@@ -2,9 +2,9 @@
 title: 给手机主题插件Wptouch绑定单独的域名
 date: 2015-06-26
 layout: post
-tags: 
-    - 经验技巧 
 categories: 
+    - 经验技巧 
+tags: 
     - 经验技巧 
     - 我做站长 
     - Wordpress 

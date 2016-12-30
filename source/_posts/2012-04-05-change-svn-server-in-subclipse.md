@@ -10,7 +10,7 @@ duoshuo_thread_id:
 categories:
   - 经验技巧
 tags:
-  - eclipse
+  - Eclipse
   - hosts
   - 工具
 ---
