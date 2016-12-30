@@ -10,8 +10,8 @@ duoshuo_thread_id:
 categories:
   - 工作那些事儿
 tags:
-  - wifi自动关闭
-  - 腾讯实习
+  - 腾讯
+  - 实习
 ---
 在上一篇[坑爹的QQ手机管家](/blog/bad-qq-mobile-sercure-manager.html)说了，我把问题在BBS上反馈了。今天有人联系我了。首先是开发联系我的，直接用RTX联系，我把我记录的log发给他看后，他提出了问题的原因。
 
