@@ -8,7 +8,7 @@ guid: http://www.tanglei.name/?p=185
 duoshuo_thread_id:
   - 1351844048792453247
 categories:
-  - 软件体系结构
+  - 课程学习
 tags:
   - 软件体系结构
   - 考试

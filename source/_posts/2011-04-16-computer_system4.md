@@ -8,8 +8,10 @@ guid: http://www.tanglei.name/?p=449
 duoshuo_thread_id:
   - 1351844048792453457
 categories:
-  - 软考
+  - 课程学习
 tags:
+  - 软考
+  - 计算机基础
 ---
 **1.9** **数学基础知识**
 

@@ -8,7 +8,7 @@ guid: http://www.tanglei.name/?p=467
 duoshuo_thread_id:
   - 1351844048792453452
 categories:
-  - 软考
+  - 课程学习
 tags:
   - 多媒体
   - 软考
