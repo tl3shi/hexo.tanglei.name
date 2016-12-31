@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://www.tanglei.name
+url: https://www.tanglei.name
 root: /
 #permalink: :year/:month/:day/:title/
 permalink: blog/:title.html
@@ -27,6 +27,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+
 
 # Writing
 new_post_name: :year-:month-:day-:title.md # File name of new posts
@@ -44,15 +45,6 @@ highlight:
   auto_detect: false
   tab_replace:
 
-
-index_generator:
-  per_page: 5
-
-archive_generator:
-  per_page: 20
-  yearly: true
-  monthly: true
-
 # Category & Tag
 default_category: default
 category_map:
@@ -65,10 +57,19 @@ tag_map:
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 
-# Pagination
+# Pagination does not work when use next theme
 ## Set per_page to 0 to disable pagination
-per_page: 15
-pagination_dir: page
+#per_page: 15
+#pagination_dir: page
+
+# next theme config, put in theme/next/_config.yml does not work
+index_generator:
+  per_page: 8
+archive_generator:
+  per_page: 16
+  yearly: false
+  monthly: false
+# next theme config
 
 # Extensions
 ## Plugins: http://hexo.io/plugins/
