@@ -44,6 +44,15 @@ highlight:
   auto_detect: false
   tab_replace:
 
+
+index_generator:
+  per_page: 5
+
+archive_generator:
+  per_page: 20
+  yearly: true
+  monthly: true
+
 # Category & Tag
 default_category: default
 category_map:

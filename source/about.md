@@ -1,6 +1,6 @@
 ---
 id: 2
-title: About Me
+title: About
 date: 2010-12-05T15:02:16+00:00
 author: tanglei
 layout: page
@@ -10,6 +10,8 @@ permalink: /about/
 duoshuo_thread_id:
   - 1351844048792453157
 ---
+
+## 关于我 
 
 目前是一名后台开发工程师 @宜信大数据创新中心, 毕业于中南大学和清华大学, 曾工作于<a href='http://www.tencent.com/zh-cn/index.shtml' target='_blank'>腾讯</a> 和 <a href='http://www.umeng.com/' target='_blank'>友盟</a>. 我的大致经历如下: 
 
@@ -40,3 +42,18 @@ by TangLei
 
   * update 2016-11
   * <del>&#8212;&#8212;update 2012/2/1&#8212;>2012/10/10</del>
+
+
+## 关于本站
+
+本站大致经历了如下流程,  详情版本可以参考 [我的博客之路](/blog/blog-history.html)
+
+- 2010年左右, 本站最开始从域名 `www.i3zhai.com` 转至`blog.i3zhai.com` 这期间刚开始接触网站, 为了增加搜索引擎收录, po 了很多水得不行的文章, 虽几经改版也没扔掉. 用的是 Wordpress;
+- 有了 `tanglei.name` 域名, 很长一段时间用了 Wordpress 的i3theme 主题, 大致持续到2014年末, 目前保留了 `wordpress.tanglei.name` 这个入口;
+- 2015年3月左右, 切换到 jekyll, 这篇博文[最终还是放弃了Wordpress](/blog/give-up-wordpress-to-jekyll.html) 介绍了原因, 一直持续到2016年底, 目前保留了入口 `jekyll.tanglei.name`;
+- 2016年11月, 开了微信公众号("唐磊Coder"), [某些原因](/blog/try-qcloud-vm-cdn.html) 促使对本域名进行备案, 同时上了 CDN, 支持 HTTPS. 
+- 2016年底, 看中另外一款 Hexo 主题 Next, 纠结一阵, 还在["唐磊Coder"微信公众号](http://mp.weixin.qq.com/s/cb4tYaC_SwKU_3KqhNlxSg)上进行了投票, 最后还是选用了 Hexo, 为了防止后面可能会再换, 也保留了这个主题的访问入口 `hexo.tanglei.name`. 
+
+
+>
+update 2016.12.31
