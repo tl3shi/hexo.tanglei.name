@@ -123,7 +123,7 @@ round-trip min/avg/max/stddev = 6.863/7.933/9.846/1.356 ms
 现在直接请求 `www.tanglei.name` 会取 github pages 的文件, 通过 `www.tanglei.me` 取会走腾讯云的 CDN, 来个对比结果. 
 前面说的提升32倍稍微有些夸张, 提升个五六倍还是正常的. 对比的是 [这个含有一些图片的页面](http://www.tanglei.me/blog/app-in-mac-for-common.html), 测速还有一些如 USA的节点, 还拉低了平均值, 国外的一些节点还是走 github 更快. 
 
-![腾讯云CDN 对比效果](/resources/qcloud/tanglei.name-vs-tanglei.me-cdn-.png)
+![腾讯云CDN 对比效果](/resources/qcloud/tanglei.name-vs-tanglei.me-cdn.png)
 
 接入 CDN 后台看到的差不多1天后的效果, 没骗你吧, 一天也就400~500 PV. 
 
