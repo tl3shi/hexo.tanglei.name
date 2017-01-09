@@ -34,9 +34,9 @@ $ a^{p-1} \equiv 1 \mod p$, `a` 的 `p-1` 次方 对 `p` 取余为`1`, (`a` 的 
 因此 public key 为 `(N=33, e=3)`, private key 为 `d=7` 或者`d=67`, 
 假设加密消息`M=8`, 
 通过加密算法 $C = M^e \mod N$ 
-得到密文 $C=8^3 \mod 33 = 17$
+得到密文 `C=8^3 % 33 = 17`
 
-再来看解密, 由$M= C^d \mod N$, 得到明文 $M = 17^7 \mod 33 = 8$ 或者 $M=17^{67}\mod33=8$, 是不是很神奇?
+再来看解密, 由$M= C^d \mod N$, 得到明文 `M = 17^7 % 33 = 8` 或者 `M=17^67 % 33=8`, 是不是很神奇? (这里`^` 表示多少次方, 后文中的有的表示异或)
 
 (来, 安利一个计算器的工具, `bc` 命令, 支持任意精度的计算, 其实 Mac简单的计算就可以通过前面介绍的 [Alfred](https://www.tanglei.name/blog/app-in-mac-preface.html) 可以方便得完成)
 
@@ -84,7 +84,8 @@ for (i <- Array.range(0, a.length)) {
 
 结合方法名称 `safeEquals` 可能知道些眉目, 与安全有关, 延迟计算等提高效率的手段见过不少, 但这种延迟返回的还是很少见.
 这种手段可以让调用 `safeEquals("abcdefghijklmn", "xbcdefghijklmn")` 和调用 `safeEquals("abcdefghijklmn", "abcdefghijklmn")` 的所耗费的时间一样, 
-防止通过大量的改变输入并通过统计运行时间来暴力破解出要比较的字符串. 
+防止通过大量的改变输入并通过统计运行时间来暴力破解出要比较的字符串, 这里其实都忽略了对比较字符串长度的attack问题. 
+
 举个例子, 假设某个用户设置了密码为 `password`, 通过从a到z(实际范围可能更广)不断枚举第一位, 最终统计发现 `p0000000` 的运行时间比其他从任意`a~z`的都短, 
 这样就能猜测出用户密码的第一位很可能是`p`, 然后再不断一位一位迭代下去最终破解出用户的密码. 如果密码通过hash加密后也能通过这种攻击方式得到hash后的密文. 
 
@@ -99,7 +100,7 @@ for (i <- Array.range(0, a.length)) {
 |----|----|----|----|
 |6863503 |java |   classes_security    | SECURITY: MessageDigest.isEqual introduces timing attack vulnerabilities|
 
-这次变更的diff[来源](http://hg.openjdk.java.net/jdk6/jdk6/jdk/rev/562da0baf70b)为: 
+这次变更的diff详细信息[来源](http://hg.openjdk.java.net/jdk6/jdk6/jdk/rev/562da0baf70b)为: 
 
 ![MessageDigest.isEqual计时攻击](/resources/rsa-and-timing-attack/MessageDigest.isEqual.timing-attack.png)
 
