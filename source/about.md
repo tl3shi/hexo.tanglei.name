@@ -38,10 +38,10 @@ some links:
 
 ![tangleithu 唐磊coder 微信公众号](/resources/wechat-tangleithu.jpg)
 
-by TangLei 
+> by TangLei 
 
-  * update 2016-11
-  * <del>&#8212;&#8212;update 2012/2/1&#8212;>2012/10/10</del>
+> * update 2016-11
+> * <del>&#8212;&#8212;update 2012/2/1&#8212;>2012/10/10</del>
 
 
 ## 关于本站
@@ -55,5 +55,4 @@ by TangLei
 - 2016年底, 看中另外一款 Hexo 主题 Next, 纠结一阵, 还在["唐磊Coder"微信公众号](http://mp.weixin.qq.com/s/cb4tYaC_SwKU_3KqhNlxSg)上进行了投票, 最后还是选用了 Hexo, 为了防止后面可能会再换, 也保留了这个主题的访问入口 `hexo.tanglei.name`. 
 
 
->
-update 2016.12.31
+> update 2016.12.31
