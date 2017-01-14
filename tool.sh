@@ -1,6 +1,6 @@
 #!/bin/bash
 TITLE=
-while getopts "t:dp" opt 
+while getopts "t:dpx" opt 
 do
     case $opt in
     t)
@@ -16,8 +16,12 @@ do
         mv source/_drafts/$TITLE.md source/_posts/$titlepre-$TITLE.md
         echo "publish post: $titlepre-$TITLE.md"
         ;;
+    x)
+        curl "qcloud.tanglei.name:1024/go/deploy-hexo/"
+        echo "deploy fired."
+        ;;
     *)
-        echo "-t \"title\" -d(new drafts) -p(publish post)"
+        echo "-t \"title\" -d(new drafts) -p(publish post) -x(deploy)"
         ;;
     esac
 done
