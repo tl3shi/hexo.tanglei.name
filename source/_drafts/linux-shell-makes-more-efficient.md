@@ -48,7 +48,7 @@ tags:
     rm, mkdir, mv, cp, cd, ls, ln, file, stat, wc(-l/w/c), head, more, tail, cat...
     ```
 
-- 利器管道 `|`
+- 利器 管道: `|`
 
 ## Shell 文本处理
 
@@ -67,12 +67,12 @@ join, sort, uniq, tr, sed, awk
     - 执行动作 `-exec`
 - 示例
 
-```bash
-find ./ -name "*.json"
-find . -maxdepth 7 -name "*.json" -type f
-find . -name "*.log.gz" -ctime +7 -size +1M -delete (atime/ctime/mtime)
-find . -name "*.scala" -atime -7 -exec du -h {} \;
-```
+    ```bash
+    find ./ -name "*.json"
+    find . -maxdepth 7 -name "*.json" -type f
+    find . -name "*.log.gz" -ctime +7 -size +1M -delete (atime/ctime/mtime)
+    find . -name "*.scala" -atime -7 -exec du -h {} \;
+    ```
 
 ### grep
 
@@ -498,7 +498,7 @@ sort 404.log | uniq -c | sort -nr -k1 | head -n 10
 
 - play framework session
 
-    - 老方式:
+    - 老方式: 需要启play环境, 慢
  
 	```scala
 	sbt "project site" consoleQuick
