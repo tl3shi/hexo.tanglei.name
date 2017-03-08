@@ -36,9 +36,9 @@ tags:
 - which/whereis, 常用 `whatis`, `man`, `--help`
 
     ```bash
-    ➜  .oh-my-zsh git:(master) whereis ls
+    ➜  .oh-my-zsh git:(master)$ whereis ls
     /bin/ls
-    ➜  .oh-my-zsh git:(master) which ls
+    ➜  .oh-my-zsh git:(master)$ which ls
     ls: aliased to ls -G
     ```
 
@@ -130,23 +130,23 @@ join, sort, uniq, tr, sed, awk
 -  示例
 
     ```bash
-    ➜  Documents cat file1
+    ➜  Documents$ cat file1
     1 11
     2 22
     3 33
     4 44
-    ➜  Documents cat file2
+    ➜  Documents$ cat file2
     one     1
     two     2
     three   3
     one1    4
 
-    ➜  Documents paste -d, file1 file2
+    ➜  Documents$ paste -d, file1 file2
     1 11,one     1
     2 22,two     2
     3 33,three   3
     4 44,one1    4
-    ➜  Documents paste -s -d: file1 file2
+    ➜  Documents$ paste -s -d: file1 file2
     a 11:b bb:3 33:4 44
     one     1:two     2:three   3:one1    4
     ```
@@ -156,19 +156,19 @@ join, sort, uniq, tr, sed, awk
 类似sql中的 `...inner join ...on ...`, `-t` 分隔符, 默认为空格或tab
 
 ```bash
-➜  Documents cat j1
+➜  Documents$ cat j1
 1 11
 2 22
 3 33
 4 44
 5 55
-➜  Documents cat j2
+➜  Documents$ cat j2
 one     1   0
 one     2   1
 two     4   2
 three   5   3
 one1    5   4
-➜  Documents join -1 1 -2 3 j1 j2
+➜  Documents$ join -1 1 -2 3 j1 j2
 1 11 one 2
 2 22 two 4
 3 33 three 5
@@ -186,40 +186,40 @@ one1    5   4
 - 示例
 
     ```bash
-    ➜  Documents seq 1 5 >file11
-    ➜  Documents seq 2 6 >file22
-    ➜  Documents cat file11
+    ➜  Documents$ seq 1 5 >file11
+    ➜  Documents$ seq 2 6 >file22
+    ➜  Documents$ cat file11
     1
     2
     3
     4
     5
-    ➜  Documents cat file22
+    ➜  Documents$ cat file22
     2
     3
     4
     5
     6
-    ➜  Documents comm file11 file22
+    ➜  Documents$ comm file11 file22
     1
             2
             3
             4
             5
         6
-    ➜  Documents comm -1 file11 file22
+    ➜  Documents$ comm -1 file11 file22
         2
         3
         4
         5
     6
-    ➜  Documents comm -2 file11 file22
+    ➜  Documents$ comm -2 file11 file22
     1
         2
         3
         4
         5
-    ➜  Documents comm -23 file11 file22
+    ➜  Documents$ comm -23 file11 file22
     1
     ```
 
@@ -236,17 +236,17 @@ one1    5   4
 -  示例
 
     ```bash
-    ➜  Documents cat file2
+    ➜  Documents$ cat file2
     one     1
     two     2
     three   3
     one1    4
-    ➜  Documents sort file2
+    ➜  Documents$ sort file2
     one     1
     one1    4
     three   3
     two     2
-    ➜  Documents sort -b -k2 -r file2
+    ➜  Documents$ sort -b -k2 -r file2
     one1    4
     three   3
     two     2
@@ -263,27 +263,27 @@ one1    5   4
 -  示例
 
     ```bash
-    ➜  Documents cat file4
+    ➜  Documents$ cat file4
     11
     22
     33
     11
     11
-    ➜  Documents sort file4 | uniq -c
+    ➜  Documents$ sort file4 | uniq -c
        3 11
        1 22
        1 33
-    ➜  Documents sort file4 | uniq -d
+    ➜  Documents$ sort file4 | uniq -d
     11
-    ➜  Documents sort file4 | uniq -u
+    ➜  Documents$ sort file4 | uniq -u
     22
     33
-    ➜  Documents cat file3
+    ➜  Documents$ cat file3
     one     1
     two     1
     three   3
     one1    4
-    ➜  Documents uniq -c -f 1 file3
+    ➜  Documents$ uniq -c -f 1 file3
        2 one     1
        1 three   3
        1 one1    4
@@ -301,15 +301,15 @@ one1    5   4
 -  示例
 
     ```bash
-    ➜  Documents echo '1111234444533hello' | tr  '[1-3]' '[a-c]'
+    ➜  Documents$ echo '1111234444533hello' | tr  '[1-3]' '[a-c]'
     aaaabc44445cchello
-    ➜  Documents echo '1111234444533hello' | tr -d '[1-3]'
+    ➜  Documents$ echo '1111234444533hello' | tr -d '[1-3]'
     44445hello
-    ➜  Documents echo '1111234444533hello' | tr -dc '[1-3]'
+    ➜  Documents$ echo '1111234444533hello' | tr -dc '[1-3]'
     11112333
-    ➜  Documents echo '1111234444533hello' | tr -s '[0-9]'
+    ➜  Documents$ echo '1111234444533hello' | tr -s '[0-9]'
     123453hello
-    ➜  Documents echo 'helloworld' | tr '[:lower:]' '[:upper:]'
+    ➜  Documents$ echo 'helloworld' | tr '[:lower:]' '[:upper:]'
     HELLOWORLD
     ```
 
@@ -323,45 +323,45 @@ one1    5   4
 -  示例
 
     ```bash
-    ➜  Documents cat file2
+    ➜  Documents$ cat file2
     one     1
     two     2
     three   3
     one1    4
-    ➜  Documents sed "2,3d" file2
+    ➜  Documents$ sed "2,3d" file2
     one     1
     one1    4
-    ➜  Documents sed '/one/d' file2
+    ➜  Documents$ sed '/one/d' file2
     two     2
     three   3
-    ➜  Documents sed 's/one/111/g' file2
+    ➜  Documents$ sed 's/one/111/g' file2
     111     1
     two     2
     three   3
     1111    4
     #将one替换成111 并将含有two的行删除
-    ➜  Documents sed -e 's/one/111/g' -e '/two/d' file2
+    ➜  Documents$ sed -e 's/one/111/g' -e '/two/d' file2
     111     1
     three   3
     1111    4
     # ()标记(转义), \1 引用
-    ➜  Documents sed 's/\([0-9]\)/\1.html/g' file2
+    ➜  Documents$ sed 's/\([0-9]\)/\1.html/g' file2
     one     1.html
     two     2.html
     three   3.html
     one1.html    4.html
     # 与上面一样 & 标记匹配的字符
-    ➜  Documents sed 's/[0-9]/&.html/g' file2
+    ➜  Documents$ sed 's/[0-9]/&.html/g' file2
     one     1.html
     two     2.html
     three   3.html
     one1.html    4.html
-    ➜  Documents cat mobile.csv
+    ➜  Documents$ cat mobile.csv
     "13090246026"
     "18020278026"
     "18520261021"
     "13110221022"
-    ➜  Documents sed 's/\([0-9]\{3\}\)[0-9]\{4\}/\1xxxx/g' mobile.csv
+    ➜  Documents$ sed 's/\([0-9]\{3\}\)[0-9]\{4\}/\1xxxx/g' mobile.csv
     "130xxxx6026"
     "180xxxx8026"
     "185xxxx1021"
@@ -382,35 +382,35 @@ one1    5   4
 -  示例
 
     ```bash
-    ➜  Documents cat file5
+    ➜  Documents$ cat file5
     11  11 aa cc
     22  22 bb
     33  33 d
     11  11
     11  11
     #行号, 列数量, 第3列
-    ➜  Documents awk '{print NR"("NF"):", $3}' file5
+    ➜  Documents$ awk '{print NR"("NF"):", $3}' file5
     1(4): aa
     2(3): bb
     3(3): d
     4(2):
     5(2):
     #字符串分割, 打印1，2列
-    ➜  Documents awk -F"xxxx" '{print $1, $2}' mobile.csv
+    ➜  Documents$ awk -F"xxxx" '{print $1, $2}' mobile.csv
     "130 6026"
     "180 8026"
     "185 1021"
     "131 1022"
     #添加表达式
-    ➜  Documents awk '$1>=22 {print NR":", $3}' file5
+    ➜  Documents$ awk '$1>=22 {print NR":", $3}' file5
     2: bb
     3: d
     #累加1到36，奇数，偶数
-    ➜  Documents seq 36 | awk 'BEGIN{sum=0; print "question:"} {print $1" +"; sum+=$1} END{print "="; print sum}' | xargs | sed 's/+ =/=/'
+    ➜  Documents$ seq 36 | awk 'BEGIN{sum=0; print "question:"} {print $1" +"; sum+=$1} END{print "="; print sum}' | xargs | sed 's/+ =/=/'
     question: 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 + 17 + 18 + 19 + 20 + 21 + 22 + 23 + 24 + 25 + 26 + 27 + 28 + 29 + 30 + 31 + 32 + 33 + 34 + 35 + 36 = 666
-    ➜  Documents seq 36 | awk 'BEGIN{sum=0; print "question:"} $1 % 2 ==1 {print $1" +"; sum+=$1} END{print "="; print sum}' | xargs | sed 's/+ =/=/'
+    ➜  Documents$ seq 36 | awk 'BEGIN{sum=0; print "question:"} $1 % 2 ==1 {print $1" +"; sum+=$1} END{print "="; print sum}' | xargs | sed 's/+ =/=/'
     question: 1 + 3 + 5 + 7 + 9 + 11 + 13 + 15 + 17 + 19 + 21 + 23 + 25 + 27 + 29 + 31 + 33 + 35 = 324
-    ➜  Documents seq 36 | awk 'BEGIN{sum=0; print "question:"} $1 % 2 !=1 {print $1" +"; sum+=$1} END{print "="; print sum}' | xargs | sed 's/+ =/=/'
+    ➜  Documents$ seq 36 | awk 'BEGIN{sum=0; print "question:"} $1 % 2 !=1 {print $1" +"; sum+=$1} END{print "="; print sum}' | xargs | sed 's/+ =/=/'
     question: 2 + 4 + 6 + 8 + 10 + 12 + 14 + 16 + 18 + 20 + 22 + 24 + 26 + 28 + 30 + 32 + 34 + 36 = 342
     ```
 
@@ -423,7 +423,7 @@ one1    5   4
 例如拿到一个nginx日志文件, 可以做很多事情, 比如看哪些请求是耗时最久的进而进行优化, 比如看每小时的"PV"数 等等.
 
 ```bash
-➜  Documents head -n5 std.nginx.log
+➜  Documents$ head -n5 std.nginx.log
 106.38.187.225 - - [20/Feb/2017:03:31:01 +0800] www.tanglei.name "GET /baike/208344.html HTTP/1.0" 301 486 "-" "Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322) 360JK yunjiankong 975382" "106.38.187.225, 106.38.187.225" - 0.000
 106.38.187.225 - - [20/Feb/2017:03:31:02 +0800] www.tanglei.name "GET /baike/208344.html HTTP/1.0" 301 486 "-" "Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322) 360JK yunjiankong 975382" "106.38.187.225, 106.38.187.225" - 0.000
 10.130.64.143 - - [20/Feb/2017:03:31:02 +0800] stdbaike.bdp.cc "POST /baike/wp-cron.php?doing_wp_cron=1487532662.2058920860290527343750 HTTP/1.1" 200 182 "-" "WordPress/4.5.6; http://www.tanglei.name/baike" "10.130.64.143" 0.205 0.205
@@ -449,7 +449,7 @@ sort 404.log | uniq -c | sort -nr -k1 | head -n 10
 再比如每小时请求数量, 请求耗时等等
 
 ```bash
-➜  Documents head -n 100000 std.nginx.log | awk -F: '{print $1 $2}' | cut -f3 -d/ | uniq -c
+➜  Documents$ head -n 100000 std.nginx.log | awk -F: '{print $1 $2}' | cut -f3 -d/ | uniq -c
 8237 201703
 15051 201704
 16083 201705
@@ -482,16 +482,16 @@ sort 404.log | uniq -c | sort -nr -k1 | head -n 10
     一般在用sed替换的时候, 先测试一下是否正常替换. 
 
 	```bash
-# 测试是否OK
-	head -n 5 customers.csv | sed 's|https://www.tanglei.name/upload/photos/[0-9]\{1,\}/|http://www.tanglei.me|g'
-# 直接替换原文件, 可以sed -i ".bak" 替换时保留原始备份文件
-	sed -i "" 's|https://www.tanglei.name/upload/photos/[0-9]\{1,\}/|http://www.tanglei.me|g' customers.csv
+    #测试是否OK
+    head -n 5 customers.csv | sed 's|https://www.tanglei.name/upload/photos/[0-9]\{1,\}/|http://www.tanglei.me|g'
+    # 直接替换原文件, 可以sed -i ".bak" 替换时保留原始备份文件
+    sed -i "" 's|https://www.tanglei.name/upload/photos/[0-9]\{1,\}/|http://www.tanglei.me|g' customers.csv
 	```
 3. 拼接sql, 然后执行
 
 	```bash
-	awk -F, '{print "update sometable set photo_url_1 = " $2, ", photo_url_2 = " $3, ", photo_url_3 = " $4, " where id = " $1 ";" }' customers.csv > customer.sql
-#然后执行sql 即可
+    awk -F, '{print "update sometable set photo_url_1 = " $2, ", photo_url_2 = " $3, ", photo_url_3 = " $4, " where id = " $1 ";" }' customers.csv > customer.sql
+    #然后执行sql 即可
 	```
 
 ### 其他
@@ -510,9 +510,9 @@ sort 404.log | uniq -c | sort -nr -k1 | head -n 10
 	- 新方式: 
 
 	```bash
-	➜  Documents  ~/stdcookie.sh 97522
+	➜  Documents$  ~/stdcookie.sh 97522
 	918xxxxdf64abcfcxxxxc465xx7554dxxxx21e-uid=97522
-	➜  Documents cat ~/stdcookie.sh
+	➜  Documents$ cat ~/stdcookie.sh
 	#!/bin/bash ##  cannot remove this line
 	uid=$1
 	hash=`echo -n "uid=$uid" | openssl dgst -sha1 -hmac "secret...secret"`
@@ -522,11 +522,11 @@ sort 404.log | uniq -c | sort -nr -k1 | head -n 10
 - 统计文章单词频率: 下面案例统计了川普就职演讲原文中词频最高的10个词.
 
 	```bash
-	➜  Documents head -n3 chuanpu.txt
+	➜  Documents$ head -n3 chuanpu.txt
 	Chief Justice Roberts, President Carter, President Clinton, President Bush, President Obama, fellow Americans and people of the world, thank you.
 	
 	We, the citizens of America, are now joined in a great national effort to rebuild our country and restore its promise for all of our people. Together we will determine the course of America and the world for many, many years to come.
-	➜  Documents cat chuanpu.txt | tr -dc 'a-zA-Z ' | xargs -n 1 | sort | uniq -c | sort -nr -k1 | head -n 20
+	➜  Documents$ cat chuanpu.txt | tr -dc 'a-zA-Z ' | xargs -n 1 | sort | uniq -c | sort -nr -k1 | head -n 20
 	  65 the
 	  63 and
 	  48 of
@@ -553,20 +553,20 @@ sort 404.log | uniq -c | sort -nr -k1 | head -n 10
 - 随机数  
 
 	```bash
-	➜  Documents cat /dev/urandom | LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 5
+	➜  Documents$ cat /dev/urandom | LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 5
 	cpBnvC0niwTybSSJhUUiZwIz6ykJxBvu
 	VDP56NlHnugAt2yDySAB9HU2Nd0LlYCW
 	0WEDzpjPop32T5STvR6K6SfZMyT6KvAI
 	a9xBwBat7tJVaad279fOPdA9fEuDEqUd
 	hTLrOiTH5FNP2nU3uflsjPUXJmfleI5c
-	➜  Documents cat /dev/urandom | head -c32 | base64
+	➜  Documents$ cat /dev/urandom | head -c32 | base64
 	WoCqUye9mSXI/WhHODHDjzLaSb09xrOtbrJagG7Kfqc=
 	```
 
 - 图片处理压缩, 可批量改图片大小等等 `sips`
 	
 	```bash
-	➜  linux-shell-more-effiency sips -g all which-whereis.png
+	➜  linux-shell-more-effiency$ sips -g all which-whereis.png
 	/Users/tanglei/Documents/linux-shell-more-effiency/which-whereis.png
 	  pixelWidth: 280
 	  pixelHeight: 81
@@ -580,10 +580,10 @@ sort 404.log | uniq -c | sort -nr -k1 | head -n 10
 	  hasAlpha: yes
 	  space: RGB
 	  profile: DELL U2412M
-	➜  linux-shell-more-effiency sips -Z 250 which-whereis.png
+	➜  linux-shell-more-effiency$ sips -Z 250 which-whereis.png
 	/Users/tanglei/Documents/linux-shell-more-effiency/which-whereis.png
 	  /Users/tanglei/Documents/linux-shell-more-effiency/which-whereis.png
-	➜  linux-shell-more-effiency sips -g all which-whereis.png
+	➜  linux-shell-more-effiency$ sips -g all which-whereis.png
 	/Users/tanglei/Documents/linux-shell-more-effiency/which-whereis.png
 	  pixelWidth: 250
 	  pixelHeight: 72
@@ -597,11 +597,10 @@ sort 404.log | uniq -c | sort -nr -k1 | head -n 10
 	  hasAlpha: yes
 	  space: RGB
 	  profile: DELL U2412M
-	➜  linux-shell-more-effiency man sips
-	➜  linux-shell-more-effiency sips -z 100 30 which-whereis.png
+	➜  linux-shell-more-effiency$ sips -z 100 30 which-whereis.png
 	/Users/tanglei/Documents/linux-shell-more-effiency/which-whereis.png
 	  /Users/tanglei/Documents/linux-shell-more-effiency/which-whereis.png
-	➜  linux-shell-more-effiency sips -g pixelWidth -g pixelHeight which-whereis.png
+	➜  linux-shell-more-effiency$ sips -g pixelWidth -g pixelHeight which-whereis.png
 	/Users/tanglei/Documents/linux-shell-more-effiency/which-whereis.png
 	  pixelWidth: 30
 	  pixelHeight: 100
