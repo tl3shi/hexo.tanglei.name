@@ -112,7 +112,22 @@ Percentage of the requests served within a certain time (ms)
 
 经过tcpdump抓包最后发现 `ab` 请求无效的原因是: postdata 文件会多一个字符(文件末尾的换行符), 导致server端的 form 解析失败, 因而返回异常的response. 
 
-这个坑是vim的默认配置导致的, vim默认会在文件末尾添加一个文件结束符, vim 默认配置 `'endofline' 'eol'       boolean (default on)` , 可以通过 `set noendofline` 解决. 
+这个坑是vim的默认配置导致的, vim默认会在文件末尾添加一个文件结束符(换行符 `0A`), vim 默认配置 `'endofline' 'eol'       boolean (default on)` , 可以通过 `set noendofline` 解决. (vim相关帮助文档如下)
+
+>'endofline' 'eol'	boolean	(default on)
+
+>When writing a file and this option is off and the 'binary' option
+is on, or 'fixeol' option is off, no <EOL> will be written for the
+last line in the file.  This option is automatically set or reset when
+starting to edit a new file, depending on whether file has an <EOL>
+for the last line in the file.  Normally you don't have to set or
+reset this option.
+When 'binary' is off and 'fixeol' is on the value is not used when
+writing the file.  When 'binary' is on or 'fixeol' is off it is used
+to remember the presence of a <EOL> for the last line in the file, so
+that when you write the file the situation from the original file can
+be kept.  But you can change it if you want to.
+
 
 实际过程中，(去掉文件末尾的换行符可以解决), 或者将postdata多添加一个参数可以解决(这个参数server端没有用到时多余的, form可以正常解析, 因此 response 正常了).  
  
