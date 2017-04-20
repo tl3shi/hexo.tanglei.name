@@ -83,6 +83,13 @@ archive_generator:
 #theme: landscape 
 theme: next
 
+# plugins  hexo-generator-feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 30 #limit 0 is all
+  hub:
+
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 #deploy:
