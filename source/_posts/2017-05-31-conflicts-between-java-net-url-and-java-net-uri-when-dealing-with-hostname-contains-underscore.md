@@ -1,5 +1,5 @@
 ---
-title: a "bug" in java.net.URL?
+title: JDK(java.net.URL) 中的 一个 "bug"
 layout: post
 categories: 
   - 经验技巧
@@ -14,7 +14,6 @@ tags:
 
 下面来重现一下该案例. 
 
-## 重现步骤 
 
 ## server 端准备 
 
@@ -131,6 +130,8 @@ new java.net.URI(url.getProtocol(), url.getHost(), url.getPath(), null) error: I
 
 要知道, 在 coding 过程中，**尽早**反馈异常信息更有利于软件开发持续迭代的过程. 我们在开发过程中也应该遵循这一点原则。 
 
+### JDK(java.net.URL) 中的 "bug" ?
+
 我记得去年我就到JDK官网提交了一个 bug, 大意是说 `java.net.URI` 和 `java.net.URL` 在处理hostname的时候标准不一致, 容易使开发人员埋藏一些潜在的bug. 不过当初提交之后就没有反应了。 (为啥没有收到相应的邮件通知 report 状态? 也bug了?)
 
 直到前两天, 又把该问题提交到 [stackoverflow](https://stackoverflow.com/questions/44226003/conflicts-between-java-net-url-and-java-net-uri-when-dealing-with-hostname-conta).
@@ -186,6 +187,7 @@ JDK 9-ea + 141 - Fail
 恩，以上就是结论了。
 不过，反正我自己感觉目前Java API 关于这里的设计不太合理, 欢迎大家讨论。
 
+## 附件
 附上本文示例代码 
 
 ```java
