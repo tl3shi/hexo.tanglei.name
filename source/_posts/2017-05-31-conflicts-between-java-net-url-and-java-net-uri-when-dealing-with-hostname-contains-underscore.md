@@ -187,6 +187,17 @@ JDK 9-ea + 141 - Fail
 恩，以上就是结论了。
 不过，反正我自己感觉目前Java API 关于这里的设计不太合理, 欢迎大家讨论。
 
+对[SO](https://stackoverflow.com/questions/44226003/conflicts-between-java-net-url-and-java-net-uri-when-dealing-with-hostname-conta?answertab=active#tab-top)上的这个答案还是表示赞同, 哈哈. 
+
+>The review is somewhat terse, but the reviewer's point is the URL constructor is behaving in accordance with its specification. Since the specification explicitly states that no validation is performed, this is not a bug in the code. This is indisputable.
+
+>What he didn't spell out is that fixing this inconsistency (by changing the URL class specification) would break lots of peoples' 20+ year old code Java code. That would be a really bad idea. It can't happen.
+
+>So ... this inconsistency is a "feature".
+
+
+
+
 ## 附件
 附上本文示例代码 
 
