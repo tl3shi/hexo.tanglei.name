@@ -1,11 +1,14 @@
 public class TestURL {
     static void conflicts() throws Exception {
-        java.net.URL url = new java.net.URL("http://test_1.tanglei.name/testurl");
+        String urlSrc = "http://test_1.tanglei.name/testurl";
+        java.net.URL url = new java.net.URL(urlSrc);
         System.out.println(url.getHost()); //test_1.tanglei.name
         System.out.println(url.getProtocol()); //http
         System.out.println(url.getPath()); // /testurl
-        java.net.URI uri = new java.net.URI("http://test_1.tanglei.name/testurl");
-        System.err.println("uri.getHost() == uri.toURL().getHost() is: " + (uri.getHost() == uri.toURL().getHost()));
+        java.net.URI uri = new java.net.URI(urlSrc);
+        //Typo System.err.println("uri.getHost() == uri.toURL().getHost() is: " + (uri.getHost() == uri.toURL().getHost()));
+        //Attention: NullPointerException
+        System.err.println("uri.toURL().getHost().equals(uri.getHost())) is: " + (uri.toURL().getHost().equals(uri.getHost())));
         System.out.println(uri.getHost()); //null    
     }
 

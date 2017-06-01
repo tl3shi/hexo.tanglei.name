@@ -116,7 +116,9 @@ new java.net.URI(url.getProtocol(), url.getHost(), url.getPath(), null) error: I
 ```
 
 
-所以问题发现了, 我们的项目中依赖的第三方httpclient包底层用到了 `java.net.URI`, 恰好在 `java.net.URI` 中是不允许以下划线(`_`)作为 `hostname` 字段的。 即这个表达式 `uri.getHost() == uri.toURL().getHost() ` 不一定成立。这是 JDK 的 Bug 吗？
+所以问题发现了, 我们的项目中依赖的第三方httpclient包底层用到了 `java.net.URI`, 恰好在 `java.net.URI` 中是不允许以下划线(`_`)作为 `hostname` 字段的。 即这个表达式 `uri.getHost() == uri.toURL().getHost() ` 不一定成立。(**update**: Scala写惯了, 以Java来理解, 这句话还有问题, 这里想表达的是两个字符串是否 **equals**)
+
+这是 JDK 的 Bug 吗？
 
 从官网上还真找到了关于包含下划线作为hostname的bug提交ticket, 戳这里 [JDK-8132508 : Bug JDK-8029354 reproduces with underscore in hostname](http://bugs.java.com/bugdatabase/view_bug.do?bug_id=8132508) ， 然后发现该 "bug" reporter 的情况貌似跟我的差不多，只不过引爆bug的点不一样. 
 
@@ -187,7 +189,7 @@ JDK 9-ea + 141 - Fail
 恩，以上就是结论了。
 不过，反正我自己感觉目前Java API 关于这里的设计不太合理, 欢迎大家讨论。
 
-对[SO](https://stackoverflow.com/questions/44226003/conflicts-between-java-net-url-and-java-net-uri-when-dealing-with-hostname-conta?answertab=active#tab-top)上的这个答案还是表示赞同, 哈哈. 
+对 [SO](https://stackoverflow.com/questions/44226003/conflicts-between-java-net-url-and-java-net-uri-when-dealing-with-hostname-conta?answertab=active#tab-top)上的这个答案还是表示赞同, 哈哈. 
 
 >The review is somewhat terse, but the reviewer's point is the URL constructor is behaving in accordance with its specification. Since the specification explicitly states that no validation is performed, this is not a bug in the code. This is indisputable.
 
@@ -203,13 +205,16 @@ JDK 9-ea + 141 - Fail
 
 ```java
 public class TestURL {
-    static void conflicts() throws Exception {
-        java.net.URL url = new java.net.URL("http://test_1.tanglei.name/testurl");
+	static void conflicts() throws Exception {
+        String urlSrc = "http://test_1.tanglei.name/testurl";
+        java.net.URL url = new java.net.URL(urlSrc);
         System.out.println(url.getHost()); //test_1.tanglei.name
         System.out.println(url.getProtocol()); //http
         System.out.println(url.getPath()); // /testurl
-        java.net.URI uri = new java.net.URI("http://test_1.tanglei.name/testurl");
-        System.err.println("uri.getHost() == uri.toURL().getHost() is: " + (uri.getHost() == uri.toURL().getHost()));
+        java.net.URI uri = new java.net.URI(urlSrc);
+        //Typo System.err.println("uri.getHost() == uri.toURL().getHost() is: " + (uri.getHost() == uri.toURL().getHost()));
+        //Attention: NullPointerException
+        System.err.println("uri.toURL().getHost().equals(uri.getHost())) is: " + (uri.toURL().getHost().equals(uri.getHost())));
         System.out.println(uri.getHost()); //null    
     }
 
