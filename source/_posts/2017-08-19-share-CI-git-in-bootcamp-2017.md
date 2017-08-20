@@ -13,7 +13,7 @@ tags:
 
 今年受公司大佬们的委托给本次Boot camp新兵训练营的培训学员(入职公司的应届生新人)做关于 CI 的分享, 主题是 "CI: Git + Jenkins + Jira", 往年的分享一般都是围绕 Git 展开, 今年虽然题目上加了 Jenkins 和 Jira, 感觉重点仍然是 Git, 1个小时的时间讲不了太多的东西. 
 
-下面将分享的内容大致以文字的形式分享一下. 
+下面将分享的内容大致以文字的形式记录分享一下. 
 
 ## CI 概念
 
@@ -61,7 +61,7 @@ Git 中的几个基本概念比较重要, 理解这几个概念能够更好的�
 
 #### 文件的生命周期
 
-![文件生命周期](/resources/share-CI-git-in-bootcamp-2017/git-file-lifecycle.png)
+![git文件生命周期](/resources/share-CI-git-in-bootcamp-2017/git-file-lifecycle.png)
 
 - untracked: 还没有被版本库所track, 与版本库还没有产生任何关联
 - unmodified: 已经添加到版本控制里面了, 版本库里面保存的文件的状态
@@ -101,7 +101,7 @@ git add      git stash    git tag      git reflog
 git commit   git merge    git blame    git cherry-pick
 ```
 
-我这里就不列举所有命令了, 挑几个重点讲一下. 培训中讲完整命令列表及案例可以在这里找到 [bootcamp-git](https://github.com/tl3shi/bootcamp/blob/master/bootcamp-git-leitang.md)
+我这里就不列举所有命令了, 挑几个重点讲一下. 培训中讲完整命令列表及案例可以在这里找到 [bootcamp-git](https://github.com/tl3shi/bootcamp/blob/master/bootcamp-git-leitang.md). 
 
 #### git checkout v.s git reset
 
@@ -117,8 +117,7 @@ git commit   git merge    git blame    git cherry-pick
 
 这部分内容详细可以参考 [atlassian merging-vs-rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing) 和 [cnblogs merge-vs-rebase](http://www.cnblogs.com/irocker/p/merge-vs-rebase.html)
 
-所以 rebase 和 merge 后的 log history 顺序可能不一样, 如果有冲突, rebase 可能会多次对同一个文件进行fix.  从下图
-自己单独的开发的分支, 用 `rebase` 保持干净整洁的 commits,  可能多人开发等分支有多种冲突的(特别是已经push到remote供其他人使用时) 用 `merge`. 
+所以 rebase 和 merge 后的 log history 顺序可能不一样, 如果有冲突, rebase 可能会多次对同一个文件进行冲突fix.  自己单独的开发的分支, 用 `rebase` 保持干净整洁的 commits,  可能多人开发等分支有多种冲突的(特别是已经push到remote供其他人使用时) 用 `merge`. 
 
 #### git rebase -i 重建提交历史
 
@@ -145,20 +144,20 @@ git commit   git merge    git blame    git cherry-pick
 
 ### 常见 Workflow
 
-#### git workflow
+#### git flow
 
-![git workflow](/resources/share-CI-git-in-bootcamp-2017/git-workflow.png)
+![git flow](/resources/share-CI-git-in-bootcamp-2017/git-workflow.png)
 
-[这篇文章](http://nvie.com/posts/a-successful-git-branching-model) 对 git workflow 有较为详细的阐述. 
+[这篇文章](http://nvie.com/posts/a-successful-git-branching-model) 对 git flow 有较为详细的阐述. 
 
 简单来说, 就是team里的成员都在一个repo里面开发, 基于不同的 branch 去完成. 
-一点意见就是, 如果team里用的是这种workflow, merge MR/PR 的时候, 别忘了勾选删除原分支. 不然会造成一个repo里面太多分支且杂乱无章. 
+一点建议就是, 如果team里用的是这种workflow, merge MR/PR 的时候, 别忘了勾选删除原分支. 不然会造成一个repo里面太多分支且杂乱无章. 
 
-#### github workflow
+#### github flow
 
-![github workflow](/resources/share-CI-git-in-bootcamp-2017/github-workflow.png)
+![github flow](/resources/share-CI-git-in-bootcamp-2017/github-workflow.png)
 
-github workflow 详见[官网](https://guides.github.com/introduction/flow/) 对其的阐述. 简而言之, 就是大家在不同的repo进行开发, 往一个主repo里去 merge.  
+github flow 详见[官网](https://guides.github.com/introduction/flow/) 对其的阐述. 简而言之, 就是大家在不同的repo进行开发, 往一个主repo里去 merge.  
 
 ## CI Server
 
