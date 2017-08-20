@@ -92,7 +92,7 @@ alias gc!='git commit -v --amend'
 ```
 ### 常见命令
 
-在培训中, 我主要介绍了以下命令的用法. 
+在培训中, 我主要介绍了以下命令的用法.  其实就是希望大家对相应的命令有一个印象, 就与之前分享过的[Shell 助力开发效率提升](https://www.tanglei.name/blog/linux-shell-makes-more-efficient.html) 一样, 知道每个命令的试用场景, 能够了解某个场景下可以用某个命令来解决实际问题就行, 具体命令的参数, 可以到时候再 `git commond --help` 一下即可, 当然最基本的参数需要掌握, 用得多了就自动熟悉了. 
 
 ```bash
 git init     git remote   git rebase   git submodule
@@ -162,13 +162,13 @@ github workflow 详见[官网](https://guides.github.com/introduction/flow/) 对
 
 ## CI Server
 
-- Jenkins
+其实 CI Server 可以直接简单的理解为, 存在这样一台机器, 当你push 代码的时候(当然这个动作可以类似git hooks一样可以配置), 会自动帮你顺序执行一系列的程序命令, 然后将执行结果以某种方式通知你. 
 
-[Jenkins](https://jenkins.io/doc/) 是一款主流的 CI Server 吧, 优点是开源免费, 含有丰富的插件系统.  本文就不做多的介绍了, 一般中小型公司也都会用这个吧? 
+最常见的就是下面这两种: Jenkins 和 Travis.
 
-- Travis CI
+- Jenkins: [Jenkins](https://jenkins.io/doc/) 是一款主流的 CI Server 吧, 优点是开源免费, 含有丰富的插件系统.  本文就不做多的介绍了, 一般中小型公司也都会用这个吧? 
 
-[travis-ci](https://travis-ci.org/), 我第一次接触这个玩意还是很久前发现可以直接用它[帮我编译我的博客程序jekyll](https://travis-ci.org/tl3shi/hexo.tanglei.name/jobs/261312275/config ), 然后把生成好的html直接push到github, 这样就省得我自己去build了, 每次新写一篇blog, 直接push 到 master 即可, travis 就会默默地进行工作, 还还挺方便的, 不需要自己买VPS等Server, 就可以动态build 程序.  (不需要后台动态语言支持, 全静态博客(hexo/jekyll/octopress等)作者推荐使用, 关键免费呀)
+- Travis CI: [travis-ci](https://travis-ci.org/), 我第一次接触这个玩意还是很久前发现可以直接用它[帮我编译我的博客程序jekyll](https://travis-ci.org/tl3shi/hexo.tanglei.name/jobs/261312275/config ), 然后把生成好的html直接push到github, 这样就省得我自己去build了, 每次新写一篇blog, 直接push 到 master 即可, travis 就会默默地进行工作, 还还挺方便的, 不需要自己买VPS等Server, 就可以动态build 程序.  (不需要后台动态语言支持, 全静态博客(hexo/jekyll/octopress等)作者推荐使用, 关键免费呀)
 
 不少开源的程序都会借助 travis, 与 github 无缝链接, 实时标记 build状态等. 
 
