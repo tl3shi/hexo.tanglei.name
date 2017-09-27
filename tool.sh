@@ -9,7 +9,7 @@ do
     d)
         echo "new draft: $TITLE.md"
         touch "source/_drafts/$TITLE.md"
-        echo -e "---\ntitle: $TITLE\nlayout: post\ncategories: \n  - default\ntags: \n  - MyLife\n---" >> "source/_drafts/$TITLE.md"
+        echo -e "---\ntitle: $TITLE\nlayout: post\ncategories: \n  - MyLife \ntags: \n  - MyLife\n---" >> "source/_drafts/$TITLE.md"
         ;;
     p)
         titlepre=$(date +%Y-%m-%d)
