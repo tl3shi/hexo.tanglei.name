@@ -22,7 +22,8 @@ script:
 - hexo clean
 - hexo g
 #- mkdir .deploy && cp -R public/ .deploy/ && cd .deploy
+- export COMMIT=`git log | head -n 1`
 - mv public .deploy && cd .deploy
-- git init && git add -A . && git commit -m "commit from travis" 
+- git init && git add -A . && git commit -m "commit from travis, origin $COMMIT" 
 - git push --force "https://tl3shi:$GITHUB_TOKEN@github.com/tl3shi/hexo.tanglei.name.git" master:gh-pages 
 - git log | head -n 6
