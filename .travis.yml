@@ -8,6 +8,8 @@ sudo: false
 node_js:
     - 'stable'
 
+cache: npm
+
 before_install:
 - git config --global user.name "tangleithu"
 - git config --global user.email travis@tanglei.name
@@ -23,3 +25,4 @@ script:
 - mv public .deploy && cd .deploy
 - git init && git add -A . && git commit -m "commit from travis" 
 - git push --force "https://tl3shi:$GITHUB_TOKEN@github.com/tl3shi/hexo.tanglei.name.git" master:gh-pages 
+- git log | head -n 6
