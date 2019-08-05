@@ -1,6 +1,7 @@
 branches:
   only:
   - master
+  - source
 language: node_js
 
 sudo: false
