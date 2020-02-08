@@ -37,4 +37,4 @@ tags:
 
 但愿这肺炎疫情早日结束, 愿大家健康, 平安.
 
-![](/resources/tl3shi-wechat.jpg)
+<img style="width: 200px; max-width: 100%;" src="/resources/tl3shi-wechat.jpg"/>
