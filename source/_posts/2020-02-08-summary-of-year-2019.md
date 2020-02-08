@@ -36,5 +36,3 @@ tags:
 照旧说下新年愿望吧, 去年未完成的继续, 今年希望能多看看书.  
 
 但愿这肺炎疫情早日结束, 愿大家健康, 平安.
-
-<img style="width: 200px; max-width: 100%;" src="/resources/tl3shi-wechat.jpg"/>
