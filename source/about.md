@@ -13,7 +13,7 @@ duoshuo_thread_id:
 
 ## 关于我 
 
-目前是一名后台开发工程师 @宜信大数据创新中心, 毕业于中南大学和清华大学, 曾工作于<a href='http://www.tencent.com/zh-cn/index.shtml' target='_blank'>腾讯</a> 和 <a href='http://www.umeng.com/' target='_blank'>友盟</a>. 我的大致经历如下: 
+目前是一名后台开发工程师 @阿里云, 毕业于中南大学和清华大学, 曾工作于 大疆, 宜信大数据创新中心, <a href='http://www.tencent.com/zh-cn/index.shtml' target='_blank'>腾讯</a> 和 <a href='http://www.umeng.com/' target='_blank'>友盟</a>. 我的大致经历如下: 
 
   * 2008年入读于湖南**长沙**的中南大学软件学院软件工程专业.(很多人不知道中南大学是在长沙滴, 在此强调下)
   * 2010年5月通过软考软件设计师, 同年10月通过软考高级——系统架构设计师, 并取得湖南省第二名.
