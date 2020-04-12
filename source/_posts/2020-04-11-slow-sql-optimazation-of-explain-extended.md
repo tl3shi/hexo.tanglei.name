@@ -303,7 +303,7 @@ mysql> show warnings;
 
 ### 留一道思考题 
 
-你能解释如下情况吗? 查询结果表现为何不一致? 
+你能解释如下情况吗? 查询结果表现为何不一致? 注意一下 SQL 的执行顺序, 查询优化器工作流程, 以及其中的 **Using join buffer (Block Nested Loop)**, 建议多看看 [MySQL 官方手册](https://dev.mysql.com/doc/refman/5.6/en/) 深入背后原理.  
 
 ```sql
 mysql> select * from user_info ui
@@ -363,6 +363,9 @@ mysql> explain
 2 rows in set (0.01 sec)
 
 ```
+
+说明: 本文测试场景基于 MySQL 5.6, 另外, 本文案例只是为了说明问题, 其中的 SQL 并不规范(例如尽量别用 select * 之类的), 请勿模仿(模仿了我也不负责)​.  为了写本文, 可花了不少时间, 建 DB, 灌mock数据等等, 如果觉得有用, 还望你帮忙"在看", "转发". 最后留一个思考题供讨论, 欢迎留言说出你的看法. 
+
 
 ### 打个广告
 
