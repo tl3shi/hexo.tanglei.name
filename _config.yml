@@ -87,7 +87,7 @@ theme: next
 feed:
   type: atom
   path: atom.xml
-  limit: 30 #limit 0 is all
+  limit: 10 #limit 0 is all
   hub:
 
 # Deployment
