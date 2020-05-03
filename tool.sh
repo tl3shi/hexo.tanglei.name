@@ -17,8 +17,11 @@ do
         echo "publish post: $titlepre-$TITLE.md"
         ;;
     x)
-        curl "qcloud.tanglei.name:1024/go/deploy-hexo/"
-        echo "deploy fired."
+        #curl "qcloud.tanglei.name:1024/go/deploy-hexo/"
+        #echo "deploy fired."
+        cd public
+        git init && git add -A . && git commit -m "commit from local"
+        git push --force "https://github.com/tl3shi/hexo.tanglei.name.git" master:gh-pages
         ;;
     *)
         echo "-t \"title\" -d(new drafts) -p(publish post) -x(deploy)"
