@@ -52,7 +52,7 @@ int tailsum(int n, int sum) {
 }
 ```
 
-可以试试结果，计算从 1 加到 1000000，仍然是 `segmentation fault`。为什么呢？ 因为这种写法，本质上还是有多层的函数嵌套调用，中间仍然有压栈、出栈等占用了存储空间（只不过能比前面的方法会生部分空间）。 
+可以试试结果，计算从 1 加到 1000000，仍然是 `segmentation fault`。为什么呢？ 因为这种写法，本质上还是有多层的函数嵌套调用，中间仍然有压栈、出栈等占用了存储空间（只不过能比前面的方法会省部分空间）。 
 
 当你给编译选项开了优化之后，见证奇迹的时刻到了，居然能算出正确结果。如图所示： 
 
@@ -78,9 +78,11 @@ object TailRecObject {
 }
 ```
 
+
+结果如下所示，默认情况下 `scalac` 做了尾递归优化，能够正确计算出结果，当通过 `-g:notailcalls` 编译参数去掉尾递归优化后，就发生了 `Exception in thread "main" java.lang.StackOverflowError`了。
+
 ![](/resources/tail-recursive-optimization/tailrec-scala.jpg)
 
-结果如上所示，默认情况下 `scalac` 做了尾递归优化，能够正确计算出结果，当通过 `-g:notailcalls` 编译参数去掉尾递归优化后，就发生了 `Exception in thread "main" java.lang.StackOverflowError`了。
 
 我们来看看生成的字节码有什么不同。 
 
