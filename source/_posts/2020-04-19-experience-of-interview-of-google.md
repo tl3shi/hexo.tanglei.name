@@ -13,13 +13,19 @@ tags:
 
 ## 相关背景
 
-先介绍下自己相关背景, 985 本科, 清华硕士(其实, 大公司都比较看重第一学历的). 在校期间, 科研也没啥能拿得出手的论文. 社招时, 4 年多工作经验, 面试时为大疆后端开发TL(带3~4个人而已). 
+先介绍下自己相关背景, 985 本科, Top2 硕士(其实, 大公司都比较看重第一学历的). 在校期间, 科研也没啥能拿得出手的论文. 社招时, 4 年多工作经验, 面试时为大疆后端开发TL(带3~4个人而已). 
 
 Google 整体面试流程上基本如下: 
 
 ```
-Recruiter Prescreen → Phone Interview (1~2 sessions) → Onsite Interview (4~5 sessions, 1 week to receive feedback) → Hiring Committee Review → Offer Review → Offer Delivery (Yippee!)
+Recruiter Prescreen → 
+Phone Interview (1~2 sessions) → 
+Onsite Interview (4~5 sessions, 1 week to receive feedback) → 
+Hiring Committee Review → 
+Offer Review → 
+Offer Delivery (Yippee!)
 ```
+
 
 我一共经历了 1 轮电话面试, 5 轮 onsite, 如果算上前面的HR 的预筛选的话, 就是 7 轮. 
 
