@@ -3,10 +3,11 @@ branches:
   - master
 language: node_js
 
+# v14/stable(2020-05) produces empty html https://github.com/hexojs/hexo/issues/4257
 node_js:
-    - 'stable'
+    - 'v13.8.0'
 
-#cache: npm
+cache: npm
 
 before_install:
 - git config --global user.name "tangleithu"
