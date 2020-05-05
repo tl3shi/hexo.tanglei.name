@@ -3,12 +3,10 @@ branches:
   - master
 language: node_js
 
-sudo: false
-
 node_js:
     - 'stable'
 
-cache: npm
+#cache: npm
 
 before_install:
 - git config --global user.name "tangleithu"
@@ -24,6 +22,6 @@ script:
 #- mkdir .deploy && cp -R public/ .deploy/ && cd .deploy
 - git log | head -n 6
 - export COMMIT=`git log | head -n 1`
-- mv public .deploy && cd .deploy
+- mv public .deploy && cd .deploy && du -sh
 - git init && git add -A . && git commit -m "commit from travis, origin $COMMIT" 
 - git push --force "https://tl3shi:$GITHUB_TOKEN@github.com/tl3shi/hexo.tanglei.name.git" master:gh-pages 

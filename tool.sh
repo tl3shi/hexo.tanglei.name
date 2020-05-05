@@ -22,6 +22,7 @@ do
         cd public
         git init && git add -A . && git commit -m "commit from local"
         git push --force "https://github.com/tl3shi/hexo.tanglei.name.git" master:gh-pages
+        #git push --force "https://gitee.com/tangleithu/hexo.tanglei.name.git" master:gh-pages
         ;;
     *)
         echo "-t \"title\" -d(new drafts) -p(publish post) -x(deploy)"
