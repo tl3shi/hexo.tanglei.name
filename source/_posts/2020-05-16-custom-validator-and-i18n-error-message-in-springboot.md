@@ -137,7 +137,7 @@ public class LanguaggeUtils {
 
 回到本文的 demo 中，假设在我们业务逻辑中需要传递一个 `UserForm`，接收 `age,name,param` 三个参数。并对其中输入进行进行校验，其中，`param` 没有具体的含义，只是为了说明问题。
 
-```
+```java
 public class UserForm {
     @Min(value = 0, message = "validate.userform.age")
     @Max(value = 120, message = "validate.userform.age")
@@ -159,10 +159,9 @@ public Response<Greeting> createUser(@Valid @RequestBody UserForm userForm) {
 
 代码如上，上面示例只用了很简单的 `@Min, @Max, @NotNull`等约束条件，通过名字就能看出来含义。更多约束规则可以直接看对应源码 `javax.validation.constraints.xxx`，比如有常见的 `Email` 等格式校验。 
 
-默认情况下，违反相应的约束条件后，默认的输出比较啰嗦，如下： 
+默认情况下，违反相应的约束条件后，默认的输出比较啰嗦，例如用这个请求 `curl -H "Content-Type: application/json" -d "{}" "localhost:8080/user"`，对应的输出如下： 
 
 ```json
-#curl -H "Content-Type: application/json" -d "{}" "localhost:8080/user"
 {
     "error": "Bad Request",
     "errors": [
@@ -197,9 +196,9 @@ public Response<Greeting> createUser(@Valid @RequestBody UserForm userForm) {
     "status": 400,
     "timestamp": "2020-05-10T08:44:12.952+0000"
 }
-``` 
+```
 
-可以在上述的 `GlobalExceptionHandler` 修改默认的行为。
+其实依葫芦画瓢，debug 的时候，把抛出的具体异常添加到前面的 `GlobalExceptionHandler`，再修改下默认的行为即可。
 
 ```java
 @ExceptionHandler(BindException.class)
