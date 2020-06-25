@@ -65,7 +65,7 @@ HR 小姐姐介绍的电话面试时 1-2 轮, 其实我理解, 这应该是需�
 
 电话面试通过后, HR 会很快跟你反馈沟通面试结果, 是否通过, 以及 onsite 的安排.  因为 onsite 是 4-5 轮, 1 轮一小时的话, 需要 4-5 个小时, 其实还是蛮耗费精力的. 一般会沟通可以约 2 个半天或者 1 整天, 两个半天的好处是, 时间不会那么紧张, 前两轮后, 中途可以过几天再休整调整下再继续. 我当初就选择"快刀斩乱麻" 或者 "早死早超生" 的想法直接约了 1 天搞定. 
 
-![](/resources/experience-of-interview-of-google/google-guest.jpg)
+![](https://www.tanglei.name/resources/experience-of-interview-of-google/google-guest.jpg)
 
 onsite 也基本上是在电脑上 coding. 你和面试官一人一个笔记本, code 时共享屏幕, 有时候题目面试官会在白板上写出.  onsite 的题目, 明显就要比电话面试的题目难度高一些呢. 但实际上比我想象中的要简单些. 因为曾经想 Google 这样的公司面试恐怕连理解题目意思都要理解大半天吧. 可能也是社招的缘故, 社招整体感觉在算法的要求比校招就要低一些. 这只是我的主观感受啦.  (确实自己在当面试官的过程中, 在算法这块对社招的同学预期也会低一些)
 
@@ -94,7 +94,7 @@ onsite 一共聊了 5 轮, 上午 2 轮, 下午 3 轮, 其中有两轮是英文�
 
 ## 吃饭
 
-![Google 食堂](/resources/experience-of-interview-of-google/eat-at-google.jpg)
+![Google 食堂](https://www.tanglei.name/resources/experience-of-interview-of-google/eat-at-google.jpg)
 
 中午 HR 小姐姐会安排一个 Google 的工程师, 带你吃饭, 跟你聊天. 有任何疑问都可以跟他沟通.  不得不说, Google 的伙食还是蛮不错的. 
 
