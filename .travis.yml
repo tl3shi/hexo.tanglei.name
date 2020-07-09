@@ -7,7 +7,7 @@ language: node_js
 node_js:
     - 'v13.8.0'
 
-cache: npm
+# cache: npm
 
 before_install:
 - git config --global user.name "tangleithu"
