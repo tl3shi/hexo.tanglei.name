@@ -1,4 +1,11 @@
-# 面试官：会玩牌吧？给我讲讲洗牌算法和应用场景吧！
+---
+title: 面试官：会玩牌吧？给我讲讲洗牌算法和应用场景吧！
+layout: post
+categories: 
+  - MyLife 
+tags: 
+  - MyLife
+---
 
 有一次参加面试，面试官问我：“会玩牌吧？”
 
@@ -40,7 +47,7 @@
 
 无聊的石头算了一下，54 的阶乘有多大呢？大概就是这么大一长串数字，`2308436973392413804720927448683027581083278564571807941132288000000000000L`，准确答案看下图：
 
-![54的阶乘计算结果](https://static01.imgkr.com/temp/6448317f3cba49c98869db499758e241.png)
+![54的阶乘计算结果](https://imgkr.cn-bj.ufileos.com/59a89bd0-0e53-4bba-b60f-7ab063685f1b.png)
 
 我们还是以 4 张牌作为例子吧。
 
@@ -162,8 +169,7 @@ public static void shuffle(List<?> list, Random rnd) {
 
 另外多说一句，其实这种参数化调优方式在各种语言实现的时候很常见的，比如你去看排序算法的实现中，比如 Java 中 `Arrays.sort` 就是用的 `DualPivotQuicksort`（源码在`java.util.DualPivotQuicksort`中），里面实现逻辑中，当数组大小较小时也是用的其他如 $O(n^2)$ 的插入排序，如下图所示。
 
-![](https://static01.imgkr.com/temp/0a4f0adbeff841a6b4c7fbadb8cd4267.png)
-
+![](https://imgkr.cn-bj.ufileos.com/40f415b6-7074-4f11-a1cb-bc0407397a97.png)
 
 ## 洗牌算法的应用
 
