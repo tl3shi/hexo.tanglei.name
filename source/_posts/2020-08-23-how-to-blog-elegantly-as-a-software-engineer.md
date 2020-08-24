@@ -1,6 +1,6 @@
 # 10 年 bloger 告诉你程序猿如何优雅地写博客
 
->关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。用不同的视角分享高质量技术文章，以每篇文章都让人有收获为目的，欢迎关注，交流和指导！
+>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。用不同的视角分享高质量技术文章，以每篇文章都让人有收获为目的，欢迎关注，交流和指导！公众号后台回复关键字 “1024” 获取程序员大厂面试指南。
 
 ## 背景
 
@@ -30,11 +30,13 @@
 
 下图是我博客最初级的版本，在相当长一段时间内也一直用这个主题。
 
-![Wordpress 博客](http://www.tanglei.name/resources/blog-historys/wordpress.tanglei.name.png)
+![Wordpress 博客](/resources/how-to-blog-elegantly-as-a-software-engineer/wordpress.tanglei.name.jpg)
 
-“时光荏苒、岁月如梭”，上面的截图也很有意思——右上角的动态“腾讯微博”，不知道你有没有用过？
+“时光荏苒、岁月如梭”，上面的截图也很有意思——
 
-左上角的 Rss 订阅，现在不知道是否还有人用，用的人多吗？反正我好久没打开我的订阅文章了。
+- 右上角的动态“腾讯微博”，不知道你有没有用过？
+
+- 左上角的 Rss 订阅，现在不知道是否还有人用，用的人多吗？反正我好久没打开我的订阅文章了。
 
 用 Wordpress 写博客，有一个缺点就是，每次写需要登录后台，排版、配图等比较麻烦。并且还得掏钱买虚拟主机、自己运营维护wordpress 程序、MySQL 等。
 
@@ -55,13 +57,17 @@
 
 ### github page 服务
 
-于是换了 github page 服务，不但省去了虚拟主机、MySQL 等费用，同时 github page 还支持自定义域名、git 版本管理，markdown 自动渲染简直就是专门给程序员量身定做的（好像确实也是的）。
+github page 服务 https://pages.github.com/，按照官网说的那样，直接将源文件托管在 Github 上，仅仅需要编辑、push即可，然后变化马上就能体现了。 
 
-程序猿直管写 markdown 文件即可，渲染等都交给 gitub。
+![image-20200823183039944](/resources/how-to-blog-elegantly-as-a-software-engineer/github-pages.png)
+
+这样不但省去了虚拟主机、MySQL 等费用，同时 github page 还支持自定义域名、git 版本管理，markdown 自动渲染简直就是专门给程序员量身定做的（好像确实也是的）。
+
+程序猿只用专注于写 markdown 文件即可，渲染 html 等都交给 gitub。
 
 下图是我搭建后的一个截图。
 
-![github和octopress配置](http://www.tanglei.name/resources/how-to-blog-elegantly-as-a-software-engineer/github-octopress.jpeg)
+![github和octopress配置](/resources/how-to-blog-elegantly-as-a-software-engineer/github-octopress.jpeg)
 
 详细过程可以参考下我的这几篇 Blog：
 
@@ -83,9 +89,9 @@ github pages 服务本身支持的博客引擎比较少，比如希望一些定�
 
 我曾经也使用过多个博客引擎，如下图：
 
-![jekyll博客主题](http://www.tanglei.name/resources/blog-historys/jekyll.tanglei.name.png)
+![jekyll博客主题](/resources/how-to-blog-elegantly-as-a-software-engineer/jekyll.tanglei.name.jpg)
 
-![hexo主题](http://www.tanglei.name/resources/blog-historys/hexo.tanglei.name.png)
+![hexo主题](/resources/how-to-blog-elegantly-as-a-software-engineer/hexo.tanglei.name.jpg)
 
 travis 是一款免费的 CI 工具，能帮你做的事情是啥？ 就是上面你本地的流程可以交给它来做。现在我写 blog 的流程是：
 
@@ -152,8 +158,13 @@ CDN 的工作流程就是你添加一个域名的 CNAME，指向 CDN 厂商的�
 
 ![CDN测试结果tanglei.name](http://www.tanglei.name/resources/qcloud/tanglei.name-vs-tanglei.me-cdn.png)
 
-访问一个 10K 的页面，基本在半秒就加载完毕了，对于个人博客来讲，已经很够用了。上图的结果测速还有一些如 USA 的节点拉低了平均值，国外的一些节点还是走 github 更快。如果有需求做全球加速的话，还可以用比如敝司的全球加速服务哦（CDN包括海外众多节点）。
+访问一个 10K 的页面，基本在半秒就加载完毕了，对于个人博客来讲，已经很够用了。上图的结果还有一些如 USA 的节点拉低了平均值，国外的一些节点还是走 github 更快。如果有需求做全球加速的话，还可以用比如敝司的全球加速服务哦（CDN包括海外众多节点）。
 
 ## 最后
 
-觉得本号分享的文章有价值，记得添加星标哦。周更很累，不要白 piao，需要来点正反馈，安排个 “一键三连”（点赞、在看、分享）如何？😝 这将是我持续输出优质文章的最强动力。
+本文只是石头在探索过程发现觉得合适自己的方法，每个人喜欢的姿势可能不一样，仅供参考。希望你能找到适合你的姿势。
+
+觉得本号分享的文章有价值，记得添加星标哦。别白 piao，需要来点正反馈，安排个 “一键三连”（点赞、在看、分享）如何？😝 这将是我持续输出优质文章的最强动力。
+
+![](/resources/一键三连.gif)
+
