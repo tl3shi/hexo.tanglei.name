@@ -24,7 +24,6 @@ script:
 - git log | head -n 6
 - export COMMIT=`git log | head -n 1`
 - mv public .deploy && cd .deploy && du -sh
-- git init 
-- git add . 
-- git commit -m "commit from travis, origin $COMMIT" 
+- git init && git add . 
+- git commit -m "commit from travis, origin $COMMIT" >/dev/null
 - git push --force "https://tl3shi:$GITHUB_TOKEN@github.com/tl3shi/hexo.tanglei.name.git" master:gh-pages 
