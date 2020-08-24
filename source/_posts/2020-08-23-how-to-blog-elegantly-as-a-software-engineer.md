@@ -14,7 +14,7 @@
 - “成就自己、帮助他人”。 在日常工作中，你肯定也有通过别人的博客解决了你的某个问题，这个时候“反哺”一下开放的互联网也何尝不是一件快事。当有人通过搜索引擎检索到你的内容并留言说感谢帮助他解决一个类似问题的时候，还是有一丝丝成就感的。
 - 锻炼写作能力。一个问题自己懂和把它讲给别人懂，是两个完全不一样的概念。
 - 打造个人 IP。例如著名的 coolshell，ruanyifeng 等，大部分人应该都知道吧？
-- 赚钱。这个就不用多说了。（说出来，你可能不信，就连我 10 年前没啥内容的 blog，当初也有是有“外快”赚的：记得当初是给“友链”的方式导流，1 个月 5~10 块，刚好能覆盖我的域名、虚拟主机的费用。）
+- 赚钱。这个就不用多说了。（说出来，你可能不信，就连我 10 年前没啥内容的 blog，当初也有是有“外快”赚的：记得当初是给“友链”的方式导流，1 个月 5~10 块，刚好能覆盖我的域名、虚拟主机的费用，不过后来我也懒得折腾了）
 - ... 
 
 通过这 10 年的摸索，石头也尝试过多种写 blog 的方法。不过说来惭愧，貌似也没什么说得出的成绩。
@@ -24,9 +24,14 @@
 ![](http://www.tanglei.name/resources/how-to-blog-elegantly-as-a-software-engineer/image-20200823151456726.png)
 
 
+
+下面分享下我的博客演进之路，供大家参考。
+
 ## 我的博客之路
 
 ### 纯 wordpress
+
+wordpress 不做多介绍，是一套用 php 开发的 CMS，很多人的博客都用这个。
 
 下图是我博客最初级的版本，在相当长一段时间内也一直用这个主题。
 
@@ -38,7 +43,7 @@
 
 - 左上角的 Rss 订阅，现在不知道是否还有人用，用的人多吗？反正我好久没打开我的订阅文章了。
 
-用 Wordpress 写博客，有一个缺点就是，每次写需要登录后台，排版、配图等比较麻烦。并且还得掏钱买虚拟主机、自己运营维护wordpress 程序、MySQL 等。
+用 Wordpress 写博客，有一个缺点就是，每次写需要登录后台，排版、配图等比较麻烦。并且还得掏钱买虚拟主机、自己运营维护 wordpress 程序、MySQL 等。
 
 再后来接触到 `markdown` 这个标记言，才发现这玩意太好用了，就一发不可收拾。一直用 markdown 写作沿用至今。
 
@@ -93,9 +98,9 @@ github pages 服务本身支持的博客引擎比较少，比如希望一些定�
 
 ![hexo主题](/resources/how-to-blog-elegantly-as-a-software-engineer/hexo.tanglei.name.jpg)
 
-travis 是一款免费的 CI 工具，能帮你做的事情是啥？ 就是上面你本地的流程可以交给它来做。现在我写 blog 的流程是：
+这里推荐一个工具 —— travis，它是一款免费的 CI 工具，能帮你做的事情是啥？ 就是上面你本地的流程可以交给它来做。现在我写 blog 的流程是：
 
-1. 本地写 blog，md 格式的。工具可以直接用之前推荐的 [程序员利器](https://mp.weixin.qq.com/s/PlDF6pn55vE1_7rusC3K2w) 中的 markdown 写作工具 Macdown 或者Typora。
+1. 本地写 blog，md 格式的。工具可以直接用之前推荐的 [程序员利器](https://mp.weixin.qq.com/s/PlDF6pn55vE1_7rusC3K2w) 中的 markdown 写作工具 Macdown 或者 Typora。
 2. git commit && git push 即可。
 3. travis 开始工作，安装 blog 程序，然后 build 静态 html，最后 push 到指定的 github pages 仓库。
 
@@ -131,9 +136,23 @@ script:
 - git push --force "https://tl3shi:$GITHUB_TOKEN@github.com/tl3shi/hexo.tanglei.name.git" master:gh-pages 
 ```
 
-借助 travis 可玩的东西就多了。 
+通过上面的配置可以看出，其实做的事情就是安装博客程序 hexo，然后生成静态 html，最后将本地生成的静态 html 整体打包作为一个仓库 push 到github pages 对应的仓库。
 
-比如，是不是可以同一文章多个平台发。举例，现在大家普遍玩法是各大博客平台同步发表。是否可以直接在 CI 流程里面加 juejin、博客园等 post 流程呢？
+下图是 travis-ci 的配置页面，可以配置比如只要有新的 commit push 即可触发 CI 流程，进而更新博客内容。
+
+![travis-ci 配置](/resources/how-to-blog-elegantly-as-a-software-engineer/travis-ci-config.png)
+
+别看整个过程看起来比较复杂，其实安装等过程是可以 cache 的，一般而言，走完整个流程所耗费的时间也就 1-2 分钟（后图所示），因为我的博客内容“历史包袱重”，可能耗费时间会更久，这时间大部分取决于博客程序的处理流程以及最后 git 上传过程。
+
+下图是构建历史，构建成功与否会邮件方式通知到你，很方便。
+
+![travis 构建历史](/resources/how-to-blog-elegantly-as-a-software-engineer/travis-history.png)
+
+
+
+借助 travis 可玩的东西就多了，上面的 scripts 有足够的灵活性可以自己随意定制。
+
+比如，是不是可以同一文章多个平台发。举例，现在大家普遍玩法是各大博客平台同步发表。是否可以直接在 CI 流程里面添加 juejin、博客园等 post 流程呢？
 
 感兴趣的朋友试试？（石头好久都有这个想法了，但却一直没有付出行动）
 
