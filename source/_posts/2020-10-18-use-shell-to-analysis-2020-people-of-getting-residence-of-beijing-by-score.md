@@ -39,7 +39,7 @@ tags:
 
 本文将从 积分分数分布、公司分布、年龄分布 等几个方面做简单分析。 
 
-![2020年积分落户数据CSV](/Users/tanglei/github/hexo.tanglei.name/source/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/2020年积分落户数据CSV.png)
+![2020年积分落户数据CSV](/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/2020年积分落户数据CSV.png)
 
 ### 分数分布
 
@@ -270,7 +270,7 @@ tags:
 
 年龄分布如下所示，主要还是集中在 38 ~ 47 岁之间。
 
-![2020积分落户年龄分布](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibsGiafxNzoG3I2Dz2b01wQ71icU8MBzYWSCy6JfVV0Q6wDia1XG5Z1zVjBbrTQjt2b5x0an5NcfodyFw/640)
+![2020积分落户年龄分布](/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/640-20201018151830149.png)
 
 
 
