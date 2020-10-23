@@ -12,11 +12,11 @@ permalink: /to-tangleithu.html
 
 你好，我是公众号「程序猿石头」号主，很高兴在这里相遇，希望我们能成为朋友。
 
-> 我也“很不要脸”的蹭了“清华”二字的标签，我在想，全网各种真真假假都在蹭（估计你也见到过吧<img src="https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibujnf6mDtqtfcuJ4dQfPXgiasVrrPGl4R9MxrHVInyZpqmibYco5jaUmQhIsUSt5o6ibhjpreedibvU0w/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img" style="zoom: 33%;" />），我确实货真价实清华硕士毕业，为何不能说？<img src="https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibvXxbic7VeMz5Otib520jtNLL3DMTdqcIZmstbVYVofGJEibUMO5aoPFmPGch4x4U1M8V0g24BDYJeFQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img" style="zoom:33%;" />
+> 我也“很不要脸”的蹭了“清华”二字的标签，我在想，全网各种真真假假都在蹭（估计你也见到过吧<img src="http://www.tanglei.name/resources/to-tangleithu/bq-cry.jpg" alt="img" style="zoom: 33%;" />），我确实货真价实清华硕士毕业，为何不能说？<img src="http://www.tanglei.name/resources/to-tangleithu/bq-js.jpg" alt="img" style="zoom:33%;" />
 
-我本科就读于某985 —— CSU，专门 “教如何打 CS” 的大学<img src="https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibujnf6mDtqtfcuJ4dQfPXgia6GVEEv4NLv8PXgRgYIetBDmmiazichx0VZviaJqQGib0RDvTxQib5jxsXVw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img" style="zoom:33%;" />，也称「长沙左家垅男子高等职业技术学院」，然后硕士保送到某 Top2——THU，也叫「北京五道口职业技术学校」。
+我本科就读于某985 —— CSU，专门 “教如何打 CS” 的大学<img src="http://www.tanglei.name/resources/to-tangleithu/bq-zy.jpg" alt="img" style="zoom:33%;" />，也称「长沙左家垅男子高等职业技术学院」，然后硕士保送到某 Top2——THU，也叫「北京五道口职业技术学校」。
 
-在“上学”这件事情上，我自认为不算特别牛，但对自己也还算相对满意（主要是周围太多牛人了，得学会知足常乐<img src="https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibt0p1UKzWVibib75lpr9yAtXXSJppRPtWwq4MGHbo1GJicicOSH8ibNicwJoicQxD2ibVO8b38bMRJgnhURsw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img" style="zoom:33%;" />）。
+在“上学”这件事情上，我自认为不算特别牛，但对自己也还算相对满意（主要是周围太多牛人了，得学会知足常乐<img src="http://www.tanglei.name/resources/to-tangleithu/bq-zy.jpg" alt="img" style="zoom:33%;" />）。
 
 我出生农村，正所谓「穷人家的孩子早当家」，自知不是特别聪明，但也还算勤奋努力，从高中到读完研究生，都没花家里钱，基本靠各种奖学金维持，硕士毕业时还有一笔不小的存款。
 
@@ -55,6 +55,8 @@ permalink: /to-tangleithu.html
 
 ![扫码关注，回复「0」即可领取](http://www.tanglei.name/resources/qrcode-tangleithu.jpg)
 
+<center>扫码回复「0」即可领取大礼包</center>
+
 同时，本人最近正在梳理之前的学习资料，包括之前在学校的课程等，后续我也将陆陆续续在本人公众号上分享。
 
 ![image-20201022231318954](http://www.tanglei.name/resources/to-tangleithu/classes-snapshot.png)
@@ -73,8 +75,12 @@ permalink: /to-tangleithu.html
 
 <img src="http://www.tanglei.name/resources/codershitou-wechat.png" alt="备注「内推」进互联网大厂内推群" style="zoom:50%;" />
 
+<center>备注「内推」进互联网大厂内推群</center>
+
 
 
 我也尽力打造高质量的读者群，群里有各路牛人，会定期分享高质量技术文章，讨论各种技术问题和见解，非常期待你的加入。我朋友圈也还有一定坑位，也欢迎大家加我好友。最后，再次邀请你关注我的公众号，让我们一起交流学习、共同进步。
 
 ![扫码关注，回复「1024」可领取大厂面试指南一份](http://www.tanglei.name/resources/qrcode-tangleithu.jpg)
+
+<center>扫码关注，回复「1024」可领取大厂面试指南一份</center>
