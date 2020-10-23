@@ -8,8 +8,6 @@ permalink: /to-tangleithu.html
 
 ---
 
-## 很高兴在这里相遇
-
 你好，我是公众号「程序猿石头」号主，很高兴在这里相遇，希望我们能成为朋友。
 
 > 我也“很不要脸”的蹭了“清华”二字的标签，我在想，全网各种真真假假都在蹭（估计你也见到过吧<img src="http://www.tanglei.name/resources/to-tangleithu/bq-cry.jpg" alt="img" style="zoom: 33%;" />），我确实货真价实清华硕士毕业，为何不能说？<img src="http://www.tanglei.name/resources/to-tangleithu/bq-js.jpg" alt="img" style="zoom:33%;" />
