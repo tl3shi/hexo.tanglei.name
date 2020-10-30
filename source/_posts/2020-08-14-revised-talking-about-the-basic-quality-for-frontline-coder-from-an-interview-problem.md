@@ -1,3 +1,17 @@
+---
+title: 从一道面试题谈谈一线大厂码农应具备的基本能力（修订版）
+layout: post
+categories:
+  - 经验技巧
+tags:
+  - 面试题
+  - 码农
+---
+
+> 关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！
+>
+> 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247484698&idx=1&sn=03cc4636e7ee7364a85788a98809cc03&chksm=eb4704fedc308de8efd48ab9aed4fd1ddee5665d8e76d0d3767c1f704eac8b15a83e450a08f1&token=1818649850&lang=zh_CN#rd)，转载请全文保留。
+
 ![一线码农](https://lc-gold-cdn.xitu.io/17bf0ee653f22d5e60cb.jpg)
 
 ## 背景
@@ -179,6 +193,3 @@ $ |r - \sqrt v| \leq t $, 难点在于其中的 $ \sqrt v $ 不知道, 不太方
 有时候感觉大部分程序员都被大量的需求压迫着，被产品经理催促着，仓促地码着繁琐的业务代码，不断的改着 Bug 又引入新的 Bug。 业务代码重要么，当然重要（代码就是服务于具体业务的），但同时也还是希望我们不要抛弃一些基础的东西，多培养一下我们的编程素养。我们在用编程语言，利用各种工具来实现我们想要达到的目的的时候，能做到“知其然，知其所以然”岂不更好？
 
 全文完, 本人才疏学浅, 望各位看官轻拍. 
-
-原文首发于[blog](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247484698&idx=1&sn=03cc4636e7ee7364a85788a98809cc03&chksm=eb4704fedc308de8efd48ab9aed4fd1ddee5665d8e76d0d3767c1f704eac8b15a83e450a08f1&token=1818649850&lang=zh_CN#rd)
-
