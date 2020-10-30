@@ -1,4 +1,15 @@
-# 某口罩项目架构演进记录&优化经验分享
+---
+title: 高并发口罩抢购项目架构演进记录&优化经验分享
+layout: post
+categories:
+  - 经验技巧
+tags:
+  - 高并发
+  - 高可用
+---
+
+
+> 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247485980&idx=1&sn=7f0ca5a9ea5c982c3841dd18f89dd092&chksm=eb470bf8dc3082ee92bed3ed6718279998d5fad6337a15b342c638269b5cbd86c11bc3f7b616&scene=178&cur_album_id=1338658897502191616#rd)，转载请全文保留。
 
 >本文作者：杨牧原（花名牧原），阿里云技术专家，多年操作系统和应用调试经验，理论功底深厚，实践经验丰富。目前专注Linux性能调优，容器集群和系统网络。
 
@@ -14,7 +25,7 @@
 
 原始架构图示&分析（2月2号晚上22点左右的原始架构）
 
-![2月2号晚上22点左右的原始架构](https://imgkr.cn-bj.ufileos.com/654de207-dfc2-4817-9636-c59b9612b5bd.png)
+![2月2号晚上22点左右的原始架构](/resources/architecture-evolution-of-HA-system-of-buy-facemask/2月2号晚上22点左右的原始架构.png) 
 
 1. 客户端走 HTTPS 协议直接访问 ECS；
 1. ECS 上使用 Nginx 监听 HTTPS 443 端口；
@@ -32,9 +43,9 @@
 
 随后我方介入，进行架构调整，24点左右找的我们，早上9点要开服，时间太紧，任务太重，程序不能动的情况下，几十万的并发架构如何做？
 
-2月3号早上9点左右的架构，4号也恢复了这个架构）
+2月3号早上9点左右的架构，4号也恢复了这个架构。
 
-![2月3号早上9点左右的架构](https://imgkr.cn-bj.ufileos.com/fa9a59e3-550d-4514-8100-5e3df0245b4a.png)
+![2月3号早上9点左右的架构](/resources/architecture-evolution-of-HA-system-of-buy-facemask/2月3号早上9点左右的架构.png)
 
 1. 接入 SLB，通过镜像横向扩展负载能力；
 2. 接入读写分离数据库架构，通过阿里云数据库自动进行读写分离，自动同步数据；
@@ -52,7 +63,7 @@
 
 ## 架构图&分析-V3
 
-![2月5号的架构](https://imgkr.cn-bj.ufileos.com/278ada16-7813-4e60-9676-f5d55c58e907.png)
+![2月5号的架构](/resources/architecture-evolution-of-HA-system-of-buy-facemask/2月5号的架构.png)
 
 1. 接入 CDN 分流超大带宽；
 2. 取消 Nginx 的代理；
@@ -68,8 +79,7 @@
 
 ## 理想架构图&分析-V4
 
-
-![理想架构](https://imgkr.cn-bj.ufileos.com/a8bdb252-3280-4216-a85a-f00cc16a4651.png)
+![理想架构](/resources/architecture-evolution-of-HA-system-of-buy-facemask/理想架构.png)
 
 1. 主域名接入CDN；
 2. CDN通过设置回源 Http、Https 协议去访问 SLB 的不同监听实现新老程序之间的切换，具体实现为回源协议对应。不同监听，监听对应不同的程序。
@@ -97,9 +107,7 @@
 
 最后的成果统计（采样分析，实际数据比这个还大）：
 
-
-![成果统计（采样分析）](https://imgkr.cn-bj.ufileos.com/288fa0c2-5cdc-4a53-ab5c-d9b24da837d0.png)
-
+![成果统计（采样分析）](/resources/architecture-evolution-of-HA-system-of-buy-facemask/成果统计（采样分析）.png)
 
 最后上线的三代架构，为了保险起见上了 150 台机器，但是根据活动期间的观察，以及对压测结果的评估，上 50 台机器应该就可以抗住了，从持续 5 小时一直崩溃被终端用户骂街，到 7 分钟库存售罄的领导赞赏，虽然经历了 3 个通宵的戮战，依然可以隐隐约约感觉到身心都得到了升华。
 
@@ -132,7 +140,7 @@ worker_connections  1024-->10240;
 worker_processes  1-->16;（根据实际情况设置，可以设置成auto）
 worker_rlimit_nofile 1024-->102400;
 listen 80 backlog 511-->65533；
-``` 
+```
 部分场景也可以考虑nginx开启长连接来优化短链接带来的开销
 
 ### 架构优化
@@ -152,7 +160,7 @@ listen 80 backlog 511-->65533；
 ```
 
 - 优化短信发送逻辑，登陆先查询 Redis 免登 Session，无免登 Session 再允许发送短信验证码（降短信的量，优化登陆体验）；
- 
+
 - jedis连接池优化；
 
 ```
@@ -175,10 +183,8 @@ springboot1.5 带的 jedis2.9.1 的 Redis 连接泄漏的问题，导致 Tomcat 
 
 ## 最后
 
-![ECS运维指南之Linux系统诊断](https://imgkr.cn-bj.ufileos.com/dc71a90f-8e3f-4158-b2db-7bc6a56bb8f4.png)
+![ECS运维指南之Linux系统诊断](/resources/architecture-evolution-of-HA-system-of-buy-facemask/ECS运维指南之Linux系统诊断.png)
 
 本文节选自《ECS运维指南之Linux系统诊断》，《ECS运维指南之Linux系统诊断》是牧原呕心沥血之作，不仅内容精益求精，代码的编排作者也花了不少心思。你也可以直接登录阿里云开发者社区下载本书——[《ECS运维指南之Linux系统诊断》](https://developer.aliyun.com/article/763939)，或者直接在公众号后台回复关键字“ecs”获取本合集。
 
 阿里云开发者社区有不少高质量技术文章，大家可以去观摩学习，有很多书籍都是可以直接免费下载的。 
-
-阅读原文：https://developer.aliyun.com/article/762493 
