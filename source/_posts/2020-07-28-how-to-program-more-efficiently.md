@@ -1,7 +1,23 @@
-# 程序员如何利用工具提升自己的工作效率？
+---
+title: 程序员如何利用工具提升自己的工作效率？
+layout: post
+categories:
+  - 经验技巧
+tags:
+  - 程序员
+  - 开发效率
+  - Shell
+  - Mac
+  - Linux
+---
+
+> 关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！
+>
+> 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247487786&idx=1&sn=842202cc524477ec1546b4747bdbf1a8&chksm=eb4710cedc3099d86953451729c7f569866e6e58abbbec5c7ebe7423d12e1f11e189bb417f80&token=553253061&lang=zh_CN#rd)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
 本文是 “工欲善其事，必先利其器” 系列的第三篇。
 没有看过前面推送的，推荐大家前去看看了解下。
+
 - [工欲善其事，必先利其器 -- Mac 软件推荐（序）](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247485871&idx=1&sn=c877775df684d8ab8c90bf2d38eee98a&chksm=eb47084bdc30815d19182c51571b096a20b79bdee0956f68167ebc8ed3117364ac0602f83658&token=551126633&lang=zh_CN#rd)
 - [有了这几个神器，瞬间逼格就上去了](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247486659&idx=1&sn=b574d3f2a6af4544ceab48aadaa0a726&chksm=eb470d27dc308431e8789a87e32a597c72cc0f2fe02d6fc80424aec11e41e712326b62603f27&token=551126633&lang=zh_CN#rd)
 
@@ -14,13 +30,14 @@
 ### trackpad 配置
 
 1. **启用 Tap to click**: 在 `System Preferences -> Trackpad` 中启用， 用 **tap** 替换 **click** 的操作，明明轻轻 **tap** 就可以完成的， 为何还要用力点击才 OK。 现在偶尔用其他人电脑非得用力 click 就太纠结了。
-同时，还有 "右键"功能， **Secondary click**， 用两个手指 tap 弹出右键菜单。 
-![mac trackpad 设置](https://imgkr.cn-bj.ufileos.com/8e4f2314-0924-4230-9db5-a5f7e0c1de20.png)
+  同时，还有 "右键"功能， **Secondary click**， 用两个手指 tap 弹出右键菜单。 
+
+  ![mac trackpad 设置](/resources/how-to-calculate-apr/mac-os-trackpad.png)
 
 2. **开启单词选词查询**:
-选中某个中英文单词后，三指 tab 会弹出词典释义。 这个在石头哥[之前的这篇文章](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247485871&idx=1&sn=c877775df684d8ab8c90bf2d38eee98a&chksm=eb47084bdc30815d19182c51571b096a20b79bdee0956f68167ebc8ed3117364ac0602f83658&token=551126633&lang=zh_CN#rd)中也有介绍。 
+  选中某个中英文单词后，三指 tab 会弹出词典释义。 这个在石头哥[之前的这篇文章](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247485871&idx=1&sn=c877775df684d8ab8c90bf2d38eee98a&chksm=eb47084bdc30815d19182c51571b096a20b79bdee0956f68167ebc8ed3117364ac0602f83658&token=551126633&lang=zh_CN#rd)中也有介绍。 
 
-![开启单词选词查询](https://imgkr.cn-bj.ufileos.com/194d4df3-6ac7-493c-ba6d-4fbccad750f1.png)
+![开启单词选词查询](/resources/how-to-calculate-apr/mac-translate-trackpad.png)
 
 3. **Scroll 方向**: 这个自己用习惯了就好。由于我刚开始从 Win 转向 Mac 的时候习惯用 Win 的那种方式，于是就没有开启 `Scroll direction: natural`， 然后也一直沿用至今。 
 
@@ -52,7 +69,7 @@ ctrl + r: bck-i-search/reverse-i-search，输入关键字搜索历史命令
 
 比较 DT 的是就是 `esc` 一起用的时候，不能连续使用。 举个例子，Terminal 中输入了 `git push origin source`，光标在末尾，这时按住`ctrl` 不放， 按一下 `w` 即向前删除一个单词，第一次按 `w` 删除 `source`，再按 `w` 删除 `origin`。 而 `esc + d` 不能这样结合使用(如下 gif 连续按就不 work)，`esc` 必须中途释放再按才能 work。不知道是不是石头使用的姿势不对，有知道的朋友，还帮忙指出一下啊。😁
 
-![bash自动补全](https://imgkr.cn-bj.ufileos.com/1aa4e66e-7453-4532-be13-ae71b537220e.gif)
+![bash自动补全](/resources/how-to-calculate-apr/builtin-quick-key-git-push.gif)
 
 啥？你说上面快捷键 `ctrl + w` 等不太好按？按键特别别扭？
 
@@ -96,19 +113,20 @@ brew-cask 是 brew 的一个加强版，可以安装一些桌面应用，例如 
 
 2. **热键** 设置一个热键，比如我的是 `alt + 空格`， 弹出 iTerm2， 且以半透明的方式显示在当前 active 的窗口上面。
 
-![iTerm2 hotkey](https://imgkr.cn-bj.ufileos.com/0ee44c9f-0024-40ab-ab55-a8e8a5600c8e.png)
+![iTerm2 hotkey](/resources/how-to-calculate-apr/iterm2-hotkey.png)
 
 3. 搜索
 	- `cmd + f`搜索输入关键字后，匹配的会黄色高亮，此时按 `tab` 或者 `shift + tab` 会自动向后/前以 word 的方式选中高亮的，并自动 copy 到剪切板。
 	- `cmd + alt + e`，在所有的 tab 中全局搜索，搜索出候选项后，再选择你想要进入的 tab。
 	
-![iTerm2 search](https://imgkr.cn-bj.ufileos.com/b4efb523-13d1-4d81-b3ad-c231aefd9f42.png)
+
+![](/resources/how-to-calculate-apr/iterm2-search-all.png)
 
 4. 密码
 
 这个功能可能会常用，程序猿得经常登录到远程服务器吧，密码又记不住。可以把常用密码保存起来，需要输入密码的时候，用快捷键 `Option + cmd + f` 弹出密码管理器，选择一个自动输入即可。
 
-![密码管理](https://imgkr.cn-bj.ufileos.com/02e5e478-bc29-4c4b-a6e3-c54b3a67bb3f.png)
+![密码管理](/resources/how-to-calculate-apr/iterm2-password-manager.png)
 
 5. 其他
 	- 新版本的 iTerm2 还支持直接在控制台里 ls 图片文件(图片显示在控制台里)。(如上图下半部分，连 gif 都支持)
@@ -116,11 +134,11 @@ brew-cask 是 brew 的一个加强版，可以安装一些桌面应用，例如 
 	- 自动补全，iTerm2 本身是支持自动补全的(`cmd + ;`)，不过建议直接结合后面的zsh 使用。`cmd + shift + h` 剪贴板历史(下图最后一行)。
 	- 一些高级的功能目前可能处于测试版本，你若用的稳定版是不支持的，需要到官网下测试版。还有更多的功能请到 iTerm2 官网探索吧。 
 
-![iTerm2 imgcat](https://imgkr.cn-bj.ufileos.com/e4422ffe-ed61-4e4a-945d-04bb0bb8e97e.png)
+![iTerm2 imgcat](/resources/how-to-calculate-apr/iterm2-imgcat.png)
 
 ## zsh
 
-这个墙裂推荐啊。结合 [oh my zsh](http://ohmyz.sh/ "oh my zsh")，丰富的[插件资源(zsh)](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview "插件资源(zsh "插件资源(zsh)")")。 
+这个墙裂推荐啊。结合 [oh my zsh](http://ohmyz.sh/ "oh my zsh")，丰富的[插件资源(zsh)](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview "插件资源(zsh "插件资源(zsh)")。 
 
 语法高亮，自动补全等特别好，在此推荐的几个插件或功能。
 
@@ -145,7 +163,7 @@ alias grom='git rebase origin/master'
 
 4. **zsh-autosuggestions**，如下图所示，我在 *app-in-mac* 这个目录下，刚输入了 `git`， 此时光标还在 `p` 前面， zsh 就已经自动给我补全了 `git push origin source`， 此时我只要按 `ctrl + e` 跳转到行尾(所以熟悉上文中的快捷键很有必要啊)，回车即可执行命令了。 
 
-![iTerm2 zsh plugins](https://imgkr.cn-bj.ufileos.com/d17c898b-363d-4141-bdd4-d09308d4af4d.png)
+![iTerm2 zsh plugins](/resources/how-to-calculate-apr/zsh-plugins.png)
 
 更多的还是请到官网查看。
 
@@ -168,7 +186,7 @@ lrwxr-xr-x  1 tanglei  admin  62  1 24  2016 /usr/local/bin/subl -> /Application
 介绍 Vim 的文章也很多了，这里就不详细展开了。分享下石头用的部分插件。
 为了让多台电脑同步我的 vim 配置/插件等，我直接放 github 了([ref vimconfigs](https://github.com/tl3shi/vimconfigs.git "ref vimconfigs"))，不同电脑只需要再建一个软链到github 中的 vimrc 即可。
 
-![vim 自动补全](https://imgkr.cn-bj.ufileos.com/0ce4b324-a582-4b4d-b7ac-f1967be55f13.png)
+![vim 自动补全](/resources/how-to-calculate-apr/vim-autocomplete.png)
 
 - Vundle/Pathogen: 插件管理，我用的Pathogen，直接将下面 github repo clone 到 `~/.vim/bundle/` 目录下即可。
 - NERDTree: 文件目录树 [NERDTree](https://github.com/scrooloose/nerdtree.git "NERDTree")
@@ -196,9 +214,9 @@ Reference
 
 内置各种语言，各种环境的各种文档。该 App 还提供各种 API 供其他工具交互使用。例如 Vim(不是想象当中自动补全功能，只是能够快捷地搜索 API)， Sublime 等。  (p.s 要是有人写了一个 Vim 插件，能够支持调用 dash 的 API(如果有的话) 自动补全代码， 那应该会很受欢迎的)
 
-![dash 搜索 API](https://imgkr.cn-bj.ufileos.com/62cebcb1-12dd-4d45-a5bb-3b25065f69f5.png)
+![dash 搜索 API](/resources/how-to-calculate-apr/dash.png)
 
-![dash](https://imgkr.cn-bj.ufileos.com/7ed2a1b4-e13f-4a1a-8298-7d021b23a87b.png)
+![](/resources/how-to-calculate-apr/dash-main.png)
 
 
 ## 其他App
@@ -269,8 +287,8 @@ rsc4AOQm
 
 觉得本号分享的文章有价值，记得添加星标哦。周更很累，不要白 piao，需要来点正反馈，安排个 “一键三连”（点赞、在看、分享）如何？😝 这将是我持续输出优质文章的最强动力。
 
-![来个一键三连](https://imgkr.cn-bj.ufileos.com/5561c379-264a-44fb-9cc7-fac14a08f523.gif)
+![来个一键三连](/resources/how-to-calculate-apr/3lian.gif)
 
->关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。用不同的视角分享高质量技术文章，以每篇文章都让人有收获为目的，欢迎关注，交流和指导！
-
-
+> 关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader，欢迎关注，交流和指导！
+>
+> 欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步。

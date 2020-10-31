@@ -1,4 +1,18 @@
+---
+title: 互联网大厂内推求职的正确姿势？
+layout: post
+categories:
+  - 经验技巧
+tags:
+  - 程序员
+  - 编程
+  - 面试
+---
+
 > 关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！
+>
+> 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247489516&idx=1&sn=2caba785992af70305ff15f4a740af4a&chksm=eb471608dc309f1ee4349dbedc0ff47a1670a804cba71818534ac3472fa12b183334397ea47b&token=553253061&lang=zh_CN#rd)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
+
 
 ## 背景
 
@@ -32,7 +46,7 @@
 
 另外一方就是公司招聘方。一般是比如在公司负责招聘的 HR 会在上面筛选简历，当然你可以选择主动联系投递。
 
-还有一部分是公司具体人才的需求方（非 HR），比如阿里很大程度上讲，是团队 Leader 要自己去招人的，甚至有的同学还背负了相应的 KPI，比如我一个阿里的朋友，今年下半年的 kpi 就是要 Offer 一个前端 P7（或者 P6）的技术岗。（有没有读者朋友帮我这个朋友完成 KPI![img](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibtp9R6XH1NdMoxzfHovXRj2L7iapmveVicFR48lgWBiczGXKHH1MQUJib9cMIp14D92HPianGZwJ8u9rfw/640.jpg)）
+还有一部分是公司具体人才的需求方（非 HR），比如阿里很大程度上讲，是团队 Leader 要自己去招人的，甚至有的同学还背负了相应的 KPI，比如我一个阿里的朋友，今年下半年的 kpi 就是要 Offer 一个前端 P7（或者 P6）的技术岗。（有没有读者朋友帮我这个朋友完成 KPI :) ）
 
 这也是为什么，好多人收到阿里的电话，问你看不看机会的原因。不要误会，他不是 HR，就是对应团队的人，从内网的简历库里面捞到了你的简历，就电话问问你，万一你要看机会呢，说不定最后就能成了。
 
@@ -82,7 +96,7 @@
 
 各个公司的岗位职级可以直接在网上搜索清楚，市场的职级和薪资水平大体上是对齐的，下图可以简单参考。
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibu2vB6V5AGoFGaCK5LicFgLEqugu01B0z2Vibwfqgm8196lZ9JLia05Xuh1fvu993uJpdjduicmRSTEfA/640.jpg.jpg)大厂职级薪资对应关系，图来源：曾加@知乎
+![大厂职级薪资对应关系，图来源：曾加@知乎](/resources/how-to-apply-a-job-by-recommended-internal/职级薪水.jpg)大厂职级薪资对应关系，图来源：曾加@知乎
 
 以阿里为例，一般大家在找工作可能会涉及到以下几个职级，在社招场合，大部分可能是 P6/P7/P8，（P9等对应的 HC 比较少，一般可能也不会通过投递简历这种方式去找，都是行业内有一定影响力，或者圈子都是认识的人）
 
@@ -138,11 +152,11 @@
 
 案例 1：一哥们半夜发简历给我，说你不是说帮忙 review 简历吗，快给看看吧。我当时有事情在忙，没有及时回复，结果 “视频弹框” 就来了。![img](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibtp9R6XH1NdMoxzfHovXRj2K3sCu9ibz7jke5ZKAAjzMbWzafsl1XyOTc0bmUic59FY8x4tY9cibgshw/640.jpg)
 
-![img](https://mmbiz.qpic.cn/mmbiz_jpg/ZMXDhhGnYibtp9R6XH1NdMoxzfHovXRj2btA0kVLn7juMljqLBT4ribdehYeibRIzTvOJUYncUB2aNWv4AC2E2Rgw/640.jpg)
+![img](/resources/how-to-apply-a-job-by-recommended-internal/video-call.jpg)
 
 案例 2：因之前帮一个哥们内推，加了微信。后来有一次我发了个朋友圈，大概就是吐槽了下微信有个小 bug，结果：
 
-![img](https://mmbiz.qpic.cn/mmbiz_jpg/ZMXDhhGnYibtp9R6XH1NdMoxzfHovXRj2wQb71X03HoNDHS5G7LJVc5eYmctTfXNy3h5fImKv9wrJFbbPXLn5mQ/640.jpg)
+![网络喷子](/resources/how-to-apply-a-job-by-recommended-internal/wangluo-penzi.jpg)
 
 哈哈，当时也是很无语。当然，这个跟“内推”这件事情没啥关系，只是想说，咱们在与人相处的时候还是和谐相处，不要当键盘侠，不要当网络喷子。
 
@@ -150,7 +164,7 @@
 
 我们部门最近有开放 P6 岗位，具体 JD [看这里](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247488750&idx=2&sn=a549a0e677ac520f48deabdae7c1c4e8&chksm=eb47150adc309c1c691614e6f0d5a68f0e82cb7728e0dadd0e6f477b61389990ad1b6a7b14e5&scene=21#wechat_redirect)，欢迎大家找我内推。另外，我有维护一个内推群，里面有各大公司（例如BAT、TMD等）的朋友，还有微软、Hulu、Google 等外，石头也可以帮忙联系内推（当然还得简历看得过去哈）。对这个群感兴趣的同学可以添加下面微信备注“内推”进群。
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibvqKiaJX4x1ZKHTkaaKkX6GkiaN8ZlgdeeFv784I1IGeQfTqp19RtNia7D2EztdL0hRcqVIkTDs8z9HQ/640.jpg)
+![备注“内推”进群](/resources/how-to-calculate-apr/codershitou-wechat.png)
 
 备注“内推”进群
 
