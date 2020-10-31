@@ -10,7 +10,7 @@ tags:
 ---
 
 
->关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。以每篇文章都让人有收获为目的，欢迎关注，交流和指导！文章首发于微信公众号，欢迎关注。
+>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。以每篇文章都让人有收获为目的，欢迎关注，交流和指导！文章首发于[微信公众号](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247489026&idx=1&sn=cf1650652a44d65730c5ee04258ad9e1&chksm=eb4717e6dc309ef037674943645abe8356aa726416ea46f3349ba227520bd40c95f8a49aa3e5&token=553253061&lang=zh_CN#rd)，欢迎关注。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
 读者福利：[点这里送几本我们部门出的新书——《弹性计算：无处不在的算力》](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247488892&idx=1&sn=1b026c5a8688b880ca06c51c816265b1&chksm=eb471498dc309d8eaac5bd296a3971901e624e9abfc5a0add8928f5ebc3a83b8402ebfadd95d&scene=21&token=1758347384&lang=zh_CN#wechat_redirect)，免费包邮到家，欢迎大家来抽奖，也帮忙 review 下抽奖的代码。
 
@@ -515,7 +515,7 @@ sort 404.log | uniq -c | sort -nr -k1 | head -n 10
 - play framework session
 
     - 老方式: 需要启play环境， 慢
- 
+
 	```scala
 	sbt "project site" consoleQuick
 	import play.api.libs._
@@ -635,7 +635,7 @@ sort 404.log | uniq -c | sort -nr -k1 | head -n 10
 - [5] UNIX环境高级编程: https://book.douban.com/subject/25900403
 
 
-​送几本我们部门出的新书，免费包邮到家，欢迎大家来抽奖（两种抽奖方式，详情见下文），也帮忙review下抽奖的代码。
+送几本我们部门出的新书，免费包邮到家，欢迎大家来抽奖（两种抽奖方式，详情见下文），也帮忙review下抽奖的代码。
 
 [关于 AI 的数百个问题，清华男神刘云浩教授的 3 万字回复给整得明明白白|附抽奖送书](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247488892&idx=1&sn=1b026c5a8688b880ca06c51c816265b1&chksm=eb471498dc309d8eaac5bd296a3971901e624e9abfc5a0add8928f5ebc3a83b8402ebfadd95d&scene=21&token=1758347384&lang=zh_CN#wechat_redirect)
 
