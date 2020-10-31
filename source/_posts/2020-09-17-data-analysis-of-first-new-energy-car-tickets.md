@@ -11,7 +11,7 @@ tags:
 ---
 
 
->关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。以每篇文章都让人有收获为目的，欢迎关注，交流和指导！文章首发于微信公众号，欢迎关注。
+>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。以每篇文章都让人有收获为目的，欢迎关注，交流和指导！文章首发于[微信公众号](https://mp.weixin.qq.com/s?src=11&timestamp=1604109316&ver=2677&signature=lA-7iYDNTu3m0Is66BL5L5*sINruP5woH9d7PrRTIv1G3z*dIgRtcYpkC2lOr*ppxgN2pamNcSNZziv7S6JZMGc*5fYDtQIyFUWxJa1v7AJFjbiiYqyeUaRjmxFZz3Fk&new=1)，欢迎关注。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
 
 
@@ -19,7 +19,7 @@ tags:
 
 当然，意料之中，很遗憾，本人并未入围，排名 8W 左右。看样子，要想新能源积分排序上去，还得抓紧增加家庭代际数啊。 
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibv6ysV7I9y3B0ZUNWNKuSR3MB5qmicS3EJI9OBbATewyZ83VuP8oLKa0T3icFibU9icYJVJ76nKhmVIvA/640.jpg)
+![img](/resources/data-analysis-of-first-new-energy-car-tickets/1.jpg)
 
 
 让我们来看看这些数据都是怎样的？
@@ -40,7 +40,7 @@ tags:
 cat car2020.csv | awk '{print substr($3, 1, match($3,/[0-9]/)-1) "\t"  substr($3, match($3,/[0-9]/)) "\t" $4 "\t" $5 "\t" $6 "\t" $7}' > car-2020.csv 
 ```
 
-![摇号数据集csv](https://mmbiz.qpic.cn/mmbiz_jpg/ZMXDhhGnYibv6ysV7I9y3B0ZUNWNKuSR3ibL5T5lRuGK6u8J6M4IXbLWaficXw4c7qWlM3hUZELc2ILHEAicRDtic9g/640)
+![摇号数据集csv](/resources/data-analysis-of-first-new-energy-car-tickets/2.png)
 
 #### 分数分析 
 
@@ -55,9 +55,9 @@ cat car2020.csv | awk '{print substr($3, 1, match($3,/[0-9]/)-1) "\t"  substr($3
 cat car-2020.csv | awk '{print $5}'  | uniq -c  | sort -k 1 -nr
 ```
 
-![积分分布](https://mmbiz.qpic.cn/mmbiz_jpg/ZMXDhhGnYibv6ysV7I9y3B0ZUNWNKuSR3LpFNHXjGIosO9TOBW9cibJqf6icmJehOSdzK7CCe4gpMTfSSTic96cZYQ/640)
+![积分分布](/resources/data-analysis-of-first-new-energy-car-tickets/积分分布.png)
 
-![](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibv6ysV7I9y3B0ZUNWNKuSR3eibFsp7PwzDgibkgotibibIp4pHnricjSm5LJicBFUbE6uMG7icZkErXfunMw/640)
+![](/resources/data-analysis-of-first-new-energy-car-tickets/积分分布1.png)
 
 #### 家庭情况
 
@@ -69,11 +69,11 @@ cat car-2020.csv | awk '{print $5}'  | uniq -c  | sort -k 1 -nr
   13379 3
   ```
 
-  ![](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibv6ysV7I9y3B0ZUNWNKuSR3IPMnRyHkjxCXgZgD9dIlhxAR0sSLneJXqr6wYibJlia9aHxFebDk6QibA/640)
+  ![](/resources/data-analysis-of-first-new-energy-car-tickets/3.png)
 
 - 家庭人口数，居然还有 9 口人的。看了下，9 口人 3 代，猜测 双方父母 4 + 两口 2 + 3 小孩？还是怎样的，我看家庭主要申请人也是从第一期就开始申请摇号了，这么大一家人，也没个车牌，也是不容易啊。 
 
-  ![](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibv6ysV7I9y3B0ZUNWNKuSR366icJickZFKaibZoctAmkib1k3MDQIFibLskNV9hqibRcREqiaarezGXWP3Ng/640)
+  ![](/resources/data-analysis-of-first-new-energy-car-tickets/4.png)
   
   ```shell
   ➜  Downloads cat car-2020.csv | awk '{print $3}'  | sort | uniq -c
@@ -101,7 +101,7 @@ cat car-2020.csv | awk '{print $5}'  | uniq -c  | sort -k 1 -nr
   19 2017
 ```
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibv6ysV7I9y3B0ZUNWNKuSR3cy2Md9RNibsEo1WYRlpM2mv4mK0zxIBRTM9qh9LhQKShTxv4Rn1ADYw/640)
+![img](/resources/data-analysis-of-first-new-energy-car-tickets/5.png)
 
 看了下，从第一期摇号的就有 1367 个。 
 
@@ -163,7 +163,7 @@ cat car-2020.csv | awk '{print $5}'  | uniq -c  | sort -k 1 -nr
 - 第二列：对应的人数
 - 第三列：对应省
 
-![](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibv6ysV7I9y3B0ZUNWNKuSR3C48bfHnDacmPqt5uCq60TkbTdSJcibtwgX3Xv2LFUGBof2ia8vyL1eJA/640)
+![](/resources/data-analysis-of-first-new-energy-car-tickets/6.png)
 
 从中可以看出，还是老北京占比最大，占比74%了。石头想找个免费的热力地图生成工具展示一下的，短时间之类没找到，先放弃了。
 
@@ -215,6 +215,6 @@ cat car-2020.csv | awk '{print $5}'  | uniq -c  | sort -k 1 -nr
 
 附《摇号解题积分对照表》
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibv6ysV7I9y3B0ZUNWNKuSR3eXbBD5fTYbiaRNowT5XL2icqqRnXDBKjvIbibiao8O1vnoicB88zLbKmiaOg/640)
+![img](/resources/data-analysis-of-first-new-energy-car-tickets/7.png)
 
 回到题目本身，这个㊙️秘密就是：如果要想家庭摇号尽早“中签”，那就赶紧生娃吧，哈哈哈😝，别打我。

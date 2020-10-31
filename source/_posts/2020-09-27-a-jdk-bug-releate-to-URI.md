@@ -8,7 +8,7 @@ tags:
   - 经验技巧
 ---
 
->关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。以每篇文章都让人有收获为目的，欢迎关注，交流和指导！文章首发于微信公众号，欢迎关注。
+>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。以每篇文章都让人有收获为目的，欢迎关注，交流和指导！文章首发于[微信公众号](https://mp.weixin.qq.com/s?src=11&timestamp=1604109394&ver=2677&signature=lA-7iYDNTu3m0Is66BL5L5*sINruP5woH9d7PrRTIv0K-9fsVesO6oMA8wzTooPMm2uQqI1lfDkD9MXJMZskn2k*KqvdMyAlTjO9sJwJDRwCOe4Olx4zG-t8qIBrSz-W&new=1)，欢迎关注。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
 分享一下之前踩的一个坑，背景是这样的： 
 
@@ -137,9 +137,7 @@ new java.net.URI(url.getProtocol(), url.getHost(), url.getPath(), null) error: I
 
 有理由怀疑，这是 JDK 的 Bug 吗？
 
-
-
-![image-20200919102937998](/Users/tanglei/github/hexo.tanglei.name/source/resources/a-jdk-bug-releate-to-URI/bug.png)
+![image-20200919102937998](/resources/a-jdk-bug-releate-to-URI/bug.png)
 
 从官网上还真找到了关于包含下划线作为hostname的bug提交issue，戳这里 [JDK-8132508 : Bug JDK-8029354 reproduces with underscore in hostname](http://bugs.java.com/bugdatabase/view_bug.do?bug_id=8132508)，然后发现该 "bug" reporter 的情况貌似跟我的差不多，只不过引爆bug的点不一样。
 

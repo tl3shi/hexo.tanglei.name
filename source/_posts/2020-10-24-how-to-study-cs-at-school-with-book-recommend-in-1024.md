@@ -10,7 +10,7 @@ tags:
 
 > 关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！
 >
-> 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?src=11&timestamp=1604070515&ver=2676&signature=WTZkuGSy13ezzH21BhWy5AUI44aSqQhVW4QRa7hyiAwgsHqcxPt1Yv6j6YOh-HJjXQ0wr4oSosaKGjtBQE68y1os*pbnOFzBHQEJ2RM8sn6BkNxzUDKc0J0bx8uthNGJ&new=1)，转载请全文保留。
+> 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?src=11&timestamp=1604070515&ver=2676&signature=WTZkuGSy13ezzH21BhWy5AUI44aSqQhVW4QRa7hyiAwgsHqcxPt1Yv6j6YOh-HJjXQ0wr4oSosaKGjtBQE68y1os*pbnOFzBHQEJ2RM8sn6BkNxzUDKc0J0bx8uthNGJ&new=1)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
 ## 背景
 
