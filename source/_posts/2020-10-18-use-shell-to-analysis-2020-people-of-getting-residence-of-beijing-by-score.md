@@ -282,5 +282,7 @@ tags:
 
 ![积分落户模拟计算工具](/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/640-20201018150747644.png)
 
-
+> 关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader，欢迎关注，交流和指导！
+>
+> 欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步。后台回复关键字 “**0**” 送阿里技术大礼包。
 
