@@ -76,7 +76,6 @@ permalink: /to-tangleithu.html
 <center>备注「内推」进互联网大厂内推群</center>
 
 
-
 我也尽力打造高质量的读者群，群里有各路牛人，会定期分享高质量技术文章，讨论各种技术问题和见解，非常期待你的加入。我朋友圈也还有一定坑位，也欢迎大家加我好友。最后，再次邀请你关注我的公众号，让我们一起交流学习、共同进步。
 
 ![扫码关注，回复「1024」可领取大厂面试指南一份](http://www.tanglei.name/resources/qrcode-tangleithu.jpg)

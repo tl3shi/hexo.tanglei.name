@@ -1,0 +1,107 @@
+大家好，我是四猿外，自从写公众号以来，除了认识了一帮优秀的读者，还认识了许多日日夜夜笔耕不辍的原创小伙伴们。
+
+能和他们一起写作、一起奋斗，我非常荣幸。
+
+同时他们还是我的贵人，给了我不少帮助、建议，在创造低潮期给我鼓励。
+
+这些技术博主的文章有的风趣幽默，有的通俗易懂，有的万字长文，有的言简意赅。
+
+这次，我先给你们隆重介绍几位。
+
+## 程序猿石头
+
+原创公众号 **「程序猿石头」**。石头哥是货真价实的**真清华学霸**，阿里 P7，前大疆（就是卖无人机的那个，美国公司都干不过的那家）后端的**技术 Leader**。曾经也在创业公司待过，有着非常丰富的经验。他的公众号会定期分享一些对技术、职场等经验和见解，以每篇文章都让人有所收获为目的。
+
+你可以通过下方的链接了解石头哥的文章风格，看是否符合你的口味，也同时期望能让你有所收获。
+
+比如这篇，石头哥面试 Google 中国的面经，看了很有收获，被转载了 50+ 次。
+
+[Google 面试 7 轮游 | Google 面经分享](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247483912&idx=1&sn=520bbca6a2056ab4df6b0e1d0ebaf6e0&chksm=eb4703ecdc308afa83b288b1469f0927c1916189f219ee5e8c3c5194defc0b8f313ff7607730&scene=21#wechat_redirect) （转载50+次）
+
+石头哥擅长挖掘日常工作中的细节，比如一个简单的字符串比较，背后却隐藏着不可思议的道理，看完我也震惊了。
+
+[这 10 行比较字符串相等的代码给我整懵了，不信你也来看看](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247485939&idx=1&sn=cad3cf49aa345783a93ce5d9b631ba1d&chksm=eb470817dc308101c95aff74fa63d530f02bef50f91ba18d4ff25b8715933a404bd03ffc8b7b&scene=21#wechat_redirect) （转载30+次）
+
+石头哥作为面试官也参与校招、社招多年，于是通过一道面试题谈谈大厂面试看中的基本能力。
+
+[从一道面试题谈谈一线大厂码农应该具备的基本能力](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247484698&idx=1&sn=03cc4636e7ee7364a85788a98809cc03&chksm=eb4704fedc308de8efd48ab9aed4fd1ddee5665d8e76d0d3767c1f704eac8b15a83e450a08f1&scene=21#wechat_redirect) （转载30+次）
+
+另外，他还经常分享一些提高工作效率的神器。[优秀的程序员是如何利用工具来提升工作效率的？](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247487786&idx=1&sn=842202cc524477ec1546b4747bdbf1a8&chksm=eb4710cedc3099d86953451729c7f569866e6e58abbbec5c7ebe7423d12e1f11e189bb417f80&scene=21#wechat_redirect) （转载30+次）
+
+此外，石头哥还热心帮助读者朋友，已经帮助好几个朋友**内推入职互联网大厂**了。总之，墙裂建议大家关注。
+
+![img](https://mmbiz.qpic.cn/mmbiz_jpg/ZMXDhhGnYibuoFRu7IJSzibGpVymEdibicEDQyob6zy2EIUOu5Wm25okUDibC73JHINm7vB3vuOMMfYwDJTS4nx4Zrw/640?wx_fmt=jpeg)
+
+
+
+## 业余码农
+
+号主安酱，出身于生科院的他，目前正就职于抖音。他曾在校招时收割了15+互联网知名大厂的offer，但是他仍然谦虚的称自己为业余码农。他说他不是前沿技术高深的大神，也不是行业见识渊博的教父，只是一名从非科班踏上代码之路的「业余程序员」。**他的公众号专注于分享原创易懂的计算机基础技术，同时也会跟大家聊聊他作为职场小白逐步进阶的程序人生。**
+
+他对计算机基础知识具有很深的理解，一落笔又能把生硬枯燥的技术点生动形象的描述出来。在他的文章中，会借助**许多图解、动画或者形象的故事**来带给读者最直观的理解，同时优秀的绘图功底又使得文章十分美观大气。**读者称赞他的文章浅显易懂，读起来就像滚被窝一样舒服。**
+
+他擅长将复杂的计算机原理变着花样讲解出来，比如这一篇被转载40+的数据结构详解，一篇顶十篇！
+
+[**图解！24张图彻底弄懂九大常见数据结构！**](https://mp.weixin.qq.com/s?__biz=MzI2MTcxNjg5OA==&mid=2247484088&idx=1&sn=b946158bd2df89f9ad242982db92f932&scene=21#wechat_redirect)
+
+他还写了数篇备受好评的数据库和操作系统相关的文章，细腻的文笔让人不再感受技术的冷冰冷，比如以下这篇：
+
+[**超干货 | 这些概念可是操作系统的灵魂，你弄懂了几个？**](https://mp.weixin.qq.com/s?__biz=MzI2MTcxNjg5OA==&mid=2247484458&idx=1&sn=818c7222ed6d6c7a5dbe8a7b06ffe82a&scene=21#wechat_redirect)
+
+不仅如此，他还经常分享自己对于行业的理解和程序人生的感悟，让人感受到技术人的有趣和温暖。比如最近这篇备受读者好评的日常分享，以幽默自然的语言诉出互联网人朴实无华的简单生活：
+
+[**一个互联网「打工人」的卑微一天**](https://mp.weixin.qq.com/s?__biz=MzI2MTcxNjg5OA==&mid=2247484554&idx=1&sn=1dd351c87a575bc8d5ab064f311ccd76&scene=21#wechat_redirect)
+
+这样一个虚怀若谷而又低调内涵的年轻人，能够让你体验到技术的温暖和有趣，墙裂推荐大家关注！
+
+![img](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibtK6nvick4ziaiaWP00wg0uJonia2ZtUFMMwrcAAD7o4khrxxepbcgyE1xGaBtRaib3Mvp80bFPOicrRo3g/640?wx_fmt=png)
+
+## 四猿外
+
+四猿外，目前是一家大公司的技术总监，管理的技术团队有一百多人。
+
+四哥从一个非计算机专业的毕业生，转行到程序员，再到架构师、项目经理、部门经理、总监、CTO，一路打拼，一路成长。
+
+作为过来人，他分享了很多宝贵经验，尤其是这篇，被转载了 50 多次，开发者头条热门文章第一、首页置顶：
+
+[一个技术总监的忠告：精通那么多技术为何还是做不好一个项目？](https://mp.weixin.qq.com/s?__biz=MzU3MTg3NDYwNg==&mid=2247484470&idx=1&sn=67907639e1fe19b6afbfbb0640fcc5a4&scene=21#wechat_redirect)
+
+没有很多年头的积累，根本写不出来为这种雄文。
+
+了让大家找工作少踩坑，他写了一篇找工作的干货大全，备受好评：
+
+[最全干货：从写简历，到面试、谈薪酬的那些技巧和防坑指南](https://mp.weixin.qq.com/s?__biz=MzU3MTg3NDYwNg==&mid=2247484503&idx=1&sn=c7a006ddd9acb1cb104128c7d8601eab&scene=21#wechat_redirect)
+
+最近四哥为了改善大家的阅读体验，开始研究用小故事的形式来写技术文章：
+
+[中年架构师，悲催的一天](https://mp.weixin.qq.com/s?__biz=MzU3MTg3NDYwNg==&mid=2247484769&idx=1&sn=e604092f8063829618e52ee3ff1f3628&scene=21#wechat_redirect)
+
+大刘的故事太诙谐了，没想到学习还能这么有趣。
+
+这是 **四猿外** 的公众号二维码，强烈建议大家扫码关注。
+
+![img](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibuoFRu7IJSzibGpVymEdibicEDLRZBK9ibOOFLPa4EtV0CCI9FMGq0TjCiawkEBacV243SJ1TsVtRkvLicA/640?wx_fmt=png)
+
+
+
+## 后端技术学堂
+
+「后端技术学堂」的号主是 柠檬，从事软件行业 5 年，他现在是腾讯的高级软件工程师，从事后台开发工作。他的公众号主要分享 Linux系统、数据结构与算法、数据库、编程语言学习、系统架构、微服务等内容，帮你构建完整的后端技术知识体系。
+
+柠檬的技术文都是反复打磨的高质量文章，经常被 CSDN、菜鸟教程、51CTO、博客园等头部技术大号转载。
+
+几乎整个互联网的服务都跑在Linux系统之上，柠檬喜欢深入Linux底层原理，深度剖析后用通俗易懂和图解的方式说给你听，学会站在系统层面思考，眼界就不一样了，下面这篇关于Linux 内存管理的文章，全网转载30+次。
+
+[万字长文，别再说你不懂Linux内存管理了，30 张图给你安排明白](http://mp.weixin.qq.com/s?__biz=MzkwOTE2OTY1Nw==&mid=2247486881&idx=2&sn=77785597cd937db3013ad6c395b557a3&chksm=c13f8b37f6480221469f82367c431ecf1133e9760a034961a16ae5b7c6c6a2a87cb27aac8aa7&scene=21#wechat_redirect)
+
+每个有技术追求程序员都有一个成为架构师的梦想，我们总是抱怨面试造飞机工作拧螺丝，那我们是否有设计软件架构的能力呢？可以跟着他下面这篇文章，掌握造飞机的方法！
+
+[面试都在问的微服务，一文带你彻底搞懂！](http://mp.weixin.qq.com/s?__biz=MzkwOTE2OTY1Nw==&mid=2247486896&idx=1&sn=05af09b569c67b2f3e8a6e0627ccaceb&chksm=c13f8b26f648023089c122326a0d446f3bdb71dc5602971888636b691ab20fa58def6c930023&scene=21#wechat_redirect)
+
+他半年写了30+篇技术文章，这其中他又优中选优，整理了10篇精华文章，还有他写的Go语言原创系列基础教程，内容持续更新，你可以点开下面的链接查看。
+
+[后端技术学堂精华文章合集-专题列表](https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&album_id=1582148241255612420&__biz=MzkwOTE2OTY1Nw==#wechat_redirect)
+
+下面是他的公众号二维码，建议大家可以去看看，翻翻精选文章列表，绝对会有收获。柠檬不仅会写硬核技术文章，有时还会和大家聊聊个人感悟、程序人生，提供大厂内推机会，是个有料又接地气的宝藏号主，强烈建议大家关注。
+
+![img](https://mmbiz.qpic.cn/mmbiz_jpg/ZMXDhhGnYibtK6nvick4ziaiaWP00wg0uJonQf8Ctc53NjeDMB886nE0ffVkpWMuZo4vy7zTpvtycDnnibpW6RjOQoA/640?wx_fmt=jpeg)

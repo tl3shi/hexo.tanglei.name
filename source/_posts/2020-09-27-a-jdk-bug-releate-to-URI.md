@@ -218,3 +218,8 @@ new java.net.URI(url.getProtocol(), url.getHost(), url.getPath(), null) error: I
 >So ... this inconsistency is a "feature".
 
 
+
+> 关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader，欢迎关注，交流和指导！
+>
+> 欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步。后台回复关键字 “**0**” 送阿里技术大礼包。
+

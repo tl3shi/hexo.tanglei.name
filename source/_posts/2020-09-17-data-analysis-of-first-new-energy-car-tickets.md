@@ -218,3 +218,8 @@ cat car-2020.csv | awk '{print $5}'  | uniq -c  | sort -k 1 -nr
 ![img](/resources/data-analysis-of-first-new-energy-car-tickets/7.png)
 
 回到题目本身，这个㊙️秘密就是：如果要想家庭摇号尽早“中签”，那就赶紧生娃吧，哈哈哈😝，别打我。
+
+> 关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader，欢迎关注，交流和指导！
+>
+> 欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步。后台回复关键字 “**0**” 送阿里技术大礼包。
+
