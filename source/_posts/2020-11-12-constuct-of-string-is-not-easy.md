@@ -1,10 +1,17 @@
-# 你可能也会掉进这个简单的 String 的坑
+---
+title: 你可能也会掉进这个简单的 String 的坑
+layout: post
+categories:
+  - 经验技巧
+tags:
+  - 程序员
+  - 编程
+  - Java
+---
 
 >关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！
 >
 >本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247490188&idx=1&sn=19c2259724a855cdfac48855a870368d&chksm=eb471b68dc30927eb17b1e5a999eebe808084a9f3aa64d3041f73dd3a8327ccc1d84353cf51f&token=105401824&lang=zh_CN#rd)，转载请全文保留。后台回复关键字 “**1024**” 获取程序员大厂面试指南。
-
-
 
 ## 背景
 
