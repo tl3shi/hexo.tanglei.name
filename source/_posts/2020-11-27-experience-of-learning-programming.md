@@ -1,12 +1,16 @@
-
-
-
-
-
+---
+title: 经验分享 —— 程序员编程如何入门、进阶
+layout: post
+categories:
+  - 经验技巧
+tags:
+  - 程序员
+  - 经验技巧
+---
 
 > 关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！
 >
-> 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?src=11&timestamp=1604070515&ver=2676&signature=WTZkuGSy13ezzH21BhWy5AUI44aSqQhVW4QRa7hyiAwgsHqcxPt1Yv6j6YOh-HJjXQ0wr4oSosaKGjtBQE68y1os*pbnOFzBHQEJ2RM8sn6BkNxzUDKc0J0bx8uthNGJ&new=1)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
+> 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247490374&idx=1&sn=2673e22f1293967bc34a3972a0d44cff&chksm=eb471aa2dc3093b4c8bcdf7c4ff4ed0ab6e8d15bbdfb0b58ac380ad27a92ce0b3c7e263a4c05&token=1124656912&lang=zh_CN#rd)，转载请全文保留。后台回复关键字 “**1024**” 获取程序员大厂面试指南。
 
 ## 背景
 
@@ -155,4 +159,8 @@ public static boolean isEqual(byte[] digesta, byte[] digestb) {
 觉得本号分享的文章有价值，记得添加星标哦。周更很累，不要白 piao，需要来点正反馈，安排个 “一键三连”（点赞、在看、分享）如何？😝 这将是我持续输出优质文章的最强动力。
 
 
+
+> 关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader，欢迎关注，交流和指导！
+>
+> 欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步。后台回复关键字 “**0**” 送阿里技术大礼包。
 
