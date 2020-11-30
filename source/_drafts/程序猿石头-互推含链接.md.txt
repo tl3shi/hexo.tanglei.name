@@ -1,15 +1,15 @@
-原创公众号**「程序猿石头」**。石头哥是**真清华学霸**，阿里 P7，前大疆（就是卖无人机的那个，美国公司都干不过的那家）后端的技术Leader。曾经也在创业公司待过，有着非常丰富的经验。公众号会分享一些对技术、职场等经验和见解，以每篇文章都让人有所收获为目的。[这是他的自我介绍](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=100005836&idx=1&sn=ddf495cc48071268ec20acf8f127b6a1&chksm=6b4716285c309f3e3beb23cc3b03ec2d6ec7e46cecd9baeef916d127b71df3706e9544630b55#rd)，感兴趣的朋友可以看看。
+原创公众号**「程序猿石头」**。石头哥是【**真清华学霸**】，【阿里 P7】，前大疆（就是卖无人机的那个，美国公司都干不过的那家）后端的技术Leader。曾经也在创业公司待过，有着非常丰富的经验。公众号会分享一些对技术、职场等经验和见解，以每篇文章都让人有所收获为目的。
 
-你可以通过下方的链接了解石头哥的文章风格，看是否符合你的口味，也同时期望能让你有所收获。
+你可以通过下方的链接了解石头哥的文章风格，看是否符合你的口味，仔细阅读你肯定会有收获的。
 
 - [面试 Google, 我失败了 | Google 面经分享](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247483912&idx=1&sn=520bbca6a2056ab4df6b0e1d0ebaf6e0&chksm=eb4703ecdc308afa83b288b1469f0927c1916189f219ee5e8c3c5194defc0b8f313ff7607730&scene=21#wechat_redirect) （转载50+次）
 - [这 10 行比较字符串相等的代码给我整懵了，不信你也来看看](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247485939&idx=1&sn=cad3cf49aa345783a93ce5d9b631ba1d&chksm=eb470817dc308101c95aff74fa63d530f02bef50f91ba18d4ff25b8715933a404bd03ffc8b7b&scene=21#wechat_redirect) （转载30+次）
-- [从一道面试题谈谈一线大厂码农应该具备的基本能力](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247484698&idx=1&sn=03cc4636e7ee7364a85788a98809cc03&chksm=eb4704fedc308de8efd48ab9aed4fd1ddee5665d8e76d0d3767c1f704eac8b15a83e450a08f1&scene=21#wechat_redirect) （转载20+次）
+- [从一道面试题谈谈一线大厂码农应该具备的基本能力](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247484698&idx=1&sn=03cc4636e7ee7364a85788a98809cc03&chksm=eb4704fedc308de8efd48ab9aed4fd1ddee5665d8e76d0d3767c1f704eac8b15a83e450a08f1&scene=21#wechat_redirect) （转载30+次）
+- [优秀的程序员是如何利用工具来提升工作效率的？](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247487786&idx=1&sn=842202cc524477ec1546b4747bdbf1a8&chksm=eb4710cedc3099d86953451729c7f569866e6e58abbbec5c7ebe7423d12e1f11e189bb417f80&scene=21#wechat_redirect) （转载30+次）
 - [没想到 Hash 冲突还能这么玩，你的服务中招了吗？](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247486920&idx=1&sn=30b5c6f684dbd2748f8d14dd53ef2180&chksm=eb470c2cdc30853a3317207cef2f067410b5f6c2dae7d89a29ddd558c57dd2c96c3c72521370&scene=21#wechat_redirect) （转载20+次）
-- [优秀的程序员是如何利用工具来提升工作效率的？](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247487786&idx=1&sn=842202cc524477ec1546b4747bdbf1a8&chksm=eb4710cedc3099d86953451729c7f569866e6e58abbbec5c7ebe7423d12e1f11e189bb417f80&scene=21#wechat_redirect) （转载20+次）
 - [给 JDK 报了一个  P4 的 Bug，结果居然……](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247489405&idx=1&sn=32a60e53fd6027fc1596c101d669f414&chksm=eb471699dc309f8fbb3b4936f61ed9f7e14acd827d3626b0bd4bbe35d0ed8168c85745421fc2&scene=21#wechat_redirect)（转载20+次）
 
-石头哥还热心帮助读者朋友，已经帮助好几个朋友内推入职互联网大厂了。总之，墙裂建议大家关注。
+石头哥还热心帮助读者朋友，已经帮助好几个读者朋友内推入职互联网大厂了。总之，墙裂建议大家关注。关注回复「0」送阿里技术大礼包、「1024」送大厂面试指南。
 
 ![](https://mmbiz.qpic.cn/mmbiz_jpg/ZMXDhhGnYibsGrjJaF5hvicrswVeQicFujwTxcfbYhd7y5cjEkf2nwDCFdiauYuqmHY3VDWyCbImg92mvoicoQ6Uk3g/640.jpg)
 
