@@ -16,7 +16,7 @@ tags:
 
 在上一篇文章中，石头哥谈了谈读本科的时候都学了[哪些计算机专业课和推荐了一些经典的技术书籍](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247490014&idx=1&sn=93880ff65c40fe6e20c65cc89dfc6478&chksm=eb47183adc30912c6c6c2134cabcf2b822ae2a091ecb4a0b5cc15c630cbbf06601310a6076ea&token=37889950&lang=zh_CN#rd)，然后推文封面中的这张图引起了不少读者的注意。
 
-![图：石头哥课程大作业 Demo](https://mmbiz.qpic.cn/mmbiz_jpg/ZMXDhhGnYibuqNjMribkORsA0R5IpyKhRIAkm4AfdLu3PVf4jZ7ibNEa9yARtJEYs2oR4JOnRgbcyteRmCwys7zqQ/640?wx_fmt=jpeg)
+![图：石头哥课程大作业 Demo](/resources/experience-of-learning-programming/石头哥课程大作业 Demo.png)
 
 这其实是我当时的课程大作业的 Demo，（严格意义上讲其实是几个课程的大作业😎）。
 
@@ -24,7 +24,7 @@ tags:
 
 下面，我将从以下这几个方面，谈谈自己的理解：
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibs3NPg5KrNWRa0ej5dQ02yyRpbpVF7Hy8dQ5xA0TXibGG7DPukia3fOIZrGT0ib9BYEQ0vANVQohbzRg/640?wx_fmt=png)
+![目录](/resources/experience-of-learning-programming/目录.png)
 
 ## 如何入门、提高兴趣？
 
@@ -86,7 +86,7 @@ tags:
 
 你当然也可以独立完成，如果也想找小伙伴一起，也可以加入"程序猿石头"的读者交流群，找志同道合的小伙伴一起“刷项目”，共同成长、共同进步。
 
-![img](https://mmbiz.qpic.cn/mmbiz_jpg/ZMXDhhGnYibuqNjMribkORsA0R5IpyKhRIYnm8qicwEydmHv8s0khr7M8D0qcGHh053jCrgjNhLSDRRCEmUQdoz7w/640?wx_fmt=jpeg)
+![积攒项目经验-传送文件](/resources/experience-of-learning-programming/积攒项目经验-传送文件.png)
 
 积攒项目经验-传送文件
 
@@ -100,7 +100,7 @@ tags:
 
 
 
-![img](https://mmbiz.qpic.cn/mmbiz_jpg/ZMXDhhGnYibuqNjMribkORsA0R5IpyKhRIibysF9K5xogicLZf1bAoDM7akHSicF1npQYex8uwBYvyF42Uw41a5Uuvw/640?wx_fmt=jpeg)
+![登录飞信-官方飞信客户端被 T 出](/resources/experience-of-learning-programming/登录飞信-官方飞信客户端被 T 出.png)
 
 登录飞信-官方飞信客户端被 T 出
 
@@ -108,7 +108,7 @@ tags:
 
 这个小项目也是源于生活。当初当了个小班长，每期末都要统计成绩，计算综合测评等，想想，何不写个爬虫来爬呢。有时候，程序猿的“懒”就是为了提高效率。
 
-![img](https://mmbiz.qpic.cn/mmbiz_jpg/ZMXDhhGnYibuqNjMribkORsA0R5IpyKhRItftfGhYpvlXzAw8N7SpT8t88CVwH4Pj2ZxTVZu2yh3SKBcdbvSOMGw/640?wx_fmt=jpeg)
+![爬虫-爬取课表和成绩](/resources/experience-of-learning-programming/爬虫-爬取课表和成绩.png)
 
 爬虫-爬取课表和成绩
 
@@ -157,8 +157,6 @@ public static boolean isEqual(byte[] digesta, byte[] digestb) {
 最后，求关注，本号会定期分享一些技术干货、职场经验等，如果大家对阿里或者其他大厂感兴趣，也可以找我内推，我可以帮忙提供简历 review 等，希望能和大家积极交流讨论，一起学习、共同进步。
 
 觉得本号分享的文章有价值，记得添加星标哦。周更很累，不要白 piao，需要来点正反馈，安排个 “一键三连”（点赞、在看、分享）如何？😝 这将是我持续输出优质文章的最强动力。
-
-
 
 > 关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader，欢迎关注，交流和指导！
 >
