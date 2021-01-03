@@ -1,11 +1,13 @@
 ---
-title:  羡慕，又一清华学弟斩获 6 个大厂 SSP Offer | 面经分享
+title: 羡慕，又一清华学弟斩获 6 个大厂 SSP Offer | 面经分享
 layout: post
 categories:
   - 经验技巧
 tags:
   - 程序员
   - 经验技巧
+  - 校招
+  - 面经
 ---
 
 > 关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！
