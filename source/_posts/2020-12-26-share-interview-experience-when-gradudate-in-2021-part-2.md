@@ -34,7 +34,7 @@ tags:
 
 本文大纲如下图所示：
 
-![img](/Users/tanglei/github/hexo.tanglei.name/source/resources/校招总结2.png)
+![img](/resources/校招总结2.png)
 
 ## 一、秋招历程
 
