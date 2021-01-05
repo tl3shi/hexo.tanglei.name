@@ -12,7 +12,7 @@ tags:
 
 以下原因促使我要用腾讯云服务器以及将裸奔了6~7年的域名进行ICP备案: 
 
-![非微信官方网页,继续访问将转换手机预览模式](/resources/qcloud/wechat-encode-tanglei.name.jpg)
+![非微信官方网页,继续访问将转换手机预览模式](https://www.tanglei.name/resources/qcloud/wechat-encode-tanglei.name.jpg)
 
 1. 刚开通的微信公众号, 积极性高涨, 然而每次微信里面跳转到我的 blog, 都会出现上图所示的跳转中间页. 默认继续访问还是看到微信转码后的效果, 影响用户体验. 我尝试申请恢复了几次没有效果. 申请页面提示备案域名可能性增大, 另外微信后台可以设置安全 JS 域, 域名也必须是通过备案的域名. 
 2. 之前用的国外的 VPS, 陆陆续续写过几个工具, 前端时间朋友圈有个求助正好是我之前工具能够解决的. (这个工具是根据关键字自动去 Google scholar 将文章的 bibtex 信息导出, 方便写 paper ) 然而, 之前工具用 PHP 写的, 跑在 VPS 上, 由于后来我 [彻底放弃了 wordpress](http://www.tanglei.me/blog/give-up-wordpress-to-jekyll.html), 直接用 github pages 提供的服务 host 我的 blog, 因此 此工具也不能 work 了. 之前的 VPS 很慢. 
@@ -39,7 +39,7 @@ cd oneinstack && ./install.sh
 
 不一会就安装了 *Nginx,Apache,Mysql,PHP* 环境, 
 
-![qcloud-lamp-oneinstack](/resources/qcloud/qcloud-lamp-oneinstack.jpg)
+![qcloud-lamp-oneinstack](https://www.tanglei.name/resources/qcloud/qcloud-lamp-oneinstack.jpg)
 
 注意, 云服务器初始化好之后, 要配置安全策略, 对外开放的端口等. 
 
@@ -71,7 +71,7 @@ nickistre/centos-lamp-wordpress   latest              14331568cd2f        6 mont
 
 `docker run -d -p 1024:80 nickistre/centos-lamp-wordpress` 然后 `curl localhost:1024 ` check 一下能够 work. 
 
-![qcloud-docker-lamp-wordpress](/resources/qcloud/docker-lamp-wordpress.png)
+![qcloud-docker-lamp-wordpress](https://www.tanglei.name/resources/qcloud/docker-lamp-wordpress.png)
 
 事后才发现, 上面的那个环境果然仅仅是一个 wp-client, 并不是我想要的 wordpress, 不过另外再下一个 wordpress 源码包就可以了. 
 
@@ -96,7 +96,7 @@ docker 其实, 我并不太会, 只是之前从白老板, 胖子那里学了两�
 
 先看一下 CDN 大概怎么配置和使用吧, 原理就是你添加一个域名的 CNAME, 指向腾讯的 host, 所以用户发起请求的时候实际是解析到腾讯的 CDN 服务器的, CDN 后台配置一个源站点, 如 `www.tanglei.name`, 用户请求到 CDN 服务器时, 如果没有命中, 就去源站点请求并将内容缓存至 CDN 服务器. 
 
-![腾讯云 CDN 配置](/resources/qcloud/www.tanglei.me-cdn-config.png)
+![腾讯云 CDN 配置](https://www.tanglei.name/resources/qcloud/www.tanglei.me-cdn-config.png)
 
 配置后约几分钟生效, `ping` 一下发现已经生效了, `931.tc.sp.cdntip.com` 就是腾讯对应的 CDN 节点, 不同地方 ping 这个节点对应的实际 IP 地址也可能不一致. 
 
@@ -112,7 +112,7 @@ PING 931.tc.sp.cdntip.com (123.125.46.43): 56 data bytes
 round-trip min/avg/max/stddev = 6.863/7.933/9.846/1.356 ms
 ```
 
-![腾讯云 CDN 配置效果](/resources/qcloud/www.tanglei.me-ping-cdn.png)
+![腾讯云 CDN 配置效果](https://www.tanglei.name/resources/qcloud/www.tanglei.me-ping-cdn.png)
 
 能看到 CDN 已经生效了, 再找个工具看下各地的延时情况. [ping.chinaz.com](http://ping.chinaz.com/www.tanglei.me), 一片绿啊, 各个地方线路 ping 到的 IP 已经不一样了. 极大提高了速度, \* 32倍都不止啊. 
 
@@ -123,11 +123,11 @@ round-trip min/avg/max/stddev = 6.863/7.933/9.846/1.356 ms
 现在直接请求 `www.tanglei.name` 会取 github pages 的文件, 通过 `www.tanglei.me` 取会走腾讯云的 CDN, 来个对比结果. 
 前面说的提升32倍稍微有些夸张, 提升个五六倍还是正常的. 对比的是 [这个含有一些图片的页面](http://www.tanglei.me/blog/app-in-mac-for-common.html), 测速还有一些如 USA的节点, 还拉低了平均值, 国外的一些节点还是走 github 更快. 
 
-![腾讯云CDN 对比效果](/resources/qcloud/tanglei.name-vs-tanglei.me-cdn.png)
+![腾讯云CDN 对比效果](https://www.tanglei.name/resources/qcloud/tanglei.name-vs-tanglei.me-cdn.png)
 
 接入 CDN 后台看到的差不多1天后的效果, 没骗你吧, 一天也就400~500 PV. 
 
-![腾讯云CDN 对比效果](/resources/qcloud/qcloud-cdn-status.png)
+![腾讯云CDN 对比效果](https://www.tanglei.name/resources/qcloud/qcloud-cdn-status.png)
 
 ## TODO
 
@@ -143,4 +143,4 @@ round-trip min/avg/max/stddev = 6.863/7.933/9.846/1.356 ms
 
 p.s 如果你觉得这文章对你有那么一点点收获, 请不要犹豫扫描下面二维码关注我的公众号, 如果你再能帮忙转发一下就更好了. 么么哒.
 
-![tanglei 微信号](/resources/wechat-tangleithu.jpg)
+![tanglei 微信号](https://www.tanglei.name/resources/wechat-tangleithu.jpg)

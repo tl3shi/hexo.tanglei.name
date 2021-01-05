@@ -17,7 +17,7 @@ tags:
 
 下面我以浦发银行实际例子来算一下, 类似产品最后年化利率到底是多少. 
 
-![](/resources/the-way-to-calculate-apr/pufa-installment.jpeg)
+![](https://www.tanglei.name/resources/the-way-to-calculate-apr/pufa-installment.jpeg)
 
 如上图所示, 是浦发银行的贷款产品(万用金), 可以看到, 提现10000元, 分12期即分12个月还钱, 等额本息的还款方式, 每月需还款929.51元. 初略地看, 你可以会简单的认为这个利率就是, 一共还的钱为`929.51*12`, 然后借款本金为10000元, 那么年化利率即为: `(929.51*12 - 10000)/10000*100%=11.54%` 感觉似乎不那么高. 
 
@@ -27,11 +27,11 @@ tags:
 
 我们用网上常见的[房贷/借款计算器](http://finance.sina.com.cn/calc/money_loan.html)来算一下, 如果按照年化`11.54%`来计算, 每月的还款情况应该如下, 即每个月只需要等额本息还款886.34, 比929.51元少不少. 
 
-![](/resources/the-way-to-calculate-apr/repayment-scheduler-0.png)
+![](https://www.tanglei.name/resources/the-way-to-calculate-apr/repayment-scheduler-0.png)
 
 而如果每个月还款929.51元的话, 其利率远远不止11.54%, 直接仍然用那个借款计算器大概估计一下.  貌似现有的网上的工具都只能正向算, 即已知利率和贷款本金计算还款计划表, 没有一个工具能从每月还款额反推贷款利率, 初步多次尝试得到如下逼近的结果. 
 
-![](/resources/the-way-to-calculate-apr/repayment-scheduler-1.png)
+![](https://www.tanglei.name/resources/the-way-to-calculate-apr/repayment-scheduler-1.png)
 
 可以看到, 年化利率达到了20.66%, 比之前预想想象中多了太多了. 
 所以电话销售在推销的时候, 往往不会直接告诉你这个年化利率, 因为太高了, 说了你可能不太会接受. 
@@ -58,7 +58,7 @@ markdown 这个渲染成 html太tm丑了.
 
 本来是markdown渲染的公式, 无奈结合table转成html之后太丑了, 于是就用截图的方式了, 点开后查看大图. 
 
-![](/resources/the-way-to-calculate-apr/monthRate-derivation.png)
+![](https://www.tanglei.name/resources/the-way-to-calculate-apr/monthRate-derivation.png)
 
 所以, 能得到第i个月的欠款情况, 上面的公式可以简化一下, 因为被减数M后边的是一个等比数列, 得到第i个月后, 欠款总额为 
 
@@ -122,7 +122,7 @@ $$
 
 可以看出, 上面的还款计划表跟最开始网上通过房贷计算器得到的一致, 我们再来看看, 招行的有个现金分期业务. 
 
-![](/resources/the-way-to-calculate-apr/zhaohang-installment.jpeg)
+![](https://www.tanglei.name/resources/the-way-to-calculate-apr/zhaohang-installment.jpeg)
 
 上面的分期费率12期, 0.75%(表面的月息=`(3270*12-36000)/36000/12`), 申请分期36000, 每月还款3270. 通过上面的公式, 我们来看一下实际的费率情况, 月息相当于1.35%, 年利率 16.2%, 比表面的年息` (0.75%*12=9%)`高不少. 
 

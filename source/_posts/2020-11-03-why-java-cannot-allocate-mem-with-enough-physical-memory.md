@@ -22,18 +22,18 @@ tags:
 
 于是便找上门来说，“你们这玩意有问题啊？”
 
-![img](/resources/why-java-cannot-allocate-mem-with-enough-physical-memory/bug.png)
+![img](https://www.tanglei.name/resources/why-java-cannot-allocate-mem-with-enough-physical-memory/bug.png)
 
 内心 ：“bug 是不可能有的，一定是你的打开姿势不对”，恩，不行，本着“客户第一”的原则，还是要来帮客户解锁姿势的。
 
-![img](/resources/why-java-cannot-allocate-mem-with-enough-physical-memory/nobug.png)
+![img](https://www.tanglei.name/resources/why-java-cannot-allocate-mem-with-enough-physical-memory/nobug.png)
 
 本文就详细记录了这个 case 的排查过程。
 
 
 ## 具体过程
 
-![申请4g内存失败](/resources/why-java-cannot-allocate-mem-with-enough-physical-memory/1.png)
+![申请4g内存失败](https://www.tanglei.name/resources/why-java-cannot-allocate-mem-with-enough-physical-memory/1.png)
 
 如上图所示，记录显示为申请 4G 内存失败（`4294967296 B / 1024 / 1024 = 4096 M`）。
 
@@ -220,7 +220,7 @@ OpenJDK 64-Bit Server VM (build 25.242-b08, mixed mode)
 
 可以看出，这其实跟具体的编程语言没有关系，用 Java 申请不到，用 c++/c 也一样。一个容易忽略的小知识点，你 get 到了吗？
 
-![ECS运维指南之Linux系统诊断](/resources/architecture-evolution-of-HA-system-of-buy-facemask/ECS运维指南之Linux系统诊断.png)
+![ECS运维指南之Linux系统诊断](https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/ECS%E8%BF%90%E7%BB%B4%E6%8C%87%E5%8D%97%E4%B9%8BLinux%E7%B3%BB%E7%BB%9F%E8%AF%8A%E6%96%AD.png)
 
 本文节选自《ECS运维指南之Linux系统诊断》，《ECS运维指南之Linux系统诊断》是牧原呕心沥血之作，不仅内容精益求精，代码的编排作者也花了不少心思。你也可以直接登录阿里云开发者社区下载本书——[《ECS运维指南之Linux系统诊断》](https://developer.aliyun.com/article/763939)，或者直接在公众号后台回复关键字**“ecs”**获取本合集。
 

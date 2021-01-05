@@ -37,7 +37,7 @@ public XXResult(boolean status, String result) {
 
 心想，这还不简单，咱们的 `result` 也不是什么关键性的东西，你有限制，我直接 trim 一下不就行了？
 
-![easy](/resources/constuct-of-string-is-not-easy/easy.png)
+![easy](https://www.tanglei.name/resources/constuct-of-string-is-not-easy/easy.png)
 
 ## 解决方案
 
@@ -65,7 +65,7 @@ public static String trimAsByte(String input, int trimTo) {
 
 再在需要调用外部服务的地方，先调用这个 `trimAsByte` 方法，一顿操作连忙上线，一切完美~
 
-![完美](/resources/constuct-of-string-is-not-easy/完美.jpeg)
+![完美](https://www.tanglei.name/resources/constuct-of-string-is-not-easy/%E5%AE%8C%E7%BE%8E.jpeg)
 
 ## 灾难现场
 
@@ -75,9 +75,9 @@ public static String trimAsByte(String input, int trimTo) {
 
 简直不敢相信，都 trim 了为啥还会超出？你也帮忙想想，是哪里的问题？
 
-![小朋友问号](/resources/constuct-of-string-is-not-easy/小朋友问号.jpeg)
+![小朋友问号](https://www.tanglei.name/resources/constuct-of-string-is-not-easy/%E5%B0%8F%E6%9C%8B%E5%8F%8B%E9%97%AE%E5%8F%B7.jpeg)
 
-![testcase-tangleithu](/resources/constuct-of-string-is-not-easy/testcase-tangleithu.png)
+![testcase-tangleithu](https://www.tanglei.name/resources/constuct-of-string-is-not-easy/testcase-tangleithu.png)
 
 看看上面的例子（为了方便展示，简单修改了下文首代码），
 
@@ -93,11 +93,11 @@ trimAsByte("WeChat:tangleithu", 8)
 trimAsByte("程序猿石头", 8)
 ```
 
-![testcase-中文](/Users/tanglei/github/hexo.tanglei.name/source/resources/constuct-of-string-is-not-easy/testcase-中文.png)
+![testcase-中文](/Users/tanglei/github/hexo.tanglei.name/source/resources/constuct-of-string-is-not-easy/testcase-%E4%B8%AD%E6%96%87.png)
 
 看上述截图，悲剧了，输入`程序猿石头`，3 个字节一个汉字，一共 15 个字节 `[-25,-88,-117,-27,-70,-113,-25,-116,-65,-25,-97,-77,-27,-92,-76]`，trim 到 8 位，剩下前 8 位 ` [-25,-88,-117,-27,-70,-113,-25,-116]` 也正确。再 `new String`，又变成3 个 “中文” 了，虽然第 3 个“中文”，咱也不认识，咱也不敢问到底读啥，总之再转换成字节数组，长度多了 1 个，变成 9 了。
 
-![testcase-中文1](/resources/constuct-of-string-is-not-easy/testcase-中文1.png)
+![testcase-中文1](https://www.tanglei.name/resources/constuct-of-string-is-not-easy/testcase-%E4%B8%AD%E6%96%871.png)
 
 问题算是定位到了。
 
@@ -133,7 +133,7 @@ public String(byte bytes[]) {
 
 所以，当我们在用字节数组（字节流）来表达具体的语义的时候，一定要约定好以什么方式进行编码，本文不具体阐述编码问题了。下面用一个例子来解释上文的现象：
 
-![string-bytes-constructor](/resources/constuct-of-string-is-not-easy/string-bytes-constructor.png)
+![string-bytes-constructor](https://www.tanglei.name/resources/constuct-of-string-is-not-easy/string-bytes-constructor.png)
 
  `[-25,-88,-117,-27,-70,-113,-25,-116,-65,-25,-97,-77,-27,-92,-76]` 仍然用这串字节数组来实验，这串字节数组，如果用 “UTF-8” 编码去解释，那么其想表达的语义就是中文“程序猿石头”，从上文标注的 1，2，3 中可以看出来，没有写即用了系统中的默认编码“UTF-8”。
 
@@ -143,7 +143,7 @@ public String(byte bytes[]) {
 
 上面的 `�` 其实是 UNICODE 编码方式中的一个特殊的字符，也就是 0xFFFD(65535)，其实是一个占位符(REPLACEMENT CHARACTER)，用来表达未知的、没办法表达的东东。 上文中在进行编码转换过程中，出现了这个玩意，其实也就是没办法准确表达含义，会被替换成这个东西，因此信息也就丢失了。 你可以试试前面的例子，比如把前 8 个字节中的最后一两个字节随便改改，都是一样的。 
 
-![string-bytes-constructor1](/resources/constuct-of-string-is-not-easy/string-bytes-constructor-1.png)
+![string-bytes-constructor1](https://www.tanglei.name/resources/constuct-of-string-is-not-easy/string-bytes-constructor-1.png)
 
 
 

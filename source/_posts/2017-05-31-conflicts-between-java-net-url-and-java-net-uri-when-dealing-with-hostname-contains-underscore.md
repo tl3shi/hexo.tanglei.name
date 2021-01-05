@@ -180,7 +180,7 @@ JDK 9-ea + 141 - Fail
 
 >So not throwing an exception isn't an issue here.
  
-![](/resources/conflicts-between-java-net-url-and-java-net-uri-when-dealing-with-hostname-contains-underscore/nonsense.jpg)
+![](https://www.tanglei.name/resources/conflicts-between-java-net-url-and-java-net-uri-when-dealing-with-hostname-contains-underscore/nonsense.jpg)
 
 其实就算 "No validation of the inputs is performed by this constructor." 是合理的, 里面也只有3个构造函数有这样的说明，按照这样的逻辑是不是说另外的构造函数有验证呢..... (示例中的默认的构造函数都没有说呀)
 
@@ -304,4 +304,4 @@ java.net.URISyntaxException: Illegal character in hostname at index 11: http://t
 	at TestURL.main(TestURL.java:45)
 ```
 
-[点这里下载本文示例代码](/resources/conflicts-between-java-net-url-and-java-net-uri-when-dealing-with-hostname-contains-underscore/TestURL.java)
+[点这里下载本文示例代码](https://www.tanglei.name/resources/conflicts-between-java-net-url-and-java-net-uri-when-dealing-with-hostname-contains-underscore/TestURL.java)

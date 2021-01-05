@@ -21,7 +21,7 @@ tags:
 
 1. **启用 Tap to click**: 在 `System Preferences -> Trackpad ` 中启用, 用 **tap** 替换 **click** 的操作, 明明轻轻 **tap** 就可以完成的, 为何还要用力点击才 OK. 现在偶尔用其他人电脑非得用力 click 就太纠结了.
 同时, 还有 "右键"功能, **Secondary click**, 用两个手指 tap 弹出右键菜单. 
-![mac trackpad 设置](/resources/app-in-mac/mac-os-trackpad.png)
+![mac trackpad 设置](https://www.tanglei.name/resources/app-in-mac/mac-os-trackpad.png)
 
 2. **开启单词选词查询**:
 选中某个中英文单词后, 三指 tab 会弹出词典释义. 这个在[之前一篇文章](http://www.tanglei.name/blog/app-in-mac-preface.html)中也有介绍. 
@@ -54,7 +54,7 @@ ctrl + r: bck-i-search/reverse-i-search, 输入关键字搜索历史命令
 
 上面的这些快捷键特别是在敲命令时还是很有用的(可能有的确实是在命令行中才生效), 特别是结合 zsh 自动补全等功能. 比较 DT 的是就是 `esc` 一起用的时候, 不能连续使用. 举个例子, terminal 中输入了 `git push origin source`, 光标在末尾, 这时按住`ctrl` 不放, 按一下 `w` 即向前删除一个单词, 第一次按 `w` 删除 *source*, 再按 `w` 删除 *origin*. 而 `esc + d` 不能这样结合使用(如下 gif连续按就不 work), `esc` 必须中途释放再按才能 work. 
 
-![bash自动补全](/resources/app-in-mac/builtin-quick-key-git-push.gif)
+![bash自动补全](https://www.tanglei.name/resources/app-in-mac/builtin-quick-key-git-push.gif)
 
 啥? 你说上面快捷键 `ctrl + w` 等不太好按? 按键特别别扭? 
 你需要做的就是将 `caps lock` 映射为 `ctrl`, `Keyboard -> Modifier Keys `修改, 目前我笔记本上的 `ctrl` 键无效. 不过, 一般情况下我用我的 HHKB, 这种映射方式正好符合 HHKB 的布局. (其实我是在买 HHKB 之前就修改的这个映射)
@@ -95,13 +95,13 @@ brew-cask 是 brew 的一个加强版, 可以安装一些桌面应用, 例如 ch
 	- 当前窗口含有分屏时, 通过 `cmd + [` 和 `cmd + ]` 来进行切换小的分屏
 
 2. **热键** 设置一个热键, 比如我的是 `alt + 空格`, 弹出 iTerm2, 且以半透明的方式显示在当前 active 的窗口上面.
-![iTerm2 hotkey](/resources/app-in-mac/iterm2-hotkey.png)
+![iTerm2 hotkey](https://www.tanglei.name/resources/app-in-mac/iterm2-hotkey.png)
 
 3. 搜索
 	- `cmd + f`搜索输入关键字后, 匹配的会黄色高亮, 此时按 `tab` 或者 `shift + tab` 会自动向后/前以word 的方式选中高亮的, 并自动 copy 到剪切板.
 	- `cmd + alt + e`, 在所有的 tab 中全局搜索, 搜索出候选项后, 再选着你想要进入的 tab. 
 	
-![iTerm2 search](/resources/app-in-mac/iterm2-search-all.png)
+![iTerm2 search](https://www.tanglei.name/resources/app-in-mac/iterm2-search-all.png)
 
 4. 其他
 	- 新版本的 iTerm2 还支持直接在控制台里 ls 图片文件(图片显示在控制台里).(如上图下半部分, 连 gif 都支持)
@@ -109,7 +109,7 @@ brew-cask 是 brew 的一个加强版, 可以安装一些桌面应用, 例如 ch
 	- 自动补全, iTerm2 本身是支持自动补全的(`cmd + ;`), 不过建议直接结合后面的zsh使用. `cmd + shift + h` 剪贴板历史(下图最后一行).
 	- 一些高级的功能目前可能处于测试版本, 你若用的稳定版是不支持的, 需要到官网下测试版. 还有更多的功能请到 iTerm2 官网探索吧. 
 
-![iTerm2 imgcat](/resources/app-in-mac/iterm2-imgcat-show-history.png)
+![iTerm2 imgcat](https://www.tanglei.name/resources/app-in-mac/iterm2-imgcat-show-history.png)
 
 ## zsh
 
@@ -138,7 +138,7 @@ alias grom='git rebase origin/master'
 
 4. **zsh-autosuggestions**, 如下图所示, 我在 *app-in-mac* 这个目录下, 刚输入了 `git`, 此时光标还在 `p` 前面, zsh 就已经自动给我补全了 `git push origin source`, 此时我只要按 `ctrl + e` 跳转到行尾(所以熟悉上文中的快捷键很有必要啊), 回车即可执行命令了. 
 
-![iTerm2 zsh plugins](/resources/app-in-mac/zsh-plugins.png) 
+![iTerm2 zsh plugins](https://www.tanglei.name/resources/app-in-mac/zsh-plugins.png) 
 
 更多的, 还是请到官网查看. 
 
@@ -161,7 +161,7 @@ lrwxr-xr-x  1 tanglei  admin  62  1 24  2016 /usr/local/bin/subl -> /Application
 介绍 Vim 的文章也很多了. 这里就不详细展开了. 分享下我用的部分插件. (最近被 IntelliJ IDEA 搞得恶心了, 准备尝试抛弃), 
 为了让多台电脑同步我的 vim 配置/插件等, 我直接放 github 了([ref vimconfigs](https://github.com/tl3shi/vimconfigs.git)), 不同电脑只需要再建一个软链到github 中的 vimrc 即可.
 
-![vim 自动补全](/resources/app-in-mac/vim-autocomplete.png)
+![vim 自动补全](https://www.tanglei.name/resources/app-in-mac/vim-autocomplete.png)
 
 - Vundle/Pathogen: 插件管理, 我用的Pathogen, 直接将下面 github repo clone 到 `~/.vim/bundle/` 目录下即可
 - NERDTree: 文件目录树[nerdtree github src](https://github.com/scrooloose/nerdtree.git)
@@ -187,7 +187,7 @@ Reference
 
 其实介绍[前文](http://www.tanglei.name/blog/app-in-mac-preface.html) 介绍 Alfred 已经提到过, 这里再介绍一下. 程序猿应该必备啊. 内置各种语言, 各种环境的各种文档. 该 App 还提供各种 API 供其他工具交互使用. 例如 Vim(不是想象当中自动补全功能, 只是能够快捷地搜索 API), Sublime 等.  (p.s 要是有人写了一个 Vim 插件, 能够支持调用 dash 的 API(如果有的话) 自动补全代码, 那应该会很受欢迎的)
 
-![dash](/resources/app-in-mac/dash-main.png)
+![dash](https://www.tanglei.name/resources/app-in-mac/dash-main.png)
 
 
 ## 其他App
@@ -258,4 +258,4 @@ rsc4AOQm
 
 p.s 如果你觉得这文章对你有那么一点点收获, 请不要犹豫扫描下面二维码关注我的公众号, 如果你再能帮忙转发一下就更好了. 么么哒.
 
-![tanglei 微信号](/resources/wechat-tangleithu.jpg)
+![tanglei 微信号](https://www.tanglei.name/resources/wechat-tangleithu.jpg)

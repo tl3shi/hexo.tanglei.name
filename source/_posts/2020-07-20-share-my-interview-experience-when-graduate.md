@@ -13,7 +13,7 @@ tags:
 >
 > 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247487666&idx=1&sn=da48d1eead58e2e2219a0fc774eeda0e&chksm=eb471156dc309840db7cf59d2a546714b1262fcb975ac6af70a49f045292a6a2d7822b0bbeb9&token=553253061&lang=zh_CN#rd)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
-![img](/resources/share-my-interview-experience-when-graduate/index-4151500.png)
+![img](https://www.tanglei.name/resources/share-my-interview-experience-when-graduate/index-4151500.png)
 
 ## 背景
 
@@ -43,20 +43,20 @@ tags:
 
 ### 腾讯
 
-![img](/resources/share-my-interview-experience-when-graduate/640-20201031213827866.png)
+![img](https://www.tanglei.name/resources/share-my-interview-experience-when-graduate/640-20201031213827866.png)
 
 当年腾讯有个提前批TST计划，投了北京 WX 岗，笔试+1面后没消息了。没消息感觉莫名其妙的，因为笔试 6 道小算法剩了一道没写代码，讲了思路，其他还 OK。提前批内推流程人较少，面试体验还行。不过暑假实习人多的时候面试安排什么的还有待提升。暑假实习生也参加面试了拿了腾讯视频的 Offer。但最终因为不能实习，所以也没去成。
 
 ### 百度
 
-![img](/resources/share-my-interview-experience-when-graduate/640-20201031213831293.png)
+![img](https://www.tanglei.name/resources/share-my-interview-experience-when-graduate/640-20201031213831293.png)
 
 百度是之前SA同学离职后内推的，商务搜索部门，因为暑假的时候校招还没正式开始，且还被误认为是社招。不过当时确实也还没怎么准备，面得也不太好。超级提前批，面试体验还行。
 校招时也没投递了，不过校招据说面试安排得也挺屎的。
 
 ### 阿里
 
-![img](/resources/share-my-interview-experience-when-graduate/640-20201031213834986.png)
+![img](https://www.tanglei.name/resources/share-my-interview-experience-when-graduate/640-20201031213834986.png)
 
 阿里因为暑期实习生拿到 Offer 了，也是因为不让实习，最终没去实习。校招正式开始后只面了 1 轮拿到 Offer。 
 
@@ -66,19 +66,19 @@ tags:
 
 ~~至于阿里我就不再多吐槽了，详情请戳知乎【2014 年放弃阿里巴巴 offer 的人是否格外多？如果是，为什么？】~~ （画外音：这其实是当初的心境，这里奉劝一下大家用成年人的思维方式思考，不要意气用事。看看，天道轮回，我现在还是来阿里了。😂）
 
-![img](/resources/share-my-interview-experience-when-graduate/640-20201031213838677.png)
+![img](https://www.tanglei.name/resources/share-my-interview-experience-when-graduate/640-20201031213838677.png)
 
 ## 国内其他大厂
 
 ### 网易有道
 
-![img](/resources/share-my-interview-experience-when-graduate/640-20201031213843504.png)
+![img](https://www.tanglei.name/resources/share-my-interview-experience-when-graduate/640-20201031213843504.png)
 
 内推，笔试+1轮面试后没消息。在北邮参加的笔试，所有提前批内推的人。然后进行了 1 轮面试，面试安排上感觉一般般，不过当年的情况跟阿里相比，好不少了。
 
 ### 网易游戏
 
-![img](/resources/share-my-interview-experience-when-graduate/640-20201031213847803.png)
+![img](https://www.tanglei.name/resources/share-my-interview-experience-when-graduate/640-20201031213847803.png)
 
 笔试 + 2轮面试(1V2) 后 Offer。
 
@@ -92,7 +92,7 @@ tags:
 
 ###  完美世界	
 
-![img](/resources/share-my-interview-experience-when-graduate/640-20201031213851636.png)
+![img](https://www.tanglei.name/resources/share-my-interview-experience-when-graduate/640-20201031213851636.png)
 
 投递了“乐逍遥”，被集团（引擎中心）拉去笔试 + 1 轮面试后给了 Offer。
 
@@ -101,7 +101,7 @@ tags:
 
 ### 搜狐 Sohu
 
-![img](/resources/share-my-interview-experience-when-graduate/640-20201031213854791.png)
+![img](https://www.tanglei.name/resources/share-my-interview-experience-when-graduate/640-20201031213854791.png)
 
 内推，2 轮面试后 Offer。
 
@@ -140,7 +140,7 @@ tags:
 
 ### IBM	
 
-![img](/resources/share-my-interview-experience-when-graduate/640-20201031213859456.png)
+![img](https://www.tanglei.name/resources/share-my-interview-experience-when-graduate/640-20201031213859456.png)
 
 内推，笔试+2轮面试后没消息，
 
@@ -148,7 +148,7 @@ tags:
 
 ### yahoo!北研	
 
-![img](/resources/share-my-interview-experience-when-graduate/640-20201031213902916.png)
+![img](https://www.tanglei.name/resources/share-my-interview-experience-when-graduate/640-20201031213902916.png)
 
 内推 + 笔试 + 3轮面试，简历送总部审批，然后没消息。
 
@@ -160,11 +160,11 @@ tags:
 
 画外音：现在回过头来讲，真的是 “**计划赶不上变化**”啊，当初拿了雅虎北研 Offer 的同学，在毕业后还没入职呢，就被通知雅虎北研团队要解散，因此 Offer 无效了，得重新找工作。当然对于有实力的同学来讲，重新找工作并不难，并且还有赔偿，简直就是爽歪歪。当年那段时间也一直是各大公司的抢人大战。
 
-![img](/resources/share-my-interview-experience-when-graduate/640-20201031213906238.png)
+![img](https://www.tanglei.name/resources/share-my-interview-experience-when-graduate/640-20201031213906238.png)
 
 没写一行代码，白拿几个月工资，倍儿爽。不过，从另外一个角度上讲，也许万一刚好想去的另外一家公司，HC 刚好满了呢？这都是看运气啊。 
 
-![img](/resources/share-my-interview-experience-when-graduate/640-20201031213910157.gif)
+![img](https://www.tanglei.name/resources/share-my-interview-experience-when-graduate/640-20201031213910157.gif)
 
 ### FreeWheel
 
@@ -174,7 +174,7 @@ tags:
 
 ### Facebook
 
-![img](/resources/share-my-interview-experience-when-graduate/640-20201031213913551.png)
+![img](https://www.tanglei.name/resources/share-my-interview-experience-when-graduate/640-20201031213913551.png)
 
 1电面后收到据信，面得比较早，没准备，英语太渣了。面试过程中重点去说想怎么用英语表达了，思路受到了限制，半个小时左右算法只写了一道题，就直接跪了。一般情况下要写两道才有下一轮机会的。
 
@@ -182,7 +182,7 @@ Facebook 当然是要去国外工作的，不过当年他们会集中到国内�
 
 ### 微软 
 
-![img](/resources/share-my-interview-experience-when-graduate/640-20201031213916797.png)
+![img](https://www.tanglei.name/resources/share-my-interview-experience-when-graduate/640-20201031213916797.png)
 
 秋令营 + 4 轮面试后，收到据信。
 
@@ -190,7 +190,7 @@ Facebook 当然是要去国外工作的，不过当年他们会集中到国内�
 
 ### Hulu
 
-![img](/resources/share-my-interview-experience-when-graduate/640-20201031213919830.png)
+![img](https://www.tanglei.name/resources/share-my-interview-experience-when-graduate/640-20201031213919830.png)
 
 网申内推，1电面 + 3轮 onsite 面试后没消息。
 
@@ -208,7 +208,7 @@ Facebook 当然是要去国外工作的，不过当年他们会集中到国内�
 
 ### 宜信大数据创新中心
 
-![img](/resources/share-my-interview-experience-when-graduate/640-20201031213922837.png)
+![img](https://www.tanglei.name/resources/share-my-interview-experience-when-graduate/640-20201031213922837.png)
 
 网申了2次，1 电面 + 3轮 onsite + 1 Boss面后 Offer。
 
@@ -260,7 +260,7 @@ FreelWheel 笔试挂了木有发言权，Facebook 电面 + 网易有道1面后�
 
 这里配个图来证明下，下图是石头拍的当时参加宜信面试的会议室门口。
 
-![img](/resources/share-my-interview-experience-when-graduate/640-20201031213927436.png)
+![img](https://www.tanglei.name/resources/share-my-interview-experience-when-graduate/640-20201031213927436.png)
 
 Hulu 面试时也有贴，只不过没那么花哨罢了，当然并不是说给面试者会议室贴个名片之类就面试体验好，比如 MS 面试体验也不错，说好了3点开始，2点45左右 HR 就准时带你到你面试的办公室，3点面试官就准时到你那给你面试。
 
@@ -318,7 +318,7 @@ Hulu 面试时也有贴，只不过没那么花哨罢了，当然并不是说给
 
 觉得本号分享的文章有价值，记得添加星标哦。周更很累，不要白 piao，需要来点正反馈，安排个 “一键三连”（分享、在看、点赞）如何？😝
 
-![](/resources/share-my-interview-experience-when-graduate/3lian.gif)
+![](https://www.tanglei.name/resources/share-my-interview-experience-when-graduate/3lian.gif)
 
 
 

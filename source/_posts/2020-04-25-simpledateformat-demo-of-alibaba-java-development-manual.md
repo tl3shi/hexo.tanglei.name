@@ -13,17 +13,17 @@ tags:
 
 回到代码规范这件事情上，好的代码读起来真的是赏心悦目，当然自己也一直在追求写出好的代码。代码规范中的 code style 只是其中最简单的一种，上述提到的 Java 开发手册也对这部分做出了严格的说明，但实际上能做到的人也不多。按道理，这部分也是最容易做到的一种，因为有模板，直接遵守即可。记得有一部电视剧（叫啥来着？）讲的就是一堆情侣因为纠结到底是用空格还是 tab 键（或者是 Vim 和 Emacs）分手，哈哈这当然是一个笑话。不过在一个 team 里保持统一的代码风格还是有必要的，毕竟你写的代码不是只有你一个人看，在不同的终端，不同的编辑器来讲空格和 tab 可能显示效果都不一样，也就影响了阅读体验。
 
-![](/resources/simpledateformat-demo-of-alibaba-java-development-manual/chaoyang-qunzong1.jpg)
+![](https://www.tanglei.name/resources/simpledateformat-demo-of-alibaba-java-development-manual/chaoyang-qunzong1.jpg)
 
 对于代码规范来讲，我也希望通过自己的努力去感染身边的人。比如之前在宜信的 hackthon，我就组队发起了一个叫 “code review advisor” 项目，实现的目的其实也很简单，就是让大家在预先统一的规范下编码，如果有违反规范的，直接以 Comment 形式告诉代码提交者需要修改。
 
-![hackthon code review advisor截图](/resources/simpledateformat-demo-of-alibaba-java-development-manual/chaoyang-qunzong2.jpg)
+![hackthon code review advisor截图](https://www.tanglei.name/resources/simpledateformat-demo-of-alibaba-java-development-manual/chaoyang-qunzong2.jpg)
 
 后来，我到了大疆，又要求 team 同学严格遵守规范，并且使用了一些技术手段完全规范大家提交的代码，对于违反相应规则的代码直接不让提交和打包，当时其实就是利用了 alibaba 对外开源的工具支持。不得不说，还是很佩服阿里巴巴对社区做的相应贡献的。
 
 现在，我在阿里，发现现实就是规范其实也是一个美好的愿景，因为各种历史等原因，其实大家的代码并没有按照预期的规范去执行和实施。这应该也是普遍的现状吧。就像在其中一次交流会上，孤尽大佬说的那样，美好愿景肯定是需要的，实现她，是需要大家花时间和精力去推进的。
 
-![孤尽大佬签名版开发手册](/resources/simpledateformat-demo-of-alibaba-java-development-manual/java-manual.jpg)
+![孤尽大佬签名版开发手册](https://www.tanglei.name/resources/simpledateformat-demo-of-alibaba-java-development-manual/java-manual.jpg)
 
 上图是在那次交流会上，得到孤尽大佬签名版的开发手册（原谅我没文化，认不出）。下面我就以其中的一个例子来说明一下规范的好处。
 

@@ -15,7 +15,7 @@ tags:
 
 曾经也写了一个[工具](/blog/codecolorer-adapted-to-highlight.html)， 只用了Wordpress这个外壳，写作的时候用markdown书写， 这个工具一方面满足了我的要求, 技术方案是: ``本地markdown+pandoc——>html——>wordpress-xmlrpc——>wordpress server``, 有兴趣的同学可以试用。 也用这个工具写了几个月的blog(然而并没写多少篇, 懒). 最近突然网上看到了Hexo这个框架，并发现了一个比较简洁的[Hexo主题](https://github.com/tufu9441/maupassant-hexo), 就准备试用下，效果[点击这里](http://hexo.tanglei.name), 如下图
 
-![](/resources/give-up-wordpress-to-jekyll/try-hexo.tanglei.name.png)
+![](https://www.tanglei.name/resources/give-up-wordpress-to-jekyll/try-hexo.tanglei.name.png)
 
 然而并不是这么顺利.
 
@@ -114,7 +114,7 @@ tags:
 - 找了个还比较简洁清晰的主题, 就是现在用的这个, 虽然还很不成熟，但也趁这个机会熟悉下前端，慢慢摸索吧。主题源自[guovz](https://github.com/guovz/jekyll-pithy)， 本blog在基础上改了不少。
 - gihub能够帮忙编译，本地写好markdown，自己commit就行了。(最后发现这个不太靠谱， 自己写的插件代码之类的github禁用了，比如原来主题的国际化之类的刚开始到github上就翻译不出来等。) 所以刚开始自己写了deploy的脚本，本地生成再push到github，这个时间还可以接受，二十几秒的时间。呃~ 最后才发现原来可以用[travis-ci](https://travis-ci.org/)这样的神器，果然我之前连这个玩意都不知道用。帮忙拉环境build代码并push。
 
-![](/resources/give-up-wordpress-to-jekyll/try-jekyll.tanglei.name.png)
+![](https://www.tanglei.name/resources/give-up-wordpress-to-jekyll/try-jekyll.tanglei.name.png)
 记录下在适配Jekyll的时候做的一些改动和Reference.
 
 
@@ -178,4 +178,4 @@ tags:
 
 纪念我那逝去的Wordpress, 放截图一张如下， 暂时还可以用 [wordpress.tanglei.name](http://wordpress.tanglei.name)访问. 
 
-![](/resources/give-up-wordpress-to-jekyll/wordpress.tanglei.name.png)
+![](https://www.tanglei.name/resources/give-up-wordpress-to-jekyll/wordpress.tanglei.name.png)

@@ -19,7 +19,7 @@ tags:
 
 当然，意料之中，很遗憾，本人并未入围，排名 8W 左右。看样子，要想新能源积分排序上去，还得抓紧增加家庭代际数啊。 
 
-![img](/resources/data-analysis-of-first-new-energy-car-tickets/1.jpg)
+![img](https://www.tanglei.name/resources/data-analysis-of-first-new-energy-car-tickets/1.jpg)
 
 
 让我们来看看这些数据都是怎样的？
@@ -40,7 +40,7 @@ tags:
 cat car2020.csv | awk '{print substr($3, 1, match($3,/[0-9]/)-1) "\t"  substr($3, match($3,/[0-9]/)) "\t" $4 "\t" $5 "\t" $6 "\t" $7}' > car-2020.csv 
 ```
 
-![摇号数据集csv](/resources/data-analysis-of-first-new-energy-car-tickets/2.png)
+![摇号数据集csv](https://www.tanglei.name/resources/data-analysis-of-first-new-energy-car-tickets/2.png)
 
 #### 分数分析 
 
@@ -55,9 +55,9 @@ cat car2020.csv | awk '{print substr($3, 1, match($3,/[0-9]/)-1) "\t"  substr($3
 cat car-2020.csv | awk '{print $5}'  | uniq -c  | sort -k 1 -nr
 ```
 
-![积分分布](/resources/data-analysis-of-first-new-energy-car-tickets/积分分布.png)
+![积分分布](https://www.tanglei.name/resources/data-analysis-of-first-new-energy-car-tickets/%E7%A7%AF%E5%88%86%E5%88%86%E5%B8%83.png)
 
-![](/resources/data-analysis-of-first-new-energy-car-tickets/积分分布1.png)
+![](https://www.tanglei.name/resources/data-analysis-of-first-new-energy-car-tickets/%E7%A7%AF%E5%88%86%E5%88%86%E5%B8%831.png)
 
 #### 家庭情况
 
@@ -69,11 +69,11 @@ cat car-2020.csv | awk '{print $5}'  | uniq -c  | sort -k 1 -nr
   13379 3
   ```
 
-  ![](/resources/data-analysis-of-first-new-energy-car-tickets/3.png)
+  ![](https://www.tanglei.name/resources/data-analysis-of-first-new-energy-car-tickets/3.png)
 
 - 家庭人口数，居然还有 9 口人的。看了下，9 口人 3 代，猜测 双方父母 4 + 两口 2 + 3 小孩？还是怎样的，我看家庭主要申请人也是从第一期就开始申请摇号了，这么大一家人，也没个车牌，也是不容易啊。 
 
-  ![](/resources/data-analysis-of-first-new-energy-car-tickets/4.png)
+  ![](https://www.tanglei.name/resources/data-analysis-of-first-new-energy-car-tickets/4.png)
   
   ```shell
   ➜  Downloads cat car-2020.csv | awk '{print $3}'  | sort | uniq -c
@@ -101,7 +101,7 @@ cat car-2020.csv | awk '{print $5}'  | uniq -c  | sort -k 1 -nr
   19 2017
 ```
 
-![img](/resources/data-analysis-of-first-new-energy-car-tickets/5.png)
+![img](https://www.tanglei.name/resources/data-analysis-of-first-new-energy-car-tickets/5.png)
 
 看了下，从第一期摇号的就有 1367 个。 
 
@@ -163,7 +163,7 @@ cat car-2020.csv | awk '{print $5}'  | uniq -c  | sort -k 1 -nr
 - 第二列：对应的人数
 - 第三列：对应省
 
-![](/resources/data-analysis-of-first-new-energy-car-tickets/6.png)
+![](https://www.tanglei.name/resources/data-analysis-of-first-new-energy-car-tickets/6.png)
 
 从中可以看出，还是老北京占比最大，占比74%了。石头想找个免费的热力地图生成工具展示一下的，短时间之类没找到，先放弃了。
 
@@ -215,7 +215,7 @@ cat car-2020.csv | awk '{print $5}'  | uniq -c  | sort -k 1 -nr
 
 附《摇号解题积分对照表》
 
-![img](/resources/data-analysis-of-first-new-energy-car-tickets/7.png)
+![img](https://www.tanglei.name/resources/data-analysis-of-first-new-energy-car-tickets/7.png)
 
 回到题目本身，这个㊙️秘密就是：如果要想家庭摇号尽早“中签”，那就赶紧生娃吧，哈哈哈😝，别打我。
 

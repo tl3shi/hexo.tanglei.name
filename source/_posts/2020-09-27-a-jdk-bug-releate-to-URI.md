@@ -16,7 +16,7 @@ tags:
 
 需要说明的是本地、测试环境、生产环境通过不同的域名访问该外部服务。生产程序调用不通，神奇的是在生产环境通过 `curl` 等命令却能够正常调用对方接口。
 
-![img](/resources/a-jdk-bug-releate-to-URI/whatjpg.png)
+![img](https://www.tanglei.name/resources/a-jdk-bug-releate-to-URI/whatjpg.png)
 
 
 
@@ -107,7 +107,7 @@ Hello, World
 
 这就尼玛神奇了吧。看看我们程序中用的 httpclient 的实现，结果发现是有用 `java.net.URI`，心想，这不至于吧，用 URI 就不行了么。 
 
-![img](/resources/a-jdk-bug-releate-to-URI/buzhiyu.png)
+![img](https://www.tanglei.name/resources/a-jdk-bug-releate-to-URI/buzhiyu.png)
 
 换 `java.net.URI` 试试?  （这里不展开讲URL和URI的区别联系了，可以简单的认为URL是URI的一个子集，详细的可参考 [URI、URL 和 URN](https://www.ibm.com/developerworks/cn/xml/x-urlni.html), [wiki URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier)）
 
@@ -137,7 +137,7 @@ new java.net.URI(url.getProtocol(), url.getHost(), url.getPath(), null) error: I
 
 有理由怀疑，这是 JDK 的 Bug 吗？
 
-![image-20200919102937998](/resources/a-jdk-bug-releate-to-URI/bug.png)
+![image-20200919102937998](https://www.tanglei.name/resources/a-jdk-bug-releate-to-URI/bug.png)
 
 从官网上还真找到了关于包含下划线作为hostname的bug提交issue，戳这里 [JDK-8132508 : Bug JDK-8029354 reproduces with underscore in hostname](http://bugs.java.com/bugdatabase/view_bug.do?bug_id=8132508)，然后发现该 "bug" reporter 的情况貌似跟我的差不多，只不过引爆bug的点不一样。
 
@@ -163,7 +163,7 @@ new java.net.URI(url.getProtocol(), url.getHost(), url.getPath(), null) error: I
 >System.out.println(uri.getHost()); //null 
 这个 JDK bug issue 详细信息见 [JDK-8170265 : underscore is allowed in java.net.URL while not in java.net.URI](http://bugs.java.com/bugdatabase/view_bug.do?bug_id=8170265), ([openjdk JDK-8170265](https://bugs.openjdk.java.net/browse/JDK-8170265) 更详细）。
 
-![](/resources/a-jdk-bug-releate-to-URI/jdk-bug.png)
+![](https://www.tanglei.name/resources/a-jdk-bug-releate-to-URI/jdk-bug.png)
 
 经过初步 Review，被认为是一个 P4 的 Bug，说的是 `java.net.URL` 遵循的是 `RFC 2396` 规范，确实不允许含有下划线的 hostname，`java.net.URI` 做到了， 而 `java.net.URL` 没有做到。
 
@@ -197,7 +197,7 @@ new java.net.URI(url.getProtocol(), url.getHost(), url.getPath(), null) error: I
 
 >So not throwing an exception isn't an issue here.
 
-![](/resources/conflicts-between-java-net-url-and-java-net-uri-when-dealing-with-hostname-contains-underscore/nonsense.jpg)
+![](https://www.tanglei.name/resources/conflicts-between-java-net-url-and-java-net-uri-when-dealing-with-hostname-contains-underscore/nonsense.jpg)
 
 当初没有收到及时反馈，就没有来得及怼回去。
 

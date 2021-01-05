@@ -8,7 +8,7 @@ tags:
   - 总结
 ---
 
-![图片来源煙雨斜陽@skypixel](/resources/wechat/resign-from-creditease-and-recommend-some-companies.jpg)
+![图片来源煙雨斜陽@skypixel](https://www.tanglei.name/resources/wechat/resign-from-creditease-and-recommend-some-companies.jpg)
 <center><div style="font-size: 10px">图片来源: 煙雨斜陽@skypixel</div></center>
 
 ## 离开前任

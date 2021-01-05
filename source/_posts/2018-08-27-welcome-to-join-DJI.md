@@ -31,7 +31,7 @@ tags:
 
 - 大疆满1年后有房补(1k左右吧, 不同级别不一样)
 - 年终奖试个人情况定, 普遍 3 ~ 6个月 (以上参考[DebugTalk](https://mp.weixin.qq.com/s/_Gx1G4t5hzb4-cUKhpzrdQ)), [saberma](https://ruby-china.org/topics/35101) 哥哥说的是 "年终丰厚奖金，每个人都不一样，还是不好写范围，于我个人而言，每年都有超预期". 
-- 福利车, 当然这个确实是很少数才能拿到的了. 今年的在8月刚公布, 能看到朋友圈大大晒的福利车.  ![福利车](/resources/welcome-to-join-DJI/DJI-car.jpeg)
+- 福利车, 当然这个确实是很少数才能拿到的了. 今年的在8月刚公布, 能看到朋友圈大大晒的福利车.  ![福利车](https://www.tanglei.name/resources/welcome-to-join-DJI/DJI-car.jpeg)
 - 无息住房贷款, 这个要求工作满2年且绩效满足一定条件的. 偶尔有看到公司邮件公式 xx 申请的通过审批邮件之类的. 
 - 对于优秀的员工, 每年会有机会获得内部配股, 目前大疆蹭蹭上涨的市值, 内部股票未来的价值也是值的期待的. 
 - 薪资方面, 初中级 20k -- 40k, 中高级 30k - 50k, 特别优秀的另谈. 薪资信息参考来自[公司在Boss直聘上的信息](https://www.zhipin.com/gongsir/05457bddad04a8e61nxy3tu7.html?city=101010100&ka=sel_city_101010100)

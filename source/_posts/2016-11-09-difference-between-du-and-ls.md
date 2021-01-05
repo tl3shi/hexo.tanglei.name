@@ -8,7 +8,7 @@ tags:
   - Linux
 ---
 
-![difference-between-du-and-ls](/resources/difference-between-du-and-ls/du-ls.jpg)
+![difference-between-du-and-ls](https://www.tanglei.name/resources/difference-between-du-and-ls/du-ls.jpg)
 
 如果你完全不明白或者完全明白图片含义, 那么你不用继续往下看了. 否则, 这篇文章也许正是你需要的.
 
@@ -183,7 +183,7 @@ int main() {
 以上内容若有不清楚或不正确的地方, 还望大家指出, 感谢.
 
 另外, 我最终也开通了一个微信公众号, 欢迎有兴趣的同学扫码关注, 谢谢.
-![微信公众号](/resources/wechat-tangleithu.jpg)
+![微信公众号](https://www.tanglei.name/resources/wechat-tangleithu.jpg)
 
 参考资料: 
 

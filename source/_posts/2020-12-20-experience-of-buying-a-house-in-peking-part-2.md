@@ -12,7 +12,7 @@ tags:
 
 > 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247491099&amp;idx=1&amp;sn=0a26712c8d9839ce17f9bf715ba4ea94&amp;chksm=eb471fffdc3096e9476e7b705173a824bbf17d05788a6d73ba230448e1101af389d0295b8293&token=1817372757&lang=zh_CN#rd)，转载请全文保留。后台回复关键字 “**1024**” 获取程序员大厂面试指南。
 
-![](/resources/experience-of-buying-a-house-in-peking/640.jpeg)
+![](https://www.tanglei.name/resources/experience-of-buying-a-house-in-peking/640.jpeg)
 
 ## 背景
 
@@ -158,7 +158,7 @@ D 只能去法院提起诉讼告 A 违约，要其把户口牵走并赔偿损失
 
 为了方便，我将本人的这篇和 [购房经验谈（上）](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247490292&amp;idx=1&amp;sn=e713144fb62aee196b4b56e84576b8e6&amp;chksm=eb471b10dc3092069db0461dde18f8a1e8c39e9e1a0650ab736de8e40d2c3d7e3292ad2210ae&token=424078307&lang=zh_CN#rd)，再加上上述两篇文章整理成了一个 PDF，你只需要在公众号后台回复 “购房经验”，即可获取，建议收藏。
 
-![扫码回复 “购房经验” 获取购房经验整理。](/resources/experience-of-buying-a-house-in-peking/640.jpg)
+![扫码回复 “购房经验” 获取购房经验整理。](https://www.tanglei.name/resources/experience-of-buying-a-house-in-peking/640.jpg)
 
 ## 总结
 

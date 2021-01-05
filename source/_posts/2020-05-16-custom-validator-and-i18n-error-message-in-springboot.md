@@ -8,7 +8,7 @@ tags:
   - Java  
 ---
 
-![](/resources/custom-validator-and-i18n-error-message-in-springboot/i18n-title.png)
+![](https://www.tanglei.name/resources/custom-validator-and-i18n-error-message-in-springboot/i18n-title.png)
 
 本文通过示例说明，在 Springboot 中如何自定义 Validator，以及如何实现国际化的错误信息返回。注意，本文代码千万别直接照抄，有可能会出大事情的。先留个悬念，读者朋友们能从中看出有什么问题吗？
 
@@ -53,7 +53,7 @@ public class GreetingController {
 
 作为高大上的项目，我们肯定有海外用户，所以就需要国际化的配置。现在来模拟了下业务逻辑，假设输入的参数有一些校验功能，比如以上name参数，假设和“tangleithu”不相等，就直接返回错误。同时希望返回的错误信息需要实现国际化，即在不同的语言环境下返回的结果不一样。例如中文：“没找到用户呢。” 对应的英文：“User does not exist.”，而对应的德文是……，算了忽略，我也不会。
 
-![](/resources/custom-validator-and-i18n-error-message-in-springboot/i18n-demo.png)
+![](https://www.tanglei.name/resources/custom-validator-and-i18n-error-message-in-springboot/i18n-demo.png)
 
 用一个图来表达，即希望实现的效果是，不同国家和地区的用户（不同语言）在遇到同一个业务场景下同一个错误原因，有不同的翻译。例如在参数校验没通过，Http Status Code应该返回 400，并告知错误原因；在具体的 Service 实现时可能也会遇到其他的 case 需要返回某种具体错误信息。
 
@@ -80,7 +80,7 @@ public class GlobalExceptionHandler {
 
 然后，我们在这种具体的异常信息时，用一个 key 来标记错误码，在资源文件中用不同的语言来定义应该返回的具体错误信息。例如本文示例中，添加了中英文两种。 相应的目录结构如下： 
 
-![](/resources/custom-validator-and-i18n-error-message-in-springboot/i18n-tree.png)
+![](https://www.tanglei.name/resources/custom-validator-and-i18n-error-message-in-springboot/i18n-tree.png)
 
 此时，我们只需要在 `GlobalExceptionHandler` 中根据请求来源是中文还是英文返回对应的错误信息即可。 
 
@@ -97,7 +97,7 @@ private String getI18nMessage(String key, HttpServletRequest request) {
 
 从请求来源获取语言信息就有多种方式啦，例如我们可以从请求头中获取 `Accept-Lanuage`，一般浏览器会根据用户的设置情况带上这个请求头的，如下图所示。
 
-![](/resources/custom-validator-and-i18n-error-message-in-springboot/i18n-header.png)
+![](https://www.tanglei.name/resources/custom-validator-and-i18n-error-message-in-springboot/i18n-header.png)
 
 或者我们自己显示定义一些例如 lang 之类的参数。本文不做详细阐述，咱们就简单用 `lang` 这个参数来定义，如下：
 
@@ -301,7 +301,7 @@ public class CustomValidator implements ConstraintValidator<CustomParam, String>
 
 看看效果，输入没校验通过，还提示你输入的参数 “xx” 不符合条件。
 
-![](/resources/custom-validator-and-i18n-error-message-in-springboot/validator-bug.png)
+![](https://www.tanglei.name/resources/custom-validator-and-i18n-error-message-in-springboot/validator-bug.png)
 
 是不是感觉很完美？
 

@@ -25,7 +25,7 @@ tags:
 
 原始架构图示&分析（2月2号晚上22点左右的原始架构）
 
-![2月2号晚上22点左右的原始架构](/resources/architecture-evolution-of-HA-system-of-buy-facemask/2月2号晚上22点左右的原始架构.png) 
+![2月2号晚上22点左右的原始架构](https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/2%E6%9C%882%E5%8F%B7%E6%99%9A%E4%B8%8A22%E7%82%B9%E5%B7%A6%E5%8F%B3%E7%9A%84%E5%8E%9F%E5%A7%8B%E6%9E%B6%E6%9E%84.png) 
 
 1. 客户端走 HTTPS 协议直接访问 ECS；
 1. ECS 上使用 Nginx 监听 HTTPS 443 端口；
@@ -45,7 +45,7 @@ tags:
 
 2月3号早上9点左右的架构，4号也恢复了这个架构。
 
-![2月3号早上9点左右的架构](/resources/architecture-evolution-of-HA-system-of-buy-facemask/2月3号早上9点左右的架构.png)
+![2月3号早上9点左右的架构](https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/2%E6%9C%883%E5%8F%B7%E6%97%A9%E4%B8%8A9%E7%82%B9%E5%B7%A6%E5%8F%B3%E7%9A%84%E6%9E%B6%E6%9E%84.png)
 
 1. 接入 SLB，通过镜像横向扩展负载能力；
 2. 接入读写分离数据库架构，通过阿里云数据库自动进行读写分离，自动同步数据；
@@ -63,7 +63,7 @@ tags:
 
 ## 架构图&分析-V3
 
-![2月5号的架构](/resources/architecture-evolution-of-HA-system-of-buy-facemask/2月5号的架构.png)
+![2月5号的架构](https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/2%E6%9C%885%E5%8F%B7%E7%9A%84%E6%9E%B6%E6%9E%84.png)
 
 1. 接入 CDN 分流超大带宽；
 2. 取消 Nginx 的代理；
@@ -79,7 +79,7 @@ tags:
 
 ## 理想架构图&分析-V4
 
-![理想架构](/resources/architecture-evolution-of-HA-system-of-buy-facemask/理想架构.png)
+![理想架构](https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/%E7%90%86%E6%83%B3%E6%9E%B6%E6%9E%84.png)
 
 1. 主域名接入CDN；
 2. CDN通过设置回源 Http、Https 协议去访问 SLB 的不同监听实现新老程序之间的切换，具体实现为回源协议对应。不同监听，监听对应不同的程序。
@@ -107,7 +107,7 @@ tags:
 
 最后的成果统计（采样分析，实际数据比这个还大）：
 
-![成果统计（采样分析）](/resources/architecture-evolution-of-HA-system-of-buy-facemask/成果统计（采样分析）.png)
+![成果统计（采样分析）](https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/%E6%88%90%E6%9E%9C%E7%BB%9F%E8%AE%A1%EF%BC%88%E9%87%87%E6%A0%B7%E5%88%86%E6%9E%90%EF%BC%89.png)
 
 最后上线的三代架构，为了保险起见上了 150 台机器，但是根据活动期间的观察，以及对压测结果的评估，上 50 台机器应该就可以抗住了，从持续 5 小时一直崩溃被终端用户骂街，到 7 分钟库存售罄的领导赞赏，虽然经历了 3 个通宵的戮战，依然可以隐隐约约感觉到身心都得到了升华。
 
@@ -183,7 +183,7 @@ springboot1.5 带的 jedis2.9.1 的 Redis 连接泄漏的问题，导致 Tomcat 
 
 ## 最后
 
-![ECS运维指南之Linux系统诊断](/resources/architecture-evolution-of-HA-system-of-buy-facemask/ECS运维指南之Linux系统诊断.png)
+![ECS运维指南之Linux系统诊断](https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/ECS%E8%BF%90%E7%BB%B4%E6%8C%87%E5%8D%97%E4%B9%8BLinux%E7%B3%BB%E7%BB%9F%E8%AF%8A%E6%96%AD.png)
 
 本文节选自《ECS运维指南之Linux系统诊断》，《ECS运维指南之Linux系统诊断》是牧原呕心沥血之作，不仅内容精益求精，代码的编排作者也花了不少心思。你也可以直接登录阿里云开发者社区下载本书——[《ECS运维指南之Linux系统诊断》](https://developer.aliyun.com/article/763939)，或者直接在公众号后台回复关键字“ecs”获取本合集。
 

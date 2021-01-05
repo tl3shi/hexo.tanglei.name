@@ -17,7 +17,7 @@ tags:
 
 ### 纯 wordpress
 
-![唐磊的 wordpress 博客](/resources/blog-historys/wordpress.tanglei.name.png)
+![唐磊的 wordpress 博客](https://www.tanglei.name/resources/blog-historys/wordpress.tanglei.name.png)
 
 这是最初级的版本, 相当长一段时间内也一直用上面这个主题, 后来接触到 `markdown` 这个标记语言, 发现这玩意太好用了, 就一发不可收拾, 但想着这个主题用着也挺好的, 也不想换, 于是演化出了第二个版本
 
@@ -33,7 +33,7 @@ tags:
 ### jekyll 
 
 
-![唐磊的 jekyll 博客](/resources/blog-historys/jekyll.tanglei.name.png)
+![唐磊的 jekyll 博客](https://www.tanglei.name/resources/blog-historys/jekyll.tanglei.name.png)
 
 再后来, 发现 wordpress 还是太臃肿了, 于是就直接抛弃了. 这篇博文记录了迁移过程: [最终还是放弃了Wordpress](https://www.tanglei.name/blog/give-up-wordpress-to-jekyll.html)
 
@@ -45,7 +45,7 @@ jekyll或者octopress这类的博客引擎的好处在于, 用 markdown 书写, 
 
 ### hexo 
 
-![唐磊的 hexo 博客](/resources/blog-historys/hexo.tanglei.name.png)
+![唐磊的 hexo 博客](https://www.tanglei.name/resources/blog-historys/hexo.tanglei.name.png)
 
 最近又看了一下之前折腾的 hexo 框架, 发现了一个不错的主题模板如上图所示, 正在考虑是否要迁移到 hexo 上呢. 其实之前 hexo环境就一直有, 只需要切换主题即可, 点击 [hexo.tanglei.name](http://hexo.tanglei.name/) 即可看到效果. 
 
@@ -56,6 +56,6 @@ jekyll或者octopress这类的博客引擎的好处在于, 用 markdown 书写, 
 1. 留言系统: 用得较多的是 duoshuo 和 disqus, disqus 国内被墙, 多说貌似现在也处于半死状态, 没人维护了. 
 2. 搜索: 简单的搜索可以借助 Google / Baidu 等搜索引擎, 通过 `keywords site: www.tanglei.name` 检索限制关键字来源在搜索引擎的系统里. 但如果搜索引擎没有收录完全等就搜不到了. 最近切换hexo主题还知道了有专门做搜索服务的公司 swiftype, 提交一个网站入口给 swiftype, swiftype 会抓取你整个网站, 然后做 index 等, 最后提供接口供搜索. (果然卖服务的公司越来越多)
 
-![](/resources/blog-historys/hexo.tanglei.name-search.png) 
+![](https://www.tanglei.name/resources/blog-historys/hexo.tanglei.name-search.png) 
 	
 目前博客主题还没切换, 要不大家投个票, 看哪个风格更好看? 

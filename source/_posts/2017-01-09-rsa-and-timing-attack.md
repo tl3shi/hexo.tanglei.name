@@ -40,7 +40,7 @@ $ a^{p-1} \equiv 1 \mod p$, `a` 的 `p-1` 次方 对 `p` 取余为`1`, (`a` 的 
 
 (来, 安利一个计算器的工具, `bc` 命令, 支持任意精度的计算, 其实 Mac简单的计算就可以通过前面介绍的 [Alfred](https://www.tanglei.name/blog/app-in-mac-preface.html) 可以方便得完成)
 
-![linux计算器](/resources/rsa-and-timing-attack/bc-calculate.png)
+![linux计算器](https://www.tanglei.name/resources/rsa-and-timing-attack/bc-calculate.png)
 
 
 ## RSA 破解
@@ -102,7 +102,7 @@ for (i <- Array.range(0, a.length)) {
 
 这次变更的diff详细信息[来源](http://hg.openjdk.java.net/jdk6/jdk6/jdk/rev/562da0baf70b)为: 
 
-![MessageDigest.isEqual计时攻击](/resources/rsa-and-timing-attack/MessageDigest.isEqual.timing-attack.png)
+![MessageDigest.isEqual计时攻击](https://www.tanglei.name/resources/rsa-and-timing-attack/MessageDigest.isEqual.timing-attack.png)
 
 为了防止(特别是与签名/密码验证等相关的操作)被 **timing attack**, 目前各大语言都提供了响应的安全比较函数, 例如 "世界上最好的编程语言" -- php中的: 
 

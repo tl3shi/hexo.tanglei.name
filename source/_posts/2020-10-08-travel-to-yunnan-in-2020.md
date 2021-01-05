@@ -11,7 +11,7 @@ tags:
 
 
 
-![](/resources/travel-to-yunnan-in-2020/jump-car.jpg)
+![](https://www.tanglei.name/resources/travel-to-yunnan-in-2020/jump-car.jpg)
 
 > 关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。以每篇文章都让人有收获为目的，欢迎关注，交流和指导！文章首发于微信公众号，欢迎关注。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
@@ -35,7 +35,7 @@ tags:
 - 昆明到丽江会途经洱海，一路蓝天白云、巍峨高山，自然风光美不胜收；
 
 
-![昆明至丽江沿途风景](/resources/travel-to-yunnan-in-2020/gaojia.jpeg)
+![昆明至丽江沿途风景](https://www.tanglei.name/resources/travel-to-yunnan-in-2020/gaojia.jpeg)
 
 
 - 建议住在丽江古城内或者古城周边，我们住在古城北门外，距离黑龙潭公园和古城均只有几百米。附近吃东西、看电影（对，我们某天晚上还去看了《我和我的家乡》）都很方便，另外跟团游的接送点一般都在古城周边。需要提示的是古城内的民宿晚上比较吵。
@@ -43,20 +43,20 @@ tags:
 
 
 
-![](/resources/travel-to-yunnan-in-2020/heilongtan-1.jpeg)
+![](https://www.tanglei.name/resources/travel-to-yunnan-in-2020/heilongtan-1.jpeg)
 
 
 - - 逛完黑龙潭西门出来有一家网红火锅店，叫“有一锅黑山羊腊排骨火锅”，如果要尝试建议 6 点半以前去排队，别问为什么（此处放擦汗表情）说实话，味道并没有很惊艳，不过量很充足。
 
 
 
-![黑龙潭公园航拍](/resources/travel-to-yunnan-in-2020/heilongtan.jpg)
+![黑龙潭公园航拍](https://www.tanglei.name/resources/travel-to-yunnan-in-2020/heilongtan.jpg)
 
 黑龙潭公园航拍
 
 ## Day 2-3（泸沽湖）
 
-![泸沽湖](/resources/travel-to-yunnan-in-2020/luguhu.JPG)
+![泸沽湖](https://www.tanglei.name/resources/travel-to-yunnan-in-2020/luguhu.JPG)
 
 泸沽湖
 
@@ -74,7 +74,7 @@ tags:
 
 
 
-![img](/resources/travel-to-yunnan-in-2020/luguhu-1.jpeg)
+![img](https://www.tanglei.name/resources/travel-to-yunnan-in-2020/luguhu-1.jpeg)
 
 
 
@@ -83,7 +83,7 @@ tags:
 
 
 
-![img](/resources/travel-to-yunnan-in-2020/luguhu-chuan.jpeg)
+![img](https://www.tanglei.name/resources/travel-to-yunnan-in-2020/luguhu-chuan.jpeg)
 
 - 建议加 60 元前往草海，各种水草、水性杨花、芦苇荡，配上碧波蓝天，绝对是最佳取景地。摩梭小哥划船也还挺累，完整行程 2 个小时左右。请欣赏用手机拍摄的视频 —— “摩梭阿哥的船桨划出了一道美丽的风景”。
 
@@ -94,7 +94,7 @@ tags:
 
 
 
-![img](/resources/travel-to-yunnan-in-2020/xiaofeiji.png)
+![img](https://www.tanglei.name/resources/travel-to-yunnan-in-2020/xiaofeiji.png)
 
 
 
@@ -105,7 +105,7 @@ tags:
 
 
 
-![玉龙雪山——蓝月谷航拍](/resources/travel-to-yunnan-in-2020/lanyuegu.jpeg)
+![玉龙雪山——蓝月谷航拍](https://www.tanglei.name/resources/travel-to-yunnan-in-2020/lanyuegu.jpeg)
 
 玉龙雪山——蓝月谷航拍（视频拍得多，还没剪，后续朋友圈分享）
 
@@ -124,7 +124,7 @@ tags:
 - 玉龙雪山的大索道（也就是海拔最高的打卡地标那个地方）一定需要提前购买，提前 3 天上午 7 点准时抢，我们因为那个时间点恰好在飞机上就错过了。直接在“丽江旅游集团”小程序上购买。
 - 关于票价，大索道 140（含景区车），中索道（牦牛坪）65，小索道（云杉坪）60，建议提前抢大索道的票，其他两个地方都相差不大，并且没什么特别的。然后 门票（也叫“进山费”）原价本来是 100，疫情期间打5折，即 50 元。蓝月谷的电瓶车也不需要买，直接步行即可。
 
-![img](/resources/travel-to-yunnan-in-2020/yunshanping.jpg)
+![img](https://www.tanglei.name/resources/travel-to-yunnan-in-2020/yunshanping.jpg)
 
 
 
@@ -133,7 +133,7 @@ tags:
 
 
 
-![img](/resources/travel-to-yunnan-in-2020/yunshanping-senlin.jpg)
+![img](https://www.tanglei.name/resources/travel-to-yunnan-in-2020/yunshanping-senlin.jpg)
 
 云杉坪原始森林
 
@@ -141,7 +141,7 @@ tags:
 
 
 
-![img](/resources/travel-to-yunnan-in-2020/lanyuegu-1.jpeg)
+![img](https://www.tanglei.name/resources/travel-to-yunnan-in-2020/lanyuegu-1.jpeg)
 
 
 
@@ -149,7 +149,7 @@ tags:
 
 
 
-![img](/resources/travel-to-yunnan-in-2020/lijiang.jpeg)
+![img](https://www.tanglei.name/resources/travel-to-yunnan-in-2020/lijiang.jpeg)
 
 
 
@@ -169,13 +169,13 @@ tags:
 
 
 
-![img](/resources/travel-to-yunnan-in-2020/cangshan-lanche.jpg)
+![img](https://www.tanglei.name/resources/travel-to-yunnan-in-2020/cangshan-lanche.jpg)
 
 
 
 - 苍山比较适合喜欢徒步的同学。时间充裕的情况下，可以爬到最高峰，海拔 4000 米以上，可以看到高山湖泊。然后对天龙八部感兴趣的可以去那个影视基地看看。
 
-![img](/resources/travel-to-yunnan-in-2020/cangshan-xiangqi.jpg)
+![img](https://www.tanglei.name/resources/travel-to-yunnan-in-2020/cangshan-xiangqi.jpg)
 
 
 
@@ -183,7 +183,7 @@ tags:
 
 
 
-![img](/resources/travel-to-yunnan-in-2020/erhai-tian.jpeg)
+![img](https://www.tanglei.name/resources/travel-to-yunnan-in-2020/erhai-tian.jpeg)
 
 
 
@@ -191,7 +191,7 @@ tags:
 
 
 
-![img](/resources/travel-to-yunnan-in-2020/erhai-qiu.jpeg)
+![img](https://www.tanglei.name/resources/travel-to-yunnan-in-2020/erhai-qiu.jpeg)
 
 
 

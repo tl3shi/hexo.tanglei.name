@@ -12,7 +12,7 @@ tags:
 花了一个周末，去了趟婺源~ 看那桃花(油菜花)盛开的地方~~~ 
 
 先上图, 左俩图就是去婺源主要去的地方 -- 江岭景区, 其实就是一大山坡梯田, 然后田里种上油菜, 3月-4月花开以此引来了大批游客.  
-![](/resources/travel-to-jiangxi-wuyuan/wuyuan.jpg)
+![](https://www.tanglei.name/resources/travel-to-jiangxi-wuyuan/wuyuan.jpg)
 图右下是"盐田古樟", 一颗千年古树, 图右上为彩虹桥景区里的水车. 
 
 
@@ -28,12 +28,12 @@ tags:
 - 第二站： 彩虹桥
 	
 	宋代造，电影闪闪红星拍摄地，明星片和陶笛很多，景区小时间短，景区人多，可以吃些简单午饭节省游览时间，中午菜馆人多上菜很慢。
-	![](/resources/travel-to-jiangxi-wuyuan/caihongqiao.jpg)
+	![](https://www.tanglei.name/resources/travel-to-jiangxi-wuyuan/caihongqiao.jpg)
 	
 - 第三站: 思溪延村
 	
 	经典聊斋拍摄地，油菜花和徽派建筑. 如果是一群人的话(AA下来也不贵)，可以花30块请一个当地的导游介绍一下景区各个建筑风格, 历史原因，不然自己在那也就是看看而已。
-	![](/resources/travel-to-jiangxi-wuyuan/sixiyan-cun.jpg)
+	![](https://www.tanglei.name/resources/travel-to-jiangxi-wuyuan/sixiyan-cun.jpg)
 	
 - 第四站: 李坑
 	

@@ -13,7 +13,7 @@ tags:
  
 最近工作上遇到一个"神奇"的问题, 或许对大家有帮助, 因此形成本文.
  
-![](/resources/slow-sql-optimazation-of-explain-extended/wtf-confused.jpeg)
+![](https://www.tanglei.name/resources/slow-sql-optimazation-of-explain-extended/wtf-confused.jpeg)
  
 问题大概是, 我有两个表 TableA, TableB, 其中 TableA 表大概百万行级别(存量业务数据), TableB 表几行(新业务场景, 数据还未膨胀起来), 语义上  `TableA.columnA = TableB.columnA`, 其中 `columnA` 上建立了索引, 但查询的时候确巨慢无比, 基本上到 5-6 秒, 明显跟预期不符合.  
 
@@ -198,7 +198,7 @@ mysql> explain select * from user_info where uid = '111111111';
 1 row in set (0.01 sec)
 ```
 
-![](/resources/slow-sql-optimazation-of-explain-extended/confused.jpeg)
+![](https://www.tanglei.name/resources/slow-sql-optimazation-of-explain-extended/confused.jpeg)
 
 ### 问题解决
  
