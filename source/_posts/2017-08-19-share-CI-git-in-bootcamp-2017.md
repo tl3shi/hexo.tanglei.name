@@ -9,7 +9,7 @@ tags:
   - 工具
 ---
 
-![宜信大数据创新中心Bootcamp 2017](/resources/share-CI-git-in-bootcamp-2017/bootcamp-welcome.png)
+![宜信大数据创新中心Bootcamp 2017](https://www.tanglei.name/resources/share-CI-git-in-bootcamp-2017/bootcamp-welcome.png)
 
 今年受公司大佬们的委托给本次Boot camp新兵训练营的培训学员(入职公司的应届生新人)做关于 CI 的分享, 主题是 "CI: Git + Jenkins + Jira", 往年的分享一般都是围绕 Git 展开, 今年虽然题目上加了 Jenkins 和 Jira, 感觉重点仍然是 Git, 1个小时的时间讲不了太多的东西. 
 
@@ -42,7 +42,7 @@ CI, 即 "Continuous integration" 持续集成的意思, 为什么要"持续"集�
 
 在git出来之前, 常见的版本控制工具软件有 SVN/CVS 等, 这种工具有很多弊端, 比如必须得联网, 代码库太大了, 不太方便进行交互等. Linus 当初为了解决 Linux 源码的管理问题(Linux最开始是用一个商业软件 BitKeeper 进行版本管理, 后来因为终止合作了), 于是就花了几周搞出了最初版本的 Git. 
 
-![集中式和分布式版本控制系统的区别](/resources/share-CI-git-in-bootcamp-2017/vcs-centralized-vs-distributed.png)
+![集中式和分布式版本控制系统的区别](https://www.tanglei.name/resources/share-CI-git-in-bootcamp-2017/vcs-centralized-vs-distributed.png)
 
 - 集中式: SVN等就是这种方式, 有一个中央Server保存所有代码, 大家都依赖于这个集中的Server, 如果集中的Server挂了, 就没法搞了. 
 - 分布式: 分布式版本控制系统根本没有“中央服务器”，每个人的电脑上都是一个完整的版本库.  分布式版本控制系统通常也有一台充当“中央服务器”的电脑(Remote Server)，但这个服务器的作用仅仅是用来方便“交换”大家的修改，没有它大家也一样干活，只是交换修改不方便而已。
@@ -53,7 +53,7 @@ Git 中的几个基本概念比较重要, 理解这几个概念能够更好的�
 
 #### 工作区域划分
 
-![git工作区域划分](/resources/share-CI-git-in-bootcamp-2017/git-space.png)
+![git工作区域划分](https://www.tanglei.name/resources/share-CI-git-in-bootcamp-2017/git-space.png)
 
 - 工作目录/工作区(working directory): 就是当前工作的目录, 实实在在操作的文件
 - 暂存区/索引区 (staging area): 通过 `git add` 之后, 会把文件保存到暂存区域里面
@@ -61,7 +61,7 @@ Git 中的几个基本概念比较重要, 理解这几个概念能够更好的�
 
 #### 文件的生命周期
 
-![git文件生命周期](/resources/share-CI-git-in-bootcamp-2017/git-file-lifecycle.png)
+![git文件生命周期](https://www.tanglei.name/resources/share-CI-git-in-bootcamp-2017/git-file-lifecycle.png)
 
 - untracked: 还没有被版本库所track, 与版本库还没有产生任何关联
 - unmodified: 已经添加到版本控制里面了, 版本库里面保存的文件的状态
@@ -113,7 +113,7 @@ git commit   git merge    git blame    git cherry-pick
 - `git merge`: Merge takes all the changes in one branch and merges them into another branch in one commit. 一次性合并, 若有冲突解决完冲突后, 再 `add, commit` 会产生新的一个commit.  `git merge --no-ff`: 保留被合并的分支的commits, 默认 fast-forward
 - `git rebase`: Rebase says I want the point at which I branched to move to a new starting point. 交互式的, 把在一个分支里提交的改变commits移到另一个分支里重放一遍。一个 commit 一个commit的进行, 当前冲突需要解决完之后, 再 `git rebase --continue`, 直到所有commits合并完毕, 使得 commit history 美观, 缺点是可能要多次进行冲突解决. 
 
-![git merge和rebase的区别](/resources/share-CI-git-in-bootcamp-2017/git-merge-rebase.png)
+![git merge和rebase的区别](https://www.tanglei.name/resources/share-CI-git-in-bootcamp-2017/git-merge-rebase.png)
 
 这部分内容详细可以参考 [atlassian merging-vs-rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing) 和 [cnblogs merge-vs-rebase](http://www.cnblogs.com/irocker/p/merge-vs-rebase.html)
 
@@ -125,7 +125,7 @@ git commit   git merge    git blame    git cherry-pick
 
 其实一般**开发人员应该使每一个commit都有意义**, 而现实当中一般的开发团队可能比较难以做到.  如果严格要求的话, 可能不少同学都需要用 rebase 对历史提交进行重新整理. 
 
-![git rebase重新整理commits历史](/resources/share-CI-git-in-bootcamp-2017/git-rebase-500ms.gif)
+![git rebase重新整理commits历史](https://www.tanglei.name/resources/share-CI-git-in-bootcamp-2017/git-rebase-500ms.gif)
 
 例如上面例子中, 已经提交了10个commits, 现在需要删除其中的第6个, 然后合并其他所有的commits为一个commit. (做了一次git动图进行演示, 不知道效果怎么样). 
 
@@ -146,7 +146,7 @@ git commit   git merge    git blame    git cherry-pick
 
 #### git flow
 
-![git flow](/resources/share-CI-git-in-bootcamp-2017/git-workflow.png)
+![git flow](https://www.tanglei.name/resources/share-CI-git-in-bootcamp-2017/git-workflow.png)
 
 [这篇文章](http://nvie.com/posts/a-successful-git-branching-model) 对 git flow 有较为详细的阐述. 
 
@@ -155,7 +155,7 @@ git commit   git merge    git blame    git cherry-pick
 
 #### github flow
 
-![github flow](/resources/share-CI-git-in-bootcamp-2017/github-workflow.png)
+![github flow](https://www.tanglei.name/resources/share-CI-git-in-bootcamp-2017/github-workflow.png)
 
 github flow 详见[官网](https://guides.github.com/introduction/flow/) 对其的阐述. 简而言之, 就是大家在不同的repo进行开发, 往一个主repo里去 merge.  
 

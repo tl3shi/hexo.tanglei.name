@@ -16,7 +16,7 @@ tags:
 
 在上一篇文章中，石头哥谈了谈读本科的时候都学了[哪些计算机专业课和推荐了一些经典的技术书籍](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247490014&idx=1&sn=93880ff65c40fe6e20c65cc89dfc6478&chksm=eb47183adc30912c6c6c2134cabcf2b822ae2a091ecb4a0b5cc15c630cbbf06601310a6076ea&token=37889950&lang=zh_CN#rd)，然后推文封面中的这张图引起了不少读者的注意。
 
-![图：石头哥课程大作业 Demo](/resources/experience-of-learning-programming/石头哥课程大作业 Demo.png)
+![图：石头哥课程大作业 Demo](https://www.tanglei.name/resources/experience-of-learning-programming/石头哥课程大作业 Demo.png)
 
 这其实是我当时的课程大作业的 Demo，（严格意义上讲其实是几个课程的大作业😎）。
 
@@ -24,7 +24,7 @@ tags:
 
 下面，我将从以下这几个方面，谈谈自己的理解：
 
-![目录](/resources/experience-of-learning-programming/目录.png)
+![目录](https://www.tanglei.name/resources/experience-of-learning-programming/目录.png)
 
 ## 如何入门、提高兴趣？
 
@@ -86,7 +86,7 @@ tags:
 
 你当然也可以独立完成，如果也想找小伙伴一起，也可以加入"程序猿石头"的读者交流群，找志同道合的小伙伴一起“刷项目”，共同成长、共同进步。
 
-![积攒项目经验-传送文件](/resources/experience-of-learning-programming/积攒项目经验-传送文件.png)
+![积攒项目经验-传送文件](https://www.tanglei.name/resources/experience-of-learning-programming/积攒项目经验-传送文件.png)
 
 积攒项目经验-传送文件
 
@@ -100,7 +100,7 @@ tags:
 
 
 
-![登录飞信-官方飞信客户端被 T 出](/resources/experience-of-learning-programming/登录飞信-官方飞信客户端被 T 出.png)
+![登录飞信-官方飞信客户端被 T 出](https://www.tanglei.name/resources/experience-of-learning-programming/登录飞信-官方飞信客户端被 T 出.png)
 
 登录飞信-官方飞信客户端被 T 出
 
@@ -108,7 +108,7 @@ tags:
 
 这个小项目也是源于生活。当初当了个小班长，每期末都要统计成绩，计算综合测评等，想想，何不写个爬虫来爬呢。有时候，程序猿的“懒”就是为了提高效率。
 
-![爬虫-爬取课表和成绩](/resources/experience-of-learning-programming/爬虫-爬取课表和成绩.png)
+![爬虫-爬取课表和成绩](https://www.tanglei.name/resources/experience-of-learning-programming/爬虫-爬取课表和成绩.png)
 
 爬虫-爬取课表和成绩
 
@@ -122,7 +122,7 @@ tags:
 
 例如，下图是我在读本科和硕士期间相关课程的学习材料，包括老师课件，课程作业和学习笔记和复习资料等，这种平日积累总结很有效，对于临近期末考试也能做到不慌不乱，还是很有作用的。
 
-![课程笔记总结](/resources/how-to-study-cs-at-school-with-book-recommend-in-1024/class.png)
+![课程笔记总结](https://www.tanglei.name/resources/how-to-study-cs-at-school-with-book-recommend-in-1024/class.png)
 
 哪怕正式工作之后，写周报、月报等也都是阶段性的总结，再比如晋升答辩等等都是需要你日常的思考积累和总结的。反正将来都会用得着，何不现在就开始锻炼呢。
 

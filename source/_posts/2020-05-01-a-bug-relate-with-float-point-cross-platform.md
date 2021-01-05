@@ -49,7 +49,7 @@ std::cout << v321 << std::endl;
 
 32位浮点数在计算机中的表示方式为：1位符号位(s)-8位指数位(E)-23位有效数字(M)，即：
 
-![](/resources/a-bug-relate-with-float-point-cross-platform.md/float.webp)
+![](https://www.tanglei.name/resources/a-bug-relate-with-float-point-cross-platform.md/float.webp)
 
 
 其中E是实际转换成1.xxxxx*2^E的指数，M是去掉 1 后的前面的xxxxx(节约1位)。

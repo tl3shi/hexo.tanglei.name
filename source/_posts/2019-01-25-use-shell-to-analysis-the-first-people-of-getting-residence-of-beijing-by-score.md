@@ -19,7 +19,7 @@ tags:
 
 ## 问题描述
 
-拿到的是json数据, 格式化之后的json数据主题结构如下所示, rows为数组, 数组中元素所代表的object即描述了获得北京户口的同学的各种属性, 例如分数, 排名, 身份证号(后四位打码了), 还有公司等等信息. 为了方便大家练习对数据进行试验, 我将数据附在[这里](/resources/use-shell-to-analysis-the-first-people-of-getting-residence-of-beijing-by-score/jifenluohu.json.gz), 如果有侵权, 请联系我删除. 
+拿到的是json数据, 格式化之后的json数据主题结构如下所示, rows为数组, 数组中元素所代表的object即描述了获得北京户口的同学的各种属性, 例如分数, 排名, 身份证号(后四位打码了), 还有公司等等信息. 为了方便大家练习对数据进行试验, 我将数据附在[这里](https://www.tanglei.name/resources/use-shell-to-analysis-the-first-people-of-getting-residence-of-beijing-by-score/jifenluohu.json.gz), 如果有侵权, 请联系我删除. 
 
 ```json
 "rows": [

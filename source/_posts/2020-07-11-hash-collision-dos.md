@@ -19,7 +19,7 @@ tags:
 
 >洪强宁（洪教授），爱因互动创始人兼 CTO，曾任豆瓣首席架构师，为中国 Python 用户组（CPUG）的创立者之一。
 
-![](/resources/how-to-calculate-apr/dalao-01.png)
+![](https://www.tanglei.name/resources/how-to-calculate-apr/dalao-01.png)
 
 这才是真大佬，原来洪教授在宜信的时候，就有分享过这个内容，可惜当初不知道没参加。看了之后才知道原来我上一篇的文章中讲的 [计时攻击（Timing Attack）](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247485939&idx=1&sn=cad3cf49aa345783a93ce5d9b631ba1d&chksm=eb470817dc308101c95aff74fa63d530f02bef50f91ba18d4ff25b8715933a404bd03ffc8b7b&token=1092973705&lang=zh_CN#rd) 也是其中的内容之一。哈哈，后面有空再研究研究继续讲其他内容。 
 
@@ -29,7 +29,7 @@ tags:
 
 初略来讲，hash 表内部实际存储还是跟数组类似，用连续的内存空间存储元素，只要通过某种方法将将要存储的元素映射为数组的下标，即可像数组一样通过下标去读取对应的元素，这也是为什么能做到 `O(1)` 的原因。 
 
-![Hash 示例](/resources/how-to-calculate-apr/array-mem.png)
+![Hash 示例](https://www.tanglei.name/resources/how-to-calculate-apr/array-mem.png)
 
 以上图为例，假设是我设计的一个 hash 函数，恰好满足如下条件：
 
@@ -37,7 +37,7 @@ tags:
 - `hash("world")=2`： "world" 存储数组下标为 2 的地方；
 - `hash("tangleithu")=5`："tangleithu" 存储数组下标为 5 的地方；
 
-![](/resources/how-to-calculate-apr/wanmei-03.png)
+![](https://www.tanglei.name/resources/how-to-calculate-apr/wanmei-03.png)
 
 目前来看一切好像很完美，但这终归是假设，我不能假设这个 hash 都很完美的将不同的字符串都映射到了不同的下标处。
 
@@ -45,13 +45,13 @@ tags:
 
 类似讲解 HashMap 的文章满大街都是，一搜一大把，本文就不详述了。为了方便读者理解，就简单来个例子。
 
-![Hash冲突开链法](/resources/how-to-calculate-apr/hash-collision-demo-04.png)
+![Hash冲突开链法](https://www.tanglei.name/resources/how-to-calculate-apr/hash-collision-demo-04.png)
 
 开链法如上图所示，我们存储元素的时候，存储形式为一个链表，当冲突的时候，就在链表末尾直接加冲突的元素。上图示例恰好运气比较差，字符串 `shitou`，`stone` 算出来的下标都为 2。
 
 这样一来，问题大了。原本我们期望 `O(1)` 的时间复杂度查找元素，现在变成在链表中线性查找了，而如果这个时候插入 $N$ 个数据，最坏的情况下的时间复杂度就是 $O(N^2)$ 了。（这里就**不讨论链表转树**的情形）
 
-![坏人乘机侵入](/resources/how-to-calculate-apr/hacker-05.png)
+![坏人乘机侵入](https://www.tanglei.name/resources/how-to-calculate-apr/hacker-05.png)
 
 这就又给坏人留下了想象空间。只要坏人精心设计一组要放进 hash 表的字符串，且让这些字符串的 hashcode 都一样，这就会导致 hash 冲突，结果会导致 cpu 要花费大量的时间来处理 hash 冲突，造成 DoS（Denial of Service）攻击。
 
@@ -69,15 +69,15 @@ tags:
 
 下面截图来自洪教授的 PPT，但内容的具体来源不详了（尝试找了下，没找到），大家参考参考就好。 
 
-![实现 hash 冲突 DoS 攻击所须带宽](/resources/how-to-calculate-apr/attack-result-06.png)
+![实现 hash 冲突 DoS 攻击所须带宽](https://www.tanglei.name/resources/how-to-calculate-apr/attack-result-06.png)
 
 左边表示用不同的语言（框架）实现这种攻击所需要的带宽，右边是攻击的 cpu 目标。可以看出，实施这种攻击成本其实挺低的（后文石头的试验也佐证了这一点）。
 
-![PHP是世界上最好的语言](/resources/how-to-calculate-apr/php-07.png)
+![PHP是世界上最好的语言](https://www.tanglei.name/resources/how-to-calculate-apr/php-07.png)
 
 不得不说 “PHP 是世界上最好的编程语言”（大家别打架），还是有一定道理的，哈哈哈哈哈哈 😝（一张图还不够，再加一张）
 
-![PHP是世界上最好的语言](/resources/how-to-calculate-apr/php-08.png)
+![PHP是世界上最好的语言](https://www.tanglei.name/resources/how-to-calculate-apr/php-08.png)
 
 上面的语言排序，不一定对，大家参考一下即可，不用纠结具体的准确性。
 
@@ -117,11 +117,11 @@ public String hash(HttpServletRequest request) {
 
 先试水一把（如下图），看看基本功能正常，用 curl 发送请求即可，然后将 post 的字段放在文件里面（太长也只能放文件中）。
 
-![](/resources/how-to-calculate-apr/hash-demo-request-09.png)
+![](https://www.tanglei.name/resources/how-to-calculate-apr/hash-demo-request-09.png)
 
 生成的字符串不够的话，还可以增加并发请求，可以借用类似 “Apache Benchmarking” 压测的工具发送请求，我之前也有一篇文章介绍了这个命令 [性能测试工具 - ab 简单应用](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247485113&idx=2&sn=9a85da7a595cbad2960952fd47b89e0a&chksm=eb47075ddc308e4b9137c4e045510afcb8bb65e83a21cae6558150ca2c8be74105ce7bc22725&token=1092973705&lang=zh_CN#rd)，感兴趣的可以参考一下。 
 
-![冲突的 hashcode 一样](/resources/how-to-calculate-apr/hash-demo-keys-10.png)
+![冲突的 hashcode 一样](https://www.tanglei.name/resources/how-to-calculate-apr/hash-demo-keys-10.png)
 
 打个断点看看效果，如上图所示，确实所有的 hash 值都是一样的。不过一次请求好像并没有影响我电脑 cpu 的明显变化。 
 
@@ -129,7 +129,7 @@ public String hash(HttpServletRequest request) {
 
 >More than the maximum number of request parameters (GET plus POST) for a single request ([10,000]) were detected. Any parameters beyond this limit have been ignored. To change this limit, set the maxParameterCount attribute on the Connector.
 
-![post参数数量被限制](/resources/how-to-calculate-apr/hash-demo-keys-limit-11.png)
+![post参数数量被限制](https://www.tanglei.name/resources/how-to-calculate-apr/hash-demo-keys-limit-11.png)
 
 一种方法当然是去修改这个请求参数个数的限制。另外其实可以尝试用 JDK 1.7 去验证，应该效果会更好（原因，聪明的读者你肯定知道吧？）。这里石头哥就懒得去折腾了，直接尝试以量来取胜，用前文说的 ab 进行并发提交请求，然后观察效果。 
 
@@ -141,17 +141,17 @@ ab -c 200 -n 100000 -p req.txt 'localhost:8080/hash'
 
 压测的结果如图所示：
 
-![ab 压测 hash 冲突结果](/resources/how-to-calculate-apr/hash-requests-ab-12.png)
+![ab 压测 hash 冲突结果](https://www.tanglei.name/resources/how-to-calculate-apr/hash-requests-ab-12.png)
 
 然后我们来看看 CPU 的变化情况，特意录屏做了个动图，可以看出还是相对比较明显的。从基本不占用 cpu 到 39.6%，然后突然就涨到 158% 了。
 
 实际试验中这个过程没有一直持续（上面是重试过程中抓到的其中一次），一方面因为本人用的 JDK 1.8，本来冲突后的查找过程已经优化了，可能效果并不明显，另外也猜测可能会有一些 cache 之类的优化吧，另外对于 10000 的量也还不够？具体我也没有深究了，感兴趣的读者可以去尝试一下玩玩。
 
-![hash-collision-demo动图](/resources/how-to-calculate-apr/hash-collision-demo-13.gif)
+![hash-collision-demo动图](https://www.tanglei.name/resources/how-to-calculate-apr/hash-collision-demo-13.gif)
 
 实验算成功了吧。 
 
-![实验成功就是拽](/resources/how-to-calculate-apr/hash-demo-success-14.png)
+![实验成功就是拽](https://www.tanglei.name/resources/how-to-calculate-apr/hash-demo-success-14.png)
 
 我这还是单机，要是多搞几个 client，不分分钟把 Web 服务搞死啊。
 

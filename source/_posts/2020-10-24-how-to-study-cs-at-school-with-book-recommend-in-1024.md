@@ -71,7 +71,7 @@ tags:
 
 例如，下图是我在读本科和硕士期间相关课程的学习材料，包括老师课件，课程作业和学习笔记和复习资料等，这种平日积累总结很有效，对于临近期末考试也能做到不慌不乱，还是很有作用的。
 
-![image-20201030232833953](/resources/how-to-study-cs-at-school-with-book-recommend-in-1024/class.png)
+![image-20201030232833953](https://www.tanglei.name/resources/how-to-study-cs-at-school-with-book-recommend-in-1024/class.png)
 
 目前我正在梳理相关的内容，后续我将逐步整理其中的精华内容，分享给大家。
 
@@ -124,7 +124,7 @@ public static boolean isEqual(byte[] digesta, byte[] digestb) {
 
 以下是【博文视点】（左图）和【机械工业出版社华章公司】（右图）挑选比较经典的 CS 相关书籍，也一并提供给大家参考，趁活动价屯几本也未尝不可。
 
-![img](/resources/how-to-study-cs-at-school-with-book-recommend-in-1024/dangdang-youhui-1.png)![img](/resources/how-to-study-cs-at-school-with-book-recommend-in-1024/dangdang-youhui-2.png)
+![img](https://www.tanglei.name/resources/how-to-study-cs-at-school-with-book-recommend-in-1024/dangdang-youhui-1.png)![img](https://www.tanglei.name/resources/how-to-study-cs-at-school-with-book-recommend-in-1024/dangdang-youhui-2.png)
 
 经典书籍（点击放大扫码识别）
 

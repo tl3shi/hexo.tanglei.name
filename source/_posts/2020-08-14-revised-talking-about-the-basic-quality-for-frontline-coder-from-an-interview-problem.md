@@ -50,7 +50,7 @@ double sqrt(int v, double t)
 <hr/><hr/><hr/><hr/>
 解答中 ing 
 
-![](/resources/talking-about-the-basic-quality-for-frontline-coder-from-an-interview-problem/coding.gif)
+![](https://www.tanglei.name/resources/talking-about-the-basic-quality-for-frontline-coder-from-an-interview-problem/coding.gif)
 
 <hr/><hr/><hr/><hr/>
 

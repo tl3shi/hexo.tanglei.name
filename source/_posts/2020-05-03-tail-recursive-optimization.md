@@ -64,7 +64,7 @@ int tailsum(int n, int sum) {
 
 当你给编译选项开了优化之后，见证奇迹的时刻到了，居然能算出正确结果。如图所示： 
 
-![](/resources/tail-recursive-optimization/tailrec-cpp.jpg)
+![](https://www.tanglei.name/resources/tail-recursive-optimization/tailrec-cpp.jpg)
 
 原因就是因为编译器帮助做了尾递归优化，可以打开汇编代码看看（这里就不展示 C++的了）。后面我用大家比较熟悉的 JVM based 语言 Scala 来阐述这个优化过程。(好像 Java 的编译器没做这方面的优化，至少我实验我本地 JDK8 是没有的，不清楚最新版本的有木有)（scala 本身提供了一个注解帮助编译器强制校验是否能够进行尾递归优化`@tailrec`）
 
@@ -87,14 +87,14 @@ object TailRecObject {
 
 结果如下所示，默认情况下 `scalac` 做了尾递归优化，能够正确计算出结果，当通过 `-g:notailcalls` 编译参数去掉尾递归优化后，就发生了 `Exception in thread "main" java.lang.StackOverflowError`了。
 
-![](/resources/tail-recursive-optimization/tailrec-scala.jpg)
+![](https://www.tanglei.name/resources/tail-recursive-optimization/tailrec-scala.jpg)
 
 
 我们来看看生成的字节码有什么不同。 
 
-![包含尾递归优化的字节码](/resources/tail-recursive-optimization/tailrec-scala-opti.jpg)
+![包含尾递归优化的字节码](https://www.tanglei.name/resources/tail-recursive-optimization/tailrec-scala-opti.jpg)
 
-![不包含尾递归优化的字节码](/resources/tail-recursive-optimization/tailrec-scala-no-opti.jpg)
+![不包含尾递归优化的字节码](https://www.tanglei.name/resources/tail-recursive-optimization/tailrec-scala-no-opti.jpg)
 
 从上面可以看出，尾递归优化后，变成循环了（前面的 C++ 类似）。
 

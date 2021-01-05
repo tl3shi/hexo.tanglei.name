@@ -22,7 +22,7 @@ tags:
 
 ## 行程
 
-![内蒙古自驾游行程](/resources/travel-to-Inner-Mongolia/route.png)
+![内蒙古自驾游行程](https://www.tanglei.name/resources/travel-to-Inner-Mongolia/route.png)
 
 这是我们计划的行程供大家参考. 本来开始想着去阿尔山, 最后大家一致同意不去阿尔山国家森林公园, 因为网上说这个森林公园都挺坑的, 门票贵, 景色非常一般, 再加上之前去过长白山([ref 长白山游记](https://www.tanglei.name/blog/travel-to-changbai-mountain.html)), 都能想到阿尔山森林公园的景色, 一个水池叫"天池", 爬爬山, 走走栈道什么的. 所以我们没去阿尔山森林公园.
 
@@ -34,7 +34,7 @@ tags:
 
 ## 食在内蒙古
 
-![吃在内蒙古](/resources/travel-to-Inner-Mongolia/eating.png)
+![吃在内蒙古](https://www.tanglei.name/resources/travel-to-Inner-Mongolia/eating.png)
 
 在阿尔山吃得非常不错, 物美价廉. 石锅坊和炭火烤肉都很美味. 到海拉尔后吃的那家 "索伦噶五彩涮"(海拉尔版呷哺呷哺) , 千万不要听服务员忽悠要那个(左上), 基本上全是羊肉, 近300元. 我们5个人*使劲吃使劲吃使劲吃*才能勉勉强强吃完. 看当地的居民貌似都没点这个, 旁边有一桌也是游客, 估计剩下1/3. 然后服务员会另外拿带子装好回收带回家吃?(不过扔了也挺可惜/浪费的​)
 右上的是石锅火锅, 左下的烤肉都挺不错的, 右下是油炸"大馒头" (中空的, 不要被外观所吓到).
@@ -43,7 +43,7 @@ tags:
 
 ### 景点 -- 奥伦布坎
 
-![奥伦布坎](/resources/travel-to-Inner-Mongolia/aolunbukan.png)
+![奥伦布坎](https://www.tanglei.name/resources/travel-to-Inner-Mongolia/aolunbukan.png)
 
 奥伦布坎这个景点, 也类似一个森林公园, 注意如果要去的话, 需要提前一天 taobao 订票(80RMB?), 现场订票价格120, 还挺坑的. 这一点也是我们功能做的不足. 如果提前1天网上订票可以省 40 RMB.
 这个景点也是我们此次出游唯一一次花钱买门票的景点, 也很一般, 可能是因为跑男去录制过? 不是很值120的门票.
@@ -52,19 +52,19 @@ tags:
 
 真正漂亮的还是沿途的风景.
 
-![蓝天白云](/resources/travel-to-Inner-Mongolia/cloud-small.png)
+![蓝天白云](https://www.tanglei.name/resources/travel-to-Inner-Mongolia/cloud-small.png)
 
 你看看这云, 这天.
 
-![内蒙古牛羊群](/resources/travel-to-Inner-Mongolia/neimenggu1.png)
+![内蒙古牛羊群](https://www.tanglei.name/resources/travel-to-Inner-Mongolia/neimenggu1.png)
 
 再看看这大片的油菜花, 草原里大片的牛群羊群.
 
-![草原里的水](/resources/travel-to-Inner-Mongolia/water.png)
+![草原里的水](https://www.tanglei.name/resources/travel-to-Inner-Mongolia/water.png)
 
 还有这水.
 
-![内蒙古游记](/resources/travel-to-Inner-Mongolia/neimenggu2.png)
+![内蒙古游记](https://www.tanglei.name/resources/travel-to-Inner-Mongolia/neimenggu2.png)
 
 恩, 上图左上是满洲里夜景, 可以去逛逛还不错. 左下是自己尝试的第一次拍摄银河(龊镜头+龊技术)发挥些想象力还是能看出来银河状的.
 

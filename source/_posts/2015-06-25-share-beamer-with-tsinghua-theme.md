@@ -13,12 +13,12 @@ tags:
 
 我在原文“一个清华的beamer主题[^1]”的基础上添加了中文支持，修改了封面，下图封面的是效果图。完整的效果可以看[这里](https://github.com/tl3shi/THUBeamer/blob/master/tanglei_thesis_report.pdf)。
 
-![Tisnghua-beamer学位论文答辩PPT封面](/resources/share-beamer-with-tsinghua-theme/tanglei_thesis_report-0.png)
+![Tisnghua-beamer学位论文答辩PPT封面](https://www.tanglei.name/resources/share-beamer-with-tsinghua-theme/tanglei_thesis_report-0.png)
 
 此外，我修改后的这个latex beamer模版还集成了一些常用的功能，跟原文相比增加了比如：(1) 页码显示，这是答辩过程中常用的；(2) 参考文献的引用方式引用页脚注和尾页集中同步展示；(3) 示例中还包括也些算法的引用等。CS等相关专业可以直接copy改改就用，省得自己再去查。
 
-![](/resources/share-beamer-with-tsinghua-theme/tanglei_thesis_report-1.png)
-![](/resources/share-beamer-with-tsinghua-theme/tanglei_thesis_report-2.png)
+![](https://www.tanglei.name/resources/share-beamer-with-tsinghua-theme/tanglei_thesis_report-1.png)
+![](https://www.tanglei.name/resources/share-beamer-with-tsinghua-theme/tanglei_thesis_report-2.png)
 
 感兴趣的同学可以从 [这里fork或者下载：THUBeamer](https://github.com/tl3shi/THUBeamer)，其中 [tanglei_thesis_report.tex](https://github.com/tl3shi/THUBeamer/blob/master/tanglei_thesis_report.tex) 为我自己学位论文答辩用到的PPT的精简版，[tsinghua_test.tex](https://github.com/tl3shi/THUBeamer/blob/master/tsinghua_test.tex)为原来版本的简单修改，你可以根据兴趣选择参考的模版。
 

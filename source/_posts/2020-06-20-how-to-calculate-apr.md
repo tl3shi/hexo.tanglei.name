@@ -23,7 +23,7 @@ tags:
 
 这个时候，一般银行客服都会直接回避这个问题，美其名曰：“我们不收利息，我们只收取一定的手续费，基于您这边的良好信用，现在您有一笔5万的额度是可以立即提现的，可以分12期还，每月只需要XXXX元”。
 
-![img](/resources/how-to-calculate-apr/640.png)
+![img](https://www.tanglei.name/resources/how-to-calculate-apr/640.png)
 
 可能不太懂的同学，听到银行客服同学的宣传，感觉这利率还不算贵，缺钱急用还挺划算的啊。有可能直接被套路，就接受了忽悠，办理了这个贷款/分期产品。
 
@@ -31,7 +31,7 @@ tags:
 
 下面我以浦发银行实际例子来算一下，类似产品最后年化利率到底是多少。 
 
-![img](/resources/how-to-calculate-apr/640-20201031203325119.png)
+![img](https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203325119.png)
 
 如上图所示，是浦发银行的某名叫“万用金”的产品，可以看到，提现 10000 元，分 12 期（即分12个月）还钱，等额本息的还款方式，每月需还款 929.51 元。 
 
@@ -39,7 +39,7 @@ tags:
 
 初步计算你可能会简单的认为这个利率就是，一共还的钱为`929.51*12`，然后借款本金为10000元，那么年化利率即为：`(929.51*12 - 10000)/10000*100%=11.54%`，感觉还行啊，不夸张。 
 
-![img](/resources/how-to-calculate-apr/640-20201031203336391.png)
+![img](https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203336391.png)
 
 但是事实上，这种算法是有问题的，因为你借款的本金10000元，并没有享受到1年的期限，以后每个月都还了本金呀。
 
@@ -47,13 +47,13 @@ tags:
 
 我们用网上常见的[房贷/借款计算器](http://finance.sina.com.cn/calc/money_loan.html "房贷/借款计算器")来算一下， 如果按照年化`11.54%`来计算， 每月的还款情况应该如下，即每个月只需要等额本息还款886.34，比929.51元少不少。 
 
-![img](/resources/how-to-calculate-apr/640-20201031203340498.png)
+![img](https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203340498.png)
 
 而如果每个月还款 929.51 元的话， 其利率远远不止11.54%，直接仍然用那个借款计算器大概估计一下。
 
 貌似现有的网上的工具都只能正向算，即已知利率和贷款本金计算还款计划表， 没有一个工具能从每月还款额反推贷款利率， 初步多次尝试得到如下逼近的结果。（注：本文最初为2017 年写的文章，现在网上也有类似的计算器了，你可以直接用后文中的方法进行计算。）
 
-![img](/resources/how-to-calculate-apr/640-20201031203406373.png)
+![img](https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203406373.png)
 
 可以看到，年化利率达到了20.66%，比之前预想想象中多太多了。
 
@@ -63,7 +63,7 @@ tags:
 
 而这个利率到底是怎么计算来的呢? 为啥会有前后这么大的差别？咱们继续。
 
-![img](/resources/how-to-calculate-apr/640-20201031203410616.png)
+![img](https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203410616.png)
 
 
 ## 如何计算年化利率
@@ -72,13 +72,13 @@ tags:
 
 这里介绍一款小程序，本人 17 年左右写的（当初市面上可没有），直接扫下面的小程序码即可使用。
 
-![img](/resources/how-to-calculate-apr/0.jpeg)
+![img](https://www.tanglei.name/resources/how-to-calculate-apr/0.jpeg)
 
 
 
 如上图所示，直接输入借款总额，月还款额以及还款月数，即可计算年化利率。后来有用户反馈，希望有一个已知借款利率，正向计算还款计划的功能，因此在之前又把这个功能给加上了，正向计算功能可以分为等额本息、等额本金以及先息后本一共三种还款方式计算。
 
-![img](/resources/how-to-calculate-apr/640-20201031203419791.png)
+![img](https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203419791.png)
 
 要想看如何推导计算过程的，记得体验小程序后，回来继续看后文的分析哦。
 
@@ -86,7 +86,7 @@ tags:
 
 借助 Excel， 我们也可以方便的计算出正确的年化利率。 
 
-![excel 计算年化利率](/resources/how-to-calculate-apr/640-20201031203425539.png)
+![excel 计算年化利率](https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203425539.png)
 
 直接利用 Excel 里面的 `IRR` 函数可以直接计算，或者直接用 `RATE`函数计算也可以。
 
@@ -101,11 +101,11 @@ tags:
 
 特别是程序猿，可以动手试试哦，能不能实现以下 Excel 里面的 `RATE` 函数？
 
-![img](/resources/how-to-calculate-apr/640-20201031203429833.png)
+![img](https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203429833.png)
 
 ## 推导方法
 
-![img](/resources/how-to-calculate-apr/640-20201031203433378.png)
+![img](https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203433378.png)
 
 没思路的话，跟着我的节奏，咱们一起来。
 
@@ -113,7 +113,7 @@ tags:
 
 假设借款总额为 `A`， 月利率为 `R`， 每月还款额为 `M`， 抓住一点，欠款总额为`本金*(1+月利率)`则有: 
 
-![推导过程（放大看）](/resources/how-to-calculate-apr/640-20201031203437107.png)
+![推导过程（放大看）](https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203437107.png)
 
 所以，能得到第 `i` 个月的欠款情况，上面的公式可以简化一下，因为被减数 `M` 后边的是一个等比数列，得到第 `i` 个月后，欠款总额为：
 
@@ -130,7 +130,7 @@ $$
 
 仍然以上述浦发银行的这个例子为准，其中 `A=10000, M=929.51`，代入上面的公式就可以算出 `R` 的值。
 
-![img](/resources/how-to-calculate-apr/640-20201031203532808.png)
+![img](https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203532808.png)
 
 但是！上面这个方程如何解呢？
 
@@ -140,7 +140,7 @@ $$
 
 各位程序猿朋友们，看看有哪些方法能够算出来？我这边暂时不公布自己写的这段代码，看看大家有思路? (**敲黑板**) 
 
-![img](/resources/how-to-calculate-apr/640-20201031203536352.png)
+![img](https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203536352.png)
 
 通过计算得到，借款10000元， 每月还款额度为929.51元的情况下， 月利率为`0.017`即`1.7%`， 年化利率即为 `20.65%` 基本上与文首查到的一致。
 
@@ -190,7 +190,7 @@ $$
 
 可以看出，上面的还款计划表跟最开始网上通过房贷计算器得到的一致，我们再来看看，招行的有个现金分期业务。 
 
-![img](/resources/how-to-calculate-apr/640-20201031203541722.png)
+![img](https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203541722.png)
 
 上面的分期费率12期， 0.75%(表面的月息=`(3270*12-36000)/36000/12`)，申请分期36000，每月还款3270。 通过上面的公式，我们来看一下实际的费率情况，月息相当于 1.35%，年利率 16.2%，比表面的年息` (0.75%*12=9%)`高不少。
 

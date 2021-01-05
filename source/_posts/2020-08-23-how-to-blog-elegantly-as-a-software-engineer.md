@@ -43,7 +43,7 @@ wordpress 不做多介绍，是一套用 php 开发的 CMS，很多人的博客�
 
 下图是我博客最初级的版本，在相当长一段时间内也一直用这个主题。
 
-![Wordpress 博客](/resources/how-to-blog-elegantly-as-a-software-engineer/wordpress.tanglei.name.jpg)
+![Wordpress 博客](https://www.tanglei.name/resources/how-to-blog-elegantly-as-a-software-engineer/wordpress.tanglei.name.jpg)
 
 “时光荏苒、岁月如梭”，上面的截图也很有意思——
 
@@ -72,7 +72,7 @@ wordpress 不做多介绍，是一套用 php 开发的 CMS，很多人的博客�
 
 github page 服务 https://pages.github.com/，按照官网说的那样，直接将源文件托管在 Github 上，仅仅需要编辑、push即可，然后变化马上就能体现了。 
 
-![image-20200823183039944](/resources/how-to-blog-elegantly-as-a-software-engineer/github-pages.png)
+![image-20200823183039944](https://www.tanglei.name/resources/how-to-blog-elegantly-as-a-software-engineer/github-pages.png)
 
 这样不但省去了虚拟主机、MySQL 等费用，同时 github page 还支持自定义域名、git 版本管理，markdown 自动渲染简直就是专门给程序员量身定做的（好像确实也是的）。
 
@@ -80,7 +80,7 @@ github page 服务 https://pages.github.com/，按照官网说的那样，直接
 
 下图是我搭建后的一个截图。
 
-![github和octopress配置](/resources/how-to-blog-elegantly-as-a-software-engineer/github-octopress.jpeg)
+![github和octopress配置](https://www.tanglei.name/resources/how-to-blog-elegantly-as-a-software-engineer/github-octopress.jpeg)
 
 详细过程可以参考下我的这几篇 Blog：
 
@@ -102,9 +102,9 @@ github pages 服务本身支持的博客引擎比较少，比如希望一些定�
 
 我曾经也使用过多个博客引擎，如下图：
 
-![jekyll博客主题](/resources/how-to-blog-elegantly-as-a-software-engineer/jekyll.tanglei.name.jpg)
+![jekyll博客主题](https://www.tanglei.name/resources/how-to-blog-elegantly-as-a-software-engineer/jekyll.tanglei.name.jpg)
 
-![hexo主题](/resources/how-to-blog-elegantly-as-a-software-engineer/hexo.tanglei.name.jpg)
+![hexo主题](https://www.tanglei.name/resources/how-to-blog-elegantly-as-a-software-engineer/hexo.tanglei.name.jpg)
 
 这里推荐一个工具 —— travis，它是一款免费的 CI 工具，能帮你做的事情是啥？ 就是上面你本地的流程可以交给它来做。现在我写 blog 的流程是：
 
@@ -148,13 +148,13 @@ script:
 
 下图是 travis-ci 的配置页面，可以配置比如只要有新的 commit push 即可触发 CI 流程，进而更新博客内容。
 
-![travis-ci 配置](/resources/how-to-blog-elegantly-as-a-software-engineer/travis-ci-config.png)
+![travis-ci 配置](https://www.tanglei.name/resources/how-to-blog-elegantly-as-a-software-engineer/travis-ci-config.png)
 
 别看整个过程看起来比较复杂，其实安装等过程是可以 cache 的，一般而言，走完整个流程所耗费的时间也就 1-2 分钟（后图所示），因为我的博客内容“历史包袱重”，可能耗费时间会更久，这时间大部分取决于博客程序的处理流程以及最后 git 上传过程。
 
 下图是构建历史，构建成功与否会邮件方式通知到你，很方便。
 
-![travis 构建历史](/resources/how-to-blog-elegantly-as-a-software-engineer/travis-history.png)
+![travis 构建历史](https://www.tanglei.name/resources/how-to-blog-elegantly-as-a-software-engineer/travis-history.png)
 
 
 
@@ -193,7 +193,7 @@ CDN 的工作流程就是你添加一个域名的 CNAME，指向 CDN 厂商的�
 
 觉得本号分享的文章有价值，记得添加星标哦。别白 piao，需要来点正反馈，安排个 “一键三连”（点赞、在看、分享）如何？😝 这将是我持续输出优质文章的最强动力。
 
-![](/resources/一键三连.gif)
+![](https://www.tanglei.name/resources/%E4%B8%80%E9%94%AE%E4%B8%89%E8%BF%9E.gif)
 
 > 关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader，欢迎关注，交流和指导！
 >

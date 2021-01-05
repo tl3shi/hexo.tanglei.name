@@ -25,11 +25,11 @@ tags:
 
 数据可以通过北京市人力资源和社会保障局官方网站下载获取，[关于2020年积分落户公示及落户办理有关工作的通告](http://rsj.beijing.gov.cn/ywsite/jflh/gg/202010/t20201015_2111656.html)。[公示名单](http://fuwu.rsj.beijing.gov.cn/nwesqintegralpublic/settleperson/settlePersonTable) 形如：
 
-![2020 年积分落户公式名单](/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/2020 年积分落户公式名单.png)
+![2020 年积分落户公式名单](https://www.tanglei.name/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/2020%20%E5%B9%B4%E7%A7%AF%E5%88%86%E8%90%BD%E6%88%B7%E5%85%AC%E5%BC%8F%E5%90%8D%E5%8D%95.png)
 
 点击每一项明细可以获得积分具体数值，以最高分为例：
 
-![2020积分落户最高分明细](/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/2020积分落户最高分明细.png)
+![2020积分落户最高分明细](https://www.tanglei.name/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/2020%E7%A7%AF%E5%88%86%E8%90%BD%E6%88%B7%E6%9C%80%E9%AB%98%E5%88%86%E6%98%8E%E7%BB%86.png)
 
 然后，稍微动点小技巧即可获取完整的 6032 条记录。若你想获取石头初步处理后的 excel 数据，可直接后台回复 “2020积分落户” 取得。
 
@@ -39,7 +39,7 @@ tags:
 
 本文将从 积分分数分布、公司分布、年龄分布 等几个方面做简单分析。 
 
-![2020年积分落户数据CSV](/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/2020年积分落户数据CSV.png)
+![2020年积分落户数据CSV](https://www.tanglei.name/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/2020%E5%B9%B4%E7%A7%AF%E5%88%86%E8%90%BD%E6%88%B7%E6%95%B0%E6%8D%AECSV.png)
 
 ### 分数分布
 
@@ -64,7 +64,7 @@ tags:
 ➜  积分落户2020数据分析 git:(master) ✗ 
 ```
 
-![2020年北京积分落户积分分布](/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/2020年北京积分落户积分分布.png)
+![2020年北京积分落户积分分布](https://www.tanglei.name/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/2020%E5%B9%B4%E5%8C%97%E4%BA%AC%E7%A7%AF%E5%88%86%E8%90%BD%E6%88%B7%E7%A7%AF%E5%88%86%E5%88%86%E5%B8%83.png)
 
 
 
@@ -115,7 +115,7 @@ tags:
 
 以下是有户口指标前 50 的公司分布，快看看你的公司是否在榜（完整公司排名名单请后台回复“2020积分落户”获取）。
 
-![2020年北京积分落户公司分布](/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/640-20201018150727450.png)
+![2020年北京积分落户公司分布](https://www.tanglei.name/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/640-20201018150727450.png)
 
 
 
@@ -152,7 +152,7 @@ tags:
 
 对比这个数据，才发现真的是很牛 X，前 10 名的姓氏中，只有两个不一样。估计这是否也符合整个中国的姓氏？哪里能拿到这部分数据？可以验证一下。
 
-![2020北京积分落户姓氏分布](/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/640-20201018150737725.png)
+![2020北京积分落户姓氏分布](https://www.tanglei.name/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/640-20201018150737725.png)
 
 为了把石头的姓氏“唐”找出来，取了前 50 个，发现像平时不怎么常见的姓氏还能入围前 50，还是很有意思的呢。比如“于”、“丁”等。
 
@@ -264,13 +264,13 @@ tags:
 
 这位 XX 磊同学确实优秀，（太具体了不太好，隐藏部分吧），看详细得分，因为有荣誉表彰 20 加分，查了下荣誉表彰指标里的“省部级及以上劳模”分为四类：全国劳模、享受全国劳模待遇人员、省部级劳模、享受省部级劳模待遇人员。
 
-![2020年积分落户指标年龄最小者](/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/640-20201018150743678.png)
+![2020年积分落户指标年龄最小者](https://www.tanglei.name/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/640-20201018150743678.png)
 
 
 
 年龄分布如下所示，主要还是集中在 38 ~ 47 岁之间。
 
-![2020积分落户年龄分布](/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/640-20201018151830149.png)
+![2020积分落户年龄分布](https://www.tanglei.name/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/640-20201018151830149.png)
 
 
 
@@ -280,7 +280,7 @@ tags:
 
 另外，如果你想计算一下自己能获得多少分，可以直接到官网网站进行计算，地址为：http://fuwu.rsj.beijing.gov.cn/integraltool/tool/simulation 
 
-![积分落户模拟计算工具](/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/640-20201018150747644.png)
+![积分落户模拟计算工具](https://www.tanglei.name/resources/use-shell-to-analysis-2020-people-of-getting-residence-of-beijing-by-score/640-20201018150747644.png)
 
 > 关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader，欢迎关注，交流和指导！
 >

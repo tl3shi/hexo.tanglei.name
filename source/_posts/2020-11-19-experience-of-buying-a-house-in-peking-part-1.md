@@ -12,7 +12,7 @@ tags:
 >
 > 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247490292&idx=1&sn=e713144fb62aee196b4b56e84576b8e6&chksm=eb471b10dc3092069db0461dde18f8a1e8c39e9e1a0650ab736de8e40d2c3d7e3292ad2210ae&token=60521723&lang=zh_CN#rd)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
-![](/resources/experience-of-buying-a-house-in-peking/index.png)
+![](https://www.tanglei.name/resources/experience-of-buying-a-house-in-peking/index.png)
 
 ## 背景
 
@@ -36,7 +36,7 @@ tags:
 
 记得还没毕业时，有一次跟一个清华的师兄讨论过此事，他谈到，“你放心，你到时候一定可以在北京买房的，时间长短的问题”，当时我心想 “我有那么牛 X 吗？”，心里确实没底儿呀！ 没想到毕业两年半，我还就真实现了，只能说**当初那个师兄看得真准**！
 
-![有眼光](/resources/experience-of-buying-a-house-in-peking/有眼光.gif)
+![有眼光](https://www.tanglei.name/resources/experience-of-buying-a-house-in-peking/%E6%9C%89%E7%9C%BC%E5%85%89.gif)
 
 不过，谈起买房，石头毕业至今，有过实操 3 套购房经历，有帝都一线，也有二线城市 CQ，去年还在十八线城市老家县城有二手房交易流程，因此在购房这方面，还是稍微有点经验。这当然不能跟那些炒房、房产大 V 比。大家就随便看看得了，如果能有点儿帮助，那就最好不过了。 
 
@@ -44,7 +44,7 @@ tags:
 
 因为来自农村，“穷人家孩纸早当家”，从高中起上学到大学，再到研究生，基本没怎么花家里的钱，并且研究生毕业时也积攒了一小笔钱（还完**生源地贷款**后，还剩 xx 来万，在当时看来确实还是个不小的数目），再然后通过自己努力，最终能在一线城市有个小窝，解决 “住” 的问题，实属不容易了。
 
-![吹牛](/resources/experience-of-buying-a-house-in-peking/吹牛.png)
+![吹牛](https://www.tanglei.name/resources/experience-of-buying-a-house-in-peking/%E5%90%B9%E7%89%9B.png)
 
 不吹牛了，聊聊正事吧，分享下购房经验。 
 
@@ -54,7 +54,7 @@ tags:
 
 购房前的前期准备，当然就是赚钱。
 
-![赚钱头大](/resources/experience-of-buying-a-house-in-peking/赚钱.png)
+![赚钱头大](https://www.tanglei.name/resources/experience-of-buying-a-house-in-peking/%E8%B5%9A%E9%92%B1.png)
 
 在准备想购房这个话题的时候，肯定手里有一定积累，这个时候就该好好整理整理计算一下，你目前自己手里有多少现金，亲戚朋友能凑多少（当然如果父母有实力支持更好，没有的话，其他亲戚朋友这块建议不要放太大的比例），这样基本上能计算出购房的大致预算是多少了。
 
@@ -64,7 +64,7 @@ tags:
 
 > 特此感谢我的老婆，没有她的支持，我们也没那么快，至少不会这么“简单“就在帝都上车的。要知道，当初她可是担着“风险”的，毕竟婚前购买，因为购房前未婚，且当初她名下外地有房贷（上面提到的二线城市购的房），所以不能先领证，且房产证也不能加她的名字（这都是“首套首贷”资格给逼的）。
 
-![感谢老婆](/resources/experience-of-buying-a-house-in-peking/感谢老婆.png)
+![感谢老婆](https://www.tanglei.name/resources/experience-of-buying-a-house-in-peking/%E6%84%9F%E8%B0%A2%E8%80%81%E5%A9%86.png)
 
 再加上比如能从亲戚手里借 10~20W，玩得好的同学手里借10~20W。这部分资金可以提前调研清楚，因为首付资金的确定是前提，决定了后面你看房范围。
 
@@ -108,7 +108,7 @@ tags:
 
 石头开始也是这样认为的，但真不是这么计算的，比这个复杂得多得多。。。
 
-![too-yong-too-naive](/resources/experience-of-buying-a-house-in-peking/too-yong-too-naive.jpeg)
+![too-yong-too-naive](https://www.tanglei.name/resources/experience-of-buying-a-house-in-peking/too-yong-too-naive.jpeg)
 
 先来看看关于贷款这部分。
 
@@ -137,7 +137,7 @@ tags:
 
 答案当然可能也不太对。
 
-![程序复杂](/resources/experience-of-buying-a-house-in-peking/程序复杂.gif)
+![程序复杂](https://www.tanglei.name/resources/experience-of-buying-a-house-in-peking/%E7%A8%8B%E5%BA%8F%E5%A4%8D%E6%9D%82.gif)
 
 首先，银行贷款额度都是 `评估价*贷款比例` ，评估价 ≠ 成交价，总价市场价 500W，银行评估会有个折扣 9 折，那么银行只认为你这个房子值 500*0.9=450 W，假设你工资不影响你贷款额度计算的情况下，理论上贷款额度为：`450W * 0.65 = 292W`，那么首付资金是 `500 - 292 = 208 W`，对不起，还不是。
 
@@ -165,7 +165,7 @@ tags:
 
 个税、增值税、契税，如果所购房是经济适用房的话，还有另外的**高额**的综合地价款或土地出让金。这个就相对很复杂了，借用网上的这个图：
 
-![税费](/resources/experience-of-buying-a-house-in-peking/税费.jpeg)
+![税费](https://www.tanglei.name/resources/experience-of-buying-a-house-in-peking/%E7%A8%8E%E8%B4%B9.jpeg)
 
 别看上面的个税等理论上由卖方承担，实际交易过程中，都会直接转交给买方的。以理想情况下 “满五唯一” 的房子，只需要缴纳契税 `500*1%=5W`。
 
@@ -181,7 +181,7 @@ tags:
 
 我们再回过头来看看首付，总价 500W 的房子，五环外的话，最多贷款 243W，首付为：257 + 5W(契税) + 10W(中介）+ 1W（其他）= 272W。 说好的首付比例 35%（175W）呢？结果从 175 直接变成 272W，硬生生多出来 100W。
 
-![难上加难](/resources/experience-of-buying-a-house-in-peking/难上加难.jpeg)
+![难上加难](https://www.tanglei.name/resources/experience-of-buying-a-house-in-peking/%E9%9A%BE%E4%B8%8A%E5%8A%A0%E9%9A%BE.jpeg)
 
 
 

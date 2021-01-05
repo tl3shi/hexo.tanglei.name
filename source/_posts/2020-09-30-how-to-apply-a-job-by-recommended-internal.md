@@ -96,7 +96,7 @@ tags:
 
 各个公司的岗位职级可以直接在网上搜索清楚，市场的职级和薪资水平大体上是对齐的，下图可以简单参考。
 
-![大厂职级薪资对应关系，图来源：曾加@知乎](/resources/how-to-apply-a-job-by-recommended-internal/职级薪水.jpg)大厂职级薪资对应关系，图来源：曾加@知乎
+![大厂职级薪资对应关系，图来源：曾加@知乎](https://www.tanglei.name/resources/how-to-apply-a-job-by-recommended-internal/%E8%81%8C%E7%BA%A7%E8%96%AA%E6%B0%B4.jpg)大厂职级薪资对应关系，图来源：曾加@知乎
 
 以阿里为例，一般大家在找工作可能会涉及到以下几个职级，在社招场合，大部分可能是 P6/P7/P8，（P9等对应的 HC 比较少，一般可能也不会通过投递简历这种方式去找，都是行业内有一定影响力，或者圈子都是认识的人）
 
@@ -152,11 +152,11 @@ tags:
 
 案例 1：一哥们半夜发简历给我，说你不是说帮忙 review 简历吗，快给看看吧。我当时有事情在忙，没有及时回复，结果 “视频弹框” 就来了。![img](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibtp9R6XH1NdMoxzfHovXRj2K3sCu9ibz7jke5ZKAAjzMbWzafsl1XyOTc0bmUic59FY8x4tY9cibgshw/640.jpg)
 
-![img](/resources/how-to-apply-a-job-by-recommended-internal/video-call.jpg)
+![img](https://www.tanglei.name/resources/how-to-apply-a-job-by-recommended-internal/video-call.jpg)
 
 案例 2：因之前帮一个哥们内推，加了微信。后来有一次我发了个朋友圈，大概就是吐槽了下微信有个小 bug，结果：
 
-![网络喷子](/resources/how-to-apply-a-job-by-recommended-internal/wangluo-penzi.jpg)
+![网络喷子](https://www.tanglei.name/resources/how-to-apply-a-job-by-recommended-internal/wangluo-penzi.jpg)
 
 哈哈，当时也是很无语。当然，这个跟“内推”这件事情没啥关系，只是想说，咱们在与人相处的时候还是和谐相处，不要当键盘侠，不要当网络喷子。
 
@@ -164,7 +164,7 @@ tags:
 
 我们部门最近有开放 P6 岗位，具体 JD [看这里](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247488750&idx=2&sn=a549a0e677ac520f48deabdae7c1c4e8&chksm=eb47150adc309c1c691614e6f0d5a68f0e82cb7728e0dadd0e6f477b61389990ad1b6a7b14e5&scene=21#wechat_redirect)，欢迎大家找我内推。另外，我有维护一个内推群，里面有各大公司（例如BAT、TMD等）的朋友，还有微软、Hulu、Google 等外，石头也可以帮忙联系内推（当然还得简历看得过去哈）。对这个群感兴趣的同学可以添加下面微信备注“内推”进群。
 
-![备注“内推”进群](/resources/how-to-calculate-apr/codershitou-wechat.png)
+![备注“内推”进群](https://www.tanglei.name/resources/how-to-calculate-apr/codershitou-wechat.png)
 
 备注“内推”进群
 

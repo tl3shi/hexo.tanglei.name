@@ -14,20 +14,20 @@ tags:
 
 先上一张我现在桌面放的一张图片, Pro2 Type-S 白色有刻版, 为啥要放在桌面上, 因为我目前为止海记不熟无刻版的键位啊.
 
-![HHKB Pro2 Type-S 白色有刻](/resources/buy-in-hhkb-pro2-type-s/hhkb-pro2-type-s-with-print.png)
+![HHKB Pro2 Type-S 白色有刻](https://www.tanglei.name/resources/buy-in-hhkb-pro2-type-s/hhkb-pro2-type-s-with-print.png)
 
 和我公司电脑MBPR的合影, 因为之前就把电脑的Caps Lock键映射成了 Ctrl了, 所以直接切换过来还比较顺手和省力. 然后发现这HHKB的键盘 USB接口在前面啊, 这个设计不太喜欢. 囧了, 都挡住屏幕了(见后, 可以另外买一个弯头解决). 另外再配一个trackpad又嫌太贵, 就直接放在原来的笔记本内置键盘上吧. 
 
-![HHKB Pro2 Type-S 无刻 配 MacBook Pro Retina](/resources/buy-in-hhkb-pro2-type-s/hhkb-pro2-type-s-on-mbpr.jpg)
+![HHKB Pro2 Type-S 无刻 配 MacBook Pro Retina](https://www.tanglei.name/resources/buy-in-hhkb-pro2-type-s/hhkb-pro2-type-s-on-mbpr.jpg)
 再上一个侧面照. 
-![HHKB Pro2 Type-S 无刻 配 MacBook Pro Retina](/resources/buy-in-hhkb-pro2-type-s/hhkb-pro2-type-s-on-mbpr-right.jpg)
+![HHKB Pro2 Type-S 无刻 配 MacBook Pro Retina](https://www.tanglei.name/resources/buy-in-hhkb-pro2-type-s/hhkb-pro2-type-s-on-mbpr-right.jpg)
 
 
 下面这张是回家后与自己的Air合影. 前面的USB接口还是碍眼. 
-![HHKB Pro2 Type-S 配MacBook Air](/resources/buy-in-hhkb-pro2-type-s/hhkb-pro2-type-s-on-mba.jpg)
+![HHKB Pro2 Type-S 配MacBook Air](https://www.tanglei.name/resources/buy-in-hhkb-pro2-type-s/hhkb-pro2-type-s-on-mba.jpg)
 
 这是印在键盘背部的开关说明. 可以根据自己的喜好来配置. 
-![HHKB Pro2 Type-S 背面配置](/resources/buy-in-hhkb-pro2-type-s/hhkb-pro2-type-s-back.jpg)
+![HHKB Pro2 Type-S 背面配置](https://www.tanglei.name/resources/buy-in-hhkb-pro2-type-s/hhkb-pro2-type-s-back.jpg)
 
 下面来硬货. 
 
@@ -43,7 +43,7 @@ tags:
 
 上面的图片也能看到, 那个mini-usb头在前面, 直直的, 挺别扭的, 还容易挡住前面的屏幕. 因此如果要用MacBook自带的trackpad的话, 买一个Mini-USB的弯头时很有必要的. (这里参考了[ref](http://synckey.github.io/posts/2016/02/26/hhkb-settings-and-shortcut-keys.html#comment-2634817881))如下图:
 
-![HHKB Pro2 Type-S 键盘mini-usb弯头](/resources/buy-in-hhkb-pro2-type-s/hhkb-pro2-mini-usb-connector.jpg)
+![HHKB Pro2 Type-S 键盘mini-usb弯头](https://www.tanglei.name/resources/buy-in-hhkb-pro2-type-s/hhkb-pro2-mini-usb-connector.jpg)
 
 #### 2. Karabiner
 
@@ -75,7 +75,7 @@ zsh中 bindkey 列出快捷键(其中`^[ = esc`)
 
 这里再推荐一个shell, 不用bash, 用zsh, 非常丰富的插件功能啊. 见官网 [Oh My ZSH](http://ohmyz.sh/). 比如命令行补全功能啊等, 比如下图所示, 你之前敲过一个命令 `git push origin source`, 你下次再敲时, 就有 autocomplete 功能, 此时光标还在`p`处, 后面已经帮你提示好了, 你只需要按前面提道的快捷键`Ctrl + E`跳转到行末即可. 
 
-![ZSH 命令行自动提示autocomplete](/resources/buy-in-hhkb-pro2-type-s/zsh-shell-tip.png)
+![ZSH 命令行自动提示autocomplete](https://www.tanglei.name/resources/buy-in-hhkb-pro2-type-s/zsh-shell-tip.png)
 
 还有一些常用的插件比如:
 
