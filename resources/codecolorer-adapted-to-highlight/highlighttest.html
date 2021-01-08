@@ -1,0 +1,766 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="中南大学|清华大学软件学院唐磊的博客, 主攻软件工程, 数据挖掘, 这里记录了我的学习, 生活和工作" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="if(false)             hljs.initHighlightingOnLoad(); //default tag&amp;gt;         else         $(document).ready(function() {             //hljs.configure({useBR: true})">
+<meta property="og:type" content="website">
+<meta property="og:title" content="唐磊的个人博客">
+<meta property="og:url" content="https://www.tanglei.name/resources/codecolorer-adapted-to-highlight/highlighttest.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="if(false)             hljs.initHighlightingOnLoad(); //default tag&amp;gt;         else         $(document).ready(function() {             //hljs.configure({useBR: true})">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://i1123.photobucket.com/albums/l549/tl3shi/aop_php.jpg">
+<meta property="og:updated_time" content="2021-01-08T10:40:03.669Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="唐磊的个人博客">
+<meta name="twitter:description" content="if(false)             hljs.initHighlightingOnLoad(); //default tag&amp;gt;         else         $(document).ready(function() {             //hljs.configure({useBR: true})">
+<meta name="twitter:image" content="http://i1123.photobucket.com/albums/l549/tl3shi/aop_php.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/resources/codecolorer-adapted-to-highlight/highlighttest.html"/>
+
+
+
+
+
+  <title>
+  
+
+  
+     | 唐磊的个人博客
+  
+</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left  ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+  <header class="post-header">
+
+	<h2 class="post-title" itemprop="name headline"></h2>
+
+
+
+</header>
+
+    
+    
+      <html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- 
+    
+    
+     <link rel="stylesheet" href="./highlight.default.min.css">
+    <script src="./highlight.min.js"></script>
+    <script src="./jquery-2.1.4.min.js"></script>
+
+    -->
+   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+       <script>
+        if(false)
+            hljs.initHighlightingOnLoad(); //default tag><pre><code>
+        else
+        $(document).ready(function() {
+            //hljs.configure({useBR: true});//this does NOT work, the original code should contains <br>, see https://github.com/isagalaev/highlight.js/issues/860
+            //$('cc').each(function(){
+            //    $(this).wrap("<pre></pre>");
+            //    console.log($(this).html());
+                //var codestr = $(this).html();
+                //$(this).html(codestr.replace(/\n/g, '<br>')); //manually substitute, add <pre>, no need
+            //});
+            $('pre cc').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+</head>
+<body>
+    test0<pre>
+    <cc lang="php">
+    $domain = $_SERVER['HTTP_HOST'];
+    if ($domain == 'm.tanglei.name')
+         $_SERVER['HTTP_USER_AGENT']='tanglei'; //跟wptouch admin后台设置的一样即可 换行貌似有问题
+    <p>
+    $domain = $_SERVER['HTTP_HOST'];
+    if ($domain == 'm.tanglei.name')
+         $_SERVER['HTTP_USER_AGENT']='tanglei';     
+    </p>
+    </cc></pre>
+    test1
+    <pre>
+    <cc lang="python">
+    '''
+    Created on Mar 9, 2012
+    @author: tanglei|www.tanglei.name
+    '''
+    import traceback
+    class A(object):
+        def __new__(self):
+            print("new  A,has not return")
+        def __init__(self):
+            print("init in A")
+        def cal(self,num):
+            print(num+1)
+    try: #if not try ,catch,the program will terminate
+        t=A()
+        t.cal(89)
+    except :
+        traceback.print_exc()
+    </cc></pre>
+    
+    bug0
+    <pre><cc class="cpp">
+#include <iostream>
+</iostream></cc></pre>
+
+    the default configuration should not work.
+    <pre>
+    <code class="php">
+    $domain = $_SERVER['HTTP_HOST'];
+    if ($domain == 'm.tanglei.name')
+         $_SERVER['HTTP_USER_AGENT']='tanglei'; //跟wptouch admin后台设置的一样即可
+    <code>
+    </code></code></pre>
+    
+    
+    下面代码是wordpress对后台写的文章过滤后的结果。导致```<cc>```选择器选择不正确，代码高亮失败。
+    
+<p>已经从腾讯离职了，今天在学校整理电脑里面的资料，看到了以前写的一篇文章，发到KM里面了，虽然没啥响应的人。我这里还是在blog里记录下(原文含有保密信息，稍稍改下)，给备份一下。下面说说背景：</p>
+<p>网站的服务质量很重要，大型网站为了保证其服务质量，会采取很多措施。比如自动化测试监控等。之前在项目中就负责将一些接口调用状态信息等上报一个统一管理的平台。比如，A接口里面，去调用了B接口，这个B接口有可能是自己项目当中的接口，也有可能是其他项目当中的接口(例如朋友网调用QQ空间的接口)，在调用B接口后，有可能返回失败，这样就得把这个失败信息log下来，上报。方便出问题时定位准确。</p>
+<p>在以前的做法中，这个模块间调用的上报分为如下几个方法:</p>
+<li>tick():调用接口开始，记录调用时间；</li>
+<li>接口调用();</li>
+<li>report():这里就是根据上一步中的结果，确定是到底上报成功，还是失败，或者是超时（只是记录调用完成后的时间，超时等由统一管理的平台配置）</li>
+<p>后来想想，A这个接口去调用B这个接口，却将tick，report这样的方法写在了A里面，然后这些方法跟A这个具体的业务逻辑是没有关系的，代码紧紧耦合在一起，为了解耦和，联想到以前学java时的AOP，于是就搜索了下php中的，后来搜索到php能通过魔术方法实现aop。下面给出我的实现</p>
+<p>具体的业务逻辑类：<br>
+<cc class="php"><br>
+class Biz{  </cc></p>
+<p>    function  add($param){<br>
+        echo &#8216;add&#8217;.$param .&#8221;\t&#8221;;<br>
+        return 0;<br>
+    }<br>
+    function  del($id){<br>
+        echo &#8216;del&#8217; . $id . &#8220;\t&#8221;;<br>
+        return false;<br>
+    }<br>
+    function  getInfo($param){<br>
+        echo &#8216;getInfo&#8217; . $param . &#8220;\t&#8221;;<br>
+        return &#8220;getinfo&#8221;;<br>
+    }  </p>
+<p>}<br>
+</p></cc><br>
+然后在外面封装一层，将业务逻辑的代码包装起来：<br>
+<cc lang="php"><br>
+//业务逻辑类的包装类<br>
+class AOP<br>
+{<br>
+    private $instance;  <p></p>
+<p>    public function __construct($instance)<br>
+    {<br>
+        $this->instance = $instance;<br>
+    }  </p>
+<p>    public function __call($method, $argument)<br>
+    {<br>
+        if(! method_exists($this->instance, $method))<br>
+        {<br>
+            throw new Exception(&#8216;未定义的方法：&#8217; . $method);<br>
+        }<br>
+        //模拟tick方法<br>
+        echo &#8216;tick_&#8217; . $method . &#8216;_&#8217;.time(). &#8220;\r\n&#8221;;<br>
+        //调用具体的业务逻辑<br>
+        $callBack = array($this->instance, $method);<br>
+        $return = call_user_func_array($callBack, $argument);<br>
+        //根据实际情况  上报成功或者失败<br>
+        if($return === false)<br>
+        {<br>
+            echo &#8216;report fail&#8217; . &#8220;\r\n&#8221;;<br>
+        }else {<br>
+            echo &#8216;report success&#8217; . &#8220;\r\n&#8221;;<br>
+        }<br>
+        return $return;<br>
+    }<br>
+}<br>
+</p></cc><br>
+最后有一个统一的工厂去管理所有的业务逻辑代码;<strong>现在代码是这样写的，可以考虑单例之类</strong><br>
+<cc class="php"><br>
+//工厂方法<br>
+class BizFactory<br>
+{<br>
+    public function getBizInstance()<br>
+    {<br>
+        return new AOP(new Biz());<br>
+    }  <p></p>
+<p>}<br>
+</p></cc><br>
+然后去调用相关的业务逻辑时，通过这个统一的工厂去调用;<br>
+<cc class="php"><br>
+function doit(){<br>
+    //不同的业务的话也可以利用抽象工厂等设计模式<br>
+    $obj = BizFactory::getBizInstance();<br>
+    //通过类方法去调用<br>
+    $obj->add(1);<br>
+    $obj->del(99);<br>
+    $obj->getInfo(1);<br>
+}<br>
+</cc><br>
+执行一下doit();就有如下的结果;<br>
+<a href="http://s1123.photobucket.com/albums/l549/tl3shi/?action=view&amp;current=aop_php.jpg" target="_blank"><img src="http://i1123.photobucket.com/albums/l549/tl3shi/aop_php.jpg" border="0" alt="aop,php"></a><br>
+<br><br>
+这样，是业务逻辑和监控上报状态就隔离出来了，实现了代码的解耦和。<p></p>
+<h3><hr size="1" style="border:1 dashed #5151A2">相关文章</h3><ul><li>2012 年 07 月 24 日—《<a href="http://www.tanglei.name/?p=1884" title="python中decorator详解">python中decorator详解</a>》</li><li>2012 年 07 月 23 日—《<a href="http://www.tanglei.name/?p=1881" title="python中的AOP">python中的AOP</a>》</li><li>2012 年 03 月 01 日—《<a href="http://www.tanglei.name/?p=1472" title="php中数组array_merge和运算符加号(+)的区别">php中数组array_merge和运算符加号(+)的区别</a>》</li><li>2012 年 01 月 08 日—《<a href="http://www.tanglei.name/?p=1397" title="PHP哈希表碰撞攻击原理">PHP哈希表碰撞攻击原理</a>》</li><li>2011 年 11 月 17 日—《<a href="http://www.tanglei.name/?p=1286" title="php图片加文字水印(中文乱码解法方案)">php图片加文字水印(中文乱码解法方案)</a>》</li></ul>"
+    
+<body>
+</body></body></html>
+
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/tx.jpg"
+               alt="tanglei" />
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href='http://www.tencent.com/zh-cn/index.shtml' target='_blank'>腾讯</a> && <a href='http://www.umeng.com/' target='_blank'>友盟</a>.  &nbsp; <a href='/about/'> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">446</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">146</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'resources/codecolorer-adapted-to-highlight/highlighttest.html';
+
+      var disqus_title = "";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+Compiled from "TailRecursiveTest.java"
+public class TailRecursiveTest {
+  public TailRecursiveTest();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  static int sumCommon(int);
+    Code:
+       0: iload_0
+       1: ifne          6
+       4: iload_0
+       5: ireturn
+       6: iload_0
+       7: iconst_1
+       8: isub
+       9: invokestatic  #2                  // Method sumCommon:(I)I
+      12: iload_0
+      13: iadd
+      14: ireturn
+
+  static int sumTail(int, int);
+    Code:
+       0: iload_0
+       1: ifne          6
+       4: iload_1
+       5: ireturn
+       6: iload_0
+       7: iconst_1
+       8: isub
+       9: iload_1
+      10: iload_0
+      11: iadd
+      12: invokestatic  #3                  // Method sumTail:(II)I
+      15: ireturn
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: getstatic     #4                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       3: bipush        10
+       5: invokestatic  #2                  // Method sumCommon:(I)I
+       8: invokevirtual #5                  // Method java/io/PrintStream.println:(I)V
+      11: iconst_0
+      12: istore_1
+      13: getstatic     #4                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      16: bipush        10
+      18: iload_1
+      19: invokestatic  #3                  // Method sumTail:(II)I
+      22: invokevirtual #5                  // Method java/io/PrintStream.println:(I)V
+      25: return
+}
