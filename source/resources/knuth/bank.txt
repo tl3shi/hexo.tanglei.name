@@ -1,0 +1,845 @@
+Udo Wermuth	0x$9da.18
+Thorsten Dahlheimer	0x$466.60
+David Raymond Fuchs	0x$214.e0
+Ashutosh Mehra	0x$207.f0
+Dan Eilers	0x$180.0a
+Filip Stappers	0x$10e.e0
+Xiaosa Zhang	0x$100.00
+Evangelos Georgiadis	0x$83.80
+Bruno Le Floch	0x$80.20
+Eberhard Mattes	0x$80.00
+Oleg Bulatov	0x$80.00
+Mark Daniel Ward	0x$64.aa
+Hu Yajie	0x$5f.20
+Gheorghe Liviu Lalescu	0x$52.c0
+Ho Boon Suan	0x$45.40
+Olivier Billet	0x$32.c0
+Christos Kapoutsis	0x$32.60
+Christof Gräber	0x$2d.80
+Eiiti Wada	0x$2a.20
+David Stevenson	0x$28.60
+Bill Love	0x$26.00
+Omid Etesami	0x$25.80
+Antal Miklós Iványi	0x$21.e0
+Huang Zhibin	0x$1f.c0
+Andru Luvisi	0x$1b.e0
+Mu Li	0x$1a.80
+Emlyn Jones	0x$1a.20
+Jiang Zhiqiang	0x$18.40
+Ernst Schulte-Geers	0x$18.20
+Günter Rote	0x$17.80
+Mihály Szalay	0x$16.60
+Martin Ruckert	0x$15.a0
+Igor Liferenko	0x$14.c0
+Tony Lu	0x$14.00
+Aaron Windsor	0x$12.20
+Helmut Postl	0x$12.20
+Nikolai Beluhov	0x$12.20
+Andreas Scherer	0x$10.e0
+Rodolfo Niborski	0x$f.80
+Soojin Nam	0x$f.40
+Gil Egozi	0x$f.20
+Marc van Leeuwen	0x$d.a0
+George Sicherman	0x$d.80
+Guy Steele Jr	0x$d.80
+Barbara Beeton	0x$c.c0
+Igor V Krasikov	0x$c.20
+Shreevatsa Rajagopalan	0x$b.20
+Jacob Yang	0x$a.40
+Nils Asmussen	0x$a.00
+Svante Janson	0x$9.a0
+Anna Barbara Iványi	0x$9.20
+Massimo Lauria	0x$9.00
+Ricardo Bittencourt	0x$8.a0
+Arnis Memic	0x$8.60
+József Dallos	0x$8.40
+Traugott Schulmeiss	0x$8.20
+David P Kanter	0x$7.40
+George Wahid	0x$7.40
+Nicholas John Pippenger	0x$7.40
+Arthur O'Dwyer	0x$7.20
+Arun Giridhar	0x$7.20
+Heiko Theißen	0x$7.20
+Henry Warren	0x$7.20
+Ben Wallberg	0x$7.00
+Charles Duan	0x$7.00
+Hermann K Gruber	0x$7.00
+Sergei Trigub	0x$7.00
+Wayne Randolph Steele	0x$7.00
+Robert S Smith	0x$6.80
+Tim Makarios	0x$6.80
+Ed Wynn	0x$6.60
+Marijn Heule	0x$6.40
+Yaakov Eisenberg	0x$6.40
+Nick J Cox	0x$6.20
+Rory Molinari	0x$6.20
+Kokichi Sugihara	0x$6.00
+Ryan Bunge	0x$6.00
+Thomas Kubo	0x$6.00
+Yoshinao Anpuku	0x$6.00
+Bijan Soleymani	0x$5.40
+Germán González-Morris	0x$5.40
+Daniel Farlow	0x$5.20
+Mustafa R Sait-Ametov	0x$5.20
+Roman Valiušenko	0x$5.20
+Sophie Alpert	0x$5.20
+Forrest Y Yu	0x$5.00
+José Manuel García-Patos	0x$5.00
+Josh Wakefield	0x$5.00
+Julius Schmidt	0x$5.00
+Marianne Siroker	0x$5.00
+Patrick Cégielski	0x$5.00
+Sam Buss	0x$5.00
+Sucharit Sarkar	0x$5.00
+Thomas S Lextrait	0x$5.00
+Shuhei Denzumi	0x$4.f0
+Gyöngyi Kocsis	0x$4.80
+Daniel Szisz	0x$4.60
+Xingliang Lou	0x$4.60
+Janet K Webb	0x$4.4d
+Eleazar Enrique Leal	0x$4.40
+Michael Coriand	0x$4.40
+Nicholas Drozd	0x$4.40
+Alessandro Gentilini	0x$4.20
+Mitchell Gerrard	0x$4.20
+Sheldon M Ross	0x$4.20
+Alexander Schrijver	0x$4.00
+Alexandru Scorpan	0x$4.00
+Baishampayan Ghose	0x$4.00
+Bogusław Jackowski	0x$4.00
+C Scott Ananian	0x$4.00
+Christian Paetzelt	0x$4.00
+Eran Yarkon	0x$4.00
+Gilbert Lee	0x$4.00
+Mathias Soeken	0x$4.00
+Nicolaas J I Mars	0x$4.00
+Péter Burcsi	0x$4.00
+Scott Godefroy	0x$4.00
+Sebastian Miele	0x$4.00
+Trevis Rothwell	0x$4.00
+Walter A Kosters	0x$4.00
+Wolfgang Plaschg	0x$4.00
+Karl Berry	0x$3.c0
+Donny Nadolny	0x$3.a0
+Bogdan Barbu	0x$3.80
+Mads Sørensen	0x$3.80
+Neill Clift	0x$3.60
+Peter Taylor	0x$3.60
+Anton Lokhmotov	0x$3.40
+Daniele Giorgio Degiorgi	0x$3.40
+Jasmin Christian Blanchette	0x$3.40
+Marcel Goh	0x$3.40
+Gary McDonald	0x$3.20
+Jeremy Horwitz	0x$3.20
+Michael S Paterson	0x$3.20
+Mutsunori Banbara	0x$3.20
+Peter Hu	0x$3.20
+Scott J Schoeller	0x$3.20
+Tomás Silva	0x$3.20
+Vincent Douzal	0x$3.20
+Denis Serre	0x$3.00
+Dmitri Chernavin	0x$3.00
+Eiji Yoshiya	0x$3.00
+Frank	0x$3.00
+Gauthier van den Hove	0x$3.00
+He Jiaqi	0x$3.00
+Ivan Panchenko	0x$3.00
+James S Hefferon	0x$3.00
+Laurent Desnogues	0x$3.00
+Manuel Kauers	0x$3.00
+Marcus Ritt	0x$3.00
+Marshall Abrams	0x$3.00
+Micah John Walter	0x$3.00
+Micha Hofri	0x$3.00
+Mladen Miksa	0x$3.00
+Olek Bijok	0x$3.00
+Pascal Baudry	0x$3.00
+Pascal Zeihen	0x$3.00
+Pavel Polestshuk	0x$3.00
+Peng Du	0x$3.00
+Petr Škovroň	0x$3.00
+Robert H Groves Sr	0x$3.00
+Satoru Hamanaka	0x$3.00
+Stergios Stergiou	0x$3.00
+Sumanta Mukhopadhyay	0x$3.00
+Sven Vermeulen	0x$3.00
+Tim Faitsch	0x$3.00
+Yehuda Sadeh Weinraub	0x$3.00
+Persi Diaconis	0x$2.c0
+Joachim Wuttke	0x$2.a0
+Luc Lornoy	0x$2.80
+Mohammad Hossein Bateni	0x$2.80
+Ryo Yoshinaka	0x$2.80
+Igor Markov	0x$2.60
+Karsten Behrmann	0x$2.60
+Michael Baer	0x$2.60
+Sui Chunning	0x$2.60
+Christian Kandeler	0x$2.40
+Guillaume Lethuillier	0x$2.40
+Oliver Kullmann	0x$2.40
+Wigi Vei A Oliveros	0x$2.40
+Ahmet Yükseltürk	0x$2.20
+Alex Conley	0x$2.20
+Boytcho Peytchev	0x$2.20
+David Kastrup	0x$2.20
+Donald Arseneau	0x$2.20
+Enrique A Tobis	0x$2.20
+Johan de Ruiter	0x$2.20
+Kartik Mohanram	0x$2.20
+Marwan Mizuri	0x$2.20
+Michael Shields	0x$2.20
+Paolo Bonzini	0x$2.20
+Radu Grigore	0x$2.20
+Robert Clausecker	0x$2.20
+Shin-ichi Minato	0x$2.20
+Wolfgang Helbig	0x$2.20
+Aad van de Wetering	0x$2.00
+Adam Malinowski	0x$2.00
+Alex Marandon	0x$2.00
+Alexandre Sedoglavic	0x$2.00
+Andreas Pannewitz	0x$2.00
+Andrey Dubinchak	0x$2.00
+Angel Chang	0x$2.00
+Anna Popick	0x$2.00
+Charles Moss	0x$2.00
+Christian Wenz	0x$2.00
+Cody Planteen	0x$2.00
+Danhong Huang	0x$2.00
+Dennis G Jerz	0x$2.00
+Diego de Estrada	0x$2.00
+Eddie Wu	0x$2.00
+Eduard Lerner	0x$2.00
+Edward Martin Reingold	0x$2.00
+Enrico Gregorio	0x$2.00
+Euthymios Kotsialos	0x$2.00
+Evan DeCorte	0x$2.00
+Frédéric Cuvellier	0x$2.00
+France Dacar	0x$2.00
+Gabriel Nivasch	0x$2.00
+Gustavo Mezzati	0x$2.00
+Hiroshi Yuki	0x$2.00
+Jeffrey Harris	0x$2.00
+Jerome Kelleher	0x$2.00
+Johann Oberklammer	0x$2.00
+Jonathan Yedidia	0x$2.00
+Keith Briggs	0x$2.00
+Kevin Ryde	0x$2.00
+Lauren K Williams	0x$2.00
+Luca Baldini	0x$2.00
+Marcin Peczarski	0x$2.00
+Martin Läuter	0x$2.00
+Martina Seidl	0x$2.00
+Masaaki Nishino	0x$2.00
+Mathias Herberts	0x$2.00
+Matthias Hagen	0x$2.00
+Michael Rahilly	0x$2.00
+Miranda Mowbray	0x$2.00
+Mohammad Abdulaziz Mansour	0x$2.00
+Naoyuki Tamura	0x$2.00
+Nick Towner	0x$2.00
+Norman Koch	0x$2.00
+Peter Jeavons	0x$2.00
+Philippe Langevin	0x$2.00
+Pranav Dandekar	0x$2.00
+R B Burckel	0x$2.00
+R Timothy Tomaselli	0x$2.00
+Ralph William Gosper	0x$2.00
+Ramakrishna Upadrasta	0x$2.00
+Ramki Balasubramanian	0x$2.00
+Randal Bryant	0x$2.00
+Rolf Sonntag	0x$2.00
+Rory Molinari	0x$2.00
+Scott Abbey	0x$2.00
+Stepan Kasal	0x$2.00
+Thomas Nestor	0x$2.00
+Todd Neller	0x$2.00
+Tomi Kiviniemi	0x$2.00
+Vincent Lextrait	0x$2.00
+Walter Hower	0x$2.00
+Wu Yu Wen	0x$2.00
+Xian Wu (吴忺)	0x$2.00
+YiRan Li	0x$2.00
+Yoshio Okamoto	0x$2.00
+Zvi Mendlowitz	0x$2.00
+Peter Stuckey	0x$1.c0
+Kazunori Fukikoshi	0x$1.80
+Tyler Neylon	0x$1.80
+Valentin Mayer-Eichberger	0x$1.80
+Kevin Lawler	0x$1.40
+Peter Rossmanith	0x$1.40
+Grace La Torra	0x$1.3c
+A W F Edwards	0x$1.20
+Adam Eberbach	0x$1.20
+Alejandro Erickson	0x$1.20
+Alexander Gerasimov	0x$1.20
+Andrew Rogers	0x$1.20
+Curtis Bright	0x$1.20
+Dennis Yurichev	0x$1.20
+Doug McKenna	0x$1.20
+Eric Muller	0x$1.20
+Frank Ruskey	0x$1.20
+Goetz Pfeiffer	0x$1.20
+Jan Vondrak	0x$1.20
+Ken Shirriff	0x$1.20
+Mark A Robien	0x$1.20
+Mehmet Atakan Gürkan	0x$1.20
+Michael Dorfman	0x$1.20
+MohammadJovad Vaez	0x$1.20
+Nathan Grammel	0x$1.20
+Qi Ge	0x$1.20
+Robert L Smith	0x$1.20
+Subhash Kak	0x$1.20
+Thomas Hühn	0x$1.20
+Vašek Chvátal	0x$1.20
+Yuma Inoue	0x$1.10
+Álvar Ibeas	0x$1.00
+Aaron Jacobs	0x$1.00
+Aaron Schooley	0x$1.00
+Aditya Ramesh	0x$1.00
+Ajexandro Adán Navarro	0x$1.00
+Albert Graells	0x$1.00
+Alex Bowe	0x$1.00
+Alexander Kulikov	0x$1.00
+Alfonso De Gregorio	0x$1.00
+Alicia Stepin	0x$1.00
+Aljoša Volčič	0x$1.00
+Ananth Raghanathan	0x$1.00
+Andrea Cogliati	0x$1.00
+Andreas Björklund	0x$1.00
+Andreas Peer	0x$1.00
+Andreas Röver	0x$1.00
+Andrew Dalke	0x$1.00
+Andrew Nikitin	0x$1.00
+Andy Owen	0x$1.00
+Anish Kadavil	0x$1.00
+Antal Járai	0x$1.00
+Anthony John William Hilton	0x$1.00
+Anthony Kattuman	0x$1.00
+Anthony Lin	0x$1.00
+Anton Sherwood	0x$1.00
+Antonio Rieser	0x$1.00
+Armin Biere	0x$1.00
+Arnaud Granal	0x$1.00
+Arnaud Lefebvre	0x$1.00
+Ashutosh Mohan	0x$1.00
+Aviezri S Fraenkel	0x$1.00
+Bálint Pató	0x$1.00
+Balbir Singh	0x$1.00
+Benjamin Peterson	0x$1.00
+Bernhard Oemer	0x$1.00
+Bernhard Reinke	0x$1.00
+Bernhard W Marx	0x$1.00
+Bette Bultena	0x$1.00
+Bill Bird	0x$1.00
+Bob Desinger	0x$1.00
+Boris Pittel	0x$1.00
+Brad Barber	0x$1.00
+Brett Gutstein	0x$1.00
+Brett Stevens	0x$1.00
+Bryan Bischof	0x$1.00
+Cai Feifei	0x$1.00
+Cameron Browne	0x$1.00
+Cedric Cellier	0x$1.00
+Cezar Ionescu	0x$1.00
+Chaoji Li	0x$1.00
+Chih-Chung Chang	0x$1.00
+Chris Swinford	0x$1.00
+Chris Willmore	0x$1.00
+Christian Neukirchen	0x$1.00
+Christian Rinderknecht	0x$1.00
+Christophe Cunat	0x$1.00
+Christophe Reutenauer	0x$1.00
+Christopher Grant	0x$1.00
+Christopher Jimenez	0x$1.00
+Colin Smith	0x$1.00
+Corey Plover	0x$1.00
+Craig Miles	0x$1.00
+Cristopher Moore	0x$1.00
+Damian Spain	0x$1.00
+Dan Fauxsmith	0x$1.00
+Daniel Bates	0x$1.00
+Daniel Ehrenberg	0x$1.00
+Daniel Heck	0x$1.00
+Daniel Kang	0x$1.00
+Daniel Marx	0x$1.00
+Daniele Perito	0x$1.00
+Danny Rorabough	0x$1.00
+Dario Uri	0x$1.00
+Darko Veljan	0x$1.00
+David Eppstein	0x$1.00
+David Fifield	0x$1.00
+David Goodger	0x$1.00
+David Jesinghaus Nadel	0x$1.00
+David Librik	0x$1.00
+David Parker	0x$1.00
+David Parks	0x$1.00
+David R Stoutemyer	0x$1.00
+David Trent Brown	0x$1.00
+Demetrios Goulios	0x$1.00
+Derek Holton	0x$1.00
+Diaaeldin Magdy Taha	0x$1.00
+Didier Verna	0x$1.00
+Donato Sciarra	0x$1.00
+Doron Zeilberger	0x$1.00
+Ed Feigenbaum	0x$1.00
+Einar Steingrímsson	0x$1.00
+Eleonora Testa	0x$1.00
+Elias P Tsigaridas	0x$1.00
+Emil Hedevang Lohse Sørensen	0x$1.00
+Enrico Spinielli	0x$1.00
+Eric Jungkurth	0x$1.00
+Ethan du Toit	0x$1.00
+Eugene N Miya	0x$1.00
+Evan Silberman	0x$1.00
+Fabien Hinault	0x$1.00
+Fabio Somenzi	0x$1.00
+Farzaneh Sarafraz	0x$1.00
+Feng Tian	0x$1.00
+Fernando Machado	0x$1.00
+Filippo Costa	0x$1.00
+Florian Lonsing	0x$1.00
+Forrest L Norvell	0x$1.00
+Francesco Sica	0x$1.00
+Frederick James Kellison-Linn	0x$1.00
+Gábor Lipovszki	0x$1.00
+Gabriel Istrate	0x$1.00
+Garry T Williams	0x$1.00
+Gary Knott	0x$1.00
+Geng Li	0x$1.00
+George Bell	0x$1.00
+George Jelliss	0x$1.00
+George Karabotsos	0x$1.00
+George Kettleborough	0x$1.00
+George Moussa	0x$1.00
+Gil Vegliach	0x$1.00
+Greg Dumbrell	0x$1.00
+Gregory S Spradlin	0x$1.00
+Hans Kiesl	0x$1.00
+Hans Wennborg	0x$1.00
+Hans-Christian Ebke	0x$1.00
+Harsh Raju Chamathi	0x$1.00
+Henk Koppelaar	0x$1.00
+Herzl Regev	0x$1.00
+Hideaki Sakai	0x$1.00
+Hiroaki Iwashita	0x$1.00
+Hiroyuki Hanada	0x$1.00
+Ian Sol White	0x$1.00
+Iftikhar Khan	0x$1.00
+Imran Ghory	0x$1.00
+Ingo Lepper	0x$1.00
+Ira Gessel	0x$1.00
+Jürgen Tritthart	0x$1.00
+Jack Kelley	0x$1.00
+Jack Thompson	0x$1.00
+James Muir	0x$1.00
+James Saxe	0x$1.00
+James Spiller	0x$1.00
+James Stein	0x$1.00
+James Weigle	0x$1.00
+Jamieson Cobleigh	0x$1.00
+Jan van den Berg	0x$1.00
+Jared Matthew Showalter	0x$1.00
+Jason Vander Woode	0x$1.00
+Jay Pendse	0x$1.00
+Jeff Joslin	0x$1.00
+Jenni Woodcock	0x$1.00
+Jens Baaran	0x$1.00
+Jeremy Lerner	0x$1.00
+Jeremy Levesley	0x$1.00
+Jesse Mullan	0x$1.00
+Jesse Short-Gershman	0x$1.00
+Jim Cloughley	0x$1.00
+Jim Malone	0x$1.00
+Joe Zbiciak	0x$1.00
+Johan Winge	0x$1.00
+Johann Oskarsson	0x$1.00
+Johannes Fischer	0x$1.00
+John D Anderberg	0x$1.00
+John T E Richardson	0x$1.00
+John Whitington	0x$1.00
+Jonathan Kew	0x$1.00
+Jonathan Kleid	0x$1.00
+Joonhyung Hwang	0x$1.00
+Jordan Bell	0x$1.00
+Joseph P Skudlarek	0x$1.00
+Joseph Weening	0x$1.00
+Karol Szkudlarek	0x$1.00
+Keean Schupke	0x$1.00
+Kenneth Waller	0x$1.00
+Keno Wehr	0x$1.00
+Khalid Baheyeldin	0x$1.00
+Kilian A Foth	0x$1.00
+Kinh Tieu	0x$1.00
+Knut Hegna	0x$1.00
+Kun-Hsing Yu	0x$1.00
+Kyle Roger Hofmann	0x$1.00
+Kyrylo Simonov	0x$1.00
+Lars Reimann	0x$1.00
+Laszlo Nemeth	0x$1.00
+Laurent Desegur	0x$1.00
+Lawrence Ryan	0x$1.00
+Leon Harkleroad	0x$1.00
+Leonardo Lucena	0x$1.00
+Lew Goldklang	0x$1.00
+Lex Bijlsma	0x$1.00
+Linda Yamamoto	0x$1.00
+Logan Rakai	0x$1.00
+Logan West	0x$1.00
+Louigi Addario-Berry	0x$1.00
+Louis Plissonneau	0x$1.00
+Lovy Singhal	0x$1.00
+Luciano Quintabani	0x$1.00
+Luis Lamb	0x$1.00
+Makoto Arisawa	0x$1.00
+Marc Renault	0x$1.00
+Marcin Ciura	0x$1.00
+Marcin Kardas	0x$1.00
+Marek Tyburec	0x$1.00
+Margaret Wright	0x$1.00
+Mark Owen	0x$1.00
+Mark Seiden	0x$1.00
+Mark Weston	0x$1.00
+Markus Püschel	0x$1.00
+Martin Fieldhouse	0x$1.00
+Martin Rubey	0x$1.00
+Marwan Salam Mizuri	0x$1.00
+Masashi Watanabe	0x$1.00
+Matej Urbas	0x$1.00
+Mathias Cardner	0x$1.00
+Matt Curcio	0x$1.00
+Matt Lewis	0x$1.00
+Matthew Austern	0x$1.00
+Matthew Johnson	0x$1.00
+Maxim Gansert	0x$1.00
+Mehmet Erol Sanliturk	0x$1.00
+Michael A Golub	0x$1.00
+Michael Jünger	0x$1.00
+Michael Malis	0x$1.00
+Michael Sofka	0x$1.00
+Michel Dekking	0x$1.00
+Michel Goemans	0x$1.00
+Mike Godfrey	0x$1.00
+Mike Morley	0x$1.00
+Mike Playle	0x$1.00
+Mike Spivey	0x$1.00
+Mike Spivey (Oxon)	0x$1.00
+Mikkel Abrahamsen	0x$1.00
+Min Wu	0x$1.00
+Miodrag Milenkovic	0x$1.00
+Mukkai Krishnamoorthy	0x$1.00
+Natalie Spring	0x$1.00
+Nathan Brixius	0x$1.00
+Nayuta Ito	0x$1.00
+Neal Menkus	0x$1.00
+Neal R Wagner	0x$1.00
+Nei Yoshihiro Soma	0x$1.00
+Nick Baxter	0x$1.00
+Nick Black	0x$1.00
+Nils Martens	0x$1.00
+Noam Elkies	0x$1.00
+Nobuhiko Asanuma	0x$1.00
+Norbert Madarász	0x$1.00
+Oleg Ishvanov	0x$1.00
+Olga Kashina	0x$1.00
+Oliver Lyon	0x$1.00
+Olof Sisask	0x$1.00
+Oren Patashnik	0x$1.00
+Oscar Cunningham	0x$1.00
+Péter Ligeti	0x$1.00
+Pandelis Theodosiou	0x$1.00
+Panos Louridas	0x$1.00
+Patrick Doetsch	0x$1.00
+Patrick Gallagher	0x$1.00
+Patrick McChesney	0x$1.00
+Patrick Prosser	0x$1.00
+Patrick Toolis	0x$1.00
+Paul Guertin	0x$1.00
+Paul Isambert	0x$1.00
+Paul Rapoport	0x$1.00
+Paul Stoeber	0x$1.00
+Peifung Eric Lam	0x$1.00
+Pete Bevin	0x$1.00
+Peter Backes	0x$1.00
+Peter Morrissey	0x$1.00
+Peter Nikouline	0x$1.00
+Petr Brezina	0x$1.00
+Philipp Lucas	0x$1.00
+Philippe Malot	0x$1.00
+Phu Le	0x$1.00
+Pierre Wadier	0x$1.00
+Pontus von Brömssen	0x$1.00
+Pranav Ashar	0x$1.00
+Quowong Liu	0x$1.00
+Rachil Chandran	0x$1.00
+Raghavendra Dhayapule	0x$1.00
+Rajbabu Velmurugan	0x$1.00
+Ramakrishnan Muthukrishnan	0x$1.00
+Raouf Eldeeb	0x$1.00
+Raphaël Rouquier	0x$1.00
+Reinhard Siegmund-Schultze	0x$1.00
+Rene Olsthoorn	0x$1.00
+Renjie Sun	0x$1.00
+Reyna Zhang	0x$1.00
+Richard Borcherds	0x$1.00
+Richard Rudell	0x$1.00
+Richard Walker	0x$1.00
+Riddhiman Ghosh	0x$1.00
+Rob Corless	0x$1.00
+Robert A Russell	0x$1.00
+Robert Alpa	0x$1.00
+Robert B Garner	0x$1.00
+Robert B Nungester	0x$1.00
+Robert Davis	0x$1.00
+Robert Irving	0x$1.00
+Rogerio P Ruivo	0x$1.00
+Roland Gübitz	0x$1.00
+Ron Begleiter	0x$1.00
+Ronald L Graham	0x$1.00
+Roozbeh Pournader	0x$1.00
+Ruben Spaans	0x$1.00
+Rune Wesström	0x$1.00
+Rustan Leino	0x$1.00
+Ryan O'Donnell	0x$1.00
+Ryan Zielinski	0x$1.00
+Ryu Gwang	0x$1.00
+Sérgio Barcellos Ximenes	0x$1.00
+Sören Köhler	0x$1.00
+Saad Quader	0x$1.00
+Sally Jane Powell	0x$1.00
+Sam Rhoads	0x$1.00
+Sami Assaf	0x$1.00
+Sampo Kaasila	0x$1.00
+Samuel Hornus	0x$1.00
+Samuel W Flint	0x$1.00
+Sander van Rijnswou	0x$1.00
+Sasao	0x$1.00
+Satish Vedantam	0x$1.00
+Seán McGarraghy	0x$1.00
+Sergejs Kozlovičs	0x$1.00
+Sergey Kotikov	0x$1.00
+Seunghoon Yeon	0x$1.00
+Shakthi Kannan	0x$1.00
+Shearer	0x$1.00
+Shingo Adachi	0x$1.00
+Shoya Takahashi	0x$1.00
+Shuo Chen	0x$1.00
+Simon Wiehe	0x$1.00
+Sinterit	0x$1.00
+Siobhan Roberts	0x$1.00
+Sourav Chatterjee	0x$1.00
+Stefan Arnold	0x$1.00
+Stefan Krämer	0x$1.00
+Stefan Lonce	0x$1.00
+Stephen Fortescue	0x$1.00
+Steve Chapel	0x$1.00
+Steve Sprang	0x$1.00
+Steven Armentrout	0x$1.00
+Sung-il Pae	0x$1.00
+Swante Scholz	0x$1.00
+Tadashi Tokieda	0x$1.00
+Takaaki Wakabayashi	0x$1.00
+Takehide Soh	0x$1.00
+Takeo Imai	0x$1.00
+Taylor Janathan Smith	0x$1.00
+Teófilo González	0x$1.00
+Themis Kotsialos	0x$1.00
+Thomas H Cormen	0x$1.00
+Thorkil Naur	0x$1.00
+Tim O'Shea	0x$1.00
+Tjerk Kerbosch	0x$1.00
+Todd Gamblin	0x$1.00
+Tomas James Boothby	0x$1.00
+Tommy Thorn	0x$1.00
+Tomura Jones	0x$1.00
+Tord M Johnson	0x$1.00
+Torsten Mütze	0x$1.00
+Truman Collins	0x$1.00
+Tsz-Wo Sze	0x$1.00
+Uwe Schöning	0x$1.00
+Václav Čechura	0x$1.00
+Václav Kotěšovec	0x$1.00
+Valentin I Spitkovsky	0x$1.00
+Valentin Yatsenko	0x$1.00
+Vasily Dolgov	0x$1.00
+Venkat Bhamidipati	0x$1.00
+Victor S Miller	0x$1.00
+Vijay Mahendra Gandhi	0x$1.00
+Vikas Tikoo	0x$1.00
+Vikram Chandra	0x$1.00
+Vikranth Inti	0x$1.00
+Virginia Vassilevska Williams	0x$1.00
+Voldimar Sigurðsson	0x$1.00
+Volker Diekert	0x$1.00
+Walter Chiricozzi	0x$1.00
+Wang Yan	0x$1.00
+Wes Henderson	0x$1.00
+William Deng	0x$1.00
+William Tyler	0x$1.00
+Woot de Zeeuw	0x$1.00
+Wujie Yang	0x$1.00
+Xiaogang Yin	0x$1.00
+Xu Ke	0x$1.00
+Yanbing Liu	0x$1.00
+Yang Cao	0x$1.00
+Yannis Haralambous	0x$1.00
+Yoichi Hariguchi	0x$1.00
+Yongxin Zhou	0x$1.00
+Yosef Berman	0x$1.00
+Yotam Medini	0x$1.00
+Yuri Matiyasevich	0x$1.00
+Zbigniew Czech	0x$1.00
+Zephyr Pellerin	0x$1.00
+Zhaolong Zhu	0x$1.00
+Zhe Fang	0x$1.00
+Zou Yanyong	0x$1.00
+Zuo Xiaochuan	0x$1.00
+Zurab Z Kutchava	0x$1.00
+Frank Jones	0x$0.80
+Graeme Gange	0x$0.80
+Hiroki Yamazaki	0x$0.80
+Ignasi Abío	0x$0.80
+Jumpei Mori	0x$0.80
+Piotr Strzelczyk	0x$0.80
+Ron Goldman	0x$0.80
+Jim Harkins	0x$0.60
+Kenneth Kin Lum	0x$0.60
+Matthias R Engelhardt	0x$0.60
+Alexander Langer	0x$0.40
+Ben Greenman	0x$0.40
+Christian Bessière	0x$0.40
+Elías Samra-Hassán	0x$0.40
+James Ian Munro	0x$0.40
+James Koppel	0x$0.40
+Joachim Kneis	0x$0.40
+Samuel Marks	0x$0.40
+Stefan Richter	0x$0.40
+Tom Verhoeff	0x$0.40
+Aaron Dale	0x$0.20
+Abdellatif Lawand	0x$0.20
+Adam Wespiser	0x$0.20
+Alan Logan	0x$0.20
+Alexander Joseph Conley	0x$0.20
+Amir Sarid	0x$0.20
+Amriamine	0x$0.20
+Andrea Rosetti	0x$0.20
+Andrew Karl	0x$0.20
+Anubhav Saggi	0x$0.20
+Ashutosh Gupta	0x$0.20
+Bart Rhywek	0x$0.20
+Beat Hörmann	0x$0.20
+Benny Renard	0x$0.20
+Brent Yorgey	0x$0.20
+Charles Guo	0x$0.20
+Charles Neal	0x$0.20
+Charles Turner	0x$0.20
+Colin Foster	0x$0.20
+Dan Boneh	0x$0.20
+Daniel Schmitz	0x$0.20
+David Bone	0x$0.20
+David Campey	0x$0.20
+David Cox	0x$0.20
+David Stifler Johnson	0x$0.20
+David Verhasselt	0x$0.20
+Dixon Jones	0x$0.20
+Dong Tan Yue	0x$0.20
+Elliot Gorokhovsky	0x$0.20
+Eric Liu	0x$0.20
+Eric Smith	0x$0.20
+Felix Filozov	0x$0.20
+Fergal O'Kane	0x$0.20
+G N Srinivasa Prasanna	0x$0.20
+Gareth McCaughan	0x$0.20
+Geoffrey Rommel	0x$0.20
+George Jahad	0x$0.20
+Guilherme Polo	0x$0.20
+Gyora Benedek	0x$0.20
+Heinz Brix	0x$0.20
+Henning Plumeyer	0x$0.20
+Inix Zhong	0x$0.20
+Ivo Fagundes David de Oliveira	0x$0.20
+Jacob Welton-Kubeczko	0x$0.20
+James Fysh	0x$0.20
+James Schneider	0x$0.20
+Jan Mehler	0x$0.20
+Jan Schneider	0x$0.20
+Jayadev Misra	0x$0.20
+Jim Newton	0x$0.20
+Jim Reeds	0x$0.20
+Jim Vaught	0x$0.20
+Joachim F Schreiber	0x$0.20
+Joao Fernando Ferreira	0x$0.20
+Joe Bowbeer	0x$0.20
+Joel Jones	0x$0.20
+Joerg Arndt	0x$0.20
+Johannes Fischer	0x$0.20
+José Hernández Santiago	0x$0.20
+Justin Handville	0x$0.20
+Karl Dieter Reinartz	0x$0.20
+Kate Bennett	0x$0.20
+Kedar Mhaswade	0x$0.20
+Kevin Butler	0x$0.20
+Kuldeep Singh Meel	0x$0.20
+Lee Duhem	0x$0.20
+Lorents Landgren	0x$0.20
+Luciano Soares Pinheiro Júnior	0x$0.20
+Luciano de Oliveira Pinheiro	0x$0.20
+Manfred Kufleitner	0x$0.20
+Marc van Woerkom	0x$0.20
+Mark Elrod	0x$0.20
+Michael Sullivan	0x$0.20
+Mingyao Zhang	0x$0.20
+Nathan Coulter	0x$0.20
+Nianhua Li	0x$0.20
+Nicky van Foreest	0x$0.20
+Nicola Torracca	0x$0.20
+Niels Lauritzen	0x$0.20
+Nikolaos Kavvadias	0x$0.20
+Om Prakash Pal	0x$0.20
+Panagiotis Louridas	0x$0.20
+Patrick Cruce	0x$0.20
+Paul Purdom	0x$0.20
+Per Starbäck	0x$0.20
+Pete Manolios	0x$0.20
+Peter Brass	0x$0.20
+Peter Hendrickson	0x$0.20
+Peter Houben	0x$0.20
+Philip Miller	0x$0.20
+Qiong Cai	0x$0.20
+Richard E Nance	0x$0.20
+Richard Pace	0x$0.20
+Richard Sandberg	0x$0.20
+Robert Bak	0x$0.20
+Rod Stephenson	0x$0.20
+Ruby Lee	0x$0.20
+Sameer Ismail	0x$0.20
+Shachaf Ben-Kiki	0x$0.20
+Sharon Curtis	0x$0.20
+Shengsheng Shi	0x$0.20
+Shurman Yin	0x$0.20
+Simon Peter	0x$0.20
+Sreeram Venkatasubramanian	0x$0.20
+Sridhar Ramakrishnan	0x$0.20
+Steve Nicholson	0x$0.20
+Tatyana Karnaukh	0x$0.20
+Thane Plambeck	0x$0.20
+Thomas Piecha	0x$0.20
+Tim Taubner	0x$0.20
+Timothy Hall	0x$0.20
+Tobias Lenz	0x$0.20
+Tony Finch	0x$0.20
+Victor Miller	0x$0.20
+Virgile Quintin	0x$0.20
+Vitor V Curtis	0x$0.20
+Vlad Simionescu	0x$0.20
+Volker Strumpen	0x$0.20
+Vyacheslav Patkov	0x$0.20
+Warren D Smith	0x$0.20
+Wesley Pegden	0x$0.20
+Wolfgang Panny	0x$0.20
+Ye Ziqing	0x$0.20
+Yi Jie Tan	0x$0.20
+Zhongbo Tian	0x$0.20
+Zsuzsanna Láng	0x$0.20
+fyca	0x$0.20
+Takahisa Toda	0x$0.10
+Takeru Inoue	0x$0.10
