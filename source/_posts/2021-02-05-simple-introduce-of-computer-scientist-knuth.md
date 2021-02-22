@@ -11,7 +11,7 @@ tags:
 
 > 关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！
 >
-> 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?src=11&timestamp=1610101552&ver=2816&signature=NfsIyt2KiIMSTPVwWmAnF93eIvto2H0RAY4DoJpCEGVCx1AOamUVMgHvuzq*i5AYDWMfZU6DftKk0yLX58Rasvr0f0U5ctgDF92M0Wgtc-2GRONIGRRXQwgJuzV5ERDX&new=1)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
+> 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247491813&amp;idx=1&amp;sn=f0b75defab3a69d32eafe2737cab49bb&amp;chksm=eb44e101dc336817643d219bc619a594399d05bff46b4ca64ee78d26bb980dc9436545ee946c&token=2047392263&lang=zh_CN#rd)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
 
 
@@ -19,7 +19,7 @@ tags:
 
 今天，我给大家介绍一位大佬 —— 高德纳（Donald Ervin Knuth），美国著名计算机科学家，是现代计算机科学的鼻祖。
 
-也许你已经听说过这个名字，如果没有，我再找几个关于他的标签：图灵奖得主，《计算机程序设计艺术》（The Art of Computer ），TeX 排版系统，KMP 算法……等等。
+也许你已经听说过这个名字，如果没有，我再找几个关于他的标签：图灵奖得主，《计算机程序设计艺术》（The Art of Computer Programming），TeX 排版系统，KMP 算法……等等。
 
 ![在家吃灰的《计算机程序设计艺术卷1》](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-2-3/1612364995997-image.png)
 
