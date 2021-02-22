@@ -6,12 +6,11 @@ categories:
 tags:
   - 经验技巧
   - 程序员
-
 ---
 
 > 关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！
 >
-> 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?src=11&timestamp=1610101863&ver=2816&signature=NfsIyt2KiIMSTPVwWmAnF93eIvto2H0RAY4DoJpCEGVP8psTO1U8kuVut695df4W6bPIlOucbU1xsyqmoyEB8uh5p46yOYaP-AFsPlTP0JBxygC9uRgJT3bN01o1xn7p&new=1)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
+> 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247491549&idx=1&sn=4eaf30256876f69342a98f47efb4015d&chksm=eb471e39dc30972fd886bbb68410421a03057d31bb109bd9296568bbeab29e0fcdf726456d1e#rd)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
 
 

@@ -1,4 +1,32 @@
-# 纠结于算法岗与开发岗的秋招记录
+---
+title: 纠结于算法岗与开发岗的秋招记录
+layout: post
+categories:
+  - 经验技巧
+tags:
+  - 经验技巧
+  - 网络安全
+
+---
+
+
+> 关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！
+>
+> 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247491218&amp;idx=1&amp;sn=e20fe76a2ba3e4f9986c7a1fe9d93995&amp;chksm=eb471f76dc309660a3599c9ea11043a807ec48a81be76565a516fe989e63e8b9a6d5dce25bc6&token=2047392263&lang=zh_CN#rd)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
+
+
+
+新鲜出炉的 2021 校招系列第四篇，前三篇分别是：
+
+- [非科班学弟如何转行斩获 ATM 大厂的 Offer ？](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247489734&idx=1&sn=f9172000b917ea4e81f4e8b3b2afa1e3&chksm=eb471922dc309034064a0420eeb9c21fca533f387a5a9a5bfbd0f25313d134753e490774bb9c&token=1659374559&lang=zh_CN&scene=21#wechat_redirect)
+- [羡慕，又一清华学弟斩获 6 个大厂 SSP Offer | 面经分享](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247490412&idx=1&sn=2512cb07a969ff50222c363dd7a6874a&chksm=eb471a88dc30939ee95067ad13447e8b9e579f719d8a89deb95ff56ae81b0447ae2c86efcbaf&token=1659374559&lang=zh_CN&scene=21#wechat_redirect)
+- [一个读者大佬精心总结的阿里、腾讯、宇宙条大厂 Offer 面经和硬核面试攻略](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247491116&idx=1&sn=676c6dab8dbb095a31e6fb45cb31a828&chksm=eb471fc8dc3096dea5f1a8600fdc9163d3ce228e640ddb93fad310d44e739f9d719d0722efd7&token=1903173876&lang=zh_CN&scene=21#wechat_redirect)
+
+本篇是石头哥又一厉害学弟的佳作，他将分享自己亲历的**互联网大厂、外企和国企**面试流程和经验，如何选择 Offer 的几个因素，并阐述了目前应届生北京落户的政策（原来落户政策已变成这样了，还是我们当年方便）。
+
+![纠结的秋招之路](/resources/校招经验/纠结的秋招之路.png)
+
+上面是本文提纲，如下开始他的分享吧。
 
 转眼间已经是2021年了，回顾我的秋招之路，可以用"纠结"两个字来形容 。
 
@@ -189,3 +217,9 @@ follow your heart，很多事情其实就像小马过河，只有自己走过才
 **把握当下，保持初心，坚持学习，不畏选择，无惧挑战，未来可期**。
 
 最后希望本文能给朋友们一些启发，非常感谢石头哥这个平台~
+
+
+
+> 关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader，欢迎关注，交流和指导！
+>
+> 欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步。后台回复关键字 “**0**” 送阿里技术大礼包。
