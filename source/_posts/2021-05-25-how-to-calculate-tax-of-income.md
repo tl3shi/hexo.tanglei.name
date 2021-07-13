@@ -24,13 +24,17 @@ tags:
 
 再加上最近公司也发邮件催促让完成上年度的个税汇算清缴工作（6月底截止）。
 
-![催办2020年度个税汇算申报](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-16/1621156577066-image.png)
+
+![催办2020年度个税汇算申报](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846610406-image.png)
+
 
 某匿名社交 App 上出现各种补税，扣税等疑问。
 
 ![补税10W+](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-16/1621156269991-image.png)
 
 你现在可以登录 “个人所得税APP”，查看全年个人所得税应补/退税情况，不知道具体怎么算的？
+
+![](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846660926-image.png)
 
 今天这篇文章就来为各位揭晓：
 
@@ -99,7 +103,8 @@ tags:
 
 不过注意，这个上限基数生效时间点一般是在年中即7月，如下图所示，是某热心网友的7月数据。
 
-![某网友2020年7月附加扣除](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-16/1621177761873-image.png)
+![某网友2020年7月附加扣除](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846691631-image.png)
+
 
 上半年还是以上一年度的基数为准：
 
@@ -110,11 +115,12 @@ tags:
 
 即得到上半年对应数据如上，也能和某热心网友的数据对上。 
 
-![某网友2020年6月附加扣除](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-16/1621177631354-image.png)
+![某网友2020年6月附加扣除](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846715856-image.png)
 
 公积金的上限2019和2020年的上限不变：27786，于是得到公积金缴纳（个人）为：`27786 * 12% = 3334.32`，（公积金政策是取整，数据也能和上面对上。
 
-![北京市：关于2020年度各项社会保险缴费工资基数上下限的通知, http://www.beijing.gov.cn/zhengce/zhengcefagui/202007/t20200718_1951602.html](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-16/1621158081647-image.png)
+![北京市：关于2020年度各项社会保险缴费工资基数上下限的通知, http://www.beijing.gov.cn/zhengce/zhengcefagui/202007/t20200718_1951602.html](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846734966-image.png)
+
 
 **3 专项附加扣除**
 
@@ -149,7 +155,9 @@ tags:
 比如20W，对应 20% 税率，直接 `20W*20%` 扣多了，要减去 (3.6~14.4W，只扣10%)，且最开始的3.6W 只应该扣 0.3%。
 `14.4W*0.2-((14.4W-3.6W)*0.1+3.6W*0.03) = 1.692W`
 
-![个税适用税率表](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-16/1621160941688-image.png)
+
+![个税适用税率表](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846753463-image.png)
+
 
 ```
 应纳个人所得税=应纳税所得额*适用税率-速算扣除数
@@ -163,7 +171,8 @@ tags:
 
 比如下面有个例子：
 
-![个税补交示例](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-16/1621161462954-tax-rate-example.jpg)
+![个税补交示例](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846770226-image.png)
+
 
 >公众号“程序猿石头” 后台回复“个税”，获取此工具Excel。
 
@@ -209,7 +218,7 @@ tags:
 
 观察上文的税率表，就知道这确实存在临界点。
 
-![个税适用税率表](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-16/1621160941688-image.png)
+![个税适用税率表](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846792997-image.png)
 
 比如：公司给石头1号发年终奖66W，因为石头2号表现更优秀，多给4W，发年终奖70W。
 
@@ -269,7 +278,7 @@ tags:
 
 这块可能比较复杂，因为申报的情况可能不一样。但是一般情况下，会按照“劳务报酬”进行申报。
 
-![劳务报酬预扣税率表](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-22/1621613653835-image.png)
+![劳务报酬预扣税率表](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846815205-image.png)
 
 而劳务报酬申报的时候，预扣的适用税率一般按照如上图所示。超过 5W，就直接按照 40% 税率预扣税了。
 
@@ -286,7 +295,7 @@ tags:
 
 不过，收入不超过12W，或者补税金额不超过400，直接给予减免。
 
-![不需要补税](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-23/1621758256973-image.png)
+![不需要补税](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846832030-image.png)
 
 因此，提醒大家，特别是有额外收入的朋友们，比如号主的公众号广告、各种平台带货的佣金，赶紧去退税吧（准确点说是工资外收入多，或者对应税率小于工资税率的）。
 
