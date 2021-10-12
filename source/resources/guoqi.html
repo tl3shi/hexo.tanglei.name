@@ -1,0 +1,36 @@
+
+
+<html>
+
+<body>
+
+<img id="bg" src="./img1.png"/>
+<img id="tx" src="./img2.png"/>
+
+
+<canvas id="canvas" width="800" height="800" style="border:1px solid #d3d3d3;">
+	
+	Your browser does not support the HTML5 canvas tag.
+
+</canvas>
+
+
+<script>
+
+
+document.getElementById("generateImg").onload=function(){
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+
+	var flagImg = document.getElementById('bg');
+	var yourImg = document.getElementById('tx');
+
+	ctx.drawImage(yourImg, 0, 0, 800, 800);
+	ctx.drawImage(flagImg, 0, 0, 800, 800);
+
+	//document.document.getElementById('generateImg').src = canvas.toDataURL("image/png");
+};
+
+</script>
+</body>
+</html>
