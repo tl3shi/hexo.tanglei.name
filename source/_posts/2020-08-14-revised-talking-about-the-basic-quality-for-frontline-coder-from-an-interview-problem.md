@@ -12,8 +12,6 @@ tags:
 >
 > 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247484698&idx=1&sn=03cc4636e7ee7364a85788a98809cc03&chksm=eb4704fedc308de8efd48ab9aed4fd1ddee5665d8e76d0d3767c1f704eac8b15a83e450a08f1&token=1818649850&lang=zh_CN#rd)，转载请全文保留。
 
-![一线码农](https://lc-gold-cdn.xitu.io/17bf0ee653f22d5e60cb.jpg)
-
 ## 背景
 
 求职面试在绝大部分人来说都是必不可少的，自己作为求职者也参与了不少面试（无论成功或者失败），作为技术面试官参与面试也有四五年的经验，在面试过程中也见识到了各种各样的人(有厉害的，也有奇葩的)。在这里也只想谈谈自己的一些看法，我说的不一定对，有不同的意见可以留言参与讨论。
