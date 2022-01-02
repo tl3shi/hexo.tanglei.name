@@ -47,10 +47,10 @@ jobs:
     - name: Deploy To Github Pages
       env:
         Github_Pages: github.com/tl3shi/hexo.tanglei.name
-        Github_Token: ${{ secrets.TOKEN_GITHUBAPI}}
+        Github_Token: ${{ secrets.TOKEN_GITHUBAPI }}
       run: |
-        ls -alh
-        mv public .deploy && cd .deploy && du -sh
+        du -h -d 1
+        mv public .deploy && cd .deploy
         git init && git add .
         git commit -F ../commit-message.log
         git push --force "https://${Github_Token}@${Github_Pages}" master:gh-pages-test
