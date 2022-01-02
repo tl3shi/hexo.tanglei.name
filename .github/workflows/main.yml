@@ -18,10 +18,10 @@ jobs:
       uses: actions/checkout@master
 
     # from: https://github.com/actions/setup-node
-    - name: Setup Node.js 17.x
+    - name: Setup Node.js 17.0
       uses: actions/setup-node@master
       with:
-        node-version: "17.x"
+        node-version: "17.0"
 
     - name: Setup Git Infomation
       run: |
@@ -35,7 +35,7 @@ jobs:
     - name: Setup Hexo Dependencies
       run: |
         node -v && npm --version
-        npm install hexo-cli -g
+        npm install hexo-cli@3.1.0 -g
         npm install
         hexo --version
 
