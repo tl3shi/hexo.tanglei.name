@@ -42,7 +42,7 @@ jobs:
     - name: Generate public files
       run: |
         hexo clean
-        hexo generate
+        hexo generate --debug
 
     - name: Deploy To Github Pages
       env:
