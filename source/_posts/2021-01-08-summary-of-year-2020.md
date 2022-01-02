@@ -4,6 +4,7 @@ layout: post
 categories:
   - MyLife
 tags:
+  - 年终总结
   - 总结
   - MyLife
 ---

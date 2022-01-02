@@ -53,4 +53,4 @@ jobs:
         mv public .deploy && cd .deploy && du -sh
         git init && git add .
         git commit -F ../commit-message.log
-        git push --force "https://${Github_Token}@${Github_Pages}" master:gh-pages
+        git push --force "https://${Github_Token}@${Github_Pages}" master:gh-pages-test
