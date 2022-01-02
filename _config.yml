@@ -78,9 +78,9 @@ archive_generator:
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-#theme: jacman
+theme: jacman
 #theme: landscape 
-theme: next
+#theme: next
 
 # plugins  hexo-generator-feed
 feed:
