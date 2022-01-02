@@ -1,0 +1,58 @@
+name: Hexo Deploy
+
+# master branch on push, auto run
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  Deploy-Pages:
+    name: Deploy Hexo Public To Pages
+    runs-on: ubuntu-latest
+
+    steps:
+    # check it to your workflow can access it
+    # from: https://github.com/actions/checkout
+    - name: Checkout Repository master branch
+      uses: actions/checkout@master
+
+    # from: https://github.com/actions/setup-node
+    - name: Setup Node.js 10.x
+      uses: actions/setup-node@master
+      with:
+        node-version: "10.x"
+
+    - name: Setup Git Infomation
+      run: |
+        git config --global user.name 'tangleithu'
+        git config --global user.email 'githubworkflow@tanglei.name'
+
+    - name: Get Latest Commit Message
+      run: |
+        git log --pretty=format:"%s from Github Actions at `date +"%Y-%m-%d %H:%M:%S"`" --date=short -n 1  > commit-message.log
+
+    - name: Setup Hexo Dependencies
+      run: |
+        npm install hexo-cli -g
+        npm install
+
+    - name: Generate public files
+      run: |
+        hexo clean
+        hexo generate
+
+    - name: Deploy To Github Pages
+      env:
+        Github_Pages: github.com/tl3shi/hexo.tanglei.name
+        Github_Token: ${{ secrets.TOKEN_GITHUBAPI}}
+      run: |
+        git clone https://${Github_Pages} .github_pages
+        cd .github_pages
+        git checkout -b master
+        cd ../
+        mv .github_pages/.git/ ./public/
+        cd ./public/
+        git add .
+        git commit -F ../commit-message.log
+        git push --force "https://${Github_Token}@${Github_Pages}" master:gh-pages
