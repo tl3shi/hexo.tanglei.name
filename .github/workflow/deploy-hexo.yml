@@ -1,4 +1,4 @@
-name: CI Hexo Blog Deploy First
+name: Hexo Deploy
 
 # master branch on push, auto run
 on: 
@@ -55,4 +55,4 @@ jobs:
         cd ./public/
         git add .
         git commit -F ../commit-message.log
-        git push --force --quiet "https://${Github_Token}@${Github_Pages}" master:gh-pages
+        git push --force "https://${Github_Token}@${Github_Pages}" master:gh-pages
