@@ -18,10 +18,10 @@ jobs:
       uses: actions/checkout@master
 
     # from: https://github.com/actions/setup-node
-    - name: Setup Node.js 16.x
+    - name: Setup Node.js 17.x
       uses: actions/setup-node@master
       with:
-        node-version: "16.x"
+        node-version: "17.x"
 
     - name: Setup Git Infomation
       run: |
