@@ -45,7 +45,7 @@ jobs:
     - name: Deploy To Github Pages 
       env:
         Github_Pages: github.com/tl3shi/hexo.tanglei.name
-        Github_Token: ${{ secrets.token_GithubAPI }}
+        Github_Token: ${{ secrets.TOKEN_GITHUBAPI}}
       run: |  
         git clone https://${Github_Pages} .github_pages
         cd .github_pages
