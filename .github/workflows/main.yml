@@ -49,12 +49,7 @@ jobs:
         Github_Pages: github.com/tl3shi/hexo.tanglei.name
         Github_Token: ${{ secrets.TOKEN_GITHUBAPI}}
       run: |
-        git clone https://${Github_Pages} .github_pages
-        cd .github_pages
-        git checkout -b master
-        cd ../
-        mv .github_pages/.git/ ./public/
-        cd ./public/
-        git add .
+        mv public .deploy && cd .deploy && du -sh
+        git init && git add .
         git commit -F ../commit-message.log
         git push --force "https://${Github_Token}@${Github_Pages}" master:gh-pages
