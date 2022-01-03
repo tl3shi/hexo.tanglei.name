@@ -39,6 +39,7 @@ jobs:
         npm install hexo-cli@3.1.0 -g
         npm install
         hexo --version
+        git diff | cat
 
     - name: Generate public files
       run: |
