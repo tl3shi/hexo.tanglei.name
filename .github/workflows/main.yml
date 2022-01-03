@@ -9,17 +9,18 @@ on:
 jobs:
   Deploy-Pages:
     name: Deploy Hexo Public To Pages
-    runs-on: ubuntu-latest
+      #runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
     # check it to your workflow can access it
     # from: https://github.com/actions/checkout
     - name: Checkout Repository master branch
-      uses: actions/checkout@master
+      uses: actions/checkout@v2
 
     # from: https://github.com/actions/setup-node
     - name: Setup Node.js v8.17.0
-      uses: actions/setup-node@master
+      uses: actions/setup-node@v2
       with:
         node-version: "8.17.0"
 
@@ -51,7 +52,7 @@ jobs:
       run: |
         du -h -d 1
         mv public .deploy && cd .deploy
-        cp -R resources deploy/ && cp -R wp-content .deploy/
+        cp -R ./resources deploy/ && cp -R ./wp-content .deploy/
         git init && git add .
         git commit -F ../commit-message.log
         git push --force "https://${Github_Token}@${Github_Pages}" master:gh-pages-test
