@@ -9,8 +9,8 @@ on:
 jobs:
   Deploy-Pages:
     name: Deploy Hexo Public To Pages
-      #runs-on: ubuntu-latest
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
+      #runs-on: macos-latest
 
     steps:
     # check it to your workflow can access it
@@ -21,10 +21,10 @@ jobs:
         ref: source
 
     # from: https://github.com/actions/setup-node
-    - name: Setup Node.js v8.17.0
+    - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: "8.17.0"
+        node-version: "16"
 
     - name: Setup Git Infomation
       run: |
@@ -39,7 +39,7 @@ jobs:
     - name: Setup Hexo Dependencies
       run: |
         node -v && npm --version
-        npm install hexo-cli@3.1.0 -g
+        npm install -g hexo-cli@4.3.0
         npm install
         hexo --version
         git diff | cat
@@ -55,8 +55,8 @@ jobs:
         Github_Token: ${{ secrets.TOKEN_GITHUBAPI }}
       run: |
         du -h -d 1
-        mv public .deploy && cd .deploy
-        cp -R ./resources deploy/ && cp -R ./wp-content .deploy/
-        git init && git add .
+        mv public .deploy
+        cp -R ./resources .deploy/ && cp -R ./wp-content .deploy/
+        cd .deploy && git init && git add .
         git commit -F ../commit-message.log
         git push --force "https://${Github_Token}@${Github_Pages}" master:gh-pages-test

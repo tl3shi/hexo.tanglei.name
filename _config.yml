@@ -80,7 +80,7 @@ archive_generator:
 ## Themes: http://hexo.io/themes/
 #theme: jacman
 #theme: landscape 
-theme: next
+theme: next1
 
 # plugins  hexo-generator-feed
 feed:
