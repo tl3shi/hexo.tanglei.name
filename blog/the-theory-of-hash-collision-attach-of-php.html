@@ -1,0 +1,817 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Java,网络安全,PHP,DDOS,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="前一篇文章说了通过构造Hash冲突实现PHP/Java等语言的拒绝服务攻击，今天看到一篇文章，或许能帮助解答上一篇文章中的遗留问题。现在转过来学习下。原文见:http://www.codinglabs.org/html/hash-collisions-attack-on-php.html 最近哈希表碰撞攻击（Hashtable collisions as DOS attack）的话题不断被提起，各">
+<meta name="keywords" content="Java,网络安全,PHP,DDOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP哈希表碰撞攻击原理">
+<meta property="og:url" content="https://www.tanglei.name/blog/the-theory-of-hash-collision-attach-of-php.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="前一篇文章说了通过构造Hash冲突实现PHP/Java等语言的拒绝服务攻击，今天看到一篇文章，或许能帮助解答上一篇文章中的遗留问题。现在转过来学习下。原文见:http://www.codinglabs.org/html/hash-collisions-attack-on-php.html 最近哈希表碰撞攻击（Hashtable collisions as DOS attack）的话题不断被提起，各">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://i1123.photobucket.com/albums/l549/tl3shi/hash-collision-attack-of-php.png">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.957Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP哈希表碰撞攻击原理">
+<meta name="twitter:description" content="前一篇文章说了通过构造Hash冲突实现PHP/Java等语言的拒绝服务攻击，今天看到一篇文章，或许能帮助解答上一篇文章中的遗留问题。现在转过来学习下。原文见:http://www.codinglabs.org/html/hash-collisions-attack-on-php.html 最近哈希表碰撞攻击（Hashtable collisions as DOS attack）的话题不断被提起，各">
+<meta name="twitter:image" content="http://i1123.photobucket.com/albums/l549/tl3shi/hash-collision-attack-of-php.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/the-theory-of-hash-collision-attach-of-php.html">
+
+
+
+
+
+  <title> PHP哈希表碰撞攻击原理 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/the-theory-of-hash-collision-attach-of-php.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                PHP哈希表碰撞攻击原理
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2012-01-08T19:37:47+00:00">
+                2012-01-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工作那些事儿/" itemprop="url" rel="index">
+                    <span itemprop="name">工作那些事儿</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/the-theory-of-hash-collision-attach-of-php.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/the-theory-of-hash-collision-attach-of-php.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>前一篇文章说了<a href="/blog/use-hash-collision-to-realize-dos-in-php-and-java.html">通过构造Hash冲突实现PHP/Java等语言的拒绝服务攻击</a>，今天看到一篇文章，或许能帮助解答上一篇文章中的遗留问题。现在转过来学习下。原文见:<a href="http://www.codinglabs.org/html/hash-collisions-attack-on-php.html" target="_blank" rel="noopener">http://www.codinglabs.org/html/hash-collisions-attack-on-php.html</a></p>
+<p>最近哈希表碰撞攻击（Hashtable collisions as DOS attack）的话题不断被提起，各种语言纷纷中招。本文结合PHP内核源码，聊一聊这种攻击的原理及实现。</p>
+<p>哈希表是一种查找效率极高的数据结构，很多语言都在内部实现了哈希表。PHP中的哈希表是一种极为重要的数据结构，不但用于表示Array数据类型，还在Zend虚拟机内部用于存储上下文环境信息（执行上下文的变量及函数均使用哈希表结构存储）。</p>
+<p>理想情况下哈希表插入和查找操作的时间复杂度均为O(1)，任何一个数据项可以在一个与哈希表长度无关的时间内计算出一个哈希值（key），然后在常量时间内定位到一个桶（术语bucket，表示哈希表中的一个位置）。当然这是理想情况下，因为任何哈希表的长度都是有限的，所以一定存在不同的数据项具有相同哈希值的情况，此时不同数据项被定为到同一个桶，称为碰撞（collision）。哈希表的实现需要解决碰撞问题，碰撞解决大体有两种思路，第一种是根据某种原则将被碰撞数据定为到其它桶，例如线性探测——如果数据在插入时发生了碰撞，则顺序查找这个桶后面的桶，将其放入第一个没有被使用的桶；第二种策略是每个桶不是一个只能容纳单个数据项的位置，而是一个可容纳多个数据的数据结构（例如链表或红黑树），所有碰撞的数据以某种数据结构的形式组织起来。</p>
+<p>不论使用了哪种碰撞解决策略，都导致插入和查找操作的时间复杂度不再是O(1)。以查找为例，不能通过key定位到桶就结束，必须还要比较原始key（即未做哈希之前的key）是否相等，如果不相等，则要使用与插入相同的算法继续查找，直到找到匹配的值或确认数据不在哈希表中。</p>
+<p>PHP是使用单链表存储碰撞的数据，因此实际上PHP哈希表的平均查找复杂度为O(L)，其中L为桶链表的平均长度；而最坏复杂度为O(N)，此时所有数据全部碰撞，哈希表退化成单链表。下图PHP中正常哈希表和退化哈希表的示意图。</p>
+<p><a href="http://s1123.photobucket.com/albums/l549/tl3shi/?action=view&current=hash-collision-attack-of-php.png" target="_blank"><img src="http://i1123.photobucket.com/albums/l549/tl3shi/hash-collision-attack-of-php.png" border="0" alt="Photobucket"></a></p>
+<p>哈希表碰撞攻击就是通过精心构造数据，使得所有数据全部碰撞，人为将哈希表变成一个退化的单链表，此时哈希表各种操作的时间均提升了一个数量级，因此会消耗大量CPU资源，导致系统无法快速响应请求，从而达到拒绝服务攻击（DoS）的目的。</p>
+<p>可以看到，进行哈希碰撞攻击的前提是哈希算法特别容易找出碰撞，如果是MD5或者SHA1那基本就没戏了，幸运的是（也可以说不幸的是）大多数编程语言使用的哈希算法都十分简单（这是为了效率考虑），因此可以不费吹灰之力之力构造出攻击数据。下一节将通过分析Zend相关内核代码，找出攻击哈希表碰撞攻击PHP的方法。</p>
+<p>Zend哈希表的内部实现</p>
+<p>数据结构</p>
+<p>PHP中使用一个叫Backet的结构体表示桶，同一哈希值的所有桶被组织为一个单链表。哈希表使用HashTable结构体表示。相关源码在zend/Zend_hash.h下：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">bucket</span> &#123;</span></span><br><span class="line">    ulong h;                        <span class="comment">/* Used for numeric indexing */</span></span><br><span class="line">    uint nKeyLength;</span><br><span class="line">    <span class="keyword">void</span> *pData;</span><br><span class="line">    <span class="keyword">void</span> *pDataPtr;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">bucket</span> *<span class="title">pListNext</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">bucket</span> *<span class="title">pListLast</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">bucket</span> *<span class="title">pNext</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">bucket</span> *<span class="title">pLast</span>;</span></span><br><span class="line">    <span class="keyword">char</span> arKey[<span class="number">1</span>]; <span class="comment">/* Must be last element */</span></span><br><span class="line">&#125; Bucket;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">hashtable</span> &#123;</span></span><br><span class="line">    uint nTableSize;</span><br><span class="line">    uint nTableMask;</span><br><span class="line">    uint nNumOfElements;</span><br><span class="line">    ulong nNextFreeElement;</span><br><span class="line">    Bucket *pInternalPointer;   <span class="comment">/* Used for element traversal */</span></span><br><span class="line">    Bucket *pListHead;</span><br><span class="line">    Bucket *pListTail;</span><br><span class="line">    Bucket **arBuckets;</span><br><span class="line">    <span class="keyword">dtor_func_t</span> pDestructor;</span><br><span class="line">    zend_bool persistent;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> nApplyCount;</span><br><span class="line">    zend_bool bApplyProtection;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> ZEND_DEBUG</span></span><br><span class="line">    <span class="keyword">int</span> inconsistent;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">&#125; HashTable;</span><br></pre></td></tr></table></figure>
+<p>字段名很清楚的表明其用途，因此不做过多解释。重点明确下面几个字段：Bucket中的“h”用于存储原始key；HashTable中的nTableMask是一个掩码，一般被设为nTableSize – 1，与哈希算法有密切关系，后面讨论哈希算法时会详述；arBuckets指向一个指针数组，其中每个元素是一个指向Bucket链表的头指针。</p>
+<p>哈希算法</p>
+<p>PHP哈希表最小容量是8（2^3），最大容量是0×80000000（2^31），并向2的整数次幂圆整（即长度会自动扩展为2的整数次幂，如13个元素的哈希表长度为16；100个元素的哈希表长度为128）。nTableMask被初始化为哈希表长度（圆整后）减1。具体代码在zend/Zend_hash.c的_zend_hash_init函数中，这里截取与本文相关的部分并加上少量注释。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">ZEND_API <span class="keyword">int</span> _zend_hash_init(HashTable *ht, uint nSize, <span class="keyword">hash_func_t</span> pHashFunction, <span class="keyword">dtor_func_t</span> pDestructor, zend_bool persistent ZEND_FILE_LINE_DC)</span><br><span class="line">&#123;</span><br><span class="line">    uint i = <span class="number">3</span>;</span><br><span class="line">    Bucket **tmp;</span><br><span class="line"> </span><br><span class="line">    SET_INCONSISTENT(HT_OK);</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//长度向2的整数次幂圆整</span></span><br><span class="line">    <span class="keyword">if</span> (nSize &gt;= <span class="number">0x80000000</span>) &#123;</span><br><span class="line">        <span class="comment">/* prevent overflow */</span></span><br><span class="line">        ht-&gt;nTableSize = <span class="number">0x80000000</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">while</span> ((<span class="number">1U</span> &lt;&lt; i) &lt; nSize) &#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        ht-&gt;nTableSize = <span class="number">1</span> &lt;&lt; i;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    ht-&gt;nTableMask = ht-&gt;nTableSize - <span class="number">1</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">/*此处省略若干代码…*/</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>值得一提的是PHP向2的整数次幂取圆整方法非常巧妙，可以背下来在需要的时候使用。</p>
+<p>Zend HashTable的哈希算法异常简单：</p>
+<p><strong>hash(key)=key&amp;nTableMask</strong></p>
+<p>即简单将数据的原始key与HashTable的nTableMask进行按位与即可。</p>
+<p>如果原始key为字符串，则首先使用Times33算法将字符串转为整形再与nTableMask按位与。</p>
+<p><strong>hash(strkey)=times33(strkey)&amp;nTableMask</strong></p>
+<p>下面是Zend源码中查找哈希表的代码：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function">ZEND_API <span class="keyword">int</span> <span class="title">zend_hash_index_find</span><span class="params">(<span class="keyword">const</span> HashTable *ht, ulong h, <span class="keyword">void</span> **pData)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    uint nIndex;</span><br><span class="line">    Bucket *p;</span><br><span class="line"> </span><br><span class="line">    IS_CONSISTENT(ht);</span><br><span class="line"> </span><br><span class="line">    nIndex = h &amp; ht-&gt;nTableMask;</span><br><span class="line"> </span><br><span class="line">    p = ht-&gt;arBuckets[nIndex];</span><br><span class="line">    <span class="keyword">while</span> (p != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> ((p-&gt;h == h) &amp;&amp; (p-&gt;nKeyLength == <span class="number">0</span>)) &#123;</span><br><span class="line">            *pData = p-&gt;pData;</span><br><span class="line">            <span class="keyword">return</span> SUCCESS;</span><br><span class="line">        &#125;</span><br><span class="line">        p = p-&gt;pNext;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> FAILURE;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function">ZEND_API <span class="keyword">int</span> <span class="title">zend_hash_find</span><span class="params">(<span class="keyword">const</span> HashTable *ht, <span class="keyword">const</span> <span class="keyword">char</span> *arKey, uint nKeyLength, <span class="keyword">void</span> **pData)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ulong h;</span><br><span class="line">    uint nIndex;</span><br><span class="line">    Bucket *p;</span><br><span class="line"> </span><br><span class="line">    IS_CONSISTENT(ht);</span><br><span class="line"> </span><br><span class="line">    h = zend_inline_hash_func(arKey, nKeyLength);</span><br><span class="line">    nIndex = h &amp; ht-&gt;nTableMask;</span><br><span class="line"> </span><br><span class="line">    p = ht-&gt;arBuckets[nIndex];</span><br><span class="line">    <span class="keyword">while</span> (p != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> ((p-&gt;h == h) &amp;&amp; (p-&gt;nKeyLength == nKeyLength)) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!<span class="built_in">memcmp</span>(p-&gt;arKey, arKey, nKeyLength)) &#123;</span><br><span class="line">                *pData = p-&gt;pData;</span><br><span class="line">                <span class="keyword">return</span> SUCCESS;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        p = p-&gt;pNext;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> FAILURE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中zend_hash_index_find用于查找整数key的情况，zend_hash_find用于查找字符串key。逻辑基本一致，只是字符串key会通过zend_inline_hash_func转为整数key，zend_inline_hash_func封装了<a href="http://blog.csdn.net/chen_alvin/article/details/5846714" target="_blank" rel="noopener">times33</a>算法，具体代码就不贴出了。</p>
+<p><strong>攻击</strong></p>
+<p>基本攻击</p>
+<p>知道了PHP内部哈希表的算法，就可以利用其原理构造用于攻击的数据。一种最简单的方法是利用掩码规律制造碰撞。上文提到Zend HashTable的长度nTableSize会被圆整为2的整数次幂，假设我们构造一个2^16的哈希表，则nTableSize的二进制表示为：1 0000 0000 0000 0000，而nTableMask = nTableSize – 1为：0 1111 1111 1111 1111。接下来，可以以0为初始值，以2^16为步长，制造足够多的数据，可以得到如下推测：</p>
+<p>0000 0000 0000 0000 0000 &amp; 0 1111 1111 1111 1111 = 0</p>
+<p>0001 0000 0000 0000 0000 &amp; 0 1111 1111 1111 1111 = 0</p>
+<p>0010 0000 0000 0000 0000 &amp; 0 1111 1111 1111 1111 = 0</p>
+<p>0011 0000 0000 0000 0000 &amp; 0 1111 1111 1111 1111 = 0</p>
+<p>0100 0000 0000 0000 0000 &amp; 0 1111 1111 1111 1111 = 0</p>
+<p>……</p>
+<p>概况来说只要保证后16位均为0，则与掩码位于后得到的哈希值全部碰撞在位置0。</p>
+<p><strong><em>[估计这个就是为什么我上一篇文章中提到的java为啥不灵的原因所在]</em></strong></p>
+<p>下面是利用这个原理写的一段攻击代码：<strong><em>代码和效果见<a href="/blog/use-hash-collision-to-realize-dos-in-php-and-java.html">前一篇文章</a>，可以看出两种方法插入N个元素的时间在O(N)水平，而另一段攻击代码则需O(N^2)的时间去插入N个元素。</em></strong></p>
+<p>POST攻击</p>
+<p>当然，一般情况下很难遇到攻击者可以直接修改PHP代码的情况，但是攻击者仍可以通过一些方法间接构造哈希表来进行攻击。例如PHP会将接收到的HTTP POST请求中的数据构造为$<em>POST，而这是一个Array，内部就是通过Zend HashTable表示，因此攻击者只要构造一个含有大量碰撞key的post请求，就可以达到攻击的目的。**</em>具体做法可以参考<a href="/blog/use-hash-collision-to-realize-dos-in-php-and-java.html">前一篇文章</a>。_**</p>
+<p><strong>防护</strong></p>
+<p>POST攻击的防护</p>
+<p>针对POST方式的哈希碰撞攻击，目前PHP的防护措施是控制POST数据的数量。在&gt;=PHP5.3.9的版本中增加了一个配置项max_input_vars，用于标识一次http请求最大接收的参数个数，默认为1000。因此PHP5.3.x的用户可以通过升级至5.3.9来避免哈希碰撞攻击。5.2.x的用户可以使用这个patch：<a href="http://www.laruence.com/2011/12/30/2440.html。" target="_blank" rel="noopener">http://www.laruence.com/2011/12/30/2440.html。</a></p>
+<p>另外的防护方法是在Web服务器层面进行处理，例如限制http请求body的大小和参数的数量等，这个是现在用的最多的临时处理方案。具体做法与不同Web服务器相关，不再详述。</p>
+<p>其它防护</p>
+<p>上面的防护方法只是限制POST数据的数量，而不能彻底解决这个问题。例如，如果某个POST字段是一个json数据类型，会被PHP json_decode，那么只要构造一个超大的json攻击数据照样可以达到攻击目的。理论上，只要PHP代码中某处构造Array的数据依赖于外部输入，则都可能造成这个问题，因此彻底的解决方案要从Zend底层HashTable的实现动手。一般来说有两种方式，一是限制每个桶链表的最长长度；二是使用其它数据结构如红黑树取代链表组织碰撞哈希（并不解决哈希碰撞，只是减轻攻击影响，将N个数据的操作时间从O(N^2)降至O(NlogN)，代价是普通情况下接近O(1)的操作均变为O(logN)）。</p>
+<p>目前使用最多的仍然是POST数据攻击，因此建议生产环境的PHP均进行升级或打补丁。至于从数据结构层面修复这个问题，目前还没有任何方面的消息。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/网络安全/" rel="tag"># 网络安全</a>
+          
+            <a href="/tags/PHP/" rel="tag"># PHP</a>
+          
+            <a href="/tags/DDOS/" rel="tag"># DDOS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/use-hash-collision-to-realize-dos-in-php-and-java.html" rel="next" title="通过构造Hash冲突实现PHP/Java等语言的拒绝服务攻击">
+                <i class="fa fa-chevron-left"></i> 通过构造Hash冲突实现PHP/Java等语言的拒绝服务攻击
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/aop-in-php.html" rel="prev" title="PHP中的AOP">
+                PHP中的AOP <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/the-theory-of-hash-collision-attach-of-php.html';
+
+      var disqus_title = "PHP哈希表碰撞攻击原理";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

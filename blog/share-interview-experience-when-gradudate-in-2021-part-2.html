@@ -1,0 +1,976 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="经验技巧,程序员,校招,面经,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="背景 关于号主：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！   本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  新鲜出炉的校招系列第三篇，前两篇分别是：   非科班学弟如何转行斩获 ATM 大厂的 Offer ？  羡慕，又一清华学弟斩获 6 个大厂 SSP">
+<meta name="keywords" content="经验技巧,程序员,校招,面经">
+<meta property="og:type" content="article">
+<meta property="og:title" content="又一位大牛斩获 BAT 大厂 Offer，看看他精心准备的面试总结">
+<meta property="og:url" content="https://www.tanglei.name/blog/share-interview-experience-when-gradudate-in-2021-part-2.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="背景 关于号主：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！   本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  新鲜出炉的校招系列第三篇，前两篇分别是：   非科班学弟如何转行斩获 ATM 大厂的 Offer ？  羡慕，又一清华学弟斩获 6 个大厂 SSP">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/%E6%A0%A1%E6%8B%9B%E6%80%BB%E7%BB%932.png">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.998Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="又一位大牛斩获 BAT 大厂 Offer，看看他精心准备的面试总结">
+<meta name="twitter:description" content="背景 关于号主：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！   本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  新鲜出炉的校招系列第三篇，前两篇分别是：   非科班学弟如何转行斩获 ATM 大厂的 Offer ？  羡慕，又一清华学弟斩获 6 个大厂 SSP">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/%E6%A0%A1%E6%8B%9B%E6%80%BB%E7%BB%932.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/share-interview-experience-when-gradudate-in-2021-part-2.html">
+
+
+
+
+
+  <title> 又一位大牛斩获 BAT 大厂 Offer，看看他精心准备的面试总结 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/share-interview-experience-when-gradudate-in-2021-part-2.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                又一位大牛斩获 BAT 大厂 Offer，看看他精心准备的面试总结
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-12-26T00:00:00+00:00">
+                2020-12-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/share-interview-experience-when-gradudate-in-2021-part-2.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/share-interview-experience-when-gradudate-in-2021-part-2.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote>
+<p>关于号主：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！</p>
+</blockquote>
+<blockquote>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247491116&amp;idx=1&amp;sn=676c6dab8dbb095a31e6fb45cb31a828&amp;chksm=eb471fc8dc3096dea5f1a8600fdc9163d3ce228e640ddb93fad310d44e739f9d719d0722efd7&amp;token=1817372757&amp;lang=zh_CN#rd" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “<strong>1024</strong>” 获取程序员大厂面试指南。</p>
+</blockquote>
+<p>新鲜出炉的校招系列第三篇，前两篇分别是： </p>
+<ul>
+<li><p><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247489734&amp;idx=1&amp;sn=f9172000b917ea4e81f4e8b3b2afa1e3&amp;chksm=eb471922dc309034064a0420eeb9c21fca533f387a5a9a5bfbd0f25313d134753e490774bb9c&amp;token=1659374559&amp;lang=zh_CN#rd" target="_blank" rel="noopener">非科班学弟如何转行斩获 ATM 大厂的 Offer ？</a></p>
+</li>
+<li><p><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247490412&amp;idx=1&amp;sn=2512cb07a969ff50222c363dd7a6874a&amp;chksm=eb471a88dc30939ee95067ad13447e8b9e579f719d8a89deb95ff56ae81b0447ae2c86efcbaf&amp;token=1659374559&amp;lang=zh_CN#rd" target="_blank" rel="noopener">羡慕，又一清华学弟斩获 6 个大厂 SSP Offer | 面经分享</a></p>
+</li>
+</ul>
+<p>本篇是石头哥又一厉害学弟的佳作，他从 <em>秋招历程、校招结构化面试、 offer 选择</em> 等三个方面进行了总结和经验分享。</p>
+<p>还总结面试过程中的各种套路，让你从自我介绍就给面试官下套。其实不只是在校招面试中，社招其实也一样，其中 “给面试官下套” 是个不错的方法，值得借鉴和学习。（详见文中第二部分）</p>
+<p>11 月底，在经历了充分的思想斗争后，我终于下定决心寄出了三方，历时三个多月的秋招也终于尘埃落定。过去的三个多月里，面试时间可能只有一个月左右，剩下的两个多月的时间都在等待结果和纠结，因此通过本文总结这段时间我的秋招历程和感悟。</p>
+<p>本文大纲如下图所示：</p>
+<p><img src="https://www.tanglei.name/resources/%E6%A0%A1%E6%8B%9B%E6%80%BB%E7%BB%932.png" alt="img"></p>
+<h2 id="一、秋招历程"><a href="#一、秋招历程" class="headerlink" title="一、秋招历程"></a>一、秋招历程</h2><p>本人本科毕业于 985 高校，硕士就读于国内 Top2，本硕专业都是软件工程。在本科期间有过华为和腾讯两段实习经历，在研究生期间，我发现自己对科研的兴趣确实有限，因此平时较多参与实验室科研项目的落地应用。</p>
+<p>今年由于疫情影响，2020 年上半年大部分时间我都在远程办公，导师分配的任务也稍有减轻，因此悄悄在字节和阿里实习了半年。</p>
+<h3 id="就业方向"><a href="#就业方向" class="headerlink" title="就业方向"></a>就业方向</h3><p>在秋招开始之前，我考虑的方向主要包括：</p>
+<ul>
+<li><p>(1) 读博：导师在博士生考试前和我长谈建议我读博，待遇上也给出了比较好的条件。如果我确实有科研天赋并且热爱科研，那么读博真的是一个非常好的选择，可惜以上两个前提我都不具备；</p>
+</li>
+<li><p>(2) 选调：由于自己在本硕期间都有非常多的学生工作经历，目前也担任学院学生工作的重要职务，因此很长一段时间内都考虑直接参加中央或者省委选调工作，但是最终因为一些个人原因还是选择放弃；</p>
+</li>
+<li><p>(3) 技术：选择大多数人选择的方向，秋招最终还是主要聚焦于技术开发类的岗位，本文也主要介绍这方面的基本情况。</p>
+</li>
+</ul>
+<h3 id="面试情况"><a href="#面试情况" class="headerlink" title="面试情况"></a>面试情况</h3><p>和一些大牛相比，我的秋招面试经历并不算多，一共只投递了十几家公司，最终拿到了国网南瑞研究院、交通银行总行、阿里、腾讯、字节、华为、猿辅导、完美世界的 offer，具体的情况如下：</p>
+<h4 id="阿里"><a href="#阿里" class="headerlink" title="阿里"></a>阿里</h4><ul>
+<li>流程：实习（笔试+5 面）+转正答辩 </li>
+<li>结果：Offer</li>
+</ul>
+<p>阿里的面试总体来讲是比较标准的结构化面试，但是面试流程实在太长了，从投递简历到完成面试，大约历时 40-50 天。</p>
+<p>而实习转正后的 offer 发放等了大约 20 天，薪资沟通等了 50-60 天，贯穿秋招的头尾，非常考验心态。 </p>
+<h4 id="腾讯"><a href="#腾讯" class="headerlink" title="腾讯"></a>腾讯</h4><ul>
+<li>流程：笔试+3 面</li>
+<li>结果：Offer</li>
+</ul>
+<p>相比于头部的几家互联网公司面试，我个人感觉腾讯的面试反而是比较“水”的。两次专业面试都是电话面试，且以项目交流为主。</p>
+<p>腾讯的内推和自主投递没有流程上的区别，只是内推能在一开始锁定心仪的部门。我一开始不了解情况自主投递简历，导致后续无法内推，简历只能由部门随机锁定。捞我的部门是腾讯某著名游戏工作室，最终顺利拿到 offer。</p>
+<h4 id="字节"><a href="#字节" class="headerlink" title="字节"></a>字节</h4><ul>
+<li>流程：实习（3 面）+绿色通道 1 面</li>
+<li>结果：Offer</li>
+</ul>
+<p>字节的整体面试流程非常紧凑，实习简历投递后第二天就开始沟通面试，一个下午直接完成 3 面，再隔一天就沟通 offer，还允许远程实习，因此计划 3~6 月在字节顺带实习 3 个月。</p>
+<p>由于当时不是暑假，实验室压力、学生工作压力、实习工作压力都聚集在一起，让我度过了极其痛苦的三个月，几乎每天都没有休息。</p>
+<p>6 月份我提出离职放弃转正答辩，在之后的校招过程中只参加一次专业面试就直接获得校招 offer。</p>
+<h4 id="华为"><a href="#华为" class="headerlink" title="华为"></a>华为</h4><ul>
+<li>流程：笔试+3 面</li>
+<li>结果：Offer</li>
+</ul>
+<p>华为的面试流程感受还是非常友好的，会有 HR 单独联系，及时沟通面试进度和状态。</p>
+<p>另外令我惊讶的是多次主动沟通感兴趣的工作方向，并针对个人做出非常详细的职业规划，有一段时间几乎是每天打一次电话。</p>
+<p>最后的整体评级和薪资待遇也非常有诚意。华为的二面很有可能是压力面，只要保持心态就能顺利过关。</p>
+<h4 id="国网南瑞"><a href="#国网南瑞" class="headerlink" title="国网南瑞"></a>国网南瑞</h4><ul>
+<li>流程：1 面</li>
+<li>结果：Offer</li>
+</ul>
+<p>因为来学校进行宣讲，所以现场投递了简历，面试 20 多分钟就直接通过了。南瑞是国家电网子公司，网络风评不太好，不过通过特批给了一个超出预期相对有诚意的待遇，不过相比互联网还是有较大差距。</p>
+<h4 id="交行总行"><a href="#交行总行" class="headerlink" title="交行总行"></a>交行总行</h4><ul>
+<li>流程：免笔试免面试</li>
+<li>结果：Offer</li>
+</ul>
+<p>学校有人才推荐计划，填了一些表格交上去，随后安排了一次不到 10 分钟的面试，通知免笔试免面试直接参与体检环节，随后直接发 offer，薪资待遇都是统一的标准。</p>
+<h4 id="猿辅导"><a href="#猿辅导" class="headerlink" title="猿辅导"></a>猿辅导</h4><ul>
+<li>流程：笔试+3 面</li>
+<li>结果：Offer</li>
+</ul>
+<p>猿辅导号称是 WLB 的典范，一直宣称“年薪至少 40 万，7 点下班”，面试号称“具有挑战性”，但实际面试流程一周一面，且面试题目难度也很一般，无法深挖项目，只会简单的基础题问答和做题，每次面试两道题目左右，基本都是 leetcode 原题。 </p>
+<h4 id="完美世界"><a href="#完美世界" class="headerlink" title="完美世界"></a>完美世界</h4><ul>
+<li>流程：3 面</li>
+<li>结果：Offer</li>
+</ul>
+<p>完美世界 K-lab 计划号称 48 小时极速发 offer，由于是校招早期，因此就参与面试练习练习。</p>
+<p>由于还是北京疫情期间无法回校，所以安排远程面试超出了“48 小时”，但整体流程还是比较速度，面试结束后也很快收到意向书。 </p>
+<h4 id="网易"><a href="#网易" class="headerlink" title="网易"></a>网易</h4><ul>
+<li>流程：笔试+1 面</li>
+<li>结果：挂</li>
+</ul>
+<p>我投递的是网易有道的 Java 开发岗位，面试安排在出发回京返校前 1 个小时，1 面全程深挖各大技术栈的底层原理，面试官非常和蔼可亲，面试体验极佳，可惜我水平不高，一问三不知，过了两周流程就变灰了。</p>
+<h4 id="快手"><a href="#快手" class="headerlink" title="快手"></a>快手</h4><ul>
+<li>流程：1 面</li>
+<li>结果：挂</li>
+</ul>
+<p>按照大多数人的经历，快手的面试基本也应该是一次性面完，我面试的是基础平台，在做题的时候出现了比较大的失误，偏离了题目重点，把问题复杂化，所以一面结束后面试官直接就说结束面试，“以后等消息”。</p>
+<h4 id="商汤"><a href="#商汤" class="headerlink" title="商汤"></a>商汤</h4><ul>
+<li>流程：笔试+3 面</li>
+<li>结果：放弃</li>
+</ul>
+<p>商汤的面试流程中规中矩，有 HR 专人对接，但是每次面试都要相隔一到两周之后才有消息，流程也拖得很长。</p>
+<p>有趣的是其中一次面试过程中面试官问我是否认识本科的一位同学，可能是也投递了同一部门。最终三面时由于已有更好的 offer，所以就直接放弃面试了。 </p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>相比于身边的一些同学，我没有选择海投，而是在不同领域选择一些有特点的公司有针对性的投递简历，努力提高简历投递的“命中率”。</p>
+<p>秋招是一个长期的过程，在获得同领域一些比较满意的 offer 后，我就没有继续面试同领域的没有特殊优势的其他公司。</p>
+<p>这样做一方面减少了无效的面试次数，有更多时间进行有针对性的准备，也能兼顾实验室导师的工作；另一方面在最后选择的过程中也能突出每家公司的优势特色，选择时也更有区分度。</p>
+<h2 id="二、校招结构化面试"><a href="#二、校招结构化面试" class="headerlink" title="二、校招结构化面试"></a>二、校招结构化面试</h2><p>综合我的实习和校招面试经历，我认为准备面试应当包括五个方面，即自我介绍、基础知识、项目经历、原理解析和手写算法。</p>
+<h3 id="1-自我介绍"><a href="#1-自我介绍" class="headerlink" title="1. 自我介绍"></a>1. 自我介绍</h3><p>自我介绍是几乎所有面试的第一步骤，自我介绍配合简历会给面试官建立第一印象。我们知道在平时生活中，如果你喜欢一个人，那么这个人做的一切都会是美好的，如果你讨厌一个人，那么不管他做什么你都会看不顺眼。</p>
+<p>面试中也是同理，一个好的初始印象可能会淡化之后面试中自己的失误，而把重点聚焦于自己的长处上。</p>
+<p>在我看来，一次自我介绍至少应该包括：</p>
+<ul>
+<li>(1) 基本信息，毕业院校；</li>
+<li>(2) 实习、项目、竞赛经历和成果；</li>
+<li>(3) 自己擅长的技术栈；</li>
+</ul>
+<p>一般在自我介绍时，面试官很可能在查看简历，这时候需要对面试官进行后续面试问题的引导。</p>
+<p>例如如果自己对某些课程掌握非常深入，可以在教育经历中简要谈谈自己的课程情况，如果对自己的一个项目准备非常充分，可以加大自我介绍时该项目的比重，但切忌一下子说完让面试官无问题可问，而是有意识的留一些常见问题的缺口，例如分布式、效率优化等关键词，并针对这些关键词着重准备。</p>
+<p>此外，注意避免一些常见的简历介绍误区，例如“精通”这类给自己挖坑的词汇。</p>
+<h3 id="2-基础知识"><a href="#2-基础知识" class="headerlink" title="2. 基础知识"></a>2. 基础知识</h3><p>对于一些企业的技术初面，面试官可能不会和你讨论项目的技术细节，而是已经准备好了一系列的面试题，此时面试就变成面试官读题，自己答题的环节。这类基础知识问答包括计算机网络、操作系统、计算机组成原理、语言特性、数据库原理等方面的内容。例如：</p>
+<ul>
+<li><p>（网络）输入域名后的流程是什么？七/四层模型是怎样的？TCP 的拥塞控制方法是什么？</p>
+</li>
+<li><p>（操作系统）进程和线程的区别是什么？死锁的如何产生、避免？分段、分页与虚拟内存的系列问题、CPU 调度的系列问题等；</p>
+</li>
+<li><p>（计算机组成原理）指令执行的基本过程是什么？</p>
+</li>
+<li><p>（数据库原理）存储引擎的区别是什么？索引底层实现的原理是什么？</p>
+</li>
+<li><p>（语言特性）Java 垃圾回收机制是怎样的？Java 虚拟机包括哪些部分？Js 闭包的原理是什么？go routine 的调度是如何进行的？</p>
+</li>
+</ul>
+<p>对于这些问题，最直接的办法就是直接看已有的面试题整理，在一些博客或是牛客论坛上有大量的总结材料，对于有一定基础的同学直接看材料就能基本回忆起之前所学的课程。</p>
+<p>近两年由于大家越来越善于背题，出题的难度也在逐渐增加，偶尔有一些确实不会的题目直接承认即可，也<strong>不用不懂装懂</strong>强行回答，反而可能引起面试官的反感。</p>
+<h3 id="3-项目经历"><a href="#3-项目经历" class="headerlink" title="3. 项目经历"></a>3. 项目经历</h3><p>投递技术开发类岗位的同学基本都需要准备一些拿得出手的项目。项目经历是最无法临时准备的部分，在一些企业中项目深挖讨论反而会占面试的大部分时间。</p>
+<p>在我看来，准备描述自己的项目经历可以包括以下几点：</p>
+<ul>
+<li>(1) 描述清楚项目的背景和需要解决的问题；</li>
+<li>(2) 用了什么样的技术方法；</li>
+<li>(3) 项目取得了怎样的成果；</li>
+<li>(4) 自己在项目中是怎样的角色，负责哪些工作；</li>
+</ul>
+<p>在我实习和秋招面试的过程中，尽管简历上列出了最具代表性的三个项目，但是每次详细介绍的项目实际只有一到两个。</p>
+<p>对于如何描述自己的项目经历，完全可以像自我介绍一样准备好时间稍长一些的介绍模版，并至少准备好回答如下问题：</p>
+<p>在这个项目中，你遇到的难点是什么？你是如何解决的？</p>
+<p>项目介绍本身并不需要回答这个问题，而是面试官基本都会问这个问题。</p>
+<p>此外，通过多次面试，我发现每个项目介绍后面试官所问的问题都是有限的几个，因此可以通过多次面试提前准备好更多的项目问题回答，在交流过程中展现出自己从容、清晰的一面。</p>
+<h3 id="4-原理解析"><a href="#4-原理解析" class="headerlink" title="4. 原理解析"></a>4. 原理解析</h3><p>在我看来，这是整个面试过程中非常容易加分的部分。我们可以根据自己已有的项目、自我介绍中频繁出现的关键词，用心准备两到三个可以深挖的点。</p>
+<p>这里的原理解析不是仅仅是自己“看过别人写的解析文档”，而是自己深入理解，并能“有条理地讲述给别人听”。</p>
+<p>可以选择的方向例如：Tomcat、Spring、Redis、Kafka 的架构和源码实现、数据库引擎的实现、操作系统内核的实现、分布式一致性算法的源码实现、以及其他在自己项目中出现的问题等。</p>
+<p>选择深入准备的方向并不是随机的，而是确实在自己的项目中发挥了重要用途，并解决实际问题的关键难点。如果说基础知识重在广度和准确性，那么原理解析就要重在深度和思考性，描述自己的理解和思考，并能经得起面试官“步步紧逼”的询问。</p>
+<p>准备好可以深入探讨的点后，就可以在自我介绍、项目介绍过程中有意识的挖坑，频繁提起关键词，并留下含糊的描述性语句吸引面试官提问。（石头注：哈哈，都是套路啊）</p>
+<p>而在交流的过程中，也无需完整背诵千字大论文，而是由上而下，从整体到局部逐步解释。如果面试官强行讨论自己不熟悉的领域，直接简短说明不太了解即可，长时间支支吾吾无法清晰表达反而会导致减分。</p>
+<h3 id="5-手写算法"><a href="#5-手写算法" class="headerlink" title="5. 手写算法"></a>5. 手写算法</h3><p>在秋招开始前，我最担心的就是手写代码这一环节，对比身边一些将 leetcode 题库刷完的同学，我刷过的题目数量可能只有零头，不过在手写代码上也没有出过严重的问题。</p>
+<p>在我看来，平时没有刷题习惯的同学也无需对这个环节太过担心，只要有针对性进行准备，基本都能顺利完成。</p>
+<p>在临时突击刷题方案中，“数量”并不是重要因素，“重复”才是重点，我比较推荐的一个刷题方案是：</p>
+<ul>
+<li><p>(1) 专题练习阶段：按 leetcode 标签专题刷题，如字符串、DFS、动态规划、树、双指针、排序等，选择出现频率较高的简单和中等难度题目。对于常见的标签，做到能理解其常见解题思路即可；</p>
+</li>
+<li><p>(2) 精选题库阶段：可以选择 leetcode 热门 100 题，或者剑指 offer 练习题刷题，此时需要注意重复刷题，例如完整做完剑指 offer 练习题后再刷一遍，争取看到题目就能想到思路，独立快速完成题目；</p>
+</li>
+</ul>
+<p>在秋招准备阶段，我个人一共刷了 150 题左右，在面试的手写算法环节基本都顺利完成。</p>
+<p>此外，在手写算法的过程中一定要注意代码规范，注意异常输入的处理和代码整洁性，另外：</p>
+<ul>
+<li><p>如果暂时没有思路，可以试图从面试官那里获取提示，部分面试官甚至可以接受换题的要求。</p>
+</li>
+<li><p>如果有一些思路，可以尝试积极和面试官沟通获取一些提示。</p>
+</li>
+<li><p>如果确信自己无法解决问题，那么要求提示或者换其他题目总比留白要好。</p>
+</li>
+</ul>
+<h2 id="三、-offer-选择"><a href="#三、-offer-选择" class="headerlink" title="三、 offer 选择"></a>三、 offer 选择</h2><p>关于如何选择 offer，可能见仁见智，基本都会从<strong>薪资待遇、平台发展、城市选择、亲友关系、工作压力</strong>等很多方面打分权衡，但落实到实际中，我自己也根本无法确认每个部分的比重，有时候可能真的只有“follow your heart”。</p>
+<p>对于我自己来讲，最终纠结的主要是阿里、腾讯、华为三家公司。具体而言：</p>
+<ul>
+<li><p>从薪资待遇上来讲，三家公司基本都给到了 SSP，总包来看腾讯&gt;华为&gt;阿里；</p>
+</li>
+<li><p>从地域来看，由于自己是 xx 人，选择的就业地点希望在江浙沪一带，三家公司的工作地点也都满足要求；</p>
+</li>
+<li><p>从打听的工作时间来看，基本是腾讯&gt;华为&gt;阿里（仅是<strong>特定部门</strong>的工作时间，而非公司整体的工作时间）；</p>
+</li>
+<li><p>从部门业务来看，三家公司的业务都算比较核心且都能接受；</p>
+</li>
+<li><p>从技术的契合程度来看，阿里&gt;华为&gt;腾讯，腾讯游戏需要自己完全转换技术栈，且发展方向稍有受限。</p>
+</li>
+</ul>
+<p>此外，我也综合考虑了工作地所在城市的生活成本、亲友的期望等问题，把最终的候选公司确定为阿里、腾讯两家，尽管每家公司都有其优势和劣势，但至少我都能接受其中的任意一种选择。</p>
+<p>在漫长的纠结、沟通之后，我最后选取了最简单的方式：抛硬币。不管是开心接收抛硬币的结果，还是希望赶紧捡起来再抛一次，我都会知道自己内心真实的选择。（石头注：好硬核的方式）</p>
+<blockquote>
+<p>关于号主：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader，欢迎关注，交流和指导！</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/经验技巧/" rel="tag"># 经验技巧</a>
+          
+            <a href="/tags/程序员/" rel="tag"># 程序员</a>
+          
+            <a href="/tags/校招/" rel="tag"># 校招</a>
+          
+            <a href="/tags/面经/" rel="tag"># 面经</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/experience-of-buying-a-house-in-peking-part-2.html" rel="next" title="毕业两年半，如何帝都购房上车|石头购房经验谈（下）">
+                <i class="fa fa-chevron-left"></i> 毕业两年半，如何帝都购房上车|石头购房经验谈（下）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/low-education-background-also-make-much-money-as-a-programmer.html" rel="prev" title="大专被裁失业，却拒绝了 42k 的 Offer？">
+                大专被裁失业，却拒绝了 42k 的 Offer？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、秋招历程"><span class="nav-number">2.</span> <span class="nav-text">一、秋招历程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#就业方向"><span class="nav-number">2.1.</span> <span class="nav-text">就业方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面试情况"><span class="nav-number">2.2.</span> <span class="nav-text">面试情况</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#阿里"><span class="nav-number">2.2.1.</span> <span class="nav-text">阿里</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#腾讯"><span class="nav-number">2.2.2.</span> <span class="nav-text">腾讯</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字节"><span class="nav-number">2.2.3.</span> <span class="nav-text">字节</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#华为"><span class="nav-number">2.2.4.</span> <span class="nav-text">华为</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#国网南瑞"><span class="nav-number">2.2.5.</span> <span class="nav-text">国网南瑞</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交行总行"><span class="nav-number">2.2.6.</span> <span class="nav-text">交行总行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#猿辅导"><span class="nav-number">2.2.7.</span> <span class="nav-text">猿辅导</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#完美世界"><span class="nav-number">2.2.8.</span> <span class="nav-text">完美世界</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网易"><span class="nav-number">2.2.9.</span> <span class="nav-text">网易</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快手"><span class="nav-number">2.2.10.</span> <span class="nav-text">快手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#商汤"><span class="nav-number">2.2.11.</span> <span class="nav-text">商汤</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">2.3.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、校招结构化面试"><span class="nav-number">3.</span> <span class="nav-text">二、校招结构化面试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-自我介绍"><span class="nav-number">3.1.</span> <span class="nav-text">1. 自我介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-基础知识"><span class="nav-number">3.2.</span> <span class="nav-text">2. 基础知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-项目经历"><span class="nav-number">3.3.</span> <span class="nav-text">3. 项目经历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-原理解析"><span class="nav-number">3.4.</span> <span class="nav-text">4. 原理解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-手写算法"><span class="nav-number">3.5.</span> <span class="nav-text">5. 手写算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、-offer-选择"><span class="nav-number">4.</span> <span class="nav-text">三、 offer 选择</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/share-interview-experience-when-gradudate-in-2021-part-2.html';
+
+      var disqus_title = "又一位大牛斩获 BAT 大厂 Offer，看看他精心准备的面试总结";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

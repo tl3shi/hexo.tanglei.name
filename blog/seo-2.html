@@ -1,0 +1,863 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="SEO,电子商务,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="1) Robots.txt**文件——纯文本文件，放置在一个站点的根目录下，而且文件名必须全部小写。 **                     Googlebot                    Google对一般网页的搜索蜘蛛                            Googlebot-Mobile                    Google对于移动设备，例如手机">
+<meta name="keywords" content="SEO,电子商务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搜索引擎优化(二)">
+<meta property="og:url" content="https://www.tanglei.name/blog/seo-2.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="1) Robots.txt**文件——纯文本文件，放置在一个站点的根目录下，而且文件名必须全部小写。 **                     Googlebot                    Google对一般网页的搜索蜘蛛                            Googlebot-Mobile                    Google对于移动设备，例如手机">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.838Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="搜索引擎优化(二)">
+<meta name="twitter:description" content="1) Robots.txt**文件——纯文本文件，放置在一个站点的根目录下，而且文件名必须全部小写。 **                     Googlebot                    Google对一般网页的搜索蜘蛛                            Googlebot-Mobile                    Google对于移动设备，例如手机">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/seo-2.html">
+
+
+
+
+
+  <title> 搜索引擎优化(二) | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/seo-2.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                搜索引擎优化(二)
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-05-23T18:18:15+00:00">
+                2011-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">课程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/seo-2.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/seo-2.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>1)</strong> <strong>Robots.txt**</strong>文件——<strong>纯文本文件，放置在一个站点的根目录下，而且文件名必须全部小写。 **</strong></p>
+<div><br>  <table border="0" cellspacing="0" cellpadding="0" width="464"><br>    <tr><br>      <td width="127" valign="top"><br>        Googlebot<br>      </td><br><br>      <td width="337" valign="top"><br>        Google对一般网页的搜索蜘蛛<br>      </td><br>    </tr><br><br>    <tr><br>      <td width="127" valign="top"><br>        Googlebot-Mobile<br>      </td><br><br>      <td width="337" valign="top"><br>        Google对于移动设备，例如手机网页的索引蜘蛛<br>      </td><br>    </tr><br><br>    <tr><br>      <td width="127" valign="top"><br>        Googlebot-Image<br>      </td><br><br>      <td width="337" valign="top"><br>        Google专门用来抓取图片的蜘蛛<br>      </td><br>    </tr><br><br>    <tr><br>      <td width="127" valign="top"><br>        Baiduspider<br>      </td><br><br>      <td width="337" valign="top"><br>        百度综合索引蜘蛛<br>      </td><br>    </tr><br><br>    <tr><br>      <td width="127" valign="top"><br>        Yahoo!Slurp<br>      </td><br><br>      <td width="337" valign="top"><br>        雅虎综合索引蜘蛛<br>      </td><br>    </tr><br><br>    <tr><br>      <td width="127" valign="top"><br>        YodaoBot<br>      </td><br><br>      <td width="337" valign="top"><br>        网易有道综合索引蜘蛛<br>      </td><br>    </tr><br><br>    <tr><br>      <td width="127" valign="top"><br>        Sosospider<br>      </td><br><br>      <td width="337" valign="top"><br>        腾讯搜搜综合索引蜘蛛<br>      </td><br>    </tr><br><br>    <tr><br>      <td width="127" valign="top"><br>        Sogou spider<br>      </td><br><br>      <td width="337" valign="top"><br>        搜狐搜狗综合索引蜘蛛<br>      </td><br>    </tr><br>  </table><br></div>
+
+<p><strong>a)</strong> <strong>举例说明</strong></p>
+<p>i.              禁止除Google外其他搜索引擎索引所有内容</p>
+<p>User-agent: Googlebot</p>
+<p>Disallow:</p>
+<p>User-agent: *</p>
+<p>Disallow: /</p>
+<p>ii.              允许SE索引指定内容</p>
+<p>User-agent: *</p>
+<p>Allow: /images/abc</p>
+<p>Disallow: /images/</p>
+<p>iii.              允许访问所有以asp为后缀的文件</p>
+<p>User-agent: *</p>
+<p>Allow: .asp$</p>
+<p>Disallow: /</p>
+<p>iv.              禁止访问所有URL中包含?的网页，如index.jsp?id=1</p>
+<p>User-agent: *</p>
+<p>Disallow: /*？*</p>
+<p><strong>b)</strong> <strong>注意事项：</strong></p>
+<p>i.              让蜘蛛远离网站的源程序文件和后台管理文件。不让蜘蛛访问数据库文件、模板文件、CSS文件等；</p>
+<p>ii.              拒绝垃圾搜索引擎。某些蜘蛛不能访问，降低服务器负担，提高服务器性能。</p>
+<p>iii.              如果网站使用Rewrite方式进行伪静态化，网站将有两个网址。为了节约服务器资源，使用robots.txt文件防止蜘蛛抓取动态页面，只允许抓取伪静态页面。</p>
+<p>&nbsp;</p>
+<p><strong>2)</strong> <strong>网页链接的优化</strong></p>
+<p><strong>a)</strong> <strong>内部链接的优化：</strong>提高了网站内部链接的紧密性，从而也提高了整个网站的SEO性能；相关页面的链接优化可以提高网站的PV，提高页面之间关键词的相关度。 <em>**</em></p>
+<p>i.              导航尽量使用文本作为连接的锚文字，不使用javascript、图片、flash作为导航，如果一定要用注意：放在页面其他部位；放置网站地图，图片导航添加alt属性。</p>
+<p> <strong>ii.</strong> 面包屑导航：面包屑导航的锚文字比较精准地反映了目标页面的主要内容，由于同类正文页面数量很大，因此每一个上级栏目页都获得大量的来自内容页面的反向链接，因此该目标页在搜索引擎中的排名也可以大大提升。 <em>**</em></p>
+<p><strong>b)</strong> <strong>外部链接的优化：</strong>是SEO的关键因素之一，高权重的网站，同行业的网站给予的友情链接质量高，分值也高。 <em>**</em></p>
+<p>i.              选择外部链接时，仔细分析对方网站是否被搜索引擎惩罚过，慎重交换链接。</p>
+<p>ii.              尽量选择同行业网站，以提高友情链接的质量。</p>
+<p>iii.              高质量的网站总会带来高质量的友情链接，如果对方PR&gt;6，that’s great!!</p>
+<p>iv.              定期检查网站上链接到外部的友情链接，查看是否出现空链接，对方网站是否使用JS脚本做友情链接等</p>
+<hr>
+<p><strong>3)</strong> <strong>Heading**</strong>标签的优化：<strong>heading标签就是指六种不同大小的文字，从<h1>到<h6>，文字由大到小。有着举足轻重的地位。 **</h6></h1></strong></p>
+<p>i.              在每个页面中只需要放置一个h1标签。</p>
+<p>ii.              h2标签不能太多，一般不能超过3个，有些关键词或者由关键词组合成的短语标题可以使用h2标签。</p>
+<p>iii.              h3-h6标签使用频率并不太高（可作为段落标题），在页面底部为了突出整个页面的关键词时，使用h6标签包含关键词。</p>
+<p>iv.              对heading标签的优化，可以在栏目页中，也可以在首页、专题页，甚至内容页中。</p>
+<hr>
+<p><strong>4)</strong> <strong>图片优化：</strong></p>
+<p>i.              在百度图片搜索中，对于同样的图片，JPG图片的排名高于其他格式的图片，其排序规范为：jpg &gt; jpeg &gt; gif &gt; png &gt; bmp。</p>
+<p>ii.              除非是特殊的人为干扰，否则像素较大的照片，会比同条件的其他图片排名靠前。</p>
+<p>iii.              通过HTML代码中的元素提高图片与关键词之间的相关度。Img标签的alt</p>
+<p>iv.              通过URL<a>标签链接来提高图片与关键词的相关度。</a></p>
+<p>v.              通过文件名、URL文件夹名称进行图片SEO。</p>
+<p>vi.              环绕图片的文字对搜索引擎蜘蛛的干扰，图片标签的前255个字符和后255个字符对搜索引擎图片内容的判断有着非常重要的作用。前后可以&lt;!—注释当中alt相近的关键字描述&#8211;&gt;</p>
+<p>&nbsp;</p>
+<p><strong>5)</strong> <strong>网页减肥</strong></p>
+<p>i.              去掉冗余代码</p>
+<p>ii.              css代码单独保存，标准命名</p>
+<p>iii.              查看网页是否符合W3C标准</p>
+<p>iv.              JS代码封装，或者放在html代码之后</p>
+<p>v.              网页文本的减肥：分页处理</p>
+<p>vi.              网页图片的减肥：图片裁减与压缩</p>
+<p>vii.              Flash的减肥：尽量避免使用Flash，制作与Flash中内容相同的文字网页。</p>
+<p>&nbsp;</p>
+<p><strong>1.1</strong> <strong>SEO**</strong>常用作弊方式**</p>
+<p>1)         桥页(Doorway Pages)：又称为过渡页，通常是用软件自动生成大量包含关键词的网页，然后从这些网页做自动转向到主页。</p>
+<p>2)         关键词堆砌(Keyword Stuffing)：在网页中大量堆砌关键词，希望提高关键词密度，提高网页针对关键词的相关度。</p>
+<p>3)         隐藏文字(Hidden Text)：隐藏文字是在网页的HTML文件中放上含有关键词的文字，但这些文字不能被用户所看到，只能被搜索引擎看到。</p>
+<p>4)         隐藏链接(Hidden Link)：隐藏链接和隐藏文字相似，但是区别是把关键词放在链接里面，而这个链接也是用户所看不到的。</p>
+<p>5)         隐藏页面(Cloaked Page)：有的网页使用程序或脚本来检测来访问的是搜索引擎还是普通用户。如果是搜索引擎，网页就返回经过优化的网页版本。如果来访的是普通人，返回的是另外一个版本.</p>
+<p>6)         细微文字：将本来隐藏的文字以细微的字体暴露出来。细微文字是使用微小的字体在网页不显眼的地方书写带有关键词的句子。</p>
+<p><strong>1.2</strong> <strong>防止网页被搜索引擎认为是SPAM</strong></p>
+<p>1)         注意网页上的链接数量，并且不要给已经被处罚过的网站提供导出链接。</p>
+<p>2)         关键词密度控制在2%-8%。</p>
+<p>3)         网站中的每一个网页都需要独一无二的内容，切不可一个页面有多个地址访问。</p>
+<p>4)         避免出现例如“免费抽奖”、“免费设计签名”、“免费手机铃声”等被网友反感的关键词。</p>
+<p>5)         在注册域名之前，查询该域名是否以前被注册过，被惩罚过。在选择服务器时，查询该服务器IP下是否有被搜索引擎惩罚过的网站。</p>
+<p>6)         如果网站有blog系统，留言本，论坛，需要注意经常检查内容。</p>
+<p><strong>1.3</strong> <strong>SEOer**</strong>：<strong><strong>Search Engine Optimizer</strong></strong>：<strong>搜索引擎优化师。这些人利用工具或者其他的各种手法使目标网站符合搜索引擎规则，从而获得搜索引擎搜索排名至高点。营销策划能力、 文字表达能力、网站运营分析能力、SEO技术、项目管理能力、沟通能力。 **</strong></p>
+<p>&nbsp;</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SEO/" rel="tag"># SEO</a>
+          
+            <a href="/tags/电子商务/" rel="tag"># 电子商务</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/seo-1.html" rel="next" title="搜索引擎优化(一)">
+                <i class="fa fa-chevron-left"></i> 搜索引擎优化(一)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/csa-is-good.html" rel="prev" title="计算机系统应用好，免审稿费">
+                计算机系统应用好，免审稿费 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">到，文字由大到小。有着举足轻重的地位。 **</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.0.0.1.</span> <span class="nav-text">，文字由大到小。有着举足轻重的地位。 **</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/seo-2.html';
+
+      var disqus_title = "搜索引擎优化(二)";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

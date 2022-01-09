@@ -1,0 +1,859 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="经验技巧,程序员,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景在上一篇文章中，石头哥谈了谈读本科的时候都学了哪些计算机专业课和推荐了一些经典的技术书籍，然后推文封面中的这张图引起了不少读者的注意。  这其实是我当时">
+<meta name="keywords" content="经验技巧,程序员">
+<meta property="og:type" content="article">
+<meta property="og:title" content="经验分享 —— 程序员编程如何入门、进阶">
+<meta property="og:url" content="https://www.tanglei.name/blog/experience-of-learning-programming.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景在上一篇文章中，石头哥谈了谈读本科的时候都学了哪些计算机专业课和推荐了一些经典的技术书籍，然后推文封面中的这张图引起了不少读者的注意。  这其实是我当时">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/experience-of-learning-programming/石头哥课程大作业 Demo.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/experience-of-learning-programming/目录.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/experience-of-learning-programming/积攒项目经验-传送文件.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/experience-of-learning-programming/登录飞信-官方飞信客户端被 T 出.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/experience-of-learning-programming/爬虫-爬取课表和成绩.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/how-to-study-cs-at-school-with-book-recommend-in-1024/class.png">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.997Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="经验分享 —— 程序员编程如何入门、进阶">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景在上一篇文章中，石头哥谈了谈读本科的时候都学了哪些计算机专业课和推荐了一些经典的技术书籍，然后推文封面中的这张图引起了不少读者的注意。  这其实是我当时">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/experience-of-learning-programming/石头哥课程大作业 Demo.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/experience-of-learning-programming.html">
+
+
+
+
+
+  <title> 经验分享 —— 程序员编程如何入门、进阶 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/experience-of-learning-programming.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                经验分享 —— 程序员编程如何入门、进阶
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-11-27T00:00:00+00:00">
+                2020-11-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/experience-of-learning-programming.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/experience-of-learning-programming.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247490374&amp;idx=1&amp;sn=2673e22f1293967bc34a3972a0d44cff&amp;chksm=eb471aa2dc3093b4c8bcdf7c4ff4ed0ab6e8d15bbdfb0b58ac380ad27a92ce0b3c7e263a4c05&amp;token=1124656912&amp;lang=zh_CN#rd" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “<strong>1024</strong>” 获取程序员大厂面试指南。</p>
+</blockquote>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在上一篇文章中，石头哥谈了谈读本科的时候都学了<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247490014&amp;idx=1&amp;sn=93880ff65c40fe6e20c65cc89dfc6478&amp;chksm=eb47183adc30912c6c6c2134cabcf2b822ae2a091ecb4a0b5cc15c630cbbf06601310a6076ea&amp;token=37889950&amp;lang=zh_CN#rd" target="_blank" rel="noopener">哪些计算机专业课和推荐了一些经典的技术书籍</a>，然后推文封面中的这张图引起了不少读者的注意。</p>
+<p><img src="https://www.tanglei.name/resources/experience-of-learning-programming/石头哥课程大作业 Demo.png" alt="图：石头哥课程大作业 Demo"></p>
+<p>这其实是我当时的课程大作业的 Demo，（严格意义上讲其实是几个课程的大作业😎）。</p>
+<p>今天这篇文章， 石头哥就接着这个话题讲讲我是如何入门和进阶编程的。也正好有读者朋友跟我咨询，有没有什么 Java 小项目可以练手的，这篇文章也算是能回答这部分读者的疑问。</p>
+<p>下面，我将从以下这几个方面，谈谈自己的理解：</p>
+<p><img src="https://www.tanglei.name/resources/experience-of-learning-programming/目录.png" alt="目录"></p>
+<h2 id="如何入门、提高兴趣？"><a href="#如何入门、提高兴趣？" class="headerlink" title="如何入门、提高兴趣？"></a>如何入门、提高兴趣？</h2><p>首先，“编程”的门槛相对较低，你看外面的培训机构早就从成年人延伸到越来越多的中小学生，甚至“少儿编程”了。既然“少儿”都学，难道你还不能学么？</p>
+<p>但整体来讲学习“编程”，特别是到后面进阶（例如数据结构和算法），是相对比较枯燥的。所以就要想办法来提高自己的兴趣，或者说通过一步步学习来获得“成就感”反向刺激自己主动多学习。</p>
+<p>关于入门的编程语言，我觉得不要太局限，不要太限制自己非得用某个语言入门，可以根据自己的实际情况来选择。不过整体来讲，如果之前完全是小白，我推荐比如用 Python 等先对编程语言有个大体的了解。</p>
+<p>掌握了一门编程语言后，其他语言都是触类旁通的，无外乎就是“顺序、选择、循环”，不同编程语言的具体语法不一样而已。然后对于常规的面向过程的 C 语言，或者面向对象的 Java 等也建议都了解和学习一下。</p>
+<p>记得我当初上大学的时候接触的第一门编程语言就是“VB”，我想学校安排的课程先后顺序还是很有道理的。用 VB，在 VisualStudio 上简单用鼠标拖一拖就能出来一个有用户界面、可交互的像模像样的“软件”，这对于上面提到的用“成就感”来激励自己主动多学习还是很有效果的。</p>
+<p>比如当初课程大作业就是写一个计算器，通过短时间的入门学习，就能写一个这样的计算器软件出来，确实还是颇有成就感。这其实就跟现在的少儿编程一个道理，用一些可视化的编程平台让小朋友通过简单的拖拽，加上少部分逻辑就能出一个非常“炫丽”的效果，就跟玩游戏一样，这当然能激发足够的兴趣。</p>
+<p>再比如刚开始入门就选择 C 语言或者汇编，这对于提高兴趣、想获得“成就感”来起到激励作用就大打折扣了。我记得当初课程学习 C 语言时，最后作业都只有在黑屏控制台下，虽然也能完成差不多的功能，但从“可观赏性”来讲就差太多了。当然，我不是说 C 语言不重要哦~ C 语言还是很经典的，入门一门语言后，建议都认真学学。</p>
+<p>小结一下，入门编程，就是先学一门比较好上手的编程语言，通过尝试写一些有用户界面（比如 HTML+JS）的小项目、小 Demo 来激励自己。</p>
+<h2 id="积累专业知识，重视基础"><a href="#积累专业知识，重视基础" class="headerlink" title="积累专业知识，重视基础"></a>积累专业知识，重视基础</h2><p>有了一两门编程语言作为基础后，这个环节就是真正体现编程水平的时候，也是最能和其他人拉开差距的部分。</p>
+<p>在阿里社招面试的过程中也是非常看重基础的，过去项目不牛 X 没关系，基础知识一定得杂实。</p>
+<p>石头在参与社招面试过程中，领导也特别交代，除了一般的沟通交流外一定要看基础，基础好，解决问题时有逻辑、有条理，简单的代码题目能写个八九不离十，基本上一面二面也就过了。</p>
+<p>具体相关的计算机专业课程无外乎就是那么几门：《C/C++程序设计基础》、《数据结构》、《算法分析和设计》、《汇编语言程序设计》、《计算机网络》、《操作系统》、《数据库系统》、《编译原理》等等，在这里我也不再详述了，感兴趣的同学可以参考下我之前写的这篇文章 <a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247490014&amp;idx=1&amp;sn=93880ff65c40fe6e20c65cc89dfc6478&amp;chksm=eb47183adc30912c6c6c2134cabcf2b822ae2a091ecb4a0b5cc15c630cbbf06601310a6076ea&amp;token=37889950&amp;lang=zh_CN#rd" target="_blank" rel="noopener">1024程序猿节，聊聊石头学了哪些课，屯了哪些书？</a>  </p>
+<p>从中可看出，正如我之前所说，计算机相关的专业基础知识和就业联系得很紧密。如果是在校生，就一定不要浪费时间、抓住这些专业课程的学习机会。不然毕业后从事了编程这个行业，也还是会回到这些基础知识上，正所谓“欠下的债，迟早都是要还的”。</p>
+<p>况且，学校的课程学得好，还能帮助获得奖学金、保研、找工作等等，一举多得，简直完美。</p>
+<p>再次强调一下，程序猿真的需要重视基础，我在之前的文章中也多次强调了，比如 <a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247487939&amp;idx=1&amp;sn=3962dc1cc3c4ce10b528b7a3bf0d7896&amp;chksm=eb471027dc3099314a181e3257957567e6fd9a3a3309532e87cb77572f13939ff6e59abecc3b&amp;token=1816538992&amp;lang=zh_CN&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">《有了这份程序员面试指南，你离大厂Offer还远吗？》</a> 、<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247484698&amp;idx=1&amp;sn=03cc4636e7ee7364a85788a98809cc03&amp;chksm=eb4704fedc308de8efd48ab9aed4fd1ddee5665d8e76d0d3767c1f704eac8b15a83e450a08f1&amp;token=1816538992&amp;lang=zh_CN&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">《从一道面试题谈谈一线大厂码农应该具备的基本能力》</a></p>
+<p>现在的网络资源也很丰富，各种丰富的教程、文章、书籍等都可以直接白嫖，比如肝王 cxuan 总，小林的图解系列等等都很不错。比起我们当年，真是要好太多了。不过也正是因为现在各种资料满天飞，其中也不乏各种垃圾，学会甄别和如何快速检索到想要的也是一种能力。</p>
+<p>当然，还有一点也很重要，很多情况下，我们去屯了不少学习资料，然而真正去阅读学习的又占多少？我不知道你怎么样，反正我确实是屯了不少，但屯了后去认真看的，确实少。</p>
+<h2 id="积攒项目经验"><a href="#积攒项目经验" class="headerlink" title="积攒项目经验"></a>积攒项目经验</h2><p>前面提到的入门也好，基础知识也好，其实最终是为“项目”、为“产品”服务的。在校生或者刚入门没有“项目”，没有“产品”怎么办，那就自己制造机会。</p>
+<p>为什么要做项目呢，因为一个完整的项目是可以比较系统的，是一个可以把理论付诸实践的机会，从某种程度上讲，做一个或大或小的项目，也能起到跟前文所说的正向激励的作用。</p>
+<p>例如我在本科期间，就做了几个小项目，现在列举两个典型供大家参考。</p>
+<p>例如，学完 Java 编程、数据库等课程后，是不是也可以自己来搞个小聊天工具呢？再比如，学了 Java Web 开发，是不是可以搞个类似的图书管理系统、校园 SNS 之类（当初人人网很🔥啊）的玩玩？</p>
+<p>下面就来看看我上学期间搞的两个小项目吧，供参考。</p>
+<h3 id="仿QQ聊天系统"><a href="#仿QQ聊天系统" class="headerlink" title="仿QQ聊天系统"></a>仿QQ聊天系统</h3><p>这个就能对自己的学习有一个阶段性、系统性的总结，在当初看来确实还是蛮有成就感的。其实做一个，各种场合都能用，比如课程 A 的大作业可以用，稍微改吧改吧，课程 B 的也能接着用，一举多得。用心做，不仅自己知识点 get 到了，各个课程作业又能得高分。😑</p>
+<p>这个系统主要是仿照QQ聊天软件，其功能模块包括：私聊、群聊、语音聊天、视频聊天，用到的主要技术点：C/S 体系结构，Oracle数据库、socket、多线程、swing等等。</p>
+<p>当初做完了语音、视频聊天，还是很让人眼前一亮的。当然这种小项目当初我们是几个小伙伴一起合作完成的，一般课程作业是需要在规定的时间内完成的，就可以找几个小伙伴一起学习、互相促进和成长。</p>
+<p>你当然也可以独立完成，如果也想找小伙伴一起，也可以加入”程序猿石头”的读者交流群，找志同道合的小伙伴一起“刷项目”，共同成长、共同进步。</p>
+<p><img src="https://www.tanglei.name/resources/experience-of-learning-programming/积攒项目经验-传送文件.png" alt="积攒项目经验-传送文件"></p>
+<p>积攒项目经验-传送文件</p>
+<p>看截图，是不是还像模像样的。用这个小项目来入门练手，还真是个不错的选择。有足够的挑战，同时也有足够的趣味性和成就感。</p>
+<h3 id="基于中国移动飞信的校园资讯网"><a href="#基于中国移动飞信的校园资讯网" class="headerlink" title="基于中国移动飞信的校园资讯网"></a>基于中国移动飞信的校园资讯网</h3><p>这个项目是基于WEB网络的校园资讯网，项目分析了飞信协议（其实就是利用网络资源改写一个web飞信），利用飞信功能可以进行个人日程提醒、订阅天气、好友生日提醒、课程提醒等等；（时光荏苒，飞信？用过的说明你也“老”了）</p>
+<p>主要技术点：项目采用Struts+Hibernate框架开发，httpclient+htmlparser分析教务管理系统流程获取有用信息，利用webservices获得谷歌天气信息，将这些有用信息通过飞信发送给用户。</p>
+<p><img src="https://www.tanglei.name/resources/experience-of-learning-programming/登录飞信-官方飞信客户端被 T 出.png" alt="登录飞信-官方飞信客户端被 T 出"></p>
+<p>登录飞信-官方飞信客户端被 T 出</p>
+<p>这个小项目也是源于生活。当初当了个小班长，每期末都要统计成绩，计算综合测评等，想想，何不写个爬虫来爬呢。有时候，程序猿的“懒”就是为了提高效率。</p>
+<p><img src="https://www.tanglei.name/resources/experience-of-learning-programming/爬虫-爬取课表和成绩.png" alt="爬虫-爬取课表和成绩"></p>
+<p>爬虫-爬取课表和成绩</p>
+<p>类似的小项目可以达到阶段性总结的目的，同时自己的积累和总结也是自己的一笔财富，且无形之中可以让自己将来也获益。</p>
+<p>举个🌰例子，比如我上面的项目总结和积累，可以帮助我后面获取更多的机会，例如当初我搞了个小团队，参与了大学生创新性实验项目，获得了国家 2 万元的项目研究资助，还发了小论文（虽然现在看来很水），后期在简历中也有加分。比如在我大三的时候，就获得了腾讯的实习机会，参与了真正的商业产品的开发。再后来，前面的积累又帮助我全奖保研到清华读研（清华录取外校的学硕名额是相当少的）。</p>
+<h2 id="勤思考、多总结"><a href="#勤思考、多总结" class="headerlink" title="勤思考、多总结"></a>勤思考、多总结</h2><p>这个其实不必多说。不管那个行当，做到 “勤思考、多总结” 百利无一害。我在<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247488750&amp;idx=1&amp;sn=bddb76b8e85d04b303b3d10024b8a56b&amp;chksm=eb47150adc309c1cfe5f847acaf6a3eb7de3efb3c7f2a87e708a686a740aa364c33c80ea3000&amp;token=1816538992&amp;lang=zh_CN&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">《10 年 bloger 告诉你要不要写博客，又该如何优雅地写博客？》</a> 这篇文章中也提到了，我其实当初最初玩 blog，更多的就是抱着学习总结的态度。</p>
+<p>例如，下图是我在读本科和硕士期间相关课程的学习材料，包括老师课件，课程作业和学习笔记和复习资料等，这种平日积累总结很有效，对于临近期末考试也能做到不慌不乱，还是很有作用的。</p>
+<p><img src="https://www.tanglei.name/resources/how-to-study-cs-at-school-with-book-recommend-in-1024/class.png" alt="课程笔记总结"></p>
+<p>哪怕正式工作之后，写周报、月报等也都是阶段性的总结，再比如晋升答辩等等都是需要你日常的思考积累和总结的。反正将来都会用得着，何不现在就开始锻炼呢。</p>
+<p>在日常学习和工作之中，我们看到一个问题的时候，要学会思考背后的道理，比如在接到某个需求的时候，思考这个需求最终是要解决具体什么问题，有没有更好的解决方案？在阅读某段代码，思考原作者为什么要这么设计？</p>
+<p>就比如看到这段代码，你能否多思考一下其中的奥秘？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public static boolean isEqual(byte[] digesta, byte[] digestb) &#123;</span><br><span class="line">   if (digesta == digestb) return true;</span><br><span class="line">   if (digesta == null || digestb == null) &#123;</span><br><span class="line">       return false;</span><br><span class="line">   &#125;</span><br><span class="line">   if (digesta.length != digestb.length) &#123;</span><br><span class="line">       return false;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   int result = 0;</span><br><span class="line">   for (int i = 0; i &lt; digesta.length; i++) &#123;</span><br><span class="line">       result |= digesta[i] ^ digestb[i];</span><br><span class="line">   &#125;</span><br><span class="line">   return result == 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述代码中，比较两个字符串是否相等，按道理，其实中间某位不相等就可以直接返回了，但为啥要遍历完了再返回，这么做的目的是什么？在问了为什么之后，你可能就会知道，原来这么做是为了防止<strong>计时攻击</strong>。完整文章可参考本人写的这篇文章——<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247485939&amp;idx=1&amp;sn=cad3cf49aa345783a93ce5d9b631ba1d&amp;chksm=eb470817dc308101c95aff74fa63d530f02bef50f91ba18d4ff25b8715933a404bd03ffc8b7b&amp;token=1816538992&amp;lang=zh_CN&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">《这 10 行比较字符串相等的代码给我整懵了，不信你也来看看》</a>。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>整体来讲，针对“入门进阶编程”这个话题，我谈了谈自己的理解，重点还是要重视基础，通过小项目正向激励自己多主动学习，然后做到勤思考，多总结。</p>
+<p>最后，求关注，本号会定期分享一些技术干货、职场经验等，如果大家对阿里或者其他大厂感兴趣，也可以找我内推，我可以帮忙提供简历 review 等，希望能和大家积极交流讨论，一起学习、共同进步。</p>
+<p>觉得本号分享的文章有价值，记得添加星标哦。周更很累，不要白 piao，需要来点正反馈，安排个 “一键三连”（点赞、在看、分享）如何？😝 这将是我持续输出优质文章的最强动力。</p>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader，欢迎关注，交流和指导！</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/经验技巧/" rel="tag"># 经验技巧</a>
+          
+            <a href="/tags/程序员/" rel="tag"># 程序员</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/experience-of-buying-a-house-in-peking-part-1.html" rel="next" title="毕业两年半，如何帝都购房上车|石头购房经验谈（上）">
+                <i class="fa fa-chevron-left"></i> 毕业两年半，如何帝都购房上车|石头购房经验谈（上）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/share-interview-experience-when-gradudate-in-2021.html" rel="prev" title="羡慕，又一清华学弟斩获 6 个大厂 SSP Offer | 面经分享">
+                羡慕，又一清华学弟斩获 6 个大厂 SSP Offer | 面经分享 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何入门、提高兴趣？"><span class="nav-number">2.</span> <span class="nav-text">如何入门、提高兴趣？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#积累专业知识，重视基础"><span class="nav-number">3.</span> <span class="nav-text">积累专业知识，重视基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#积攒项目经验"><span class="nav-number">4.</span> <span class="nav-text">积攒项目经验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#仿QQ聊天系统"><span class="nav-number">4.1.</span> <span class="nav-text">仿QQ聊天系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于中国移动飞信的校园资讯网"><span class="nav-number">4.2.</span> <span class="nav-text">基于中国移动飞信的校园资讯网</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#勤思考、多总结"><span class="nav-number">5.</span> <span class="nav-text">勤思考、多总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/experience-of-learning-programming.html';
+
+      var disqus_title = "经验分享 —— 程序员编程如何入门、进阶";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

@@ -1,0 +1,887 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="经验技巧,Linux,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景大家好，我是石头哥。  题目你可能读不全（没事，俺也一样），特此补充拼音！ yòu shuāng ruò zhuó又双叒叕 最近有">
+<meta name="keywords" content="经验技巧,Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="磁盘又双叒叕满了~">
+<meta property="og:url" content="https://www.tanglei.name/blog/this-disk-is-full-again-and-again.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景大家好，我是石头哥。  题目你可能读不全（没事，俺也一样），特此补充拼音！ yòu shuāng ruò zhuó又双叒叕 最近有">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.tanglei.name/resources/difference-between-du-and-ls/du-ls.jpg">
+<meta property="og:image" content="https://inews.gtimg.com/newsapp_match/0/14048391133/0">
+<meta property="og:image" content="https://inews.gtimg.com/newsapp_match/0/14048391864/0">
+<meta property="og:updated_time" content="2022-01-09T16:47:23.007Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="磁盘又双叒叕满了~">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景大家好，我是石头哥。  题目你可能读不全（没事，俺也一样），特此补充拼音！ yòu shuāng ruò zhuó又双叒叕 最近有">
+<meta name="twitter:image" content="http://www.tanglei.name/resources/difference-between-du-and-ls/du-ls.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/this-disk-is-full-again-and-again.html">
+
+
+
+
+
+  <title> 磁盘又双叒叕满了~ | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/this-disk-is-full-again-and-again.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                磁盘又双叒叕满了~
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-10-31T00:00:00+00:00">
+                2021-10-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/除臭虫/" itemprop="url" rel="index">
+                    <span itemprop="name">除臭虫</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/this-disk-is-full-again-and-again.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/this-disk-is-full-again-and-again.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上<strong>清华</strong>（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点这里查看我的逆袭之路</a>），BAT某厂P7，是前大疆（无人机）技术主管。</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247497629&amp;idx=1&amp;sn=d293f09e031d8eac89092ae4be91e05a&amp;chksm=eb44f679dc337f6f67582611c140ef00a5971a71da458d503fd54d8a0ae836f14c81f559373c&amp;token=1503745258&amp;lang=zh_CN#rd" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>大家好，我是石头哥。 </p>
+<p>题目你可能读不全（没事，俺也一样），特此补充拼音！</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yòu shuāng ruò zhuó</span><br><span class="line">又双叒叕</span><br></pre></td></tr></table></figure>
+<p>最近有读者遇到本文提到的坑，来询问我为什么。我看了下，确实是非常经典的坑，我在刚毕业那会也遇到过，之前文章也分享过，这次重新整理下，再分享给大家。</p>
+<p><img src="http://www.tanglei.name/resources/difference-between-du-and-ls/du-ls.jpg" alt="difference-between-du-and-ls"></p>
+<p>知道为什么会有上面的结果吗？什么又是稀疏文件？这篇文章将为你揭秘。</p>
+<p>可以评论区说说，你有遇到过这个坑吗？ </p>
+<h2 id="磁盘满告警"><a href="#磁盘满告警" class="headerlink" title="磁盘满告警"></a>磁盘满告警</h2><p>某天收到的自动告警短信或者邮件告诉我某机器上的磁盘满了，赶紧登录机器查看。</p>
+<blockquote>
+<p>其实，这都应该定时巡检自动化处理的。</p>
+</blockquote>
+<p>第一次出现该问题时， 我的处理方式是: 先删了 <code>/tmp/</code> 目录， 空闲出部分空间， 然后检查下几个常用的用户目录。</p>
+<p>最终发现某服务A的日志文件（<code>contentutil.log</code>）占用了好几个十个大G，询问相关开发人员后确定该日志文件不需要压缩备份， 可直接删除，于是 <code>rm contentutil.log</code> 之后就天真地认为万事大吉了…</p>
+<p><strong>rm 文件后，磁盘空间就释放了吗？</strong></p>
+<h2 id="磁盘满告警，又来了"><a href="#磁盘满告警，又来了" class="headerlink" title="磁盘满告警，又来了"></a>磁盘满告警，又来了</h2><p>然而，大约xx天后，发现该机器磁盘又满了，惊呼奇怪咋这么快又满了。</p>
+<p>最终发现是上次 <code>rm contentutil.log</code> 后， 占用好几十大G的 <code>contentutil.log</code> 一直被服务A的进程打开了，<code>rm</code> 后空间并没有释放。</p>
+<p><code>rm</code> 其实是删除该文件名到文件真正保存到磁盘位置的链接，此时该文件句柄还被服务A打开，因此对应的磁盘空间并没有被系统回收。</p>
+<p>其实可以理解为 GC 里面的引用计数， <code>rm</code> 只是减少了引用计数，并没有真正的进行释放，当引用计数为0的时候，OS 内核才会释放空间，供其他进程使用。</p>
+<p>所以当A进程停止（文件句柄的引用计数会变为0）或者重启后，占用的存储空间才被释放（从某种程度上讲说明该服务一直很稳定， 可以连续跑很久不出故障~ 微笑脸）。</p>
+<p>tip: 如果不知道具体进程或文件名的话：<code>lsof | grep deleted</code>，这样会查找所有被删除的但是文件句柄没有释放的文件和相应的进程，然后再kill掉进程或者重启进程即可。</p>
+<p>后来，白老板告知可以用修改文件内容的方式在不用重启进程的情况下释放空间。</p>
+<p>下面这个技巧，划重点：</p>
+<blockquote>
+<p>echo “” &gt; filename.log</p>
+</blockquote>
+<h2 id="du-vs-ls"><a href="#du-vs-ls" class="headerlink" title="du vs ls"></a>du vs ls</h2><p>前两天该问题又出现了，该服务A的日志文件（contentutil.log）占用了约7.6G。</p>
+<blockquote>
+<p>应该对服务日志做 log rotate。</p>
+</blockquote>
+<p>这一次学聪明了，直接用<code>echo &#39;hello&#39; &gt; contentutil.log</code>， 然后 <code>df</code> 确认磁盘空间确实已经释放，心想着这次可以 Happy 了，突然手贱执行了下 <code>ls</code> 和 <code>du</code>， 有了以下结果: </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@xxx shangtongdai-content-util]<span class="comment"># ls -lah contentutil.log</span></span><br><span class="line">-rw-r--r--. 1 root root 7.6G Nov  7 19:36 contentutil.log</span><br><span class="line">[root@xxx shangtongdai-content-util]<span class="comment"># du -h contentutil.log</span></span><br><span class="line">2.3M    contentutil.log</span><br></pre></td></tr></table></figure>
+<p>反正我看到这样的结果是百思不得其解， 如果你已经明确为什么会产生这样的结果呢？</p>
+<p>可以明确的是， 这里的 <code>ls</code> 和 <code>du</code> 结果肯定代表不同的含义，在查阅相关资料和咨询强大的票圈后了解到， 这大概与文件空洞和稀疏文件（holes in ‘sparse’ files）相关. </p>
+<p><code>ls</code> 的结果是 apparent sizes， 我的理解是文件长度，就类似文件系统中 file 这个数据结构中的定义文件长度的这个字段；</p>
+<p><code>du</code> 的结果 disk usage，即真正占用存储空间的大小，且默认度量单位是 block。</p>
+<blockquote>
+<p>apparent sizes 和 disk usage 说法摘自 <code>man du</code> 中的 <code>--apparent-size</code> 部分。</p>
+</blockquote>
+<p>给出一个具体的示例: </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// Mac OS 10.11.6 (15G1004)</span><br><span class="line">➜  _drafts git:(<span class="built_in">source</span>) ✗ <span class="built_in">echo</span> -n a &gt;1B.log</span><br><span class="line">➜  _drafts git:(<span class="built_in">source</span>) ✗ ls -las 1B.log</span><br><span class="line">8 -rw-r--r--  1 tanglei  staff  1 11  9 00:06 1B.log</span><br><span class="line">➜  _drafts git:(<span class="built_in">source</span>) ✗ du 1B.log</span><br><span class="line">8	1B.log</span><br><span class="line">➜  _drafts git:(<span class="built_in">source</span>) ✗ du -h 1B.log</span><br><span class="line">4.0K	1B.log</span><br></pre></td></tr></table></figure>
+<p>上面示例中， 文件 1B.log 内容仅仅包含一个字母”a”， 文件长度为1个字节， 前面的 8 为占用的存储空间 8 个 block， （ls -s 的结果跟 du 的结果等价， 都是实际占用磁盘的空间）。</p>
+<p>为什么1个字节的文件需要占用8个 block 呢， 可以这样理解， <em>block</em> 为磁盘存储的基本的单位，方便磁盘寻址等（这里说的基本单位应该是磁盘物理结构单位例如一个扇区/柱面等，对应一个物理单位）。</p>
+<p>而此处的block可以理解为一个逻辑单位， 且一个文件除了包括数据外， 还需要存储描述此文件的其他信息， 因此包含1个字节的文件实际在磁盘中占用的存储空间不止1个字节。</p>
+<p>这里借用最近超火的一篇文章的图示来解释：</p>
+<blockquote>
+<p>不得不说，这篇 “0.2 秒居然复制了100G文件？” 文章这动图画得真好，火是有原因的。不过，遗憾（讽刺）的是最开始的原文竟然找不到了，（后补充：源自奇伢云存储，链接见评论），各个文章转载的时候，都没注原文。</p>
+</blockquote>
+<p><img src="https://inews.gtimg.com/newsapp_match/0/14048391133/0" alt="磁盘文件管理基本单位-block"></p>
+<p>然后读写的时候，都用另外一个结构来存储对应的 block 信息。 </p>
+<p><img src="https://inews.gtimg.com/newsapp_match/0/14048391864/0" alt="文件系统inode 和 block 区"></p>
+<p>默认情况下， Mac中1个逻辑 block 中是 512 字节， 因此 <code>du -h</code> 结果是 <code>8 * 512 = 4096 = 4.0K</code>.  </p>
+<blockquote>
+<p>If the environment variable BLOCKSIZE is set， and the -k option is not specified， the block counts will be displayed in units of that size block.  If BLOCKSIZE is not set， and the -k option is not specified， the block counts will be displayed in 512-byte blocks. (<code>man du</code>)</p>
+</blockquote>
+<p>因此， 通常情况下， <code>ls</code> 的结果应该比 <code>du</code> 的结果更小（都指用默认的参数执行， 调整参数可使其表达含义相同）， 然而上面跑服务 A 的机器上 contentutil.log 的对比结果是 <code>7.6G vs. 2.3M</code>， 仍然无法理解了。</p>
+<h2 id="稀疏文件"><a href="#稀疏文件" class="headerlink" title="稀疏文件"></a>稀疏文件</h2><p>沿着 <a href="https://linux.die.net/man/1/du" target="_blank" rel="noopener">man du</a> 可以看到: </p>
+<blockquote>
+<p>although the apparent size is usually smaller， it may be larger due to holes in (‘sparse’) files， internal fragmentation， indirect blocks， and the like</p>
+</blockquote>
+<p>即因contentutil.log是一个稀疏文件， 虽然其文件长度很大， 到7.6G了， 然而其中包含大量的<code>holes</code>并不占用实际的存储空间。</p>
+<p>下面用一个具体的例子来复现以上遇到的问题。注意以下例子为 Linux version 2.6.32 (Red Hat 4.4.7)中运行结果， 且在 Mac 中并不能复现（后文有指出为什么我的Mac不能复现）。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// 从标准输入中读取 count=0 个block， 输出到 sparse-file 中， </span><br><span class="line">// 一个 block 的大小为1k(bs=1k)， 输出时先将写指针移动到 seek 位置的地方</span><br><span class="line">[root@localhost ~]<span class="comment"># dd of=sparse-file bs=1k seek=5120 count=0</span></span><br><span class="line">0+0 records <span class="keyword">in</span></span><br><span class="line">0+0 records out</span><br><span class="line">0 bytes (0 B) copied， 1.6329e-05 s， 0.0 kB/s</span><br><span class="line">// 所以此时的文件长度为: 5M = 5120*1k(1024) = 5242880</span><br><span class="line">[root@localhost ~]<span class="comment"># ls -l sparse-file</span></span><br><span class="line">-rw-r--r--. 1 root root 5242880 Nov  8 11:32 sparse-file</span><br><span class="line">[root@localhost ~]<span class="comment"># ls -ls sparse-file</span></span><br><span class="line">0 -rw-r--r--. 1 root root 5242880 Nov  8 11:32 sparse-file</span><br><span class="line">// 而 sparse-file 占用的存储空间为 0 个 block</span><br><span class="line">[root@localhost ~]<span class="comment"># du sparse-file</span></span><br><span class="line">0	sparse-file</span><br><span class="line">[root@localhost ~]<span class="comment"># du -h sparse-file</span></span><br><span class="line">0	sparse-file</span><br></pre></td></tr></table></figure>
+<p>此时若用 vim 打开该文件， 用二进制形式查看 （tip <code>:%!xxd</code> 可以更改当前文件显示为2进制形式）， 能看到里面的内容全是<code>0</code>. 或者直接用<code>od</code>命令查看2进制. </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// vim 二进制查看</span><br><span class="line">0000000: 0000 0000 0000 0000 0000 0000 0000 0000  ................</span><br><span class="line">0000010: 0000 0000 0000 0000 0000 0000 0000 0000  ................</span><br><span class="line">....</span><br><span class="line">//od -b sparse-file</span><br><span class="line">0000000   000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000</span><br><span class="line">*</span><br><span class="line">24000000</span><br></pre></td></tr></table></figure>
+<p>实际上， Sparse 文件是并不占用磁盘存储空间的， 那为什么能看到文件里面包含很多0? 因为当在读取稀疏文件的时候， 文件系统根据文件的 metadata（就是前面所指描述文件的这个数据结构）自动用<code>0</code>填充[ref Wiki]; </p>
+<p>Wiki上还说，现代的不少文件系统都支持 Sparse 文件， 包括 Unix 及其变种和 NTFS， 然而Apple File System(APFS)不支持， 因此我在我的 Mac 上用 <code>du</code> 查看占用空间与 <code>ls</code> 的结果一致。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// In Mac</span><br><span class="line">➜  ~ dd of=sparse-file bs=1k seek=5120 count=0</span><br><span class="line">0+0 records <span class="keyword">in</span></span><br><span class="line">0+0 records out</span><br><span class="line">0 bytes transferred <span class="keyword">in</span> 0.000024 secs (0 bytes/sec)</span><br><span class="line">➜  ~ ls -ls sparse-file</span><br><span class="line">10240 -rw-r--r--  1 tanglei  staff  5242880 11  9 09:44 sparse-file</span><br><span class="line">➜  ~ du sparse-file</span><br><span class="line">10240	sparse-file</span><br></pre></td></tr></table></figure>
+<p>以上是用 <code>dd</code> 等命令创建稀疏文件， 也有同学用 c 代码实现了相同的功能。</p>
+<p>其实就是写文件的时候， 改变下当前文件写指针，前面遇到的问题就应该类似。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> fd， result;</span><br><span class="line">    <span class="keyword">char</span> wbuf[] = <span class="string">"hello"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> ((fd = open(<span class="string">"./filetest.log"</span>， O_RDWR|O_CREAT|O_EXCL， S_IRUSR|S_IWUSR))</span><br><span class="line">)  &#123;</span><br><span class="line">            perror(<span class="string">"open"</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ((result = write(fd， wbuf， <span class="built_in">strlen</span>(wbuf)+<span class="number">1</span>)) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            perror(<span class="string">"write"</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ((result = lseek(fd， <span class="number">1024</span>*<span class="number">1024</span>*<span class="number">10</span>， SEEK_END)) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            perror(<span class="string">"lseek"</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ((result = write(fd， wbuf， <span class="built_in">strlen</span>(wbuf)+<span class="number">1</span>)) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            perror(<span class="string">"write"</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    close(fd);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上先将”hello”写入 filetest.log， 然后改变文件指针到<code>1024*1024*10</code>（相当于文件长度这个字段变大了）， gcc 编译后运行结果文件详情如下: </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># ls -ls filetest.log</span></span><br><span class="line">8 -rw-------. 1 root root 10485772 Nov  9 17:45 filetest.log</span><br><span class="line">[root@localhost ~]<span class="comment"># du  filetest.log</span></span><br><span class="line">8	filetest.log</span><br><span class="line">[root@localhost ~]<span class="comment"># du -h filetest.log</span></span><br><span class="line">8.0K	filetest.log</span><br><span class="line">[root@localhost ~]<span class="comment"># ls -lh filetest.log</span></span><br><span class="line">-rw-------. 1 root root 11M Nov  9 17:45 filetest.log</span><br><span class="line">[root@localhost ~]<span class="comment"># od -c filetest.log</span></span><br><span class="line">0000000   h   e   l   l   o  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0</span><br><span class="line">0000020  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0</span><br><span class="line">*</span><br><span class="line">50000000  \0  \0  \0  \0  \0  \0   h   e   l   l   o  \0</span><br><span class="line">50000014</span><br></pre></td></tr></table></figure>
+<p>解释下结果: 文件长度应该是 “hello” 加上 “\n” 共6个字节<code>*2 = 12</code>， 再加上<code>1024*1024*10</code>个字节， 即为<code>ls</code>产生的结果10485772个字节约11M。</p>
+<p>而<code>du</code>的结果为8个block也为8k（这台机器上的block大小与前面的Mac不一样， 这里是1024）。</p>
+<blockquote>
+<p>Display values are in units of the first available SIZE from –block-size， and the DU_BLOCK_SIZE， BLOCK_SIZE and BLOCKSIZE environment variables.  Otherwise， units default to 1024 bytes (or 512 if POSIXLY_CORRECT is set. (<code>du --help</code>)</p>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总结一下: 出现以上问题说明自己对一些基础掌握得尚不牢固， 比如 </p>
+<ol>
+<li>rm 某文件后， 文件占用的磁盘空间并不是立即释放，而是其句柄没有被任意一个进程引用时才回收；</li>
+<li>ls/du 命令结果的具体含义；</li>
+<li>稀疏文件。</li>
+</ol>
+<p>然而这些知识点都在《UNIX环境高级编程》这本书中有讲（之前走马观花看过不少， 咋对稀疏文件等一点印象都木有!），需要这本电子书的同学可后台联系我获取。</p>
+<p>以上内容若有不清楚或不正确的地方，还望大家指出，感谢。</p>
+<p>有收获请记得下方点赞、在看、分享，这对我很重要，感谢。 </p>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点击这里查看我的逆袭之路</a>），目前在BAT某厂打工，是前大疆（无人机）技术主管。</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/经验技巧/" rel="tag"># 经验技巧</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/tour-at-alibaba-data-center.html" rel="next" title="他们居然把服务器泡“水”里！| 数据中心参观有感">
+                <i class="fa fa-chevron-left"></i> 他们居然把服务器泡“水”里！| 数据中心参观有感
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/the-boss-of-gym-run-away.html" rel="prev" title="刚办的健身卡，老板跑路了！">
+                刚办的健身卡，老板跑路了！ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#磁盘满告警"><span class="nav-number">2.</span> <span class="nav-text">磁盘满告警</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#磁盘满告警，又来了"><span class="nav-number">3.</span> <span class="nav-text">磁盘满告警，又来了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#du-vs-ls"><span class="nav-number">4.</span> <span class="nav-text">du vs ls</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#稀疏文件"><span class="nav-number">5.</span> <span class="nav-text">稀疏文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/this-disk-is-full-again-and-again.html';
+
+      var disqus_title = "磁盘又双叒叕满了~";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

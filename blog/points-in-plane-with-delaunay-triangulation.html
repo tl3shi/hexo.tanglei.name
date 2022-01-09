@@ -1,0 +1,919 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="计算机图形学,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="作业中遇到三角剖分的问题，关键字&amp;#8221;三角剖分&amp;#8221;出来最多的就是&amp;#8221;Delaunay&amp;#8221;三角剖分，整理了下相关资料，记录备忘。     1.三角剖分与Delaunay剖分的定义     2. Delaunay剖分的算法     3. Bowyer-Watson算法 VS Lawson 算法    1.三角剖分与Delaunay剖分的定义  如何把一个散点集">
+<meta name="keywords" content="计算机图形学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="平面点集的Delaunay三角剖分">
+<meta property="og:url" content="https://www.tanglei.name/blog/points-in-plane-with-delaunay-triangulation.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="作业中遇到三角剖分的问题，关键字&amp;#8221;三角剖分&amp;#8221;出来最多的就是&amp;#8221;Delaunay&amp;#8221;三角剖分，整理了下相关资料，记录备忘。     1.三角剖分与Delaunay剖分的定义     2. Delaunay剖分的算法     3. Bowyer-Watson算法 VS Lawson 算法    1.三角剖分与Delaunay剖分的定义  如何把一个散点集">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/11/110712_1636_Delaunay1.png">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/11/110712_1636_Delaunay2.jpg">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/11/110712_1636_Delaunay3.jpg">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/11/110712_1636_Delaunay4.jpg">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/11/110712_1636_Delaunay5.png">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/11/110712_1636_Delaunay6.png">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/11/110712_1636_Delaunay7.png">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.969Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="平面点集的Delaunay三角剖分">
+<meta name="twitter:description" content="作业中遇到三角剖分的问题，关键字&amp;#8221;三角剖分&amp;#8221;出来最多的就是&amp;#8221;Delaunay&amp;#8221;三角剖分，整理了下相关资料，记录备忘。     1.三角剖分与Delaunay剖分的定义     2. Delaunay剖分的算法     3. Bowyer-Watson算法 VS Lawson 算法    1.三角剖分与Delaunay剖分的定义  如何把一个散点集">
+<meta name="twitter:image" content="https://www.tanglei.name/wp-content/uploads/2012/11/110712_1636_Delaunay1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/points-in-plane-with-delaunay-triangulation.html">
+
+
+
+
+
+  <title> 平面点集的Delaunay三角剖分 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/points-in-plane-with-delaunay-triangulation.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                平面点集的Delaunay三角剖分
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2012-11-08T00:36:23+00:00">
+                2012-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机图形学/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机图形学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/points-in-plane-with-delaunay-triangulation.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/points-in-plane-with-delaunay-triangulation.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p style="text-align: justify;"><br>  <span style="font-size: 10pt;">作业中遇到三角剖分的问题，关键字&#8221;三角剖分&#8221;出来最多的就是&#8221;Delaunay&#8221;三角剖分，整理了下相关资料，记录备忘。<br> </span><br></p>
+
+<p style="text-align: justify;"><br>  <a href="#_Toc339392350"><span style="font-size: 10pt;">1.三角剖分与Delaunay剖分的定义<br> </span></a><br></p>
+
+<p style="text-align: justify;"><br>  <a href="#_Toc339392351"><span style="font-size: 10pt;">2. Delaunay剖分的算法</span></a><span style="font-size: 10pt;"><br> </span><br></p>
+
+<p style="text-align: justify;"><br>  <span style="font-size: 10pt;"><a href="#_Toc339392352">3. Bowyer-Watson算法 VS Lawson 算法</a></span><br></p>
+
+<h3 style="text-align: justify;"><br>  1.三角剖分与Delaunay剖分的定义<br></h3>
+
+<p>如何把一个散点集合剖分成不均匀的三角形网格，这就是散点集的三角剖分问题，散点集的三角剖分，对数值分析以及图形学来说，都是极为重要的一项预处理技术。该问题图示如下：</p>
+<p style="text-align: center; background: white;"><br>  <img src="/wp-content/uploads/2012/11/110712_1636_Delaunay1.png" alt><span style="color: #333333; font-family: Tahoma;"><br> </span><br></p>
+
+<h4 id="1-1-三角剖分定义"><a href="#1-1-三角剖分定义" class="headerlink" title="1.1 三角剖分定义"></a>1.1 三角剖分定义</h4><p>三角剖分：假设V是二维实数域上的有限点集，边e是由点集中的点作为端点构成的封闭线段, E为e的集合。那么该点集V的一个三角剖分T=(V,E)是一个平面图G，该平面图满足条件：</p>
+<p>1.除了端点，平面图中的边不包含点集中的任何点。</p>
+<p>2.没有相交边。</p>
+<p>3.平面图中所有的面都是三角面，且所有三角面的合集是散点集V的<a href="http://zh.wikipedia.org/wiki/%E5%87%B8%E5%8C%85" target="_blank" rel="noopener"><span style="font-family: 宋体;">凸包</span></a>(<span style="color: black;"><span style="font-family: 宋体; font-size: 11pt; background-color: white;">在<span style="color: #4f81bd;">二维<a title="欧几里得空间" href="http://zh.wikipedia.org/wiki/æ¬§å éå¾ç©ºé´" target="_blank" rel="noopener">欧几里得空间</a>中，凸包可想象为一条刚好包著所有点的橡皮圈</span></span>)</span>。</p>
+<h4 style="background: white;"><br>  1.2. Delaunay三角剖分的定义<span style="font-size: 14pt;"><strong><span style="font-family: Cambria;"><br> </span></strong></span><br></h4>
+
+<p>在实际中运用的最多的三角剖分是Delaunay三角剖分，它是一种特殊的三角剖分。</p>
+<p>Delaunay边：假设E中的一条边e（两个端点为a,b），e若满足下列条件，则称之为Delaunay边：存在一个圆经过a,b两点，圆内(注意是圆内，圆上最多三点共圆)不含点集V中任何其他的点，这一特性又称空圆特性。</p>
+<p>Delaunay三角剖分：如果点集V的一个三角剖分T只包含Delaunay边，那么该三角剖分称为Delaunay三角剖分。</p>
+<h4 id="1-3-Delaunay三角剖分的准则"><a href="#1-3-Delaunay三角剖分的准则" class="headerlink" title="1.3.Delaunay三角剖分的准则 "></a>1.3.Delaunay三角剖分的准则<span style="color: #333333; font-family: Verdana; background-color: white;"><br> </span></h4><p>要满足Delaunay三角剖分的定义，必须符合两个重要的准则：</p>
+<p>1、空圆特性：Delaunay三角网是唯一的（任意四点不能共圆），在Delaunay三角形网中任一三角形的外接圆范围内不会有其它点存在。如下图所示：</p>
+<p style="text-align: center;"><br>  <a title="查看图片" href="http://baike.baidu.com/albums/1691145/1691145/0/0.html" target="_blank"><span style="color: #136ec2; font-size: 1pt;">  </span></a><img src="/wp-content/uploads/2012/11/110712_1636_Delaunay2.jpg" alt><br></p>
+
+<p>2、最大化最小角特性：在散点集可能形成的三角剖分中，Delaunay三角剖分所形成的三角形的最小角最大。从这个意义上讲，Delaunay 三角网是&#8221;最接近于规则化的&#8221;的三角网。具体的说是指在两个相邻的三角形构成凸四边形的对角线，在相互交换后，六个内角的最小角不再增大。(<em>如果将三角网中的每个三角形的最小角进行升序排列，则Delaunay三角网的排列得到的数值最大，从这个意义上讲，Delaunay三角网是&#8221;最接近于规则化&#8221;的三角网。</em>)如下图所示：</p>
+<p><a title="查看图片" href="http://baike.baidu.com/albums/1691145/1691145/0/0.html" target="_blank"><span style="color: #136ec2; font-family: Arial; font-size: 1pt;">  </span></a><img src="/wp-content/uploads/2012/11/110712_1636_Delaunay3.jpg" alt></p>
+<p>最大化最小角特性是区分平面点集Delaunay三角剖分于高维点集所特有的性质。正式这一特性，delaunay剖分总是能尽可能避免病态三角形的出现，自动向等边三角形靠近，注意仅适用于平面点集，三维或者更高的delaunay三角剖分不具有相应的性质 (周知.三角剖分算法研究[D].哈尔滨理工大学,2007.)<span style="color: #333333; font-family: Tahoma;"><br> </span></p>
+<h4 id="1-4-Delaunay三角剖分的特性"><a href="#1-4-Delaunay三角剖分的特性" class="headerlink" title="1.4.Delaunay三角剖分的特性"></a>1.4.Delaunay三角剖分的特性</h4><ol>
+<li><span style="background-color: white;">最接近：以最近临的三点形成三角形，且各线段(三角形的边)皆不相交。</span><span style="font-family: 宋体; font-size: 12pt;"><br> </span></li>
+<li><span style="background-color: white;">唯一性：不论从区域何处开始构建，最终都将得到一致的结果。（<strong>注意</strong>：<strong>出现四个或者更多的节点共外接圆的特殊情况时，delaunay三角划分不唯一</strong>[王成恩，2011</span>]<span style="background-color: white;">）</span><span style="font-family: 宋体; font-size: 12pt;"><br> </span></li>
+<li><span style="background-color: white;">最优性：任意两个相邻三角形形成的凸四边形的对角线如果可以互换的话，那么两个三角形六个内角中最小的角度不会变大。</span><span style="font-family: 宋体; font-size: 12pt;"><br> </span></li>
+<li><span style="background-color: white;">最规则：如果将三角网中的每个三角形的最小角进行升序排列，则Delaunay三角网的排列得到的数值最大。</span><span style="font-family: 宋体; font-size: 12pt;"><br> </span></li>
+<li><span style="background-color: white;">区域性：新增、删除、移动某一个顶点时只会影响临近的三角形。</span><span style="font-family: 宋体; font-size: 12pt;"><br> </span></li>
+<li><span style="background-color: white;">凸包性：三角网最外层的边界形成一个凸多边形的外壳。<br> </span></li>
+</ol>
+<h4 id="1-5-局部最优化处理"><a href="#1-5-局部最优化处理" class="headerlink" title="1.5.局部最优化处理"></a>1.5.局部最优化处理</h4><p><span style="background-color: white;">理论上为了构造Delaunay三角网，Lawson提出的局部优化过程LOP(Local Optimization Procedure)，一般三角网经过LOP处理，即可确保成为Delaunay三角网，其基本做法如下所示：</span><span style="font-family: 宋体; font-size: 12pt;"><br> </span></p>
+<ol>
+<li><span style="background-color: white;">将两个具有共同边的三角形合成一个多边形。</span><span style="font-family: 宋体; font-size: 12pt;"><br> </span></li>
+<li><span style="background-color: white;">以最大空圆准则作检查，看其第四个顶点是否在三角形的外接圆之内。</span><span style="font-family: 宋体; font-size: 12pt;"><br> </span></li>
+<li><span style="background-color: white;">如果在，修正对角线即将对角线对调，即完成局部优化过程的处理。</span><span style="font-family: 宋体; font-size: 12pt;"><br> </span></li>
+</ol>
+<p><span style="background-color: white;">LOP处理过程如下图所示：</span>**</p>
+<p>** </p>
+<p><img src="/wp-content/uploads/2012/11/110712_1636_Delaunay4.jpg" alt></p>
+<h3 id="2-Delaunay剖分的算法"><a href="#2-Delaunay剖分的算法" class="headerlink" title="2.Delaunay剖分的算法"></a><span style="text-align: justify;">2.Delaunay剖分的算法</span></h3><p><span style="color: black;"><span style="font-family: Arial; background-color: white;">Delaunay</span><span style="font-family: 宋体; background-color: white;">剖分</span></span>是一种三角剖分的标准，实现它有多种算法。本文讲的是<strong>逐点插入</strong>的两种算法。</p>
+<h4 id="2-1-Lawson算法"><a href="#2-1-Lawson算法" class="headerlink" title="2.1.Lawson算法"></a>2.1.Lawson算法</h4><p><span style="background-color: white;">逐点插入的Lawson算法是Lawson在1977年提出的，该算法思路简单，易于编程实现。基本原理为：首先建立一个大的三角形或多边形，把所有数据点包围起来，向其中插入一点，该点与包含它的三角形三个顶点相连，形成三个新的三角形，然后逐个对它们进行空外接圆检测，同时用Lawson设计的局部优化过程LOP进行优化，即通过交换对角线的方法来保证所形成的三角网为Delaunay三角网。</span><span style="font-family: 宋体; font-size: 12pt;"><br> </span></p>
+<p><span style="background-color: white;">上述基于散点的构网算法理论严密、唯一性好，网格满足空圆特性，较为理想。由其逐点插入的构网过程可知，遇到非Delaunay边时，通过删除调整，可以构造形成新的Delaunay边。在完成构网后，增加新点时，无需对所有的点进行重新构网，只需对新点的影响三角形范围进行局部联网，且局部联网的方法简单易行。同样，点的删除、移动也可快速动态地进行。但在实际应用当中，这种构网算法当点集较大时构网速度也较慢，如果点集范围是非凸区域或者存在内环，则会产生非法三角形。</span><span style="font-family: 宋体; font-size: 12pt;"><br> </span></p>
+<p><span style="background-color: white;">Lawson算法的基本步骤是：</span><span style="font-family: 宋体; font-size: 12pt;"><br> </span></p>
+<ol>
+<li><span style="background-color: white;">构造一个超级三角形，包含所有散点，放入三角形链表。(求解离散点集的凸包，建立点集凸包边界节点的初始Delaunay三角剖分)</span><span style="font-family: 宋体; font-size: 12pt;"><br> </span></li>
+<li><span style="background-color: white;">将点集中的散点依次插入，在三角形链表中找出包含插入点的三角形（只是点在内部，不是外接圆），将插入点同此三角形的全部顶点连接起来，构成三个小三角形。</span><span style="font-family: 宋体; font-size: 12pt;"><br> </span></li>
+<li><span style="background-color: white;">分别构造没个小三角形的外接圆，检测外接圆是否包含其他三角形顶点，如果三个三角形外接圆均不包含，则继续第二步插入新的点。若某个新三角形包含其他三角形顶点，则采用互换对角线方式形成新的局部Delaunay三角形，再判断新形成的局部delaunay三角形是否包含其他三角形顶点，直至新形成的局部delaunay三角形不包含其余三角形顶点。</span><span style="font-family: 宋体; font-size: 12pt;"><strong><br> </strong></span></li>
+<li><span style="background-color: white;">循环执行上述第2步，直到所有散点插入完毕。</span><span style="font-family: 宋体; font-size: 12pt;"><br> </span></li>
+</ol>
+<p>最后删除超级三角形相关联的三角形即可。</p>
+<h4 id="2-2-Bowyer-Watson算法"><a href="#2-2-Bowyer-Watson算法" class="headerlink" title="2.2 Bowyer-Watson算法"></a>2.2 Bowyer-Watson算法</h4><p>Bowyer算法由英国Bath大学的Bowyer在1981年提出。算法首先构造离散点集的的若干离散点的<a href="http://en.wikipedia.org/wiki/Voronoi_diagram" target="_blank" rel="noopener">Voronoi图</a>，根据Voronoi领域准则连接临近点，得到初始Delaunay三角剖分，然后逐步加入剖分点，每加入一个点就对已有的Voronoi图进行修改，构造新点集的Voronoi图，直到所有点都插入完毕。具体论文是这篇<a href="http://scholar.google.com.hk/scholar?q=Computing+Dirichlet+Tesselations" target="_blank" rel="noopener">Computing Dirichlet Tesselations</a>。</p>
+<p>Watson算法由澳大利亚悉尼大学Watson在1981年提出。算法采用空外接圆准则，直接从三角剖分入手。算法从初始三角划分开始，每加入一个离散点，找出所有外接圆包含此点的三角形，删除这些三角形面向该插入点的边，得到包含此点的多边形，将此点与多边形的定点连接就构成新的Delaunay三角剖分，重复此过程直至所有点插入完毕为止。注意，此算法当四点或以上共圆时将产生错误。论文是这篇<a href="http://scholar.google.com.hk/scholar?hl=zh-CN&amp;as_sdt=0,5&amp;q=Computing+the+n-Dimensional+Delaunay+Tessellation+with+Application+to+Voronoi+Polytopes" target="_blank" rel="noopener">Computing the n-Dimensional Delaunay Tessellation with Application to Voronoi Polytopes</a>。</p>
+<p>Bowyer-Watson算法是根据上述两者算法相互补充改进得到的(貌似跟Watson算法差不多，具体可以参考上述两篇论文)，仍然是一种插点增量算法的一种。算法逻辑如下：</p>
+<ol>
+<li><div style="text-align: justify;"><br> 求解离散点集的凸包，建立点集凸包边界节点的初始三角形划分；<br></div>
+</li>
+<li><div style="text-align: justify;"><br> 选择另外的离散点，插入指定位置，在已有的三角形中找出<strong>外接圆</strong>包含此点的三角形，并删除公共边，得到一个包含新插入点的多边形；<br></div>
+</li>
+<li><div style="text-align: justify;"><br> 将此点与多边形的其他顶点连接起来，构成新的三角形划分；<br></div>
+</li>
+<li><div style="text-align: justify;"><br> 重复插点知道所有点插入完毕。<br></div>
+
+</li>
+</ol>
+<p>最后删除超级三角形相关联的三角形即可。</p>
+<h3 id="3-Bowyer-Watson算法-VS-Lawson-算法"><a href="#3-Bowyer-Watson算法-VS-Lawson-算法" class="headerlink" title="3.Bowyer-Watson算法 VS Lawson 算法"></a><span style="text-align: justify;">3.Bowyer-Watson算法 VS Lawson 算法</span></h3><p>Bowyer-Watson算法和Lawson 算法<strong>区别和联系</strong>。</p>
+<h4 id="3-1-Bowyer-Watson-Algorithm"><a href="#3-1-Bowyer-Watson-Algorithm" class="headerlink" title="3.1 Bowyer-Watson Algorithm"></a>3.1 Bowyer-Watson Algorithm</h4><ul>
+<li><div style="text-align: justify;"><br>  <span style="font-size: 10pt;">form super triangle, enclosing all points p in V<br> </span><br></div>
+</li>
+<li><div style="text-align: justify;"><br>  <span style="font-size: 10pt;">as long as not all vertices of V have been treated, do:<br> </span><br></div>
+
+</li>
+</ul>
+<ol>
+<li><p>insert vertex p in V into triangulation</p>
+</li>
+<li><p>find circumcircles containing p with corresponding triangles</p>
+</li>
+<li><p>remove triangles to get insertion polygon</p>
+</li>
+<li><p>retriangulate insertion polygon by simply adding edges to p</p>
+<ul>
+<li><div style="text-align: justify;"><br> <span style="font-size: 10pt;">remove super triangle<br> </span><br></div>
+
+</li>
+</ul>
+</li>
+</ol>
+<p><img src="/wp-content/uploads/2012/11/110712_1636_Delaunay5.png" alt></p>
+<h4 id="3-2-Lawson-Algorithm"><a href="#3-2-Lawson-Algorithm" class="headerlink" title="3.2 Lawson Algorithm"></a>3.2 Lawson Algorithm</h4><ul>
+<li><div style="text-align: justify;"><br>  <span style="font-size: 10pt;">form super triangle, enclosing all points p in V<br> </span><br></div>
+</li>
+<li><div style="text-align: justify;"><br>  <span style="font-size: 10pt;">as long as not all vertices of V have been treated, do:<br> </span><br></div>
+
+</li>
+</ul>
+<ol>
+<li>insert vertex p in V into triangulation</li>
+</ol>
+<p style="margin-left: 11pt;"><br>  2. triangulate new p (draw edges to p from enclosing triangle, creating traingles)<br></p>
+
+<p style="margin-left: 11pt;"><br>  3. for all new triangles t created recursively:<br></p>
+
+<p style="margin-left: 11pt;"><br>  check circumcircle of t, if containing neighbouring vertex,，flip<br></p>
+
+<ul>
+<li><div style="text-align: justify;"><br>  <span style="font-size: 10pt;">remove super triangle<br> </span><br></div>
+
+</li>
+</ul>
+<p><img src="/wp-content/uploads/2012/11/110712_1636_Delaunay6.png" alt></p>
+<p><img src="/wp-content/uploads/2012/11/110712_1636_Delaunay7.png" alt></p>
+<p>参考资料：</p>
+<p><a href="http://baike.baidu.com/view/1691145.htm" target="_blank" rel="noopener">http://baike.baidu.com/view/1691145.htm</a></p>
+<p>周知.三角剖分算法研究[D].哈尔滨理工大学,2007.</p>
+<p>Henrik Zimmer. Voronoi and Delaunay Techniques.2005</p>
+<p><a href="http://www.amazon.cn/gp/product/B005UKY13W/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=536&amp;creative=3200&amp;creativeASIN=B005UKY13W&amp;linkCode=as2&amp;tag=tangleiname05-23" target="_blank" rel="noopener">面向科学计算的网格划分与可视化技术</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/计算机图形学/" rel="tag"># 计算机图形学</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/bezier-curve-and-surface.html" rel="next" title="Bezier曲线曲面算法">
+                <i class="fa fa-chevron-left"></i> Bezier曲线曲面算法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/have-no-feeling-recently.html" rel="prev" title="最近一直没状态-得调整调整">
+                最近一直没状态-得调整调整 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">  1.三角剖分与Delaunay剖分的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-三角剖分定义"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 三角剖分定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.2.</span> <span class="nav-text">  1.2. Delaunay三角剖分的定义 </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-Delaunay三角剖分的准则"><span class="nav-number">1.3.</span> <span class="nav-text">1.3.Delaunay三角剖分的准则 </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-Delaunay三角剖分的特性"><span class="nav-number">1.4.</span> <span class="nav-text">1.4.Delaunay三角剖分的特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-局部最优化处理"><span class="nav-number">1.5.</span> <span class="nav-text">1.5.局部最优化处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Delaunay剖分的算法"><span class="nav-number">2.</span> <span class="nav-text">2.Delaunay剖分的算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-Lawson算法"><span class="nav-number">2.1.</span> <span class="nav-text">2.1.Lawson算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-Bowyer-Watson算法"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 Bowyer-Watson算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Bowyer-Watson算法-VS-Lawson-算法"><span class="nav-number">3.</span> <span class="nav-text">3.Bowyer-Watson算法 VS Lawson 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-Bowyer-Watson-Algorithm"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 Bowyer-Watson Algorithm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-Lawson-Algorithm"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 Lawson Algorithm</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/points-in-plane-with-delaunay-triangulation.html';
+
+      var disqus_title = "平面点集的Delaunay三角剖分";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

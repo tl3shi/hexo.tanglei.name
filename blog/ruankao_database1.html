@@ -1,0 +1,817 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="软考,数据库,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="软考当中设计到数据库的主要有下面几个方面： 数据库管理系统的功能和特征、 数据库模型（概念模式、外模式、内模式）、 数据模型，ER图，第一范式、第二范式、第三范式、 数据操作（集合运算和关系运算）、 数据库语言（SQL）、 数据库的控制功能（并发控制、恢复、安全性、完整性）、 数据仓库和分布式数据库基础知识。 1**、数据库知识** 1.1**数据管理技术的发展**  数据管理技术的发展阶段： 人">
+<meta name="keywords" content="软考,数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软考：数据库知识(一)">
+<meta property="og:url" content="https://www.tanglei.name/blog/ruankao_database1.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="软考当中设计到数据库的主要有下面几个方面： 数据库管理系统的功能和特征、 数据库模型（概念模式、外模式、内模式）、 数据模型，ER图，第一范式、第二范式、第三范式、 数据操作（集合运算和关系运算）、 数据库语言（SQL）、 数据库的控制功能（并发控制、恢复、安全性、完整性）、 数据仓库和分布式数据库基础知识。 1**、数据库知识** 1.1**数据管理技术的发展**  数据管理技术的发展阶段： 人">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.820Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软考：数据库知识(一)">
+<meta name="twitter:description" content="软考当中设计到数据库的主要有下面几个方面： 数据库管理系统的功能和特征、 数据库模型（概念模式、外模式、内模式）、 数据模型，ER图，第一范式、第二范式、第三范式、 数据操作（集合运算和关系运算）、 数据库语言（SQL）、 数据库的控制功能（并发控制、恢复、安全性、完整性）、 数据仓库和分布式数据库基础知识。 1**、数据库知识** 1.1**数据管理技术的发展**  数据管理技术的发展阶段： 人">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/ruankao_database1.html">
+
+
+
+
+
+  <title> 软考：数据库知识(一) | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/ruankao_database1.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                软考：数据库知识(一)
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-04-19T13:41:43+00:00">
+                2011-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">课程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/ruankao_database1.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/ruankao_database1.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>软考当中设计到数据库的主要有下面几个方面：</p>
+<p>数据库管理系统的功能和特征、 数据库模型（概念模式、外模式、内模式）、 数据模型，ER图，第一范式、第二范式、第三范式、 数据操作（集合运算和关系运算）、 数据库语言（SQL）、 数据库的控制功能（并发控制、恢复、安全性、完整性）、 数据仓库和分布式数据库基础知识。</p>
+<p><strong>1**</strong>、数据库知识**</p>
+<p><strong>1.1**</strong>数据管理技术的发展**</p>
+<p> <strong>数据管理技术的发展阶段：</strong></p>
+<p>人工阶段：数据处理方式是批处理。其特点是：</p>
+<p>u         数据不保存</p>
+<p>u         没有专用的软件对数据进行管理</p>
+<p>u         只有程序概念，没有文件概念</p>
+<p>u         一组数据对应一个程序，即数据是面向程序的</p>
+<p>文件系统阶段：数据处理方式有批处理，也有联机实时处理。其特点是：</p>
+<p>u         数据可长期保存在外存上</p>
+<p>u         数据的逻辑结构与物理结构有了区别，但简单</p>
+<p>u         文件组织已多样化，有索引文件、链接文件和直接存取文件等，但文件之间相互独立，没有联系</p>
+<p>u         数据不再属于某个特定的程序，可重复使用，但数据结构和程序之间的依赖关系并未根本改变。</p>
+<p>其缺点是：</p>
+<p>u         数据冗余性</p>
+<p>u         数据不一致性</p>
+<p>u         数据联系弱</p>
+<p>数据库阶段：其特点是：</p>
+<p>u         用关系模型表示复杂的数据模型</p>
+<p>u         有较高的数据独立性</p>
+<p>u         数据库系统为用户提供了方便的用户接口</p>
+<p>u         数据库管理系统提供了四个方面的数据控制能力－数据完整性、数据安全性、数据库的并发控制、数据库的恢复</p>
+<p><strong>数据库的基本概念</strong></p>
+<p>数据库（DB）：是存储在一起的相关数据的集合。DB能为各种用户共享，具有最小冗余度，数据间联系密切，而又有较高的程序与数据的独立性。</p>
+<p>数据库管理系统（DBMS）：DBMS是位于用户与操作系统之间的一层数据管理软件，为用户或应用程序提供访问DB的方法，包括DB的建立、查询、更新及各种数据控制。DBMS可分为层次型、网状型、关系型、面向对象型。</p>
+<p>数据库系统（DBS）：即是采用了数据库技术的计算机系统，是实现有组织地、动态存储大量关联数据，方便多用户访问的计算机软件、硬件和数据资源而组成的系统。</p>
+<p>数据库技术：研究数据库的结构、存储、设计、管理和使用的一门软件学科。</p>
+<p><strong>1.2**</strong>数据模型<strong> **</strong></p>
+<p>表示实体类型及实体之间联系的模型称为“数据模型”。数据模型是严格定义的概念的集合，数据库的数据模型应包括数据结构（指对实体类型和实体之间联系的表达和实现）、数据操作（指对数据库的检索和更新两大类操作）和完整性约束（给出数据及其所具有的制约合依赖规则）3个部分。</p>
+<p>数据模型的种类很多。目前广泛使用的数据模型可分为两种：概念数据模型和结构数据模型。</p>
+<p>概念数据模型</p>
+<p>这是一种独立于任何计算机系统的模型，完全不涉及信息在计算机系统中的表示，用于建立信息世界的数据模型，是现实世界的第一层抽象，是用户和数据库设计人员进行交流的工具，其中最著名的模型是“实体联系模型”（ER模型）。</p>
+<p>ER模型直接从现实世界中抽取出实体类型及实体间联系图（ER图）表示数据模型。一般遇到实际问题时，总是先设计一个ER模型，然后再把ER模型转换成与DBMS关联的数据模型。</p>
+<p>结构数据模型（亦称基本数据模型）：</p>
+<p>这是直接面向数据库的逻辑数据结构，通常有一组严格定义了语法和语义的数据库语言，用来定义、操纵数据库中的数据。其主要有层次、网状、关系模型三种。</p>
+<p>◆层次模型：用树型（层次）结构表示实体类型及实体之间联系的数据模型称为层次模型。层次结构是一棵树，树的结点是记录类型，非根结点有且只有一个父结点。上一层记录类型和下一层记录类型的联系是1：M联系。</p>
+<p>◆网状模型：用从结构（网络结构）表示实体类型及实体间联系的数据模型称为网状模型。记录之间的联系通过指针实现，M：N联系容易实现（一个M：N联系可拆成两个1：M联系），查询效率高。</p>
+<p>◆关系模型：用规范化了的二维表格结构表示实体集，用键表示实体间联系。通常是若干个关系模型组成的集合。</p>
+<p><strong>1.3**</strong>数据库系统的结构<strong>**</strong></p>
+<p>n  数据库的数据体系结构</p>
+<p>数据库的数据体系结构分成3个级别：内部级、概念级、外部级。从某个角度看到的数据特性称为数据视图。</p>
+<p>Ø         外部级最接近用户，是用户看到的数据特性，用户的数据视图称为外模型。</p>
+<p>Ø         概念级是涉及到所有用户的数据定义，也就是全局的数据视图，称为概念模型。</p>
+<p>Ø         内部级是最接近于物理存储设备，涉及到实际数据的存储方式。物理存储的数据视图称为内模型。</p>
+<p>这些模型用数据库的数据定义语言（DDL）描述后，分别得到外模式、概念模式、内模式。为实现这３个抽象级别的转换，数据库和管理系统在这３级结构之间提供了两层映象：外模式／概念模式映象和概念模式／内模式映象</p>
+<p><strong>数据库管理系统的主要目标：把数据作为可管理的资源处理。</strong></p>
+<p>数据库管理系统的５个重要功能：数据库的定义功能、数据库的操纵功能、数据库的保护功能、数据库的维护功能、数据字典。</p>
+<p>数据库的全局结构:</p>
+<p>DBS的某些功能是由计算机的OS提供的，OS提供了DBS最基本的服务，因此 DBS必须在OS基础上工作。在DBS中就应包含DBMS和OS之间的界面。</p>
+<p>DBS的全局结构由数据库用户、数据库管理系统的查询处理器、数据库管理系统的存储管理器和磁盘存储器中的数据结构等部分组成。</p>
+<p>未完待续……</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/软考/" rel="tag"># 软考</a>
+          
+            <a href="/tags/数据库/" rel="tag"># 数据库</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/ruankao_network3.html" rel="next" title="软考：计算机网络知识(三)">
+                <i class="fa fa-chevron-left"></i> 软考：计算机网络知识(三)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/ruankao_database2.html" rel="prev" title="软考：数据库知识(二)">
+                软考：数据库知识(二) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/ruankao_database1.html';
+
+      var disqus_title = "软考：数据库知识(一)";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

@@ -1,0 +1,807 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Android,传感器,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="本文节选于机械工业出版社推出的《Android应用开发揭秘》一书，作者为杨丰盛。本书内容全面，详细讲解了Android框架、Android组件、用户界面开发、游戏开发、数据存储、多媒体开发和网络开发等基础知识，而且还深入阐述了传感器、语音识别、桌面组件开发、Android游戏引擎设计、Android应用优化、OpenGL等高级知识。另外，本书还全面介绍了如何利用原生的C/C++（NDK）和Pyth">
+<meta name="keywords" content="Android,传感器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="android传感器开发基础">
+<meta property="og:url" content="https://www.tanglei.name/blog/android_sensors_devlope.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="本文节选于机械工业出版社推出的《Android应用开发揭秘》一书，作者为杨丰盛。本书内容全面，详细讲解了Android框架、Android组件、用户界面开发、游戏开发、数据存储、多媒体开发和网络开发等基础知识，而且还深入阐述了传感器、语音识别、桌面组件开发、Android游戏引擎设计、Android应用优化、OpenGL等高级知识。另外，本书还全面介绍了如何利用原生的C/C++（NDK）和Pyth">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.805Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="android传感器开发基础">
+<meta name="twitter:description" content="本文节选于机械工业出版社推出的《Android应用开发揭秘》一书，作者为杨丰盛。本书内容全面，详细讲解了Android框架、Android组件、用户界面开发、游戏开发、数据存储、多媒体开发和网络开发等基础知识，而且还深入阐述了传感器、语音识别、桌面组件开发、Android游戏引擎设计、Android应用优化、OpenGL等高级知识。另外，本书还全面介绍了如何利用原生的C/C++（NDK）和Pyth">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/android_sensors_devlope.html">
+
+
+
+
+
+  <title> android传感器开发基础 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/android_sensors_devlope.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                android传感器开发基础
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-02-25T13:49:18+00:00">
+                2011-02-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/android_sensors_devlope.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/android_sensors_devlope.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文节选于机械工业出版社推出的《Android应用开发揭秘》一书，作者为杨丰盛。本书内容全面，详细讲解了Android框架、Android组件、用户界面开发、游戏开发、数据存储、多媒体开发和网络开发等基础知识，而且还深入阐述了传感器、语音识别、桌面组件开发、Android游戏引擎设计、Android应用优化、OpenGL等高级知识。另外，本书还全面介绍了如何利用原生的C/C++（NDK）和Python、Lua等脚本语言（Android Scripting Environment）来开发Android应用，并以迭代的方式重现了各种常用的Android应用和经典Android游戏的开发全过程。</p>
+<p><strong>第9章  Android特色开发</strong></p>
+<p>Android 是一个面向应用程序开发的丰富平台，它拥有许多具有吸引力的用户界面元素、数据管理和网络应用等优秀的功能。Android 还提供了很多颇具特色的接口。本章我们将分别介绍这些吸引开发者眼球的特色开发，主要包括：传感器系统（Sensor）、语音识别技术（RecognizerIntent）、Google Map和用来开发桌面的插件（Widget）。通过本章的学习，读者将对Android有一个更深入的了解，可以开发出一些有特色、有创意的应用程序。</p>
+<p><strong>9.1  传感器</strong></p>
+<p>据调查，2008年全球传感器销售额为506亿美元，预计到2010年全球传感器销售额可达600亿美元以上。调查显示，东欧、亚太区和加拿大成为传感器市场增长最快的地区，而美国、德国、日本依旧是传感器市场分布最大的地区。就世界范围而言，传感器市场增长最快的领域依旧是汽车，占第二位的是过程控制，当然现在也被广泛应用于通信。那么，传感器的定义是什么呢？有哪些种类的传感器呢？Android中提供了哪些传感器呢？</p>
+<p>1．传感器的定义</p>
+<p>传感器是一种物理装置或生物器官，能够探测、感受外界的信号、物理条件（如光、热、湿度）或化学组成（如烟雾），并将探知的信息传递给其他装置或器官。国家标准GB7665—87对传感器的定义是：“能感受规定的被测量并按照一定的规律转换成可用信号的器件或装置，通常由敏感元件和转换元件组成”。传感器是一种检测装置，能感受被测量的信息，并能将检测的感受到的信息，按一定规律变换成为电信号或其他所需形式的信息输出，以满足信息的传输、处理、存储、显示、记录和控制等要求。它是实现自动检测和自动控制的首要环节。</p>
+<p>2．传感器的种类</p>
+<p>可以从不同的角度对传感器进行分类：转换原理（传感器工作的基本物理或化学效应）；用途；输出信号类型以及制作材料和工艺等。</p>
+<p>根据工作原理，传感器可分为物理传感器和化学传感器两大类。</p>
+<p>物理传感器应用的是物理效应，诸如压电效应，磁致伸缩现象，离化、极化、热电、光电、磁电等效应。被测信号量的微小变化都将转换成电信号。</p>
+<p>化学传感器包括那些以化学吸附、电化学反应等现象为因果关系的传感器，被测信号量的微小变化也将转换成电信号。</p>
+<p>大多数传感器是以物理原理为基础运作的。化学传感器的技术问题较多，例如可靠性问题、规模生产的可能性、价格问题等，解决了这些问题，化学传感器的应用将会有巨大增长。而有些传感器既不能划分为物理类，也不能划分为化学类。</p>
+<p>3．Android中传感器的种类</p>
+<p>Google Android操作系统中内置了很多传感器，比如G1自带了一个非常实用的加速感应器（微型陀螺仪），有了它，G1手机就支持重力感应、方向判断等功能，在部分游戏或软件中可以自动识别屏幕的横屏、竖屏方向来改变屏幕显示布局。下面是Android中支持的几种传感器：</p>
+<p>Sensor.TYPE_ACCELEROMETER：加速度传感器。</p>
+<p>Sensor.TYPE_GYROSCOPE：陀螺仪传感器。</p>
+<p>Sensor.TYPE_LIGHT：亮度传感器。</p>
+<p>Sensor.TYPE_MAGNETIC_FIELD：地磁传感器。</p>
+<p>Sensor.TYPE_ORIENTATION：方向传感器。</p>
+<p>Sensor.TYPE_PRESSURE：压力传感器。</p>
+<p>Sensor.TYPE_PROXIMITY：近程传感器。</p>
+<p>Sensor.TYPE_TEMPERATURE：温度传感器。</p>
+<p>下面我们通过一个例子来分析Android中传感器的使用（具体实现参见本书所附代码：第9章\ Examples_09_01），这里分析的是方向传感器（TYPE_ORIENTATION）。</p>
+<p>4．Android 中传感器的功能</p>
+<p>要在Android中使用传感器，首先需要了解SensorManager和SensorEventListener。顾名思义，SensorManager就是所有传感器的一个综合管理类，包括了传感器的种类、采样率、精准度等。我们可以通过getSystemService方法来取得一个SensorManager对象。代码如下：</p>
+<p>SensorManager mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE); </p>
+<p>取得SensorManager对象之后，可以通过getSensorList方法来获得我们需要的传感器类型，保存到一个传感器列表中。通过如下代码可以得到一个方向传感器：</p>
+<p>List<sensor> sensors = mSensorManager.getSensorList(Sensor.TYPE_ORIENTATION);</sensor></p>
+<p>要与传感器交互，应用程序必须注册以侦听与一个或多个传感器相关的活动。Android中提供了registerListener来注册一个传感器，并提供了unregisterListener来卸载一个传感器。registerListener方法包括3个参数：第1个参数，接收信号的Listener实例；第2个参数，想接收的传感器类型的列表（即上一步创建的List<sensor>对象）；第3个参数，接收频度。调用之后返回一个布尔值，true表示成功，false表示失败。当然，之后不再使用时，我们还需要卸载。代码如下：</sensor></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//注册传感器  </span></span><br><span class="line"> Boolean  mRegisteredSensor = mSensorManager.registerListener(<span class="keyword">this</span>, sensor,   </span><br><span class="line"> SensorManager.SENSOR_DELAY_FASTEST);  </span><br><span class="line"> <span class="comment">//卸载传感器  </span></span><br><span class="line"> mSensorManager.unregisterListener(<span class="keyword">this</span>);</span><br></pre></td></tr></table></figure>
+<p>其中，SensorEventListener是使用传感器的核心部分，包括以下两个方法必须实现：</p>
+<p>onSensorChanged (SensorEvent event) 方法在传感器值更改时调用。该方法只由受此应用程序监视的传感器调用。该方法的参数包括一个SensorEvent对象，该对象主要包括一组浮点数，表示传感器获得的方向、加速度等信息。例如，以下代码可以取得其值：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">float</span> x = event.values[SensorManager.DATA_X];  </span><br><span class="line"><span class="keyword">float</span> y = event.values[SensorManager.DATA_Y];  </span><br><span class="line"><span class="keyword">float</span> z = event.values[SensorManager.DATA_Z];</span><br></pre></td></tr></table></figure>
+<p>onAccuracyChanged (Sensor sensor,int accuracy) 方法在传感器的精准度发生改变时调用。其参数包括两个整数：一个表示传感器，另一个表示该传感器新的准确值。</p>
+<p>具体实现如代码清单9-1所示。</p>
+<p>代码清单9-1 第9章\Examples_09_01\src\com\yarin\android\Examples_09_01\Activity01.java</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Activity01</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">SensorEventListener</span>  </span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span>         mRegisteredSensor;  </span><br><span class="line">    <span class="comment">//定义SensorManager  </span></span><br><span class="line">    <span class="keyword">private</span> SensorManager       mSensorManager;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);  </span><br><span class="line">        setContentView(R.layout.main);  </span><br><span class="line">        mRegisteredSensor = <span class="keyword">false</span>;  </span><br><span class="line">        <span class="comment">//取得SensorManager实例  </span></span><br><span class="line">        mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        <span class="keyword">super</span>.onResume();  </span><br><span class="line">        <span class="comment">//接收SensorManager的一个列表(Listener)  </span></span><br><span class="line">        <span class="comment">//这里我们指定类型为TYPE_ORIENTATION(方向传感器)  </span></span><br><span class="line">        List&lt;Sensor&gt; sensors = mSensorManager.getSensorList  </span><br><span class="line">        (Sensor.TYPE_ORIENTATION);  </span><br><span class="line">        <span class="keyword">if</span> (sensors.size() &gt; <span class="number">0</span>)  </span><br><span class="line">        &#123;  </span><br><span class="line">            Sensor sensor = sensors.get(<span class="number">0</span>);  </span><br><span class="line">            <span class="comment">//注册SensorManager  </span></span><br><span class="line">            <span class="comment">//this-&gt;接收sensor的实例  </span></span><br><span class="line">            <span class="comment">//接收传感器类型的列表  </span></span><br><span class="line">            <span class="comment">//接收的频率  </span></span><br><span class="line">            mRegisteredSensor = mSensorManager.registerListener(<span class="keyword">this</span>,   </span><br><span class="line">            sensor, SensorManager.SENSOR_DELAY_FASTEST);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        <span class="keyword">if</span> (mRegisteredSensor)  </span><br><span class="line">        &#123;  </span><br><span class="line">            <span class="comment">//如果调用了registerListener  </span></span><br><span class="line">            <span class="comment">//这里我们需要unregisterListener来卸载/取消注册  </span></span><br><span class="line">        mSensorManager.unregisterListener(<span class="keyword">this</span>);  </span><br><span class="line">            mRegisteredSensor = <span class="keyword">false</span>;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">super</span>.onPause();  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">//当精准度发生改变时  </span></span><br><span class="line">    <span class="comment">//sensor-&gt;传感器  </span></span><br><span class="line">    <span class="comment">//accuracy-&gt;精准度  </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAccuracyChanged</span><span class="params">(Sensor sensor, <span class="keyword">int</span> accuracy)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        <span class="comment">//处理精准度改变  </span></span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">// 当传感器在被改变时触发  </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSensorChanged</span><span class="params">(SensorEvent event)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        <span class="comment">// 接收方向传感器的类型  </span></span><br><span class="line">        <span class="keyword">if</span> (event.sensor.getType() == Sensor.TYPE_ORIENTATION)  </span><br><span class="line">        &#123;  </span><br><span class="line">            <span class="comment">//这里我们可以得到数据，然后根据需要来处理  </span></span><br><span class="line">            <span class="comment">//由于模拟器上面无法测试效果，因此我们暂时不处理数据  </span></span><br><span class="line">            <span class="keyword">float</span> x = event.values[SensorManager.DATA_X];  </span><br><span class="line">            <span class="keyword">float</span> y = event.values[SensorManager.DATA_Y];  </span><br><span class="line">            <span class="keyword">float</span> z = event.values[SensorManager.DATA_Z];  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的例子中演示了如何获得方向传感器的方向、加速度等信息，我们可以根据得到的数值与上一次得到的数值之间的关系来进行需要的操作。SensorManager中还有很多常量和一些常用的方法，如下：</p>
+<p>getDefaultSensor：得到默认的传感器对象。</p>
+<p>getInclination：得到地磁传感器倾斜角的弧度值。</p>
+<p>getOrientation：得到设备旋转的方向。</p>
+<p>getSensorList：得到指定传感器的列表。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/传感器/" rel="tag"># 传感器</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/defy_sensors.html" rel="next" title="Defy传感器列表">
+                <i class="fa fa-chevron-left"></i> Defy传感器列表
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/4g-memery.html" rel="prev" title="我的Y430升4G内存啦">
+                我的Y430升4G内存啦 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/android_sensors_devlope.html';
+
+      var disqus_title = "android传感器开发基础";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

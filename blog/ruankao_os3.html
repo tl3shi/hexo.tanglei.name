@@ -1,0 +1,867 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="软考,操作系统,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="1.8**操作系统的结构** 1．   无序结构法：整体结构或模块组合结构（以大型表格和队列为中心）； 2．   层次结构法：分解成各个单向依赖的层次； 3．   面向对象法：利用对象和对对象的操作加上保护组成操作系统；执行体对象（进程，线程、文件和令牌等）和内核对象（时钟、事件和信号等） 4．   微内核结构法：公共部分抽象形成底层的核心，提供基本的服务； 网络操作系统： 网络操作系统(NOS)">
+<meta name="keywords" content="软考,操作系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软考：操作系统知识(三)">
+<meta property="og:url" content="https://www.tanglei.name/blog/ruankao_os3.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="1.8**操作系统的结构** 1．   无序结构法：整体结构或模块组合结构（以大型表格和队列为中心）； 2．   层次结构法：分解成各个单向依赖的层次； 3．   面向对象法：利用对象和对对象的操作加上保护组成操作系统；执行体对象（进程，线程、文件和令牌等）和内核对象（时钟、事件和信号等） 4．   微内核结构法：公共部分抽象形成底层的核心，提供基本的服务； 网络操作系统： 网络操作系统(NOS)">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.819Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软考：操作系统知识(三)">
+<meta name="twitter:description" content="1.8**操作系统的结构** 1．   无序结构法：整体结构或模块组合结构（以大型表格和队列为中心）； 2．   层次结构法：分解成各个单向依赖的层次； 3．   面向对象法：利用对象和对对象的操作加上保护组成操作系统；执行体对象（进程，线程、文件和令牌等）和内核对象（时钟、事件和信号等） 4．   微内核结构法：公共部分抽象形成底层的核心，提供基本的服务； 网络操作系统： 网络操作系统(NOS)">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/ruankao_os3.html">
+
+
+
+
+
+  <title> 软考：操作系统知识(三) | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/ruankao_os3.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                软考：操作系统知识(三)
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-04-17T13:51:56+00:00">
+                2011-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">课程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/ruankao_os3.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/ruankao_os3.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>1.8**</strong>操作系统的结构<strong>**</strong></p>
+<p>1．   无序结构法：整体结构或模块组合结构（以大型表格和队列为中心）；</p>
+<p>2．   层次结构法：分解成各个单向依赖的层次；</p>
+<p>3．   面向对象法：利用对象和对对象的操作加上保护组成操作系统；执行体对象（进程，线程、文件和令牌等）和内核对象（时钟、事件和信号等）</p>
+<p>4．   微内核结构法：公共部分抽象形成底层的核心，提供基本的服务；</p>
+<p><strong>网络操作系统：</strong></p>
+<p>网络操作系统(NOS)是网络的心脏和灵魂，是向网络计算机提供服务的特殊的操作系统。它在计算机操作系统下工作,使计算机操作系统增加了网络操作所需要的能力。例如象前面已谈到的当你在LAN上使用字处理程序时,你的PC机操作系统的行为象在没有构成LAN时一样，这正是LAN操作系统软件管理了你对字处理程序的访问。网络操作系统运行在称为服务器的计算机上,并由连网的计算机用户共享,这类用户称为客户。</p>
+<p>NOS与运行在工作站上的单用户操作系统或多用户操作系统由于提供的服务类型不同而有差别。一般情况下，NOS是以使网络相关特性最佳为目的的。如共享数据文件、软件应用以及共享硬盘、打印机、调制解调器、扫描仪和传真机等。一般计算机的操作系统，如DOS和OS/2等,其目的是让用户与系统及在此操作系统上运行的各种应用之间的交互作用最佳。</p>
+<p>为防止一次由一个以上的用户对文件进行访问，一般网络操作系统都具有文件加锁功能。如果没有这种功能,将不会正常工作。文件加锁功能可跟踪使用中的每个文件,并确保一次只能一个用户对其进行编辑。文件也可由用户的口令加锁,以维持专用文件的专用性。</p>
+<p>NOS还负责管理LAN用户和LAN打印机之间的连接。NOS总是跟踪每一个可供使用的打印机以及每个用户的打印请求,并对如何满足这些请求进行管理,使每个端用户的操作系统感到所希望的打印机犹如与其计算机直接相连。</p>
+<p>NOS还对每个网络设备之间的通信进行管理,这是通过NOS中的媒体访问法来实现的。</p>
+<p>NOS的各种安全特性可用来管理每个用户的访问权利,确保关键数据的安全保密。因此,NOS从根本上说是一种管理器,用来管理连接、资源和通信量的流向。</p>
+<p><strong>嵌入式操作系统：</strong></p>
+<p>嵌入式系统是以应用为中心，软硬件可裁剪的，适应应用系统对功能、可靠性、成本、体积、功耗等综合性严格要求的专用电脑系统；主要由嵌入式CPU、相关硬件、嵌入式OS操作系统及应用软件等组成。与通用型电脑系统相比，嵌入式系统功耗低、可靠性高；功能强大、性能价格比高；实用性强，支持多任务；占用空间小，效率高；面向特定应用，可根据需要灵活定制。</p>
+<p>嵌入式系统应用广泛：可用于移动电脑平台（PDA、掌上计算机），信息家电（数字电视、机顶盒、网络设备），无线通信设备（智能手机、股票接收设备），工业/商业控制（智能工控设备、POS/ATM机），电子商务平台，甚至军事应用等诸多领域。</p>
+<p>对于大多数用户而言，嵌入式系统的应用有一定的难度。不论是硬件的造型、嵌入式操作系统的选择，以及应用软件的确定都是令人头疼的事情。为了解决这难题，威达佳科技推出了一系列从嵌入式硬件到操作系统的解决方案。</p>
+<p>WindowsCE.net概述</p>
+<p>Windows CE .NET是Windows CE 3.0的后继产品。Windows CE .NET为嵌入式市场重新设计，为快速建立下一代智能移动和小内存占用的设备提供了一个健壮的实时操作系统。Windows CE .NET具备完整的操作系统特性,集包和端对端开发环境，它包括了创建一个基于定制设备的Windows CE所需的一切。</p>
+<p>WinCE.NET包含大量的新增特性和改进特性，如：</p>
+<p>n          蓝牙（bluetooth）和802.11零配置设定等无线技术；</p>
+<p>n          设备仿真特性使你可以对完整的设备环境进行仿真而无需任何额外的硬件投资；</p>
+<p>n          在平台向导方面，使您可以从众多的预置设备设计中进行选择，以便跳跃式的开始你的开发流程；</p>
+<p>丰富的多媒体和Web浏览功能，如Microsoft Internet Explorer6.0和Windows Media编解码器（Codec）和控件原件。强大的联网能力、强劲的实时性和小内存体积占用以及丰富的多媒体和Web浏览功能使得WindowsCE.NET成为各个不同领域嵌入式操作系统的首选。</p>
+<p>WinCE.NET为快速建立下一代智能移动和小内存占用的设备提供了一个健壮的实时操作系统，利用WinCE.NET就有可能创建一个您所需要的与众不同的平台，从而应用到各个领域。</p>
+<p>◆ 移动电话/智能多媒体</p>
+<p>◆ 自定义设备</p>
+<p>◆ 数字成像设备</p>
+<p>◆ 工业自动化设备</p>
+<p>◆ Internet /媒体设备</p>
+<p>◆ PDA/移动手持设备</p>
+<p>◆ 住宅门禁</p>
+<p>◆ POS设备</p>
+<p>◆ 顶置盒</p>
+<p>◆ 微内核</p>
+<p>◆ Web 板设备</p>
+<p>◆ Windows客户端/终端</p>
+<p><strong>1.9**</strong>常用操作系统**</p>
+<p><strong>UNIX**</strong>系统**</p>
+<p>UNIX是一个分时操作系统。它利用最内层硬件提供的基本服务，向外层提供全部应用程序所需要的服务。</p>
+<p>UNIX中的文件是字符流文件，在物理上组织为索引文件。</p>
+<p>工作目录的概念：当前目录</p>
+<p>UNIX系统中的进程控制子系统负责进程同步、进程间通信、存储管理及进程调度。</p>
+<p>UNIX系统中的进程调度采用动态优先数的算法。</p>
+<p>UNIX采用段页式管理，分配的单位是块（如每块8K字节）。</p>
+<p>UNIX采用了LRU（最近最少使用算法）作为虚存中的淘汰算法。</p>
+<p>UNIX的文件系统用缓冲技术来调节系统与磁盘之间的数据流。</p>
+<p>UNIX系统中的命令解释程序称作shell。</p>
+<p>管道是UNIX系统的一个重要特色。</p>
+<p><strong>Window NT**</strong>系统**</p>
+<p>Window NT系统是20世纪90年代的操作系统技术，适用于高档工作站平台、局域网服务器或者主干计算机。是微内核操作系统</p>
+<p>Window NT支持对称多处理结构，支持多线程并行，采用90年代操作系统技术（即微内核技术），在体系结构上采用客户机/服务器模式。</p>
+<p>有两类保护子系统：环境子系统和集成子系统：</p>
+<p>环境子系统：提供不同风格的操作环境；</p>
+<p>保护子系统：实现所必需的操作系统的功能；</p>
+<p>在淘汰算法上采用了FIFO算法；</p>
+<p><strong>2**</strong>．重点与难点：**</p>
+<p><strong>2.1**</strong>进程相关的概念：**</p>
+<p>进程、线程和管程</p>
+<p>这是三个看起来似乎比较容易混淆的概念，所以在复习的时候一定要牢记其定义和相互之间的区别。</p>
+<p>►进程</p>
+<p>进程是一个可并发执行的程序在一个数据集合上的运行过程。也就是说，它是运行中的程序，是程序的一次运行活动。在操作系统中，进程是进行系统资源分配、调度和管理的最小单位。</p>
+<p>►线程</p>
+<p>对于一些多线程程序来讲，其包含两条或两条以上并发运行的部分，每个部分就称作一个线程，每个线程都有独立的执行路径。线程是处理器分配资源的最小单位。</p>
+<p>►管程</p>
+<p>管程是一种并发性的构造，它包括用于分配一个共享资源或一组共享资源的数据和过程。为了完成分配资源的功能，进程必须调用特定的管程入口。</p>
+<p>操作系统中，多任务处理一般有两种方式：基于进程和基于线程。基于进程的多任务处理的特点是允许计算机同时运行两个或更多的程序。而基于线程的多任务处理是指一个程序可以同时执行两个或者多个任务的功能。</p>
+<p>多线程程序比多进程程序需要更少的管理费用。进程是重量级的任务，需要分配它们自己独立的地址空间。进程间的通信和相互转换需要很多的开销。而线程是轻量级的任务，它们共享相同的地址空间并且分享同一个进程。线程间的通信和转换开销要小很多。</p>
+<p><strong>2.2**</strong>信号量处理：**</p>
+<p>信号量和P-V操作</p>
+<p>为了解决进程同步的问题，提出了信号量机制。这一机制取得了很大的发展，从整型信号量到记录型信号量，再进而发展为“信号量集”机制。不过，在原理上和考试中，一般我们都只涉及整型信号量机制。</p>
+<p>对于互斥临界区的管理要求：</p>
+<p>n          有空则进</p>
+<p>n          无空等待</p>
+<p>n          两者择一</p>
+<p>n          有先等待</p>
+<p>在整型信号量机制中，信号量被定义为一个整型变量，除初始化外，仅能通过两个标准的原子操作wait(s)和signal(s)来访问。其通常被分别称作P、V操作。描述如下：</p>
+<p><strong>P**</strong>操作**</p>
+<p>I.          S-1→S</p>
+<p>II.       如果S&lt;0，则该进程进入等待状态；否则继续进行</p>
+<p><strong>V**</strong>操作**</p>
+<p>I.          S+1→S</p>
+<p>II.       如果S≥0，则唤醒队列中的一个等待进程</p>
+<p>进程互斥的情况初值是1，而同步的初值是0</p>
+<p>进程同步的问题相对来说是比较复杂的，这其中一些比较经典的进程同步问题，如：</p>
+<p>Ø         生产者—消费者问题</p>
+<p>Ø         读者—写者问题</p>
+<p>Ø         哲学家进餐问题</p>
+<p><strong>2.3**</strong>各种调度算法：<strong>**</strong></p>
+<p>操作系统中，涉及到的调度比较多，如进程调度、作业调度、磁盘调度等。但是其调度算法的原理都大致相同。进程调度是比较典型的一类调度，其调度算法较多。包括：</p>
+<p>Ø         先来先服务</p>
+<p>Ø         优先数调度</p>
+<p>Ø         轮转法</p>
+<p>Ø         短作业优先</p>
+<p>通过对这些调度算法的复习，对我们掌握其他种类调度的调度算法也会很有帮助。</p>
+<p>例题： 一台 PC 计算机系统启动时，首先执行的是__(42)__，然后加载__(43)__。在设备管理中，虚拟设备的引入和实现是为了充分利用设备，提高系统效率，采用__(44)__来模拟低速设备(输入机或打印机)的工作。</p>
+<table border="0" cellspacing="1" cellpadding="0" width="94%"><br>  <tr><br>    <td width="24%"><br>      (42) A. 主引导记录<br>    </td><br><br>    <td width="24%"><br>      B. 分区引导记录<br>    </td><br><br>    <td width="24%"><br>      C. BIOS引导程序<br>    </td><br><br>    <td width="24%"><br>      D. 引导扇区<br>    </td><br>  </tr><br><br>  <tr><br>    <td colspan="4" width="99%"><br>      (43) A. 主引导记录和引导驱动器的分区表，并执行主引导记录<br>    </td><br>  </tr><br><br>  <tr><br>    <td colspan="4" width="99%"><br>      B. 分区引导记录、配置系统，并执行分区引导记录<br>    </td><br>  </tr><br><br>  <tr><br>    <td colspan="4" width="99%"><br>      C. 操作系统，如 Windows98/NT/2000/XP、UNIX 等<br>    </td><br>  </tr><br><br>  <tr><br>    <td colspan="4" width="99%"><br>      D. 相关支撑软件<br>    </td><br>  </tr><br><br>  <tr><br>    <td colspan="2" width="49%"><br>      (44) A. Spooling技术，利用磁带设备<br>    </td><br><br>    <td colspan="2" width="49%"><br>      B. Spooling技术，利用磁盘设备<br>    </td><br>  </tr><br><br>  <tr><br>    <td colspan="2" width="49%"><br>      C. 脱机批处理系统<br>    </td><br><br>    <td colspan="2" width="49%"><br>      D. 移臂调度和旋转调度技术，利用磁盘设备<br>    </td><br>  </tr><br></table>
+
+<p>42.c 43.b 44.b</p>
+<p>例题：设有 7 项任务，分别标记为 a、b、c、d、c、f 和 g，需要若干台机器以并行工作方式来完成，它们执行的开始时间和完成时间如下表所示：</p>
+<table border="1" cellspacing="0" cellpadding="0" width="57%"><br>  <tr><br>    <td rowspan="2" width="21%"><br>      时间<br>    </td><br><br>    <td colspan="7" width="79%"><br>      任 务<br>    </td><br>  </tr><br><br>  <tr><br>    <td width="11%"><br>      a<br>    </td><br><br>    <td width="11%"><br>      b<br>    </td><br><br>    <td width="11%"><br>      c<br>    </td><br><br>    <td width="11%"><br>      d<br>    </td><br><br>    <td width="11%"><br>      e<br>    </td><br><br>    <td width="12%"><br>      f<br>    </td><br><br>    <td width="12%"><br>      g<br>    </td><br>  </tr><br><br>  <tr><br>    <td width="21%"><br>      开始时间<br>    </td><br><br>    <td width="11%"><br>    </td><br><br>    <td width="11%"><br>      3<br>    </td><br><br>    <td width="11%"><br>      4<br>    </td><br><br>    <td width="11%"><br>      9<br>    </td><br><br>    <td width="11%"><br>      7<br>    </td><br><br>    <td width="12%"><br>      1<br>    </td><br><br>    <td width="12%"><br>      6<br>    </td><br>  </tr><br><br>  <tr><br>    <td width="21%"><br>      结束时间<br>    </td><br><br>    <td width="11%"><br>      2<br>    </td><br><br>    <td width="11%"><br>      7<br>    </td><br><br>    <td width="11%"><br>      7<br>    </td><br><br>    <td width="11%"><br>      11<br>    </td><br><br>    <td width="11%"><br>      10<br>    </td><br><br>    <td width="12%"><br>      5<br>    </td><br><br>    <td width="12%"><br>      8<br>    </td><br>  </tr><br></table>
+
+<p>在最优分配方案中完成这些任务需要，__(16)__台机器。</p>
+<table border="0" cellspacing="1" cellpadding="0" width="94%"><br>  <tr><br>    <td width="25%"><br>      (16) A. 2<br>    </td><br><br>    <td width="25%"><br>      <span style="color: #ff0000;">B. 3</span><br>    </td><br><br>    <td width="25%"><br>      C. 4<br>    </td><br><br>    <td width="25%"><br>      D. 5<br>    </td><br>  </tr><br></table>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/软考/" rel="tag"># 软考</a>
+          
+            <a href="/tags/操作系统/" rel="tag"># 操作系统</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/ruankao_os2.html" rel="next" title="软考：操作系统知识(二)">
+                <i class="fa fa-chevron-left"></i> 软考：操作系统知识(二)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/ruankao_multi_media1.html" rel="prev" title="软考：多媒体知识(一)">
+                软考：多媒体知识(一) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/ruankao_os3.html';
+
+      var disqus_title = "软考：操作系统知识(三)";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

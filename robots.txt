@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /resources/
+Disallow: /wp-content/
+Sitemap: /sitemap.xml
+Sitemap: /baidusitemap.xml

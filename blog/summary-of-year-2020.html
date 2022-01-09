@@ -1,0 +1,882 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="总结,MyLife,年终总结,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景最近看到不少号主都发了年终总结了，这不，我元旦期间就加班加点来一篇。哈哈哈，不过我可不是跟风，因为我其实早在 2011 年开始就有在 blog 上写总">
+<meta name="keywords" content="总结,MyLife,年终总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2020年总终结">
+<meta property="og:url" content="https://www.tanglei.name/blog/summary-of-year-2020.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景最近看到不少号主都发了年终总结了，这不，我元旦期间就加班加点来一篇。哈哈哈，不过我可不是跟风，因为我其实早在 2011 年开始就有在 blog 上写总">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/2020-summary/2020-summary.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-1-3/1609663464497-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-1-3/1609668537273-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-1-3/1609669157737-image.png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibt2jjWlzYH0CsURuWXZKuYQWliadmnDvDpibkQWjZLVZGHL2PPW8wnJLhhggEPgpcLsaIUia0Bzcf6wA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-1-4/1609771936438-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-1-3/1609672104211-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-1-3/1609672852413-image.png">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.998Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2020年总终结">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景最近看到不少号主都发了年终总结了，这不，我元旦期间就加班加点来一篇。哈哈哈，不过我可不是跟风，因为我其实早在 2011 年开始就有在 blog 上写总">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/2020-summary/2020-summary.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/summary-of-year-2020.html">
+
+
+
+
+
+  <title> 2020年总终结 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/summary-of-year-2020.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                2020年总终结
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-08T00:00:00+00:00">
+                2021-01-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MyLife/" itemprop="url" rel="index">
+                    <span itemprop="name">MyLife</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/summary-of-year-2020.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/summary-of-year-2020.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1610101552&amp;ver=2816&amp;signature=NfsIyt2KiIMSTPVwWmAnF93eIvto2H0RAY4DoJpCEGVCx1AOamUVMgHvuzq*i5AYDWMfZU6DftKk0yLX58Rasvr0f0U5ctgDF92M0Wgtc-2GRONIGRRXQwgJuzV5ERDX&amp;new=1" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<p><img src="/resources/2020-summary/2020-summary.png" alt></p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>最近看到不少号主都发了年终总结了，这不，我元旦期间就加班加点来一篇。哈哈哈，不过我可不是跟风，因为我其实早在 2011 年开始就有在 blog 上写总结的习惯了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-1-3/1609663464497-image.png" alt="历年总结"></p>
+<p>看看往年的总结的时间点，参差不齐，有的甚至到拖延到 3 月份才写，这都是因为懒啊。😂</p>
+<p>现在回过头去看看八九年前写的总结还是蛮有意思的，在之前的这篇 <a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247488750&amp;idx=1&amp;sn=bddb76b8e85d04b303b3d10024b8a56b&amp;chksm=eb47150adc309c1cfe5f847acaf6a3eb7de3efb3c7f2a87e708a686a740aa364c33c80ea3000&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">讲程序猿该如何优雅地写博客？</a> 中也提到了写博客、写总结的好处。</p>
+<p>照旧从工作、生活等几个方面来总结吧，今年下半年开始了公众号写作，因此也加上公众号方面的总结。</p>
+<p>另外，为了感谢大家一直以来的支持，文末也给大家带来了几本书，大家抽奖试试。</p>
+<h2 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h2><p>工作方面，我所在的团队围绕着整个阿里云计算节点的稳定性展开工作；换句话讲，就是保证大家在阿里云官网购买的 ECS 的稳定性。围绕着这个核心的目标，所开展的一系列自动化、系统化的工作。</p>
+<p>目前阿里云对外公布的单地域多可用区部署的 ECS，SLA 是 99.995%，做技术的同学应该知道这个概念。进入阿里云之前，我所负责的工作业务场景一般是上层应用，还相对容易；但对于物理机这样的硬件设备来讲，这个还是很有挑战的。</p>
+<p>年初因为团队有人员变动（体验到了 “唯一不变的是变化”），还参与了一段时间的阿里云的另外一块产品 —— 云助手的开发工作。云助手是 ECS 的原生运维部署服务，无需远程连接实例，可完成运行自动化运维等任务。</p>
+<p>记得我参加工作以来，写的代码 bug 造成的最大的 “故障” 要属当初在 XX 公司，因 bug 导致给 xx 用户多发了几条短信，给用户带来了困扰。从此对代码保持敬畏之心。</p>
+<p>之前有听到同事讲，某医院用了 xx 云，因为 xx 云系统故障，导致医院系统无法用，无法正常运转。还有类似案例，xx 高速用了 yy 云，因 yy 云故障宕机，导致高速收费系统崩溃。</p>
+<p>因此在这样的工作场景下，对写的代码质量要求非常高，稍有不注意可能就会酿成大祸。之前听一个大佬分享，大意是强调平台的价值，我也不得不认同这样的观点：同样是几行代码，在不同的平台下的重要性，产生的价值可能有着天壤之别。</p>
+<p>当然以上是表面上“吹嘘”系统很核心，很牛 X，有多么重要（确实如此），不过进来后你也会发现，代码库中也有翔一样的历史代码。😝，所以也急需你一起来改善、优化，对于这方面感兴趣的同学，可以私聊我，我们团队还有部分 hc，欢迎一起搞事情。</p>
+<h2 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h2><h3 id="关于运动"><a href="#关于运动" class="headerlink" title="关于运动"></a>关于运动</h3><p>去年立的 flag，多锻炼，减体重，今年只能继续了。（狗头）</p>
+<p>因为疫情，再加上之前办的游泳卡过期也一直没续，因此 “游泳” 停掉了，不过今年会继续的。</p>
+<p>前段时间被强行拉入了同事组织的一个“健康生活”的群，入群定周 KPI，未完成发 100 红包。之前 KPI 最低标准是每周 5Km 或者 5W 步，每周强行吃完饭遛弯，周末强行出去转转勉强可达到 KPI。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-1-3/1609668537273-image.png" alt="运动KPI：每周 5W 步"></p>
+<p>不过今年 KPI 升级了，走路不算了。我就定一个每周 2 次运动吧。运动包括：羽毛球、游泳、Keep、或者 xbox 健身舞蹈。</p>
+<h3 id="关于旅游"><a href="#关于旅游" class="headerlink" title="关于旅游"></a>关于旅游</h3><p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-1-3/1609669157737-image.png" alt="飞越不凡的 2020"></p>
+<p>因为疫情，也没去太多的地方，国庆去了趟云南，详情可见 <a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247489724&amp;idx=1&amp;sn=bee9795690e80ed88408a9395cb1553e&amp;chksm=eb471958dc30904e865c3889feebc0cb2d55dcb8b6ed11fe1f03cf1aa162632451417c1c80e2&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">云南攻略</a>。然后因买了 “随心飞”，还去了三亚、山东、重庆和厦门。</p>
+<h3 id="其他兴趣"><a href="#其他兴趣" class="headerlink" title="其他兴趣"></a>其他兴趣</h3><p>熟悉我的朋友知道，我还有个兴趣是吹吹竹笛的。不过说来惭愧，今年笛子都没拿出来过，😂 前面陶笛道是简单地吹了吹。</p>
+<p>前两天还通过一首陶笛曲在朋友圈祝大家新年快乐的，感兴趣的同学可戳下面的视频号内容观看，真的是献丑了，水平有限，大家将就。😃</p>
+<p>//TODO，插入视频号</p>
+<p>年末，老婆一时兴起，要学个乐器，因此就买了电子琴，我也跟着学学吧。愿明年的年终总结能弹出个像样的曲子。</p>
+<h2 id="公众号"><a href="#公众号" class="headerlink" title="公众号"></a>公众号</h2><p>从 2020 年 4 月开始吧，我又继续开始了写公众号，基本保持周更，平均每月 4 篇，至今也有 50 篇原创内容。</p>
+<p>确实也产出了不少自认为还不错的文章，从被转载数量也可看出。不知道你是看到我哪篇文章开始关注我的？</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibt2jjWlzYH0CsURuWXZKuYQWliadmnDvDpibkQWjZLVZGHL2PPW8wnJLhhggEPgpcLsaIUia0Bzcf6wA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="热门转载文章"></p>
+<p>我将其中的文章做了大致分类，并在每个分类中选取其中的 5 篇文章供大家参考，希望能让你有收获。</p>
+<h3 id="热门原创"><a href="#热门原创" class="headerlink" title="热门原创"></a>热门原创</h3><ul>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247483912&amp;idx=1&amp;sn=520bbca6a2056ab4df6b0e1d0ebaf6e0&amp;chksm=eb4703ecdc308afa83b288b1469f0927c1916189f219ee5e8c3c5194defc0b8f313ff7607730&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">面试 Google, 我失败了 | Google 面经分享</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247485939&amp;idx=1&amp;sn=cad3cf49aa345783a93ce5d9b631ba1d&amp;chksm=eb470817dc308101c95aff74fa63d530f02bef50f91ba18d4ff25b8715933a404bd03ffc8b7b&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">这 10 行比较字符串相等的代码给我整懵了，不信你也来看看</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247484698&amp;idx=1&amp;sn=03cc4636e7ee7364a85788a98809cc03&amp;chksm=eb4704fedc308de8efd48ab9aed4fd1ddee5665d8e76d0d3767c1f704eac8b15a83e450a08f1&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">从一道面试题谈谈一线大厂码农应该具备的基本能力</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247489405&amp;idx=1&amp;sn=32a60e53fd6027fc1596c101d669f414&amp;chksm=eb471699dc309f8fbb3b4936f61ed9f7e14acd827d3626b0bd4bbe35d0ed8168c85745421fc2&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">给 JDK 报了一个 P4 的 Bug，结果居然……</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247486920&amp;idx=1&amp;sn=30b5c6f684dbd2748f8d14dd53ef2180&amp;chksm=eb470c2cdc30853a3317207cef2f067410b5f6c2dae7d89a29ddd558c57dd2c96c3c72521370&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">没想到 Hash 冲突还能这么玩，你的服务中招了吗？</a></li>
+</ul>
+<h3 id="面试-amp-面经"><a href="#面试-amp-面经" class="headerlink" title="面试&amp;面经"></a>面试&amp;面经</h3><ul>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247487939&amp;idx=1&amp;sn=3962dc1cc3c4ce10b528b7a3bf0d7896&amp;chksm=eb471027dc3099314a181e3257957567e6fd9a3a3309532e87cb77572f13939ff6e59abecc3b&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">有了这份程序员面试指南，你离大厂Offer还远吗？| 附推荐书籍</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247489734&amp;idx=1&amp;sn=f9172000b917ea4e81f4e8b3b2afa1e3&amp;chksm=eb471922dc309034064a0420eeb9c21fca533f387a5a9a5bfbd0f25313d134753e490774bb9c&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">非科班学弟如何转行斩获 ATM 大厂的 Offer ？</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247490412&amp;idx=1&amp;sn=2512cb07a969ff50222c363dd7a6874a&amp;chksm=eb471a88dc30939ee95067ad13447e8b9e579f719d8a89deb95ff56ae81b0447ae2c86efcbaf&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">羡慕，又一清华学弟斩获 6 个大厂 SSP Offer | 面经分享</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247491116&amp;idx=1&amp;sn=676c6dab8dbb095a31e6fb45cb31a828&amp;chksm=eb471fc8dc3096dea5f1a8600fdc9163d3ce228e640ddb93fad310d44e739f9d719d0722efd7&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">一个读者大佬精心总结的阿里、腾讯、宇宙条大厂 Offer 面经和硬核面试攻略</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247487666&amp;idx=1&amp;sn=da48d1eead58e2e2219a0fc774eeda0e&amp;chksm=eb471156dc309840db7cf59d2a546714b1262fcb975ac6af70a49f045292a6a2d7822b0bbeb9&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">同学，这里有份程序员校招总结等你来取 | 面试10+公司，8 Offer的校招经历分享</a></li>
+</ul>
+<h3 id="工具-amp-效率"><a href="#工具-amp-效率" class="headerlink" title="工具&amp;效率"></a>工具&amp;效率</h3><ul>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247487786&amp;idx=1&amp;sn=842202cc524477ec1546b4747bdbf1a8&amp;chksm=eb4710cedc3099d86953451729c7f569866e6e58abbbec5c7ebe7423d12e1f11e189bb417f80&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">优秀的程序员是如何利用工具来提升工作效率的？</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247489026&amp;idx=1&amp;sn=cf1650652a44d65730c5ee04258ad9e1&amp;chksm=eb4717e6dc309ef037674943645abe8356aa726416ea46f3349ba227520bd40c95f8a49aa3e5&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">提升开发效率N倍的20+命令行神器!(附 demo)</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247486659&amp;idx=1&amp;sn=b574d3f2a6af4544ceab48aadaa0a726&amp;chksm=eb470d27dc308431e8789a87e32a597c72cc0f2fe02d6fc80424aec11e41e712326b62603f27&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">有了这几个神器，瞬间逼格就上去了</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247489970&amp;idx=1&amp;sn=0765365069973269c479eccea07e23bb&amp;chksm=eb471856dc3091407b1b4c4a5dd86ac3d270405ac7e128de9fdc8588278e1fbef8a6d95e499e&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">2020 北京积分落户结果公示，落户指标最多的公司竟然又是 ？</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247489185&amp;idx=1&amp;sn=4abfc07dfca59dec6680d39f395020ba&amp;chksm=eb471745dc309e5392ad57d867ef687526e785a9fe5d190ebb7efe8f60ae1dd112c3366e255a&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">分析了获得家庭摇号新能源指标的数据后，我发现了一个秘密</a></li>
+</ul>
+<h3 id="踩坑-amp-填坑"><a href="#踩坑-amp-填坑" class="headerlink" title="踩坑&amp;填坑"></a>踩坑&amp;填坑</h3><ul>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247485827&amp;idx=1&amp;sn=648a889ec625943accd6830f4b4811a5&amp;chksm=eb470867dc3081712a663141064b4bf987797551eb3840af11df362e1c4797c2c9bc1723329e&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">一行代码引来的安全漏洞就让我们丢失了整个服务器的控制权    </a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247483891&amp;idx=1&amp;sn=264171adf872514d1fd54faf54970dd7&amp;chksm=eb470017dc3089019ffc13facfdfb38e9d5f2adaf7fcbf9c117723ce015fb660f0802d406c7b&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">震惊! 阿里的程序员也不过如此,竟被一个简单的 SQL 查询难住</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247490188&amp;idx=1&amp;sn=19c2259724a855cdfac48855a870368d&amp;chksm=eb471b68dc30927eb17b1e5a999eebe808084a9f3aa64d3041f73dd3a8327ccc1d84353cf51f&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">你可能也会掉进这个简单的 String 的坑</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247490048&amp;idx=1&amp;sn=868a6eed7b199023429c26f2a1b2abea&amp;chksm=eb471be4dc3092f24c284dce9e76765d68ea9b4dc345c3bb45f2e29d5cc02da7136ebc7f68ad&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">物理内存充足，但是为什么用代码总申请不到内存呢？</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247485980&amp;idx=1&amp;sn=7f0ca5a9ea5c982c3841dd18f89dd092&amp;chksm=eb470bf8dc3082ee92bed3ed6718279998d5fad6337a15b342c638269b5cbd86c11bc3f7b616&amp;token=990554520&amp;lang=zh_CN#rd" target="_blank" rel="noopener">高并发口罩抢购项目架构演进记录&amp;优化经验分享</a></li>
+</ul>
+<h3 id="汇总-PDF"><a href="#汇总-PDF" class="headerlink" title="汇总 PDF"></a>汇总 PDF</h3><p>同时，为了方便，我特意将公众号的历史文章汇总成 pdf，这个 pdf 我将持续更新，你只需要在公众号后台回复 “历史文章PDF” 即可获取已更新的最新版本。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-1-4/1609771936438-image.png" alt="本号经典文章集合"></p>
+<p>目前还是半自动化生成的这个 pdf，正在改进，计划有个脚本一键生成。</p>
+<h3 id="公众号收入"><a href="#公众号收入" class="headerlink" title="公众号收入"></a>公众号收入</h3><p>大家有的同学可能好奇，我这公众号能挣多少钱？😝 我可以告诉大家，基本没有。</p>
+<p>毕竟目前为止，我这公众号也没有发过广告，只靠流量主确实挣不了钱的，拿昨天的数据为例，就这还算运气好，很有可能为 0 的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-1-3/1609672104211-image.png" alt="公众号收入"></p>
+<p>这完全还不如我很久之前花两天时间写的小程序呀，基本没管过，也从来没运营过，收入可比公众号强多了呢，就当偶尔吃面能加个鸡腿吧。 </p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-1-3/1609672852413-image.png" alt="小程序收入"></p>
+<p>所以，如果你看到还不错的文章，还期望你能够帮忙分享传播一下，就当给我赞赏了。我当然也期望能像其他号主那样能恰饭呀，确实也有不少广告主来联系投放广告，不过都被我拒绝了，感觉时机未到呀，未来再说吧~ </p>
+<h2 id="抽奖"><a href="#抽奖" class="headerlink" title="抽奖"></a>抽奖</h2><p>感谢 <strong>图灵社区</strong> 赞助本次抽奖活动，这次给大家带来了这本书 —— 《Java性能优化实践：JVM调优策略、工具与技巧》。</p>
+<p>性能优化作为一个常谈常新的话题，受到越来越多开发者的关注。本书作为一本性能调优方面的实用指南，从实验科学的角度将JVM调优的技术原理与方法论相结合。详情介绍可点<a href="https://book.douban.com/subject/35258148/" target="_blank" rel="noopener">豆瓣链接</a>查看。</p>
+<p>抽奖方式：不像<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247488892&amp;idx=1&amp;sn=1b026c5a8688b880ca06c51c816265b1&amp;chksm=eb471498dc309d8eaac5bd296a3971901e624e9abfc5a0add8928f5ebc3a83b8402ebfadd95d&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">上次公众号抽奖</a>搞得那么复杂了，还按照什么彩票中奖号码、留言顺序啥之类的，直接抽奖，两种方式：</p>
+<ol>
+<li>从本文留言中抽 2 位同学，可说说 2020 的收获或为啥想要这本书等，点赞最高的 2 名同学；</li>
+<li>后台回复“2021抽奖”，随机抽取 2 位同学，这个随机由第三方小程序控制。</li>
+</ol>
+<p>抽奖截止时间：2020 年 1 月 10 日 23:59:59，以上两种方式都可参加，如果有重复中奖只算一次，顺延给后面的同学，一本书原价也就百十来块，大家就没必要刷票赞了哈，中奖后的同学请及时联系本人，5 天内未联系视为自动放弃。</p>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader，欢迎关注，交流和指导！</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/总结/" rel="tag"># 总结</a>
+          
+            <a href="/tags/MyLife/" rel="tag"># MyLife</a>
+          
+            <a href="/tags/年终总结/" rel="tag"># 年终总结</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/low-education-background-also-make-much-money-as-a-programmer.html" rel="next" title="大专被裁失业，却拒绝了 42k 的 Offer？">
+                <i class="fa fa-chevron-left"></i> 大专被裁失业，却拒绝了 42k 的 Offer？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/share-interview-experience-when-gradudate-in-2021-part-3.html" rel="prev" title="纠结于算法岗与开发岗的秋招记录">
+                纠结于算法岗与开发岗的秋招记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工作"><span class="nav-number">2.</span> <span class="nav-text">工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生活"><span class="nav-number">3.</span> <span class="nav-text">生活</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于运动"><span class="nav-number">3.1.</span> <span class="nav-text">关于运动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于旅游"><span class="nav-number">3.2.</span> <span class="nav-text">关于旅游</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他兴趣"><span class="nav-number">3.3.</span> <span class="nav-text">其他兴趣</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#公众号"><span class="nav-number">4.</span> <span class="nav-text">公众号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#热门原创"><span class="nav-number">4.1.</span> <span class="nav-text">热门原创</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面试-amp-面经"><span class="nav-number">4.2.</span> <span class="nav-text">面试&amp;面经</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工具-amp-效率"><span class="nav-number">4.3.</span> <span class="nav-text">工具&amp;效率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#踩坑-amp-填坑"><span class="nav-number">4.4.</span> <span class="nav-text">踩坑&amp;填坑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#汇总-PDF"><span class="nav-number">4.5.</span> <span class="nav-text">汇总 PDF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公众号收入"><span class="nav-number">4.6.</span> <span class="nav-text">公众号收入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽奖"><span class="nav-number">5.</span> <span class="nav-text">抽奖</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/summary-of-year-2020.html';
+
+      var disqus_title = "2020年总终结";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

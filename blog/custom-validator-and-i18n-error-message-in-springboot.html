@@ -1,0 +1,846 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="经验技巧,Java,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="本文通过示例说明，在 Springboot 中如何自定义 Validator，以及如何实现国际化的错误信息返回。注意，本文代码千万别直接照抄，有可能会出大事情的。先留个悬念，读者朋友们能从中看出有什么问题吗？ 项目初始化直接从 springboot 官网中下载模板，直接通过示例中的 GreetingController 添加实现逻辑。  @RestControllerpublic class G">
+<meta name="keywords" content="经验技巧,Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一文教你实现 SpringBoot 中的自定义 Validator 和错误信息国际化配置">
+<meta property="og:url" content="https://www.tanglei.name/blog/custom-validator-and-i18n-error-message-in-springboot.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="本文通过示例说明，在 Springboot 中如何自定义 Validator，以及如何实现国际化的错误信息返回。注意，本文代码千万别直接照抄，有可能会出大事情的。先留个悬念，读者朋友们能从中看出有什么问题吗？ 项目初始化直接从 springboot 官网中下载模板，直接通过示例中的 GreetingController 添加实现逻辑。  @RestControllerpublic class G">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/custom-validator-and-i18n-error-message-in-springboot/i18n-title.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/custom-validator-and-i18n-error-message-in-springboot/i18n-demo.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/custom-validator-and-i18n-error-message-in-springboot/i18n-tree.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/custom-validator-and-i18n-error-message-in-springboot/i18n-header.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/custom-validator-and-i18n-error-message-in-springboot/validator-bug.png">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.990Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一文教你实现 SpringBoot 中的自定义 Validator 和错误信息国际化配置">
+<meta name="twitter:description" content="本文通过示例说明，在 Springboot 中如何自定义 Validator，以及如何实现国际化的错误信息返回。注意，本文代码千万别直接照抄，有可能会出大事情的。先留个悬念，读者朋友们能从中看出有什么问题吗？ 项目初始化直接从 springboot 官网中下载模板，直接通过示例中的 GreetingController 添加实现逻辑。  @RestControllerpublic class G">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/custom-validator-and-i18n-error-message-in-springboot/i18n-title.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/custom-validator-and-i18n-error-message-in-springboot.html">
+
+
+
+
+
+  <title> 一文教你实现 SpringBoot 中的自定义 Validator 和错误信息国际化配置 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/custom-validator-and-i18n-error-message-in-springboot.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                一文教你实现 SpringBoot 中的自定义 Validator 和错误信息国际化配置
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-16T00:00:00+00:00">
+                2020-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/custom-validator-and-i18n-error-message-in-springboot.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/custom-validator-and-i18n-error-message-in-springboot.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://www.tanglei.name/resources/custom-validator-and-i18n-error-message-in-springboot/i18n-title.png" alt></p>
+<p>本文通过示例说明，在 Springboot 中如何自定义 Validator，以及如何实现国际化的错误信息返回。注意，本文代码千万别直接照抄，有可能会出大事情的。先留个悬念，读者朋友们能从中看出有什么问题吗？</p>
+<h2 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h2><p>直接从 <a href="https://spring.io/guides/gs/rest-service/#initial" target="_blank" rel="noopener">springboot</a> 官网中下载模板，直接通过示例中的 <code>GreetingController</code> 添加实现逻辑。 </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GreetingController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String template = <span class="string">"Hello, %s!"</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">final</span> AtomicLong counter = <span class="keyword">new</span> AtomicLong();</span><br><span class="line"></span><br><span class="line">	<span class="meta">@RequestMapping</span>(<span class="string">"/greeting"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> Response&lt;Greeting&gt; <span class="title">greeting</span><span class="params">(@RequestParam(value = <span class="string">"name"</span>, defaultValue = <span class="string">"World"</span>)</span> String name) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (!<span class="string">"tangleithu"</span>.equals(name)) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> BadRequestException(<span class="string">"user.notFound"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> Response.ok(<span class="keyword">new</span> Greeting(counter.incrementAndGet(), String.format(template, name)));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上代码直接源自<a href="https://github.com/spring-guides/gs-rest-service.git" target="_blank" rel="noopener">官方 spring-guides 的 demo</a>，我稍微改吧改吧。正常情况下，能返回正确的结果：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"># curl "localhost:8080/greeting?name=tangleithu&amp;lang=en" </span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"code"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"data"</span>: &#123;</span><br><span class="line">        <span class="attr">"content"</span>: <span class="string">"Hello, tangleithu!"</span>,</span><br><span class="line">        <span class="attr">"id"</span>: <span class="number">9</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"message"</span>: <span class="string">"success"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="国际化需求"><a href="#国际化需求" class="headerlink" title="国际化需求"></a>国际化需求</h2><p>作为高大上的项目，我们肯定有海外用户，所以就需要国际化的配置。现在来模拟了下业务逻辑，假设输入的参数有一些校验功能，比如以上name参数，假设和“tangleithu”不相等，就直接返回错误。同时希望返回的错误信息需要实现国际化，即在不同的语言环境下返回的结果不一样。例如中文：“没找到用户呢。” 对应的英文：“User does not exist.”，而对应的德文是……，算了忽略，我也不会。</p>
+<p><img src="https://www.tanglei.name/resources/custom-validator-and-i18n-error-message-in-springboot/i18n-demo.png" alt></p>
+<p>用一个图来表达，即希望实现的效果是，不同国家和地区的用户（不同语言）在遇到同一个业务场景下同一个错误原因，有不同的翻译。例如在参数校验没通过，Http Status Code应该返回 400，并告知错误原因；在具体的 Service 实现时可能也会遇到其他的 case 需要返回某种具体错误信息。</p>
+<p>注意：实际业务场景中后端可能仅仅只返回错误码，具体的展示由前端根据 key 进行翻译。不过在一些更加灵活的场景中（例如有的 app 实现方案），错误信息很有可能会由后端接口直接返回。本文只是用了一个简单的案例阐述整个流程。</p>
+<h2 id="统一错误处理"><a href="#统一错误处理" class="headerlink" title="统一错误处理"></a>统一错误处理</h2><p>​我们借助 Spring 中的 AOP，用一个 <code>ControllerAdvice</code> 统一拦截这种 <code>BadRequestException</code>异常。其他 Exception 也一样，做到异常信息统一处理，也不容易出现安全风险（之前有遇到过某大型网站因为后台发生异常，直接将具体的 SQL 错误暴露出来了，其中还不乏有表结构等敏感信息）。例如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@ControllerAdvice</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GlobalExceptionHandler</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ExceptionHandler</span>(BadRequestException<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">    @<span class="title">ResponseBody</span></span></span><br><span class="line"><span class="class">    <span class="title">public</span> <span class="title">ResponseEntity</span> <span class="title">handle</span>(<span class="title">HttpServletRequest</span> <span class="title">request</span>, <span class="title">BadRequestException</span> <span class="title">e</span>)</span>&#123;</span><br><span class="line">        String i18message = getI18nMessage(e.getKey(), request);</span><br><span class="line">        <span class="keyword">return</span> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Response.error(e.getCode(), i18message));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="国际化配置"><a href="#国际化配置" class="headerlink" title="国际化配置"></a>国际化配置</h2><p>然后，我们在这种具体的异常信息时，用一个 key 来标记错误码，在资源文件中用不同的语言来定义应该返回的具体错误信息。例如本文示例中，添加了中英文两种。 相应的目录结构如下： </p>
+<p><img src="https://www.tanglei.name/resources/custom-validator-and-i18n-error-message-in-springboot/i18n-tree.png" alt></p>
+<p>此时，我们只需要在 <code>GlobalExceptionHandler</code> 中根据请求来源是中文还是英文返回对应的错误信息即可。 </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> String <span class="title">getI18nMessage</span><span class="params">(String key, HttpServletRequest request)</span> </span>&#123;</span><br><span class="line">   <span class="keyword">try</span> &#123;</span><br><span class="line">       <span class="keyword">return</span> messageSource.getMessage(key, <span class="keyword">null</span>, LanguaggeUtils.currentLocale(request));</span><br><span class="line">   &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">       <span class="comment">// log</span></span><br><span class="line">       <span class="keyword">return</span> key;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从请求来源获取语言信息就有多种方式啦，例如我们可以从请求头中获取 <code>Accept-Lanuage</code>，一般浏览器会根据用户的设置情况带上这个请求头的，如下图所示。</p>
+<p><img src="https://www.tanglei.name/resources/custom-validator-and-i18n-error-message-in-springboot/i18n-header.png" alt></p>
+<p>或者我们自己显示定义一些例如 lang 之类的参数。本文不做详细阐述，咱们就简单用 <code>lang</code> 这个参数来定义，如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LanguaggeUtils</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Locale <span class="title">currentLocale</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 从 RequestHeader 等等获取相应的语言信息</span></span><br><span class="line">        <span class="comment">// 简单起见，直接从 queryParams 中取, 只模拟中英文</span></span><br><span class="line">        String locale = request.getParameter(<span class="string">"lang"</span>);</span><br><span class="line">        <span class="keyword">if</span> (<span class="string">"zh"</span>.equalsIgnoreCase(locale)) &#123;</span><br><span class="line">            <span class="keyword">return</span> Locale.CHINA;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> Locale.ENGLISH;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样，通过简单几行代码就能实现高大上的“国际化”参数返回了。 试试效果如下： </p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">#curl "localhost:8080/greeting?name=tanglei&amp;lang=en" </span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"code"</span>: <span class="number">400</span>,</span><br><span class="line">    <span class="attr">"data"</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">"message"</span>: <span class="string">"User does not exist."</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#curl "localhost:8080/greeting?name=tanglei&amp;lang=zh" </span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"code"</span>: <span class="number">400</span>,</span><br><span class="line">    <span class="attr">"data"</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">"message"</span>: <span class="string">"没找到用户呢。"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Bean-Validator"><a href="#Bean-Validator" class="headerlink" title="Bean Validator"></a>Bean Validator</h2><p>其实针对类似 Form 等参数校验，我们有更简单的方法。那就是借助 SpringBoot 中自带的 Validation 框架，本文用到的这个版本对应的实现是<code>jakarta.validation-api</code>。其实 Bean Validation 都有相应的标准，可能有不同的具体实现而已。对标准感兴趣的可以戳这里<a href="https://www.jcp.org/en/egc/view?id=380" target="_blank" rel="noopener">JSR #380 Bean Validation 2.0</a>。</p>
+<p>回到本文的 demo 中，假设在我们业务逻辑中需要传递一个 <code>UserForm</code>，接收 <code>age,name,param</code> 三个参数。并对其中输入进行进行校验，其中，<code>param</code> 没有具体的含义，只是为了说明问题。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserForm</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Min</span>(value = <span class="number">0</span>, message = <span class="string">"validate.userform.age"</span>)</span><br><span class="line">    <span class="meta">@Max</span>(value = <span class="number">120</span>, message = <span class="string">"validate.userform.age"</span>)</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@NotNull</span>(message = <span class="string">"validate.userform.name.notEmpty"</span>)</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@CustomParam</span>(message = <span class="string">"validate.userform.param.custom"</span>)</span><br><span class="line">    <span class="keyword">private</span> String param;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/user"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> Response&lt;Greeting&gt; <span class="title">createUser</span><span class="params">(@Valid @RequestBody UserForm userForm)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> Response.ok(<span class="keyword">new</span> Greeting(counter.incrementAndGet(), String.format(template, userForm.getName())));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码如上，上面示例只用了很简单的 <code>@Min, @Max, @NotNull</code>等约束条件，通过名字就能看出来含义。更多约束规则可以直接看对应源码 <code>javax.validation.constraints.xxx</code>，比如有常见的 <code>Email</code> 等格式校验。 </p>
+<p>默认情况下，违反相应的约束条件后，默认的输出比较啰嗦，例如用这个请求 <code>curl -H &quot;Content-Type: application/json&quot; -d &quot;{}&quot; &quot;localhost:8080/user&quot;</code>，对应的输出如下： </p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"error"</span>: <span class="string">"Bad Request"</span>,</span><br><span class="line">    <span class="attr">"errors"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"arguments"</span>: [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="attr">"arguments"</span>: <span class="literal">null</span>,</span><br><span class="line">                    <span class="attr">"code"</span>: <span class="string">"name"</span>,</span><br><span class="line">                    <span class="attr">"codes"</span>: [</span><br><span class="line">                        <span class="string">"userForm.name"</span>,</span><br><span class="line">                        <span class="string">"name"</span></span><br><span class="line">                    ],</span><br><span class="line">                    <span class="attr">"defaultMessage"</span>: <span class="string">"name"</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="attr">"bindingFailure"</span>: <span class="literal">false</span>,</span><br><span class="line">            <span class="attr">"code"</span>: <span class="string">"NotBlank"</span>,</span><br><span class="line">            <span class="attr">"codes"</span>: [</span><br><span class="line">                <span class="string">"NotBlank.userForm.name"</span>,</span><br><span class="line">                <span class="string">"NotBlank.name"</span>,</span><br><span class="line">                <span class="string">"NotBlank.java.lang.String"</span>,</span><br><span class="line">                <span class="string">"NotBlank"</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="attr">"defaultMessage"</span>: <span class="string">"must not be blank"</span>,</span><br><span class="line">            <span class="attr">"field"</span>: <span class="string">"name"</span>,</span><br><span class="line">            <span class="attr">"objectName"</span>: <span class="string">"userForm"</span>,</span><br><span class="line">            <span class="attr">"rejectedValue"</span>: <span class="literal">null</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"message"</span>: <span class="string">"Validation failed for object='userForm'. Error count: 1"</span>,</span><br><span class="line">    <span class="attr">"path"</span>: <span class="string">"/user"</span>,</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">400</span>,</span><br><span class="line">    <span class="attr">"timestamp"</span>: <span class="string">"2020-05-10T08:44:12.952+0000"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其实依葫芦画瓢，debug 的时候，把抛出的具体异常添加到前面的 <code>GlobalExceptionHandler</code>，再修改下默认的行为即可。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@ExceptionHandler</span>(BindException<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">@<span class="title">ResponseBody</span></span></span><br><span class="line"><span class="class"><span class="title">public</span> <span class="title">ResponseEntity</span> <span class="title">handle</span>(<span class="title">HttpServletRequest</span> <span class="title">request</span>, <span class="title">BindException</span> <span class="title">e</span>)</span>&#123;</span><br><span class="line">   String key = e.getBindingResult().getAllErrors().get(<span class="number">0</span>).getDefaultMessage();</span><br><span class="line">   String i18message = getI18nMessage(key, request);</span><br><span class="line">   <span class="keyword">return</span> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Response.error(<span class="number">400</span>, i18message));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@ExceptionHandler</span>(MethodArgumentNotValidException<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">@<span class="title">ResponseBody</span></span></span><br><span class="line"><span class="class"><span class="title">public</span> <span class="title">ResponseEntity</span> <span class="title">handle</span>(<span class="title">HttpServletRequest</span> <span class="title">request</span>, <span class="title">MethodArgumentNotValidException</span> <span class="title">e</span>)</span>&#123;</span><br><span class="line">   String key = e.getBindingResult().getAllErrors().get(<span class="number">0</span>).getDefaultMessage();</span><br><span class="line">   String i18message = getI18nMessage(key, request);</span><br><span class="line">   <span class="keyword">return</span> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Response.error(<span class="number">400</span>, i18message));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@ExceptionHandler</span>(ConstraintViolationException<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">@<span class="title">ResponseBody</span></span></span><br><span class="line"><span class="class"><span class="title">public</span> <span class="title">ResponseEntity</span> <span class="title">handle</span>(<span class="title">HttpServletRequest</span> <span class="title">request</span>, <span class="title">ConstraintViolationException</span> <span class="title">e</span>)</span>&#123;</span><br><span class="line">   String key = e.getConstraintViolations().iterator().next().getMessage();</span><br><span class="line">   String i18message = getI18nMessage(key, request);</span><br><span class="line">   <span class="keyword">return</span> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Response.error(<span class="number">400</span>, i18message));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>改进后，增加自定义的 handler 后，返回信息结构一致方便前端统一处理，同时也简洁不少：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"code"</span>: <span class="number">400</span>,</span><br><span class="line">    <span class="attr">"data"</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">"message"</span>: <span class="string">"validate.userform.name.notEmpty"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>再结合前面讲解的通过i18n的参数配置，又可以实现当没通过校验的时候，错误信息统一由对应的国际化资源文件进行配置了。 </p>
+<h2 id="自定义-Validator"><a href="#自定义-Validator" class="headerlink" title="自定义 Validator"></a>自定义 Validator</h2><p>当内置的满足不了条件的时候，我们希望实现自定义的 Validator，例如前文中的 <code>CustomParam</code>。</p>
+<p>我们需要一个 Annotation，方便在对应 Form 的时候引用校验，具体实现如下： </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> tanglei</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2020/5/10</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Constraint</span>(validatedBy = CustomValidator<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">@<span class="title">Target</span>(</span>&#123;FIELD, METHOD, PARAMETER, ANNOTATION_TYPE&#125;)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> CustomParam &#123;</span><br><span class="line">    <span class="function">String <span class="title">message</span><span class="params">()</span> <span class="keyword">default</span> "name.tanglei.www.validator.CustomArray.defaultMessage"</span>;</span><br><span class="line"></span><br><span class="line">    Class&lt;?&gt;[] groups() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line">    Class&lt;? extends Payload&gt;[] payload() <span class="keyword">default</span> &#123; &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Documented</span></span><br><span class="line">    <span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line">    <span class="meta">@Target</span>(&#123;FIELD, METHOD, PARAMETER, ANNOTATION_TYPE&#125;)</span><br><span class="line">    <span class="meta">@interface</span> List &#123;</span><br><span class="line">        CustomParam[] value();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>还需要一个具体的 validator 实现类，通过上面的 <code>@Constraint(validatedBy = CustomValidator.class)</code> 关联起来。本文只是 demo，所以具体参数校验没有实际逻辑意义的，下面假设输入的参数和“tanglei”相同则校验通过，否则提示用户输入错误。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomValidator</span> <span class="keyword">implements</span> <span class="title">ConstraintValidator</span>&lt;<span class="title">CustomParam</span>, <span class="title">String</span>&gt; </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(String s, ConstraintValidatorContext constraintValidatorContext)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> == s || s.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (s.equals(<span class="string">"tanglei"</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            error(constraintValidatorContext, <span class="string">"Invalid params: "</span> + s);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initialize</span><span class="params">(CustomParam constraintAnnotation)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">error</span><span class="params">(ConstraintValidatorContext context, String message)</span> </span>&#123;</span><br><span class="line">        context.disableDefaultConstraintViolation();</span><br><span class="line">        context.buildConstraintViolationWithTemplate(message).addConstraintViolation();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>看看效果，输入没校验通过，还提示你输入的参数 “xx” 不符合条件。</p>
+<p><img src="https://www.tanglei.name/resources/custom-validator-and-i18n-error-message-in-springboot/validator-bug.png" alt></p>
+<p>是不是感觉很完美？</p>
+<blockquote>
+<p>注意：上文中有一个比较隐蔽的安全漏洞，请大家注意。</p>
+<blockquote>
+<p>注意：上文中有一个比较隐蔽的安全漏洞，请大家注意。</p>
+<blockquote>
+<p>注意：上文中有一个比较隐蔽的安全漏洞，请大家注意。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>重要的事情说三遍，总体来说本文思路还是值得借鉴的（对应代码见 <a href="https://github.com/tl3shi/demo.git" target="_blank" rel="noopener">github</a>），但一定要注意不要完全照抄，上面说的这个安全漏洞还挺严重的。给予点提示，就是在<code>CustomValidator</code> 的具体实现中，有朋友了解吗？欢迎留言讨论。我将在后面的文章中来讲述这个安全漏洞。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/经验技巧/" rel="tag"># 经验技巧</a>
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/tail-recursive-optimization.html" rel="next" title="大家都知道递归，尾递归呢？什么又是尾递归优化？">
+                <i class="fa fa-chevron-left"></i> 大家都知道递归，尾递归呢？什么又是尾递归优化？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/a-security-vulnerability-of-spring-validator.html" rel="prev" title="一行代码引来的安全漏洞就让我们丢失了整个服务器的控制权">
+                一行代码引来的安全漏洞就让我们丢失了整个服务器的控制权 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目初始化"><span class="nav-number">1.</span> <span class="nav-text">项目初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#国际化需求"><span class="nav-number">2.</span> <span class="nav-text">国际化需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统一错误处理"><span class="nav-number">3.</span> <span class="nav-text">统一错误处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#国际化配置"><span class="nav-number">4.</span> <span class="nav-text">国际化配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bean-Validator"><span class="nav-number">5.</span> <span class="nav-text">Bean Validator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义-Validator"><span class="nav-number">6.</span> <span class="nav-text">自定义 Validator</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/custom-validator-and-i18n-error-message-in-springboot.html';
+
+      var disqus_title = "一文教你实现 SpringBoot 中的自定义 Validator 和错误信息国际化配置";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

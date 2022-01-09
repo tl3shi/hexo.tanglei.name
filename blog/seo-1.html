@@ -1,0 +1,927 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="SEO,电子商务," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="1. SEO**概述 **  1.1 概念 SEO (Search Engine Optimization)，汉译为搜索引擎优化，就是针对搜索引擎对网页的检索特点，让网站建设的各项基本要素适合搜索引擎的检索原则，从而使搜索引擎收录本网站尽可能多的网页，并且在搜索引擎自然检索结果中排名靠前，最终达到网站推广的目的。 1.2 SEO**赢利模式** 1)         提供SEO服务 2)">
+<meta name="keywords" content="SEO,电子商务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搜索引擎优化(一)">
+<meta property="og:url" content="https://www.tanglei.name/blog/seo-1.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="1. SEO**概述 **  1.1 概念 SEO (Search Engine Optimization)，汉译为搜索引擎优化，就是针对搜索引擎对网页的检索特点，让网站建设的各项基本要素适合搜索引擎的检索原则，从而使搜索引擎收录本网站尽可能多的网页，并且在搜索引擎自然检索结果中排名靠前，最终达到网站推广的目的。 1.2 SEO**赢利模式** 1)         提供SEO服务 2)">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/blog/””">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.838Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="搜索引擎优化(一)">
+<meta name="twitter:description" content="1. SEO**概述 **  1.1 概念 SEO (Search Engine Optimization)，汉译为搜索引擎优化，就是针对搜索引擎对网页的检索特点，让网站建设的各项基本要素适合搜索引擎的检索原则，从而使搜索引擎收录本网站尽可能多的网页，并且在搜索引擎自然检索结果中排名靠前，最终达到网站推广的目的。 1.2 SEO**赢利模式** 1)         提供SEO服务 2)">
+<meta name="twitter:image" content="https://www.tanglei.name/blog/””">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/seo-1.html"/>
+
+
+
+
+
+  <title> 搜索引擎优化(一) | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/seo-1.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                搜索引擎优化(一)
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-05-23T18:12:04+00:00">
+                2011-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">课程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/seo-1.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/seo-1.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+<li><strong>1.</strong> <strong>SEO**</strong>概述<strong> **</strong></li>
+</ol>
+<p><strong>1.1</strong> <strong>概念</strong></p>
+<p>SEO (Search Engine Optimization)，汉译为搜索引擎优化，就是针对搜索引擎对网页的检索特点，让网站建设的各项基本要素适合搜索引擎的检索原则，从而使搜索引擎收录本网站尽可能多的网页，并且在搜索引擎自然检索结果中排名靠前，最终达到网站推广的目的。</p>
+<p><strong>1.2</strong> <strong>SEO**</strong>赢利模式**</p>
+<p>1)         提供SEO服务</p>
+<p>2)         建立垂直型行业门户</p>
+<p>3)         建立专题网站，获取广告费用</p>
+<p>4)         直接优化公司网站，销售自己的产品或者服务</p>
+<p><strong>1.3</strong> <strong>SEO**</strong>相关术语**</p>
+<p>1)         <strong>PR</strong> (Page Rank)——Page Rank是Google衡量网页重要性的工具，Page Rank代表的是重要性和受欢迎程度。Page Rank和排名没有直接的关系，高PageRank并不能保证Google高排名。</p>
+<p>2)         <strong>PV</strong> (Page View)：PV是每个用户单次访问网站时所浏览的网页数。</p>
+<p>3)         <strong>百度快照</strong>：百度快照其实就是百度蜘蛛在爬取网页内容时，将网页文本内容独立创建一个文本文件，保存在百度数据库中的网页的“照片”。</p>
+<p>4)         <strong>SEO**</strong>黑帽**（SEO black hat）：SEO黑帽就是采用了搜索引擎所禁止的方法（作弊），对网站在搜索引擎的排名进行优化，在短时间内排到搜索引擎前列。白帽所指的是采用合理的SEO行为优化网站，提高用户的体验，合理与其他网站互联，从而达到网站在搜索引擎排名的稳步提升。</p>
+<p>5)         <strong>跳出率</strong>：是指来到网站只浏览了一个页面就离开的用户占网站总浏览用户的百分比。也即PV=1的比例。</p>
+<p>6)         <strong>沙盒效应</strong>(Sandbox)：指一个新建立的网站在刚上线的一个或几个月内，在搜索引擎上很难有好的排名，甚至没有排名。</p>
+<p>7)         <strong>Google Dance</strong>：指Google搜索引擎数据库每月一次的大规模升级。</p>
+<p>8)         <strong>长尾理论</strong>：美国人克里斯·安德森提出，看似需求极低的产品，只要有卖，都会有人买，这些需求和销量不高的产品所占据的共同市场份额，可以和主流产品的市场份额相比，甚至更大。</p>
+<p>9)         <strong>长尾关键词</strong>：网站上非目标关键词但也可以带来搜索流量的关键词，称为长尾关键词。(比较长，往往是2-3个词组成, 甚至是短语，除了存在于内容页的标题，还存在于内容正文中, 其搜索量非常少，并且不稳定。长尾关键词带来的客户，转化为网站产品客户的概率比目标关键词高很多。) 长尾关键词的基本属性包括：可延伸性，针对性强，范围广。</p>
+<p>10)     <strong>目标关键词</strong>：是指经过关键词分析确定下来的网站“主打”关键词，通俗地讲指，网站产品和服务的目标客户可能用来搜索的关键词。</p>
+<p>11)     <strong>相关关键词</strong>：与目标关键词相关的其他关键词。</p>
+<p>12)     <strong>SPAM</strong>(Specially Processed Assorted Meat): 欺骗搜索引擎的技术</p>
+<p><strong>1.4</strong> <strong>SEO**</strong>常用技术**</p>
+<p><strong>1)</strong> <strong>网页title**</strong>的优化——<strong>title标签中的内容是蜘蛛群第一个获取到的网页文字内容。完全符合内容，简短，由小到大，由细到粗，关键词出现一次（百度用</strong>_<strong> 谷歌用- 分割关键词），   不能超过255个字符。 **</strong></p>
+<p><strong>2)</strong> <strong>关键词的选取——</strong>关键词不要太宽泛，长尾关键词并不是很长的关键词（意义要精确），多考虑用户会以什么关键词搜索，选择竞争较小，但实际关注度高的关键词，关键词和网站一定要有关系（可能会被搜索引擎认为是作弊）。 <em>**</em></p>
+<p>a)  切忌一个网站只选择一个关键词，而且所有的页面都使用这个关键词</p>
+<p>b)  每个页面的关键词只要确定两三个就可以了，如果确定太多，或者在keywords部分写了很多关键词，那么每个关键词都不会在搜索引擎中有良好的表现（分值将平均分配）</p>
+<p>c)  通过直接使用工具的办法来获取关键词，如百度竞价排名、谷歌关键词工具等&gt;</p>
+<p>d) 元标签的优化<meta name="”keywords”" content="””(英文逗号)"></p>
+<meta name="”description”" content="””">
+
+<p>e)  页面的左上角重点位置放置页面的关键词或者整站的网站地图</p>
+<p>f) title中的中文组合词，如“UML+类图+实例”，不需要将整个关键词都放在title中，而可以采用和页面组合关键词的方式</p>
+<p>g)  可以在页面重点部分，如页面左上角、页面顶部、页面导航下部等区域，以marquee标签的形式表现滚动字幕，滚动字幕已经很少被SEOer使用。</p>
+<p>h)一个网页的正文标题需要用</p><h1>标签加重，也正是因为如此，蜘蛛对<h1>标签中的字符尤为关照,并用h2包含文章页面副标题，以h3-h6包含页面段落标题<p></p>
+<p>i) 对关键词的加粗（使用<b>、<strong>标签）、下划线(<u>标签)、斜体(<i>标签)、关键词内部链接等方面。不要对每一个关键词都着重表现或者加链接，而是对第一次出现该关键词时进行操作，否则将有可能被搜索引擎认为是链接堆砌作弊，还有，尽量避免在一个关键词上添加过多的着重标签，在CSS样式中设置的<b>、<u>、<i>、<strong>等标签，对于搜索引擎是无效的</strong></i></u></b></i></u></strong></b></p>
+<p>j)  相关文章链接：在内容页的右侧放置与本页内容相关的新闻链接，也可以直接使用带有本页关键词的标题链接。用户体验的角度和搜索引擎的角度讲，添加相关文章的链接很有必要。</p>
+<p>k) <img src="””" alt="””"></p>
+<p>l) 网页底部通常是被站长放置联系方式、版权、ICP备案的地方，实际上这个位置也是蜘蛛格外关注的区域之一。在很多时候人们在此放置网站链接、网站地图等信息</p>
+<p>m)  关键词密度：关键词的密度是指一个网页中某个词与所有文本之间的比例，一般控制在2%-8%之间。</p>
+<p>3)         <strong>元标签及网页描述的优化——</strong>元标签位于<head><meta name="generator" content="Hexo 3.9.0">标签中。告诉一切支持网页运行的程序或者搜索引擎蜘蛛该网页的内容和基本信息。Meta标签包括网页关键词、描述和版权等信息。常用的Title网页的内容标题；Subject文章的主题和核心内容；Description不超过255个字符来描述网页的内容；Keywords内容的主要关键词，不要超过3个；Robots对搜索引擎蜘蛛的引导。</head></p>
+<p>a)   <meta name="”robots”" content="”" (英文逗号分割)”>应用与后台管理页面、留言     页面等，值如下：</p>
+<p>all不拒绝</p>
+<p>noindex/index不索引当前页面/索引</p>
+<p>nofollow/follow不追踪当前网页的链接/追踪</p>
+<p>noarchive/archive搜索结果中不保存当前网页的快照/保存</p>
+<p>nosnippet在搜索结果中<strong>不采用当前页面的头部描述信息</strong>且<strong>不保存当前页面的快照</strong></p>
+<p>none不索引当前页面以及当前页面的所有链接</p>
+<p>b)   description中和keywords中一模一样，所有网页的des都一样&#8212;&gt;两大忌；正确写法：一句话概括，不超过255，英文标点符号</p>
+<p><strong>4)</strong> <strong>网站结构和URL**</strong>优化——<strong>过长或者带？，都被SE认为不友好；三层目录较合适 <a href="http://www&#8230;./xxx/xxx.html；" target="_blank" rel="noopener">http://www&#8230;./xxx/xxx.html；</a> **</strong></p>
+<p><strong>a)</strong> <strong>域名：</strong>包含关键词的域名再好不过了(必要的时候在中间加横杆)，注册一个域名之前看是否被K过，二级域名和主域名的权重是一样，将慎重选择。<em>**</em></p>
+<p>l  大型网站：具有海量的内容，因此每个二级域名都有很好的权重。</p>
+<p>l  个人网站：每个栏目使用一个<strong>文件夹</strong>，或者将某类网页归类到一个文件夹中，例如文章文件夹、图片文件夹等，以保持权重最大集中化。</p>
+<p>l  博客：为每个用户提供一个<strong>二级域名</strong>，搜索引擎会区分用户行为和网站管理员行为，如果其中一个博客使用大量的SEO作弊手段，并<strong>不会牵连到整个网</strong>站。</p>
+<p><strong>b)</strong> <strong>注意的问题<em>**</em></strong></p>
+<p>i.   URL中带有关键词（不能太长也不能太短）</p>
+<p>ii.  页面静态化(html, htm, shtml)</p>
+<p>iii.  减少使用自动生成的URL (newpage1.html, page1.htm)</p>
+<p>iv. 使用与内容分类相符的目录名(三层结构)</p>
+<p>v.  只用一个URL访问网页</p>
+<p>vi.  只用小写字母(Google优化小技巧)</p>
+<p>vii. 没有后缀参数的文件也是静态文件(静态文件虽然只有html一种，但是只要文件的后缀名之后没有“?”参数，那么也可以和HTML文件有一样的效果，如uml.jsp、adapter.asp等)</p>
+<p><strong>c)</strong> <strong>伪静态化工具：</strong>通过正则表达式的方式来对URL字符串进行转换<em>**</em></p>
+<p>i.   Apache服务器：mod_rewrite</p>
+<p>ii. IIS服务器：ISAPI Rewrite</p>
+<p>iii.  Tomcat服务器：Url Rewrite Filter</p>
+<p>未完……</p>
+</h1></h1>
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;"/>
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SEO/" rel="tag"># SEO</a>
+          
+            <a href="/tags/电子商务/" rel="tag"># 电子商务</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/search-engine.html" rel="next" title="搜索引擎">
+                <i class="fa fa-chevron-left"></i> 搜索引擎
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/seo-2.html" rel="prev" title="搜索引擎优化(二)">
+                搜索引擎优化(二) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/tx.jpg"
+               alt="tanglei" />
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href='http://www.tencent.com/zh-cn/index.shtml' target='_blank'>腾讯</a> && <a href='http://www.umeng.com/' target='_blank'>友盟</a>.  &nbsp; <a href='/about/'> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">标签加重，也正是因为如此，蜘蛛对标签中的字符尤为关照,并用h2包含文章页面副标题，以h3-h6包含页面段落标题
+i) 对关键词的加粗（使用、标签）、下划线(标签)、斜体(标签)、关键词内部链接等方面。不要对每一个关键词都着重表现或者加链接，而是对第一次出现该关键词时进行操作，否则将有可能被搜索引擎认为是链接堆砌作弊，还有，尽量避免在一个关键词上添加过多的着重标签，在CSS样式中设置的、、、等标签，对于搜索引擎是无效的
+j)  相关文章链接：在内容页的右侧放置与本页内容相关的新闻链接，也可以直接使用带有本页关键词的标题链接。用户体验的角度和搜索引擎的角度讲，添加相关文章的链接很有必要。
+k) 
+l) 网页底部通常是被站长放置联系方式、版权、ICP备案的地方，实际上这个位置也是蜘蛛格外关注的区域之一。在很多时候人们在此放置网站链接、网站地图等信息
+m)  关键词密度：关键词的密度是指一个网页中某个词与所有文本之间的比例，一般控制在2%-8%之间。
+3)         元标签及网页描述的优化——元标签位于标签中。告诉一切支持网页运行的程序或者搜索引擎蜘蛛该网页的内容和基本信息。Meta标签包括网页关键词、描述和版权等信息。常用的Title网页的内容标题；Subject文章的主题和核心内容；Description不超过255个字符来描述网页的内容；Keywords内容的主要关键词，不要超过3个；Robots对搜索引擎蜘蛛的引导。
+a)   应用与后台管理页面、留言     页面等，值如下：
+all不拒绝
+noindex/index不索引当前页面/索引
+nofollow/follow不追踪当前网页的链接/追踪
+noarchive/archive搜索结果中不保存当前网页的快照/保存
+nosnippet在搜索结果中不采用当前页面的头部描述信息且不保存当前页面的快照
+none不索引当前页面以及当前页面的所有链接
+b)   description中和keywords中一模一样，所有网页的des都一样—&gt;两大忌；正确写法：一句话概括，不超过255，英文标点符号
+4) 网站结构和URL**优化——过长或者带？，都被SE认为不友好；三层目录较合适 http://www…./xxx/xxx.html； **
+a) 域名：包含关键词的域名再好不过了(必要的时候在中间加横杆)，注册一个域名之前看是否被K过，二级域名和主域名的权重是一样，将慎重选择。**
+l  大型网站：具有海量的内容，因此每个二级域名都有很好的权重。
+l  个人网站：每个栏目使用一个文件夹，或者将某类网页归类到一个文件夹中，例如文章文件夹、图片文件夹等，以保持权重最大集中化。
+l  博客：为每个用户提供一个二级域名，搜索引擎会区分用户行为和网站管理员行为，如果其中一个博客使用大量的SEO作弊手段，并不会牵连到整个网站。
+b) 注意的问题**
+i.   URL中带有关键词（不能太长也不能太短）
+ii.  页面静态化(html, htm, shtml)
+iii.  减少使用自动生成的URL (newpage1.html, page1.htm)
+iv. 使用与内容分类相符的目录名(三层结构)
+v.  只用一个URL访问网页
+vi.  只用小写字母(Google优化小技巧)
+vii. 没有后缀参数的文件也是静态文件(静态文件虽然只有html一种，但是只要文件的后缀名之后没有“?”参数，那么也可以和HTML文件有一样的效果，如uml.jsp、adapter.asp等)
+c) 伪静态化工具：通过正则表达式的方式来对URL字符串进行转换**
+i.   Apache服务器：mod_rewrite
+ii. IIS服务器：ISAPI Rewrite
+iii.  Tomcat服务器：Url Rewrite Filter
+未完……
+</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">标签中的字符尤为关照,并用h2包含文章页面副标题，以h3-h6包含页面段落标题
+i) 对关键词的加粗（使用、标签）、下划线(标签)、斜体(标签)、关键词内部链接等方面。不要对每一个关键词都着重表现或者加链接，而是对第一次出现该关键词时进行操作，否则将有可能被搜索引擎认为是链接堆砌作弊，还有，尽量避免在一个关键词上添加过多的着重标签，在CSS样式中设置的、、、等标签，对于搜索引擎是无效的
+j)  相关文章链接：在内容页的右侧放置与本页内容相关的新闻链接，也可以直接使用带有本页关键词的标题链接。用户体验的角度和搜索引擎的角度讲，添加相关文章的链接很有必要。
+k) 
+l) 网页底部通常是被站长放置联系方式、版权、ICP备案的地方，实际上这个位置也是蜘蛛格外关注的区域之一。在很多时候人们在此放置网站链接、网站地图等信息
+m)  关键词密度：关键词的密度是指一个网页中某个词与所有文本之间的比例，一般控制在2%-8%之间。
+3)         元标签及网页描述的优化——元标签位于标签中。告诉一切支持网页运行的程序或者搜索引擎蜘蛛该网页的内容和基本信息。Meta标签包括网页关键词、描述和版权等信息。常用的Title网页的内容标题；Subject文章的主题和核心内容；Description不超过255个字符来描述网页的内容；Keywords内容的主要关键词，不要超过3个；Robots对搜索引擎蜘蛛的引导。
+a)   应用与后台管理页面、留言     页面等，值如下：
+all不拒绝
+noindex/index不索引当前页面/索引
+nofollow/follow不追踪当前网页的链接/追踪
+noarchive/archive搜索结果中不保存当前网页的快照/保存
+nosnippet在搜索结果中不采用当前页面的头部描述信息且不保存当前页面的快照
+none不索引当前页面以及当前页面的所有链接
+b)   description中和keywords中一模一样，所有网页的des都一样—&gt;两大忌；正确写法：一句话概括，不超过255，英文标点符号
+4) 网站结构和URL**优化——过长或者带？，都被SE认为不友好；三层目录较合适 http://www…./xxx/xxx.html； **
+a) 域名：包含关键词的域名再好不过了(必要的时候在中间加横杆)，注册一个域名之前看是否被K过，二级域名和主域名的权重是一样，将慎重选择。**
+l  大型网站：具有海量的内容，因此每个二级域名都有很好的权重。
+l  个人网站：每个栏目使用一个文件夹，或者将某类网页归类到一个文件夹中，例如文章文件夹、图片文件夹等，以保持权重最大集中化。
+l  博客：为每个用户提供一个二级域名，搜索引擎会区分用户行为和网站管理员行为，如果其中一个博客使用大量的SEO作弊手段，并不会牵连到整个网站。
+b) 注意的问题**
+i.   URL中带有关键词（不能太长也不能太短）
+ii.  页面静态化(html, htm, shtml)
+iii.  减少使用自动生成的URL (newpage1.html, page1.htm)
+iv. 使用与内容分类相符的目录名(三层结构)
+v.  只用一个URL访问网页
+vi.  只用小写字母(Google优化小技巧)
+vii. 没有后缀参数的文件也是静态文件(静态文件虽然只有html一种，但是只要文件的后缀名之后没有“?”参数，那么也可以和HTML文件有一样的效果，如uml.jsp、adapter.asp等)
+c) 伪静态化工具：通过正则表达式的方式来对URL字符串进行转换**
+i.   Apache服务器：mod_rewrite
+ii. IIS服务器：ISAPI Rewrite
+iii.  Tomcat服务器：Url Rewrite Filter
+未完……
+</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/seo-1.html';
+
+      var disqus_title = "搜索引擎优化(一)";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

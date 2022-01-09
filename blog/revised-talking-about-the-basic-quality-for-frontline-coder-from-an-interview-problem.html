@@ -1,0 +1,896 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="面试题,码农,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。  背景求职面试在绝大部分人来说都是必不可少的，自己作为求职者也参与了不少面试（无论成功或者失败），作为技术面试官参与面试也有四五年的经验，在面试过程中也见识到了各种各样的人(有厉害的，也有奇葩的)。在这里也只想谈">
+<meta name="keywords" content="面试题,码农">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从一道面试题谈谈一线大厂码农应具备的基本能力（修订版）">
+<meta property="og:url" content="https://www.tanglei.name/blog/revised-talking-about-the-basic-quality-for-frontline-coder-from-an-interview-problem.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。  背景求职面试在绝大部分人来说都是必不可少的，自己作为求职者也参与了不少面试（无论成功或者失败），作为技术面试官参与面试也有四五年的经验，在面试过程中也见识到了各种各样的人(有厉害的，也有奇葩的)。在这里也只想谈">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/talking-about-the-basic-quality-for-frontline-coder-from-an-interview-problem/coding.gif">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.993Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从一道面试题谈谈一线大厂码农应具备的基本能力（修订版）">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。  背景求职面试在绝大部分人来说都是必不可少的，自己作为求职者也参与了不少面试（无论成功或者失败），作为技术面试官参与面试也有四五年的经验，在面试过程中也见识到了各种各样的人(有厉害的，也有奇葩的)。在这里也只想谈">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/talking-about-the-basic-quality-for-frontline-coder-from-an-interview-problem/coding.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/revised-talking-about-the-basic-quality-for-frontline-coder-from-an-interview-problem.html">
+
+
+
+
+
+  <title> 从一道面试题谈谈一线大厂码农应具备的基本能力（修订版） | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/revised-talking-about-the-basic-quality-for-frontline-coder-from-an-interview-problem.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                从一道面试题谈谈一线大厂码农应具备的基本能力（修订版）
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-14T00:00:00+00:00">
+                2020-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/revised-talking-about-the-basic-quality-for-frontline-coder-from-an-interview-problem.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/revised-talking-about-the-basic-quality-for-frontline-coder-from-an-interview-problem.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247484698&amp;idx=1&amp;sn=03cc4636e7ee7364a85788a98809cc03&amp;chksm=eb4704fedc308de8efd48ab9aed4fd1ddee5665d8e76d0d3767c1f704eac8b15a83e450a08f1&amp;token=1818649850&amp;lang=zh_CN#rd" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。</p>
+</blockquote>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>求职面试在绝大部分人来说都是必不可少的，自己作为求职者也参与了不少面试（无论成功或者失败），作为技术面试官参与面试也有四五年的经验，在面试过程中也见识到了各种各样的人(有厉害的，也有奇葩的)。在这里也只想谈谈自己的一些看法，我说的不一定对，有不同的意见可以留言参与讨论。</p>
+<p>面试本来就是一个双向选择的过程，面试官和候选人的地位本应该是一个平等的位置，面试官希望通过简单的交流沟通可以对候选人的技术，沟通等有一定了解进而确定候选人是否匹配相应的职位。个人认为一场成功的面试最好是能够让求职者和面试官都有一定的收获（曾经也遇到过在某次面试后，HR 告诉我有候选人特意跟她反馈要表达对面试官的感谢，因为让他很有收获，这当然还是让我感到非常高兴的），每次参与面试，也希望自己能达到这个目标。对于候选人来说能从面试过程了解自己的不足或者交流探讨面试问题；对于面试官来说能了解候选人的技术和项目，在交流探讨中也是一次学习和巩固。 另外面试能否通过最终强调的是职位匹配，一个萝卜一个坑，萝卜太大或太小都不一定合适。所以有时候面试没通过并不是候选人不够优秀，也有可能是候选人过于优秀（例如本来只想招聘 P6，结果来了一个 P8的候选人肯定不合适）。</p>
+<p>因为面试时间有限，1个小时(一般情况)的时间很难去全面了解候选人的技术实力，因此在面试过程中很难做到绝对的公平。举个简单的例子，面试官出一道题目，候选人 A 可能曾经做过或见过，所以能够比较轻松地回答出这个问题，而候选人 B 没有做过，虽然不能答出让面试官满意的答案，但 B 提供了一些解题的思路，虽然最终并没有答出这道题目，这就一定说明候选人 B 比 A 差么? 并不是吧。</p>
+<p>下面就从这道题目说起，这道题目是我在过往的面试中经常考察的一道题目。</p>
+<p>其实这题目可以变种有多个考察方向，可以实际场景中灵活运用。 例如：</p>
+<ul>
+<li><code>int sqrt(int x)</code></li>
+<li><code>double sqrt(int x, double delta)</code></li>
+<li><code>double sqrt(double x, double delta)</code></li>
+</ul>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>实现一个函数, 完成 开根号 的操作, 方法签名如下.  </p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">sqrt</span><span class="params">(<span class="keyword">int</span> v, <span class="keyword">double</span> t)</span></span></span><br></pre></td></tr></table></figure>
+<p>要求: </p>
+<ol start="0">
+<li>不能调用系统库函数, 诸如 <code>Math.sqrt(v)</code> 之类的;</li>
+<li>假设计算出的结果为 <code>r</code>, 要求满足如下条件 $|r - \sqrt v| \leq t $, 其中, $\sqrt v$ 是真实的值, <code>t</code> 为给定的一个误差, 例如<code>0.1</code>等. 千万别被这个不等式吓住, 其实就是希望你计算出的答案 <code>r</code> 要在给定的误差范围内. 举个例子, 我调用你的接口 <code>sqrt(9, 0.21)</code> 返回值属于 <code>[2.79, 3.21]</code> 这个区间的任意一个都满足条件. 因为 $\sqrt 9 = 3$,  对于任意的 $r \in [2.79, 3.21]$, 都满足 $|r - 3| \leq 0.21$. </li>
+<li>实现语言不限, 你条件可以比上述<strong>更加苛刻, 但不能宽松</strong>. </li>
+</ol>
+<p>看到这里，其实你可以 拿出笔和纸，尝试解答一下，需要注意的是答案要满足给定的误差条件，欢迎沟通交流。其实这个题目是就是 leetcode 上原题稍加变化得到，做过的肯定觉得 leetcode 其他题目来说相对比较简单。但没做过也没关系，如果在面试官的提示下能够最终把这道题目解出来，在我看来也 OK 的，甚至有可能比刷过题记住解题答案的更好（当然刷过题目本身的肯定会围绕这个题目穿插其他小问题的）。</p>
+<p><hr><hr><hr><hr><br>解答中 ing </p>
+<p><img src="https://www.tanglei.name/resources/talking-about-the-basic-quality-for-frontline-coder-from-an-interview-problem/coding.gif" alt></p>
+<p><hr><hr><hr><hr></p>
+<h2 id="开始解答"><a href="#开始解答" class="headerlink" title="开始解答"></a>开始解答</h2><p>其实刚开始，我认为这道题目比较简单，至少在给予提示后，理想情况下大部分一线coding的程序员都可以给出实实在在 code 的。然而“理想很丰满，现实很骨感”，事实并非如此，然而在面试很很多人之后， 发现此道题目并不简单，如果你能写出来，说明你已经比很多人优秀了（至少在我过往的社招面试经历中）。 </p>
+<p>当被问起这道题目之后，可能遇到的答案如下。</p>
+<h3 id="直接放弃"><a href="#直接放弃" class="headerlink" title="直接放弃"></a>直接放弃</h3><p>题目给出后, 我一般首先明确候选人弄清楚了题目的含义然后会给一两分钟让候选人先思考一下. </p>
+<blockquote>
+<p>A: 你有什么思路吗?<br>B: 没有啊. </p>
+</blockquote>
+<p>可能候选人内心OS是: “你出这样的题目是不是有病啊, 明明有 lib 函数可以直接用的”.<br>(同组有小伙伴确实有遇到这样的候选人, 语言虽没这样夸张, 大意是: 实际工作中会出现这样的问题吗? 我直接给你百度一个就行了)</p>
+<p>在此强调，<strong>面试这道题目并不是想强调这个题目本身，期望以这道题目为契机，考察候选人在分析问题和解决问题的能力，在交流过程中所体现的逻辑推理和思维方式等，当然最后也会看看实实在在的 Code，从编码过程中看候选人的编程习惯，风格等等。</strong></p>
+<p>也有候选人刚开始抱着那个约束误差范围的不等式研究 N 久, 然后就没有然后的. 刚开始看这个条件当然好, 但如果这个不等式没有思路可以先放一放, 没必要在那苦熬.   </p>
+<blockquote>
+<p>A: 这样吧, 如果我问题 根号10 等于多少, 你怎么回答.<br>B: 3.? 吧<br>A: 你怎么知道是3.几, 因为你知道9开根号是3, 想象一下, 你可以完全用程序帮忙模拟你大脑思考的过程.<br>B: ……</p>
+</blockquote>
+<p>其实是希望提醒候选人, 我们首先是要解题, 然后才考虑效率. 即不管用什么方法能够给出一个答案的. 这个时候候选人可能进入下一个阶段了.</p>
+<h3 id="暴力搜索"><a href="#暴力搜索" class="headerlink" title="暴力搜索"></a>暴力搜索</h3><p>实际面试过程中也有人是直接到这个阶段的. </p>
+<p>先用一个循环找到 $r$, 使得 $r^2$ 是离给定 v 最近的平方数, 即你希望算 $\sqrt {10}$, 先找到3, 因为$3^2=9$, 计算 $\sqrt {10011}$, 先找到 $100$. </p>
+<p>然后再用一个循环, 每次 $ r += t $, 直到 $r ^2 &gt; v$ 为止. </p>
+<blockquote>
+<p>面试官：这个方法从理论上讲， 是一个可行的方案，设想一下，如果我的精度要求很高，希望计算的 v 也很大，如 <code>sqrt(v = 10000000, t = 0.000001)</code> 之类的，调用你这个方法效率是不是很低，这个时候应该怎么优化?<br>求职者：这样的话，我这个方法效率确实比较低，不过可以这样优化，比如设置一个步长，一次迭代后，如果没有达到预期，可以不断修改这个步长来增大逼近真实值的速度，比如10倍误差，100倍误差等。       </p>
+</blockquote>
+<p>其实, 在与候选人的不断交流中可以看出候选人在 <code>Problem Solving</code> 的能力, 例如关于上面问题的优化, 也可能用于在实际工作中遇到的问题. </p>
+<p>例如, 我们在实际工作中可能经常会写一些异步的回调通知接口等, 这个接口可能是其他团队维护的, 有可能由于网络问题等回调接口可能会失败进而需要重试, 对于重试的机制其实就可以借鉴上面的”步长”机制, 第一次回调失败, 我等待 1s 后重试, 失败再重试, 也许间隔 1s 不太恰当, 是否可以修改等待的步长, 等待比如 5s, 10s? 等等再重试直到成功. 为什么要这样做? 也许对方 server 本来现在就处于峰值, 你不停的重试不但没有增加你接口调用成功的机会, 反而增加对方 server 的负担. </p>
+<p>回到这个问题本身, 继续</p>
+<blockquote>
+<p>面试官：恩，这样做确实可以优化。但从本质上讲，假设我们不考虑误差的话，这个题目其实就是在一个有序的列表里面去搜索满足条件的特定的值。刚刚你的方法是一个线性的搜索方案。常见的搜索还有其他什么吗？</p>
+</blockquote>
+<blockquote>
+<p>求职者：二分搜索？</p>
+</blockquote>
+<blockquote>
+<p>面试官：对呀，你可以尝试想想能否借用一下这个思路来解决这个问题。</p>
+</blockquote>
+<h3 id="二分搜索"><a href="#二分搜索" class="headerlink" title="二分搜索"></a>二分搜索</h3><p>当然, 部分候选人提示二分后, 就直接能够 get 到点, 并且能够写出二分大体框架, 但很有可能<strong>结束条件</strong>写的不对. </p>
+<p>(当然, 部分人可能之间见到过类似的, 但很有可能精度要求不一样, 这个精度的设置也是为了考察候选人对一个新问题的理解能力, 以及防止刷过题的人直接”背”出答案. 不过, 如果候选人不是很能理解这种思路, 一般会让候选人先忽略这个精度问题. )</p>
+<p>如果候选人还没有思路, 就会继续</p>
+<blockquote>
+<p>面试官: 这样理解吧, 你刚刚的搜索整数部分的过程其实是线性的, 一个一个数去暴力穷举, 借助二分的意思就是, 比如算 根号10, 你搜索范围是, [0, 10] (其实除了几个数之外范围可以更小[0, v/2], 你能证明么?). </p>
+</blockquote>
+<ul>
+<li>因为 $5^2 = 25 &gt; 10$, 所以 $r \in [0, 5)$  </li>
+<li>因为 $(5/2)^2 = 6.25 &lt; 10$, 所以 $r \in (2.5, 5)$  </li>
+<li>因为 $((2.5+5)/2) ^ 2 = 14.0625 &gt; 10$, 所以 $r \in (2.5, 3.75)$  </li>
+<li>继续, 如果你结束条件不太确定, 可以暂时不管…  </li>
+</ul>
+<p>我觉得我提示到这里, 已经很明显了.</p>
+<blockquote>
+<p>面试官： 你现在明白了吗？<br>求职者：明白了。<br>面试官：那你写一下代码吧。  </p>
+</blockquote>
+<p>一个二分搜索, 算法都结合例子讲一遍了, 在候选人回答明白的情况下, 理想当中, 作为一线开发者写出来应该不成问题吧. </p>
+<p>然而…理想和现实还是有差距的.<br>很多人都喜欢用递归写, 可是很多人递归里面的最重要的结束条件都木有, 一些边界条件等等都木有. 所以一般情况下, 代码写完后, 我会让候选人自己写测试用例. </p>
+<blockquote>
+<p>面试官：写好了是吧，你写几个测试用例吧，假设这个接口是别人写的，你应该从哪几个角度去测试。<br>求职者：sqrt(-4, 0.21)，哎呀，我这里忘了判断了。改一下代码。<br>求职者：sqrt(0, 0.21)，sqrt(4, 0.21)… 还有问题，再改改。<br>面试官：……</p>
+</blockquote>
+<p>为什么要别人提示要测试用例, 才去 check 自己写的代码的正确性呢. 有的候选人写的代码, 就不拿一些异常情况去 check, 就用上面讲的 <code>sqrt(10, 0.21)</code> 的例子都得不到预期结果. </p>
+<p>哪些边界条件可以考察呢? 除了常规的一些比如负数开根号等, 还可以比如有可能传入精度 <code>t=0</code> 这样的 BT 的输入, 如果候选人代码没有排除这个可能就会导致 “无限循环” 下去(事实情况暂且不讨论), 这个时候再看看候选人的应变能力和思维方式. </p>
+<h3 id="关于结束条件"><a href="#关于结束条件" class="headerlink" title="关于结束条件"></a>关于结束条件</h3><p>本质上讲, 这个算法就是一个迭代逼近的过程, 用二分的思路后, 关键就在于什么时候结束. 题目中已经给了误差条件,<br>$ |r - \sqrt v| \leq t $, 难点在于其中的 $ \sqrt v $ 不知道, 不太方便直接进行计算判断.<br>不少人用一个另外的结束条件来进行了判断即: $ |r^2 - v| \leq t $, 其实这两个条件是不一样的, 这里就需要考察一下候选人是否正确区分并理解这两个条件. </p>
+<p>对于这个结束条件, 你有什么想法吗? 你能证明你的想法吗? </p>
+<h3 id="其他解法"><a href="#其他解法" class="headerlink" title="其他解法"></a>其他解法</h3><p>当然本题还有一些其他的数学解法, 例如用牛顿迭代法, 梯度下降法(最速下降法), 泰勒公式展开等等. </p>
+<p>当然本题还有一些其他的数学解法，例如用牛顿迭代法，梯度下降法(最速下降法)，泰勒公式展开等等。如果候选人能想到这些，说明他还是有一定数学基础的，如果愿意可以让他讲讲。（考察这道题目本意并不是期望候选人用这些数学方法解的。）</p>
+<p>对于这道题目, 你有什么比较好的思路吗? 欢迎讨论. </p>
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ol>
+<li><strong>问</strong>: 为什么题目中的 <code>v</code> 的类型是 <code>int</code>?<br>答: 还真没有理由，double 也行（这会增加一个坑，你知道是什么吗？），可能仅仅是因为 leetcode 上原题计算的数是 int 吧。</li>
+<li><strong>问</strong>: 我能正确答对这道题目就一定能通过这次面试吗?<br>答: 强调一下, 面试中考察这样一个题目, 并不是仅仅考察这道题目本身, 不是说你将这道题做对了, 就能通过我们的面试, 反之, 也不是说你没做对这道题目就一定不能通过我们的面试. 我们通过这道题目为契机, 希望考察的是候选人在分析问题, 解决问题的能力, 在交流过程中所体现的逻辑推理和思维方式等, 当然也有最后实实在在的 code.  </li>
+<li><strong>问</strong>: 这不是一道数学题目吗, 为什么程序员面试需要考察这样的数学问题?<br>答: 同上, 不是考察这道题目本身. 另外, 这也不是一道数学题目, 当然能用数学的方式解答. 候选人能用数学的方式解答也算正确. </li>
+<li><strong>问</strong>: 二分是这道题目的标准答案吗, 我能用其他解法吗?<br> 答: 同上, 题目没有标准答案, 就算你用最暴力的算法搜索出来也是正确的解法, 其他数学方法也对. </li>
+<li><strong>问</strong>: 这道题目这么简单, 牛顿迭代, 二分逼近分分钟秒掉, 是不是太简单了?<br>答: 欢迎来面试. </li>
+<li><strong>问</strong>: 这题目在说什么, 我搞了半天没看懂, 这太难了?<br>答: 如果看完整篇文章或跟面试官交流了那么久, 你还是根本不明白这到底再说一个什么问题, 那么我真心建议还是趁早转行吧. </li>
+<li><strong>问</strong>: 我在实际工作中根本就不会遇到这样的问题, 你问这个有什么用?<br>答: 同第2条答案, 如果还有疑问, 再见. </li>
+<li><strong>问</strong>: 你们公司还缺人么, 面试会考察哪些点?<br>答: 人一直缺的, 有兴趣或者有其他问题可以戳我邮箱, 邮箱地址: <strong>==gCl1mLpVGbn5WY0BUa</strong> (地址没错, 就是这个), 面试考察可能会涉及: CS 基础/Coding/算法/解决问题/项目经验/系统设计/沟通团队协作等等. </li>
+</ol>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>本文题目是“从一道面试题谈谈一线大厂码农应该具备的基本能力”，其实，上面大部分内容只谈到了这道题目本身(也穿插了一些对这道题目的分析和理解)。上述题目的场景是社招面试中的，对于这样的题目来说校招的反馈会更好。因为在校生可能对于工作经验，项目经验等比较欠缺，所以只好用一些比较固定的算法来面试进行筛选（本质上跟学校考试没有太大的区别）。 </p>
+<p>但这种类似的题目在社招场景下就完全不适用吗？社招的的同学写不出来就有很充分的理由吗？或许你在工作场景中不会遇到实际这种题目，但我其实想表达的是，作为在最前线写代码的码农，在别人讲解了二分算法且自己也能理解的情况下，能写出这个二分算法应该不算太难？相当于一个需求，大家讨论了算法实现和解法，需要你把它变成能跑的 code 而已。</p>
+<p>其实这篇文章最开始叫“从一道面试题谈谈一线码农应该具备的基本能力”，几年前发出来被喷了，后来想想似乎被喷也有点道理，因为在日常有些场景下，“复制粘贴”工程师貌似也够用了，遇到问题有更高水平的人来帮你解决就行，大家都一样的话，怎么体现高手水平呢？但从用人单位角度想，当然是更希望招聘更加优秀的选手，怎样体现优秀呢？候选人基数太大，怎么筛选，其实也就“高考”一样嘛，通过“考试”择优录取而已。</p>
+<p>我们就不去讨论是否每个写代码的人都需要有这样的能力（好像答案也是显而易见并不是）。但我建议咱们一线的程序员们（特指有上进心的一线程序员）应该对一些基本的数据结构和算法有所了解，对常见的算法复杂度有所了解? 或者至少应该有这样的追求吧？比如二分搜索复杂度为什么是<br><code>logN</code>。之前遇到过比如有的候选人，Java 开发七八年经验了，简历描述精通 Java，但不清楚 ArrayList, HashMap 内部大概是怎么做的（我理解，不管什么都需要知道大致的实现原理才有可能去优化遇到的各种性能问题吧？）。还有什么熟练掌握 Vim，结果其实就是熟练掌握如何打开和关闭 vim。还有的候选人口头表达头头是道，结果落实到写代码就根本下不了笔。</p>
+<p>有时候感觉大部分程序员都被大量的需求压迫着，被产品经理催促着，仓促地码着繁琐的业务代码，不断的改着 Bug 又引入新的 Bug。 业务代码重要么，当然重要（代码就是服务于具体业务的），但同时也还是希望我们不要抛弃一些基础的东西，多培养一下我们的编程素养。我们在用编程语言，利用各种工具来实现我们想要达到的目的的时候，能做到“知其然，知其所以然”岂不更好？</p>
+<p>全文完, 本人才疏学浅, 望各位看官轻拍. </p>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader，欢迎关注，交流和指导！</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试题/" rel="tag"># 面试题</a>
+          
+            <a href="/tags/码农/" rel="tag"># 码农</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/the-guide-for-join-big-company.html" rel="next" title="有了这份程序员面试指南，你离大厂Offer还远吗？| 附推荐书籍">
+                <i class="fa fa-chevron-left"></i> 有了这份程序员面试指南，你离大厂Offer还远吗？| 附推荐书籍
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/how-to-blog-elegantly-as-a-software-engineer.html" rel="prev" title="10 年 bloger 告诉你要不要写博客，又该如何优雅地写博客？">
+                10 年 bloger 告诉你要不要写博客，又该如何优雅地写博客？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">2.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始解答"><span class="nav-number">3.</span> <span class="nav-text">开始解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接放弃"><span class="nav-number">3.1.</span> <span class="nav-text">直接放弃</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#暴力搜索"><span class="nav-number">3.2.</span> <span class="nav-text">暴力搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二分搜索"><span class="nav-number">3.3.</span> <span class="nav-text">二分搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于结束条件"><span class="nav-number">3.4.</span> <span class="nav-text">关于结束条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他解法"><span class="nav-number">3.5.</span> <span class="nav-text">其他解法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见问题"><span class="nav-number">3.6.</span> <span class="nav-text">常见问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">4.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/revised-talking-about-the-basic-quality-for-frontline-coder-from-an-interview-problem.html';
+
+      var disqus_title = "从一道面试题谈谈一线大厂码农应具备的基本能力（修订版）";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

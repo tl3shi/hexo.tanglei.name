@@ -1,0 +1,863 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Linux,Ubuntu,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="今天突然XP和win7联无线网络都不稳定，一会又掉线了。然后就把ubuntu打开，联网算稳定，整理了以前的一些文档。现在发出来。maybe有用呢。在之前的文章有谈到过我的ubuntu漂亮的3D绚丽桌面，现在就把方法贴出来。也是参考网上的。    首先安装 CompizConfig 设置管理器    ＃sudo apt-get install compizconfig-settings-manage">
+<meta name="keywords" content="Linux,Ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu 10.10 绚丽 3D 桌面效果">
+<meta property="og:url" content="https://www.tanglei.name/blog/how-to-use-ubuntu-10-3d-nice.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="今天突然XP和win7联无线网络都不稳定，一会又掉线了。然后就把ubuntu打开，联网算稳定，整理了以前的一些文档。现在发出来。maybe有用呢。在之前的文章有谈到过我的ubuntu漂亮的3D绚丽桌面，现在就把方法贴出来。也是参考网上的。    首先安装 CompizConfig 设置管理器    ＃sudo apt-get install compizconfig-settings-manage">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.934Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu 10.10 绚丽 3D 桌面效果">
+<meta name="twitter:description" content="今天突然XP和win7联无线网络都不稳定，一会又掉线了。然后就把ubuntu打开，联网算稳定，整理了以前的一些文档。现在发出来。maybe有用呢。在之前的文章有谈到过我的ubuntu漂亮的3D绚丽桌面，现在就把方法贴出来。也是参考网上的。    首先安装 CompizConfig 设置管理器    ＃sudo apt-get install compizconfig-settings-manage">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/how-to-use-ubuntu-10-3d-nice.html">
+
+
+
+
+
+  <title> Ubuntu 10.10 绚丽 3D 桌面效果 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/how-to-use-ubuntu-10-3d-nice.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                Ubuntu 10.10 绚丽 3D 桌面效果
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-07-04T20:02:56+00:00">
+                2011-07-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/how-to-use-ubuntu-10-3d-nice.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/how-to-use-ubuntu-10-3d-nice.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今天突然XP和win7联无线网络都不稳定，一会又掉线了。然后就把ubuntu打开，联网算稳定，整理了以前的一些文档。现在发出来。maybe有用呢。在之前的文章有谈到过<a href="/blog/my-ubuntu10-10.html">我的ubuntu漂亮的3D绚丽桌面</a>，现在就把方法贴出来。也是参考网上的。</p>
+<!--         @page { margin: 2cm }         P { margin-bottom: 0.21cm } -->
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">首先安装 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CompizConfig </span></span><span style="font-size: x-small;">设置管理器</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">＃</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">sudo apt-get install compizconfig-settings-manager</span></span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">任务栏点击 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">-&gt; </span></span><span style="font-size: x-small;">系统 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">-&gt; </span></span><span style="font-size: x-small;">首选项 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">-&gt; CompizConfig </span></span><span style="font-size: x-small;">设置管理</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">选择桌面 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">-&gt; </span></span><span style="font-size: x-small;">勾选 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">-&gt; </span></span><span style="font-size: x-small;">旋转立方体、桌面立方体、显示桌面、视口切换工具这几项</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">在切换到特效 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">-&gt; </span></span><span style="font-size: x-small;">勾选 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">-&gt; 3D</span></span><span style="font-size: x-small;">窗口、窗口装饰、立方体倒影与形变、动画、在屏幕上绘制火焰、水纹效果</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">然后，任务栏点击 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">-&gt; </span></span><span style="font-size: x-small;">系统 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">-&gt; </span></span><span style="font-size: x-small;">首选项 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">-&gt; </span></span><span style="font-size: x-small;">外观 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">-&gt; </span></span><span style="font-size: x-small;">视觉效果 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">-&gt; </span></span><span style="font-size: x-small;">自定义 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">-&gt; </span></span><span style="font-size: x-small;">首选项</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">桌面选项卡 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">-&gt; </span></span><span style="font-size: x-small;">外观选桌面立方体 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">-&gt; </span></span><span style="font-size: x-small;">桌面列数 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">4 -&gt; </span></span><span style="font-size: x-small;">桌面行数 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">1</span></span><br></p>
+
+<p><a name="baidusnap4"></a> <span style="font-size: x-small;">按住</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Ctrl+alt</span></span><span style="font-size: x-small;">，再按住鼠标左键移动，</span><span style="font-family: 'DejaVu Serif', serif;"><span style="color: #000000;">3D</span></span><span style="color: #000000;">桌面效果</span><span style="font-size: x-small;">即出现。</span></p>
+<p lang="zh-CN"><br>  <span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Gears</span></span><span style="font-size: x-small;">前面打钩，然后找到前面打过钩的桌面立方体，点击，选择</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Transparent Cube</span></span><span style="font-size: x-small;">，将</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Opacity During</span></span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Rotation</span></span><span style="font-size: x-small;">降到</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">50</span></span><span style="font-size: x-small;">左右，再将</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">3D</span></span><span style="font-size: x-small;">桌面调出来，立方体成半透明的了，</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;"><a href="http://www.linuxidc.com" target="_blank" rel="noopener">www.linuxidc.com</a></span></span><span style="font-size: x-small;">并且里面有三个齿轮在滚动</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">!</span></span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">点击旋转立方体</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">-&gt;</span></span><span style="font-size: x-small;">一般，把缩放调整到</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">1.0</span></span><span style="font-size: x-small;">，把速度调整到</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">0.7</span></span><span style="font-size: x-small;">，再按</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Ctrl+alt+</span></span><span style="font-size: x-small;">向左</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">/</span></span><span style="font-size: x-small;">向右键，可以看到立方体运动时的慢动作，并且立方体小了很多。</span><br></p>
+
+<p><span style="font-size: x-small;">将鼠标在桌面上的空白位置点击一下，然后转动鼠标的滚轮，出现旋转的</span><span style="font-family: 'DejaVu Serif', serif;"><span style="color: #000000;">3D</span></span><span style="color: #000000;">桌面效果</span><span style="font-size: x-small;">。按住</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Super</span></span><span style="font-size: x-small;">键</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">(Ctrl</span></span><span style="font-size: x-small;">与</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Alt</span></span><span style="font-size: x-small;">中间的那个键</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">)+Tab</span></span><span style="font-size: x-small;">键，桌面水平排列。</span></p>
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">进入调整大小</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">-&gt;</span></span><span style="font-size: x-small;">动作，点击一般前面的小三角，双击“启动所有窗口的窗口拾取器”，选中</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Topleft</span></span><span style="font-size: x-small;">，点击</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">OK</span></span><span style="font-size: x-small;">。现在将你的鼠标移动到桌面左上角，就能实现类似</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Mac</span></span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">os X</span></span><span style="font-size: x-small;">的</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Expose</span></span><span style="font-size: x-small;">特效了。</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">进入</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CompizConfig</span></span><span style="font-size: x-small;">设置管理器的主界面，点击</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Expo-&gt;</span></span><span style="font-size: x-small;">动作，在窗口中的</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Expo</span></span><span style="font-size: x-small;">上面双击，勾选</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Top</span></span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Right</span></span><span style="font-size: x-small;">，然后</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">OK</span></span><span style="font-size: x-small;">。将鼠标移动到桌面的右上角，</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">4</span></span><span style="font-size: x-small;">个桌面整齐排列在一个</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">3D</span></span><span style="font-size: x-small;">空间内</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">(</span></span><span style="font-size: x-small;">同</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">super+E</span></span><span style="font-size: x-small;">效果</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">)</span></span><span style="font-size: x-small;">，可以将窗口从一个桌面拖动到另一个桌面，甚至放在两个桌面中间</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">!</span></span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">在</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CompizConfig</span></span><span style="font-size: x-small;">设置主界面选择</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Shift Switcher-&gt;</span></span><span style="font-size: x-small;">动作</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">-&gt;Initial(All workspace)</span></span><span style="font-size: x-small;">下，勾选</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Bottomleft</span></span><span style="font-size: x-small;">。鼠标移动到桌面的左下角，出现</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">iPhone</span></span><span style="font-size: x-small;">的</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Cover Flow</span></span><span style="font-size: x-small;">特效。可以用鼠标滚轮和方向键切换桌面。回到</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Shift Switcher</span></span><span style="font-size: x-small;">，点击外观，在</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Switcher mode</span></span><span style="font-size: x-small;">中选择</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Flip</span></span><span style="font-size: x-small;">。鼠标移动到桌面的左下角，出现</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">windows vista</span></span><span style="font-size: x-small;">中的</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Flip3D</span></span><span style="font-size: x-small;">特效。</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">在</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CompizConfig</span></span><span style="font-size: x-small;">设置管理器主界面选择“在屏幕上绘制火焰”前面的复选框，现在就可以直接按住</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Super+shift</span></span><span style="font-size: x-small;">键，然后用鼠标左键在屏幕写了。火焰的默认颜色是红色，可以直接进入“在屏幕上绘制火焰”设置项里，调整火焰颜色，或者干脆“随机”，取消火焰的时候同时按</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Super+Shift+C</span></span><span style="font-size: x-small;">。再次回到主界面中，勾选</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Windows Previews</span></span><span style="font-size: x-small;">，这样将鼠标移动到任务栏会出现预览窗口。</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">在</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CCSM(CompizConfig</span></span><span style="font-size: x-small;">设置管理器</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">)</span></span><span style="font-size: x-small;">主界面选择移动窗口，将其设置界面中的不透明度设置到</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">60</span></span><span style="font-size: x-small;">左右，这样你移动窗口的时候就会有半透明的效果。</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">同样在主界面中选择</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">General Options-&gt;Opacity Settings</span></span><span style="font-size: x-small;">，点击</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">ADD(</span></span><span style="font-size: x-small;">添加</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">)</span></span><span style="font-size: x-small;">。在</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">OpacityWindows </span></span><span style="font-size: x-small;">中输入</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Dock</span></span><span style="font-size: x-small;">，</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">OpacityWIndow Values</span></span><span style="font-size: x-small;">输入数值</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">80</span></span><span style="font-size: x-small;">。再以同样的方式添加</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">DropDownMenu</span></span><span style="font-size: x-small;">和</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">PopupMenu</span></span><span style="font-size: x-small;">，数值都为</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">80</span></span><span style="font-size: x-small;">。输入完毕之后，不管是什么菜单，现在都是以半透明的方式显示了，包括右键菜单。</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">在</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CCSM</span></span><span style="font-size: x-small;">主界面中选择</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Animations-&gt;CloseAnimation</span></span><span style="font-size: x-small;">，在窗口中的第一个</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Glide2</span></span><span style="font-size: x-small;">上双击，然后从</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CloseEffect</span></span><span style="font-size: x-small;">的下拉菜单中选择</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Burn</span></span><span style="font-size: x-small;">，这样每次关闭窗口的时候会有火焰的效果。</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">点击</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Effect Settings</span></span><span style="font-size: x-small;">，找到下面的</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Fire</span></span><span style="font-size: x-small;">，点击小三角形出现火焰选项，然后勾选其中的“随机颜色火焰”后面的复选框，火焰颜色随机。也可以去</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">OpenAnimation</span></span><span style="font-size: x-small;">里设置开启窗口时的动画特效，或者就选“随机”。</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">1</span></span><span style="font-size: x-small;">、给立方体设置一个背景，进入 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CompizConfig -&gt; </span></span><span style="font-size: x-small;">桌面立方体 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">-&gt; Appearance -&gt; Skydome </span></span><span style="font-size: x-small;">勾选</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;"> “</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Background”</span></span><span style="font-size: x-small;">，在 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Background Images </span></span><span style="font-size: x-small;">中选择一个背景图片即可。</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">2</span></span><span style="font-size: x-small;">、如果要让立方体增加一个倒影，勾选 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CompizConfig -&gt; Cube Reflection</span></span><span style="font-size: x-small;">即可。</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Tips: </span></span><span style="font-size: x-small;">展示立方体默认快捷键是 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Ctrl+Alt+</span></span><span style="font-size: x-small;">鼠标左键拖动，</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Ctrl+Alt+</span></span><span style="font-size: x-small;">方向键旋转立方体。</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">3</span></span><span style="font-size: x-small;">、使用神灯效果，这个效果最早出现在 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Mac </span></span><span style="font-size: x-small;">上。</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">勾选 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CompizConfig -&gt; Animations</span></span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Tips: </span></span><span style="font-size: x-small;">建议取消 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CompizConfig -&gt; </span></span><span style="font-size: x-small;">最小化效果，勾选 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CompizConfig -&gt; </span></span><span style="font-size: x-small;">渐弱窗口</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">4</span></span><span style="font-size: x-small;">、火焰字</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">勾选 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CompizConfig -&gt; Paint fire on the screen</span></span><span style="font-size: x-small;">即可。</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">可以在 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CompizConfig -&gt; Paint fire on the screen -&gt; Fire Particle Color </span></span><span style="font-size: x-small;">这里设置火焰的颜色，勾选 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Randomly Colored Fire </span></span><span style="font-size: x-small;">会写出五彩斑斓的文字。</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Tips: </span></span><span style="font-size: x-small;">默认快捷键是 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">shift+win+</span></span><span style="font-size: x-small;">鼠标左键，按 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">shift+win+c </span></span><span style="font-size: x-small;">是清除效果。</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">5</span></span><span style="font-size: x-small;">、桌面展示</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">勾选 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CompizConfig -&gt; Expo</span></span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Tips: </span></span><span style="font-size: x-small;">默认快捷键是 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">win+e</span></span><span style="font-size: x-small;">，鼠标移动到屏幕左上角也可以。</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">6</span></span><span style="font-size: x-small;">、雪花效果</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">勾选 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CompizConfig -&gt; Snow </span></span><span style="font-size: x-small;">再到这里下载雪花材质，在 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Snow -&gt; Textures </span></span><span style="font-size: x-small;">这里添加进去即可。</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">7</span></span><span style="font-size: x-small;">、菜单透明问题</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">默认菜单是透明的，可以到 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CompizConfig -&gt; General Options -&gt; Opacity Settings </span></span><span style="font-size: x-small;">这里进行设置。删除 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Window opacities </span></span><span style="font-size: x-small;">里面的那行代码就可以了。</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">8</span></span><span style="font-size: x-small;">、</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">3D </span></span><span style="font-size: x-small;">层叠窗口效果</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">勾选 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CompizConfig -&gt; 3D Windows</span></span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">9</span></span><span style="font-size: x-small;">、给立方体中增加一些鱼儿</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">勾选 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CompizConfig -&gt; Cube Atlantis</span></span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">按住 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Ctrl+Alt+</span></span><span style="font-size: x-small;">鼠标左键拖动桌面，就能看见了。</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">10</span></span><span style="font-size: x-small;">、屏幕保护</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">勾选 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CompizConfig -&gt; Screen Saver</span></span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">有两种效果，一种是 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Rotating cube </span></span><span style="font-size: x-small;">旋转立方体，一种是 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Flying windows </span></span><span style="font-size: x-small;">飞行的窗口。</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">11</span></span><span style="font-size: x-small;">、</span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">3D </span></span><span style="font-size: x-small;">窗口切换效果</span><br></p>
+
+<p lang="zh-CN"><br>  <span style="font-size: x-small;">勾选 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CompizConfig -&gt; Shift Switcher </span></span><span style="font-size: x-small;">在 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Switcher mode </span></span><span style="font-size: x-small;">中可以选择两种切换效果，一种类似 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Vista </span></span><span style="font-size: x-small;">的 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Flip3D </span></span><span style="font-size: x-small;">切换，一种类似 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">Mac </span></span><span style="font-size: x-small;">的 </span><span style="font-family: 'DejaVu Serif', serif;"><span style="font-size: x-small;">CoverFlow </span></span><span style="font-size: x-small;">切换。</span><br></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/milestone-miui-app2sd.html" rel="next" title="MS里程碑MIUI(android2.3)刷app2sd">
+                <i class="fa fa-chevron-left"></i> MS里程碑MIUI(android2.3)刷app2sd
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/emotional-ambiguous-waste-time.html" rel="prev" title="多少青春，都被暧昧荒废">
+                多少青春，都被暧昧荒废 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/how-to-use-ubuntu-10-3d-nice.html';
+
+      var disqus_title = "Ubuntu 10.10 绚丽 3D 桌面效果";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

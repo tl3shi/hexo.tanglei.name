@@ -1,0 +1,989 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="总结,MyLife,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景大家好， 我是石头哥。  前一阵公司刚发了年终奖了，同事们也都在讨论年终奖、股票等扣税的事情。  再加上最近公司也发邮件催促让完">
+<meta name="keywords" content="总结,MyLife">
+<meta property="og:type" content="article">
+<meta property="og:title" content="崩溃！补税10W+ —— 每个人都应该懂的个税计算方法">
+<meta property="og:url" content="https://www.tanglei.name/blog/how-to-calculate-tax-of-income.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景大家好， 我是石头哥。  前一阵公司刚发了年终奖了，同事们也都在讨论年终奖、股票等扣税的事情。  再加上最近公司也发邮件催促让完">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-23/1621762765154-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-16/1621156298737-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846610406-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-16/1621156269991-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846660926-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-23/1621785512834-%E5%B7%A5%E8%B5%84%E4%B8%AA%E7%A8%8E%E5%88%B0%E5%BA%95%E6%80%8E%E4%B9%88%E7%AE%97%EF%BC%9F.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-23/1621757663650-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-23/1621757912819-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-23/1621757611716-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-23/1621757974858-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846691631-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846715856-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846734966-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846753463-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846770226-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846792997-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-16/1621180090447-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-16/1621179998907-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846815205-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-22/1621614055248-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846832030-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-24/1621785617720-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-17/1621265620209-image.png">
+<meta property="og:updated_time" content="2022-01-09T16:47:23.003Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="崩溃！补税10W+ —— 每个人都应该懂的个税计算方法">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景大家好， 我是石头哥。  前一阵公司刚发了年终奖了，同事们也都在讨论年终奖、股票等扣税的事情。  再加上最近公司也发邮件催促让完">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-23/1621762765154-image.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/how-to-calculate-tax-of-income.html">
+
+
+
+
+
+  <title> 崩溃！补税10W+ —— 每个人都应该懂的个税计算方法 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/how-to-calculate-tax-of-income.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                崩溃！补税10W+ —— 每个人都应该懂的个税计算方法
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-25T00:00:00+00:00">
+                2021-05-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MyLife/" itemprop="url" rel="index">
+                    <span itemprop="name">MyLife</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/how-to-calculate-tax-of-income.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/how-to-calculate-tax-of-income.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上<strong>清华</strong>（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点这里查看我的逆袭之路</a>），BAT某厂P7，是前大疆（无人机）技术主管。</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s/DZ4ho7E1gBuzcsXHGjpPLA" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-23/1621762765154-image.png" alt></p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>大家好， 我是石头哥。 </p>
+<p>前一阵公司刚发了年终奖了，同事们也都在讨论年终奖、股票等扣税的事情。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-16/1621156298737-image.png" alt="年终奖17W，扣税4W+，本文将揭晓方法"></p>
+<p>再加上最近公司也发邮件催促让完成上年度的个税汇算清缴工作（6月底截止）。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846610406-image.png" alt="催办2020年度个税汇算申报"></p>
+<p>某匿名社交 App 上出现各种补税，扣税等疑问。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-16/1621156269991-image.png" alt="补税10W+"></p>
+<p>你现在可以登录 “个人所得税APP”，查看全年个人所得税应补/退税情况，不知道具体怎么算的？</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846660926-image.png" alt></p>
+<p>今天这篇文章就来为各位揭晓：</p>
+<ol>
+<li>个人所得税到底怎么算？</li>
+<li>年终奖是如何扣税？</li>
+<li>多发1块年终奖，税后反而少3W？</li>
+<li>股票期权又是如何扣税？</li>
+<li>什么情况下需补税、退税？</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-23/1621785512834-%E5%B7%A5%E8%B5%84%E4%B8%AA%E7%A8%8E%E5%88%B0%E5%BA%95%E6%80%8E%E4%B9%88%E7%AE%97%EF%BC%9F.png" alt="工资个税到底怎么算？"></p>
+<h2 id="个人所得税到底怎么算？"><a href="#个人所得税到底怎么算？" class="headerlink" title="个人所得税到底怎么算？"></a>个人所得税到底怎么算？</h2><p>一共分为两个步骤（文末获取计算工具Excel）。</p>
+<h3 id="第一步：加总全年收入、附加扣除、专项附加扣除"><a href="#第一步：加总全年收入、附加扣除、专项附加扣除" class="headerlink" title="第一步：加总全年收入、附加扣除、专项附加扣除"></a>第一步：加总全年收入、附加扣除、专项附加扣除</h3><p><strong>1 工资薪金收入</strong></p>
+<p>找到工资单，加总全年应税工资薪金收入；</p>
+<p>如果年中换过工作，存在某个月两家公司都给申报了个人所得税，两边的收入都加上。</p>
+<p>比如，石头月薪10W（我做梦都笑醒了），一年工资收入（不算年终奖）为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">10W * (12+1) = 130W</span><br></pre></td></tr></table></figure>
+<p><code>12+1</code> 是因为年底双薪。</p>
+<p><strong>2 附加扣除</strong></p>
+<p>找到工资单或者前往社保及公积金官网查询，加总全年个人承担部分的养老保险、医疗保险、失业保险、公积金。</p>
+<p>月薪都10W了，肯定各种缴纳也封顶了（请以具体工资单详情为准）。如果你的薪资超出社保基数上限了，那么这个最大值也和下面差不多。</p>
+<p>&lt;<img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-23/1621757663650-image.png" alt>,<img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-23/1621757912819-image.png" alt>,<img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-23/1621757611716-image.png" alt>,<img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-23/1621757974858-image.png" alt>&gt;</p>
+<p>这部分附加扣除数（北京为例）为：</p>
+<ul>
+<li>养老：<code>(2123.28+1885.2)*6=24050.88</code> </li>
+<li>医疗：<code>(597.64+558.72)*6=6938.16</code></li>
+<li>失业：<code>(53.08+47.13)*12=1202.52</code></li>
+<li>公积金：<code>3334*12=40008</code></li>
+<li>总计：<code>24050.88 + 6938.16 +1202.52+40008=72199.56</code></li>
+</ul>
+<p>这里说明一下，如果看到你个人缴纳部分没有失业保险，也不要慌。看看你的缴纳人员身份是不是农村，因为针对农村户籍个人部分给予免交。其实这里因为失业保险，个人缴纳比例较低（0.2%），每个月也没多少钱，几十块。</p>
+<p>具体而言：</p>
+<p>社保个人缴纳的部分为：</p>
+<ul>
+<li>养老保险：个人8%，单位16%;</li>
+<li>医疗保险：个人2%+3元，单位10%;</li>
+<li>失业保险：个人0.2%，单位0.8%，（农村户口免个人部分）</li>
+</ul>
+<p>结合对应的基数上限：</p>
+<ul>
+<li>2020社保缴费基数上限：养老 26541，医疗 29732</li>
+</ul>
+<p>得到：</p>
+<ul>
+<li>养老保险：<code>26541 * 0.08 = 2123.28</code></li>
+<li>医疗保险：<code>29732 * 0.02 + 3=597.64</code></li>
+<li>失业保险：<code>26541 * 0.002 = 53.08</code></li>
+</ul>
+<p>不过注意，这个上限基数生效时间点一般是在年中即7月，如下图所示，是某热心网友的7月数据。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846691631-image.png" alt="某网友2020年7月附加扣除"></p>
+<p>上半年还是以上一年度的基数为准：</p>
+<ul>
+<li>2019上限社保缴费基数上限：养老 23565，医疗 27786。</li>
+<li>养老保险：<code>23565 * 0.08 = 1885.2</code></li>
+<li>医疗保险：<code>27786 * 0.02 + 3=558.72</code></li>
+<li>失业保险：<code>23565 * 0.002 = 47.13</code></li>
+</ul>
+<p>即得到上半年对应数据如上，也能和某热心网友的数据对上。 </p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846715856-image.png" alt="某网友2020年6月附加扣除"></p>
+<p>公积金的上限2019和2020年的上限不变：27786，于是得到公积金缴纳（个人）为：<code>27786 * 12% = 3334.32</code>，（公积金政策是取整，数据也能和上面对上。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846734966-image.png" alt="北京市：关于2020年度各项社会保险缴费工资基数上下限的通知, http://www.beijing.gov.cn/zhengce/zhengcefagui/202007/t20200718_1951602.html"></p>
+<p><strong>3 专项附加扣除</strong></p>
+<p>根据自己在“个人所得税APP”中申报的赡养老人、大病医疗、住房贷款、租房、继续教育、子女教育情况，加总全年可以扣除的专项附加扣除金额。</p>
+<p>各个城市，各个人的情况可能不一样，请以你自己为准。</p>
+<p>比如，石头赡养老人（非独生，1000），房贷（1000），合计2000，12 个月也就是 24000。</p>
+<p>如果你有小孩，可以申报子女教育，或者是租房（租房好像能到1500），扣除金额可能会更多。</p>
+<h3 id="第二步：计算个人所得税"><a href="#第二步：计算个人所得税" class="headerlink" title="第二步：计算个人所得税"></a>第二步：计算个人所得税</h3><p><strong>1 计算应纳税所得额</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">应纳税所得额=全年工资薪金收入- 减除费用(5000*12) - 专项扣除 -专项附加扣除</span><br></pre></td></tr></table></figure>
+<p>大多数人可能只需要使用里面的收入、减除费用、专项扣除及专项附加扣除4项。减除费用统一为6万，专项扣除为个人的三险一金，专项附加扣除为养老、房贷等附加扣除；</p>
+<p>则石头的应纳税所得额为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">应纳税所得额 = 薪资收入 130W - 减除费用 6W - 72199.56 - 24000 = 1143800.44</span><br></pre></td></tr></table></figure>
+<p><strong>2 计算应纳个人所得税</strong></p>
+<p>用应纳税所得额在下表中找到对应级数的适用税率和速算扣除数，这里速算扣除数只是为了计算方便而已。</p>
+<p>比如20W，对应 20% 税率，直接 <code>20W*20%</code> 扣多了，要减去 (3.6~14.4W，只扣10%)，且最开始的3.6W 只应该扣 0.3%。<br><code>14.4W*0.2-((14.4W-3.6W)*0.1+3.6W*0.03) = 1.692W</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846753463-image.png" alt="个税适用税率表"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">应纳个人所得税=应纳税所得额*适用税率-速算扣除数</span><br></pre></td></tr></table></figure>
+<p>超过96W，统一45%，因此个人所得税为：</p>
+<p><code>1143800.44 * 0.45 - 181920 = 332790.198</code></p>
+<p>如果，中途申报数据有问题或者换工作等，导致预缴纳个税不准确，最终汇算清缴就根据这个数据为准进行多退少补了。</p>
+<p>比如下面有个例子：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846770226-image.png" alt="个税补交示例"></p>
+<blockquote>
+<p>公众号“程序猿石头” 后台回复“个税”，获取此工具Excel。</p>
+</blockquote>
+<p>上图以年中换过工作的为例，统计了全年的收入、社保、公积金、专项附加扣除及已缴纳个税情况。</p>
+<ul>
+<li>应纳税所得额：<code>222,000-60,000-(13,400+5,500+430+27,500)-24,000=91,170</code></li>
+<li>适用税率为<code>10%</code>，速算扣除数为<code>2,520</code></li>
+<li>应纳个人所得税：<code>=91,170*10%-2,520=6,597</code></li>
+<li>应补个人所得税：<code>=6,597-4,358=2,240</code></li>
+</ul>
+<h2 id="年终奖是如何扣税？"><a href="#年终奖是如何扣税？" class="headerlink" title="年终奖是如何扣税？"></a>年终奖是如何扣税？</h2><p>年终奖有两种方式，纳入工资一并计算，或者单独计税。一般而言，选择单独计算更划算。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">年终奖个税=年终奖金额*对应区间的税率-对应区间的速算扣除数/12</span><br></pre></td></tr></table></figure>
+<p>上面的对应区间税率表为年度（即上文所述）的，也可以换成月度的，则计算方式可以先将年终奖数额除以12，再按照转换成月度税率表折算得到，实际上一样。</p>
+<p>假设我几年发了年终奖50W（又笑醒了），对应上文的个税适用税率表，税率为<code>30%</code>，速算扣除数为52920，则年终奖应纳税为：<code>50W * 30% - 52920/12=145590</code>，14W+ 个税，好心痛。</p>
+<p>还有<strong>更心痛</strong>的，这种能够除以12，再折算年终奖个税的方式，今年是最后一年了。</p>
+<p>最新税法规定，<strong>自2022年1月1日起</strong>，居民个人取得全年一次性奖金，应并入当年综合所得计算缴纳个人所得税。相当于按照月工资发放扣税了。</p>
+<p>这样的话，仍然以上文中石头薪资为准，个税将直接变成：<br><code>50W * 0.45 - 0 = 225000</code>，（前面速算扣除数已经用过了）。</p>
+<p>相比较，直接多了 <code>225000-145590</code>，接近 8W 块。</p>
+<p>总结下来，10W月薪，年底双薪，50W年终奖，税后所得为：</p>
+<ul>
+<li>税前：<code>10W*(12+1)+50W=180W</code></li>
+<li>前文所得各种（三险一金）扣除：<code>72199.56</code></li>
+<li>月薪个税：<code>332790.198</code></li>
+<li>年终个税：<code>145590</code></li>
+<li>税后：<code>180W-72199.56-332790.198-145590=1249420.242</code>，约125W。</li>
+</ul>
+<p>2022年后，年终奖优惠没了，税后再减8W，直接变成117W了。</p>
+<h2 id="多发1块年终奖，税后反而少3W？"><a href="#多发1块年终奖，税后反而少3W？" class="headerlink" title="多发1块年终奖，税后反而少3W？"></a>多发1块年终奖，税后反而少3W？</h2><p>观察上文的税率表，就知道这确实存在临界点。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846792997-image.png" alt="个税适用税率表"></p>
+<p>比如：公司给石头1号发年终奖66W，因为石头2号表现更优秀，多给4W，发年终奖70W。</p>
+<p>根据上文公式，我们计算年终奖个税分别为：</p>
+<ul>
+<li>石头1号：66W，30%，速算扣除52920，最终个税为<code>660000 * 0.30 - 52920/12=193590.0</code>，税后得到：46.6W。</li>
+<li>石头2号：70W，35%，速算扣除85920，最终个税为<code>700000 * 0.35 - 85920/12=237840</code>，税后得到：46.2W。</li>
+</ul>
+<p>石头2号，税前明明多4W，最终到手居然还变少了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-16/1621180090447-image.png" alt></p>
+<p>我们再看看极端情况，年终奖<strong>多发1块钱导致少得30000</strong>的例子：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">660000 * 0.30 - 52920/12=193590.0</span><br><span class="line">660001 * 0.35 - 85920/12=223840.35</span><br></pre></td></tr></table></figure>
+<p>通过简单计算，其实能得到年终奖应该避开某些特定的区间。</p>
+<blockquote>
+<p>年终奖的六个“盲区”分别为：（18001元-19283.33元），（54001元-60187.50元），（108001元-114600元），（420001元-447500元)，（660001元-706538.46元），（960001元-1120000元）。数据来源于网络，石头没具体计算了，通过前文讲述，大家知道原理即可。</p>
+</blockquote>
+<p>不过，大家不要过度担心，<strong>一般情况</strong>下，公司的 HR 会合理帮你计算好的，不会让本来税前能得到更多奖金，因为扣税反而税后得到的更少。</p>
+<p>石头之前在某公司的时候，就有一次遇到这种情况，工资单里面的数据，写清楚了年终奖因发 XX W，实发 YY.XYZ W。后面实发还有零有整，就是为了避开跳跃区间。</p>
+<p>大家，实在不知道怎么计算也不用担心了。因为2022年，合并计算后，就没这个问题了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-16/1621179998907-image.png" alt="难过"></p>
+<h2 id="股票期权又是如何扣税？"><a href="#股票期权又是如何扣税？" class="headerlink" title="股票期权又是如何扣税？"></a>股票期权又是如何扣税？</h2><p>根据“财税〔2018〕164号”文件描述，股票期权也单独计算，公式仍为：<code>应纳税额＝股权激励收入×适用税率－速算扣除数</code>。一年内，多次行权的，也可以合并在一起计算。</p>
+<p>说白了，就跟年终奖的计税方式一样，能够享受优惠。</p>
+<p>又假设除了年终奖外，公司又给我发了价值50W的股票（再次笑醒了），对应上文的个税适用税率表，税率为<code>30%</code>，速算扣除数为52920，则股票应纳税为：<code>50W * 30% - 52920/12=145590</code>，14W+ 个税。</p>
+<blockquote>
+<p><a href="http://shanxi.chinatax.gov.cn/zcfg/detail/sx-11400-3815-1695171" target="_blank" rel="noopener">http://shanxi.chinatax.gov.cn/zcfg/detail/sx-11400-3815-1695171</a></p>
+</blockquote>
+<p>跟年终奖不一样的是，2022年年终奖个税合并工资计算了，没有优惠了，不过到时候得股票期权个税政策还不明确。按照官方说法是：2022年1月1日之后的股权激励政策另行明确。</p>
+<h2 id="什么情况下需补税、退税？"><a href="#什么情况下需补税、退税？" class="headerlink" title="什么情况下需补税、退税？"></a>什么情况下需补税、退税？</h2><p>什么情况下要补税或退税？按照上面计算出来的个税和你实际缴纳的不一样，就会进行多退少补了。</p>
+<p>好像，我说了句废话？</p>
+<p>一般情况下，没有换工作，一直在一家公司，且你也没有其他额外的收入。这种情况下，一般是不会进行补税退税的。</p>
+<p>换工作，一般会进行补缴个税。</p>
+<p>原因是下家公司其实不知道你上家公司的申报情况，比如那 6W 免征额到底用了多少额度？所以，<strong>可能</strong>又会重新计算这 6W 免征额。多享受了免征的额度，因此汇算清缴的时候，需要补回来。</p>
+<p>有“副业”的朋友们注意了，比如可能有号主朋友接了广告，<strong>可能</strong>有的广告主替你申报了个税。</p>
+<p>这块可能比较复杂，因为申报的情况可能不一样。但是一般情况下，会按照“劳务报酬”进行申报。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846815205-image.png" alt="劳务报酬预扣税率表"></p>
+<p>而劳务报酬申报的时候，预扣的适用税率一般按照如上图所示。超过 5W，就直接按照 40% 税率预扣税了。</p>
+<p>但是！</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-22/1621614055248-image.png" alt></p>
+<p>在年度汇算的时候呢，税法又规定，劳务报酬所得、稿酬所得等，可以和工资进行合并（这都叫“综合所得”），可以按照纳税年度合并计算个人所得税（上面超过96W 扣45%的表）。</p>
+<p>因为，之前扣税较多（从劳务报酬预扣税率表和工资税率表可以看出），因此年度汇算可以退税！</p>
+<p>当然，相反，如果劳务报酬比较少，例如少于2W（适用于20%税率），而你工资收入又较多（例如税率超过了20%），这个时候，合并计税，劳务报酬部分就扣得还不够，需要<strong>补税</strong>了。</p>
+<p>不过，收入不超过12W，或者补税金额不超过400，直接给予减免。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-10/1625846832030-image.png" alt="不需要补税"></p>
+<p>因此，提醒大家，特别是有额外收入的朋友们，比如号主的公众号广告、各种平台带货的佣金，赶紧去退税吧（准确点说是工资外收入多，或者对应税率小于工资税率的）。</p>
+<p>退完税，记得来给本文打赏。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>本文涉及不少税务专业知识，我都尽全力找税务专业人士review，但本人并非专业人士，撰写过程中难免有所纰漏，如有问题，还请帮忙指正。</p>
+<p>18年新老税法刚切换那会，写了个个税计算小程序，如果感兴趣的人多，我会抽时间更新这个小程序，方便大家使用。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-24/1621785617720-image.png" alt="税后工资计算器小程序，更新中"></p>
+<p>其实，你也可以从公众号“程序猿石头”后台回复“个税”，获取本文中的 Excel 进行计算。（其实方法已经告诉你了，你也可以自己做哦）</p>
+<p>码字不易，有帮助，记得帮忙三连。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-17/1621265620209-image.png" alt="欢迎扫码领取武林秘籍"></p>
+<p>最后，求关注、求星标，本号会定期分享一些技术干货、职场经验等，如果大家对阿里或者其他大厂感兴趣，也可以找我内推，我可以帮忙提供简历 review 等，希望能和大家积极交流讨论，一起学习、共同进步。</p>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点击这里查看我的逆袭之路</a>），目前在BAT某厂打工，是前大疆（无人机）技术主管。</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/总结/" rel="tag"># 总结</a>
+          
+            <a href="/tags/MyLife/" rel="tag"># MyLife</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/interview-p7-of-alibaba-so-easy.html" rel="next" title="面阿里P7，竟问这么简单题目？">
+                <i class="fa fa-chevron-left"></i> 面阿里P7，竟问这么简单题目？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/income-frauded-how-to-prevent.html" rel="prev" title="辛苦搬砖挣的钱，被骗了！">
+                辛苦搬砖挣的钱，被骗了！ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人所得税到底怎么算？"><span class="nav-number">2.</span> <span class="nav-text">个人所得税到底怎么算？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：加总全年收入、附加扣除、专项附加扣除"><span class="nav-number">2.1.</span> <span class="nav-text">第一步：加总全年收入、附加扣除、专项附加扣除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：计算个人所得税"><span class="nav-number">2.2.</span> <span class="nav-text">第二步：计算个人所得税</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#年终奖是如何扣税？"><span class="nav-number">3.</span> <span class="nav-text">年终奖是如何扣税？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多发1块年终奖，税后反而少3W？"><span class="nav-number">4.</span> <span class="nav-text">多发1块年终奖，税后反而少3W？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#股票期权又是如何扣税？"><span class="nav-number">5.</span> <span class="nav-text">股票期权又是如何扣税？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么情况下需补税、退税？"><span class="nav-number">6.</span> <span class="nav-text">什么情况下需补税、退税？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">7.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/how-to-calculate-tax-of-income.html';
+
+      var disqus_title = "崩溃！补税10W+ —— 每个人都应该懂的个税计算方法";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

@@ -1,0 +1,799 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="经验技巧,我做站长,Wordpress,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="最近在写一个Wordpress小的客户端发布工具，就是直接写markdown，然后转为html发布到Wordpress，为什么要写?  不太想换之前已有的blogs，试过相应的工具将已有的Wordpress blog转为markdown，效果不是很好。//直接用github+jekyll之类的静态站点 Wordpress已有的支持markdown的插件貌似都不怎么理想，想兼容之前的比较麻烦，特别是">
+<meta name="keywords" content="经验技巧,我做站长,Wordpress">
+<meta property="og:type" content="article">
+<meta property="og:title" content="将代码高亮插件codecolorer替换为highlight">
+<meta property="og:url" content="https://www.tanglei.name/blog/codecolorer-adapted-to-highlight.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="最近在写一个Wordpress小的客户端发布工具，就是直接写markdown，然后转为html发布到Wordpress，为什么要写?  不太想换之前已有的blogs，试过相应的工具将已有的Wordpress blog转为markdown，效果不是很好。//直接用github+jekyll之类的静态站点 Wordpress已有的支持markdown的插件貌似都不怎么理想，想兼容之前的比较麻烦，特别是">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.978Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="将代码高亮插件codecolorer替换为highlight">
+<meta name="twitter:description" content="最近在写一个Wordpress小的客户端发布工具，就是直接写markdown，然后转为html发布到Wordpress，为什么要写?  不太想换之前已有的blogs，试过相应的工具将已有的Wordpress blog转为markdown，效果不是很好。//直接用github+jekyll之类的静态站点 Wordpress已有的支持markdown的插件貌似都不怎么理想，想兼容之前的比较麻烦，特别是">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/codecolorer-adapted-to-highlight.html">
+
+
+
+
+
+  <title> 将代码高亮插件codecolorer替换为highlight | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/codecolorer-adapted-to-highlight.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                将代码高亮插件codecolorer替换为highlight
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-07-01T00:00:00+00:00">
+                2015-07-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/codecolorer-adapted-to-highlight.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/codecolorer-adapted-to-highlight.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近在写一个Wordpress小的客户端发布工具，就是直接写markdown，然后转为html发布到Wordpress，为什么要写?</p>
+<ul>
+<li>不太想换之前已有的blogs，试过相应的工具将已有的Wordpress blog转为markdown，效果不是很好。//直接用github+jekyll之类的静态站点</li>
+<li>Wordpress已有的支持markdown的插件貌似都不怎么理想，想兼容之前的比较麻烦，特别是用了代码高亮之类的插件//用Wordpress已有的支持markdown的插件</li>
+</ul>
+<p>所以就写了，目前的技术方案是：<br><code>本地markdown+pandoc——&gt;html——&gt;Wordpress-xmlrpc——&gt;Wordpress server</code><br>这样的好处是：</p>
+<ul>
+<li>仅仅要对已有的blog进行细小的改动即可，即改下那些po了代码的文章；</li>
+<li>本地的markdown方便管理和备份，也方便生成其他如pdf等格式；</li>
+<li>win下之前还有wlw工具方便发布带有图片的blog，但在mac、linux下找不到相应方便的工具，现在用这个统一的client就比较方便传图片等资源。</li>
+</ul>
+<p>本篇文章是讨论解决之前文章代码高亮的问题。一方面，现在的代码高亮是基于pandoc的，pandoc会把代码拆分添加各种tag，然后根据tag去css，且生成的html是与之前的codecolorer不兼容的，开启codecolorer插件后，现在的文章乱得一塌糊涂；<br>另外一方面，关闭codecolorer后，由于现在的文章代码已经不是独立的代码，是带有各种html标签的文本，解决方案是将之前的所有post中含有的代码都用pandoc转换一下，这个成本太高；后来找到一个代码高亮的插件可以自定义代码区域的标签，且是通过前端实现的，不占用服务器资源，于是就采用了这款插件<a href="https://highlightjs.org/" target="_blank" rel="noopener">hightlight</a>。</p>
+<p>codecolorer之前的代码区域基本上都是通过<code>[cc lang=&quot;java&quot;]java code[/cc]</code>实现的，hightlight可以自定义html标签，<br>所以大致只需要将原来的文章中所有的<code>[cc]</code> 替换成<code>&lt;cc&gt;</code>即可，不能用hightlight默认的<code>&lt;pre&gt;&lt;code&gt;&lt;/code&gt;&lt;pre&gt;</code>，这个又会跟pandoc的冲突(其实也可以，后面会说怎么自定义让哪些文章启用highlight)。</p>
+<p>在将代码高亮插件codecolorer替换为highlight过程中，遇到的主要问题是：</p>
+<ul>
+<li>codecolorer之前的代码区域仅用<code>[cc]</code>标签包围，highlight自定义标签时，换行符会出现问题。<code>hljs.configure({useBR: true});</code> 不生效，参见<a href="https://github.com/isagalaev/highlight.js/issues/860" target="_blank" rel="noopener">hightligth讨论</a>，结果是要求code中需要包含<code>&lt;br&gt;</code>标签，这不扯么。。。解决方法是手动通过js添加<code>&lt;br&gt;</code>。</li>
+<li>换行符问题解决了，代码缩进有出现问题了。囧。后来想想还是手动在<code>&lt;cc&gt;</code>周围添加<code>&lt;pre&gt;</code>吧。 //注意在前端加时<code>&lt;cc&gt;</code>区域中间的内容会被Wordpress 给添加一些<code>&lt;br/&gt;&lt;p&gt;</code>之类的标签切这个标签可能会添加得不合理比如代码的一部分和代码以上的文字在一个p里面，会导致选择器选择cc不能全部选到，这个禁用即可(这样可能导致之前的文章排版不太正确)，方法是主题中<code>the_content(&#39;Continue reading &amp;raquo;&#39;);</code>替换为<code>echo $post-&gt;post_content;</code>。在后端即数据库端加就不用管。所以还是直接数据库添加较好。</li>
+</ul>
+<p>代码如下:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css"</span>&gt;</span><br><span class="line">&lt;script src=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script src="http:/</span><span class="regexp">/code.jquery.com/</span>jquery<span class="number">-2.1</span><span class="number">.4</span>.min.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;script&gt;</span></span><br><span class="line"><span class="string">   if(false)</span></span><br><span class="line"><span class="string">       hljs.initHighlightingOnLoad(); //default tag&lt;pre&gt;&lt;code&gt;</span></span><br><span class="line"><span class="string">   else</span></span><br><span class="line"><span class="string">   	$(document).ready(function() &#123;</span></span><br><span class="line"><span class="string">       //hljs.configure(&#123;useBR: true&#125;);//this does NOT work, the original code should contains &lt;br&gt;, </span></span><br><span class="line"><span class="string">       //see https://github.com/isagalaev/highlight.js/issues/860</span></span><br><span class="line"><span class="string">       //$('cc').each(function()&#123;</span></span><br><span class="line"><span class="string">       //    $(this).wrap("</span>&lt;pre&gt;&lt;<span class="regexp">/pre&gt;"); /</span><span class="regexp">/db substitute</span></span><br><span class="line"><span class="regexp">           /</span><span class="regexp">/var codestr = $(this).html();</span></span><br><span class="line"><span class="regexp">           /</span><span class="regexp">/$(this).html(codestr.replace(/</span>\n/g, <span class="string">'&lt;br&gt;'</span>)); <span class="comment">//manually substitute, add &lt;pre&gt;, no need</span></span><br><span class="line">       <span class="comment">//&#125;);</span></span><br><span class="line">       $(<span class="string">'pre cc'</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params">i, block</span>) </span>&#123;</span><br><span class="line">           hljs.highlightBlock(block);</span><br><span class="line">       &#125;);</span><br><span class="line">   &#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Demo 见<a href="https://www.tanglei.name/resources/codecolorer-adapted-to-highlight/highlighttest.html">这里</a>。</p>
+<p>然后就是使这些js代码应用到之前的所有文章中，直接添加到每篇含有代码的文章中的正文里容易被Wordpress过滤转义掉，且加载的顺序不正确也会导致代码高亮出现问题，如果加在全站的header中有造成不必要的浪费，幸好Wordpress提供了给每篇文章自定义的功能，Wordpress后台发布文章时有个自定义栏目，可以给每篇文章加个标签，然后wp加载的时候根据这篇文章的标签采用不同的逻辑加载。方法可以参考<a href="http://loo2k.com/blog/Wordpress-page-javascript-css-code/" target="_blank" rel="noopener">在 WordPress 指定页面加载指定 JavaScript 或 CSS 代码</a>[^1]</p>
+<p>最后就是修改那些含有代码的文章，修改<code>[cc]</code>标签，给文章添加自定义字段。sql语句如下：<br>自定义条目：enable_highlight<br>值：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"/wp-content/blogresources/highlightconfig/highlight.default.min.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/wp-content/blogresources/highlightconfig/enable_highlight.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>主题的header.php文件中，<code>&lt;?php wp_head(); ?&gt;</code>之后添加如下代码进行过滤：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">if</span> (is_single() || is_page()) &#123;</span><br><span class="line">    $head = get_post_meta($post-&gt;ID, <span class="string">'enable_highlight'</span>, <span class="keyword">true</span>); </span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">empty</span>($head)) &#123; <span class="meta">?&gt;</span> </span><br><span class="line">        <span class="meta">&lt;?php</span> <span class="keyword">echo</span> $head; <span class="meta">?&gt;</span> </span><br><span class="line"><span class="meta">&lt;?php</span> &#125; &#125; <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其实可以优化下，不用jQuery的，懒得搞了。</p>
+<p>呃，每篇文章都得单独添加一个wp_postmeta。<br>mysql replace没有正则匹配，一个一个来了。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> wp_posts <span class="keyword">SET</span> post_content = <span class="keyword">REPLACE</span>( post_content, <span class="string">'[/cc]'</span>, <span class="string">'```&lt;/pre&gt;'</span> ) <span class="keyword">where</span> <span class="keyword">ID</span> <span class="keyword">in</span> </span><br><span class="line">(<span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> wp_posts <span class="keyword">WHERE</span> post_content <span class="keyword">LIKE</span> <span class="string">'%[/cc]%'</span>);</span><br></pre></td></tr></table></figure>
+<p>当试图用以上sql进行查询更新时，提示 “You can’t specify target table ‘wp_posts’ for update in FROM clause”，因为这样对同一个表操作会冲突，中间加一个临时表解决问题。[^2]</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> wp_posts <span class="keyword">SET</span> post_content = <span class="keyword">REPLACE</span>( post_content, <span class="string">'[/cc]'</span>, <span class="string">'```&lt;/pre&gt;'</span> ) <span class="keyword">where</span> <span class="keyword">ID</span> <span class="keyword">in</span> </span><br><span class="line">(<span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> wp_posts <span class="keyword">WHERE</span> post_content <span class="keyword">LIKE</span> <span class="string">'%[/cc]%'</span>) <span class="keyword">as</span> tmp);</span><br><span class="line"><span class="keyword">UPDATE</span> wp_posts <span class="keyword">SET</span> post_content = <span class="keyword">REPLACE</span>( post_content, <span class="string">'[cc lang="python"]'</span>, <span class="string">'&lt;pre&gt;&lt;cc class="python"&gt;'</span> ) <span class="keyword">where</span> <span class="keyword">ID</span> <span class="keyword">in</span> </span><br><span class="line">( <span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> wp_posts <span class="keyword">WHERE</span> post_content <span class="keyword">LIKE</span> <span class="string">'%[cc lang="python"]%'</span>) <span class="keyword">as</span> tmp);  <span class="comment">/*8 rows*/</span></span><br><span class="line"><span class="keyword">UPDATE</span> wp_posts <span class="keyword">SET</span> post_content = <span class="keyword">REPLACE</span>( post_content, <span class="string">'[cc lang="php"]'</span>, <span class="string">'&lt;pre&gt;&lt;cc class="php"&gt;'</span> ) <span class="keyword">where</span> <span class="keyword">ID</span> <span class="keyword">in</span> </span><br><span class="line">( <span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> wp_posts <span class="keyword">WHERE</span> post_content <span class="keyword">LIKE</span> <span class="string">'%[cc lang="php"]%'</span>) <span class="keyword">as</span> tmp); <span class="comment">/*8 rows*/</span></span><br><span class="line"><span class="keyword">UPDATE</span> wp_posts <span class="keyword">SET</span> post_content = <span class="keyword">REPLACE</span>( post_content, <span class="string">'[cc lang="cpp"]'</span>, <span class="string">'&lt;pre&gt;&lt;cc class="cpp"&gt;'</span> ) <span class="keyword">where</span> <span class="keyword">ID</span> <span class="keyword">in</span> </span><br><span class="line">( <span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> wp_posts <span class="keyword">WHERE</span> post_content <span class="keyword">LIKE</span> <span class="string">'%[cc lang="cpp"]%'</span>) <span class="keyword">as</span> tmp); <span class="comment">/*6*/</span> </span><br><span class="line"><span class="keyword">UPDATE</span> wp_posts <span class="keyword">SET</span> post_content = <span class="keyword">REPLACE</span>( post_content, <span class="string">'[cc lang="java"]'</span>, <span class="string">'&lt;pre&gt;&lt;cc class="java"&gt;'</span> ) <span class="keyword">where</span> <span class="keyword">ID</span> <span class="keyword">in</span> </span><br><span class="line">( <span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> wp_posts <span class="keyword">WHERE</span> post_content <span class="keyword">LIKE</span> <span class="string">'%[cc lang="java"]%'</span>) <span class="keyword">as</span> tmp); <span class="comment">/*16*/</span></span><br><span class="line"><span class="keyword">UPDATE</span> wp_posts <span class="keyword">SET</span> post_content = <span class="keyword">REPLACE</span>( post_content, <span class="string">'[cc lang="c#"]'</span>, <span class="string">'&lt;pre&gt;&lt;cc class="csharp"&gt;'</span> ) <span class="keyword">where</span> <span class="keyword">ID</span> </span><br><span class="line"><span class="keyword">in</span> ( <span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> wp_posts <span class="keyword">WHERE</span> post_content <span class="keyword">LIKE</span> <span class="string">'%[cc lang="c#"]%'</span>) <span class="keyword">as</span> tmp); <span class="comment">/*4*/</span></span><br><span class="line"><span class="keyword">UPDATE</span> wp_posts <span class="keyword">SET</span> post_content = <span class="keyword">REPLACE</span>( post_content, <span class="string">'[cc lang="c++"]'</span>, <span class="string">'&lt;pre&gt;&lt;cc class="cpp"&gt;'</span> ) <span class="keyword">where</span> <span class="keyword">ID</span> <span class="keyword">in</span> </span><br><span class="line">( <span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> wp_posts <span class="keyword">WHERE</span> post_content <span class="keyword">LIKE</span> <span class="string">'%[cc lang="c++"]%'</span>) <span class="keyword">as</span> tmp); <span class="comment">/*6*/</span></span><br><span class="line"><span class="keyword">UPDATE</span> wp_posts <span class="keyword">SET</span> post_content = <span class="keyword">REPLACE</span>( post_content, <span class="string">'[cc lang="html"]'</span>, <span class="string">'&lt;pre&gt;&lt;cc class="html"&gt;'</span> ) <span class="keyword">where</span> <span class="keyword">ID</span> </span><br><span class="line"><span class="keyword">in</span> ( <span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> wp_posts <span class="keyword">WHERE</span> post_content <span class="keyword">LIKE</span> <span class="string">'%[cc lang="html"]%'</span>) <span class="keyword">as</span> tmp); <span class="comment">/*1*/</span></span><br><span class="line"><span class="keyword">UPDATE</span> wp_posts <span class="keyword">SET</span> post_content = <span class="keyword">REPLACE</span>( post_content, <span class="string">'[cc lang="xml"]'</span>, <span class="string">'&lt;pre&gt;&lt;cc class="xml"&gt;'</span> ) <span class="keyword">where</span> <span class="keyword">ID</span> </span><br><span class="line"><span class="keyword">in</span> ( <span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> wp_posts <span class="keyword">WHERE</span> post_content <span class="keyword">LIKE</span> <span class="string">'%[cc lang="xml"]%'</span>) <span class="keyword">as</span> tmp); <span class="comment">/*5*/</span></span><br><span class="line"><span class="keyword">UPDATE</span> wp_posts <span class="keyword">SET</span> post_content = <span class="keyword">REPLACE</span>( post_content, <span class="string">'[cc lang="C"]'</span>, <span class="string">'&lt;pre&gt;&lt;cc class="C"&gt;'</span> ) <span class="keyword">where</span> <span class="keyword">ID</span> <span class="keyword">in</span> </span><br><span class="line">( <span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> wp_posts <span class="keyword">WHERE</span> post_content <span class="keyword">LIKE</span> <span class="string">'%[cc lang="C"]%'</span>) <span class="keyword">as</span> tmp); <span class="comment">/*10*/</span></span><br><span class="line"><span class="keyword">UPDATE</span> wp_posts <span class="keyword">SET</span> post_content = <span class="keyword">REPLACE</span>( post_content, <span class="string">'[/cc]'</span>, <span class="string">'```&lt;/pre&gt;'</span> ) <span class="keyword">where</span> <span class="keyword">ID</span> <span class="keyword">in</span> </span><br><span class="line">( <span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> wp_posts <span class="keyword">WHERE</span> post_content <span class="keyword">LIKE</span> <span class="string">'%[/cc]%'</span>) <span class="keyword">as</span> tmp); </span><br><span class="line"><span class="comment">/*66*/</span></span><br><span class="line"><span class="keyword">UPDATE</span> wp_posts <span class="keyword">SET</span> post_content = <span class="keyword">REPLACE</span>( post_content, <span class="string">'&lt;code'</span>, <span class="string">'&lt;pre&gt;&lt;cc'</span> ) <span class="keyword">where</span> <span class="keyword">ID</span> <span class="keyword">in</span> </span><br><span class="line">( <span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> wp_posts <span class="keyword">WHERE</span> post_content <span class="keyword">LIKE</span> <span class="string">'%&lt;code%'</span>) <span class="keyword">as</span> tmp); <span class="comment">/*11*/</span></span><br><span class="line"><span class="keyword">UPDATE</span> wp_posts <span class="keyword">SET</span> post_content = <span class="keyword">REPLACE</span>( post_content, <span class="string">'&lt;/code&gt;'</span>, <span class="string">'```&lt;/pre&gt;'</span> ) <span class="keyword">where</span> <span class="keyword">ID</span> <span class="keyword">in</span> </span><br><span class="line">( <span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> wp_posts <span class="keyword">WHERE</span> post_content <span class="keyword">LIKE</span> <span class="string">'%&lt;/code&gt;%'</span>) <span class="keyword">as</span> tmp); <span class="comment">/*11*/</span></span><br><span class="line"><span class="keyword">UPDATE</span> wp_posts <span class="keyword">SET</span> post_content = <span class="keyword">REPLACE</span>( post_content, <span class="string">'[cc lang="sql"]'</span>, <span class="string">'&lt;pre&gt;&lt;cc class="sql"&gt;'</span> ) <span class="keyword">where</span> <span class="keyword">ID</span> <span class="keyword">in</span> </span><br><span class="line">( <span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> wp_posts <span class="keyword">WHERE</span> post_content <span class="keyword">LIKE</span> <span class="string">'%[cc lang="sql"]%'</span>) <span class="keyword">as</span> tmp); <span class="comment">/*5*/</span></span><br><span class="line"><span class="keyword">UPDATE</span> wp_posts <span class="keyword">SET</span> post_content = <span class="keyword">REPLACE</span>( post_content, <span class="string">'[cc lang="c"]'</span>, <span class="string">'&lt;pre&gt;&lt;cc class="c"&gt;'</span> ) <span class="keyword">where</span> <span class="keyword">ID</span> </span><br><span class="line"><span class="keyword">in</span> ( <span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> wp_posts <span class="keyword">WHERE</span> post_content <span class="keyword">LIKE</span> <span class="string">'%[cc lang="c"]%'</span>) <span class="keyword">as</span> tmp); <span class="comment">/*4*/</span></span><br><span class="line"><span class="keyword">UPDATE</span> wp_posts <span class="keyword">SET</span> post_content = <span class="keyword">REPLACE</span>( post_content, <span class="string">'[cc lang="javascript"]'</span>, <span class="string">'&lt;pre&gt;&lt;cc class="javascript"&gt;'</span> ) <span class="keyword">where</span> <span class="keyword">ID</span> </span><br><span class="line"><span class="keyword">in</span> ( <span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> wp_posts <span class="keyword">WHERE</span> post_content <span class="keyword">LIKE</span> <span class="string">'%[cc lang="javascript"]%'</span>) <span class="keyword">as</span> tmp); <span class="comment">/*2*/</span></span><br><span class="line"><span class="keyword">UPDATE</span> wp_posts <span class="keyword">SET</span> post_content = <span class="keyword">REPLACE</span>( post_content, <span class="string">"[cc lang='python']"</span>, <span class="string">'&lt;pre&gt;&lt;cc class="python"&gt;'</span> ) <span class="keyword">where</span> <span class="keyword">ID</span> <span class="keyword">in</span> </span><br><span class="line">( <span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> wp_posts <span class="keyword">WHERE</span> post_content <span class="keyword">LIKE</span> <span class="string">"%[cc lang='python']%"</span>) <span class="keyword">as</span> tmp); <span class="comment">/*2*/</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> wp_postmeta (post_id, meta_key, meta_value) </span><br><span class="line"><span class="keyword">SELECT</span> wp_posts.ID, <span class="string">'enable_highlight'</span>, </span><br><span class="line"><span class="string">'&lt;link rel="stylesheet" href="/wp-content/blogresources/highlightconfig/highlight.default.min.css"&gt;</span></span><br><span class="line"><span class="string">&lt;script src="/wp-content/blogresources/highlightconfig/jquery-2.1.4.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;script src="/wp-content/blogresources/highlightconfig/enable_highlight.js"&gt;&lt;/script&gt;'</span> </span><br><span class="line"><span class="keyword">FROM</span> wp_posts <span class="keyword">WHERE</span> wp_posts.ID <span class="keyword">in</span> (<span class="keyword">SELECT</span> <span class="keyword">ID</span> <span class="keyword">FROM</span> wp_posts <span class="keyword">WHERE</span> wp_posts.post_content <span class="keyword">LIKE</span> <span class="string">'%```&lt;/pre&gt;%'</span>);</span><br></pre></td></tr></table></figure>
+<p>参考文献：</p>
+<p>[^1]: <a href="http://loo2k.com/blog/Wordpress-page-javascript-css-code/" target="_blank" rel="noopener">在 WordPress 指定页面加载指定 JavaScript 或 CSS 代码</a><br>[^2]: <a href="http://stackoverflow.com/questions/8333376/mysql-1093-you-cant-specify-target-table-giveaways-for-update-in-from-clau" target="_blank" rel="noopener">MySQL #1093 - You can’t specify target table ‘giveaways’ for update in FROM clause</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/经验技巧/" rel="tag"># 经验技巧</a>
+          
+            <a href="/tags/我做站长/" rel="tag"># 我做站长</a>
+          
+            <a href="/tags/Wordpress/" rel="tag"># Wordpress</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/binding-domain-to-plugin-of-mobile-theme.html" rel="next" title="给手机主题插件Wptouch绑定单独的域名">
+                <i class="fa fa-chevron-left"></i> 给手机主题插件Wptouch绑定单独的域名
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/travel-to-northwest-of-china.html" rel="prev" title="毕业旅行之大西北游">
+                毕业旅行之大西北游 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/codecolorer-adapted-to-highlight.html';
+
+      var disqus_title = "将代码高亮插件codecolorer替换为highlight";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

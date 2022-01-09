@@ -1,0 +1,792 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="计算几何,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="凸的意思就是，点集当中任意两个点的连线仍然在这个集合当中。凸包就是说用一个足够大的橡皮筋把这些点包围住，这个最小的橡皮筋就构成了这些点集的凸包。 求出凸包是计算几何当中一个经典的问题，也是贯穿这整个计算几何的学科。如下图所示，最外层的那个圈就是这些点集的凸包。凸包上的那些点称为极点，如果找出了所有的极点，那么，凸包也就求出来了。极点的可以用这种方式来进行判断，点集P中任意一个点s，如果存在另外的三">
+<meta name="keywords" content="计算几何">
+<meta property="og:type" content="article">
+<meta property="og:title" content="点集的凸包问题">
+<meta property="og:url" content="https://www.tanglei.name/blog/convex-hull-of-points.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="凸的意思就是，点集当中任意两个点的连线仍然在这个集合当中。凸包就是说用一个足够大的橡皮筋把这些点包围住，这个最小的橡皮筋就构成了这些点集的凸包。 求出凸包是计算几何当中一个经典的问题，也是贯穿这整个计算几何的学科。如下图所示，最外层的那个圈就是这些点集的凸包。凸包上的那些点称为极点，如果找出了所有的极点，那么，凸包也就求出来了。极点的可以用这种方式来进行判断，点集P中任意一个点s，如果存在另外的三">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2013/03/032813_1505_1.png">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2013/03/032813_1505_2.png">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2013/03/032813_1505_3.png">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2013/03/032813_1505_4.png">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.970Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="点集的凸包问题">
+<meta name="twitter:description" content="凸的意思就是，点集当中任意两个点的连线仍然在这个集合当中。凸包就是说用一个足够大的橡皮筋把这些点包围住，这个最小的橡皮筋就构成了这些点集的凸包。 求出凸包是计算几何当中一个经典的问题，也是贯穿这整个计算几何的学科。如下图所示，最外层的那个圈就是这些点集的凸包。凸包上的那些点称为极点，如果找出了所有的极点，那么，凸包也就求出来了。极点的可以用这种方式来进行判断，点集P中任意一个点s，如果存在另外的三">
+<meta name="twitter:image" content="https://www.tanglei.name/wp-content/uploads/2013/03/032813_1505_1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/convex-hull-of-points.html">
+
+
+
+
+
+  <title> 点集的凸包问题 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/convex-hull-of-points.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                点集的凸包问题
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-03-28T23:06:07+00:00">
+                2013-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机图形学/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机图形学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/convex-hull-of-points.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/convex-hull-of-points.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>凸的意思就是，点集当中任意两个点的连线仍然在这个集合当中。凸包就是说用一个足够大的橡皮筋把这些点包围住，这个最小的橡皮筋就构成了这些点集的凸包。</p>
+<p>求出凸包是计算几何当中一个经典的问题，也是贯穿这整个计算几何的学科。如下图所示，最外层的那个圈就是这些点集的凸包。凸包上的那些点称为极点，如果找出了所有的极点，那么，凸包也就求出来了。极点的可以用这种方式来进行判断，点集P中任意一个点s，如果存在另外的三个不同的点p,q,r构成的三角形将s包围住，那么这个点s就不是极点，反之就是极点。于是也就有了第一个算法：</p>
+<p><img src="/wp-content/uploads/2013/03/032813_1505_1.png" alt="凸包" align="left"></p>
+<figure class="highlight pascal"><table><tr><td class="code"><pre><span class="line">Mark All points <span class="keyword">in</span> <span class="keyword">Set</span> P <span class="keyword">as</span> extreme;</span><br><span class="line"><span class="keyword">For</span> each triangle (p,q,r):</span><br><span class="line">   <span class="keyword">For</span> each k <span class="keyword">in</span> <span class="keyword">Set</span> P <span class="keyword">and</span> k ! = (p,q,r):</span><br><span class="line">       <span class="keyword">If</span> k <span class="keyword">in</span> triangle(p,q,r)</span><br><span class="line">          Mark k <span class="keyword">as</span> NON-extreme.</span><br></pre></td></tr></table></figure>
+<p>判断一个点k是否在点p,q,r构成的三角形中可以用toleft测试。如上图中的例子，如果k在有向线段pq的左边 and k 在 qr的左边and k在rp的左边，那么k就在pqr构成的的三角形里面了。核心代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//O(n^4)</span></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;CP_Vector2D&gt; <span class="title">cal_extreme_points</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;CP_Vector2D&gt; extreme_points;</span><br><span class="line">    <span class="built_in">vector</span>&lt;MyPoint&gt; my_points;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> size = points.size();</span><br><span class="line">    <span class="comment">//inital all points to extreme</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">unsigned</span> <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)</span><br><span class="line">        my_points.push_back(MyPoint(points[i], <span class="literal">true</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">unsigned</span> <span class="keyword">int</span> p = <span class="number">0</span>; p &lt; size; p++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">unsigned</span> <span class="keyword">int</span> q = p+<span class="number">1</span> ; q &lt; size; q++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">unsigned</span> <span class="keyword">int</span> r = q+<span class="number">1</span>; r &lt; size; r++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">unsigned</span> <span class="keyword">int</span> k = <span class="number">0</span>; k &lt; size; k++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span> (k == p || k == q || k == r || !my_points[k].isExtreme) </span><br><span class="line">                        <span class="keyword">continue</span>;</span><br><span class="line">                    <span class="keyword">if</span> (in_triangle(my_points[k].point, my_points[p].point, my_points[q].point, my_points[r].point))</span><br><span class="line">                        my_points[k].isExtreme = <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">unsigned</span> <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(my_points[i].isExtreme)</span><br><span class="line">            extreme_points.push_back(my_points[i].point);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//sort the extrme_points</span></span><br><span class="line">    sort(extreme_points.begin(), extreme_points.end(), compare);</span><br><span class="line">    leftest_and_lowest = extreme_points[<span class="number">0</span>];</span><br><span class="line">    <span class="comment">//sort the extrme_points by left_and_lowest polar</span></span><br><span class="line">    sort(extreme_points.begin()+<span class="number">1</span>, extreme_points.end(), compareByAngle);</span><br><span class="line">    <span class="keyword">return</span> extreme_points;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这是一个O(n<sup>4</sup>)的算法，找出所有极点之后，还得用O(nlgn)排一下序将所有的极点连接起来(可以按照极点与最左下角的点和沿水平X轴的夹角排序)。</p>
+<p>稍微有些改进的方法是找出所有的极边(构成凸包的多边形的每一条边都是极边)，可以这么来计算极边，除了极边两个点外，其他的点都在这个边的同一侧。如下算法：</p>
+<figure class="highlight pascal"><table><tr><td class="code"><pre><span class="line">let EE = null</span><br><span class="line"><span class="keyword">for</span> each directed segment pq</span><br><span class="line"><span class="keyword">if</span> points <span class="keyword">in</span> P\<span class="comment">&#123;p,q&#125;</span> lie <span class="keyword">to</span> the SAME side <span class="keyword">of</span> pq <span class="keyword">then</span> let EE = EE+<span class="comment">&#123;pq&#125;</span></span><br></pre></td></tr></table></figure>
+<p>找出所有的极边需要<a name="OLE_LINK1"></a>O(n<sup>3</sup>)，然后再连接起来，整个算法复杂度为O(n<sup>3</sup>).</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//O(n^3)</span></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;CP_Vector2D&gt; <span class="title">cal_extreme_edges</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;ExtremeEdge&gt; edgs;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> size = points.size();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">unsigned</span> <span class="keyword">int</span> p = <span class="number">0</span>; p &lt; size; p++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">unsigned</span> <span class="keyword">int</span> q = p+<span class="number">1</span> ; q &lt; size; q++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">bool</span> all_left = <span class="literal">true</span>, all_right = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">unsigned</span> <span class="keyword">int</span> k = <span class="number">0</span>; k &lt; size; k++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (k == p || k == q || p == q)</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span>(to_left(points[k], points[p], points[q]))</span><br><span class="line">                    all_left = <span class="literal">false</span>;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    all_right = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//let the direction be all the same</span></span><br><span class="line">            <span class="keyword">if</span> (all_left)</span><br><span class="line">                edgs.push_back(ExtremeEdge(points[p], points[q]));</span><br><span class="line">            <span class="keyword">if</span> (all_right)</span><br><span class="line">                edgs.push_back(ExtremeEdge(points[q], points[p]));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">vector</span>&lt;CP_Vector2D&gt; convexPoints;</span><br><span class="line"></span><br><span class="line">    <span class="comment">////O(n^2), should better sort the edges by angle.</span></span><br><span class="line">    <span class="comment">//convexPoints.push_back(edgs[0].end);</span></span><br><span class="line">    <span class="comment">//while(convexPoints.size() != edgs.size())</span></span><br><span class="line">    <span class="comment">//&#123;</span></span><br><span class="line">    <span class="comment">//    for (unsigned int i = 0; i &lt; edgs.size(); i++)</span></span><br><span class="line">    <span class="comment">//    &#123;</span></span><br><span class="line">    <span class="comment">//        if (convexPoints[convexPoints.size() - 1] == edgs[i].start)</span></span><br><span class="line">    <span class="comment">//            convexPoints.push_back(edgs[i].end);</span></span><br><span class="line">    <span class="comment">//    &#125;</span></span><br><span class="line">    <span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//O(nlogn)</span></span><br><span class="line">    sort(edgs.begin(), edgs.end(), compareEdgeByAngle);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">unsigned</span> <span class="keyword">int</span> i=<span class="number">0</span>; i &lt; edgs.size(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        convexPoints.push_back(edgs[i].start);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> convexPoints;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>再说一下<span style="font-size: 10pt;">Gift Wrapping算法</span>，算法思路如下：因为所有的极边都通过端点连接而成围成一个圈，一旦找到第一条极边，可以通过利用O(n)搜索剩下的点构成接下来的极边，圈围成后，凸包即计算出来。整个算法复杂度O(n<sup>2</sup>)。其中第一个点可以通过O(n)的时间找到最左下角的点。就像其名字一样，整个算法就像在包装gift。</p>
+<figure class="highlight pascal"><table><tr><td class="code"><pre><span class="line">find an arbitrary EP, denoted <span class="keyword">as</span> p0</span><br><span class="line">let i = <span class="number">0</span></span><br><span class="line"><span class="keyword">repeat</span></span><br><span class="line"> find the EE pipi+<span class="number">1</span></span><br><span class="line"> i++</span><br><span class="line"><span class="keyword">until</span> pi = p0</span><br></pre></td></tr></table></figure>
+<p>分析下GiftWrapping算法，每条极边的确定需要O(N)的时间，算法所耗费的时间依赖与极边的数量，因此GiftWrapping算法在最坏的情况下需要O(n<sup>2</sup>)，最好的情况下仅仅需要O(N)，更确切地讲，需要O(n*h)，h是凸包包含的点数量，这个算法是一个output sensitive的算法。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//O(n^2),in fact O(n*h),h = convex hull.size, output sensitive</span></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;CP_Vector2D&gt; <span class="title">giftwraping</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ltl = <span class="number">0</span>;<span class="comment">//find the lowest-and-leftmost point</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">unsigned</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt; points.size(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(points[i].m_y &lt; points[ltl].m_y || </span><br><span class="line">           (points[i].m_y == points[ltl].m_y &amp;&amp; points[i].m_x &lt; points[ltl].m_x))</span><br><span class="line">           ltl = i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">vector</span>&lt;CP_Vector2D&gt; convexPoints;</span><br><span class="line">    convexPoints.push_back(points[ltl]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> p = ltl; ;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> q = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">unsigned</span> <span class="keyword">int</span> k = <span class="number">0</span>; k &lt; points.size(); k++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>( (k != p) &amp;&amp;  (q &lt; <span class="number">0</span> || !to_left(points[k], points[p], points[q])))</span><br><span class="line">                q = k;<span class="comment">//update q if k lies in right of pq</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(ltl == q)</span><br><span class="line">            <span class="keyword">break</span>;<span class="comment">// has find out the convex hull circle</span></span><br><span class="line">        <span class="comment">//find q</span></span><br><span class="line">        convexPoints.push_back(points[q]);</span><br><span class="line">        p = q;</span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">return</span> convexPoints;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>是否能够继续优化下去，将算法复杂度再次提高？或者Convex Hull的解法是否有一个下界?下面的算法就是一个总体复杂度O(nlgn)的算法，已经有人证明，这个是凸包问题的下界。不能再继续优化了。下面就看看著名的O(nlgn)的Graham Scan算法。</p>
+<p><img src="/wp-content/uploads/2013/03/032813_1505_2.png" alt><br><img src="/wp-content/uploads/2013/03/032813_1505_3.png" alt></p>
+<p>算法思路如下：首先仍然是找到最左下角的点，然后按照极角排序，如上图所示，编上号1——n，然后从第三个点开始，依次看该点是否在前两个点构成的直线的左边(3是否在有向线段12的左边,4是否在有向线段23的左边，依次类推),上例中，到第5个点时，发现5不在34的左边，则回退一个，连接35，到第6个点时，发现6也不在前两个点35(此时4已经被排除)构成的有向线段的左边,再回退，看6仍然不在23的左边，继续回退，直到发现6在12的左边，此时连接26……就按照这样走下去，完成了整个凸包的构成。从具体实现上可以用两个栈来实现，算法如下所示：</p>
+<figure class="highlight pascal"><table><tr><td class="code"><pre><span class="line">find the LTL point p1</span><br><span class="line">sort all points w.r.t. p1 by polar angle: <span class="comment">&#123;p2, p3, ..., pn&#125;</span></span><br><span class="line">create stack S; S.push(p1) <span class="keyword">and</span> S.push(p2)</span><br><span class="line">create stack T; <span class="keyword">for</span> i = n down <span class="keyword">to</span> <span class="number">3</span> <span class="keyword">do</span> T.push(pi)</span><br><span class="line"><span class="keyword">while</span> (!T.empty()) <span class="keyword">do</span></span><br><span class="line">   <span class="keyword">while</span> (!toLeft(S[<span class="number">1</span>], S[<span class="number">0</span>], T[<span class="number">0</span>])) <span class="keyword">do</span></span><br><span class="line">        S.pop() </span><br><span class="line">   S.push(T.pop())</span><br></pre></td></tr></table></figure>
+<p>最后S中的点就是凸包上的极点，并且是有序的。注意上述算法中，每一个从S中pop出来的点都不是极点，因为会被其他三角形包围住。而所有的点都会在p1和p2的左边。这个代码用stl的stack有些别扭啊。因为stack不能直接查看栈顶的第二个元素&#8230;.不要紧，意思意思即可。:)</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//O(nlgn)</span></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;CP_Vector2D&gt; <span class="title">graham_scan</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ltl = <span class="number">0</span>;<span class="comment">//find the lowest-and-leftmost point</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">unsigned</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt; points.size(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(points[i].m_y &lt; points[ltl].m_y || </span><br><span class="line">            (points[i].m_y == points[ltl].m_y &amp;&amp; points[i].m_x &lt; points[ltl].m_x))</span><br><span class="line">            ltl = i;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    leftest_and_lowest = points[ltl];</span><br><span class="line">    <span class="comment">//compareByAngle should use the ltl point</span></span><br><span class="line">    sort(points.begin(), points.end(), compareByAngle);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">vector</span>&lt;CP_Vector2D&gt; convexPoints;</span><br><span class="line">    <span class="built_in">stack</span>&lt;CP_Vector2D&gt; S, T;</span><br><span class="line">    S.push(points[<span class="number">0</span>]);S.push(points[<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = points.size()<span class="number">-1</span>; i &gt;= <span class="number">2</span>;i--)</span><br><span class="line">    &#123;</span><br><span class="line">        T.push(points[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    CP_Vector2D s0, s1;</span><br><span class="line">    <span class="keyword">while</span> (!T.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        s0 = S.top();</span><br><span class="line">        S.pop();<span class="comment">//s0 is gone</span></span><br><span class="line">        <span class="keyword">if</span>(S.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            S.push(T.top());</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        s1 = S.top();<span class="comment">//get s1</span></span><br><span class="line">        S.push(s0);</span><br><span class="line">        <span class="keyword">while</span> (!to_left(T.top(), s1, s0))</span><br><span class="line">        &#123; </span><br><span class="line">            S.pop(); </span><br><span class="line">            s0 = S.top();</span><br><span class="line">            S.pop();<span class="comment">//s0 is gone</span></span><br><span class="line">            s1 = S.top();<span class="comment">//get s1</span></span><br><span class="line">            S.push(s0);</span><br><span class="line">        &#125;</span><br><span class="line">        S.push(T.top());</span><br><span class="line">        T.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> size = S.size();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        convexPoints.push_back(S.top());</span><br><span class="line">        S.pop();<span class="comment">//size is change, cannot use i &lt; S.size()</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> convexPoints;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>来分析下这个算法的复杂度。刚开始用O(N)的时间找p1，然后排序O(nlgn),最复杂的就是这个Scan，表面上看有两层while循环，仔细分析发现：toleft测试的数量=T.pop+s.push =O(N),而每一次toleft测试，总有一个点会从S或者T中pop出来，每个点从S中push进去一次且最多被pop出来一次。因此，整个while循环那里实际只耗费了O(N)。所以整个算法复杂度就是O(nlgn)。</p>
+<p>最后自己实现了下以上几个算法，用MFC+OPENGL如图。注意实现时细节的处理，比如按照极角排序等，若考虑算法鲁棒性，得处理多点共线、重点等情况(本文未考虑)。</p>
+<p><img src="/wp-content/uploads/2013/03/032813_1505_4.png" alt></p>
+<p>参考资料：<a href="http://www.csai.tsinghua.edu.cn/iar/members/dengjunhui_en.htm" target="_blank" rel="noopener">邓俊辉</a> 《计算几何》</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/计算几何/" rel="tag"># 计算几何</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/life-of-march-in-2013.html" rel="next" title="近况——学习,生活,工作">
+                <i class="fa fa-chevron-left"></i> 近况——学习,生活,工作
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/change-ubuntuserver-to-support-wordpress.html" rel="prev" title="换主机风波-ubuntu配置Wordpress">
+                换主机风波-ubuntu配置Wordpress <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/convex-hull-of-points.html';
+
+      var disqus_title = "点集的凸包问题";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

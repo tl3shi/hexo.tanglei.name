@@ -1,0 +1,875 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="MyLife,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="有一次参加面试，面试官问我：“会玩牌吧？”  内心：“咋滴，这是要玩德州扑克（或者炸金花），赢了他就能通过面试么？” 结果…… 没想到面试官的下一句话：“给我讲讲洗牌算法以及它的应用场景吧！”  背景本文产生背景是看到了 一枝花算不算浪漫 同学的这篇 Eureka注册中心集群如何实现客户端请求负载及故障转移？文章想到的。其实本人觉得那篇文中提到的负责均衡的重点就是本文要说的洗牌算法。 好了，回到题">
+<meta name="keywords" content="MyLife">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试官：会玩牌吧？给我讲讲洗牌算法和应用场景吧！">
+<meta property="og:url" content="https://www.tanglei.name/blog/shuffle-algorithm.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="有一次参加面试，面试官问我：“会玩牌吧？”  内心：“咋滴，这是要玩德州扑克（或者炸金花），赢了他就能通过面试么？” 结果…… 没想到面试官的下一句话：“给我讲讲洗牌算法以及它的应用场景吧！”  背景本文产生背景是看到了 一枝花算不算浪漫 同学的这篇 Eureka注册中心集群如何实现客户端请求负载及故障转移？文章想到的。其实本人觉得那篇文中提到的负责均衡的重点就是本文要说的洗牌算法。 好了，回到题">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://static01.imgkr.com/temp/3dd28e16a9ae45858913c98be35c4d76.png">
+<meta property="og:image" content="https://static01.imgkr.com/temp/225551c21c1f4437a9deb17aeda15177.png">
+<meta property="og:image" content="https://static01.imgkr.com/temp/dd508c001bef4c9e9cc6a88802983ec0.png">
+<meta property="og:image" content="https://static01.imgkr.com/temp/609655ff110e4ca5a6164e777cfdbaa6.gif">
+<meta property="og:image" content="https://static01.imgkr.com/temp/5dae931b74434a6282a7f98451dd6158.png">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/59a89bd0-0e53-4bba-b60f-7ab063685f1b.png">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/40f415b6-7074-4f11-a1cb-bc0407397a97.png">
+<meta property="og:image" content="https://static01.imgkr.com/temp/af18db05cc254e0bb50d0917eae1ba78.png">
+<meta property="og:image" content="https://static01.imgkr.com/temp/1b20066375134f39a913fcfba34690bd.png">
+<meta property="og:image" content="https://static01.imgkr.com/temp/243222ae15844d16bdc6ac3d7bd6d037.png">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.992Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试官：会玩牌吧？给我讲讲洗牌算法和应用场景吧！">
+<meta name="twitter:description" content="有一次参加面试，面试官问我：“会玩牌吧？”  内心：“咋滴，这是要玩德州扑克（或者炸金花），赢了他就能通过面试么？” 结果…… 没想到面试官的下一句话：“给我讲讲洗牌算法以及它的应用场景吧！”  背景本文产生背景是看到了 一枝花算不算浪漫 同学的这篇 Eureka注册中心集群如何实现客户端请求负载及故障转移？文章想到的。其实本人觉得那篇文中提到的负责均衡的重点就是本文要说的洗牌算法。 好了，回到题">
+<meta name="twitter:image" content="https://static01.imgkr.com/temp/3dd28e16a9ae45858913c98be35c4d76.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/shuffle-algorithm.html">
+
+
+
+
+
+  <title> 面试官：会玩牌吧？给我讲讲洗牌算法和应用场景吧！ | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/shuffle-algorithm.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                面试官：会玩牌吧？给我讲讲洗牌算法和应用场景吧！
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-18T00:00:00+00:00">
+                2020-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MyLife/" itemprop="url" rel="index">
+                    <span itemprop="name">MyLife</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/shuffle-algorithm.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/shuffle-algorithm.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>有一次参加面试，面试官问我：“会玩牌吧？”</p>
+<p><img src="https://static01.imgkr.com/temp/3dd28e16a9ae45858913c98be35c4d76.png" alt></p>
+<p>内心：“咋滴，这是要玩德州扑克（或者炸金花），赢了他就能通过面试么？”</p>
+<p>结果……</p>
+<p>没想到面试官的下一句话：“给我讲讲洗牌算法以及它的应用场景吧！”</p>
+<p><img src="https://static01.imgkr.com/temp/225551c21c1f4437a9deb17aeda15177.png" alt="哈哈，以上内容纯属虚构"></p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>本文产生背景是看到了 <code>一枝花算不算浪漫</code> 同学的这篇 <a href="https://mp.weixin.qq.com/s/bSIKnw5446Ocb63Covk2Fw" target="_blank" rel="noopener">Eureka注册中心集群如何实现客户端请求负载及故障转移？</a>文章想到的。其实本人觉得那篇文中提到的负责均衡的重点就是本文要说的洗牌算法。</p>
+<p>好了，回到题目上来。</p>
+<p>这确实也是一道面试题，我曾经多次面试中都有遇到这个题目或者这个题目的变种。</p>
+<p>你不妨花 1 秒，想想？</p>
+<p><img src="https://static01.imgkr.com/temp/dd508c001bef4c9e9cc6a88802983ec0.png" alt></p>
+<h2 id="什么是洗牌算法"><a href="#什么是洗牌算法" class="headerlink" title="什么是洗牌算法"></a>什么是洗牌算法</h2><p>从名字上来看，就是给你一副牌让你洗呗，用怎样的方法才能洗得均匀呢？<br>请大佬表演一下。</p>
+<p><img src="https://static01.imgkr.com/temp/609655ff110e4ca5a6164e777cfdbaa6.gif" alt="不好意思，翻车了"></p>
+<p>其实洗牌算法就是一种随机算法，你在斗地主的时候，随机把牌的顺序打乱就行。一个足够好的洗牌算法最终结果应该是可以让牌的顺序足够随机。好像有点绕~</p>
+<p>这么来说吧，一副牌大家斗地主的话用 54 张（不考虑你们打配配牌的情形哈），那么这 54 张牌的顺序的话，按照排列组合算法，应该是有 <code>54!</code> 这么多种，然后你的洗牌算法就是从这 <code>54!</code> 种排列中，随机选 1 种。</p>
+<p><img src="https://static01.imgkr.com/temp/5dae931b74434a6282a7f98451dd6158.png" alt></p>
+<p>无聊的石头算了一下，54 的阶乘有多大呢？大概就是这么大一长串数字，<code>2308436973392413804720927448683027581083278564571807941132288000000000000L</code>，准确答案看下图：</p>
+<p><img src="https://imgkr.cn-bj.ufileos.com/59a89bd0-0e53-4bba-b60f-7ab063685f1b.png" alt="54的阶乘计算结果"></p>
+<p>我们还是以 4 张牌作为例子吧。</p>
+<p>4 张牌，<code>JQKA</code>，所有的排列有 <code>4!=4*3*2*1=24</code> 种，分别如下： </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(&apos;J&apos;, &apos;Q&apos;, &apos;K&apos;, &apos;A&apos;)</span><br><span class="line">(&apos;J&apos;, &apos;Q&apos;, &apos;A&apos;, &apos;K&apos;)</span><br><span class="line">(&apos;J&apos;, &apos;K&apos;, &apos;Q&apos;, &apos;A&apos;)</span><br><span class="line">(&apos;J&apos;, &apos;K&apos;, &apos;A&apos;, &apos;Q&apos;)</span><br><span class="line">(&apos;J&apos;, &apos;A&apos;, &apos;Q&apos;, &apos;K&apos;)</span><br><span class="line">(&apos;J&apos;, &apos;A&apos;, &apos;K&apos;, &apos;Q&apos;)</span><br><span class="line">(&apos;Q&apos;, &apos;J&apos;, &apos;K&apos;, &apos;A&apos;)</span><br><span class="line">(&apos;Q&apos;, &apos;J&apos;, &apos;A&apos;, &apos;K&apos;)</span><br><span class="line">(&apos;Q&apos;, &apos;K&apos;, &apos;J&apos;, &apos;A&apos;)</span><br><span class="line">(&apos;Q&apos;, &apos;K&apos;, &apos;A&apos;, &apos;J&apos;)</span><br><span class="line">(&apos;Q&apos;, &apos;A&apos;, &apos;J&apos;, &apos;K&apos;)</span><br><span class="line">(&apos;Q&apos;, &apos;A&apos;, &apos;K&apos;, &apos;J&apos;)</span><br><span class="line">(&apos;K&apos;, &apos;J&apos;, &apos;Q&apos;, &apos;A&apos;)</span><br><span class="line">(&apos;K&apos;, &apos;J&apos;, &apos;A&apos;, &apos;Q&apos;)</span><br><span class="line">(&apos;K&apos;, &apos;Q&apos;, &apos;J&apos;, &apos;A&apos;)</span><br><span class="line">(&apos;K&apos;, &apos;Q&apos;, &apos;A&apos;, &apos;J&apos;)</span><br><span class="line">(&apos;K&apos;, &apos;A&apos;, &apos;J&apos;, &apos;Q&apos;)</span><br><span class="line">(&apos;K&apos;, &apos;A&apos;, &apos;Q&apos;, &apos;J&apos;)</span><br><span class="line">(&apos;A&apos;, &apos;J&apos;, &apos;Q&apos;, &apos;K&apos;)</span><br><span class="line">(&apos;A&apos;, &apos;J&apos;, &apos;K&apos;, &apos;Q&apos;)</span><br><span class="line">(&apos;A&apos;, &apos;Q&apos;, &apos;J&apos;, &apos;K&apos;)</span><br><span class="line">(&apos;A&apos;, &apos;Q&apos;, &apos;K&apos;, &apos;J&apos;)</span><br><span class="line">(&apos;A&apos;, &apos;K&apos;, &apos;J&apos;, &apos;Q&apos;)</span><br><span class="line">(&apos;A&apos;, &apos;K&apos;, &apos;Q&apos;, &apos;J&apos;)</span><br></pre></td></tr></table></figure>
+<p>那么，一个均匀的洗牌算法，就是每次洗牌完后，获得上面每种顺序的概率是相等的，都等于<code>1/24</code>。感觉已经出来了一种算法了，那就是先像前文所述把所有的排列情况都枚举出来，分别标上号 1-24 号，然后从 24 中随机取一个数字（先不考虑如何能做到随机取了，这个话题好像也没那么容易），获取其中这个数字对应的号的排列。</p>
+<p>这个算法复杂度是多少？假设为 <code>N</code> 张牌的话，应该就是 <code>1/N!</code>（注意是阶乘，这里可不是感叹号），显然复杂度太高了。</p>
+<p>有没有更好的方法呢？答案当然是肯定的。</p>
+<h2 id="经典的洗牌算法"><a href="#经典的洗牌算法" class="headerlink" title="经典的洗牌算法"></a>经典的洗牌算法</h2><p>洗牌算法实际上是一个很经典的算法，在经典书籍《算法导论》里面很靠前的部分就有讲解和分析。</p>
+<p>我们把这个洗牌过程用更加“程序员”的语言描述一下，就是假设有一个 <code>n</code> 个元素的数组 <code>Array[n]</code>，通过某种方式，随机产生一个另外一个序列<code>Array&#39;[n]</code>让数组的每个元素 <code>Array[i]</code> 在数组中的每个位置出现的概率都是<code>1/n</code>。</p>
+<p>其实方法可以这样，依此从 <code>Array</code> 中随机选择 1 个，依此放到 <code>Array&#39;</code> 中即可。<br>证明一下：</p>
+<ul>
+<li><code>Array[0]</code>，在新数组的第 0 个位置处的概率为：<code>1/n</code>，因为随机选，只能是<code>1/n</code>的概率能选中；</li>
+<li><code>Array[1]</code>，在新数组的第 1 个位置处的概率为：<code>1/n</code>，因为 第一次没选中 <code>Array[1]</code>的概率为 <code>n-1/n</code>，再结合第二次（只剩下n-1个了，所以分母为<code>n-1</code>）选中的概率为：<code>1/n-1</code>，因此概率为：$\frac{n-1}{n} * \frac{1}{n-1} = \frac{1}{n}$ 。</li>
+<li>依此类推，可以证明前述问题。</li>
+</ul>
+<p>其实，我们也可以不用另外找个数组来存结果，<code>Array&#39;</code>也可以理解为还是前面的这个 <code>Array</code>，只不过里面元素的顺序变化了。</p>
+<p>这其实可以理解为一个 “排序”（其实是乱序） 过程，算法如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">shuffle</span><span class="params">(List list)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> size = list.size();</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">int</span> j = random(i, n); <span class="comment">// 随机产生 [i, n) 中的一个数，每个概率一致</span></span><br><span class="line">    <span class="comment">// list 中第 i 个元素和 第 j 个元素互换位置 </span></span><br><span class="line">    swap(list[i], list[j]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来是如何证明呢？不能你说随机就随机吧，你说等概率就等概率吧。下面还是跟着石头哥一起来看看如何证明吧（这也是面试中的考察点）。</p>
+<p>我们假设经过排序后，某个元素 <code>Array[x]</code> 恰好排在位置 <code>x</code> 处的概率为 $P_x$，<br>则该元素恰好排在第 <code>x</code> 处的概率是前 <code>x-1</code> 次时都没有被随机到，并且第 <code>x</code> 次时，恰好 <code>random(x, n) = x</code>了。 </p>
+<p>还是在循环中列举几项，更好理解一些（写完，才发现跟前面的解释差不多）：</p>
+<ul>
+<li><code>i = 0</code>, <code>random(0, n)</code> 没有返回 x，共 <code>n</code> 个数，肯定返回了其他 <code>n-1</code> 个中的一个，因此概率为 $\frac{n-1}{n}$</li>
+<li><code>i = 1</code>, <code>ramdom(1, n)</code> 没有返回 x，共 <code>n - 1</code> 个数，肯定返回了其他 <code>n-2</code> 个中的一个，即该为 $\frac{n-2}{n-1}$</li>
+<li>依此类推……</li>
+<li><code>i = x-1</code>, <code>random(x-1, n)</code> 没有返回 x，共 <code>n - (x-1)</code> 个数，肯定返回了其他<code>n-(x-1)-1</code> 个中的一个，即为 $\frac{n-(x-1)-1}{n - (x-1)}=\frac{n-x}{n - x+1}$</li>
+<li><code>i = x</code>，<code>random(x, n)</code> 恰好返回了 x，共 <code>n-x</code> 个数，概率为 $\frac{1}{n-x}$</li>
+</ul>
+<p>$p_x = \frac{n-1}{n} <em> \frac{n-2}{n-1} </em>…<em> \frac{n-x}{n - x+1}</em> \frac{1}{n-x} = \frac{1}{n}$</p>
+<p>因此，到这算是简单证明了任何元素出现在任何位置的概率是相等的。</p>
+<p>注意说明一下，这是理论上的值，概率类的问题在量不大的情况下​很有可能有随机性的。就像翻硬币​，正反面理论上的值都是一半一半的，但你不能说一定是正反面按照次序轮着来。​</p>
+<h2 id="看看-JDK-中的实现"><a href="#看看-JDK-中的实现" class="headerlink" title="看看 JDK 中的实现"></a>看看 JDK 中的实现</h2><p>我们还是来看看 JDK 中的实现。JDK 中 <code>Collections</code> 中有如下的实现方法 <code>shuffle</code>：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">shuffle</span><span class="params">(List&lt;?&gt; list, Random rnd)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> size = list.size();</span><br><span class="line">    <span class="comment">// 石头备注：本机特定版本中的常量 SHUFFLE_THRESHOLD=5</span></span><br><span class="line">    <span class="keyword">if</span> (size &lt; SHUFFLE_THRESHOLD || list <span class="keyword">instanceof</span> RandomAccess) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=size; i&gt;<span class="number">1</span>; i--)</span><br><span class="line">            swap(list, i-<span class="number">1</span>, rnd.nextInt(i));</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        Object arr[] = list.toArray();</span><br><span class="line">        <span class="comment">// Shuffle array</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=size; i&gt;<span class="number">1</span>; i--)</span><br><span class="line">            swap(arr, i-<span class="number">1</span>, rnd.nextInt(i));</span><br><span class="line">        ListIterator it = list.listIterator();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;arr.length; i++) &#123;</span><br><span class="line">            it.next();</span><br><span class="line">            it.set(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>基本上能看懂大概，不过是不是看看源码还是能获得新技能的。</p>
+<p>上面条件分支大概分两类：</p>
+<ul>
+<li>如果是数组类型，就是可以 <code>O(1)</code>随机访问的List；或者传入的 list 小于 <code>SHUFFLE_THRESHOLD</code>。</li>
+<li>否则的话不能随机访问的链表类型，则花 <code>O(n)</code> 转成数组，再 shuffle，最后又回滚回链表。转成数组的目的很简单，可以快速定位某个下标的元素。</li>
+</ul>
+<p>第一步的这个 <code>SHUFFLE_THRESHOLD</code> 其实就是一个经验调优值，即便假设不能通过快速下标定位某个元素（即需要遍历的方式定位），当输入的 size 比较小的时候，和先花 <code>O(n)</code>转成数组最后又转回成链表 相比，也能有更快的速度。</p>
+<p>另外多说一句，其实这种参数化调优方式在各种语言实现的时候很常见的，比如你去看排序算法的实现中，比如 Java 中 <code>Arrays.sort</code> 就是用的 <code>DualPivotQuicksort</code>（源码在<code>java.util.DualPivotQuicksort</code>中），里面实现逻辑中，当数组大小较小时也是用的其他如 $O(n^2)$ 的插入排序，如下图所示。</p>
+<p><img src="https://imgkr.cn-bj.ufileos.com/40f415b6-7074-4f11-a1cb-bc0407397a97.png" alt></p>
+<h2 id="洗牌算法的应用"><a href="#洗牌算法的应用" class="headerlink" title="洗牌算法的应用"></a>洗牌算法的应用</h2><p><del>肝到 凌晨 2 点了，明天继续写吧….</del></p>
+<p><img src="https://static01.imgkr.com/temp/af18db05cc254e0bb50d0917eae1ba78.png" alt="第二天继续肝"></p>
+<p>回到本篇标题说的应用场景上来，比如开篇提到的 Eureka 注册中心的 Client 就是通过把server 的 IPList 打乱顺序，然后挨个取来实现理论上的均匀的负载均衡。</p>
+<p>代码（在 github: Netflix/eureka 中，公众号就不单独贴出来了）在这里<a href="https://github.com/Netflix/eureka/blob/dad077108c54041a41add075c0e373783a173e2a/eureka-client/src/main/java/com/netflix/discovery/shared/resolver/ResolverUtils.java" target="_blank" rel="noopener"><code>com.netflix.discovery.shared.resolver.ResolverUtils</code></a>。看代码如下，是不是跟前文的算法差不多？（具体写法不一样而已）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T extends EurekaEndpoint&gt; <span class="function">List&lt;T&gt; <span class="title">randomize</span><span class="params">(List&lt;T&gt; list)</span> </span>&#123;</span><br><span class="line">    List&lt;T&gt; randomList = <span class="keyword">new</span> ArrayList&lt;&gt;(list);</span><br><span class="line">    <span class="keyword">if</span> (randomList.size() &lt; <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> randomList;</span><br><span class="line">    &#125;</span><br><span class="line">    Random random = <span class="keyword">new</span> Random(LOCAL_IPV4_ADDRESS.hashCode());</span><br><span class="line">    <span class="keyword">int</span> last = randomList.size() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; last; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> pos = random.nextInt(randomList.size() - i);</span><br><span class="line">        <span class="keyword">if</span> (pos != i) &#123;</span><br><span class="line">            Collections.swap(randomList, i, pos);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> randomList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其实，在任何需要打乱顺序的场景里面都可以用这个算法，举个例子，播放器一般都有随机播放的功能，比如你自己有个歌单 list，但想随机播放里面的歌曲，就也可以用这个方法来实现。</p>
+<p>还有，就比如名字中的“洗牌”，那些棋牌类的游戏，当然会用到名副其实的“洗牌”算法了。其实在各种游戏的随机场景中应该都可以用这个算法的。​</p>
+<h2 id="扩展一下，留道作业题"><a href="#扩展一下，留道作业题" class="headerlink" title="扩展一下，留道作业题"></a>扩展一下，留道作业题</h2><p>跟这个问题类似的，还有一些常见的面试题，本人之前印象中也被问到过（石头特地去翻了翻当年校招等找工作的时候收集和积累的面试题集）。</p>
+<p>以下题目来源于网络，因为是当初准备面试时候收集的，具体来源不详了。​</p>
+<p><img src="https://static01.imgkr.com/temp/1b20066375134f39a913fcfba34690bd.png" alt="动动脑筋，思考一下"></p>
+<h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目 1"></a>题目 1</h3><p>给你一个文本文件，设计一个算法随机从文本文件中抽取一行，要保证每行被抽取到的概率一样。 </p>
+<p>最简单的思路其实就是：先把文件每一行读取出来，假设有 <code>n</code> 行，这个时候随机从 <code>1-n</code>生成一个数，读取对应的行即可。 </p>
+<p>这种方法当然可以解决，咱们加深一下难度，假设文件很大很大很大呢，或者直接要求只能遍历该文件内容一遍，怎么做到呢？</p>
+<h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目 2"></a>题目 2</h3><p>其实题目 1 还可以扩展一下，不是选择 1 行了，是选择 <code>k</code> 行，又应该怎么做呢？</p>
+<p><img src="https://static01.imgkr.com/temp/243222ae15844d16bdc6ac3d7bd6d037.png" alt></p>
+<p>本人才疏学浅，如果有不对的地方，还望大家指出。</p>
+<p>欢迎大家留言讨论文末的两个小问题的解决思路和方法。</p>
+<p>原创真心不易，希望你能帮我个小忙呗，如果本文内容你觉得有所启发，有所收获，请帮忙点个“在看”呗，或者转发分享让更多的小伙伴看到。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MyLife/" rel="tag"># MyLife</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/hash-collision-dos.html" rel="next" title="没想到 Hash 冲突还能这么玩，你的服务中招了吗？">
+                <i class="fa fa-chevron-left"></i> 没想到 Hash 冲突还能这么玩，你的服务中招了吗？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/share-my-interview-experience-when-graduate.html" rel="prev" title="同学，这里有一份校招总结到了 |分享本人校招经历">
+                同学，这里有一份校招总结到了 |分享本人校招经历 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是洗牌算法"><span class="nav-number">2.</span> <span class="nav-text">什么是洗牌算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经典的洗牌算法"><span class="nav-number">3.</span> <span class="nav-text">经典的洗牌算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#看看-JDK-中的实现"><span class="nav-number">4.</span> <span class="nav-text">看看 JDK 中的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#洗牌算法的应用"><span class="nav-number">5.</span> <span class="nav-text">洗牌算法的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展一下，留道作业题"><span class="nav-number">6.</span> <span class="nav-text">扩展一下，留道作业题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目-1"><span class="nav-number">6.1.</span> <span class="nav-text">题目 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目-2"><span class="nav-number">6.2.</span> <span class="nav-text">题目 2</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/shuffle-algorithm.html';
+
+      var disqus_title = "面试官：会玩牌吧？给我讲讲洗牌算法和应用场景吧！";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

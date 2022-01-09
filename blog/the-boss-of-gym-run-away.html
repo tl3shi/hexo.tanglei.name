@@ -1,0 +1,920 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="总结,MyLife,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景大家好，我是石头哥。 最近遇到一件郁闷的事情，那就是，刚办不久的健身卡，老板跑路了！（还是2张年卡！） 损失4000元！ （我这还">
+<meta name="keywords" content="总结,MyLife">
+<meta property="og:type" content="article">
+<meta property="og:title" content="刚办的健身卡，老板跑路了！">
+<meta property="og:url" content="https://www.tanglei.name/blog/the-boss-of-gym-run-away.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景大家好，我是石头哥。 最近遇到一件郁闷的事情，那就是，刚办不久的健身卡，老板跑路了！（还是2张年卡！） 损失4000元！ （我这还">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636218864558-image.png">
+<meta property="og:image" content="https://files.mdnice.com/user/71/c91c7dde-0a8b-4928-8344-d820c8d5b569.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-6/1636212774456-image.png">
+<meta property="og:image" content="https://img.soogif.com/OHXbhM1z0fpTl80iE5sE85wggxMdSRuO.gif?scope=mdnice">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-6/1636210215975-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-6/1636211511121-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636220141128-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-6/1636214093278-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636214447987-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-6/1636214263468-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636214439136-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636215022075-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636215462891-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636215879974-20211107002410.jpg">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636215960338-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636216252412-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636216135384-image.png">
+<meta property="og:updated_time" content="2022-01-09T16:47:23.007Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="刚办的健身卡，老板跑路了！">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景大家好，我是石头哥。 最近遇到一件郁闷的事情，那就是，刚办不久的健身卡，老板跑路了！（还是2张年卡！） 损失4000元！ （我这还">
+<meta name="twitter:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636218864558-image.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/the-boss-of-gym-run-away.html">
+
+
+
+
+
+  <title> 刚办的健身卡，老板跑路了！ | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/the-boss-of-gym-run-away.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                刚办的健身卡，老板跑路了！
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-11-08T00:00:00+00:00">
+                2021-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MyLife/" itemprop="url" rel="index">
+                    <span itemprop="name">MyLife</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/the-boss-of-gym-run-away.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/the-boss-of-gym-run-away.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上<strong>清华</strong>（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点这里查看我的逆袭之路</a>），BAT某厂P7，是前大疆（无人机）技术主管。</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247497789&amp;idx=1&amp;sn=108b03c287543ab809c80e6e1cbc2c40&amp;chksm=eb44f9d9dc3370cfc9ad68e114d79e625dd8886fc9aaa613d06a88b5fa8c378c96937ffb38c7&amp;token=1503745258&amp;lang=zh_CN#rd" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>大家好，我是石头哥。</p>
+<p>最近遇到一件郁闷的事情，那就是，刚办不久的健身卡，老板跑路了！（还是2张年卡！）</p>
+<p>损失4000元！ （我这还算好，有的办了私教的，损失几个达不溜（几W+）的都有！</p>
+<p>目前大批会员已经自发在组织维权（微信群已经 1000+人了），涉案几百万+。</p>
+<p>现如今圈钱跑路事件屡见不鲜，皆因违法成本太低，而起诉有门槛，个体维权成本高，因此很多都选择了放弃。</p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636218864558-image.png" alt="不要沉默，能够拿起法律武器维权"></p>
+<p>当然参与维权也要有心理准备，也许我们最终也不一定能拿到钱，但广大同胞一起努力，肯定还是能引起相关部门的重视。</p>
+<p>在参与维权过程中发现，其实如果在办卡前好好<strong>调查</strong>，应该这次就不会掉坑里了。</p>
+<p>因此形成本文，主要有 3 个目的：</p>
+<ol>
+<li>健身房（会员卡预付费）跑路如何维权？</li>
+<li>类似预付费办卡过程中需要注意什么！</li>
+<li>呼吁大家要用法律武器维护自己的合法权益。</li>
+</ol>
+<h2 id="事发经过"><a href="#事发经过" class="headerlink" title="事发经过"></a>事发经过</h2><p>作为新时代 IT 农民工，自己运动本来就较少，想着迫使自己多参与运动，因此想花点钱逼迫下自己。最开始办了另外一个地方的游泳卡，基本使用完毕（没浪费多少）。 </p>
+<p>前不久发现家附近有一健身房也含有游泳池，即去考察了一番。办卡原因：</p>
+<ol>
+<li>发现该健身房已经开业很久了（2年有余），应该不会跑路。（<strong>错了</strong>！）</li>
+<li>健身房，还是个连锁店，北京有 3 家呢。（<strong>连锁店一样跑路啊！</strong>）</li>
+<li>砍价到 2000/年，还赠送几个月，如果平均1周去一次，计算下来单次价格比之前的便宜。（再次错了！）</li>
+<li>再加上，这健身房除了游泳外，还有其他器械等，之前差不多价格的还只有游泳。</li>
+</ol>
+<p>基于此，便办了 2 张年卡。</p>
+<p><img src="https://files.mdnice.com/user/71/c91c7dde-0a8b-4928-8344-d820c8d5b569.png" alt></p>
+<p>因为最近疫情，去游泳前都打电话咨询是否开放。10月下旬周末打电话，被前台告知，游泳池装修，暂不能游泳。</p>
+<p>隔了一两周，准备再去，打电话仍然被告知“装修，游泳池暂未开放”。 （其实，此时已经跑路迹象了）。 </p>
+<p>我还真信了，电话要求年卡使用期限延长！</p>
+<p>然后，就在第二天，邻居群里就在转发，健身房老板要跑路了！</p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-6/1636212774456-image.png" alt="微信群转发跑路通知"></p>
+<p>后来健身房贴了公告，说自己是受害者？？要甩锅给物业？</p>
+<p><img src="https://img.soogif.com/OHXbhM1z0fpTl80iE5sE85wggxMdSRuO.gif?scope=mdnice" alt></p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-6/1636210215975-image.png" alt="甩锅给物业"></p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-6/1636211511121-image.png" alt="也是受害者？？"></p>
+<p>然后，我问了问卖我卡的销售，结果销售两三个月前已经离职了，原因是工资发的不及时。</p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636220141128-image.png" alt="售卡销售早已离职"></p>
+<p>当然，也还有教练继续“装作”不知道，继续忽悠的（后有会员反馈，此教练大有问题）。</p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-6/1636214093278-image.png" alt="教练继续忽悠"></p>
+<p>我还好心提醒他，注意别被老板忽悠，拖欠工资。</p>
+<p>后面真有员工拖欠工资被劳动仲裁的。</p>
+<h2 id="企业多次违规，"><a href="#企业多次违规，" class="headerlink" title="企业多次违规，"></a>企业多次违规，</h2><p>这个时候，临跑路了，大家就“各显神通”了，知道查企业相关信息了。</p>
+<p><strong>其实，如果在办卡之前查，是不是就不会掉坑了呢？</strong></p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636214447987-image.png" alt="企业状态-失信被执行人"></p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-6/1636214263468-image.png" alt="企业状态-风险"></p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636214439136-image.png" alt="拖欠员工工资被法院判强制执行"></p>
+<p>看 2021 年 4 月就被劳动仲裁，要求给员工支付 9900 工资。结果公司一个没钱？能有啥用？</p>
+<p>老板是老老赖了啊~ 员工工资都不发，被法院判决也一样。</p>
+<p><strong>再次提醒</strong>，如果早点进行“背调”，恐怕，你也不敢在这样的公司办理健身卡吧？</p>
+<blockquote>
+<p>各位，划重点啊，下次办卡前，先“背调”清楚。</p>
+</blockquote>
+<p>后悔没用了，现在就是看看如何维权吧？尽管看下来，好像追回钱的可能并不大。</p>
+<h2 id="老板跑路，如何维权？"><a href="#老板跑路，如何维权？" class="headerlink" title="老板跑路，如何维权？"></a>老板跑路，如何维权？</h2><p>进了维权群，有志愿者就提出了各种维权方案。12345 投诉啊，网上立案流程啊等。</p>
+<ol>
+<li>可以向税务局投诉（比如当时不开发票，偷税漏税等）</li>
+<li>12345 政务服务便民热线，使劲打，说述求</li>
+<li>报警，让警察出面，如果涉嫌诈骗就更容易立案了</li>
+<li>微法院，等网上立案</li>
+<li>线下法院窗口办理（准备好相应证件）</li>
+</ol>
+<p>刚开始都是离线的 pdf 在传播，我见不方便更改和维护，因此搞了个在线文档，感兴趣的朋友，在公众号后台回复 “健身房维权”，查看详细文档，后续也将一直更新维护进展，会将一些维权的经验更新到文档。</p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636215022075-image.png" alt></p>
+<p>北京有一个法院电子诉讼平台，可直接进行网上立案。在平台提交立案申请，立案法官经审核通过后，直接予以登记立案的工作机制。</p>
+<p>可实现当事人或代理人足不出户就可以办理立案手续。</p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636215462891-image.png" alt="北京法院电子诉讼平台"></p>
+<p>因合同纠纷提起的诉讼，由被告住所地或者合同履行地人民法院管辖。即看合同落款处公司所盖的公章是属于哪个区的，就去哪个所属的区法院提交。</p>
+<p>不少城市应该都有这个网上立案平台。</p>
+<p>立案申请，被告和证据很重要。如果你办卡时，啥也木有，就很困难啊。因此，重点来了，相关消费时，注意留存消费凭证，最好开具发票，对方公开的营业执照等信息也留一份。</p>
+<blockquote>
+<p>划重点：留存消费凭证，开具发票等。</p>
+</blockquote>
+<p> <img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636215879974-20211107002410.jpg" alt="营业执照"></p>
+<p>当然，营业执照信息等也可以通过公司名字在国家企业信息信用系统中查询到。</p>
+<p>但可能你连背后的公司名字都不知道呢？再次体现<strong>开具发票</strong>的重要性。</p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636215960338-image.png" alt="国家企业信息信用公示系统"></p>
+<p>被告信息有了后，就得提交起诉书：</p>
+<ul>
+<li>诉讼请求：希望法官判什么，如“请求判定被告退还费用 4000 元”。</li>
+<li>事实与理由：该处需要让法官清晰的理解发生了什么。需要写清楚，你什么时候去健身房、交了多少钱，办的什么卡，什么时候开卡，有效期到什么时候，健身房基于什么原因，什么时候停止运营等基础事实，尽量简洁陈述。</li>
+</ul>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636216252412-image.png" alt="提交起诉书"></p>
+<p>然后，就是相关的证据了。 </p>
+<p><strong>准备证据</strong></p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636216135384-image.png" alt="相关证据说明"></p>
+<p>例如，办卡的签订的合同、付款凭证（微信转账、支付宝转账截图），相关收据（最好有发票），各种证明办理的会员服务未消费完毕（例如小程序显示的我们的卡的种类、有效期等），停止营业公告等。</p>
+<p>提交后，就等审批流程吧。</p>
+<p>现如今圈钱跑路事件屡见不鲜，皆因违法成本太低，而起诉有门槛，个体维权成本高，因此很多都选择了放弃。</p>
+<p>不过，也要有心理准备，也许我们最终也不一定能拿到钱（毕竟老赖，连工资都不付），但广大同胞一起努力，肯定还是能引起相关部门的重视。</p>
+<p><strong>小结一下</strong></p>
+<p>一定要有相关证据：有效合同 + 开具的收据或发票。 </p>
+<h2 id="办卡前要做啥？"><a href="#办卡前要做啥？" class="headerlink" title="办卡前要做啥？"></a>办卡前要做啥？</h2><p><strong>谨慎办卡，防被割韭菜</strong></p>
+<p>其实，就应该向我一个前同事 老W 学习，他拒绝办理一切预付费卡，连家门口理发店 100 块的都不办，宁愿单次付费，“不差钱”。</p>
+<p>真正办卡前，做足背调工作，比如：</p>
+<ul>
+<li>刚装修甚至毛坯的健身房就销售预售卡。（能不能撑到开业都说不清楚呢）</li>
+<li>办卡前，用天眼查、企查查等系统查下对应公司和法定代表人，看看有没有啥风险提示。有相关风险的一律不办（比如如果石头在办卡前有查的话，肯定就不办了）</li>
+<li>办卡时，一定要开发票，保留合同等相关证据。（现在手机方便，勤拍照）</li>
+</ul>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>也许这次维权最终并不能拿到什么好结果，但体验一下这个流程也不错，以后办点什么事情就能“长点心”了。</p>
+<p>希望广大朋友若遇到类似事情的时候，不要沉默，能够拿起法律武器维护自己的合法权益。</p>
+<p>现如今圈钱跑路事件屡见不鲜，皆因违法成本太低，个体维权成本高，因此放弃。若每个人都选择放弃，<code>那被割的韭菜只会越来越多</code>。</p>
+<p>推荐阅读文章：</p>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247493855&amp;idx=1&amp;sn=55c507ac2a459c4fd9ce69ca2ef9e0e8&amp;chksm=eb44e93bdc33602db26a4737f60dce11d5656fe682420a05362d806adb58d0a050da02087d6d&amp;token=503311523&amp;lang=zh_CN#rd" target="_blank" rel="noopener">辛苦搬砖挣的钱，被骗了！</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247493052&amp;idx=1&amp;sn=577948f73e728f1059788190f14fa511&amp;chksm=eb44e458dc336d4ec960ba352fd6bc4f93ef217e6f89d1e568a0b00833dc6a7ba6f3ed679b4c&amp;token=1336735893&amp;lang=zh_CN&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">被拉进一个刷单群，赚了75元 | 就真的只是刷单吗？</a></li>
+</ul>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点击这里查看我的逆袭之路</a>），目前在BAT某厂打工，是前大疆（无人机）技术主管。</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/总结/" rel="tag"># 总结</a>
+          
+            <a href="/tags/MyLife/" rel="tag"># MyLife</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/this-disk-is-full-again-and-again.html" rel="next" title="磁盘又双叒叕满了~">
+                <i class="fa fa-chevron-left"></i> 磁盘又双叒叕满了~
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/talk-about-the-welfare-of-alibaba.html" rel="prev" title="聊聊阿里巴巴的福利">
+                聊聊阿里巴巴的福利 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事发经过"><span class="nav-number">2.</span> <span class="nav-text">事发经过</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#企业多次违规，"><span class="nav-number">3.</span> <span class="nav-text">企业多次违规，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#老板跑路，如何维权？"><span class="nav-number">4.</span> <span class="nav-text">老板跑路，如何维权？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#办卡前要做啥？"><span class="nav-number">5.</span> <span class="nav-text">办卡前要做啥？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">6.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/the-boss-of-gym-run-away.html';
+
+      var disqus_title = "刚办的健身卡，老板跑路了！";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

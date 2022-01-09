@@ -1,0 +1,807 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="软考,数据库,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="1.9**数据仓库与分布式数据库** 数据仓库： 随着计算机技术的飞速发展和企业界不断提出新的需求，数据仓库技术应运而生。传统的数据库技术是单一的数据资源，即数据库为中心，进行从事事务处理、批处理到决策分析等各种类型的数据处理工作。近年来，随着计算机应用，,网络计算，开始向两个不同的方向拓展，一是广度计算，一是深度计算，广度计算的含义是把计算机的应用范围尽量扩大，同时实现广泛的数据交流，互联网就是">
+<meta name="keywords" content="软考,数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软考：数据库知识(六)">
+<meta property="og:url" content="https://www.tanglei.name/blog/ruankao_database6.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="1.9**数据仓库与分布式数据库** 数据仓库： 随着计算机技术的飞速发展和企业界不断提出新的需求，数据仓库技术应运而生。传统的数据库技术是单一的数据资源，即数据库为中心，进行从事事务处理、批处理到决策分析等各种类型的数据处理工作。近年来，随着计算机应用，,网络计算，开始向两个不同的方向拓展，一是广度计算，一是深度计算，广度计算的含义是把计算机的应用范围尽量扩大，同时实现广泛的数据交流，互联网就是">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.821Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软考：数据库知识(六)">
+<meta name="twitter:description" content="1.9**数据仓库与分布式数据库** 数据仓库： 随着计算机技术的飞速发展和企业界不断提出新的需求，数据仓库技术应运而生。传统的数据库技术是单一的数据资源，即数据库为中心，进行从事事务处理、批处理到决策分析等各种类型的数据处理工作。近年来，随着计算机应用，,网络计算，开始向两个不同的方向拓展，一是广度计算，一是深度计算，广度计算的含义是把计算机的应用范围尽量扩大，同时实现广泛的数据交流，互联网就是">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/ruankao_database6.html">
+
+
+
+
+
+  <title> 软考：数据库知识(六) | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/ruankao_database6.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                软考：数据库知识(六)
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-04-20T14:00:49+00:00">
+                2011-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">课程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/ruankao_database6.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/ruankao_database6.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>1.9**</strong>数据仓库与分布式数据库**</p>
+<p><strong>数据仓库：</strong></p>
+<p>随着计算机技术的飞速发展和企业界不断提出新的需求，数据仓库技术应运而生。传统的数据库技术是单一的数据资源，即数据库为中心，进行从事事务处理、批处理到决策分析等各种类型的数据处理工作。近年来，随着计算机应用，,网络计算，开始向两个不同的方向拓展，一是广度计算，一是深度计算，广度计算的含义是把计算机的应用范围尽量扩大，同时实现广泛的数据交流，互联网就是广度计算的特征，另一方面就是人们对以往计算机的简单数据操作，提出了更高的要求，希望计算机能够更多的参与数据分析与决策的制定等领域。特别是数据库处理可以大致地划分为两大类：操作型处理和分析型处理（或信息型处理）。这种分离，划清了数据处理的分析型环境与操作型环境之间的界限，从而由原来的以单一数据库为中心的数据环境发展为一种新环境：体系化环境。</p>
+<p>数据库系统作为数据管理手段，从它的诞生开始，就主要用于事务处理。经过数十年的发展，在这些数据库中已经保存了大量的日常业务数据。传统的业务系统一般是直接建立在这种事务处理环境上的。随着技术的进步，人们试图让计算机担任更多的工作，而数据库技术也一直力图使自己能胜任从事务处理、批处理到分析处理的各种类型的信息处理任务。后来人们逐渐认识到，在目前的计算机处理能力上，根本无法实现这种功能，而且，另一方面，事物处理和分析处理具有极不相同的性质，直接使用事务处理环境来支持决策是行不通的。</p>
+<p>事务处理环境不适宜DSS应用的原因主要有以下五条：</p>
+<p>（1）事务处理和分析处理的性能特性不同。</p>
+<p>在事务处理环境中，用户的行为特点是数据的存取操作频率高而每次操作处理的时间短；在分析处理环境中，用户的行为模式与此完全不同，某个DSS应用程序可能需要连续几个小时，从而消耗大量的系统资源。将具有如此不同处理性能的两种应用放在同一个环境中运行显然是不适当的。</p>
+<p>（2）数据集成问题。</p>
+<p>DSS需要集成的数据。全面而正确的数据是有效的分析和决策的首要前提，相关数据收集得月完整，得到的结果就越可靠。当前绝大多数企业内数据的真正状况是分散而非集成的。造成这种分散的原因有多种，主要有事务处理应用分散、“蜘蛛网”问题、数据不一致问题、外部数据和非结构化数据。</p>
+<p>（3）数据动态集成问题。</p>
+<p>静态集成的最大缺点在于，如果在数据集成后数据源中数据发生了变化，这些 变化将不能反映给决策者，导致决策者使用的是过时的数据。集成数据必须以一定的周期（例如24小时）进行刷新，我们称其为动态集成。显然，事务处理系统不具备动态集成的能力。</p>
+<p>（4）历史数据问题。</p>
+<p>事务处理一般只需要当前数据，在数据库中一般也是存储短期数据，切不同数据的保存期限也不一样，即使有一些历史数据保存下来了，也被束之高阁，未得到充分利用。但对于决策分析而言，历史数据是相当重要的，许多分析方法必须一大量的历史数据为依托。没有历史数据的详细分析，是难以把握企业的发展趋势的。DSS对数据在空间和时间的广度上都有了更高的要求，而事务处理环境难以满足这些要求。</p>
+<p>（5）数据的综合问题。</p>
+<p>在事务处理系统中积累了大量的细节数据，一般而言，DSS并不对这些细节数据进行分析。在分析前，往往需要对细节数据进行不同程度的综合。而事务处理系统不具备这种综合能力，根据规范化理论，这种综合还往往因为是一种数据冗余而加以限制。</p>
+<p>要提高分析和决策的效率和有效性，分析型处理及其数据必须与操作型处理及其数据相分离。必须把分析型数据从事务处理环境中提取出来，按照DSS处理的需要进行重新组织，建立单独的分析处理环境，数据仓库正是为了构建这种新的分析处理环境而出现的一种数据存储和组织技术。</p>
+<p><strong>分布式数据库：</strong></p>
+<p>分布式数据库系统是在集中式数据库系统的基础上发展起来的，是数据库技术与计算机网络技术的产物。分布式数据库系统是具有管理分布数据库功能的计算机系统。一个分布式数据库是由分布于计算机网络上的多个逻辑相关的数据库组成的集合，网络中的每个结(一般在系统中的每一台计算机称为结点node)具有独立处理的能力(称为本地自治),可执行局部应用,同时,每个结点通过网络通讯系统也能执行全局应用。所谓局部应用即仅对本结点的数据库执行某些应用。所谓全局应用(或分布应用)是指对两个以上结点的数据库执行某些应用。支持全局应用的系统才能称为分布式数据库系统。对用户来说，一个分布式数据库系统逻辑上看如同集中式数据库系统一样，用户可在任何一个场地执行全局应用。</p>
+<p>分布式数据库系统是由分布式数据库管理系统和分布式数据库组成。分布式数据库管理系统(简称DDBMS)是建立、管理和维护分布式数据库的一组软件。</p>
+<p>分布式数据库系统适合于单位分散的部门，系统的结点可反映公司的逻辑组织，允许各部门将其常用数据存贮在本地，实施就地存放就地使用，降低通讯费用，并可提高响应速度。分布式数据库可将数据分布在多个结点上，增加适当的冗余，可提高系统的可靠性，只要一个数据库和网络可用，那么全局数据库可一部分可用。不会因一个数据库的故障而停止全部操作或引起性能瓶颈。故障恢复通常在单个结点上进行。结点可独立地升级软件。每个局部数据库存在一个数据字典。由于分布式数据库系统结构的特点，它和集中式数据库系统相比具有可扩展性，为扩展系统的处理能力提供了较好的途径。</p>
+<p>理想的分布式系统使用时应该精确地像一个非分布式系统的样子。1986年C.J. Date为理想的分布式系统创立了12条细则，这12条全功能分布式数据库系统的规则和目标具体是：</p>
+<p>(1) 局部结点自治性,网络中的每个结点是独立的数据库系统,它有自己的数据库,运行它的局部DBMS,执行局部应用,具有高度的自治性。</p>
+<p>(2) 不依赖中心结点,即每个结点具有全局字典管理、查询处理、并发控制和恢复控制等功能。</p>
+<p>(3) 能连续操作,该目标使中断分布式数据库服务情况减至最少,当一个新场地合并到现有的分布式系统、或将分布式系统中撤离一场地不会导致任何不必要的服务中断；在分布式系统中可动态地建立和消除片段，而不中止任何组成部分的场地或数据库；应尽可能在不使整个系统停机的情况下对组成分布式系统的场地的DBMS进行升级。</p>
+<p>(4) 具有位置独立性(或称位置透明性),用户不必知道数据的物理存储地,可工作得像数据全部存储在局部场地一样。一般位置独立性需要有分布式数据命名模式和字典子系统的支持。</p>
+<p>(5) 分片独立性(或称分片透明性),分布式系统如果可将给定的关系分成若干块或片,可提高系统的处理性能。利用分片将数据存储在最频繁使用它的位置上，使大部分操作是局部操作，减少网络的信息流量。如果系统支持分片独立性，用户工作起来就像数据全然不是分片的一样。</p>
+<p>(6) 数据复制独立性,是指将给定的关系(或片段)可在物理级用许多不同存储副本或复制品在许多不同场地上存储。支持数据复制的系统应当支持复制独立性，用户工作可像它全然没有存储副本一样地工作。</p>
+<p>(7) 支持分布式查询处理,在分布数据库系统中有三类查询:局部查询、远程查询和全局查询。局部查询和远程查询仅涉及单个结点的数据(本地的或远程的)，查询优化采用的技术是集中式数据库的查询优化技术。全局查询涉及多个结点上的数据，其查询处理和优化要复杂得多。</p>
+<p>(8) 支持分布事务管理,事务管理有两个主要方面:恢复控制和并发控制。在分布式系统中，单个事务会涉及到多个场地上的代码执行，会涉及到多个场地上的更新，可以说每个事务是由多个“代理”组成，每个代理代表在给定场地上的给定事务上执行的过程。在分布式系统中须保证事务的代理集，或者全部一致交付，或者全部一致回滚。</p>
+<p>(9) 具有硬件独立性,希望在不同硬件系统上运行同样的DBMS。</p>
+<p>(10) 具有操作系统独立性,希望在不同的操作系统上运行DBMS。</p>
+<p>(11) 具有网络独立性,如果系统能够支持多个不同的场地,每个场地有不同的硬件和不同的操作系统,则要求该系统能支持各种不同的通信网络。</p>
+<p>(12) 具有DBMS独立性,实现对异构型分布式系统的支持。理想的分布式系统应该提供DBMS独立性。</p>
+<p>上述的全功能分布式数据库系统的准则和目标起源于：一个分布式数据库系统，对用户来说，应当看上去完全像一个非分布式系统。</p>
+<p><strong>DDBS**</strong>的基本特点** </p>
+<ul>
+<li>物理分布性：数据不是存储在一个场地上，而是存储在计算机网络的多个场地上。</li>
+<li>逻辑整体性：数据物理分布在各个场地，但逻辑上是一个整体，它们被所有用户（全局用户）共享，并由一个DDBMS统一管理。</li>
+<li>场地自治性：各场地上的数据由本地的DBMS管理，具有自治处理能力，完成本场地的应用（局部应用）。</li>
+<li>场地之间协作性：各场地虽然具有高度的自治性，但是又相互协作构成一个整体。</li>
+</ul>
+<p><strong>分布式数据库与集中式数据库的对比：</strong></p>
+<table border="0" cellspacing="0" cellpadding="0" width="553"><br>  <tr><br>    <td width="109"><br>    </td><br><br>    <td width="225"><br>      <strong>分布式DBMS</strong><br>    </td><br><br>    <td width="219"><br>      <strong>集中式DBMS</strong><br>    </td><br>  </tr><br><br>  <tr><br>    <td width="109"><br>      <strong>①存取方式</strong><br>    </td><br><br>    <td width="225"><br>      <strong>用户→DDBMS→分布式网络OS→网络通信→局部DBMS→局部OS→DB</strong><br>    </td><br><br>    <td width="219"><br>      <strong>用户→DBMS→OS→DB</strong><br>    </td><br>  </tr><br><br>  <tr><br>    <td width="109"><br>      <strong>②数据冗余性</strong><br>    </td><br><br>    <td width="225"><br>      <strong>有控制的冗余</strong><br>    </td><br><br>    <td width="219"><br>      <strong>最小的冗余</strong><br>    </td><br>  </tr><br><br>  <tr><br>    <td width="109"><br>      <strong>③数据表示级别</strong><br>    </td><br><br>    <td width="225"><br>      <strong>（四级）用户试图，全局视图，分片视图，分配视图</strong><br>    </td><br><br>    <td width="219"><br>      <strong>（三级）外部视图，概念视图，内部视图</strong><br>    </td><br>  </tr><br><br>  <tr><br>    <td width="109"><br>      <strong>④数据存放方式</strong><br>    </td><br><br>    <td width="225"><br>      <strong>复制在多个场地，模式分散化，处理程序也分散化</strong><br>    </td><br><br>    <td width="219"><br>      <strong>集中在一个地点</strong><br>    </td><br>  </tr><br><br>  <tr><br>    <td width="109"><br>      <strong>⑤DBA</strong><br>    </td><br><br>    <td width="225"><br>      <strong>分布在各场地，</strong><p></p><br><br>      <p><br>        <strong>进行局部控制</strong></p></td><br><br>        <td width="219"><br>          <strong>集中在一起</strong><br>        </td></tr><br><br>        <tr><br>          <td width="109"><br>            <strong>⑥同步</strong><br>          </td><br><br>          <td width="225"><br>            <strong>由全局DBMS和</strong><p></p><br><br>            <p><br>              <strong>网络OS组成</strong></p></td><br><br>              <td width="219"><br>                <strong>由OS完成</strong><br>              </td></tr><br><br>              <tr><br>                <td width="109"><br>                  <strong>⑦封锁</strong><br>                </td><br><br>                <td width="225"><br>                  <strong>分散控制</strong><br>                </td><br><br>                <td width="219"><br>                  <strong>集中控制</strong><br>                </td><br>              </tr><br><br>              <tr><br>                <td width="109"><br>                  <strong>⑧实际资源</strong><br>                </td><br><br>                <td width="225"><br>                  <strong>多个CPU，多个DBMS</strong><br>                </td><br><br>                <td width="219"><br>                  <strong>一个CPU，一个DBMS</strong><br>                </td><br>              </tr><br><br>              <tr><br>                <td width="109"><br>                  <strong>⑨操作方式</strong><br>                </td><br><br>                <td width="225"><br>                  <strong>当前方式，响应方式两种</strong><br>                </td><br><br>                <td width="219"><br>                  <strong>一种方式（当前方式）</strong><br>                </td><br>              </tr><br><br>              <tr><br>                <td width="109"><br>                  <strong>⑩数据一致性</strong><br>                </td><br><br>                <td width="225"><br>                  <strong>所有主场地的逻辑结果是一致的，但各个场地的复制中数据可能不一致</strong><br>                </td><br><br>                <td width="219"><br>                  <strong>任何时候都需要保持</strong><strong>数据的一致性</strong><br>                </td><br>              </tr> </table>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/软考/" rel="tag"># 软考</a>
+          
+            <a href="/tags/数据库/" rel="tag"># 数据库</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/ruankao_database5.html" rel="next" title="软考：数据库知识(五)">
+                <i class="fa fa-chevron-left"></i> 软考：数据库知识(五)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/pop_8_languages.html" rel="prev" title="[转]在企业中越来越流行的8种编程语言">
+                [转]在企业中越来越流行的8种编程语言 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/ruankao_database6.html';
+
+      var disqus_title = "软考：数据库知识(六)";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

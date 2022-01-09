@@ -1,0 +1,852 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="软考,多媒体,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="上接：/blog/ruankao_multi_media1.html 1.5**数据压缩和编码技术标准**  **◆H.261** H.261是用于音频视频服务的视频编码解码器，也称为P×64标准。由CCITT（ITU-T）制定。其应用目标是可视电话和视频会议系统。含有此标准的系统必须能实时的按标准进行编码和解码。 H.261于JPEG、MPEG标准的区别在于它是为动态使用而设计的，并提供完全包含">
+<meta name="keywords" content="软考,多媒体">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软考：多媒体知识(二)">
+<meta property="og:url" content="https://www.tanglei.name/blog/ruankao_multi_media2.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="上接：/blog/ruankao_multi_media1.html 1.5**数据压缩和编码技术标准**  **◆H.261** H.261是用于音频视频服务的视频编码解码器，也称为P×64标准。由CCITT（ITU-T）制定。其应用目标是可视电话和视频会议系统。含有此标准的系统必须能实时的按标准进行编码和解码。 H.261于JPEG、MPEG标准的区别在于它是为动态使用而设计的，并提供完全包含">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.818Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软考：多媒体知识(二)">
+<meta name="twitter:description" content="上接：/blog/ruankao_multi_media1.html 1.5**数据压缩和编码技术标准**  **◆H.261** H.261是用于音频视频服务的视频编码解码器，也称为P×64标准。由CCITT（ITU-T）制定。其应用目标是可视电话和视频会议系统。含有此标准的系统必须能实时的按标准进行编码和解码。 H.261于JPEG、MPEG标准的区别在于它是为动态使用而设计的，并提供完全包含">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/ruankao_multi_media2.html">
+
+
+
+
+
+  <title> 软考：多媒体知识(二) | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/ruankao_multi_media2.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                软考：多媒体知识(二)
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-04-17T14:05:00+00:00">
+                2011-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">课程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/ruankao_multi_media2.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/ruankao_multi_media2.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>上接：<a href="/blog/ruankao_multi_media1.html">/blog/ruankao_multi_media1.html</a></p>
+<p><strong>1.5**</strong>数据压缩和编码技术标准**</p>
+<p> <strong>**</strong>◆H.261**</p>
+<p>H.261是用于音频视频服务的视频编码解码器，也称为P×64标准。由CCITT（ITU-T）制定。其应用目标是可视电话和视频会议系统。含有此标准的系统必须能实时的按标准进行编码和解码。</p>
+<p>H.261于JPEG、MPEG标准的区别在于它是为动态使用而设计的，并提供完全包含的组织的高水平的交互控制。</p>
+<p>◆JPEG</p>
+<p>JPEG是静止图像压缩和解压缩算法的标准，它是基于DCT的有损算法，是ISO的国际标准。</p>
+<p>MPEG在三方面优于其他的压缩/解压方案：</p>
+<p>开始就是一个国际化的标准，兼容性很好；</p>
+<p>比其他算法有更高的压缩比，最高可达到200：1；</p>
+<p>在提供高压缩比的同时，对数据的损失很小；</p>
+<p>◆MPEG</p>
+<p>MPEG-X是一组由ITU和ISO制定发布的视频、音频和数据的压缩标准。</p>
+<p>◆MPEG-1</p>
+<p>制定于1992年，传输率最高可达4Mbps~5Mbps，质量级别与VHS相当。可用于记录媒体或是在Internet上传输音频。</p>
+<p>◆MPEG-2</p>
+<p>制定于1994年，传输率在3Mbps~10Mbps之间，DVD指定标准。</p>
+<p>◆MPEG-4</p>
+<p>传输率要求在4800bps~64000bps之间。其主要特点是交互性和综合性。更适合交互AV服务记忆即远程监控，，是第一个使观众由被动变主动的动态图象标准。</p>
+<p>◆DVI</p>
+<p>DVI视频图像压缩算法的性能与MPEG相当，图像质量可达到VHS的水平。压缩以后的图像传输率约为1.5Mbps。</p>
+<p><strong>1.6</strong> <strong>多媒体应用开发过程</strong></p>
+<p>多媒体创作系统是多媒体电脑技术的严格重要组成部分，它介于多媒体工作平台于应用软件之间，是支持应用开发人员进行多媒体应用软件创作的工具，因此也称为多媒体创作工具。</p>
+<p>多媒体创作工具的初衷是非计算机领域的专家对计算机技术的不了解，因此就需要一种工具，使应用开发人员不用编程也能做出很优秀的多媒体软件产品，这种工具称之为多媒体创作工具，用这种工具做出来的产品称为——节目。</p>
+<p>多媒体创作工具是能够用来集成各种媒体、并可设计阅读信息内容方式的软件。其功能日趋完善，总结起来，以下几个方向和功能是多媒体创作工具应具备的：</p>
+<p>1．编辑能力及环境</p>
+<p>编辑能力主要是支持用户对节目所需要的外部媒体资料的生成、增删、修改于管理能力。这些功能不是通过用户编程来实现，而是在系统中通过可视化的界面，帮助用户使用简便操作来达到相同的效果。</p>
+<ol start="2">
+<li>媒体数据输入能力</li>
+</ol>
+<p>即处理静态和动态的多媒体的能力，支持的格式越多越好。</p>
+<ol start="3">
+<li>交互能力</li>
+</ol>
+<p>从最简单的设置按钮来连接事件，道后来的超链接功能，再道现在的菜单交互、可视媒体对象交互、文字输入交互等，随着多媒体创作工具对系统硬件的控制能力的加强，语音交互、触控交互、三维立体触控交互以及未来的智能判断交互都是交互能力的新技术。</p>
+<ol start="4">
+<li>功能扩充能力</li>
+</ol>
+<p>为了满足高层次节目的需求，媒体创作工具提供外部接口，可以连入其他的高级对象和组件，这样就实现了三级用户开发环境，这三级用户是不懂编程的普通用户、稍懂编程的用户和富有丰富编程经验的用户。</p>
+<ol start="5">
+<li>调试能力</li>
+</ol>
+<p>目前还制停留再放映节目的范围，未来的调试工具应该是多断点、逆向回放等功能，再调试过程中显示调试信息。</p>
+<p>6.动态数据交换能力</p>
+<p>使用变量给某些媒体构件赋予属性，并且可以通过程序改变变量，从而达到动态改变媒体属性的目的。</p>
+<p>7.数据库功能</p>
+<p>应具有数据库的查询、排序、更新、删除和增加等功能。</p>
+<p>8.网络组件及模板套用能力</p>
+<p>能有效支持一组人通力制作一个节目的创作工具称为组件版本，支持异构电脑系统之间的互连和资料传递，。模板功能是提高拥护编辑效率的一个重要手段，方便用户大量制作某一类型的节目。</p>
+<p>9.其他能力</p>
+<p><strong>2**</strong>．<strong> <em>**</em></strong>多媒体重点和难点<strong>**</strong></p>
+<p>1．   图形和图象的各种格式、几个主要的概念：</p>
+<p>2．音频采集计算：声音文件的存储量=采样频率×采样位数×声道数</p>
+<p>3．视频图象的容量计算和国家标准：图像文件的存储量=分辨率×色彩数（位）。</p>
+<p>4．视频的几种集中压缩格式：</p>
+<p>例题1：</p>
+<p>MPEG-I编码器输出视频的数据率大约为__C__。PAL制式下其图像亮度信号的分辨率为_A\__，帧速为__B__。 （多媒体）</p>
+<table border="0" cellspacing="1" cellpadding="0" width="94%"><br>  <tr><br>    <td width="25%"><br>      (44)A．128Kb/s<br>    </td><br><br>    <td width="25%"><br>      B．320Kb/s<br>    </td><br><br>    <td width="25%"><br>      C．1.5Mb/s<br>    </td><br><br>    <td width="25%"><br>      D．15Mb/s<br>    </td><br>  </tr><br><br>  <tr><br>    <td width="25%"><br>      (45)A．352×288<br>    </td><br><br>    <td width="25%"><br>      B．576×352<br>    </td><br><br>    <td width="25%"><br>      C．720×576<br>    </td><br><br>    <td width="25%"><br>      D．1024×720<br>    </td><br>  </tr><br><br>  <tr><br>    <td width="25%"><br>      (46)A．16帧/秒<br>    </td><br><br>    <td width="25%"><br>      B．25帧/秒<br>    </td><br><br>    <td width="25%"><br>      C．30帧/秒<br>    </td><br><br>    <td width="25%"><br>      D．50帧/秒<br>    </td><br>  </tr><br></table>
+
+<p>例题2：</p>
+<p>在多媒体的音频处理中，由于人所敏感的声频最高为<strong>A</strong>赫兹（Hz），因此数字音频文件对音频的采样频率为<strong>B</strong>赫兹（Hz）。对一个双声道的立体声，保持1秒钟声音，其波形文件所需的字节数为<strong>C</strong>，这里假设每个采样点的量化位数为8位。</p>
+<p>MIDI文件是最常用的数字音频文件之一，MIDI是一种<strong>D</strong>，它是该领域国际上的一个<strong>E</strong>。</p>
+<p> <strong>A**</strong>：** ①50               ②10k                 ③22k                 ④44k</p>
+<p><strong>B**</strong>：** ①44.1k            ②20.05k              ③10k                 ④88k</p>
+<p><strong>C**</strong>：** ①22050            ②88200               ③176400              ④44100</p>
+<p> <strong>D**</strong>：** ①语音数字接口                           ②乐器数字接口</p>
+<p>③语音模拟接口                           ④乐器模拟接口</p>
+<p> <strong>E**</strong>：** ①控制方式        ②管理规范         ③通信标准           ④输入格式</p>
+<p>在音频处理中，采样频率是决定音频质量的一个重要因素，它决定了频率响应范围。对声音进行采样的三种标准以及采样频率分别为：语音效果（11 kHz）、音乐效果（22 kHz）、高保真效果（44.1 kHz），目前声卡的最高采样率为44.1KHz。</p>
+<p>另外，一般人的听觉带宽为20Hz~20kHz，人敏感的声频最高为22kHz。</p>
+<p>信号编码的位数是决定音频质量的另一个重要因素，它决定数字采样的可用动态范围和信噪比。16位声卡的采样位数就是16。</p>
+<p>声音文件的存储量等于采样频率×采样位数×声道数。如本题所求波形文件的字节数计算公式如下：</p>
+<p>44.1kHz×8bit×2×1秒=705.6Mbit/8=88.2MB=88200Byte</p>
+<p><strong>[**</strong>答案]**</p>
+<p><strong>A**</strong>：<strong>③ </strong>B：<strong>① </strong>C：<strong>② </strong>D：<strong>② </strong>E：**③</p>
+<p>例题3：</p>
+<p>多媒体应用需要对庞大的数据进行压缩，常见的压缩编码方法可分为两大类，一类是无损压缩法，另一类是有损压缩法，也称__(47)__。__(48)__属于无损压缩法。</p>
+<table border="0" cellspacing="1" cellpadding="0" width="94%"><br>  <tr><br>    <td width="25%"><br>      (47) A. 熵编码<br>    </td><br><br>    <td width="25%"><br>      <span style="color: #ff0000;">B. 熵压缩法</span><br>    </td><br><br>    <td width="25%"><br>      C. MPEG压缩法<br>    </td><br><br>    <td width="25%"><br>      D. JPEG压缩法<br>    </td><br>  </tr><br><br>  <tr><br>    <td width="25%"><br>      (48) A. MPEG压缩<br>    </td><br><br>    <td width="25%"><br>      D.子带编码<br>    </td><br><br>    <td width="25%"><br>      <span style="color: #ff0000;">C. Huffman编码</span><br>    </td><br><br>    <td width="25%"><br>      D. 模型编码<br>    </td><br>  </tr><br></table>
+
+<p>● 若每个像素具有 8 位的颜色深度，则可表示__(49)__种不同的颜色，若某个图像具有 640X480 个像素点，其未压缩的原始数据需占用__(50)__字节的存储空间。</p>
+<table border="0" cellspacing="1" cellpadding="0" width="94%"><br>  <tr><br>    <td width="25%"><br>      (49) A. 8<br>    </td><br><br>    <td width="25%"><br>      B. 128<br>    </td><br><br>    <td width="25%"><br>      <span style="color: #ff0000;">C. 256</span><br>    </td><br><br>    <td width="25%"><br>      D. 512<br>    </td><br>  </tr><br><br>  <tr><br>    <td width="25%"><br>      (50) A. 1024<br>    </td><br><br>    <td width="25%"><br>      B. 19200<br>    </td><br><br>    <td width="25%"><br>      C. 38400<br>    </td><br><br>    <td width="25%"><br>      D. 307200<br>    </td><br>  </tr><br></table>
+
+<p>● 声音的三要素为音调、音强和音色，其中音色是由混入基音的__(51)__决定的。</p>
+<p>若对声音以 22.05kHZ 的采样频率、8 位采样深度进行采样，则 10 分钟双声道立体声的存储量为__(52)__字节。</p>
+<table border="0" cellspacing="1" cellpadding="0" width="94%"><br>  <tr><br>    <td width="24%"><br>      (51) A. 响度<br>    </td><br><br>    <td width="24%"><br>      <span style="color: #ff0000;">B. 泛音</span><br>    </td><br><br>    <td width="24%"><br>      C. 高音<br>    </td><br><br>    <td width="24%"><br>      D. 波形声音<br>    </td><br>  </tr><br><br>  <tr><br>    <td width="24%"><br>      (52<span style="color: #ff0000;">) A. 26460000</span><br>    </td><br><br>    <td width="24%"><br>      B. 441000<br>    </td><br><br>    <td width="24%"><br>      C. 216000000<br>    </td><br><br>    <td width="24%"><br>      D. 108000000<br>    </td><br>  </tr><br></table>
+
+<p>●在数据压缩编码的应用中，哈夫曼（Huffman）算法可以用来构造具有__(13)__的二叉树，这是一种采用了__(14)__的算法。</p>
+<table border="0" cellspacing="1" cellpadding="0" width="94%"><br>  <tr><br>    <td width="25%"><br>      (13) A. 前缀码<br>    </td><br><br>    <td width="25%"><br>      <span style="color: #ff0000;">B. 最优前缀码</span><br>    </td><br><br>    <td width="25%"><br>      C. 后缀码<br>    </td><br><br>    <td width="25%"><br>      D. 最优后缀码<br>    </td><br>  </tr><br><br>  <tr><br>    <td width="25%"><br>      (14) <span style="color: #ff0000;">A. 贪心</span><br>    </td><br><br>    <td width="25%"><br>      D. 分治<br>    </td><br><br>    <td width="25%"><br>      C. 递推<br>    </td><br><br>    <td width="25%"><br>      D. 回溯<br>    </td><br>  </tr><br></table>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/软考/" rel="tag"># 软考</a>
+          
+            <a href="/tags/多媒体/" rel="tag"># 多媒体</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/ruankao_multi_media1.html" rel="next" title="软考：多媒体知识(一)">
+                <i class="fa fa-chevron-left"></i> 软考：多媒体知识(一)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/ruankao_network1.html" rel="prev" title="软考：计算机网络知识(一)">
+                软考：计算机网络知识(一) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/ruankao_multi_media2.html';
+
+      var disqus_title = "软考：多媒体知识(二)";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

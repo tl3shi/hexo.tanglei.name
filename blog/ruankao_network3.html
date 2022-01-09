@@ -1,0 +1,830 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="软考,计算机网络,TCP/IP,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="2**．计算机网络重点和难点：** 1．   ISO参考模型和TCP/IP协议组, 模型的整体层次结构、每层的具体含义、任务和涉及协议标准、工作方式和工作原理； 2．   网络中的术语； 3．   局域网是考试的复习重点（局域网中的通信子网和资源子网的概念） 4．   IPV6的优点等，与IPV4对比  有关子网和掩码的计算  例题： 有多种设备可以实现不同网段或网络之间的互连，互连设备通常可按工">
+<meta name="keywords" content="软考,计算机网络,TCP&#x2F;IP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软考：计算机网络知识(三)">
+<meta property="og:url" content="https://www.tanglei.name/blog/ruankao_network3.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="2**．计算机网络重点和难点：** 1．   ISO参考模型和TCP/IP协议组, 模型的整体层次结构、每层的具体含义、任务和涉及协议标准、工作方式和工作原理； 2．   网络中的术语； 3．   局域网是考试的复习重点（局域网中的通信子网和资源子网的概念） 4．   IPV6的优点等，与IPV4对比  有关子网和掩码的计算  例题： 有多种设备可以实现不同网段或网络之间的互连，互连设备通常可按工">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.819Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软考：计算机网络知识(三)">
+<meta name="twitter:description" content="2**．计算机网络重点和难点：** 1．   ISO参考模型和TCP/IP协议组, 模型的整体层次结构、每层的具体含义、任务和涉及协议标准、工作方式和工作原理； 2．   网络中的术语； 3．   局域网是考试的复习重点（局域网中的通信子网和资源子网的概念） 4．   IPV6的优点等，与IPV4对比  有关子网和掩码的计算  例题： 有多种设备可以实现不同网段或网络之间的互连，互连设备通常可按工">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/ruankao_network3.html">
+
+
+
+
+
+  <title> 软考：计算机网络知识(三) | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/ruankao_network3.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                软考：计算机网络知识(三)
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-04-18T12:04:19+00:00">
+                2011-04-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">课程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/ruankao_network3.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/ruankao_network3.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>2**</strong>．计算机网络重点和难点：<strong>**</strong></p>
+<p>1．   ISO参考模型和TCP/IP协议组, 模型的整体层次结构、每层的具体含义、任务和涉及协议标准、工作方式和工作原理；</p>
+<p>2．   网络中的术语；</p>
+<p>3．   局域网是考试的复习重点（局域网中的通信子网和资源子网的概念）</p>
+<p>4．   IPV6的优点等，与IPV4对比</p>
+<ol start="5">
+<li>有关子网和掩码的计算</li>
+</ol>
+<p>例题：</p>
+<p>有多种设备可以实现不同网段或网络之间的互连，互连设备通常可按工作在OSI模型中的层次来划分。在物理层实现互连的称为<strong>A</strong> ；在数据链路层实现互连的称为<strong>B</strong> ；在网络层实现互连的称为<strong>C</strong> ；在运输层及以上高层实现互连的设备称为网关或<strong>D</strong> 。<strong>E</strong>也是一种用来构造局域网的常用设备，通常可以用双绞线把服务器与PC客户机等连入<strong>E</strong>。</p>
+<p><strong>A~E**</strong>：** ①集线器            ②协议转换器              ③网桥           ④路由器</p>
+<p>⑤网关                ⑥转发器</p>
+<p><strong>[**</strong>分析]**</p>
+<p>本题考查的是OSI模型中的各种互连设备。</p>
+<p>OSI模型是整个网络部分的重点，模型的结构层次、各种协议类型和互连设备都是经常涉及的考点。</p>
+<p>网络互连需要通过一个中间设备或中间系统，这称之为中继系统。按照中继系统在网络中所处的层次有以下几种：</p>
+<p>1、转发器Repeater：位于物理层</p>
+<p>2、网桥（也称桥接器）Bridge：位于数据链路层</p>
+<p>3、路由器Router：位于网络层</p>
+<p>4、桥路器Brouter：网桥和路由器的混合系统</p>
+<p>5、网关Gateway（也称网间连接器、信关或联网机）：位于网络层以上，用于协议转换</p>
+<p>6、集线器Hub</p>
+<p><strong>[**</strong>答案]**</p>
+<p><strong>A**</strong>：<strong>⑥ </strong>B：<strong>③  </strong>C：<strong>④ </strong>D：<strong>② </strong>E：**①</p>
+<p>例题2：</p>
+<p>Browser/Serer结构是把__C__技术和数据库技术结合起来的一种应用模式，这种应用模式把所有应用功能和数据库集中放在__B__，实现了开发环境与应用环境的分离，便于管理和系统维护。该模式最大的优点之—是__A__。 （计算机网络）</p>
+<table border="0" cellspacing="1" cellpadding="0" width="94%"><br>  <tr><br>    <td width="24%"><br>      (59) A．FTP<br>    </td><br><br>    <td width="24%"><br>      B．TCP/IP<br>    </td><br><br>    <td width="24%"><br>      C．Web<br>    </td><br><br>    <td width="24%"><br>      D．HTTP<br>    </td><br>  </tr><br><br>  <tr><br>    <td width="24%"><br>      (60) A．客户端<br>    </td><br><br>    <td width="24%"><br>      B．服务器端<br>    </td><br><br>    <td width="24%"><br>      C．<br>    </td><br><br>    <td width="24%"><br>      D．<br>    </td><br>  </tr><br><br>  <tr><br>    <td colspan="2" width="49%"><br>      (61) A．客户端不用安装专用软件<br>    </td><br><br>    <td colspan="2" width="49%"><br>      B．服务器端不用安装专用软件<br>    </td><br>  </tr><br><br>  <tr><br>    <td colspan="2" width="49%"><br>      C．运算效率高<br>    </td><br><br>    <td colspan="2" width="49%"><br>      D．传输速率快<br>    </td><br>  </tr><br></table>
+
+<p>例题3：<span style="color: #ff0000;">（ADBCB）</span></p>
+<p>WWW页面访问的大致过程如下:用户在浏览器中输入要访问的 WWW 页面的__(61)__地址(<a href="http://hostnane/dirctory/fi1e);浏览器通过\_\_(62)\_\_查询上述输入信息所指的" target="_blank" rel="noopener">http://hostnane/dirctory/fi1e);浏览器通过\_\_(62)\_\_查询上述输入信息所指的</a> Web 服务器的IP 地址；浏览器通过网络与该 IP 地址处的 Web 服务器的__(63)__服务端口间建立一条__(64)__连接；浏览器依照相关协议发送__(65)__命令；Web 服务器根据命令取出文档,发送回来；浏览器释放连接,显示该文档。</p>
+<p>(60):A.URL         B.EMS         C.NDS         D.DNS</p>
+<p>(62):A.NAT         B.EMS         C.NDS         D.DNS</p>
+<p>(63):A.HTML        B.HTTP        C.SMTP        D.SNMP</p>
+<p>(64):A.RTP         B.IP          C.TCP         D.UDP</p>
+<p>(65):A.TCP         B.GET         C.UDP         D.PUT</p>
+<p><span style="color: #ff0000;">子网掩码：</span></p>
+<p>对于无须再划分成子网的IP地址来说，其子网掩码非常简单，即按照其定义即可写出：如某B类IP地址为 10.12.3.0，无须再分割子网，则该IP地址的子网掩码为255.255.0.0。如果它是一个C类地址，则其子网掩码为 255.255.255.0。其它类推，不再详述。下面我们关键要介绍的是一个IP地址，还需要将其高位主机位再作为划分出的子网网络号，剩下的是每个子网的主机号，这时该如何进行每个子网的掩码计算。</p>
+<p>一、利用子网数来计算</p>
+<p>在求子网掩码之前必须先搞清楚要划分的子网数目，以及每个子网内的所需主机数目。</p>
+<p>1)将子网数目转化为二进制来表示</p>
+<p>2)取得该二进制的位数，为 N</p>
+<p>3)取得该IP地址的类子网掩码，将其主机地址部分的的前N位置 1 即得出该IP地址划分子网的子网掩码。</p>
+<p>如欲将B类IP地址168.195.0.0划分成27个子网：</p>
+<p>1)27=11011</p>
+<p>2)该二进制为五位数，N = 5</p>
+<p>3)将B类地址的子网掩码255.255.0.0的主机地址前5位置 1，得到 255.255.248.0</p>
+<p>即为划分成 27个子网的B类IP地址 168.195.0.0的子网掩码。</p>
+<p>二、利用主机数来计算</p>
+<p>1)将主机数目转化为二进制来表示</p>
+<p>2)如果主机数小于或等于254（注意去掉保留的两个IP地址），则取得该主机的二进制位数，为 N，这里肯定 N&lt;8。如果大于254，则 N&gt;8，这就是说主机地址将占据不止8位。</p>
+<p>3)使用255.255.255.255来将该类IP地址的主机地址位数全部置1，然后从后向前的将N位全部置为 0，即为子网掩码值。</p>
+<p>如欲将B类IP地址168.195.0.0划分成若干子网，每个子网内有主机700台：</p>
+<p>1) 700=1010111100</p>
+<p>2)该二进制为十位数，N = 10</p>
+<p>3)将该B类地址的子网掩码255.255.0.0的主机地址全部置 1，得到255.255.255.255</p>
+<p>然后再从后向前将后 10位置0,即为： 11111111.11111111.11111100.00000000</p>
+<p>即255.255.252.0。这就是该欲划分成主机为700台的B类IP地址 168.195.0.0的子网掩码。</p>
+<p>首先，我们看一个考试中常见的题型：一个主机的IP地址是202.112.14.137，掩码是255.255.255.224，要求计算这个主机所在网络的网络地址和广播地址。</p>
+<p>常规办法是把这个主机地址和子网掩码都换算成二进制数，两者进行逻辑与运算后即可得到网络地址。其实大家只要仔细想想，可以得到另一个方法：255.255.255.224的掩码所容纳的IP地址有256－224＝32个（包括网络地址和广播地址），那么具有这种掩码的网络地址一定是32的倍数。而网络地址是子网IP地址的开始，广播地址是结束，可使用的主机地址在这个范围内，因此略小于137而又是32的倍数的只有128，所以得出网络地址是202.112.14.128。而广播地址就是下一个网络的网络地址减1。而下一个32的倍数是160，因此可以得到广播地址为202.112.14.159</p>
+<p>“比如一个C网要分成两个网段，那么256/2=128.每个子网128个地址。用256减去每个子网的地址数，256-128=128，子网掩码就是255.255.255.128；</p>
+<p>分成4个网段，256/4=64每个子网64个地址。用256减去每个子网的地址数，256-64=192，子网掩码就是255.255.255.192；</p>
+<p>分成8个网段，256/8=32每个子网32个地址。用256减去每个子网的地址数，256-32=224，子网掩码就是255.255.255.224.</p>
+<p>所以我们要求的那位数就是256减去每个子网的地址数。</p>
+<p>当然，我们也可以从子网地址中看出，使用此掩码每个子网中的地址数目，划分了多少个子网。”</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/软考/" rel="tag"># 软考</a>
+          
+            <a href="/tags/计算机网络/" rel="tag"># 计算机网络</a>
+          
+            <a href="/tags/TCP-IP/" rel="tag"># TCP/IP</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/ruankao_network2.html" rel="next" title="软考：计算机网络知识(二)">
+                <i class="fa fa-chevron-left"></i> 软考：计算机网络知识(二)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/ruankao_database1.html" rel="prev" title="软考：数据库知识(一)">
+                软考：数据库知识(一) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/ruankao_network3.html';
+
+      var disqus_title = "软考：计算机网络知识(三)";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

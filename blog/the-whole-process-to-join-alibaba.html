@@ -1,0 +1,946 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="总结,MyLife,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景大家好，我是石头哥。 今天给大家分享下阿里面试攻略，声明一下：本文内容仅代表石头哥个人观点，仅供参考。 对于想加入阿里的同学，或者">
+<meta name="keywords" content="总结,MyLife">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阿里面试招人流程大揭秘">
+<meta property="og:url" content="https://www.tanglei.name/blog/the-whole-process-to-join-alibaba.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景大家好，我是石头哥。 今天给大家分享下阿里面试攻略，声明一下：本文内容仅代表石头哥个人观点，仅供参考。 对于想加入阿里的同学，或者">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-5/1625498635038-%E9%98%BF%E9%87%8C%E9%9D%A2%E8%AF%95%E6%94%BB%E7%95%A5.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-4/1625389473194-%E9%98%BF%E9%87%8C%E9%9D%A2%E8%AF%95%E6%94%BB%E7%95%A5.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-3/1625322610524-alibaba-hire-flow.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-4/1625328791811-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-4/1625329299994-image.png">
+<meta property="og:image" content="https://img.soogif.com/T4r6VBXYtX7nQ1QD524ABHbTyCOX4fAQ.gif?scope=mdnice">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-4/1625330696122-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-15/1621072716691-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-15/1621073227234-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-15/1621087826674-alibole-problems.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-15/1621073431912-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-4/1625390614478-%E6%98%9F%E6%A0%87.gif">
+<meta property="og:updated_time" content="2022-01-09T16:47:23.005Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="阿里面试招人流程大揭秘">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景大家好，我是石头哥。 今天给大家分享下阿里面试攻略，声明一下：本文内容仅代表石头哥个人观点，仅供参考。 对于想加入阿里的同学，或者">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-5/1625498635038-%E9%98%BF%E9%87%8C%E9%9D%A2%E8%AF%95%E6%94%BB%E7%95%A5.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/the-whole-process-to-join-alibaba.html">
+
+
+
+
+
+  <title> 阿里面试招人流程大揭秘 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/the-whole-process-to-join-alibaba.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                阿里面试招人流程大揭秘
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-07-17T00:00:00+00:00">
+                2021-07-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MyLife/" itemprop="url" rel="index">
+                    <span itemprop="name">MyLife</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/the-whole-process-to-join-alibaba.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/the-whole-process-to-join-alibaba.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上<strong>清华</strong>（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点这里查看我的逆袭之路</a>），BAT某厂P7，是前大疆（无人机）技术主管。</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s/h_pCxpAP0BaJjs--PHDWCA" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>大家好，我是石头哥。</p>
+<p>今天给大家分享下阿里面试攻略，声明一下：本文内容仅代表石头哥<strong>个人观点，仅供参考</strong>。</p>
+<p>对于想加入阿里的同学，或者想了解阿里面试流程（其实，很多公司，特别是 BAT 等大厂，有很多问题是相通的），一定不要错过本文</p>
+<p>作为候选人，从毕业到现在，参与的面试没有上百场也有大几十场了，也算是个面霸，不管失败和成功，积累的经验也都还不小。</p>
+<p>作为面试官，不管是社招还是校招，也都面试过很多人，也算久经沙场。在我参与的所有面试中，我都尽量期望能让候选人有所收获。（当然也期望自己在面试中也有所收获）</p>
+<p>本文主要分为以下几个部分：</p>
+<p>[toc]</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-5/1625498635038-%E9%98%BF%E9%87%8C%E9%9D%A2%E8%AF%95%E6%94%BB%E7%95%A5.png" alt="阿里面试攻略"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-4/1625389473194-%E9%98%BF%E9%87%8C%E9%9D%A2%E8%AF%95%E6%94%BB%E7%95%A5.png" alt="阿里面试攻略"></p>
+<h2 id="面试流程"><a href="#面试流程" class="headerlink" title="面试流程"></a>面试流程</h2><p>阿里巴巴的面试流程，一般而言，会遵循如下如下图所示的流程进行：</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-3/1625322610524-alibaba-hire-flow.png" alt="阿里面试流程"></p>
+<p>具体而言，不同业务线、不同部门、不同人可能有或多或少的差异（差异不大）。</p>
+<p>但对于整个阿里集团来讲，图中红色部分是必选的，在面试官考核流程里面有讲到。</p>
+<p>即面试官的构成必须遵循 <code>1 OVER 1 + HR</code> 原则：</p>
+<ul>
+<li>1：用人方直接主管</li>
+<li>OVER 1：二级主管（主管的主管）</li>
+<li>HR：一般是部门的 HRG；</li>
+</ul>
+<p>且终面的面试官的层级需要高于招聘岗位层级至少2级。举个例子招聘P7，终面面试官职级必须&gt;=P9，可能 P10 也会面。</p>
+<p>比如我当初加入阿里时候的面试流程中，最后终面就是P10+HRG一起进行的面试。</p>
+<p>一般而言，P7及以上的岗位都会要求进行交叉面（虽然公司招聘手册中并未强制要求）。交叉面一般是其他跨二级主管业务线的面试官。</p>
+<p>另外，技术同学面试过程中，必须要有至少一轮的代码测评（笔试），具体测评工具和流程见后文详述。</p>
+<p>下面我将分别按照上文流程分别阐述其中的注意事项。</p>
+<h2 id="简历投递及注意事项"><a href="#简历投递及注意事项" class="headerlink" title="简历投递及注意事项"></a>简历投递及注意事项</h2><h3 id="投递渠道"><a href="#投递渠道" class="headerlink" title="投递渠道"></a>投递渠道</h3><p>投递简历无外乎就以下几个渠道：内推，猎头，官网投递，招聘平台（某聘、某 Boss 之类）。</p>
+<p>如果能找到内推渠道，当然内推更好，且尽量找自己目标岗位对应部门的人内推，同部门的人肯定比其他人了解得更全。没有的话，就可以找我哈。</p>
+<p>为什么内推更好以及其他内推注意事项，建议你应该看看我之前写的这篇文章 —— <a href="https://mp.weixin.qq.com/s/EMv6yfi6Blt_dKvQn7Tbng" target="_blank" rel="noopener">互联网大厂内推求职的正确姿势？</a></p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>说说简历投递的注意事项。</p>
+<p>请确保简历中有如下基本信息：姓名、出生年月、邮箱、手机号、学校。</p>
+<p>投递相关岗位前，请一定确保自己了解目标岗位职级和要求。各个公司的岗位职级可以直接在网上搜索清楚，市场的职级和薪资水平大体上是对齐的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-4/1625328791811-image.png" alt="大厂职级薪资对应关系，图源见水印"></p>
+<p>上图可以简单参考，确保自己打有准备之仗，不要再闹这样的笑话：比如曾经就有刚毕业 2 年的 Java 开发投递简历应聘“资深技术专家”（P9）。</p>
+<p>其实阿里的职级从岗位名称上一般都能看出来，详见<a href="https://mp.weixin.qq.com/s/EMv6yfi6Blt_dKvQn7Tbng" target="_blank" rel="noopener">这里</a>。实在不行，对照这个薪资水平也能看嘛，比如现在我年薪 20W，确试图找 P7，按照上图 P7 最低不得60W+呀，跳 2 职级，薪资翻 3 倍？一般来说不太可能吧？</p>
+<p>另外，简历信息，请对自己负责一点，比如曾经收到这样一份简历：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-4/1625329299994-image.png" alt="“反例”简历"></p>
+<p>一个工作4年经验的同学，写着 “社会实践经验”？</p>
+<p><img src="https://img.soogif.com/T4r6VBXYtX7nQ1QD524ABHbTyCOX4fAQ.gif?scope=mdnice" alt></p>
+<p>当然，结合学校信息能<strong>猜测</strong>出：这位同学17年毕业，前两份经验，应该算实习，后面才是正式工作。</p>
+<p>但为何我们自己不在简历中写明呢，不然还以为有两份正式工作经验不足2个月？</p>
+<p>说到这，如果你换工作太频繁，这绝对是大大地减分项（不管你是主动还是被动）。友情提醒一下，年轻人不要稍微有点不顺心，就想着换个环境，没有哪家公司、哪个工作环境是完美，事事如意的。</p>
+<p>上图流程中有写“5年3跳”（5年内换了3份工作），公司可能会考虑到你的稳定性。此时，如果你简历很一般，加上频繁地换工作，大概率简历筛选这一关就过不了。（如果熟悉的人内推，有人帮忙“背书”，可能会稍微好一丢丢）。</p>
+<p>如果简历一般，学校一般，工作经验也一般，可能简历被拒的可能性比较大。因为大厂能收到的简历实在是太多了，如果没有自己的特色，很大众化的一份简历，确实不太容易通过。</p>
+<p><strong>“简历造假”</strong>（学历，工作经验等） 肯定是不能容忍的，哪怕你面试通过，后面背调也会揪出来的。</p>
+<p>另外，不管做啥，期望我们能够站在对方的角度思考和做事。正所谓 <strong>与人方便，与己方便</strong>。</p>
+<p>比如曾经收到一份邮件，希望我帮忙内推：邮件标题 “内推”，正文无内容，附件“简历.pdf”。</p>
+<p>此时，我又只能如下表情了：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-4/1625330696122-image.png" alt></p>
+<p>这种情况下，我一般简历都懒得打开看。有时候我还会收到微信，询问，“我给你发了邮件，怎么没反应啊？” 。关键微信他也没改名，也没说ta是谁。我咋知道你是谁发了啥邮件？</p>
+<p>这也难怪，很多时候，候选人发了求职简历后，石沉大海。这样的方式，不石沉大海才怪！</p>
+<p>我们发送邮件最起码的“礼貌”还是要有的吧？简历命名格式建议“姓名-学校-岗位.pdf” 或 ”姓名-目前公司-岗位.pdf”，真的没必要太花哨，请用标准的PDF格式（或者Word），确保导入系统能正确被识别（一般花哨的pdf系统都不认识）。</p>
+<p>在陈述自己的技能栈、工作经验时要做到逻辑清晰，描述工作成果的时候，最好是要有数据支撑，比如，经过系统优化，性能提高了20%等等。</p>
+<p>另外，我们还是要注意一些“老生常谈”的细节，比如最好简历没错别字呀。也有遇到，一个人发个简历就发了两三遍的，要么忘了附件，要么简历发错了，岗位发错了等等。不是常说“细节决定成败”么？</p>
+<p>我现在帮人内推，会直接给你一个标准（具体标准，公众号后台回复“阿里内推”），本来也是无偿帮忙提供一个内推渠道，但即便这样，也还是有很多人都不按照要求，不尊重别人的劳动成果。如果没按照要求的，一律拒绝。</p>
+<h3 id="没有主动投递简历，也会接到面试邀请？"><a href="#没有主动投递简历，也会接到面试邀请？" class="headerlink" title="没有主动投递简历，也会接到面试邀请？"></a>没有主动投递简历，也会接到面试邀请？</h3><p>不知道你有没有经历过这种场景，明明我没有投递简历，可为啥还是会经常收到电话说是否看机会。</p>
+<p>我经常收到这样的电话，最多的肯定是猎头了；然后就是各大公司的 HR；在阿里的话，就是对应部门的技术同学（这一点可能和其他公司不一样）。</p>
+<p>猎头不用说了，有自己的渠道来源，能拿到你的联系方式。</p>
+<blockquote>
+<p>提醒大家，千万不要泄露同事信息，被揪出来，后果很严重。</p>
+</blockquote>
+<p>大公司 HR，可能是你之前投递过他们公司，他们可能从公司内部系统里面捞到你，于是就问问。</p>
+<p>阿里也一样，内部有简历库，只要你的简历曾经到过阿里（不管校招、猎头、内推等），系统都会有记录，每次面试记录都有。然后各个用人部门（一般不是HR），就会定期去简历库捞捞自己感兴趣的简历，碰碰运气。</p>
+<blockquote>
+<p>因此，不要太频繁去投递简历，每次面试过程中实事求是，不要投机取巧，耍小花样。（点到为止，不能再多说了）</p>
+</blockquote>
+<p>经常收到同一个公司不同部门的电话，肯定也很烦人。这一点，公司内部也在逐渐优化整个招聘系统的流程，能看到一些进步。</p>
+<p>比如校招流程、内推流程，明显跟以前有较大的改进，对候选人更友好了，比如校招支持多个志愿。</p>
+<h2 id="在线笔试"><a href="#在线笔试" class="headerlink" title="在线笔试"></a>在线笔试</h2><p>下面，聊聊在线笔试流程。 其实，早在<a href="https://mp.weixin.qq.com/s/cpje2Uo3db9nAlXlk17rxQ" target="_blank" rel="noopener">这篇文章</a>中，我已经给大家介绍过了。</p>
+<p>需要说明的是，不同部门，不同面试官可能用到的工具或形式不一样。本文提到的是公司系统推荐工具。</p>
+<p>一般笔试前，面试官会通过公司的代码评测系统中，给候选人邮箱发送一份测评邀请。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-15/1621072716691-image.png" alt="候选人收到的测评邀请"></p>
+<p>点击链接，会进入到在线编程系统，如下图所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-15/1621073227234-image.png" alt="阿里在线测评系统"></p>
+<p>该系统有内置系统题库（如下图，5000+道题目，不过我很少看），其实每个面试官基本都有自己的小题库的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-15/1621087826674-alibole-problems.jpg" alt="阿里面试题库"></p>
+<p>根据面试官的风格，可能会选择开启视频，进行视频面试。</p>
+<p>候选人可点击左上角切换不用的编程语言，甚至可以切换到 “vim” 模式进行编程。</p>
+<blockquote>
+<p>这里补充分享下石头<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247487786&amp;idx=1&amp;sn=842202cc524477ec1546b4747bdbf1a8&amp;chksm=eb4710cedc3099d86953451729c7f569866e6e58abbbec5c7ebe7423d12e1f11e189bb417f80&amp;scene=178&amp;cur_album_id=1514114646956425216#rd" target="_blank" rel="noopener">使用的 vim 插件列表</a></p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-15/1621073431912-image.png" alt></p>
+<p>另外，提醒下大家，这个系统只是实时在线共享编辑，并不像 leetcode 刷题网站那样能直接编译提交。</p>
+<p>面试官其实也主要是考察思路，代码编写风格等，并不是说非得让候选人写出能够 AC 的代码。</p>
+<h2 id="面试过程注意事项"><a href="#面试过程注意事项" class="headerlink" title="面试过程注意事项"></a>面试过程注意事项</h2><p>面试时，在介绍自己的项目经验的时候，可以尝试用 “STAR行为面试法” 来回答：</p>
+<ul>
+<li>Situation、Task：项目当时的背景是怎样的，自己的任务和目标是啥？</li>
+<li>Action：要解决上述问题和实现目标，自己具体做了什么事情，怎样做的，为什么要这样做？</li>
+<li>Result：最  终成功是怎样的？在描述成果时，最好有数据能够支撑。</li>
+</ul>
+<h3 id="技术面会涉及哪些方面？"><a href="#技术面会涉及哪些方面？" class="headerlink" title="技术面会涉及哪些方面？"></a>技术面会涉及哪些方面？</h3><p>整体来讲，不同面试官可能问到的问题都不一样，题目难易程度，就看运气了。 </p>
+<p>在线 coding 的笔试题必不可少，在前文也给予了说明。不过，整体来讲，我认为阿里在 coding 这块的难度（或者说在算法上的要求）还是比比如宇宙条等难度低一些。（以上基于石头哥面试后端开发岗，针对笔试环节的感受）</p>
+<p>在线笔试不用多说，刷题训练即可，社招可能没有太多时间大量刷题，但面试前刷点题目练练手，还是有必要的。推荐一份不错的 leetcode 刷题笔记，在公众号后台回复 “leetcode01” 获取。</p>
+<p>笔试过程中，多注意沟通。在 <a href="https://mp.weixin.qq.com/s/cpje2Uo3db9nAlXlk17rxQ" target="_blank" rel="noopener">面阿里P7，竟问这么简单的题目？</a> 中，我也强调了，面试官在考察某道笔试题目的时候，并不是仅仅考察题目本身。</p>
+<p>是期望以笔试题目为契机，考察候选人在解决实际问题时候的沟通能力，逻辑思维方式等。当然最后也会看看实实在在的 Code，从编码过程中看候选人的编程习惯，编码风格等等。</p>
+<p>另外，不管怎样，你自己简历上的东西肯定是重点考察对象。多整理，理清自己的思路，介绍项目时强调你自己的贡献（前文提到的“STAR行为面试法”）。</p>
+<p>面试八股文会考吗？</p>
+<p>可能会的，不同面试官可能风格不一样，有的可能不会很明显直接问你 “HashMap 是怎么实现的？”</p>
+<p>在回答这类问题的时候，我建议你如果能结合自身项目的具体case 分析，肯定会有加分的。</p>
+<p>举个栗子哈。涉及 “Java Full GC” 这个话题时，你能结合某次生产的 “事故” 讲讲这个问题发生症状，当时如何解决的，如何定位根因等等？</p>
+<h3 id="遇到不会的题目怎么办？"><a href="#遇到不会的题目怎么办？" class="headerlink" title="遇到不会的题目怎么办？"></a>遇到不会的题目怎么办？</h3><p>遇到不会的题目，不用紧张，可以尝试让面试官给予提示。多和面试官沟通，沟通能力也是在考察范围内的。 </p>
+<p>候选人有时候其实可以掌握主动权，比如“这个题目我虽然不太清楚，但类似的 XX，我很了解，……”。 类似的套路，其实在我之前的推文中也多次说道，比如这篇中 —— <a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247491116&amp;idx=1&amp;sn=676c6dab8dbb095a31e6fb45cb31a828&amp;chksm=eb471fc8dc3096dea5f1a8600fdc9163d3ce228e640ddb93fad310d44e739f9d719d0722efd7&amp;token=1903173876&amp;lang=zh_CN&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">一个读者大佬精心总结的阿里、腾讯、宇宙条大厂 Offer 面经和硬核面试攻略</a></p>
+<p>实在不行，直接回答 “这题我不会，换一道吧” 即可，也不用不懂装懂强行回答。</p>
+<p>作为成年人，我们知道最好不要在面试过程中和面试官起正面冲突。</p>
+<p>曾经，我在某家公司面试的时候，遇到过候选人怒怼题目，甚至还些许带些人身攻击，霸气离场。怼题目也就算了，还人身攻击。这种人，怎么说呢，素质堪忧。</p>
+<p>因为，面试本来就是一个双向选择，面试官和候选人双方平等交流、互相尊重的过程。</p>
+<p>一个优秀的面试官应该是要善于挖掘候选人的优点，而不是显示自己有多牛X，你提前准备的题目，就那么几道，换候选人提前准备还不是一样。</p>
+<p>不过，程序员最基础的编码能力，我们还是需要具备的，这一点我在这篇文章中也多次强调 —— <a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247484698&amp;idx=1&amp;sn=03cc4636e7ee7364a85788a98809cc03&amp;chksm=eb4704fedc308de8efd48ab9aed4fd1ddee5665d8e76d0d3767c1f704eac8b15a83e450a08f1&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">从一道面试题谈谈一线大厂码农应该具备的基本能力</a></p>
+<h3 id="某些问题能拒绝回答吗？"><a href="#某些问题能拒绝回答吗？" class="headerlink" title="某些问题能拒绝回答吗？"></a>某些问题能拒绝回答吗？</h3><p>遇到不能回答，或涉及商业机密的问题怎么办？</p>
+<p>其实，面试官手册中都明确说明，面试官只能提问与岗位要求和候选人任职资格相关的问题。</p>
+<p>比如，当面试官问你 “你们用户数多少？” </p>
+<p>如果这确实是你公司相关商业机密数据，你可以直接拒绝回答。“不好意思，这一块数据，不太方便透露”。</p>
+<p>技术面试官问你 “你工资多少？”</p>
+<p>在面试流程中，其实是严禁面试官直接问你工资等个人隐私问题的。一般，谈薪流程都是由 HR 进行的。当然，这个你可以自己把握评判，比如在有的公司，这个面试官就是给你发 Offer 的人，他可能希望得到这数据进行判断。</p>
+<p>不过，我们总不能啥问题都说 “这个数据涉及公司商业机密，不方便回答” 吧？</p>
+<p>比如，你这个系统平时负载如何，QPS 大概多少？你拿这个回应，就有点牵强了。（确实是商业机密除外）</p>
+<h3 id="HR-面要注意什么？"><a href="#HR-面要注意什么？" class="headerlink" title="HR 面要注意什么？"></a>HR 面要注意什么？</h3><p>据我所知，多数情况下，一般公司的 HR 面试不会刷人。即便 HR 面试没通过，也很有可能是用人业务部门在有限 hc 的情况下，发现了更合适的候选人。</p>
+<p>但阿里的 HR 在招人这块，权利还蛮大的，也具有一票否决权。即便前面技术（业务）面试都通过，但 HR 面试可能还是会刷掉，具体原因不好说，比如不符合公司文化？没有阿里味？</p>
+<p>这块儿，其实没有特别好的建议，就看缘分吧。</p>
+<p>咱们在 HR 面试过程中，表现真诚，如实的回答相关问题，只要没什么硬伤，一般来说，问题不太大。</p>
+<h3 id="一个部门面挂了还能继续面其他部门吗？"><a href="#一个部门面挂了还能继续面其他部门吗？" class="headerlink" title="一个部门面挂了还能继续面其他部门吗？"></a>一个部门面挂了还能继续面其他部门吗？</h3><p>这是一个非常常见的问题。</p>
+<p>一般来讲，面完一个部门后，可以继续面试其他部门的。</p>
+<p>一个部门面试没通过，在另外的部门能面试通过吗？这个是有可能的。</p>
+<p>之前在<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247489516&amp;idx=1&amp;sn=2caba785992af70305ff15f4a740af4a&amp;chksm=eb471608dc309f1ee4349dbedc0ff47a1670a804cba71818534ac3472fa12b183334397ea47b&amp;token=196265126&amp;lang=zh_CN#rd" target="_blank" rel="noopener">我的文章</a>中也说过，一般而言，公司招聘都是一个萝卜一个坑，萝卜太大或太小都不一定合适。</p>
+<p>因为每个部门/每个岗位对候选人的要求、能力、技术栈等需求是不一样的，且每个面试官可能看中的点也可能不一样（说白了，面试确实也有一定运气成分）。</p>
+<p>当然，这并不能说明我们可以无限制重复下去。因为每一次面试记录，都会被面试官完整的记录下来。也许后面的面试官看到你前面的面试评价，就直接拒绝了。</p>
+<p>你多一次尝试，且拒绝后，简历通过率（或者一面通过率）就下降，到后面，很有可能根据这个通过率数字就被拒绝了（甚至简历都不会被看到）。</p>
+<p>因此，还是建议我们“打有准备之仗”，好好准备，珍惜自己每一次面试机会。</p>
+<h2 id="背调注意事项"><a href="#背调注意事项" class="headerlink" title="背调注意事项"></a>背调注意事项</h2><p>如果前面的面试流程通过，HR 谈薪等也满足预期后面就是 Offer、背调、体检、入职了。</p>
+<p>背调一般会让第三方背调公司进行，有的公司调查得还挺详细的。我在 XX 公司的时候招人有看过候选人的背调报告，不过整体上来，主要是核实：工作经历（包括起止时间），是否属实；之前是否有违规（违法）记录；可能还会问你在之前公司表现如何呀、离职原因呀等等。</p>
+<p>开始背调一般需要你提供之前公司的直属领导和HR的联系方式，背调公司可能会说仅参考你给的信息，访谈对象可能不仅限于你提供的人的联系方式。</p>
+<p>你也没必要“造假”，说担心前面领导说你坏话啊等等，大家都是打工人，不至于。</p>
+<p>如实提供相应信息就好，若耍小聪明，被发现了反而不太好。只要你别简历造假，比如学历造假，工作经验造假等等。背调，一般不会有什么幺蛾子的。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>从投递简历到最后 Offer，整个流程算下来，耗时不短。比较快的，可能1个月之内能搞定，慢的就说不准了。我想，这也是招聘流程应该改进的地方吧。</p>
+<p>关于面试相关话题更多的内容可以<a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI3OTUzMzcwNw==&amp;action=getalbum&amp;album_id=1551696963291693061&amp;scene=173&amp;subscene=&amp;sessionid=undefined&amp;enterid=0&amp;from_msgid=2247493510&amp;from_itemidx=1&amp;count=3&amp;nolastread=1#wechat_redirect" target="_blank" rel="noopener">点击这里</a>访问。</p>
+<p>公众号改变了推文规则，为了保证每周的最新分享能够及时送达到你，请按照下图添加星标。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-7-4/1625390614478-%E6%98%9F%E6%A0%87.gif" alt="星标方法"></p>
+<p>期待能够和大家积极交流讨论，一起学习、共同进步。</p>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点击这里查看我的逆袭之路</a>），目前在BAT某厂打工，是前大疆（无人机）技术主管。</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/总结/" rel="tag"># 总结</a>
+          
+            <a href="/tags/MyLife/" rel="tag"># MyLife</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/you-should-learn-web-security.html" rel="next" title="公司搞了 Web 安全测评，挂了">
+                <i class="fa fa-chevron-left"></i> 公司搞了 Web 安全测评，挂了
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/the-whole-process-to-buy-house-in-peking.html" rel="prev" title="帝都购房了，500W，蜗居！">
+                帝都购房了，500W，蜗居！ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面试流程"><span class="nav-number">2.</span> <span class="nav-text">面试流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简历投递及注意事项"><span class="nav-number">3.</span> <span class="nav-text">简历投递及注意事项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#投递渠道"><span class="nav-number">3.1.</span> <span class="nav-text">投递渠道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">3.2.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#没有主动投递简历，也会接到面试邀请？"><span class="nav-number">3.3.</span> <span class="nav-text">没有主动投递简历，也会接到面试邀请？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在线笔试"><span class="nav-number">4.</span> <span class="nav-text">在线笔试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面试过程注意事项"><span class="nav-number">5.</span> <span class="nav-text">面试过程注意事项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#技术面会涉及哪些方面？"><span class="nav-number">5.1.</span> <span class="nav-text">技术面会涉及哪些方面？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遇到不会的题目怎么办？"><span class="nav-number">5.2.</span> <span class="nav-text">遇到不会的题目怎么办？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#某些问题能拒绝回答吗？"><span class="nav-number">5.3.</span> <span class="nav-text">某些问题能拒绝回答吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HR-面要注意什么？"><span class="nav-number">5.4.</span> <span class="nav-text">HR 面要注意什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个部门面挂了还能继续面其他部门吗？"><span class="nav-number">5.5.</span> <span class="nav-text">一个部门面挂了还能继续面其他部门吗？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#背调注意事项"><span class="nav-number">6.</span> <span class="nav-text">背调注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">7.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/the-whole-process-to-join-alibaba.html';
+
+      var disqus_title = "阿里面试招人流程大揭秘";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

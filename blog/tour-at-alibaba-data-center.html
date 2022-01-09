@@ -1,0 +1,909 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="总结,MyLife,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景大家好，我是石头哥。 本科的时候，有去参观过某个公司的机房，就是一堆机柜服务器那种，对机房的主观视觉概念也就停留在那个时刻。">
+<meta name="keywords" content="总结,MyLife">
+<meta property="og:type" content="article">
+<meta property="og:title" content="他们居然把服务器泡“水”里！| 数据中心参观有感">
+<meta property="og:url" content="https://www.tanglei.name/blog/tour-at-alibaba-data-center.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景大家好，我是石头哥。 本科的时候，有去参观过某个公司的机房，就是一堆机柜服务器那种，对机房的主观视觉概念也就停留在那个时刻。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-1/1633102716253-0353a81ef5345bcb2394ab4ffe47fd2.jpg">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633184097292-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-1/1633102853154-ef4cbab947743b3660ef8c8ac9b862b.jpg">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-1/1633103464717-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633106839037-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633105624311-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633106711754-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-3/1633271519262-ali-data-center.jpg">
+<meta property="og:image" content="http://dingyue.ws.126.net/2021/0918/1adf3e48g00qzlyn401nkc000go009em.gif">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633108181778-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633108807178-6eab19caa40291891720ca3d453fd344.jpg">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633109503088-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633109151866-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633183454955-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633183431892-image.png">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633183464635-image.png">
+<meta property="og:updated_time" content="2022-01-09T16:47:23.007Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="他们居然把服务器泡“水”里！| 数据中心参观有感">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景大家好，我是石头哥。 本科的时候，有去参观过某个公司的机房，就是一堆机柜服务器那种，对机房的主观视觉概念也就停留在那个时刻。">
+<meta name="twitter:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-1/1633102716253-0353a81ef5345bcb2394ab4ffe47fd2.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/tour-at-alibaba-data-center.html">
+
+
+
+
+
+  <title> 他们居然把服务器泡“水”里！| 数据中心参观有感 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/tour-at-alibaba-data-center.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                他们居然把服务器泡“水”里！| 数据中心参观有感
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-10-28T00:00:00+00:00">
+                2021-10-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MyLife/" itemprop="url" rel="index">
+                    <span itemprop="name">MyLife</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/tour-at-alibaba-data-center.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/tour-at-alibaba-data-center.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上<strong>清华</strong>（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点这里查看我的逆袭之路</a>），BAT某厂P7，是前大疆（无人机）技术主管。</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s/E9tTzmPigZrhC3wIi5pczQ" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-1/1633102716253-0353a81ef5345bcb2394ab4ffe47fd2.jpg" alt="数据中心入口"></p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>大家好，我是石头哥。</p>
+<p>本科的时候，有去参观过某个公司的机房，就是一堆机柜服务器那种，对机房的主观视觉概念也就停留在那个时刻。</p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633184097292-image.png" alt="本科参观过类似的机房，网图"></p>
+<p>虽说自己作为云计算行业从业者几年了，对数据中心的概念了解得更多了，知道其中不仅仅是服务器摆在机柜那么简单，但始终没有亲眼看到过，比如数据中心到底是怎样的？服务器、机柜、交换机、电源等等都长啥样？</p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-1/1633102853154-ef4cbab947743b3660ef8c8ac9b862b.jpg" alt="朋友圈日常分享，没加的可添加vx：codershitou"></p>
+<p>前几天，有了个机会，跟公司申请去参观了阿里云的数据中心，感受了下其中的黑科技（比如把服务器泡在“水”里？），今天就给大家分享一下。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>提前报备，严格的预约机制，保密流程等，需要另外签署 NDA（Non Disclosure Agreement，保密协议）等。当然本文分享内容不含敏感信息哈，都是从公网（更多的是官方授权的官网）可得到的信息。</p>
+<p>本文内容每个敏感点，石头哥都刻意去“官媒”求证了，不含敏感信息。所以，这篇分享不容易啊。大家看到了，还望多多帮忙点赞分享支持。</p>
+<p>可以看出，即便是内部员工，要求也挺严格的。进入机房，甚至<strong>从机房出来</strong>，都需要过安检（虽比不上乘飞机时的安检程度，但比地铁安检口严格得多），穿戴鞋套（回到了小学时候上电脑课）。</p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-1/1633103464717-image.png" alt="还记得小时候穿鞋套上电脑课吗？-网图"></p>
+<p>包当然不让带，手机可以带（人性化），不过进入机房前都给戴了套，加了锁，拍照是啥也看不到的。</p>
+<h2 id="供电"><a href="#供电" class="headerlink" title="供电"></a>供电</h2><p>数据中心是能耗的大头。一般一台服务器得几百瓦吧？几万上十万服务器跑着，这功率可想而知。除此之外，还有空调等其他系统。</p>
+<p>前两天某券商就发生了故障。事故原因是由于运营商机房电力闪断导致的多机房网络故障。其 CEO 反馈：</p>
+<blockquote>
+<p>供电网络一个几秒钟的电压抖动，IDC一堆网络IT设备跟着关机或重启，实在是难以想象，说好的不间断电源和柴油发电机去哪了？不间断电源和柴油发电机竟然都没能发挥应有的作用，要知道电力保障是一个IDC之所以是IDC的最基础能力。</p>
+</blockquote>
+<p>这里先提一下 PUE 这个概念（后面也会用得着）：</p>
+<blockquote>
+<p>PUE: Power Usage Effectiveness，又叫电源使用效率。计算方式为<code>数据中心总能耗/IT设备能耗</code>，评价数据中心能源效率的指标。</p>
+</blockquote>
+<p>IT设备能耗就是指真正产生“实际价值”的服务器、网络等IT设备使用的能源，除此之外，当然还有空调等制冷设备产生的能耗。据百度百科说数据中心的冷却占机房总功耗的40%左右。</p>
+<p>当然，PUE 值越接近1表明能效水平越好。</p>
+<h3 id="供电局断电了咋办？"><a href="#供电局断电了咋办？" class="headerlink" title="供电局断电了咋办？"></a>供电局断电了咋办？</h3><p>但当机房市电供电断掉的时候呢？比如电路被某个施工搞断了。</p>
+<blockquote>
+<p>最近非常严格的各种“限电”政策（别问我怎么知道的，特别惨）。</p>
+</blockquote>
+<p>所以，机房一般会双路供电。即：有2路来自不同的供电系统的市电接入，这两路市电不是同一个发电源，不交叉的供电系统，任何一路市电出问题都不会影响到另一路。</p>
+<p>此外，服务器上的电源也得是成对的。供电局不断电，保不齐，电源会坏啊。所以一个电源坏了，另外一个马上续上。</p>
+<blockquote>
+<p>为了<strong>高可用</strong>，基本都靠冗余，本文后面还有各种设备的冗余。</p>
+</blockquote>
+<h3 id="UPS"><a href="#UPS" class="headerlink" title="UPS"></a>UPS</h3><p>UPS（Uninterruptible Power Supply，不间断电源）你肯定听说过。当市电突然断电时，UPS 会把命给续上。</p>
+<p>但想想，一个机房能提供的功率多大，UPS 是不是也得尽量提供充足的电力？想想都贵。</p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633106839037-image.png" alt="电力电池室，来源见水印"></p>
+<blockquote>
+<p>搞云计算很难挣钱，是不是大概明白了？</p>
+</blockquote>
+<p>但是，UPS 毕竟是蓄电池，肯定支撑不了多久的。断电了，还得想办法补充电力才行。</p>
+<p>市电，你一个私企没法控制的吧，因此得自己有发电机。</p>
+<h3 id="柴油发电机"><a href="#柴油发电机" class="headerlink" title="柴油发电机"></a>柴油发电机</h3><p>这个时候，柴油发电机，就派上用场了。</p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633105624311-image.png" alt="柴油发电机，网图"></p>
+<p>就是类似上面这种玩意，当然这玩意，要你家停电了，提供下照明还是没啥问题的。</p>
+<p>要给IDC供电，得是这样的（看到的是升级过后的，这个是网上找的老版）：</p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633106711754-image.png" alt="柴油发电机房，来源见水印"></p>
+<p>这玩意，一般用不上，一年可能也用不上几回，但没有它，又不行。</p>
+<p>等到真正要用的时候，不能坏了，不能用吧？所以也会要有日常演练。</p>
+<p>演练虽然烧油有成本，但也是必须的。</p>
+<p>柴油跑着跑着没油了呢？“储油罐”不够怎么办，因此输送油的管道链路也得有。</p>
+<p>这玩意，比想象中的复杂太多啊。但缺了电，啥也干不了。</p>
+<p>所以，业务上层考虑高可用是必须的，不要把业务仅仅部署在一个机房。<br>所谓的“两地三中心”等等概念不是平白无故来的。</p>
+<h2 id="制冷"><a href="#制冷" class="headerlink" title="制冷"></a>制冷</h2><p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-3/1633271519262-ali-data-center.jpg" alt="冷机房，来源见水印"></p>
+<p>不知道你们的电脑在开发的时候，能同时开几个 IDE，开多个的时候，风扇是不是呼呼转，电脑是不是非常发烫？</p>
+<p>对，散热非常重要。</p>
+<p>传统的散热方式，就是靠空调。</p>
+<p>空调的散热方式，一般两种，即“风冷”和“水冷”。</p>
+<ul>
+<li>风冷，用风作为散热介质，就是空气，你家空调基本就是这种。</li>
+<li>水冷，就是用的水作为散热介质，效率会高一些。上面图就是水冷机组了。 冷水进，热水出。</li>
+</ul>
+<p>估计你之前也看过微软在海底建“数据中心”的这个新闻。 </p>
+<p><img src="http://dingyue.ws.126.net/2021/0918/1adf3e48g00qzlyn401nkc000go009em.gif" alt="微软海底“数据中心”"></p>
+<p>阿里也有类似的。</p>
+<blockquote>
+<p>阿里巴巴千岛湖数据中心是国内首个采用自然水制冷技术的数据中心，空调系统采用两路进水，湖水和冷冻水，可以实现同时或单独运行。湖水经过物理净化后，通过密闭管道流经每层为服务器降温，之后直接供市政景观用水，实现了资源最佳利用。</p>
+</blockquote>
+<p>一样，空调也得是“双路”的，主备空调能切换。</p>
+<p>各种备用空调坏的时候，物理降温，应急冰块、干冰等等也得准备起来。</p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633108181778-image.png" alt="物理降温冰块，网图"></p>
+<h2 id="黑科技-——-液冷"><a href="#黑科技-——-液冷" class="headerlink" title="黑科技 —— 液冷"></a>黑科技 —— 液冷</h2><p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633108807178-6eab19caa40291891720ca3d453fd344.jpg" alt="泡在“水”里的服务器，图片来源见水印"></p>
+<p>此外，还有黑科技。</p>
+<p>基于单相浸没液冷技术，利用<strong>绝缘冷却液</strong>实现高效散热，无需风扇、空调、冷机等冷却设施，数据中心PUE（Power Usage Effectiveness-能源使用效率，以下同)可低至1.09。</p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633109503088-image.png" alt="浸没液冷服务器集群，图片来源阿里AIS"></p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633109151866-image.png" alt="全球规模最大的全浸没液冷数据中心，图片来源阿里AIS"></p>
+<p>浸没液冷服务器采用了3M氟化液液体，全环境无风扇无振动设计，达到卓越散热冷却效果。</p>
+<p>据讲解的小姐姐说，使用这种技术的服务器故障率下降了7倍。</p>
+<p>不过那玩意应该很贵吧？</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>参观完，有一个明显的体验就是：虽说大家从官网通过一键就能轻轻松松购买“服务器” ECS，但这背后其实有这么庞大的工程系统在做支持。</p>
+<p>所以，也能理解，云计算为啥很难盈利了（你对比下广告）。更能感受到，当初在阿里做云计算有多么不容易（云计算早期中途团队走了不少，差点干不下去）。</p>
+<blockquote>
+<p>搞云计算的真的是挣点辛苦钱呀！</p>
+</blockquote>
+<p>回过头来看看2010年，BAT 大佬们对云计算的看法，这里有个视频：</p>
+<p><a href="https://v.qq.com/txp/iframe/player.html?vid=m3040cv8mop" target="_blank" rel="noopener">https://v.qq.com/txp/iframe/player.html?vid=m3040cv8mop</a></p>
+<p>其实就是下面三张图。你说马老师不懂技术，但对于王坚完全信任，很难得的。结果，想必大家也看到了。</p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633183454955-image.png" alt></p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633183431892-image.png" alt></p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-2/1633183464635-image.png" alt></p>
+<p>你可能感兴趣：</p>
+<ul>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247494957&amp;idx=1&amp;sn=5262cddbb843204d39a6d10acb1b44bd&amp;chksm=eb44ecc9dc3365df261839ba70c59f08643a6cdce62fd15ffabe8474ca1be07e5d6d1321c59c#rd" target="_blank" rel="noopener">云计算到底是个什么鬼？</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247495138&amp;idx=1&amp;sn=c692cbd20f3ac9ae4f23cbf1914ae0f7&amp;chksm=eb44ec06dc33651085d5cd7bfa88e71f76e130e2640290b786f6bc0a9bd0b0f30c5f5b2ff797#rd" target="_blank" rel="noopener">阿里云的“神龙”为何物？</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247487856&amp;idx=1&amp;sn=25affb193961ff69212e92ad89d5cbb4&amp;chksm=eb471094dc309982b83f02248a6ec1a7cf16af24c6f0573e40809fe2c936f8496d7c76493959#rd" target="_blank" rel="noopener">终于跟女朋友解释清楚了什么是云计算</a></li>
+</ul>
+<p>有收获请记得下方点赞、在看、分享，这对我很重要，感谢。 </p>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点击这里查看我的逆袭之路</a>），目前在BAT某厂打工，是前大疆（无人机）技术主管。</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/总结/" rel="tag"># 总结</a>
+          
+            <a href="/tags/MyLife/" rel="tag"># MyLife</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/9-years-of-experience-at-alibaba.html" rel="next" title="阿里待了9年的P8同学用心总结">
+                <i class="fa fa-chevron-left"></i> 阿里待了9年的P8同学用心总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/this-disk-is-full-again-and-again.html" rel="prev" title="磁盘又双叒叕满了~">
+                磁盘又双叒叕满了~ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#供电"><span class="nav-number">3.</span> <span class="nav-text">供电</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#供电局断电了咋办？"><span class="nav-number">3.1.</span> <span class="nav-text">供电局断电了咋办？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UPS"><span class="nav-number">3.2.</span> <span class="nav-text">UPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#柴油发电机"><span class="nav-number">3.3.</span> <span class="nav-text">柴油发电机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#制冷"><span class="nav-number">4.</span> <span class="nav-text">制冷</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#黑科技-——-液冷"><span class="nav-number">5.</span> <span class="nav-text">黑科技 —— 液冷</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">6.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/tour-at-alibaba-data-center.html';
+
+      var disqus_title = "他们居然把服务器泡“水”里！| 数据中心参观有感";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

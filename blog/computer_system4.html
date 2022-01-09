@@ -1,0 +1,868 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="软考,计算机基础,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="1.9 数学基础知识 1.9.1**命题逻辑的基础知识** 1. 命题  命题表述为具有确定真假意义的陈述句_。_  命题必须具备二个条件： 其一，语句是陈述句； 其二，语句有唯一确定的真假意义_。_ 2. 联结词 h“Ø”否定联结词：_P_是命题，Ø_P_是_P_的否命题_。_ 是由联结词 Ø 和命题_P_组成的复合命题_。_ 一元命题_。_ h “Ù”合取联结词，_P_Ù_Q_是命题_P_，_">
+<meta name="keywords" content="软考,计算机基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软考：计算机系统知识(四)">
+<meta property="og:url" content="https://www.tanglei.name/blog/computer_system4.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="1.9 数学基础知识 1.9.1**命题逻辑的基础知识** 1. 命题  命题表述为具有确定真假意义的陈述句_。_  命题必须具备二个条件： 其一，语句是陈述句； 其二，语句有唯一确定的真假意义_。_ 2. 联结词 h“Ø”否定联结词：_P_是命题，Ø_P_是_P_的否命题_。_ 是由联结词 Ø 和命题_P_组成的复合命题_。_ 一元命题_。_ h “Ù”合取联结词，_P_Ù_Q_是命题_P_，_">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.816Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软考：计算机系统知识(四)">
+<meta name="twitter:description" content="1.9 数学基础知识 1.9.1**命题逻辑的基础知识** 1. 命题  命题表述为具有确定真假意义的陈述句_。_  命题必须具备二个条件： 其一，语句是陈述句； 其二，语句有唯一确定的真假意义_。_ 2. 联结词 h“Ø”否定联结词：_P_是命题，Ø_P_是_P_的否命题_。_ 是由联结词 Ø 和命题_P_组成的复合命题_。_ 一元命题_。_ h “Ù”合取联结词，_P_Ù_Q_是命题_P_，_">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/computer_system4.html">
+
+
+
+
+
+  <title> 软考：计算机系统知识(四) | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/computer_system4.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                软考：计算机系统知识(四)
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-04-16T12:39:05+00:00">
+                2011-04-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">课程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/computer_system4.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/computer_system4.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>1.9</strong> <strong>数学基础知识</strong></p>
+<p><strong>1.9.1**</strong>命题逻辑的基础知识<strong>**</strong></p>
+<p><strong>1.</strong> <strong>命题</strong> </p>
+<p>命题表述为具有确定真假意义的陈述句_。_ </p>
+<p>命题必须具备二个条件：</p>
+<p>其一，语句是陈述句；</p>
+<p>其二，语句有唯一确定的真假意义_。_</p>
+<p><strong>2.</strong> <strong>联结词</strong></p>
+<p>h“Ø”否定联结词：_P_是命题，Ø_P_是_P_的否命题_。_ 是由联结词 Ø 和命题_P_组成的复合命题_。_ 一元命题_。_</p>
+<p>h “Ù”合取联结词，_P_Ù_Q_是命题_P_，_Q_的合取式，是“Ù”和_P_，_Q_组成的复合命题_。_ “Ù”在语句中相当于“不但…而且…”，“既…又…”<em>。 P</em>Ù_Q_取值1，当且仅当_P_，_Q_均取1；_P_Ù_Q_取值为0，只要_P_，_Q_之一取0_。_</p>
+<p>h “Ú”析取联结词，“Ú`”不可兼析取(异或)联结词， _P_Ú_Q_是命题_P_，_Q_的析取式，是“Ú”和_P_，_Q_组成的复合命题<em>。 P</em>Ú`_Q_是联结词“Ú`”和_P_，_Q_组成的复合命题_。_ 联结词“Ú”或“Ú`”在一个语句中都表示“或”的含义，可以表示相容或，也可以表示排斥或_。_ Ú`表示不相容的或_。_ 即“_P_Ú`_Q_”«“Ø_P_Ù_Q_Ú_P_ØÙ_Q_”_。_ PÚQ取值1，只要P，Q之一取值1，PÚQ取值0，只有P，Q都取值0。</p>
+<p>h “«” 等价联结词，_P_«_Q_是_P_，_Q_的等价式，是“«”和_P_，_Q_组成的复合命题_。_ “«”在语句中相当于“…当且仅当…”，_P_«_Q_取值1当且仅当_P_，_Q_取值相同_。_ </p>
+<p>h “®”蕴含联结词， _P_®_Q_是“®”和_P_，_Q_组成的复合命题<em>。 P</em>®_Q_取值为0，只有_P_取值为1，_Q_取值为0时；其余各种情况，均有_P_®_Q_取值为1，亦即1®0的真值为0，0®1，1®1，0®0的真值均为1。</p>
+<p><strong>3.</strong> <strong>命题公式、永真性的判定或命题公式的分类</strong> </p>
+<p>h命题公式与赋值，命题_P_含有_n_个命题变项_P_<sub>1</sub>，_P_<sub>2</sub>,…,<em>P<sub>n</sub></em>，给_P_<sub>1</sub>，_P_<sub>2</sub>,…,<em>P<sub>n</sub></em>各指定一个真值0或1，称为对_P_的一个赋值(真值指派)_。_ 若指定的一组值使_P_的值为1，则这组值为_P_的真指派；若使_P_的值为0，则称这组值称为_P_的假指派_。_</p>
+<p>h命题公式分类，在各种赋值下均为真的命题公式_A_，称为重言式(永真式)；在各种赋值下均为假的命题公式_A_，称为矛盾式(永假式)；命题_A_不是矛盾式，称为可满足式；</p>
+<p>判定命题公式类型的方法：其一是真值表法，对于任给公式，列出该公式的真值表，若真值表的最后一列全为1，则该公式为永真式；若真值表的最后一列全为0，则该公式是永假式；若真值表的最后一列既非全1，又非全0，则该公式是可满足式_。_ 其二是推导法_。_ 利用基本等值式(双重否定律、幂等律、交换律、结合律、分配律、吸收律、摩根律、同一律、零律、否定律、蕴含等值式、等价等值式、假言易位和等价否定等值式等)，对给定公式进行等值推导，若该公式的真值为1，则该公式是永真式；若该公式的真值为0，则该公式为永假式_。_ </p>
+<p>h定理1：设_F_(_A_)是含命题公式_A_的命题，_F_(_B_)是用命题公式_B_置换_F_(_A_)中的_A_之后得到的命题公式_。_ 如果_A_Û_B_，则_F_(_A_)Û_F_(_B_)_。_</p>
+<p><strong>4.</strong> <strong>范式</strong> </p>
+<p>h 析取(合取)范式，仅有有限个简单合取式(合取式)构成的析取式(合取式)，就是析取(合取)范式_。_</p>
+<p>h 极小项(极大项),，_n_个命题变项，每个变项与它的否定不同时出现，但是两者必须出现且仅出现一次，而且第_i_个命题变项或者其否定出现在从左算起第_i_个位置上(无脚标时，按字典序排列)，这样的简单合取式(析取式)为极小项(极大项)_。_</p>
+<p>极小项是_n_个变项的合取,_m_<sub>00</sub>=Ø_P_ØÙ_Q_，_m_<sub>01</sub>=Ø_P_Ù_Q_,…; 极大项是_n_个变项的析取,_M_<sub>00</sub>=_P_Ù_Q_，M<sub>01</sub>=_P_ØÙ_Q_,…;</p>
+<p>h 主析取范式(主合取范式)，对于含有_n_个命题变项的命题公式如果有一个仅有极小项(极大项)的析取(合取)构成的等式，则该等式为原命题公式的主析取范式(主合取范式)_。_</p>
+<p>每项含有n个命题变项(变项字母齐全)合取式(析取式)的析取(合取)为主析取(主合取)范式。</p>
+<p>任意命题公式都存在与之等值的析取范式和合取范式，与之等值的主析取范式和主合取范式是惟一的_。_ </p>
+<p>求范式，包括求析取范式、合取范式、主析取范式和主合取范式_。_ 关键有两点：</p>
+<p>其一是准确掌握范式定义；</p>
+<p>其二是巧妙使用基本等值式中的分配律、同一律和摩根律，结果的前一步适当使用幂等律_。_ </p>
+<p><strong>求析取(合取)范式的步骤：</strong> </p>
+<p>① 将公式中的联结词都化成Ø，Ù，Ú(在析取(合取)范式中不能有联结词®，«，Ú`)；</p>
+<p>② 将否定联结词Ø消去或移到各命题变项之前；</p>
+<p>③ 利用分配律、结合律等，将公式化为析取(合取)范式_。_ </p>
+<p><strong>求命题公式_A_的主析取(合取)范式的步骤</strong> </p>
+<p>① 求公式_A_的析取(合取)范式；</p>
+<p>② “消去”析取(合取)范式中所有永假式(永真式)的析取项(合取项)，如_P_ØÙ_P_(_P_ØÚ_P_)用0(1)替代_。_ 用幂等律将析取(合取)范式中重复出现的合取项(析取项)或相同的变项合并，如_P_Ù_P_(_P_Ú_P_)用_P_替代，<em>m<sub>i</sub></em>Ú<em>m<sub>i</sub></em>(<em>M<sub>i</sub></em>Ù<em>M<sub>i</sub></em>)用<em>m<sub>i</sub></em>(<em>M<sub>i</sub></em>)替代_。_ </p>
+<p>③ 若析取(合取)范式的某个合取项(析取项)_B_不含有命题变项<em>P<sub>i</sub></em>或Ø<em>P<sub>i</sub></em>，则添加<em>P<sub>i</sub></em>ØÚ<em>P<sub>i</sub></em>(<em>P<sub>i</sub></em>ØÙ<em>P<sub>i</sub></em>)，再利用分配律展开，使得每个合取项(析取项)的命题变项齐全；</p>
+<p>④ 将极小(极大)项按由小到大的顺序排列，用S(P)表示_。_</p>
+<p><strong>5.</strong> <strong>命题演算的推理理论</strong></p>
+<p>掌握演绎或形式证明_。_ 要理解并掌握14个重言蕴含式(即_I_<sub>1</sub>～_I_<sub>14</sub>)，17个等值式(_E_<sub>1</sub>～_E_<sub>17</sub>)；二是会使用三个规则(_P_规则、_T_规则和_CP_规则)_。_</p>
+<p><strong>1.9.2</strong> <strong>谓词逻辑、形式逻辑基础知识<em>**</em></strong></p>
+<p><strong>1**</strong>．谓词概念**：用以刻画客体的性质或关系的词；</p>
+<p>用谓词表达命题必须包括两个部分：客体和谓词字母，其中客体表示的是对象而谓词字母表示的是客体之间的关系。可以分为一元谓词，记作A(b)，二元谓词，记作B(a ,b)等等。</p>
+<p>单独一个谓词不是一个完整的命题，把谓词字母后填以客体所得的式子称为谓词填式。</p>
+<p>有N个客体变元的谓词称为N元谓词</p>
+<p>谓词命名式中客体变元的取值范围叫客体域</p>
+<p>例：论述域a{人}，b{人，地名}，c{实数，实数，实数}</p>
+<p>注意：空集不能作为论述域</p>
+<p>若A代表一特定谓词，A称为谓词常元。</p>
+<p>若A 代表任意谓词， A称为谓词变元。</p>
+<p>注：(1)单独的客体或单独的谓词不能构成命题</p>
+<p>(2)在谓词命名式中,若谓词是常元,个体变元代以   论述域中某客体才成为命题</p>
+<p>(3)命题是0元谓词</p>
+<p><strong>2**</strong>．命题函数：**由一个谓词，一些客体变元组成的表达式称为简单命题函数，有0元和n元命题函数。</p>
+<p>量词：分为全称量词和存在量词</p>
+<p>全称量词：&#8221;x读作‘对任意x’， &#8220;xP(x)表示‘对一切x,P(x)为真’</p>
+<p>┐&#8221;x┐P(x)表示，‘并非对任意x, ┐P(x)是真’</p>
+<p>存在量词：$x读作‘至少有一x’，‘存在一x’</p>
+<p>$x ┐P(x)表示，‘存在一x，使┐P(x) 为真’</p>
+<p>┐$x ┐P(x)表示，‘并非存在一个x，使P(x)为真’</p>
+<p>任意谓词中任意个体变元的所有个体域称全总个体域</p>
+<p>注：使用全总个体域后，个体变元取值范围一致。</p>
+<p>但不同论述对象须用不同的特性谓词加以刻划。</p>
+<p>个体词：</p>
+<p>个体域：</p>
+<p><strong>3**</strong>．不出现命题联结词和量词的谓词命名式P(X1, X2…Xn)称为谓词演算的原子公式。**</p>
+<p><strong>谓词演算的合式公式</strong>简称谓词公式，定义如下：</p>
+<p>1)谓词演算的原子公式是谓词演算公式</p>
+<p>2)若A， B是谓词演算公式，则</p>
+<p>(┐A)，(AÙB)，(AÚB)，(A→B)，(A«B)，</p>
+<p>(&#8220;XA)和($XA)是谓词演算公式</p>
+<p>3)只有有限次应用步骤1）和2）构成的公式才是谓词演算公式</p>
+<p><strong>4**</strong>．自由变元与约束变元：**</p>
+<p>定义：在量词&#8221;X，$X辖域内变元X的一切出现叫约束出现，称这样的X为约束变元。</p>
+<p>变元的非约束出现称为自由出现,称这样的变元为自由变元。</p>
+<p>谓词演算的永真公式：对公式A和B中的谓词变元（包括命题变元），指派任一在E上有定义的确定的谓词，指派E中任一确定的个体，若所得命题有相同的真值，称在E上AÛB。</p>
+<p>例如：1.&#8221;XP(X)→$XR(X)Û ┐&#8221;XP(X) Ú $XR(X)</p>
+<p>2．&#8221;XA Û A $XA Û A 这里A不含自由变元X</p>
+<p>3． a.&#8221;XP(X) ÞP(Y)或&#8221;XP(X) ÞP(X)</p>
+<p>b.P(Y) Þ$X P(X)或P(X) P(X)</p>
+<p>c.&#8221;XP(X) Þ$XP(X)</p>
+<p>4.a.&#8221;XA(X)ÚP Û&#8221;X(A(X)ÚP)</p>
+<p>b.&#8221;XA(X)ÙP Û&#8221;X(A(X)ÙP)</p>
+<p>c.$XA(X)ÚP Û$X(A(X)ÚP)</p>
+<p>d.$XA(X)ÙP Û$X(A(X)ÙP)</p>
+<p><strong>5**</strong>．前束范式**：量词均在谓词公式开头，作用域延伸到整个谓词公式末尾的谓词公式称为前束范式。</p>
+<p>例1：&#8221;x&#8221;y$z(Q(x，y) →R(z))</p>
+<p>例2：&#8221;x&#8221;y(┐P(x，y) →Q(y))</p>
+<p>例1把&#8221;x&#8221;y(┐($zP((x,y,z) ÙP(y,z)))→$uQ(x,y,u))化为前束范式。</p>
+<p>解：原式</p>
+<p>Û&#8221;x&#8221;y(┐($z(P(x，z) ÙP(y，z)) Ú$uQ(x，y，u))</p>
+<p>Û&#8221;x&#8221;y(&#8220;z(┐P(x，z) Ú┐P(y，z)) Ú$uQ(x，y，u))</p>
+<p>Û&#8221;x&#8221;y&#8221;z$u(┐P(x，y) Ú┐P(y，z) ÚQ(x，y，u))</p>
+<p>定义：若谓词公式是前束范式且作用域为合取范式,则称为前束合取范式。</p>
+<p>前束合取范式形式:(□u<sub>1</sub>)(□u<sub>2</sub>)…..(□u<sub>n</sub>)((A11Ú………ÚA1m<sub>1</sub>) Ù…Ù (An1Ú…. ÚAnm<sub>n</sub>))</p>
+<p>定义：若谓词公式是前束范式且作用域为析取范式,则称为前束析取范式。</p>
+<p>前束析取范式形式:</p>
+<p>(□u<sub>1</sub>)(□u<sub>2</sub>)…..(□u<sub>n</sub>)((A11Ù………ÙA1m<sub>1</sub>) Ú…  Ú (An1Ù…….. ÙAnm<sub>n</sub>))</p>
+<p>6．推理规则与<strong>推理理论：</strong></p>
+<p>命题演算中的所有推理规则都是谓词演算中的推理规则，谓词演算的所有永真式也是谓词推理规则。</p>
+<p>四条重要的推理规则</p>
+<p>1.全称指定规则，简记为US：对一切x，P(x)为真,可推得任意一个确定的c，使P(c)为真。</p>
+<p>2.存在指定规则，简记为EG：至少存在一个x使得A(x)为真.即可推得有一个确定的c,使P(c)为真。</p>
+<p>3.存在推广规则，简记为EG：c是某个确定的个体,若P(c)为真,则$x P(x)为真注意：c不能出现在P(c)中的x的辖域中</p>
+<p>4.全称推广规则，简记为UG：若对个体域中每一个客体c，P(c)断言为真则&#8221;x P(x)为真</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/软考/" rel="tag"># 软考</a>
+          
+            <a href="/tags/计算机基础/" rel="tag"># 计算机基础</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/computer_system3.html" rel="next" title="软考：计算机系统知识(三)">
+                <i class="fa fa-chevron-left"></i> 软考：计算机系统知识(三)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/program_language1.html" rel="prev" title="软考：程序语言部分(一)">
+                软考：程序语言部分(一) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/computer_system4.html';
+
+      var disqus_title = "软考：计算机系统知识(四)";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

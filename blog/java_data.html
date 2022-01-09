@@ -1,0 +1,828 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Java,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="背景今天分享初学者的常见问题: System.out.println(Long.MAX_VALUE &amp;gt; Float.MAX_VALUE);//false float f1 = 10000000143242F;float f2 = 10000000000000F;System.out.println(f1 == f2); //trueSystem.out.println((f1-f2) &amp;gt">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="再看java数据类型">
+<meta property="og:url" content="https://www.tanglei.name/blog/java_data.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="背景今天分享初学者的常见问题: System.out.println(Long.MAX_VALUE &amp;gt; Float.MAX_VALUE);//false float f1 = 10000000143242F;float f2 = 10000000000000F;System.out.println(f1 == f2); //trueSystem.out.println((f1-f2) &amp;gt">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-30/1638287663111-image.png">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.790Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="再看java数据类型">
+<meta name="twitter:description" content="背景今天分享初学者的常见问题: System.out.println(Long.MAX_VALUE &amp;gt; Float.MAX_VALUE);//false float f1 = 10000000143242F;float f2 = 10000000000000F;System.out.println(f1 == f2); //trueSystem.out.println((f1-f2) &amp;gt">
+<meta name="twitter:image" content="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-30/1638287663111-image.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/java_data.html">
+
+
+
+
+
+  <title> 再看java数据类型 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/java_data.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                再看java数据类型
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2010-12-18T08:24:38+00:00">
+                2010-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/java_data.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/java_data.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>今天分享初学者的常见问题:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(Long.MAX_VALUE &gt; Float.MAX_VALUE);<span class="comment">//false </span></span><br><span class="line"><span class="keyword">float</span> f1 = <span class="number">10000000143242F</span>;</span><br><span class="line"><span class="keyword">float</span> f2 = <span class="number">10000000000000F</span>;</span><br><span class="line"></span><br><span class="line">System.out.println(f1 == f2); <span class="comment">//true</span></span><br><span class="line">System.out.println((f1-f2) &gt; <span class="number">0.01</span>);<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<h2 id="Java-基本数据类型"><a href="#Java-基本数据类型" class="headerlink" title="Java 基本数据类型"></a>Java 基本数据类型</h2><p>在Java语言中，数据类型分为基本类型和对象类型。</p>
+<p>其中对象类型继承Object类，按照存储对象的内存模型进行数据存储。对象引用存储在内存栈上，而对象本身的值存储在内存堆上。这个概念上没有什么值得需要注意的地方。</p>
+<p>这里，我想说的主要还是 Java 的基本数据类型。</p>
+<p>一般来说也就是比较公认的 Java 包括8中基本类型(有的人也说 void 是一种类型)，从类型上又可分为：布尔型、字符型和数值型；其中数值型又可分为整数和实数2种。</p>
+<p><img src="https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-30/1638287663111-image.png" alt="Java基本数据类型"></p>
+<p>需要说明的是 <code>boolean</code> 类型所占存储空间的大小没有明确指定，仅定义为能够取字面值<code>true</code>或<code>false</code>，它占用的空间取决于Java虚拟机(JVM)的实现，可能是1位也可能是1个字节。</p>
+<p>而类型可以自动转化，但需要满足的规则是 <code>byte -&gt; short(char) -&gt; int -&gt; long -&gt; float -&gt; double</code>逐步提升。</p>
+<p>向下就得加强制转换符号。但有可能失去信息。</p>
+<p>默认的整数都是<code>int</code>，默认的小数都是<code>double</code>。</p>
+<p>要定义<code>float</code>以及<code>long</code>等类型时得加个后缀，F（小写也可以）或者L，否则编译不会通过。</p>
+<p>这也就是编译期间检查编译器会在编译期对 <code>byte、short、int、long、float、double、char</code>型变量的值进行检查，如果超出了它们的取值范围就会报错。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">byte</span> bb = <span class="number">1455</span>;<span class="comment">//编译过不了 eclipse 会提示： Type mismatch: cannot convert from int to byte</span></span><br><span class="line"><span class="keyword">byte</span> bbb = <span class="number">12</span>;</span><br></pre></td></tr></table></figure>
+<p>并且当使用 <code></code>+、-、*、/、%` 运算符对基本类型进行运算时，遵循如下规则：</p>
+<ul>
+<li>只要两个操作数中有一个是double类型的，另一个将会被转换成double类型，并且结果也是double类型；</li>
+<li>否则，只要两个操作数中有一个是float类型的，另一个将会被转换成float类型，并且结果也是float类型；</li>
+<li>否则，只要两个操作数中有一个是long类型的，另一个将会被转换成long类型，并且结果也是long类型；</li>
+<li>否则，两个操作数（包括byte、short、int、char）都将会被转换成int类型，并且结果也是int类型。</li>
+</ul>
+<p>当使用 <code>+=、-=、*=、/=、%=</code> 运算符对基本类型进行运算时，遵循如下规则：</p>
+<p>运算符右边的数值将首先被强制转换成与运算符左边数值相同的类型，然后再执行运算，且运算结果与运算符左边数值类型相同。</p>
+<p>这也是经常在某些面试题上出现的问题。</p>
+<h2 id="初学者常见问题"><a href="#初学者常见问题" class="headerlink" title="初学者常见问题"></a>初学者常见问题</h2><p>还需要说明的是从 JDK 1.5 开始，Java基本数据类型及其对应包装类之间能实现自动装箱解箱操作。</p>
+<p>就是说 <code>int</code> 自动装箱成<code>Integer</code>等。</p>
+<p>另外，有的人可能会问，自动转型的时候，为什么占用8个字节的<code>long</code>还能转成4个字节的<code>float</code>呢？</p>
+<p>或者到底是<code>Float</code>的 MAX_VALUE 大还是<code>Long</code>的 MAX_VALUE 大呢？下面这段代码可以看出结果。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(Long.MAX_VALUE &gt; Float.MAX_VALUE);<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<p>居然是false。</p>
+<p>什么原因呢？</p>
+<p>再看下面的。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">float</span> f1 = <span class="number">10000000143242F</span>;</span><br><span class="line"><span class="keyword">float</span> f2 = <span class="number">10000000000000F</span>;</span><br><span class="line"></span><br><span class="line">System.out.println(f1 == f2); <span class="comment">//true</span></span><br><span class="line">System.out.println((f1-f2) &gt; <span class="number">0.01</span>);<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<p>应该能看出原因了吧？结果就是进度不一致。</p>
+<p>float使用ieee754格式存储。只有24位精度，两个float之间的距离可能很大。</p>
+<p>举个简单的例子，10000000143242和10000000000000用float表示的话这两个数是相同的 。但是整数是精确表示的。</p>
+<p>这就是float为什么比long的范围广的原因了。</p>
+<p>下面把测试代码贴出来</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> c = <span class="string">'A'</span>;</span><br><span class="line">System.out.println(c);<span class="comment">//A</span></span><br><span class="line">System.out.println(c+<span class="number">1</span>);<span class="comment">//66</span></span><br><span class="line"><span class="comment">// System.out.println("char 默认类型：" +ch); 微信搜索“程序员升级打怪”，回复“见面礼”有惊喜</span></span><br><span class="line"><span class="comment">//byte bb = 1455;//编译过不了Type mismatch: cannot convert from int to byte</span></span><br><span class="line"><span class="keyword">byte</span> bbb = <span class="number">12</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">float</span> f = <span class="number">0f</span>;</span><br><span class="line"><span class="keyword">long</span> l = Long.MAX_VALUE;</span><br><span class="line">f = l;</span><br><span class="line"><span class="comment">//l = f;编译不能通过</span></span><br><span class="line">System.out.println(f);<span class="comment">//9.223372E18</span></span><br><span class="line">System.out.println(l);<span class="comment">//9223372036854775807</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* float使用ieee754格式存储。只有24位精度，两个float之间的距离可能很大。</span></span><br><span class="line"><span class="comment">*举个简单的例子，2000000000和2000000050用float表示的话这两个数是相同的 。</span></span><br><span class="line"><span class="comment">*整数是精确表示的。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">System.out.println(Long.MAX_VALUE &gt; Float.MAX_VALUE);<span class="comment">//false 精度不一致</span></span><br><span class="line"><span class="keyword">float</span> f1 = <span class="number">10000000143242F</span>;</span><br><span class="line"><span class="keyword">float</span> f2 = <span class="number">10000000000000F</span>;</span><br><span class="line"></span><br><span class="line">System.out.println(f1 == f2); <span class="comment">//true</span></span><br><span class="line">System.out.println((f1-f2) &gt; <span class="number">0.01</span>);<span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> i =<span class="number">255</span>;</span><br><span class="line"><span class="keyword">byte</span> b = (<span class="keyword">byte</span>) i; <span class="comment">//强制转换 可能丢失信息</span></span><br><span class="line">System.out.println(b); <span class="comment">//-1</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/soft0804_bb.html" rel="next" title="中南大学先进班集体标兵答辩-软件0804班视频准备final">
+                <i class="fa fa-chevron-left"></i> 中南大学先进班集体标兵答辩-软件0804班视频准备final
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/classes_j2ee.html" rel="prev" title="J2EE考点">
+                J2EE考点 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-基本数据类型"><span class="nav-number">2.</span> <span class="nav-text">Java 基本数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初学者常见问题"><span class="nav-number">3.</span> <span class="nav-text">初学者常见问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/java_data.html';
+
+      var disqus_title = "再看java数据类型";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

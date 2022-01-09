@@ -1,0 +1,845 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Linux,工具,Shell,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="标题党一回, 现如今到处都是各种”大数据”, 本文分析对象也就是首批积分落户的6000多条数据而已, 显然不能算什么大数据.  概述本文是 Shell 的一次综合应用, 充分利用 Shell 中的管道, 结合常用的 Shell 命令, 如 sort, uniq, cut, grep, awk, sed 等等命令对之前官方公布的首批北京积分落户同学进行分析.  目前政府官方数据公示期已过, 已经不能">
+<meta name="keywords" content="Linux,工具,Shell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Shell 应用 -- &quot;大数据&quot;分析首批北京积分落户同学">
+<meta property="og:url" content="https://www.tanglei.name/blog/use-shell-to-analysis-the-first-people-of-getting-residence-of-beijing-by-score.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="标题党一回, 现如今到处都是各种”大数据”, 本文分析对象也就是首批积分落户的6000多条数据而已, 显然不能算什么大数据.  概述本文是 Shell 的一次综合应用, 充分利用 Shell 中的管道, 结合常用的 Shell 命令, 如 sort, uniq, cut, grep, awk, sed 等等命令对之前官方公布的首批北京积分落户同学进行分析.  目前政府官方数据公示期已过, 已经不能">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.988Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Shell 应用 -- &quot;大数据&quot;分析首批北京积分落户同学">
+<meta name="twitter:description" content="标题党一回, 现如今到处都是各种”大数据”, 本文分析对象也就是首批积分落户的6000多条数据而已, 显然不能算什么大数据.  概述本文是 Shell 的一次综合应用, 充分利用 Shell 中的管道, 结合常用的 Shell 命令, 如 sort, uniq, cut, grep, awk, sed 等等命令对之前官方公布的首批北京积分落户同学进行分析.  目前政府官方数据公示期已过, 已经不能">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/use-shell-to-analysis-the-first-people-of-getting-residence-of-beijing-by-score.html">
+
+
+
+
+
+  <title> Shell 应用 -- "大数据"分析首批北京积分落户同学 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/use-shell-to-analysis-the-first-people-of-getting-residence-of-beijing-by-score.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                Shell 应用 -- "大数据"分析首批北京积分落户同学
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-25T00:00:00+00:00">
+                2019-01-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/use-shell-to-analysis-the-first-people-of-getting-residence-of-beijing-by-score.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/use-shell-to-analysis-the-first-people-of-getting-residence-of-beijing-by-score.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>标题党一回, 现如今到处都是各种”大数据”, 本文分析对象也就是首批积分落户的6000多条数据而已, 显然不能算什么大数据. </p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本文是 Shell 的一次综合应用, 充分利用 Shell 中的管道, 结合常用的 Shell 命令, 如 <code>sort, uniq, cut, grep, awk, sed</code> 等等命令对之前官方公布的首批北京积分落户同学进行分析. </p>
+<p>目前政府官方数据公示期已过, 已经不能从官方网站下载相应的公示数据了, 后文用到的数据来源于<a href="https://blog.csdn.net/huoyongliang/article/details/83062245" target="_blank" rel="noopener">某CSDN博客</a>. 印象中, 我记得当初该官网的这6000多条数据也是一次性就能wget下来的(后端估计没做限制, 可能稍微调整下接口的分页参数之类不需要严格按照各种分页多次下载). </p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>拿到的是json数据, 格式化之后的json数据主题结构如下所示, rows为数组, 数组中元素所代表的object即描述了获得北京户口的同学的各种属性, 例如分数, 排名, 身份证号(后四位打码了), 还有公司等等信息. 为了方便大家练习对数据进行试验, 我将数据附在<a href="https://www.tanglei.name/resources/use-shell-to-analysis-the-first-people-of-getting-residence-of-beijing-by-score/jifenluohu.json.gz">这里</a>, 如果有侵权, 请联系我删除. </p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">"rows": [</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"id"</span>: <span class="number">62981</span>,</span><br><span class="line">    <span class="attr">"idCard"</span>: <span class="string">"32092219721222****"</span>,</span><br><span class="line">    <span class="attr">"idCardSHA"</span>: <span class="string">"9ef70bde894959a4e4a1d1b2b9592b470294f9e4012a8cf480319665d1a7c1c6"</span>,</span><br><span class="line">    <span class="attr">"insertTime"</span>: <span class="number">1539518353000</span>,</span><br><span class="line">    <span class="attr">"integralQualified"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"internetAnnual"</span>: &#123;</span><br><span class="line">        <span class="attr">"annual"</span>: <span class="number">2018</span>,</span><br><span class="line">        <span class="attr">"id"</span>: <span class="number">43</span>,</span><br><span class="line">        <span class="attr">"insertTime"</span>: <span class="number">1539518353000</span>,</span><br><span class="line">        <span class="attr">"publicityEnd"</span>: <span class="number">1540224000000</span>,</span><br><span class="line">        <span class="attr">"publicityStart"</span>: <span class="number">1539591600000</span>,</span><br><span class="line">        <span class="attr">"publishResultEndDate"</span>: <span class="number">1541679300000</span>,</span><br><span class="line">        <span class="attr">"publishResultStartDate"</span>: <span class="number">1539591600000</span>,</span><br><span class="line">        <span class="attr">"publishResultStatus"</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">"score"</span>: <span class="number">90.75</span>,</span><br><span class="line">        <span class="attr">"status"</span>: <span class="number">1</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"md5Code"</span>: <span class="string">"54e9ff7ce0b004f7141b157f8afc66db"</span>,</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"杨效丰"</span>,</span><br><span class="line">    <span class="attr">"pxid"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"ranking"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"s1"</span>: <span class="number">51</span>,</span><br><span class="line">    <span class="attr">"s10"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"s2"</span>: <span class="number">12.59</span>,</span><br><span class="line">    <span class="attr">"s3"</span>: <span class="number">15</span>,</span><br><span class="line">    <span class="attr">"s4"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"s5"</span>: <span class="number">4</span>,</span><br><span class="line">    <span class="attr">"s6"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"s7"</span>: <span class="number">20</span>,</span><br><span class="line">    <span class="attr">"s8"</span>: <span class="number">20</span>,</span><br><span class="line">    <span class="attr">"s9"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"score"</span>: <span class="number">122.59</span>,</span><br><span class="line">    <span class="attr">"unit"</span>: <span class="string">"北京利德华福电气技术有限公司"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>拿到这个文件, 比如希望你用最快的方法获得以下信息, 你将会怎么做? </p>
+<ul>
+<li>获取取得户口名额最多的top10公司</li>
+<li>获取取得户口名额的人中姓氏最多的</li>
+<li>获取户口名字中叫啥名最流行</li>
+<li>获取年龄分布</li>
+<li>获取取得户口的同学户籍地top10  </li>
+<li>生肖/星座/生日…</li>
+</ul>
+<p>当然, 方法有很多, 比如熟悉各种编程语言的, 例如 <code>python, php, java</code> 等等写个简单的脚本程序, 也能比较快获取答案. 或者把相应的数据提取出来, 放到 excel 中也可以. </p>
+<p>如果你对 shell 很熟悉, 那真的是分分钟, 哦, 应该是秒秒种就能获取答案. 就算用Shell来实现, 不同的人可能也有不同的写法, 后面我就列举其中的一种来解决这些问题. 本文不对 Shell 具体每个命令做过多的解释, 不熟悉的同学 可以直接 <code>man $cmd</code> 或者 <code>$cmd --help</code> 等等查看, 之前我也写过一篇名叫 <a href="https://www.tanglei.name/blog/linux-shell-makes-more-efficient.html">Shell 助力开发效率提升</a> 的文章, 算是给常用的命令的常用参数做了一个解释和示例, 有兴趣的同学可以前往查阅. </p>
+<h2 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h2><h3 id="获取取得户口名额最多的top10公司"><a href="#获取取得户口名额最多的top10公司" class="headerlink" title="获取取得户口名额最多的top10公司"></a>获取取得户口名额最多的top10公司</h3><p>看看想通过积分落户, 最好是进哪些公司, 哈哈. </p>
+<blockquote>
+<p>   “unit”: “北京利德华福电气技术有限公司”</p>
+</blockquote>
+<p>先通过 <code>grep</code> 得到包含公司名字的一行, 然后通过 “:” 分割 <code>cut</code> 取第2列得到公司名字, 对结果进行<code>sort</code>排序进行去重<code>uniq</code>统计得到重复次数, 次时结果为<code>重复次数 公司名</code>, 再对第一列<code>-k 1</code>重复数字进行按照数字排序逆序<code>-nr</code> 即 <code>sort -nr -k 1</code>, 最后取结果的前10行 <code>head -n 10</code>.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  积分落户  &gt; grep <span class="string">'unit'</span> jifenluohu.json| cut -f2 -d: | sort | uniq -c | sort -nr -k 1 | head -n 10</span><br><span class="line"> 137  <span class="string">"北京华为数字技术有限公司"</span></span><br><span class="line">  73  <span class="string">"中央电视台"</span></span><br><span class="line">  57  <span class="string">"北京首钢建设集团有限公司"</span></span><br><span class="line">  55  <span class="string">"百度在线网络技术（北京）有限公司"</span></span><br><span class="line">  48  <span class="string">"联想（北京）有限公司"</span></span><br><span class="line">  40  <span class="string">"北京外企人力资源服务有限公司"</span></span><br><span class="line">  40  <span class="string">"中国民生银行股份有限公司"</span></span><br><span class="line">  39  <span class="string">"国际商业机器（中国）投资有限公司"</span></span><br><span class="line">  29  <span class="string">"中国国际技术智力合作有限公司"</span></span><br><span class="line">  27  <span class="string">"华为技术有限公司北京研究所"</span></span><br></pre></td></tr></table></figure>
+<h3 id="获取取得户口名额的人中姓氏最多的"><a href="#获取取得户口名额的人中姓氏最多的" class="headerlink" title="获取取得户口名额的人中姓氏最多的"></a>获取取得户口名额的人中姓氏最多的</h3><p>看看想通过积分落户, 最好是姓啥, 哈哈.</p>
+<blockquote>
+<p>   “name”: “杨效丰”,</p>
+</blockquote>
+<p>套路跟之前差不多的, 我这边就不特别指出了. 下面shell实际上是取到这行后, 将真正表示名字之前的所有字符都删除, 就只剩下名字开头了, 取行首第一个字符<code>cut -c 1</code>即得到姓, 再按照之前的套路就能拿到了. </p>
+<p>其实用什么<code>sed</code>替换冗余的字符都是多余的, 因为json的格式都是良好的, 可以直接通过 <code>cut -c ?</code> 取姓这个字符即可. 也不用挨个去数到底是第几个字符, 直接 copy出来, 然后 <code>echo -n $paste | wc -c</code> 就能数到第几个字符了. </p>
+<p>看结果还是姓 “张, 王” 之类的最有戏. :) </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 或者 grep '"name":' jifenluohu.json| sed 's|"name": "||g' | sed 's|[[:space:]]||g' | cut -c 1 | sort | uniq -c | sort -nr -k 1 | head -n 10</span></span><br><span class="line">➜  积分落户  &gt; grep <span class="string">'"name":'</span> jifenluohu.json| sed <span class="string">'s|"name": "||g'</span> | sed <span class="string">'s| ||g'</span> | cut -c 1 | sort | uniq -c | sort -nr -k 1 | head -n 10</span><br><span class="line"> 541 张</span><br><span class="line"> 531 王</span><br><span class="line"> 462 李</span><br><span class="line"> 376 刘</span><br><span class="line"> 205 陈</span><br><span class="line"> 193 杨</span><br><span class="line"> 166 赵</span><br><span class="line"> 132 孙</span><br><span class="line">  95 郭</span><br><span class="line">  95 徐</span><br></pre></td></tr></table></figure>
+<h3 id="获取户口名字中叫啥名最流行"><a href="#获取户口名字中叫啥名最流行" class="headerlink" title="获取户口名字中叫啥名最流行"></a>获取户口名字中叫啥名最流行</h3><p>套路差不多, 不做过多解释了. </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  积分落户  &gt; grep <span class="string">'"name":'</span> jifenluohu.json| sed <span class="string">'s|"name": "||g'</span> | sed <span class="string">'s|[[:space:]]||g'</span> | cut -c 2-4 | sort | uniq -c | sort -nr -k 1 | head -n 10</span><br><span class="line">  51 伟<span class="string">",</span></span><br><span class="line"><span class="string">  39 静"</span>,</span><br><span class="line">  38 涛<span class="string">",</span></span><br><span class="line"><span class="string">  36 勇"</span>,</span><br><span class="line">  36 军<span class="string">",</span></span><br><span class="line"><span class="string">  32 敏"</span>,</span><br><span class="line">  31 颖<span class="string">",</span></span><br><span class="line"><span class="string">  30 鹏"</span>,</span><br><span class="line">  28 杰<span class="string">",</span></span><br><span class="line"><span class="string">  28 峰"</span>,</span><br><span class="line"><span class="comment"># 取名字, 必须包含2个字</span></span><br><span class="line">➜  积分落户  &gt; grep <span class="string">'"name":'</span> jifenluohu.json| sed <span class="string">'s|"name": "||g'</span> | sed <span class="string">'s|[[:space:]]||g'</span> | cut -c 2-3 | sed  <span class="string">'/"/d'</span> | sort | uniq -c | sort -nr -k 1 | head -n 10</span><br><span class="line">  19 海涛</span><br><span class="line">  19 晓东</span><br><span class="line">  12 志强</span><br><span class="line">  11 海燕</span><br><span class="line">  11 永强</span><br><span class="line">  11 建华</span><br><span class="line">  10 雪梅</span><br><span class="line">   9 海龙</span><br><span class="line">   9 丽娜</span><br><span class="line">   8 洪涛</span><br></pre></td></tr></table></figure>
+<p>作为码农, 必须得养成对自己得到结果进行自测的习惯, 所以如果对自己的结果不够自信, 可以正向去计算一下最终的结果. </p>
+<p>例如可以简单<code>grep</code>一下进行验证, 叫 “海涛” 的是不是19个. </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  积分落户  &gt; grep <span class="string">'海涛'</span> jifenluohu.json | wc -l</span><br><span class="line">      19</span><br></pre></td></tr></table></figure>
+<h3 id="获取年龄分布"><a href="#获取年龄分布" class="headerlink" title="获取年龄分布"></a>获取年龄分布</h3><p>思路是截取身份证中号码中代表出生年的4位数, 然后拿当前年份2019减出生年得到年龄, 后面的套路又一样了. </p>
+<p><code>bc</code> 一个简单的计算器程序, 了解下? </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  shell-train  &gt; <span class="built_in">echo</span> <span class="string">"3+2-5/5"</span> | bc</span><br><span class="line">4</span><br><span class="line">➜  shell-train  &gt; <span class="built_in">echo</span> <span class="string">"3.141592*5-4"</span> | bc</span><br><span class="line">11.707960</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#思路1: `cut -c 9-12` 获取出生年, 拼接表达式 `2019-出生年` 得到年龄.</span></span><br><span class="line">➜  积分落户  &gt; grep <span class="string">'"idCard":'</span> jifenluohu.json| cut -f2 -d: | cut -c 9-12 | xargs -n1 <span class="built_in">echo</span> 2019 -|bc | sort | uniq -c</span><br><span class="line">   3 34</span><br><span class="line">  13 35</span><br><span class="line">  39 36</span><br><span class="line"> 109 37</span><br><span class="line"> 162 38</span><br><span class="line"> 302 39</span><br><span class="line"> 507 40</span><br><span class="line"> 773 41</span><br><span class="line"> 799 42</span><br><span class="line"> 813 43</span><br><span class="line"> 757 44</span><br><span class="line"> 586 45</span><br><span class="line"> 507 46</span><br><span class="line"> 378 47</span><br><span class="line"> 238 48</span><br><span class="line">   4 49</span><br><span class="line">   9 50</span><br><span class="line">   1 51</span><br><span class="line">   4 52</span><br><span class="line">   3 53</span><br><span class="line">   2 54</span><br><span class="line">   5 55</span><br><span class="line">   1 56</span><br><span class="line">   1 58</span><br><span class="line">   1 59</span><br><span class="line">   1 60</span><br><span class="line">   1 61</span><br></pre></td></tr></table></figure>
+<p><code>awk</code> 是个好东西, 多练练. </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 拿到出生年后, 直接通过 awk 计算结果输出</span></span><br><span class="line">➜  积分落户  &gt; grep <span class="string">'"idCard":'</span> jifenluohu.json| cut -f2 -d: | cut -c 9-12 |awk <span class="string">'&#123;print 2019-$1&#125;'</span> | sort | uniq -c</span><br><span class="line">   3 34</span><br><span class="line">  13 35</span><br><span class="line">  39 36</span><br><span class="line"> 109 37</span><br><span class="line"> 162 38</span><br><span class="line"> 302 39</span><br><span class="line"> 507 40</span><br><span class="line"> 773 41</span><br><span class="line"> 799 42</span><br><span class="line"> 813 43</span><br><span class="line"> 757 44</span><br><span class="line"> 586 45</span><br><span class="line"> 507 46</span><br><span class="line"> 378 47</span><br><span class="line"> 238 48</span><br><span class="line">   4 49</span><br><span class="line">   9 50</span><br><span class="line">   1 51</span><br><span class="line">   4 52</span><br><span class="line">   3 53</span><br><span class="line">   2 54</span><br><span class="line">   5 55</span><br><span class="line">   1 56</span><br><span class="line">   1 58</span><br><span class="line">   1 59</span><br><span class="line">   1 60</span><br><span class="line">   1 61</span><br></pre></td></tr></table></figure>
+<h3 id="获取取得户口的同学户籍地top10"><a href="#获取取得户口的同学户籍地top10" class="headerlink" title="获取取得户口的同学户籍地top10"></a>获取取得户口的同学户籍地top10</h3><p>有时候, 我们在写Shell的时候, 为了debug方便, 可能会将一些中间结果缓存到文件中, 后续以该文件为基础进行后续的计算. </p>
+<p>比如先拿到top10的身份证中代表的户籍地的四位编码, 这里需要借助另外的一个表示身份证户籍地的编码来进行对应. 借此机会解释下 <code>join</code> 这个命令.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 身份证前4位为例, 拿到户籍地</span></span><br><span class="line">grep <span class="string">'"idCard":'</span> jifenluohu.json| cut -f2 -d: | cut -c 3-6 | sort | uniq -c | sort -nr -k 1 &gt;topcity.code</span><br><span class="line"><span class="comment"># 城市列表</span></span><br><span class="line">➜  积分落户  &gt; more city.csv</span><br><span class="line">11,北京市</span><br><span class="line">1101,北京市市辖区</span><br><span class="line">110101,北京市东城区</span><br><span class="line">110102,北京市西城区</span><br><span class="line">110103,北京市崇文区</span><br><span class="line">110104,北京市宣武区</span><br><span class="line">110105,北京市朝阳区</span><br><span class="line"><span class="comment"># grep -E '^[0-9]&#123;4&#125;,' city.csv | sed 's|,| |g' &gt; city.code4</span></span><br><span class="line">➜ shell-train  &gt; head -n 2 city.code4</span><br><span class="line">1101 北京市市辖区</span><br><span class="line">1102 北京市市辖县</span><br><span class="line">➜ shell-train  &gt; head -n 2 topcity.code</span><br><span class="line"> 197 1201</span><br><span class="line"> 156 1302</span><br><span class="line">➜ shell-train  &gt; join</span><br><span class="line">usage: join [-a fileno | -v fileno ] [-e string] [-1 field] [-2 field]</span><br><span class="line">            [-o list] [-t char] file1 file2</span><br></pre></td></tr></table></figure>
+<p>其实, <code>join</code> 就类似<code>sql</code>中的 <code>...inner join ...on ...</code>, <code>-t</code> 分隔符, 默认为空格或<code>tab</code>. </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 未排序, 所以没有将所有的导出(join需要排序)</span></span><br><span class="line">➜ shell-train  &gt; join -1 1 -2 2 city.code4 topcity.code</span><br><span class="line">1201 天津市市辖区 197</span><br><span class="line">1302 河北省唐山市 156</span><br><span class="line">2301 黑龙江哈尔滨市 123</span><br><span class="line">4201 湖北省武汉市 118</span><br><span class="line">6101 陕西省西安市 100</span><br><span class="line">6201 甘肃省兰州市 59</span><br><span class="line">6501 新疆乌鲁木齐市 29</span><br><span class="line">6523 新疆昌吉回族自治州 11</span><br></pre></td></tr></table></figure>
+<p>一定需要将结果输出到文件, 然后再进行吗? 其实也不一定. 管道的方式 <code>|</code> 可以将上一个命令的输出结果作为下一个命令的输入, 可以通过 <code>&lt;(command)</code> 的方式, 将<code>command</code> 的输出作为一个文件输入. </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 需要排序</span></span><br><span class="line">➜ shell-train  &gt; join -1 1 -2 2 city.code4 &lt;(head -n 10 topcity.code | sort -k 2)</span><br><span class="line">1201 天津市市辖区 197</span><br><span class="line">1301 河北省石家庄市 114</span><br><span class="line">1302 河北省唐山市 156</span><br><span class="line">1324 河北省保定地区 103</span><br><span class="line">1501 内蒙古呼和浩特市 88</span><br><span class="line">2101 辽宁省沈阳市 109</span><br><span class="line">2201 吉林省长春市 113</span><br><span class="line">2301 黑龙江哈尔滨市 123</span><br><span class="line">4201 湖北省武汉市 118</span><br><span class="line">6101 陕西省西安市 100</span><br></pre></td></tr></table></figure>
+<p>举个例子<code>paste</code>用来将两个文件按列合并在一起, </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  shell-train  &gt; cat paste.f1</span><br><span class="line">hello, i am</span><br><span class="line">world, you are</span><br><span class="line">➜  shell-train  &gt; cat paste.f2</span><br><span class="line">tanglei, wechat is: tangleithu</span><br><span class="line">?, hahaha</span><br><span class="line">➜  shell-train  &gt; paste paste.f1 paste.f2</span><br><span class="line">hello, i am	tanglei, wechat is: tangleithu</span><br><span class="line">world, you are	?, hahaha</span><br></pre></td></tr></table></figure>
+<p>以上用<code>paste</code>将两个文件合并在一起了, 实际上通过 <code>&lt;(cmd)</code>的方式, 可以不借助外部文件也能做到. 方法如下: </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  shell-train  &gt; paste &lt;(<span class="built_in">echo</span> <span class="string">"hello, i am \nworld, you are"</span>) &lt;(<span class="built_in">echo</span> <span class="string">"tanglei, wechat is: tangleithu\n?, hahaha"</span>)</span><br><span class="line">hello, i am 	tanglei, wechat is: tangleithu</span><br><span class="line">world, you are	?, hahaha</span><br></pre></td></tr></table></figure>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>这里就不重复多讲了, 剩下的问题, 要不你动手试试? 比如看看生日最多的? 再试试获取 生肖/星座 最多的top10. </p>
+<p>有任何疑问, 欢迎留言交流参与交流讨论. </p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/工具/" rel="tag"># 工具</a>
+          
+            <a href="/tags/Shell/" rel="tag"># Shell</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/welcome-to-join-DJI.html" rel="next" title="这是一个招聘贴 -- 大疆欢迎你">
+                <i class="fa fa-chevron-left"></i> 这是一个招聘贴 -- 大疆欢迎你
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/summary-of-year-2018.html" rel="prev" title="2018年终总结">
+                2018年终总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">2.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题解答"><span class="nav-number">3.</span> <span class="nav-text">问题解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取取得户口名额最多的top10公司"><span class="nav-number">3.1.</span> <span class="nav-text">获取取得户口名额最多的top10公司</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取取得户口名额的人中姓氏最多的"><span class="nav-number">3.2.</span> <span class="nav-text">获取取得户口名额的人中姓氏最多的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取户口名字中叫啥名最流行"><span class="nav-number">3.3.</span> <span class="nav-text">获取户口名字中叫啥名最流行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取年龄分布"><span class="nav-number">3.4.</span> <span class="nav-text">获取年龄分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取取得户口的同学户籍地top10"><span class="nav-number">3.5.</span> <span class="nav-text">获取取得户口的同学户籍地top10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">3.6.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/use-shell-to-analysis-the-first-people-of-getting-residence-of-beijing-by-score.html';
+
+      var disqus_title = "Shell 应用 -- \"大数据\"分析首批北京积分落户同学";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

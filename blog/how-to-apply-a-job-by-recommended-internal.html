@@ -1,0 +1,882 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="面试,程序员,编程,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景每个人的职业生涯基本上都离不开”投简历找工作”这件事（什么，你家里有矿？当我没说），那拿着简历找工作正确的姿势是啥？这篇文章将分享下石头的经验和看法。">
+<meta name="keywords" content="面试,程序员,编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="互联网大厂内推求职的正确姿势？">
+<meta property="og:url" content="https://www.tanglei.name/blog/how-to-apply-a-job-by-recommended-internal.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景每个人的职业生涯基本上都离不开”投简历找工作”这件事（什么，你家里有矿？当我没说），那拿着简历找工作正确的姿势是啥？这篇文章将分享下石头的经验和看法。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/how-to-apply-a-job-by-recommended-internal/%E8%81%8C%E7%BA%A7%E8%96%AA%E6%B0%B4.jpg">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibtp9R6XH1NdMoxzfHovXRj2K3sCu9ibz7jke5ZKAAjzMbWzafsl1XyOTc0bmUic59FY8x4tY9cibgshw/640.jpg">
+<meta property="og:image" content="https://www.tanglei.name/resources/how-to-apply-a-job-by-recommended-internal/video-call.jpg">
+<meta property="og:image" content="https://www.tanglei.name/resources/how-to-apply-a-job-by-recommended-internal/wangluo-penzi.jpg">
+<meta property="og:image" content="https://www.tanglei.name/resources/how-to-calculate-apr/codershitou-wechat.png">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.995Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="互联网大厂内推求职的正确姿势？">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景每个人的职业生涯基本上都离不开”投简历找工作”这件事（什么，你家里有矿？当我没说），那拿着简历找工作正确的姿势是啥？这篇文章将分享下石头的经验和看法。">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/how-to-apply-a-job-by-recommended-internal/%E8%81%8C%E7%BA%A7%E8%96%AA%E6%B0%B4.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/how-to-apply-a-job-by-recommended-internal.html">
+
+
+
+
+
+  <title> 互联网大厂内推求职的正确姿势？ | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/how-to-apply-a-job-by-recommended-internal.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                互联网大厂内推求职的正确姿势？
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-30T00:00:00+00:00">
+                2020-09-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/how-to-apply-a-job-by-recommended-internal.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/how-to-apply-a-job-by-recommended-internal.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247489516&amp;idx=1&amp;sn=2caba785992af70305ff15f4a740af4a&amp;chksm=eb471608dc309f1ee4349dbedc0ff47a1670a804cba71818534ac3472fa12b183334397ea47b&amp;token=553253061&amp;lang=zh_CN#rd" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>每个人的职业生涯基本上都离不开”投简历找工作”这件事（什么，你家里有矿？当我没说），那拿着简历找工作正确的姿势是啥？这篇文章将分享下石头的经验和看法。</p>
+<p>一般而言，我认为走“内推”渠道，是一个对求职者和招聘方都靠谱的选择。</p>
+<h2 id="为什么内推靠谱？"><a href="#为什么内推靠谱？" class="headerlink" title="为什么内推靠谱？"></a>为什么内推靠谱？</h2><p>找工作无外乎就这几个选择：内推，猎头，官网投递，招聘平台（某聘、某Boss 之类）。</p>
+<p>如果能找到内推渠道，当然内推更好，后面详细说。下面从这几个渠道来谈谈石头的看法。</p>
+<h3 id="猎头"><a href="#猎头" class="headerlink" title="猎头"></a>猎头</h3><p>猎头专门靠这个吃饭的，所以还是有一定优势的，但大部分猎头的“KPI”是促进这个“订单”成交，因为成交才能有收益，据我所知，一般成交的猎头公司的收益是候选人年薪的 20%-30%（年薪可能按照合同 base，不算绩效），当然到猎头自己手上的可能会少一些。</p>
+<p>关键问题是现在满世界的猎头，说真的，质量真的是参差不齐，我也接触过好多，当然还是有不少高水平的猎头，能不能碰到就得看你的运气了。</p>
+<p>通过猎头成交 Offer，缺点是你可能没法了解到对应部门的真正的具体职责，里面团队到底是怎样的等等细节，这肯定没有公司内部（内推渠道）的人更了解；</p>
+<p>从进度把控等方面，猎头跟进等肯定也不如内推人及时，毕竟中间有个 “中间商” 绕一圈，传话什么的也不能及时反馈。一般公司可能会对接多个猎头公司，HR 和猎头公司之间的关系当然就是“甲方-乙方”的关系，猎头去催问进度和内部员工问同事（或者一般内推有系统可直接跟进），你说哪个效率更高？</p>
+<p>还有，你的简历信息给到猎头了，我相信，当然大部分猎头应该没有恶意，简历里面有电话号码吧？背后猎头公司简历库的管理，如果中间哪个环节出了点问题会怎么样？</p>
+<p>你以为你现在收到的各种“骚扰”电话是怎么来的？啊，有的猎头真的很不专业，不知道你有没收到类似“不专业”的电话，评论区说说？</p>
+<h3 id="招聘平台"><a href="#招聘平台" class="headerlink" title="招聘平台"></a>招聘平台</h3><p>招聘平台聚合了很多职位信息，方便候选人筛选不同的公司。当然招聘平台上也有不少猎头，这里就略过不讲这部分了。</p>
+<p>另外一方就是公司招聘方。一般是比如在公司负责招聘的 HR 会在上面筛选简历，当然你可以选择主动联系投递。</p>
+<p>还有一部分是公司具体人才的需求方（非 HR），比如阿里很大程度上讲，是团队 Leader 要自己去招人的，甚至有的同学还背负了相应的 KPI，比如我一个阿里的朋友，今年下半年的 kpi 就是要 Offer 一个前端 P7（或者 P6）的技术岗。（有没有读者朋友帮我这个朋友完成 KPI :) ）</p>
+<p>这也是为什么，好多人收到阿里的电话，问你看不看机会的原因。不要误会，他不是 HR，就是对应团队的人，从内网的简历库里面捞到了你的简历，就电话问问你，万一你要看机会呢，说不定最后就能成了。</p>
+<p>其实招聘方在查看相应简历的时候，是要花钱的。比如你的简历可能会被通过某些关键字检索到，想看联系方式等，招聘方就得花钱购买，比如 5 块 1 个。我有同事就在上面买过简历，然后拿到信息后，一问已经在流程中了，这样的例子多了之后，其实就不大愿意去上面找简历。一来效果不好，另外还得自己掏钱。</p>
+<p>另外，我觉得你既然要看机会，还是自己主动点比较好，比如对哪个公司感兴趣，对哪个岗位感兴趣，积极主动效果会更好，这样把简历放到公共池子里面被捞，虽然还是有一定概率被合适的岗位捞，但效率较低。</p>
+<p>当然，如果不是特别着急换工作，也就想看看了解下情况，这样也行，只是可能会被不断“骚扰”。我还是建议，既然要看机会，还是自己主动、要有目标，找人内推更好。</p>
+<p>再一个问题，跟上面提到的一样，就是你的简历信息的“隐私”性，不排除你的简历就被转卖了。</p>
+<h3 id="官网投递"><a href="#官网投递" class="headerlink" title="官网投递"></a>官网投递</h3><p>官网投递也是一种方式，但最有可能会“石沉大海”，很有可能就投完了，就没有下一步了。也不知道去哪里找谁问进展。</p>
+<p>因为这个渠道收到的简历确实很多，HR 在后台筛选简历的时候，说不定某个关键字没匹配上，你的简历就没机会被“过目”了。</p>
+<h3 id="内推"><a href="#内推" class="headerlink" title="内推"></a>内推</h3><p>对比上面几个渠道的优缺点后，也就知道了内推的好处。</p>
+<p>对于候选人，可以跟内推人了解到：</p>
+<ul>
+<li>了解岗位职责，具体业务情况</li>
+<li>岗位对应团队的具体情况和氛围，比如加班情况啊等等</li>
+<li>面试进度实时反馈，提高效率</li>
+</ul>
+<p>对于招聘方：</p>
+<ul>
+<li>内推人有内推奖励，也很乐意帮忙内推</li>
+<li>帮公司招揽人才，还能完成部分 KPI（比如上面提到的石头一个同事的情况）</li>
+<li>公司成本也是最低的，如果内推人和推荐人相对比较了解，也清楚具体候选人的技术水平等</li>
+</ul>
+<p>当然内推也有缺点，就是你看机会很多时候肯能不止看一个公司的。每个公司，你都需要找一个内推的同学，相对比较麻烦，不过同学朋友多的话，其实也一样。石头就有一个内推群，汇集了各大公司的朋友，如果你有需求，可以后台回复“内推”，拉你进群。</p>
+<p>说了这么多，那么究竟内推的正确姿势是什么？</p>
+<h2 id="内推的正确姿势"><a href="#内推的正确姿势" class="headerlink" title="内推的正确姿势"></a>内推的正确姿势</h2><p>在<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247487939&amp;idx=1&amp;sn=3962dc1cc3c4ce10b528b7a3bf0d7896&amp;chksm=eb471027dc3099314a181e3257957567e6fd9a3a3309532e87cb77572f13939ff6e59abecc3b&amp;token=647837463&amp;lang=zh_CN&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">《有了这份程序员面试指南，你离大厂Offer还远吗？| 附推荐书籍》</a>这篇文章中，我也提到了，首先最重要的就是你自己找工作的目标岗位的工作内容和职责，以及预期的职级（比如 P7、P8等），如果正好是你认识的朋友团队招人就再好不过了。</p>
+<p>一般而言，公司招聘都是一个萝卜一个坑，萝卜太大或太小都不一定合适。有时候简历没有通过筛选并不是你不够优秀，恰好是和对应岗位不匹配而已，假设你是 P8 的候选人，对应岗位的 HC 是 P6，这肯定不合适。</p>
+<p>如果你要投递的目标岗位和你内推的同学不是一个团队，那么你就要先自己找到自己的目标岗位，一定要先搞清楚职级，不要乱投递。</p>
+<h3 id="了解目标岗位信息"><a href="#了解目标岗位信息" class="headerlink" title="了解目标岗位信息"></a>了解目标岗位信息</h3><p>各个公司的岗位职级可以直接在网上搜索清楚，市场的职级和薪资水平大体上是对齐的，下图可以简单参考。</p>
+<p><img src="https://www.tanglei.name/resources/how-to-apply-a-job-by-recommended-internal/%E8%81%8C%E7%BA%A7%E8%96%AA%E6%B0%B4.jpg" alt="大厂职级薪资对应关系，图来源：曾加@知乎">大厂职级薪资对应关系，图来源：曾加@知乎</p>
+<p>以阿里为例，一般大家在找工作可能会涉及到以下几个职级，在社招场合，大部分可能是 P6/P7/P8，（P9等对应的 HC 比较少，一般可能也不会通过投递简历这种方式去找，都是行业内有一定影响力，或者圈子都是认识的人）</p>
+<ul>
+<li>P5：工程师，一般校招生；</li>
+<li>P6：高级XX，资深XX，一般社招都要求 P6 起步。例如：高级/资深工程师，资深客户经理等；</li>
+<li>P7(M2)：技术专家，M2代表管理序列。XX 专家基本属于 P7，例如：销售运营专家、产品运营专家等；</li>
+<li>P8(M3)：高级专家，高级 XX 专家，例如：高级运营专家、高级销售运营专家等；</li>
+<li>P9(M4)：资深专家，资深 XX 专家，例如：资深采购专家、资深产品专家等。</li>
+</ul>
+<p>不过一般而言，对外的招聘的 JD 上可能不会直接描述对应岗位的职级，但从 title 上基本能判断。</p>
+<p>石头也帮助了不少公众号的读者朋友内推，之前收到一份简历，刚毕业 2 年的 Java 开发（最多 P6），给我一个目标岗位的链接，我打开一看 “资深技术专家”（P9），搞得我哭笑不得。</p>
+<p>所以以后找我内推的同学，我首先会把这篇文章扔给你😝，如果你对阿里的职位感兴趣，可以直接后台回复“内推”和我取得联系哦，或者直接加石头微信 “codershitou” 备注 “内推” 即可。</p>
+<p>具体的招聘岗位，可以直接从公司的官方网站找，例如阿里的社招官网地址是: <a href="https://job.alibaba.com/zhaopin/index.htm" target="_blank" rel="noopener">https://job.alibaba.com/zhaopin/index.htm</a></p>
+<p>可以适当选择多个备选岗位，按照优先级给帮你内推的人。一般而言，同一时间可能只能有一个岗位可以进行面试。阿里内推的话，不能超过 5 个岗位。</p>
+<h3 id="简历信息"><a href="#简历信息" class="headerlink" title="简历信息"></a>简历信息</h3><p>简历最好用 PDF 格式，直接发内推人邮箱（最好是带公司后缀的官方邮箱），前面也说了简历的隐私性，如果随便搜索的网上找的不认识的人帮你内推，而你也不知道这个人身份的真假，所以用公司邮箱至少不会有问题。</p>
+<p>至于什么样的简历是好简历，鉴于篇幅有限，这里不展开说明。</p>
+<p>简历真的没必要弄十分花哨的格式，特别是对于技术岗的同学，一般<strong>大厂</strong>都有自己的招聘系统，简历导进系统后，就很少会看你原本的 PDF 简历了。</p>
+<p>况且有时候你花里胡哨的简历可能还导致系统识别不了，没办法导入，这不直接就加大了内推人的负担了。</p>
+<p>另外，除了联系方式（手机+邮箱）外，简历中的其他比如出生年月，教育背景这样的必要信息不能缺，大部分公司都会关注这个，在内推（招聘）系统里面也基本上是必填项。</p>
+<p>最后，最好有个简单的介绍，你为什么和这个目标岗位匹配。一般可能帮你内推的人需要填写部分推荐语。</p>
+<p>石头曾经找同学帮忙内推 Google，填了一大段内推信息（英文），比如和候选人关系，对候选人的了解程度等等（详细问题列表，感兴趣的同学可以后台回复 “Google内推模板”获取），不过，最后简历也没过筛选。😂</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>内推并不能增加你最终拿 Offer 的概率，最多只能保证你的简历可以被用人部门 Review 过。</p>
+<p>希望候选人主动提供更多的信息给内推人，方便推进整个内推流程。</p>
+<p>比如你曾经在其他渠道投递过 XX 岗位，是否有流程中的简历等等，因为系统有锁定期，锁定期间是不能投递简历的，然后相同的岗位，一般也不能重复投递。</p>
+<p>如果你没主动告诉，或者刻意回避，会导致内推人一顿操作，最后投递不了简历，浪费了感情。</p>
+<p>也不要抱有侥幸心理，曾经一个哥们让帮内推简历，刻意回避了（我还主动问过）投递过这个岗位，然后换了手机和邮箱让我帮忙投递，结果提交立马就被系统识别，提示不能重复投递。</p>
+<p>还有就是只有内推你的人才能看到具体的面试流程和进度。同事也跟我吐槽过，他有朋友从其他渠道投递了（或者内推了），然后又一直找他问进度，他也没法看呀，也是很无语。</p>
+<p>最后，找人帮你内推，咱们还是态度“友好”点，毕竟他本没有义务帮你投递的。你说他可以赚内推费？说得也对，不过这话说得好像你就一定能成功 Offer 似的，不过我喜欢有这样底气的候选人。</p>
+<p>石头为啥提这个，也是曾经被 “伤” 过了。这其实也不仅仅是 “内推” 这件事情，还是与个人修养有关，下面讲两个案例：</p>
+<p>案例 1：一哥们半夜发简历给我，说你不是说帮忙 review 简历吗，快给看看吧。我当时有事情在忙，没有及时回复，结果 “视频弹框” 就来了。<img src="https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibtp9R6XH1NdMoxzfHovXRj2K3sCu9ibz7jke5ZKAAjzMbWzafsl1XyOTc0bmUic59FY8x4tY9cibgshw/640.jpg" alt="img"></p>
+<p><img src="https://www.tanglei.name/resources/how-to-apply-a-job-by-recommended-internal/video-call.jpg" alt="img"></p>
+<p>案例 2：因之前帮一个哥们内推，加了微信。后来有一次我发了个朋友圈，大概就是吐槽了下微信有个小 bug，结果：</p>
+<p><img src="https://www.tanglei.name/resources/how-to-apply-a-job-by-recommended-internal/wangluo-penzi.jpg" alt="网络喷子"></p>
+<p>哈哈，当时也是很无语。当然，这个跟“内推”这件事情没啥关系，只是想说，咱们在与人相处的时候还是和谐相处，不要当键盘侠，不要当网络喷子。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>我们部门最近有开放 P6 岗位，具体 JD <a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247488750&amp;idx=2&amp;sn=a549a0e677ac520f48deabdae7c1c4e8&amp;chksm=eb47150adc309c1c691614e6f0d5a68f0e82cb7728e0dadd0e6f477b61389990ad1b6a7b14e5&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">看这里</a>，欢迎大家找我内推。另外，我有维护一个内推群，里面有各大公司（例如BAT、TMD等）的朋友，还有微软、Hulu、Google 等外，石头也可以帮忙联系内推（当然还得简历看得过去哈）。对这个群感兴趣的同学可以添加下面微信备注“内推”进群。</p>
+<p><img src="https://www.tanglei.name/resources/how-to-calculate-apr/codershitou-wechat.png" alt="备注“内推”进群"></p>
+<p>备注“内推”进群</p>
+<p>最后，觉得本号分享的文章有价值，记得添加星标哦。周更很累，不要白 piao，需要来点正反馈，安排个 “一键三连”（点赞、在看、分享）如何？😝 这将是我持续输出优质文章的最强动力。</p>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader，欢迎关注，交流和指导！</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+            <a href="/tags/程序员/" rel="tag"># 程序员</a>
+          
+            <a href="/tags/编程/" rel="tag"># 编程</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/a-jdk-bug-releate-to-URI.html" rel="next" title="给 JDK 报了一个 P4 的 Bug，结果居然……">
+                <i class="fa fa-chevron-left"></i> 给 JDK 报了一个 P4 的 Bug，结果居然……
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/travel-to-yunnan-in-2020.html" rel="prev" title="云南旅游">
+                云南旅游 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么内推靠谱？"><span class="nav-number">2.</span> <span class="nav-text">为什么内推靠谱？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#猎头"><span class="nav-number">2.1.</span> <span class="nav-text">猎头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#招聘平台"><span class="nav-number">2.2.</span> <span class="nav-text">招聘平台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#官网投递"><span class="nav-number">2.3.</span> <span class="nav-text">官网投递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内推"><span class="nav-number">2.4.</span> <span class="nav-text">内推</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内推的正确姿势"><span class="nav-number">3.</span> <span class="nav-text">内推的正确姿势</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#了解目标岗位信息"><span class="nav-number">3.1.</span> <span class="nav-text">了解目标岗位信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简历信息"><span class="nav-number">3.2.</span> <span class="nav-text">简历信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">3.3.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">4.</span> <span class="nav-text">最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/how-to-apply-a-job-by-recommended-internal.html';
+
+      var disqus_title = "互联网大厂内推求职的正确姿势？";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

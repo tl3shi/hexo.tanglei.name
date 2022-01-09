@@ -1,0 +1,881 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="程序员,编程,分期利率,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景你肯定也经常收到各个银行电话推销，可以办理小额贷款/信用卡账单分期/万用金，或者其他乱七八糟的名字的产品。 又或者接到电话说，“石头先生，我们有留意到您">
+<meta name="keywords" content="程序员,编程,分期利率">
+<meta property="og:type" content="article">
+<meta property="og:title" content="你有被银行套路过吗？| 一文教你计算真实的年化利率">
+<meta property="og:url" content="https://www.tanglei.name/blog/how-to-calculate-apr.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景你肯定也经常收到各个银行电话推销，可以办理小额贷款/信用卡账单分期/万用金，或者其他乱七八糟的名字的产品。 又或者接到电话说，“石头先生，我们有留意到您">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/how-to-calculate-apr/640.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203325119.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203336391.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203340498.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203406373.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203410616.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/how-to-calculate-apr/0.jpeg">
+<meta property="og:image" content="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203419791.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203425539.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203429833.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203433378.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203437107.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203532808.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203536352.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203541722.png">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.991Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="你有被银行套路过吗？| 一文教你计算真实的年化利率">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景你肯定也经常收到各个银行电话推销，可以办理小额贷款/信用卡账单分期/万用金，或者其他乱七八糟的名字的产品。 又或者接到电话说，“石头先生，我们有留意到您">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/how-to-calculate-apr/640.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/how-to-calculate-apr.html">
+
+
+
+
+
+  <title> 你有被银行套路过吗？| 一文教你计算真实的年化利率 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/how-to-calculate-apr.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                你有被银行套路过吗？| 一文教你计算真实的年化利率
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-20T00:00:00+00:00">
+                2020-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/how-to-calculate-apr.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/how-to-calculate-apr.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247486345&amp;idx=1&amp;sn=56373982f8e8393a5a11b0e401523937&amp;chksm=eb470a6ddc30837b1cdefb2812ef8ee2b7f52f56002481480974ccc42c44a146935c1548592c&amp;token=553253061&amp;lang=zh_CN#rd" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>你肯定也经常收到各个银行电话推销，可以办理小额贷款/信用卡账单分期/万用金，或者其他乱七八糟的名字的产品。</p>
+<p>又或者接到电话说，“石头先生，我们有留意到您这个月账单为 X 万元，请您放心，我这次打电话过来并不是来催您还款的。而是基于您在我行的优质信用，我们这边可以帮你申请延期还款，这个钱这个月不用还，下个月开始分期还，只需要每个月还款 xx 元即可……” （有印象么？）</p>
+<p>遂问电销人员，你们这个最后年化利息多少? </p>
+<p>这个时候，一般银行客服都会直接回避这个问题，美其名曰：“我们不收利息，我们只收取一定的手续费，基于您这边的良好信用，现在您有一笔5万的额度是可以立即提现的，可以分12期还，每月只需要XXXX元”。</p>
+<p><img src="https://www.tanglei.name/resources/how-to-calculate-apr/640.png" alt="img"></p>
+<p>可能不太懂的同学，听到银行客服同学的宣传，感觉这利率还不算贵，缺钱急用还挺划算的啊。有可能直接被套路，就接受了忽悠，办理了这个贷款/分期产品。</p>
+<h2 id="案例解读"><a href="#案例解读" class="headerlink" title="案例解读"></a>案例解读</h2><p>下面我以浦发银行实际例子来算一下，类似产品最后年化利率到底是多少。 </p>
+<p><img src="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203325119.png" alt="img"></p>
+<p>如上图所示，是浦发银行的某名叫“万用金”的产品，可以看到，提现 10000 元，分 12 期（即分12个月）还钱，等额本息的还款方式，每月需还款 929.51 元。 </p>
+<h3 id="忽悠你，没商量"><a href="#忽悠你，没商量" class="headerlink" title="忽悠你，没商量"></a>忽悠你，没商量</h3><p>初步计算你可能会简单的认为这个利率就是，一共还的钱为<code>929.51*12</code>，然后借款本金为10000元，那么年化利率即为：<code>(929.51*12 - 10000)/10000*100%=11.54%</code>，感觉还行啊，不夸张。 </p>
+<p><img src="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203336391.png" alt="img"></p>
+<p>但是事实上，这种算法是有问题的，因为你借款的本金10000元，并没有享受到1年的期限，以后每个月都还了本金呀。</p>
+<h3 id="实际年化利率"><a href="#实际年化利率" class="headerlink" title="实际年化利率"></a>实际年化利率</h3><p>我们用网上常见的<a href="http://finance.sina.com.cn/calc/money_loan.html" title="房贷/借款计算器" target="_blank" rel="noopener">房贷/借款计算器</a>来算一下， 如果按照年化<code>11.54%</code>来计算， 每月的还款情况应该如下，即每个月只需要等额本息还款886.34，比929.51元少不少。 </p>
+<p><img src="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203340498.png" alt="img"></p>
+<p>而如果每个月还款 929.51 元的话， 其利率远远不止11.54%，直接仍然用那个借款计算器大概估计一下。</p>
+<p>貌似现有的网上的工具都只能正向算，即已知利率和贷款本金计算还款计划表， 没有一个工具能从每月还款额反推贷款利率， 初步多次尝试得到如下逼近的结果。（注：本文最初为2017 年写的文章，现在网上也有类似的计算器了，你可以直接用后文中的方法进行计算。）</p>
+<p><img src="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203406373.png" alt="img"></p>
+<p>可以看到，年化利率达到了20.66%，比之前预想想象中多太多了。</p>
+<p>所以电话销售在推销的时候，往往不会直接告诉你这个年化利率，因为太高了，说了你可能不太会接受。 </p>
+<p>实际上，你借款本金 10000，并没有享受到整年，而是只享受到了1个月，因为1个月之后，你就有归还部分本金(和利息)了。 </p>
+<p>而这个利率到底是怎么计算来的呢? 为啥会有前后这么大的差别？咱们继续。</p>
+<p><img src="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203410616.png" alt="img"></p>
+<h2 id="如何计算年化利率"><a href="#如何计算年化利率" class="headerlink" title="如何计算年化利率"></a>如何计算年化利率</h2><h3 id="小程序方法"><a href="#小程序方法" class="headerlink" title="小程序方法"></a>小程序方法</h3><p>这里介绍一款小程序，本人 17 年左右写的（当初市面上可没有），直接扫下面的小程序码即可使用。</p>
+<p><img src="https://www.tanglei.name/resources/how-to-calculate-apr/0.jpeg" alt="img"></p>
+<p>如上图所示，直接输入借款总额，月还款额以及还款月数，即可计算年化利率。后来有用户反馈，希望有一个已知借款利率，正向计算还款计划的功能，因此在之前又把这个功能给加上了，正向计算功能可以分为等额本息、等额本金以及先息后本一共三种还款方式计算。</p>
+<p><img src="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203419791.png" alt="img"></p>
+<p>要想看如何推导计算过程的，记得体验小程序后，回来继续看后文的分析哦。</p>
+<h3 id="Excel-如何计算"><a href="#Excel-如何计算" class="headerlink" title="Excel 如何计算"></a>Excel 如何计算</h3><p>借助 Excel， 我们也可以方便的计算出正确的年化利率。 </p>
+<p><img src="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203425539.png" alt="excel 计算年化利率"></p>
+<p>直接利用 Excel 里面的 <code>IRR</code> 函数可以直接计算，或者直接用 <code>RATE</code>函数计算也可以。</p>
+<ul>
+<li>IRR 函数：输入直接分期总数，以及后面每期还款数即可。</li>
+<li>RATE 函数：输入为三个参数，分别表示：分期数、每月还款额、借款总额。</li>
+</ul>
+<p>其实看 Excel 官方文档得知，Excel 的 <code>irr</code> 等函数也是用迭代法进行计算的， 具体可以参考 <a href="https://support.office.com/zh-cn/article/IRR-%E5%87%BD%E6%95%B0-64925EAA-9988-495B-B290-3AD0C163C1BC" title="Excel IRR 函数说明" target="_blank" rel="noopener">Excel IRR 函数说明</a></p>
+<p>如果只想知道用现成的工具如何计算这个还款利率，到这里就可以结束了。</p>
+<p>如果你比较好奇，这背后到底是怎么计算的呢，咱们就继续。</p>
+<p>特别是程序猿，可以动手试试哦，能不能实现以下 Excel 里面的 <code>RATE</code> 函数？</p>
+<p><img src="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203429833.png" alt="img"></p>
+<h2 id="推导方法"><a href="#推导方法" class="headerlink" title="推导方法"></a>推导方法</h2><p><img src="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203433378.png" alt="img"></p>
+<p>没思路的话，跟着我的节奏，咱们一起来。</p>
+<p>我们来正向推导一下这个等额本息利率的计算过程。</p>
+<p>假设借款总额为 <code>A</code>， 月利率为 <code>R</code>， 每月还款额为 <code>M</code>， 抓住一点，欠款总额为<code>本金*(1+月利率)</code>则有: </p>
+<p><img src="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203437107.png" alt="推导过程（放大看）"></p>
+<p>所以，能得到第 <code>i</code> 个月的欠款情况，上面的公式可以简化一下，因为被减数 <code>M</code> 后边的是一个等比数列，得到第 <code>i</code> 个月后，欠款总额为：</p>
+<p>$$<br>Qi = A(1+R)^{i} - M[(1+R)^{i-1} + (1+R)^{i-2} + … + (1+R)^2 + (1+R) + 1] \\<br>   = A(1+R)^{i} - M(1 * \frac{1-(1+R)^{i}}{1-(1+R)})  \\<br>   = A(1+R)^{i} - M\frac{(1+R)^{i}-1}{R}<br>$$<br>如果知道月利率 <code>R</code>， 要计算每个月还款额也可以直接通过上面这个公式得到， </p>
+<p>$$<br>M = \frac{A*R(1+R)^i}{(1+R)^i-1}<br>$$</p>
+<p>仍然以上述浦发银行的这个例子为准，其中 <code>A=10000, M=929.51</code>，代入上面的公式就可以算出 <code>R</code> 的值。</p>
+<p><img src="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203532808.png" alt="img"></p>
+<p>但是！上面这个方程如何解呢？</p>
+<p>咱们也可以跟着 Excel 学嘛，人家都说了是用迭代法，咱们也可以哦。 </p>
+<p>自己写了段小代码迭代搜索一下能算出来。貌似这里能出一道给程序猿的面试题目了，哈哈。</p>
+<p>各位程序猿朋友们，看看有哪些方法能够算出来？我这边暂时不公布自己写的这段代码，看看大家有思路? (<strong>敲黑板</strong>) </p>
+<p><img src="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203536352.png" alt="img"></p>
+<p>通过计算得到，借款10000元， 每月还款额度为929.51元的情况下， 月利率为<code>0.017</code>即<code>1.7%</code>， 年化利率即为 <code>20.65%</code> 基本上与文首查到的一致。</p>
+<p>月利率出来之后， 还款计划表也就自然而然能够出来了。 </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>monthRate = calcMonthRate(<span class="number">12</span>, <span class="number">10000</span>, <span class="number">929.51</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> monthRate</span><br><span class="line"><span class="number">0.0172138214111</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> monthRate * <span class="number">12</span></span><br><span class="line"><span class="number">0.206565856934</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>schedules = repaymentSchedules(<span class="number">12</span>, <span class="number">10000</span>, monthRate)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> s <span class="keyword">in</span> schedules: <span class="keyword">print</span> s</span><br><span class="line">...</span><br><span class="line">[<span class="number">1</span>， <span class="string">'929.49'</span>， <span class="string">'172.14'</span>， <span class="string">'757.35'</span>， <span class="string">'9242.65'</span>]</span><br><span class="line">[<span class="number">2</span>， <span class="string">'929.49'</span>， <span class="string">'159.10'</span>， <span class="string">'770.39'</span>， <span class="string">'8472.26'</span>]</span><br><span class="line">[<span class="number">3</span>， <span class="string">'929.49'</span>， <span class="string">'145.84'</span>， <span class="string">'783.65'</span>， <span class="string">'7688.61'</span>]</span><br><span class="line">[<span class="number">4</span>， <span class="string">'929.49'</span>， <span class="string">'132.35'</span>， <span class="string">'797.14'</span>， <span class="string">'6891.47'</span>]</span><br><span class="line">[<span class="number">5</span>， <span class="string">'929.49'</span>， <span class="string">'118.63'</span>， <span class="string">'810.86'</span>， <span class="string">'6080.61'</span>]</span><br><span class="line">[<span class="number">6</span>， <span class="string">'929.49'</span>， <span class="string">'104.67'</span>， <span class="string">'824.82'</span>， <span class="string">'5255.79'</span>]</span><br><span class="line">[<span class="number">7</span>， <span class="string">'929.49'</span>， <span class="string">'90.47'</span>， <span class="string">'839.02'</span>， <span class="string">'4416.77'</span>]</span><br><span class="line">[<span class="number">8</span>， <span class="string">'929.49'</span>， <span class="string">'76.03'</span>， <span class="string">'853.46'</span>， <span class="string">'3563.31'</span>]</span><br><span class="line">[<span class="number">9</span>， <span class="string">'929.49'</span>， <span class="string">'61.34'</span>， <span class="string">'868.15'</span>， <span class="string">'2695.16'</span>]</span><br><span class="line">[<span class="number">10</span>， <span class="string">'929.49'</span>， <span class="string">'46.39'</span>， <span class="string">'883.10'</span>， <span class="string">'1812.06'</span>]</span><br><span class="line">[<span class="number">11</span>， <span class="string">'929.49'</span>， <span class="string">'31.19'</span>， <span class="string">'898.30'</span>， <span class="string">'913.76'</span>]</span><br><span class="line">[<span class="number">12</span>， <span class="string">'929.49'</span>， <span class="string">'15.73'</span>， <span class="string">'913.76'</span>， <span class="string">'-0.00'</span>]</span><br></pre></td></tr></table></figure>
+<center><br><br>|期数| 还款本息| 利息 | 本金 |剩余本金|<br>|—|—|—|—|—|—|<br>|1| 929.51| 172.17| 757.34| 9242.66|<br>|2| 929.51| 159.13| 770.38| 8472.28|<br>|3| 929.51| 145.87| 783.64| 7688.64|<br>|4| 929.51| 132.38| 797.13| 6891.51|<br>|5| 929.51| 118.65| 810.86| 6080.65|<br>|6| 929.51| 104.69| 824.82| 5255.84|<br>|7| 929.51| 90.49| 839.02| 4416.82|<br>|8| 929.51| 76.05| 853.46| 3563.35|<br>|9| 929.51| 61.35| 868.16| 2695.19|<br>|10| 929.51| 46.40| 883.11| 1812.09|<br>|11| 929.51| 31.20| 898.31| 913.78|<br>|12| 929.51| 15.73| 913.78| 0.00|<br><br></center>
+
+<p>可以看出，上面的还款计划表跟最开始网上通过房贷计算器得到的一致，我们再来看看，招行的有个现金分期业务。 </p>
+<p><img src="https://www.tanglei.name/resources/how-to-calculate-apr/640-20201031203541722.png" alt="img"></p>
+<p>上面的分期费率12期， 0.75%(表面的月息=<code>(3270*12-36000)/36000/12</code>)，申请分期36000，每月还款3270。 通过上面的公式，我们来看一下实际的费率情况，月息相当于 1.35%，年利率 16.2%，比表面的年息<code>(0.75%*12=9%)</code>高不少。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>calcMonthRate(<span class="number">12</span>, <span class="number">36000</span>, <span class="number">3270</span>)</span><br><span class="line"><span class="number">0.013513565063476562</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>calcMonthRate(<span class="number">12</span>, <span class="number">36000</span>, <span class="number">3270</span>)*<span class="number">12</span></span><br><span class="line"><span class="number">0.16216278076171875</span></span><br></pre></td></tr></table></figure>
+<h2 id="小科普"><a href="#小科普" class="headerlink" title="小科普"></a>小科普</h2><p>最后，来个小科普，针对贷款年化利率，有两个数字作为分割线，<code>24%</code> 和 <code>36%</code>。</p>
+<ul>
+<li>借贷双方约定的利率未超过年利率24%，出借人请求借款人按照约定的利率支付利息的，人民法院应予支持。</li>
+<li>借贷双方约定的利率超过年利率36%，超过部分的利息约定无效。借款人请求出借人返还已支付的超过年利率36%部分的利息的，人民法院应予支持。</li>
+</ul>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>所以，朋友们，下次银行再给你打电话，你知道怎么应付了吧？再也不用被所谓的手续费利率（表面现象）所迷惑了哦！</p>
+<p>另外，请广大的程序猿朋友们思考一下前面留出的问题哈，看看大家都有什么方法来计算，欢迎留言讨论。  </p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/程序员/" rel="tag"># 程序员</a>
+          
+            <a href="/tags/编程/" rel="tag"># 编程</a>
+          
+            <a href="/tags/分期利率/" rel="tag"># 分期利率</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/architecture-evolution-of-HA-system-of-buy-facemask.html" rel="next" title="高并发口罩抢购项目架构演进记录&优化经验分享">
+                <i class="fa fa-chevron-left"></i> 高并发口罩抢购项目架构演进记录&优化经验分享
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/timing-attack-of-safe-equals.html" rel="prev" title="这 10 行比较字符串相等的代码给我整懵逼了，不信你也来看看">
+                这 10 行比较字符串相等的代码给我整懵逼了，不信你也来看看 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例解读"><span class="nav-number">2.</span> <span class="nav-text">案例解读</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#忽悠你，没商量"><span class="nav-number">2.1.</span> <span class="nav-text">忽悠你，没商量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实际年化利率"><span class="nav-number">2.2.</span> <span class="nav-text">实际年化利率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何计算年化利率"><span class="nav-number">3.</span> <span class="nav-text">如何计算年化利率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小程序方法"><span class="nav-number">3.1.</span> <span class="nav-text">小程序方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Excel-如何计算"><span class="nav-number">3.2.</span> <span class="nav-text">Excel 如何计算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推导方法"><span class="nav-number">4.</span> <span class="nav-text">推导方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小科普"><span class="nav-number">5.</span> <span class="nav-text">小科普</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">6.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/how-to-calculate-apr.html';
+
+      var disqus_title = "你有被银行套路过吗？| 一文教你计算真实的年化利率";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

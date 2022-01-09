@@ -1,0 +1,799 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Windows,计算机图形学,OpenGL,敲敲代码,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="有时候往往需要通过远程桌面连接进行coding工作，像一般的比如web之类的可能不需要GPU等支持的coding工作直接用windows远程桌面连接编码然后debug即可，而一些需要依靠显卡支持的工作如渲染、cuda等GPU操作时，往往远程桌面连接debug会失败。因为当用远程桌面连接电脑B时，比如本来电脑B是具有牛X显卡，驱动啥之类都没有问题，但此时用另外一台电脑A远程连接过去，在B上跑需要GP">
+<meta name="keywords" content="Windows,计算机图形学,OpenGL,敲敲代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何远程连接运行OpenGL&#x2F;Cuda 等GPU程序">
+<meta property="og:url" content="https://www.tanglei.name/blog/how-to-run-gpu-programs-using-remote-connection.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="有时候往往需要通过远程桌面连接进行coding工作，像一般的比如web之类的可能不需要GPU等支持的coding工作直接用windows远程桌面连接编码然后debug即可，而一些需要依靠显卡支持的工作如渲染、cuda等GPU操作时，往往远程桌面连接debug会失败。因为当用远程桌面连接电脑B时，比如本来电脑B是具有牛X显卡，驱动啥之类都没有问题，但此时用另外一台电脑A远程连接过去，在B上跑需要GP">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2013/11/image_thumb.png">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2013/11/image_thumb1.png">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2013/11/image_thumb2.png">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2013/11/image_thumb3.png">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2013/11/image_thumb4.png">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.973Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何远程连接运行OpenGL&#x2F;Cuda 等GPU程序">
+<meta name="twitter:description" content="有时候往往需要通过远程桌面连接进行coding工作，像一般的比如web之类的可能不需要GPU等支持的coding工作直接用windows远程桌面连接编码然后debug即可，而一些需要依靠显卡支持的工作如渲染、cuda等GPU操作时，往往远程桌面连接debug会失败。因为当用远程桌面连接电脑B时，比如本来电脑B是具有牛X显卡，驱动啥之类都没有问题，但此时用另外一台电脑A远程连接过去，在B上跑需要GP">
+<meta name="twitter:image" content="https://www.tanglei.name/wp-content/uploads/2013/11/image_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/how-to-run-gpu-programs-using-remote-connection.html">
+
+
+
+
+
+  <title> 如何远程连接运行OpenGL/Cuda 等GPU程序 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/how-to-run-gpu-programs-using-remote-connection.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                如何远程连接运行OpenGL/Cuda 等GPU程序
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-11-14T15:04:07+00:00">
+                2013-11-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/how-to-run-gpu-programs-using-remote-connection.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/how-to-run-gpu-programs-using-remote-connection.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>有时候往往需要通过远程桌面连接进行coding工作，像一般的比如web之类的可能不需要GPU等支持的coding工作直接用windows远程桌面连接编码然后debug即可，而一些需要依靠显卡支持的工作如渲染、cuda等GPU操作时，往往远程桌面连接debug会失败。因为当用远程桌面连接电脑B时，比如本来电脑B是具有牛X显卡，驱动啥之类都没有问题，但此时用另外一台电脑A远程连接过去，在B上跑需要GPU支持的程序，如需要用到Opengl3.X的功能或者cuda，而此时B检测到是远程连接过来的，就不会给予相应的支持或者说没有相应的驱动能够使得远程连接过来的也能支持。啊。。晕了。意思就是说可能此时只能驱动OpenGL1.X,程序就会crash掉。下面用个实例来说吧。</p>
+<p>比如我在电脑B上有<a href="https://gist.github.com/tl3shi/7462450" target="_blank">一段代码时检测GPU 对CUDA的支持</a>。</p>
+<p>此时我直接通过电脑A通过windows自带的远程桌面连接工具练过去，运行。</p>
+<p><a href="/wp-content/uploads/2013/11/image.png"><img class="alignnone" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/11/image_thumb.png" alt="image"></a></p>
+<p>得到这样的结果，就是没有cuda相应的支持，而实际上，我直接通过本地执行时能够正常运行的。现在的问题是采取怎样的方式能够正常跑电脑B上的程序，就像自己本人在电脑B所在地本地操控电脑B一样。</p>
+<p>开始设想通过QQ的远程控制能否解决？因为感觉QQ远程控制貌似就是传输图片，然后将在电脑A对电脑B传输过来的图片做相应鼠标等操作映射到电脑B上。于是有了如下的解决方案：电脑A、B各登陆1个QQ，QQ A 和QQ B,然后远程桌面连接过去，通过在电脑B上用B QQ申请 QQ A进行远程协助。然后断掉连接、QQ A上接受申请，然后就可以通过QQ的远程桌面控制电脑B了，然后再运行程序。结果……结果失败～ 意思就是这样还是解决不了问题。实验证明，不用远程连接，而直接让人在电脑B上操作，申请电脑A这边的远程协助，这样是可以的。但不能每次都得先让其他人在电脑B上帮忙申请下远程协助吧。</p>
+<p>最后在<a href="mailto:http://www.renren.com/242915121/profile%3Fref=opensearch_normal" target="_blank">@大鑫</a>的帮助下得到解决。</p>
+<p>方法：</p>
+<p>1、电脑A用windows自带远程桌面连接到电脑B，在电脑B上登陆QQ B，电脑A这边已经登陆了QQ A。</p>
+<p>2、在电脑B上通过QQ B申请远程协助QQ A。</p>
+<p><a href="/wp-content/uploads/2013/11/image1.png"><img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/11/image_thumb1.png" alt="image"></a></p>
+<p style="text-align: left;"><br>  3、电脑A上 QQ A接受邀请。<br></p>
+
+<p><a href="/wp-content/uploads/2013/11/image2.png"><img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/11/image_thumb2.png" alt="image"></a></p>
+<p>此时已经建立好连接了。并也能通过QQ的远程协助控制电脑B了。</p>
+<p>4、<strong>关键，</strong>在windows自带的远程桌面连接工具中通过在电脑B上<a href="https://gist.github.com/tl3shi/7462590" target="_blank">运行如下脚本</a>。没有的话，copy一个过去。</p>
+<p><a href="/wp-content/uploads/2013/11/image3.png"><img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/11/image_thumb3.png" alt="image"></a></p>
+<p>注意得以管理员身份运行。运行后，此时通过windows远程连接的会话会断开。现在只能通过QQ的远程协助操作电脑B了。</p>
+<p>5、下面就是见证奇迹的时刻了。</p>
+<p><a href="/wp-content/uploads/2013/11/image4.png"><img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2013/11/image_thumb4.png" alt="image"></a></p>
+<p>现在能够检测到电脑B上的显卡对cuda 支持。</p>
+<p>以上演示是得到了显卡对Cuda支持的驱动，相应的OpenGL也一样。其实现在操作就跟在本地实际操作电脑B一样了。</p>
+<p>原理：</p>
+<p><strong>个人认为，</strong>以上关键步骤中的那个脚本(那个脚本是个循环试探，其实可以在电脑B上通过命令行query session得到在线的准确的会话，然后运行那个命令得到准确的session切换)中有个应用程序tscon,其相应的语法用法可以<a href="mailto:http://support.microsoft.com/kb/321703/zh-cn" target="_blank">参考这里</a>。其实QQ远程协助也是用到了windows底层的RDP协议。从电脑A通过远程桌面通过QQ B申请QQ A远程协助，此时被控电脑B有两个session，即一个QQ远程协助的另外一个windows远程桌面的。此时运行tscon是将session切换到QQ桌面的那个session。而这个session就是被控那台电脑的。因此gpu opengl啥驱动之类的就以为是本地执行的。因此才得以成功。</p>
+<p>其实这也是个人猜测而已啦，实际上什么原理也还不清楚呢。能解决这个问题就好。也希望懂的童鞋给予解释下。另外有同学指出一些团队协助类的软件也能支持，没试过不清楚。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Windows/" rel="tag"># Windows</a>
+          
+            <a href="/tags/计算机图形学/" rel="tag"># 计算机图形学</a>
+          
+            <a href="/tags/OpenGL/" rel="tag"># OpenGL</a>
+          
+            <a href="/tags/敲敲代码/" rel="tag"># 敲敲代码</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/no-need-to-register-software-certificates.html" rel="next" title="软考证书不再需要定期登记了">
+                <i class="fa fa-chevron-left"></i> 软考证书不再需要定期登记了
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/com-interface-tlb.html" rel="prev" title="COM接口示例">
+                COM接口示例 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/how-to-run-gpu-programs-using-remote-connection.html';
+
+      var disqus_title = "如何远程连接运行OpenGL/Cuda 等GPU程序";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

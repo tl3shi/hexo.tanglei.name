@@ -1,0 +1,862 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="经验技巧,网络安全,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="RSA 算法一种常见的非对称加密算法, 常用来对一些在网络上传输的敏感信息进行加密, 本文将概述RSA算法的流程以及一种意想不到的”旁门左道”的攻击方式.  RSARSA 算法流程如下,   找到互质的两个数, p 和 q, 计算 N = p*q 确定一个数 e, 使得 e 与 (p-1)(q-1) 互质, 此时公钥为 (N, e), 告诉给对方 确定私钥 d, 使得 e*d-1能够被(p-1)(">
+<meta name="keywords" content="经验技巧,网络安全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RSA算法流程和计时攻击">
+<meta property="og:url" content="https://www.tanglei.name/blog/rsa-and-timing-attack.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="RSA 算法一种常见的非对称加密算法, 常用来对一些在网络上传输的敏感信息进行加密, 本文将概述RSA算法的流程以及一种意想不到的”旁门左道”的攻击方式.  RSARSA 算法流程如下,   找到互质的两个数, p 和 q, 计算 N = p*q 确定一个数 e, 使得 e 与 (p-1)(q-1) 互质, 此时公钥为 (N, e), 告诉给对方 确定私钥 d, 使得 e*d-1能够被(p-1)(">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/rsa-and-timing-attack/bc-calculate.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/rsa-and-timing-attack/MessageDigest.isEqual.timing-attack.png">
+<meta property="og:updated_time" content="2022-01-09T16:47:22.985Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RSA算法流程和计时攻击">
+<meta name="twitter:description" content="RSA 算法一种常见的非对称加密算法, 常用来对一些在网络上传输的敏感信息进行加密, 本文将概述RSA算法的流程以及一种意想不到的”旁门左道”的攻击方式.  RSARSA 算法流程如下,   找到互质的两个数, p 和 q, 计算 N = p*q 确定一个数 e, 使得 e 与 (p-1)(q-1) 互质, 此时公钥为 (N, e), 告诉给对方 确定私钥 d, 使得 e*d-1能够被(p-1)(">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/rsa-and-timing-attack/bc-calculate.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/rsa-and-timing-attack.html">
+
+
+
+
+
+  <title> RSA算法流程和计时攻击 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/rsa-and-timing-attack.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                RSA算法流程和计时攻击
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-09T00:00:00+00:00">
+                2017-01-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学到老/" itemprop="url" rel="index">
+                    <span itemprop="name">学到老</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/rsa-and-timing-attack.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/rsa-and-timing-attack.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>RSA 算法一种常见的非对称加密算法, 常用来对一些在网络上传输的敏感信息进行加密, 本文将概述RSA算法的流程以及一种意想不到的”旁门左道”的攻击方式. </p>
+<h2 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h2><p>RSA 算法流程如下, </p>
+<ol>
+<li>找到互质的两个数, <code>p</code> 和 <code>q</code>, 计算 <code>N = p*q</code></li>
+<li>确定一个数 <code>e</code>, 使得 <code>e</code> 与 <code>(p-1)(q-1)</code> 互质, 此时公钥为 <code>(N, e)</code>, 告诉给对方</li>
+<li>确定私钥 <code>d</code>, 使得 <code>e*d-1</code>能够被<code>(p-1)(q-1)</code>整除</li>
+<li>消息传输方传输消息 <code>M</code>, 加密密文<code>C</code>为: $C = M^e \mod N$</li>
+<li>消息接受方通过收到密文消息 <code>C</code>, 解密消息 <code>M</code>: $M= C^d \mod N$</li>
+</ol>
+<p>RSA算法依赖于欧拉定理, 一个简化版本为大致为 <code>a</code> 和 <code>p</code> 互质, 那么有, </p>
+<p>$ a^{p-1} \equiv 1 \mod p$, <code>a</code> 的 <code>p-1</code> 次方 对 <code>p</code> 取余为<code>1</code>, (<code>a</code> 的 <code>p-1</code>次方减去<code>1</code>可以整除 <code>p</code>).</p>
+<p>欧拉定理的证明比较复杂，本来有一个绝妙的证明方式的, 但由于微信公众号字数有限, 这里就省略了(什么? 这跟费马有什么关系? 实在要看的可以看文末参考资料)</p>
+<p>举个例子</p>
+<p><code>N = pq</code>, 取俩素数 <code>p=11, q = 3, N = p * q = 33</code>, 取 <code>e</code> 与 <code>(p-1)(q-1) = 20</code> 互质的数 <code>e = 3</code>, 然后通过 $ed \equiv 1 \mod (p-1)(q-1)$ 确定私钥,<br>即取一个 <code>d</code> 使得 <code>3*d -1</code> 能 20 被整除, 假设取 <code>d=7</code> 或者<code>d=67</code>. (<code>3*7-1=20</code> 当然能被20整除, <code>3*67-1=200</code> 也能被20整除)</p>
+<p>因此 public key 为 <code>(N=33, e=3)</code>, private key 为 <code>d=7</code> 或者<code>d=67</code>,<br>假设加密消息<code>M=8</code>,<br>通过加密算法 $C = M^e \mod N$<br>得到密文 <code>C=8^3 % 33 = 17</code></p>
+<p>再来看解密, 由$M= C^d \mod N$, 得到明文 <code>M = 17^7 % 33 = 8</code> 或者 <code>M=17^67 % 33=8</code>, 是不是很神奇? (这里<code>^</code> 表示多少次方, 后文中的有的表示异或)</p>
+<p>(来, 安利一个计算器的工具, <code>bc</code> 命令, 支持任意精度的计算, 其实 Mac简单的计算就可以通过前面介绍的 <a href="https://www.tanglei.name/blog/app-in-mac-preface.html">Alfred</a> 可以方便得完成)</p>
+<p><img src="https://www.tanglei.name/resources/rsa-and-timing-attack/bc-calculate.png" alt="linux计算器"></p>
+<h2 id="RSA-破解"><a href="#RSA-破解" class="headerlink" title="RSA 破解"></a>RSA 破解</h2><p>如果需要破解 RSA 的话, 就是需要找到 <code>p</code> 和 <code>q</code>, 使得 <code>pq=33</code>, 如果知道了 <code>p</code> 和 <code>q</code> 就能通过公钥 <code>N</code> 和 <code>e</code> 反推出私钥 <code>d</code> 了. 然而大数分解在历史以来就一直是数学上的难题.<br>当然上面所述的案例较简单, 当 N 很大时, 就特别困难了. 曾经有人花了五个月时间分解了这个数<code>39505874583265144526419767800614481996020776460304936454139376051579355626529450683609727842468219535093544305870490251995655335710209799226484977949442955603</code>(159位数), RSA-155 (512 bits) [from wikipedia].</p>
+<p>这条路走不通, 就有人走了”旁门左道”了, Stanford 的几个研究者用了两个小时破解了 OpenSSL 0.9.7 的 1024-bit 的 RSA 私钥 (感兴趣的同学可以看他们的论文<em>Remote Timing Attacks are Practical</em>),<br>用到的方法就是后面提到的时序攻击(或译为”计时攻击”), 主要思想是因为在进行加密时所进行的模指数运算是一个bit一个bit进行的, 而bit为1所花的运算比bit为0的运算要多很多(耗时久)，<br>因此可以通过得到大量消息与其加密时间, 然后基于统计的方法就可以大致反推出私钥的内容.</p>
+<h2 id="计时攻击-Timing-Attack"><a href="#计时攻击-Timing-Attack" class="headerlink" title="计时攻击(Timing Attack)"></a>计时攻击(Timing Attack)</h2><p>计时攻击是边信道攻击(或称”侧信道攻击”, Side Channel Attack, 简称SCA) 的一种, 主要是一种利用不同的输入会有不同的执行时间这个特点.<br>举个具体的例子, 这个来自playframewok 里用来验证cookie(session)中的数据是否合法(包含签名的验证), 也是我写这篇文章的由来.</p>
+<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">safeEquals</span></span>(a: <span class="type">String</span>, b: <span class="type">String</span>) = &#123;</span><br><span class="line">  <span class="keyword">if</span> (a.length != b.length) &#123;</span><br><span class="line">    <span class="literal">false</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> equal = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> (i &lt;- <span class="type">Array</span>.range(<span class="number">0</span>, a.length)) &#123;</span><br><span class="line">      equal |= a(i) ^ b(i)</span><br><span class="line">    &#125;</span><br><span class="line">    equal == <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>刚开始看到这段源码感觉挺奇怪的, 这个函数的功能是比较两个字符串是否相等, 首先长度不等肯定不等, 立即返回这个是可以理解的,<br>可是后面的代码得发挥下想象力了, 当然这个逻辑还是好懂: 通过异或操作<code>1^1=0, 1^0=1, 0^0=0</code>, 如果每一 bit 都相等的话, 两个字符串肯定相等, 最后的<code>equal</code>肯定为0, 否则为1.<br>但从效率角度上讲, 不是应该只要中途发现某一位的结果为1了就可以立即返回 false 了吗? (如下所示) </p>
+<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (i &lt;- <span class="type">Array</span>.range(<span class="number">0</span>, a.length)) &#123;</span><br><span class="line">  <span class="keyword">if</span> (a(i) ^ b(i) != <span class="number">0</span>) <span class="comment">// or a(i) != b[i]</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结合方法名称 <code>safeEquals</code> 可能知道些眉目, 与安全有关, 延迟计算等提高效率的手段见过不少, 但这种延迟返回的还是很少见.<br>这种手段可以让调用 <code>safeEquals(&quot;abcdefghijklmn&quot;, &quot;xbcdefghijklmn&quot;)</code> 和调用 <code>safeEquals(&quot;abcdefghijklmn&quot;, &quot;abcdefghijklmn&quot;)</code> 的所耗费的时间一样,<br>防止通过大量的改变输入并通过统计运行时间来暴力破解出要比较的字符串, 这里其实都忽略了对比较字符串长度的attack问题. </p>
+<p>举个例子, 假设某个用户设置了密码为 <code>password</code>, 通过从a到z(实际范围可能更广)不断枚举第一位, 最终统计发现 <code>p0000000</code> 的运行时间比其他从任意<code>a~z</code>的都短,<br>这样就能猜测出用户密码的第一位很可能是<code>p</code>, 然后再不断一位一位迭代下去最终破解出用户的密码. 如果密码通过hash加密后也能通过这种攻击方式得到hash后的密文. </p>
+<p>当然, 从理论角度上讲这个确实容易理解, 如上文所提到的学术界已经有论文发表指出用这种计时攻击的方法破解了 OpenSSL 0.9.7 的RSA加密算法了.<br>然而在实际中是否存在这样的攻击问题呢?<br>因为好像通过统计运行时间总感觉不太靠谱, 这个运行时间对环境太敏感了, 比如网络, 内存, CPU负载等等都会影响.<br>尽管如此, 各个软件的实现也都采用了这种 <code>safeEquals</code> 的方法.</p>
+<p><code>JDK 1.6.0_17</code> 中的<a href="http://www.oracle.com/technetwork/java/javase/6u17-141447.html" target="_blank" rel="noopener">Release Notes</a>中就提到了<code>MessageDigest.isEqual</code> 中的bug的修复</p>
+<table>
+<thead>
+<tr>
+<th>BugId</th>
+<th>Category</th>
+<th>Subcategory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6863503</td>
+<td>java</td>
+<td>classes_security</td>
+<td>SECURITY: MessageDigest.isEqual introduces timing attack vulnerabilities</td>
+</tr>
+</tbody>
+</table>
+<p>这次变更的diff详细信息<a href="http://hg.openjdk.java.net/jdk6/jdk6/jdk/rev/562da0baf70b" target="_blank" rel="noopener">来源</a>为: </p>
+<p><img src="https://www.tanglei.name/resources/rsa-and-timing-attack/MessageDigest.isEqual.timing-attack.png" alt="MessageDigest.isEqual计时攻击"></p>
+<p>为了防止(特别是与签名/密码验证等相关的操作)被 <strong>timing attack</strong>, 目前各大语言都提供了响应的安全比较函数, 例如 “世界上最好的编程语言” – php中的: </p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Compares two strings using the same time whether they're equal or not.</span></span><br><span class="line"><span class="comment">// This function should be used to mitigate timing attacks; for instance, when testing crypt() password hashes.</span></span><br><span class="line">bool hash_equals ( string $known_string , string $user_string )</span><br><span class="line"></span><br><span class="line"><span class="comment">//This function is safe against timing attacks.</span></span><br><span class="line">boolean password_verify ( string $password , string $hash )</span><br></pre></td></tr></table></figure>
+<p>各种语言版本的实现方式都与上面的版本差不多, 将两个字符串每一位取出来异或(<code>^</code>)并用或(<code>|</code>)保存, 最后通过判断结果是否为0来确定两个字符串是否相等. </p>
+<p>参考资料: </p>
+<ul>
+<li><a href="http://www.cs.sjsu.edu/faculty/stamp/students/article.html" target="_blank" rel="noopener">Timing Attacks on RSA: Revealing Your Secrets through the Fourth Dimension</a></li>
+<li><a href="http://crypto.stanford.edu/~dabo/papers/ssl-timing.pdf" target="_blank" rel="noopener">Remote Timing Attacks are Practical</a> </li>
+<li><a href="http://www.ruanyifeng.com/blog/2013/07/rsa_algorithm_part_two.html" target="_blank" rel="noopener">RSA算法原理</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86" target="_blank" rel="noopener">费马小定理</a></li>
+</ul>
+<p>p.s 如果你觉得这文章对你有那么一点点收获, 请不要犹豫扫描下面二维码关注我的公众号, 如果你再能帮忙转发一下就更好了. 么么哒.</p>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>
+
+<script type="text/javascript">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    processEscapes: true
+  }
+});
+ </script>
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/经验技巧/" rel="tag"># 经验技巧</a>
+          
+            <a href="/tags/网络安全/" rel="tag"># 网络安全</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/tangleithu-comment-feature.html" rel="next" title="微信公众号原创声明|留言功能体验">
+                <i class="fa fa-chevron-left"></i> 微信公众号原创声明|留言功能体验
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/linux-shell-makes-more-efficient.html" rel="prev" title="Shell 助力开发效率提升">
+                Shell 助力开发效率提升 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">481</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">151</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RSA"><span class="nav-number">1.</span> <span class="nav-text">RSA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RSA-破解"><span class="nav-number">2.</span> <span class="nav-text">RSA 破解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计时攻击-Timing-Attack"><span class="nav-number">3.</span> <span class="nav-text">计时攻击(Timing Attack)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/rsa-and-timing-attack.html';
+
+      var disqus_title = "RSA算法流程和计时攻击";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>
