@@ -4,7 +4,7 @@ name: Hexo Deploy
 on:
   push:
     branches:
-      - master
+      - source
 
 jobs:
   Deploy-Pages:
@@ -17,6 +17,8 @@ jobs:
     # from: https://github.com/actions/checkout
     - name: Checkout Repository master branch
       uses: actions/checkout@v2
+      with:
+        ref: source
 
     # from: https://github.com/actions/setup-node
     - name: Setup Node.js v8.17.0
@@ -31,6 +33,7 @@ jobs:
 
     - name: Get Latest Commit Message
       run: |
+        git branch -va
         git log --pretty=format:"%s from Github Actions at `date +"%Y-%m-%d %H:%M:%S"`" --date=short -n 1  > commit-message.log
 
     - name: Setup Hexo Dependencies
