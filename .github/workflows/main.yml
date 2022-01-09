@@ -57,4 +57,4 @@ jobs:
         cp -R ./resources .deploy/ && cp -R ./wp-content .deploy/
         cd .deploy && git init && git add .
         git commit -F ../commit-message.log
-        git push --force "https://${Github_Token}@${Github_Pages}" master:gh-pages-test
+        git push --force "https://${Github_Token}@${Github_Pages}" master:gh-pages
