@@ -1,0 +1,95 @@
+---
+title: 骗子冒充阿里员工诈骗阿里员工是一种怎样的体验？
+layout: post
+categories:
+  - MyLife
+tags:
+  - 总结
+  - MyLife
+---
+
+> 关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上**清华**（[点这里查看我的逆袭之路](https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ)），BAT某厂P7，是前大疆（无人机）技术主管。
+>
+> 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s/VJHsrc_g4auVztYuCP9GNw)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
+
+## 背景
+
+大家好，我是石头哥。
+
+就在刚刚，接到一个（021）55970937 …… 的电话，说是支付宝员工……  
+当然 基本断定是诈骗电话了，就想看看他想干嘛，就聊了下去。 
+
+- 骗子：“我是支付宝员工，因为你账户花呗（借呗）信息之前是学生身份，现在已经毕业了，必须修改成社会身份，不然后面会冻结账户，还会影响你征信，需要通过钉钉邀请进一个会议，进行核实修改” （大意）
+- 我：“好的，你邀请我吧”     
+
+>骗子能准确说出我姓名以及毕业学校 
+
+钉钉直接拉会，通过手机号，应该拉不了会议？
+
+于是他加了我好友。
+
+![骗子加我钉钉好友](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-20/1637398387735-image.png)
+
+当时心里还有丝丝担心（想想应该不至于）：直接通过手机号搜索，看到我是阿里巴巴员工，岂不尴尬了嘛，还好多虑了，看不到。
+
+加了好友，就开始钉钉会议了。（我录屏了） 
+
+![骗子拉的钉钉会议](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-20/1637398317602-image.png)
+
+然后，让我打开支付宝，问我的借呗额度，问我利率是不是高于国家法定的 7.几 % 。
+
+我内心：国家法定上限才 7.几？开啥玩笑……，我早就知道针对贷款年化利率，有两个数字作为分割线，24% 和 36%（经读者提醒，最新的政策，是有一个4倍LPR的线），在之前的这篇文章中也有介绍 —— [你有被银行套路过吗？| 一文教你计算真实的年化利率](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247486345&idx=1&sn=56373982f8e8393a5a11b0e401523937&chksm=eb470a6ddc30837b1cdefb2812ef8ee2b7f52f56002481480974ccc42c44a146935c1548592c&token=146977841&lang=zh_CN#rd)
+
+我当然不能照实说，我的额度有大几十万，利率还相对较低，[阿里福利](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247498018&idx=1&sn=d122e1a5ab60094dac95c0d45a8f8f71&chksm=eb44f8c6dc3371d0fb8733f2cc474a3d298794a5aa3bcf1b285563b20218ee73c41f6b4bbb4f&token=146977841&lang=zh_CN#rd)这篇文章也有说。
+
+就随口说了句额度是 10W，利率确实高了。（看样子，骗子是想骗借呗的钱？）
+
+再然后，就跟我核实银行卡卡号的后八位，还告诉我从支付宝哪里去查看……
+
+到这里，我觉得玩不下去了……
+
+于是，要求对方提供支付宝工号，当然他也不虚，很自信的报出来了，还说把工作证发我，让我提供邮箱，我也提供了一个不常用的邮箱。
+
+收到了所谓的工作证……
+
+![骗子的工作证](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-20/1637398748791-image.png)
+
+然后我问，你这邮箱怎么是 163 后缀的。
+
+骗子：“对，这就是我们个人工作邮箱，几万人的公司，不是每个人都能有阿里巴巴的企业邮箱的……”
+
+再然后，我也不知道怎么能不暴露更多的信息后继续玩下去了，就挂了……
+
+后来我通过这个图片一搜，好家伙，原来已经有人中招了……
+
+![骗子工作证都是统一的吗？](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-20/1637398910529-image.png)
+
+根据网上的信息，才了解到这个电话的后续发展大概剧情如下：
+
+更改信息，需要缴纳一笔保证金，转到“中国银监会认证对接账户”，保证金转进去，支付宝更改信息才能激活，认证完毕后，这些钱会立即转回来。
+
+再然后，操作“认证工作”，从借呗贷出x万元，转入对方提供的“对接账户”上。
+
+再次提醒大家，遇到陌生“客服”电话，一定要提高警惕，让你“过账”激活账户、转账更改信息的全是骗局。 
+
+![反诈骗灵魂 8 问](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-29/1622300520051-image.png)
+
+始终记住：
+
+**不听！不信！！不转账！！！**
+
+记住一招：遇事多确认，千万别转钱！！！防范电信网络诈骗，你必须做一毛不拔“铁公鸡”。
+
+![遇事多确认，千万别转钱](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-21/1637425711155-image.png)
+
+推荐阅读文章：
+
+- [辛苦搬砖挣的钱，被骗了！](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247493855&idx=1&sn=55c507ac2a459c4fd9ce69ca2ef9e0e8&chksm=eb44e93bdc33602db26a4737f60dce11d5656fe682420a05362d806adb58d0a050da02087d6d&token=503311523&lang=zh_CN&scene=21#wechat_redirect)
+- [被拉进一个刷单群，赚了75元 | 就真的只是刷单吗？](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247493052&idx=1&sn=577948f73e728f1059788190f14fa511&chksm=eb44e458dc336d4ec960ba352fd6bc4f93ef217e6f89d1e568a0b00833dc6a7ba6f3ed679b4c&token=1336735893&lang=zh_CN&scene=21#wechat_redirect)
+- [刚办的健身卡，老板跑路了！！！](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247497789&idx=1&sn=108b03c287543ab809c80e6e1cbc2c40&chksm=eb44f9d9dc3370cfc9ad68e114d79e625dd8886fc9aaa613d06a88b5fa8c378c96937ffb38c7&token=146977841&lang=zh_CN#rd)
+
+> 关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（[点击这里查看我的逆袭之路](https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ)），目前在BAT某厂打工，是前大疆（无人机）技术主管。
+>
+> 欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步。后台回复关键字 “**0**” 送阿里技术大礼包。
+
+
