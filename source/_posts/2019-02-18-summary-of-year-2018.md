@@ -4,8 +4,9 @@ layout: post
 categories: 
   - MyLife 
 tags: 
-  - MyLife
+  - 年终总结
   - 总结
+  - MyLife
 ---
 
 >还是按照往年一样, 年终总结总是拖, 18年的比[17年的总结](/blog/summary-of-year-2017.html)又晚了一个多月. 

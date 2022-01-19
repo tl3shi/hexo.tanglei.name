@@ -5,3 +5,7 @@ db.json
 node_modules/
 public/
 source/_drafts/export*
+<<<<<<< HEAD
+=======
+package-lock.json
+>>>>>>> ad9c60161841bbc2f25a42b9e672fa0f2850bd9a
