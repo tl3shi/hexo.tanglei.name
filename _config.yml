@@ -28,8 +28,8 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
 
-sitemap:
-  path: sitemap.xml
+#sitemap:
+  #path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
 

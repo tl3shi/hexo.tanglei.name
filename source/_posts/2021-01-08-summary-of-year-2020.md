@@ -1,5 +1,5 @@
 ---
-title: 2020年总终结
+title: 2020年终总结
 layout: post
 categories:
   - MyLife
