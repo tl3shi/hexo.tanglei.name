@@ -93,7 +93,7 @@ trimAsByte("WeChat:tangleithu", 8)
 trimAsByte("程序猿石头", 8)
 ```
 
-![testcase-中文](/Users/tanglei/github/hexo.tanglei.name/source/resources/constuct-of-string-is-not-easy/testcase-%E4%B8%AD%E6%96%87.png)
+![testcase-中文](/resources/constuct-of-string-is-not-easy/testcase-%E4%B8%AD%E6%96%87.png)
 
 看上述截图，悲剧了，输入`程序猿石头`，3 个字节一个汉字，一共 15 个字节 `[-25,-88,-117,-27,-70,-113,-25,-116,-65,-25,-97,-77,-27,-92,-76]`，trim 到 8 位，剩下前 8 位 ` [-25,-88,-117,-27,-70,-113,-25,-116]` 也正确。再 `new String`，又变成3 个 “中文” 了，虽然第 3 个“中文”，咱也不认识，咱也不敢问到底读啥，总之再转换成字节数组，长度多了 1 个，变成 9 了。
 

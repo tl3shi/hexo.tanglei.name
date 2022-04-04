@@ -12,7 +12,7 @@ tags:
 >
 > 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247499894&idx=1&sn=35afd5303029ff14a43883aa73dc97a9&chksm=eb44c192dc334884c4f05a25122d47c32d2f7fe56ec8c6b132b5281d65855363b406fb11966c&token=1931883326&lang=zh_CN#rd)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
-![这名字挺有意思的](/Users/tanglei/github/hexo.tanglei.name/resources/experience-of-campus-recruitment-of-2022/985-training.png)
+![这名字挺有意思的](/resources/experience-of-campus-recruitment-of-2022/985-training.png)
 
 
 
@@ -26,7 +26,7 @@ tags:
 
 这不这次，又找了一个学弟，给大家邀请了一个朋友来分享他新鲜的校招经验啦。这位读者朋友横扫大厂，拿了 BAT、TMD 中的5家，还有华为。真心佩服，实力派选手。
 
-![分享提纲](/Users/tanglei/github/hexo.tanglei.name/resources/experience-of-campus-recruitment-of-2022/1646062516575-image.png)
+![分享提纲](/resources/experience-of-campus-recruitment-of-2022/1646062516575-image.png)
 
 ## 知识体系
 
@@ -128,7 +128,7 @@ tags:
 
 部门比较看重个人经历和成长性，面试官给的评价也比较准确。
 
-![阿里笔试测评系统](/Users/tanglei/github/hexo.tanglei.name/resources/experience-of-campus-recruitment-of-2022/1646063023276-image.png)
+![阿里笔试测评系统](/resources/experience-of-campus-recruitment-of-2022/1646063023276-image.png)
 
 阿里面试推荐参考：[阿里面试流程大揭秘](https://mp.weixin.qq.com/s/h_pCxpAP0BaJjs--PHDWCA)
 

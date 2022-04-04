@@ -82,9 +82,9 @@ tags:
 
 在安全点日志中，我发现有很多下图类似的日志输出：
 
-[![图片](/Users/tanglei/github/hexo.tanglei.name/resources/a-problem-about-response-time-out/3.png)](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247499568&idx=1&sn=50a7b633481a25e161c84fa04b478112&chksm=eb44fed4dc3377c2870997b98d4fdc4e0f7fda42055a51b06f056a1691598fa7e6764b71c226&scene=21#wechat_redirect)
+![图片](/resources/a-problem-about-response-time-out/3.png)
 
-**从前面的 vmopt 列可以得知，进入安全点的原因是 RevokeBias， [查资料](https://mp.weixin.qq.com/s?__biz=MzkzNTI1NjYxNg==&mid=2247483837&idx=4&sn=59f4b03cc403706870d806c4f8c35fea&scene=21#wechat_redirect)得知，这是在释放 偏向锁。**
+从前面的 vmopt 列可以得知，进入安全点的原因是 RevokeBias， [查资料](https://mp.weixin.qq.com/s?__biz=MzkzNTI1NjYxNg==&mid=2247483837&idx=4&sn=59f4b03cc403706870d806c4f8c35fea&scene=21#wechat_redirect)得知，这是在释放 偏向锁。**
 
 ## 偏向锁
 
@@ -205,7 +205,9 @@ public class LoggerRunner {
 
 对比 jmh 压测用例输出的 log4j2.info() 方法耗时，发现了下图中的状况：
 
-[![图片](/Users/tanglei/github/hexo.tanglei.name/resources/a-problem-about-response-time-out/4.png)](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247499589&idx=2&sn=6f1e334d709110c2f4d67e53664baa3c&chksm=eb44fea1dc3377b7f21e26ac1a099ccde69028ccf725cc0470f3f7c0a476963f245072adb804&scene=21#wechat_redirect)
+![图片](/resources/a-problem-about-response-time-out/4.png)
+
+[x](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247499589&idx=2&sn=6f1e334d709110c2f4d67e53664baa3c&chksm=eb44fea1dc3377b7f21e26ac1a099ccde69028ccf725cc0470f3f7c0a476963f245072adb804&scene=21#wechat_redirect)
 
 一次 write 系统调用竟然消耗了 147ms，很明显地，问题出在 write 系统调用上。
 
@@ -215,7 +217,7 @@ public class LoggerRunner {
 
 这时候就要好好回想一下操作系统的知识了。
 
-[![图片](/Users/tanglei/github/hexo.tanglei.name/resources/a-problem-about-response-time-out/5.png)](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247497629&idx=1&sn=d293f09e031d8eac89092ae4be91e05a&chksm=eb44f679dc337f6f67582611c140ef00a5971a71da458d503fd54d8a0ae836f14c81f559373c&scene=21#wechat_redirect)
+[![图片](/resources/a-problem-about-response-time-out/5.png)](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247497629&idx=1&sn=d293f09e031d8eac89092ae4be91e05a&chksm=eb44f679dc337f6f67582611c140ef00a5971a71da458d503fd54d8a0ae836f14c81f559373c&scene=21#wechat_redirect)
 
 在 linux 系统中，万物皆文件，而为了给不同的介质提供一种抽象的接口，在应用层和系统层之间，抽象了一个虚拟文件系统层（virtual file system, VFS）。
 
@@ -297,7 +299,7 @@ ext4 格式的文件系统在挂载时可以选择 (jouranling、ordered、write
 
 当然，对于这几种方案，我也做了压测，以下是压测的结果：
 
-[![图片](/Users/tanglei/github/hexo.tanglei.name/resources/a-problem-about-response-time-out/6.png)](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247490048&idx=1&sn=868a6eed7b199023429c26f2a1b2abea&chksm=eb471be4dc3092f24c284dce9e76765d68ea9b4dc345c3bb45f2e29d5cc02da7136ebc7f68ad&scene=21#wechat_redirect)
+[![图片](/resources/a-problem-about-response-time-out/6.png)](http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247490048&idx=1&sn=868a6eed7b199023429c26f2a1b2abea&chksm=eb471be4dc3092f24c284dce9e76765d68ea9b4dc345c3bb45f2e29d5cc02da7136ebc7f68ad&scene=21#wechat_redirect)
 
 所以，程序员还是要懂些操作系统知识的，不仅帮我们在应对这种诡异的问题时不至于束手无策，也可以在做一些业务设计时能有所参考。
 
@@ -468,7 +470,7 @@ linux 真的是博大精深啊。
 
 写文章很累的，需要一点正反馈。
 
-![图片](/Users/tanglei/github/hexo.tanglei.name/resources/a-problem-about-response-time-out/7.png)
+![图片](/resources/a-problem-about-response-time-out/7.png)
 
 你可能感兴趣：
 

@@ -23,7 +23,7 @@ tags:
 
 >上游985天坑本，费老大劲到top2计算机，踩了无数坑，给大家提醒一下不要走我的老路。
 
-![分享大纲](/Users/tanglei/github/hexo.tanglei.name/resources/experience-of-campus-recruitment-of-2022/1645239136418-image.png)
+![分享大纲](/resources/experience-of-campus-recruitment-of-2022/1645239136418-image.png)
 
 学妹将从秋招面试的项目、刷题、八股以及 Offer 选择等几个方面分享个人踩雷的经验。享主要来自一个学妹，我在基础上有一些补充。
 
@@ -163,7 +163,7 @@ tags:
 
 我的读者中应该也有不少朋友招聘应届生，最近阿里的春招马上就要开始了，建立了一个群，专门解答阿里校招相关问题，感兴趣的同学可以扫码加入群，请大家奔走相告，加群请备注：学校-昵称-岗位方向。
 
-![](/Users/tanglei/github/hexo.tanglei.name/resources/experience-of-campus-recruitment-of-2022/2022-campus-hire-group.jpg)
+![](/resources/experience-of-campus-recruitment-of-2022/2022-campus-hire-group.jpg)
 
 在前面的这篇文章中 ——[崩溃了……](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247499004&amp;idx=1&amp;sn=dda9a3a378e370f323e7593762aa03eb&amp;chksm=eb44fd18dc33740ef375b1ed304aafa55c8e783d56095f581ea164b19eee8cb4cf6d4d388735&token=571901650&lang=zh_CN#rd)讲述了读者被坑的例子，在这里也希望大佬们，如果遇到有 HC 调整等情况，尽量都提前跟候选人通知下。
 

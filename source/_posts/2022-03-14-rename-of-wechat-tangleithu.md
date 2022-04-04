@@ -18,7 +18,7 @@ tags:
 
 不知道大家发现没有（估计没有），我公众号改名了。
 
-![改名了](/Users/tanglei/github/hexo.tanglei.name/resources/experience-of-campus-recruitment-of-2022/1.jpg)
+![改名了](/resources/experience-of-campus-recruitment-of-2022/1.jpg)
 
 为啥？
 
@@ -26,7 +26,7 @@ tags:
 
 好心人把公众号名称让给我了，在此感谢。
 
-![](/Users/tanglei/github/hexo.tanglei.name/resources/experience-of-campus-recruitment-of-2022/2.jpg)
+![](/resources/experience-of-campus-recruitment-of-2022/2.jpg)
 
 其实，当初我取这个名字的时候，记得是因为腾讯开始不让我用“程序员石头”，说可能会侵犯别人权益xx之类的，让我提供相应的证明，就一个网名而已，我哪能拿出什么证明啊。
 
@@ -42,11 +42,11 @@ tags:
 
 今天在朋友圈看到了这个图，还是很恐怖的。
 
-![](/Users/tanglei/github/hexo.tanglei.name/resources/experience-of-campus-recruitment-of-2022/3.png)
+![](/resources/experience-of-campus-recruitment-of-2022/3.png)
 
 看看 BABA，300+ 直接给干到了 80+，今天还听朋友说，现在给公司打工，都是自己另外掏钱在干活（可不是嘛，一些大佬在高点行权缴税，然后股票还很多的情况下）。
 
-![](/Users/tanglei/github/hexo.tanglei.name/resources/experience-of-campus-recruitment-of-2022/4.png)
+![](/resources/experience-of-campus-recruitment-of-2022/4.png)
 
 哎，看看最近的股价真的是太惨了。
 
