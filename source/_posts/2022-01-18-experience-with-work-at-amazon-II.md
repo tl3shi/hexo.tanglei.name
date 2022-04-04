@@ -12,7 +12,7 @@ tags:
 >
 > 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247499506&idx=1&sn=37fac5a7d1718234d22845c8dc36a8cf&chksm=eb44ff16dc337600a59819684474f9b17914c1f7413c4835c9f398c0ea46f4843b532167a57b&scene=178&cur_album_id=2225655022002978819#rd)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
-![西雅图- 亚马逊球（Amazon Spheres），来源于网络](https://gitee.com/tangleithu/blog-resources/raw/master/2022-1-15/1642252071210-image.png)
+![西雅图- 亚马逊球（Amazon Spheres），来源于网络](/resources/gitee-blog-resources/2022-1-15/1642252071210-image.png)
 
 
 ## 背景
@@ -25,7 +25,7 @@ tags:
 
 在 [上期](https://mp.weixin.qq.com/s/Vd8czTWOJXpLV0LaUU39qA)，我们聊到了公司氛围、工作岗位以及办公地点等话题，今天我们接着聊聊公司的福利以及招聘面试流程等。
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-25/1640429880467-image.png)
+![](/resources/gitee-blog-resources/2021-12-25/1640429880467-image.png)
 
 [toc]
 
@@ -37,7 +37,7 @@ tags:
 
 ## 公司福利
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2022-1-15/1642257725500-image.png)
+![](/resources/gitee-blog-resources/2022-1-15/1642257725500-image.png)
 
 ### 五险一金
 
@@ -49,7 +49,7 @@ tags:
 
 ### 商业保险
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2022-1-15/1642259939985-image.png)
+![](/resources/gitee-blog-resources/2022-1-15/1642259939985-image.png)
 
 也叫做补充医疗保险。主要是重疾险和意外险，重疾能赔10万元，意外能赔36倍月薪，最低20万元。
 
@@ -63,7 +63,7 @@ tags:
 
 ### 年度体检 
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2022-1-15/1642258908348-image.png)
+![](/resources/gitee-blog-resources/2022-1-15/1642258908348-image.png)
 
 每年9月1日前入职的员工都可以参加本年度体检。
 
@@ -79,7 +79,7 @@ tags:
 
 ### 带薪休假
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2022-1-15/1642259026377-image.png)
+![](/resources/gitee-blog-resources/2022-1-15/1642259026377-image.png)
 
 法定节假日里值得一说的就是三八妇女节和五四青年节，妇女节女性员工可以休半天，青年节未满28岁的员工可以休半天，但实际上这两个半天休假的并不多。
 
@@ -99,7 +99,7 @@ tags:
 
 国内这边15天年假其实也相当充裕了，一般除去过年前后休上几天，平时还能休两次一周的假，一次5天的年假拼上前后周末就是9天长假，即使出国玩也基本够了，如果再跟五一国庆这种长假拼一起就更爽歪歪了。
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2022-1-15/1642259903531-image.png)
+![](/resources/gitee-blog-resources/2022-1-15/1642259903531-image.png)
 
 还有值得一说的是，有些组平时请个半天假啥的都不计入年假，有些组会比较严格，半天假也要在系统内登记。
 
@@ -115,13 +115,13 @@ tags:
 
 亚麻没有年终奖（一年12薪），也没有年会，平时过节啥的也没有礼品，全年只有中秋会发100块的礼品卡，能买的东西有限。
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2022-1-15/1642258840339-image.png)
+![](/resources/gitee-blog-resources/2022-1-15/1642258840339-image.png)
 
 ## 招聘面试
 
 ### 校招
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2022-1-15/1642258263906-image.png)
+![](/resources/gitee-blog-resources/2022-1-15/1642258263906-image.png)
 
 作为一个成熟的大公司，亚麻每年还是会招一些应届毕业生来培养的。
 
@@ -143,7 +143,7 @@ tags:
 
 亚麻的题目有个特点，就是特别长，就跟高考做英文阅读理解似的，如果题意没理解对，是很难拿到分数的，这也算变相考察了一些英文能力吧。
 
-![刷题 - 题海战术](https://gitee.com/tangleithu/blog-resources/raw/master/2022-1-15/1642259580077-image.png)
+![刷题 - 题海战术](/resources/gitee-blog-resources/2022-1-15/1642259580077-image.png)
 
 我有幸参加过两年的校招题目选题，HR 给了我们一个大约20页（A4 纸）的题库，我们先花半小时看一遍这些题目，从中选出自己觉得比较好的几个题目，分低、中、高三个难度。
 
@@ -157,7 +157,7 @@ tags:
 
 好多平时感觉很厉害的同学竟然没有过，这也是无可奈何的事情，毕竟这些系统都是老外们开发的，中国人有时候不习惯也正常。
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2022-1-15/1642259693822-image.png)
+![](/resources/gitee-blog-resources/2022-1-15/1642259693822-image.png)
 
 所以想毕业来亚麻的同学可以提前找找网上的亚麻面试题，提前适应一下。或者问问往届的师兄师姐，学习点经验。
 
