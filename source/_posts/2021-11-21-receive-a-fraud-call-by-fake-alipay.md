@@ -28,13 +28,13 @@ tags:
 
 于是他加了我好友。
 
-![骗子加我钉钉好友](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-20/1637398387735-image.png)
+![骗子加我钉钉好友](/resources/gitee-blog-resources/2021-11-20/1637398387735-image.png)
 
 当时心里还有丝丝担心（想想应该不至于）：直接通过手机号搜索，看到我是阿里巴巴员工，岂不尴尬了嘛，还好多虑了，看不到。
 
 加了好友，就开始钉钉会议了。（我录屏了） 
 
-![骗子拉的钉钉会议](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-20/1637398317602-image.png)
+![骗子拉的钉钉会议](/resources/gitee-blog-resources/2021-11-20/1637398317602-image.png)
 
 然后，让我打开支付宝，问我的借呗额度，问我利率是不是高于国家法定的 7.几 % 。
 
@@ -52,7 +52,7 @@ tags:
 
 收到了所谓的工作证……
 
-![骗子的工作证](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-20/1637398748791-image.png)
+![骗子的工作证](/resources/gitee-blog-resources/2021-11-20/1637398748791-image.png)
 
 然后我问，你这邮箱怎么是 163 后缀的。
 
@@ -62,7 +62,7 @@ tags:
 
 后来我通过这个图片一搜，好家伙，原来已经有人中招了……
 
-![骗子工作证都是统一的吗？](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-20/1637398910529-image.png)
+![骗子工作证都是统一的吗？](/resources/gitee-blog-resources/2021-11-20/1637398910529-image.png)
 
 根据网上的信息，才了解到这个电话的后续发展大概剧情如下：
 
@@ -80,7 +80,7 @@ tags:
 
 记住一招：遇事多确认，千万别转钱！！！防范电信网络诈骗，你必须做一毛不拔“铁公鸡”。
 
-![遇事多确认，千万别转钱](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-21/1637425711155-image.png)
+![遇事多确认，千万别转钱](/resources/gitee-blog-resources/2021-11-21/1637425711155-image.png)
 
 推荐阅读文章：
 

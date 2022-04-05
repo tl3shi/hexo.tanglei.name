@@ -12,7 +12,7 @@ tags:
 >
 > 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s/Vd8czTWOJXpLV0LaUU39qA)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
-![西雅图- 亚马逊球（Amazon Spheres），来源于网络](https://gitee.com/tangleithu/blog-resources/raw/master/2022-1-15/1642252071210-image.png)
+![西雅图- 亚马逊球（Amazon Spheres），来源于网络](/resources/gitee-blog-resources/2022-1-15/1642252071210-image.png)
 
 
 ## 背景
@@ -27,7 +27,7 @@ tags:
 
 本文是我邀请到的一个学弟分享在亚马逊中国的工作体验。废话不多说，让我们一起来看看吧。
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-25/1640429880467-image.png)
+![](/resources/gitee-blog-resources/2021-12-25/1640429880467-image.png)
 
 [toc]
 
@@ -43,7 +43,7 @@ tags:
 
 北京这边分两个办公地点，电商业务在东四环远洋国际中心（最近的地铁站是四惠），AWS 在酒仙桥。
 
-![远洋国际中心](https://gitee.com/tangleithu/blog-resources/raw/master/2022-1-15/1642253319718-image.png)
+![远洋国际中心](/resources/gitee-blog-resources/2022-1-15/1642253319718-image.png)
 
 不过逐渐在往酒仙桥那边搬，应该等租期都到期了远洋就不再有办公室了。
 
@@ -61,7 +61,7 @@ tags:
 
 海外购刚开始的时候的确很火，因为那时候国家管控以及竞争都还没那么激烈，亚麻借助它全球公司的分布有很大优势，真的可以把进口商品价格做得很低而且有质量保证。
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2022-1-15/1642252906327-image.png)
+![](/resources/gitee-blog-resources/2022-1-15/1642252906327-image.png)
 
 作为内部员工，清楚亚麻确实不会卖假货（这方面还是很靠谱的）。
 
@@ -69,7 +69,7 @@ tags:
 
 很多大牌不让卖了，亚麻的优势一下小了很多。
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2022-1-15/1642252125638-image.png)
+![](/resources/gitee-blog-resources/2022-1-15/1642252125638-image.png)
 
 再说下全球开店，这两年中国对外输出很牛，尤其是疫情这两年，让中国商品卖到国外更加火热。
 
@@ -84,7 +84,7 @@ tags:
 
 ### 全栈工程师
 
-<a href="https://mp.weixin.qq.com/s/OGJhxM7FdeoIkAL2-uUI_Q">![全栈工程师](https://gitee.com/tangleithu/blog-resources/raw/master/2022-1-15/1642253156290-image.png)</a>
+<a href="https://mp.weixin.qq.com/s/OGJhxM7FdeoIkAL2-uUI_Q">![全栈工程师](/resources/gitee-blog-resources/2022-1-15/1642253156290-image.png)</a>
 
 不像国内互联网公司技术岗位分得比较细，分前后端开发，还有数据、算法岗等。亚麻这边都叫做 SDE （软件开发工程师）。
 
@@ -96,7 +96,7 @@ tags:
 
 哪怕是 App 开发部门，国内一般叫客户端开发，但亚麻没有这种专门的称呼，还是按 SDE 标准招。
 
-<a href="https://mp.weixin.qq.com/s/iRcyW1dEeCxleTfOTyr2Lw">![Amazon go](https://gitee.com/tangleithu/blog-resources/raw/master/2022-1-15/1642253744123-image.png)</a>
+<a href="https://mp.weixin.qq.com/s/iRcyW1dEeCxleTfOTyr2Lw">![Amazon go](/resources/gitee-blog-resources/2022-1-15/1642253744123-image.png)</a>
 
 19 年亚麻零售退出中国以后，App 的部分开工作发转移到了中国这边。因为在亚麻没有专门的客户端开发工程师，所以原来做 web 开发的人可以转去做 app 开发。**这在国内公司几乎是不可能的**。
 
@@ -124,7 +124,7 @@ tags:
 
 有时早上或晚上要跟外国团队开会，可以晚些到公司或者选择当天 work from home。
 
-<a href="https://mp.weixin.qq.com/s/E9tTzmPigZrhC3wIi5pczQ">![Work From Home](https://gitee.com/tangleithu/blog-resources/raw/master/2022-1-15/1642253861268-image.png)</a>
+<a href="https://mp.weixin.qq.com/s/E9tTzmPigZrhC3wIi5pczQ">![Work From Home](/resources/gitee-blog-resources/2022-1-15/1642253861268-image.png)</a>
 
 **当然从疫情开始到现在，亚麻一直是居家办公**，如果家里办公条件不适合，也可以选择去公司。
 
@@ -138,7 +138,7 @@ tags:
 
 ### 企业文化
 
-<a href="https://mp.weixin.qq.com/s/dtoN36JAKX4Vq_VelkExpQ">![AWS](https://gitee.com/tangleithu/blog-resources/raw/master/2022-1-15/1642253524570-image.png)</a>
+<a href="https://mp.weixin.qq.com/s/dtoN36JAKX4Vq_VelkExpQ">![AWS](/resources/gitee-blog-resources/2022-1-15/1642253524570-image.png)</a>
 
 亚麻有一套自己非常完整的文化，叫领导力准则，以前是 14 条，今年加了两条成了 16条。
 

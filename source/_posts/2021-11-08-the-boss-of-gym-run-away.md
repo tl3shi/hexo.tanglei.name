@@ -24,7 +24,7 @@ tags:
 
 现如今圈钱跑路事件屡见不鲜，皆因违法成本太低，而起诉有门槛，个体维权成本高，因此很多都选择了放弃。
 
-![不要沉默，能够拿起法律武器维权](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636218864558-image.png)
+![不要沉默，能够拿起法律武器维权](/resources/gitee-blog-resources/2021-11-7/1636218864558-image.png)
 
 当然参与维权也要有心理准备，也许我们最终也不一定能拿到钱，但广大同胞一起努力，肯定还是能引起相关部门的重视。
 
@@ -59,24 +59,24 @@ tags:
 
 然后，就在第二天，邻居群里就在转发，健身房老板要跑路了！
 
-![微信群转发跑路通知](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-6/1636212774456-image.png)
+![微信群转发跑路通知](/resources/gitee-blog-resources/2021-11-6/1636212774456-image.png)
 
 后来健身房贴了公告，说自己是受害者？？要甩锅给物业？
 
 ![](https://img.soogif.com/OHXbhM1z0fpTl80iE5sE85wggxMdSRuO.gif?scope=mdnice)
 
-![甩锅给物业](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-6/1636210215975-image.png)
+![甩锅给物业](/resources/gitee-blog-resources/2021-11-6/1636210215975-image.png)
 
-![也是受害者？？](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-6/1636211511121-image.png)
+![也是受害者？？](/resources/gitee-blog-resources/2021-11-6/1636211511121-image.png)
 
 然后，我问了问卖我卡的销售，结果销售两三个月前已经离职了，原因是工资发的不及时。
 
 
-![售卡销售早已离职](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636220141128-image.png)
+![售卡销售早已离职](/resources/gitee-blog-resources/2021-11-7/1636220141128-image.png)
 
 当然，也还有教练继续“装作”不知道，继续忽悠的（后有会员反馈，此教练大有问题）。
 
-![教练继续忽悠](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-6/1636214093278-image.png)
+![教练继续忽悠](/resources/gitee-blog-resources/2021-11-6/1636214093278-image.png)
 
 我还好心提醒他，注意别被老板忽悠，拖欠工资。
 
@@ -88,11 +88,11 @@ tags:
 
 **其实，如果在办卡之前查，是不是就不会掉坑了呢？**
 
-![企业状态-失信被执行人](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636214447987-image.png)
+![企业状态-失信被执行人](/resources/gitee-blog-resources/2021-11-7/1636214447987-image.png)
 
-![企业状态-风险](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-6/1636214263468-image.png)
+![企业状态-风险](/resources/gitee-blog-resources/2021-11-6/1636214263468-image.png)
 
-![拖欠员工工资被法院判强制执行](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636214439136-image.png)
+![拖欠员工工资被法院判强制执行](/resources/gitee-blog-resources/2021-11-7/1636214439136-image.png)
 
 看 2021 年 4 月就被劳动仲裁，要求给员工支付 9900 工资。结果公司一个没钱？能有啥用？
 
@@ -116,13 +116,13 @@ tags:
 
 刚开始都是离线的 pdf 在传播，我见不方便更改和维护，因此搞了个在线文档，感兴趣的朋友，在公众号后台回复 “健身房维权”，查看详细文档，后续也将一直更新维护进展，会将一些维权的经验更新到文档。
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636215022075-image.png)
+![](/resources/gitee-blog-resources/2021-11-7/1636215022075-image.png)
 
 北京有一个法院电子诉讼平台，可直接进行网上立案。在平台提交立案申请，立案法官经审核通过后，直接予以登记立案的工作机制。
 
 可实现当事人或代理人足不出户就可以办理立案手续。
 
-![北京法院电子诉讼平台](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636215462891-image.png)
+![北京法院电子诉讼平台](/resources/gitee-blog-resources/2021-11-7/1636215462891-image.png)
 
 因合同纠纷提起的诉讼，由被告住所地或者合同履行地人民法院管辖。即看合同落款处公司所盖的公章是属于哪个区的，就去哪个所属的区法院提交。
 
@@ -132,26 +132,26 @@ tags:
 
 > 划重点：留存消费凭证，开具发票等。
 
- ![营业执照](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636215879974-20211107002410.jpg)
+ ![营业执照](/resources/gitee-blog-resources/2021-11-7/1636215879974-20211107002410.jpg)
 
 当然，营业执照信息等也可以通过公司名字在国家企业信息信用系统中查询到。
 
 但可能你连背后的公司名字都不知道呢？再次体现**开具发票**的重要性。
 
-![国家企业信息信用公示系统](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636215960338-image.png)
+![国家企业信息信用公示系统](/resources/gitee-blog-resources/2021-11-7/1636215960338-image.png)
 
 被告信息有了后，就得提交起诉书：
 
 - 诉讼请求：希望法官判什么，如“请求判定被告退还费用 4000 元”。
 - 事实与理由：该处需要让法官清晰的理解发生了什么。需要写清楚，你什么时候去健身房、交了多少钱，办的什么卡，什么时候开卡，有效期到什么时候，健身房基于什么原因，什么时候停止运营等基础事实，尽量简洁陈述。
 
-![提交起诉书](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636216252412-image.png)
+![提交起诉书](/resources/gitee-blog-resources/2021-11-7/1636216252412-image.png)
 
 然后，就是相关的证据了。 
 
 **准备证据**
 
-![相关证据说明](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-7/1636216135384-image.png)
+![相关证据说明](/resources/gitee-blog-resources/2021-11-7/1636216135384-image.png)
 
 例如，办卡的签订的合同、付款凭证（微信转账、支付宝转账截图），相关收据（最好有发票），各种证明办理的会员服务未消费完毕（例如小程序显示的我们的卡的种类、有效期等），停止营业公告等。
 

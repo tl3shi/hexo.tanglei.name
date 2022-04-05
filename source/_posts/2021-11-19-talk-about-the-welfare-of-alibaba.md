@@ -12,7 +12,7 @@ tags:
 >
 > 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247498018&amp;idx=1&amp;sn=d122e1a5ab60094dac95c0d45a8f8f71&amp;chksm=eb44f8c6dc3371d0fb8733f2cc474a3d298794a5aa3bcf1b285563b20218ee73c41f6b4bbb4f&token=1503745258&lang=zh_CN#rd)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
-![阿里巴巴-飞天园区](https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-10/1633863362835-aliyun.jpg)
+![阿里巴巴-飞天园区](/resources/gitee-blog-resources/2021-10-10/1633863362835-aliyun.jpg)
 
 ## 背景
 
@@ -30,7 +30,7 @@ tags:
 
 ## 福利
 
-![网传各大厂福利](https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-10/1633862530716-image.png)
+![网传各大厂福利](/resources/gitee-blog-resources/2021-10-10/1633862530716-image.png)
 
 上图列举了各大厂相关福利，可能有的已经过时了，可供参考，也许可当个笑话看看呢，比如：
 
@@ -44,7 +44,7 @@ tags:
 
 我暂且把这种称为一种“福利”吧。这其实跟公司的文化氛围（或者“价值观”）有关，习惯了也就还好。
 
-![阿里巴巴园区灯光秀](https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-10/1633862422175-ali-11-11.jpg)
+![阿里巴巴园区灯光秀](/resources/gitee-blog-resources/2021-10-10/1633862422175-ali-11-11.jpg)
 
 其他福利，好像就没有啥特别的了，基本大厂也都有。
 
@@ -60,7 +60,7 @@ tags:
 
 健身房就不说了，基本大厂都有。
 
-![偶尔去健身房锻炼一下，图为北京某健身房一角，杭州设施更加齐全一些](https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-10/1633864769448-ali-gym.jpg)
+![偶尔去健身房锻炼一下，图为北京某健身房一角，杭州设施更加齐全一些](/resources/gitee-blog-resources/2021-10-10/1633864769448-ali-gym.jpg)
 
 员工每年一次的体检，基本覆盖了基础的检查，当然有额外检查需要另加钱。
 
@@ -70,7 +70,7 @@ tags:
 
 ## 餐饮
 
-![杭州食堂-煎小笼包，每次去杭州出差都会点一次](https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-10/1633862997269-image.png)
+![杭州食堂-煎小笼包，每次去杭州出差都会点一次](/resources/gitee-blog-resources/2021-10-10/1633862997269-image.png)
 
 一般园区有自己的食堂（当然有的地方比较小的木有），每个月有500的餐补，直接打支付宝。
 
@@ -80,7 +80,7 @@ tags:
 
 食堂吃的吧，跟学校食堂一样，吃多了都腻。杭州相对而言“地广人稀”，可选的会多一些，北京就那么几个档口了。
 
-![曾经发的朋友圈](https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-10/1633864060205-image.png)
+![曾经发的朋友圈](/resources/gitee-blog-resources/2021-10-10/1633864060205-image.png)
 
 每次看到头条的同学晒食堂吃的，就很酸。
 
@@ -88,13 +88,13 @@ tags:
 
 中秋月饼礼盒。
 
-![阿里月饼礼盒，图源网络](https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-10/1633865736923-ali-yuebing.jpg)
+![阿里月饼礼盒，图源网络](/resources/gitee-blog-resources/2021-10-10/1633865736923-ali-yuebing.jpg)
 
 其他？
 
 春节的家书算吗？ 
 
-![阿里春节家书](https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-10/1633865670661-ali-jiashu.jpg)
+![阿里春节家书](/resources/gitee-blog-resources/2021-10-10/1633865670661-ali-jiashu.jpg)
 
 不然就没了。
 
@@ -102,7 +102,7 @@ tags:
 
 前不久，公司高层领导也正面回应过这个事情，承认确实当年的处罚过于严重。这块也在不断改进。
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-10/1633863651955-image.png)
+![](/resources/gitee-blog-resources/2021-10-10/1633863651955-image.png)
 
 说道加班打车，阿里还算不错，晚上9点，有公司得晚上10点后才能报销。 
 
@@ -123,7 +123,7 @@ tags:
 
 当然有一定要求，必须是工作地首套住房。
 
-![各厂住房贷款福利-图源脉脉](https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-10/1633860806521-image.png)
+![各厂住房贷款福利-图源脉脉](/resources/gitee-blog-resources/2021-10-10/1633860806521-image.png)
 
 此外，阿里员工另外还有个福利，就是借呗低息的额度。有40W/60W之类的。
 
@@ -133,7 +133,7 @@ tags:
 
 ## 其他
 
-![一年香、三年醇、五年陈](https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-23/1635000467839-image.png)
+![一年香、三年醇、五年陈](/resources/gitee-blog-resources/2021-10-23/1635000467839-image.png)
 
 “一年香、三年醇、五年陈”是阿里巴巴对职工进入公司的一种纪念。
 
@@ -143,7 +143,7 @@ tags:
 
 每年5月10日为“阿里日”，邀请职工家属参观公司，另外就是著名的集体婚礼。
 
-![脉脉某招聘附福利-图源网络](https://gitee.com/tangleithu/blog-resources/raw/master/2021-10-10/1633866229422-image.png)
+![脉脉某招聘附福利-图源网络](/resources/gitee-blog-resources/2021-10-10/1633866229422-image.png)
 
 参考资料：
 

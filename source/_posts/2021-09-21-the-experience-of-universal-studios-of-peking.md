@@ -12,7 +12,7 @@ tags:
 >
 > 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247496626&idx=1&sn=f71285455b2072080ced06be40e0a9e8&chksm=eb44f256dc337b404b7bda7cabfef4ace182a747397a67d7cb8ef69e86127c5c0bfe9eb1f5d4&token=1427165924&lang=zh_CN#rd)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-13/1631547413375-image.png)
+![](/resources/gitee-blog-resources/2021-9-13/1631547413375-image.png)
 
 ## 背景
 
@@ -20,15 +20,15 @@ tags:
 
 这不环球影城攻略来了！
 
-![北京环球影城](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-17/1631893189007-image.png)
+![北京环球影城](/resources/gitee-blog-resources/2021-9-17/1631893189007-image.png)
 
 请看如下目录，本文图片（地图、导览等攻略图）被微信压缩可能导致看不清，高清原图请在公众号后台回复“环球影城”获取，为了方便，石头哥刻意做成了“北京环球影城攻略.pdf”，也一并提供下载。
 
-![北京环球影城攻略.pdf](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-18/1631976322371-image.png)
+![北京环球影城攻略.pdf](/resources/gitee-blog-resources/2021-9-18/1631976322371-image.png)
 
 本攻略是石头哥好友咸鱼老哥精心整理，真羡慕他，内部压力测试就体验了。
 
-![内部压力测试票](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-17/1631893111744-image.png)
+![内部压力测试票](/resources/gitee-blog-resources/2021-9-17/1631893111744-image.png)
 
 ## 整体概况
 
@@ -38,7 +38,7 @@ tags:
 
 ### 餐饮 
 
-![餐厅指南](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-16/1631806235111-image.png)
+![餐厅指南](/resources/gitee-blog-resources/2021-9-16/1631806235111-image.png)
 
 - 每个主题都有餐厅，价位人均100-300不等，具体参考上图餐厅指南
 - 水和饮料很贵：矿泉水10元，可乐等15元，但凡制作的饮品就三五十了（看来[前面的发的这个图](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247496460&idx=1&sn=047483bf288d01aac7faaa1a8c0b6be4&chksm=eb44f2e8dc337bfe95c695504c82ed768e96f351961ddfabbc99ce0e0e91f1f4c5971ecee781&token=402593151&lang=zh_CN#rd)是高端货）
@@ -52,7 +52,7 @@ tags:
 - 检票进来的左手边好莱坞区域有一排总商店，可以先买寄存，最好是傍晚再来购买就行
 - 环球城市大道也有商店卖所有东西，根本不用担心买不到
 
-![景点和骑乘设施指南](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-16/1631806005261-image.png)
+![景点和骑乘设施指南](/resources/gitee-blog-resources/2021-9-16/1631806005261-image.png)
 
 ## 重点在这 
 
@@ -64,11 +64,11 @@ tags:
 4. 神偷奶爸小黄人闹翻天：4D影院，座椅原地晃动，有趣度一般，容纳人多，排队中等
 5. 功夫熊猫：神龙大侠之旅：坐着小船漂流看视频和实景，小朋友会喜欢，排队中等
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-17/1631892629823-image.png)
+![](/resources/gitee-blog-resources/2021-9-17/1631892629823-image.png)
 
 ### 过山车排名 
 
-![霸天虎过山](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-18/1631974933040-b0b51064bcd3acc83032eb2c21984c3.jpg)
+![霸天虎过山](/resources/gitee-blog-resources/2021-9-18/1631974933040-b0b51064bcd3acc83032eb2c21984c3.jpg)
 
 1. 霸天虎过山车：最刺激也是排队最久项目之一，试运营已经排到2小时；什么都不让带，提前存包，包括手机
 2. 飞跃侏罗纪：大型室内外过山车，应该很爽，尚未开放调试中，估计排队很久
@@ -90,7 +90,7 @@ tags:
 
 ## 七个主题 
 
-![七大主题地图](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-16/1631807157602-%E4%B8%83%E5%A4%A7%E4%B8%BB%E9%A2%98%E5%9C%B0%E5%9B%BE.jpg)
+![七大主题地图](/resources/gitee-blog-resources/2021-9-16/1631807157602-%E4%B8%83%E5%A4%A7%E4%B8%BB%E9%A2%98%E5%9C%B0%E5%9B%BE.jpg)
 
 ### 1.哈利波特的魔法世界 
 
@@ -103,7 +103,7 @@ tags:
 - 卫生间有彩蛋，忘了去了
 - 快到城堡门口有个小舞台，有歌舞表演
 
-<![哈利波特的魔法世界导览图](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-18/1631975137251-image.png),![哈利波特的魔法世界导览图](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-18/1631975153376-image.png)>
+<![哈利波特的魔法世界导览图](/resources/gitee-blog-resources/2021-9-18/1631975137251-image.png),![哈利波特的魔法世界导览图](/resources/gitee-blog-resources/2021-9-18/1631975153376-image.png)>
 
 
 ### 2. 侏罗纪世界奴布拉岛 
@@ -114,23 +114,23 @@ tags:
 - 奇遇迅猛龙：和真实的机器迅猛龙交互合影，排队很久，时间不足可pass
 - 餐厅：哈蒙德餐厅，纯正西餐，也就那样吧，人均100-300全凭个人；有个冰沙铺子不错，20一杯可以体验
 
-<![侏罗纪世界奴布拉岛导览图](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-18/1631975031426-image.png),![侏罗纪世界奴布拉岛导览图](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-18/1631975065074-image.png)>
+<![侏罗纪世界奴布拉岛导览图](/resources/gitee-blog-resources/2021-9-18/1631975031426-image.png),![侏罗纪世界奴布拉岛导览图](/resources/gitee-blog-resources/2021-9-18/1631975065074-image.png)>
 
 ### 3. 未来水世界 
 
-![未来水世界](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-17/1631893322468-image.png)
+![未来水世界](/resources/gitee-blog-resources/2021-9-17/1631893322468-image.png)
 
-![未来水世界](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-17/1631893379344-image.png)
+![未来水世界](/resources/gitee-blog-resources/2021-9-17/1631893379344-image.png)
 
 - 2小时一场，奇数小时开始持续20多分钟，露天排队通道很长，至少提前半小时入场吧
 - 据称原样复刻洛杉矶和大阪，有热场湿身环节
 - 尚无水上飞机坠毁冲入水中的桥段，只剩下突突突，哒哒哒，体验感少一半
 
-![未来水世界导览图](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-17/1631891513602-image.png)
+![未来水世界导览图](/resources/gitee-blog-resources/2021-9-17/1631891513602-image.png)
 
 ### 4. 功夫熊猫盖世之地 
 
-<![功夫熊猫盖世之地](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-17/1631891822612-image.png),![功夫熊猫盖世之地](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-17/1631891840638-image.png)>
+<![功夫熊猫盖世之地](/resources/gitee-blog-resources/2021-9-17/1631891822612-image.png),![功夫熊猫盖世之地](/resources/gitee-blog-resources/2021-9-17/1631891840638-image.png)>
 
 - 总结在前面：成人可直接pass；整个是个室内，空调凉快，玩累了来休息会不错
 - 神龙大侠之旅：小朋友推荐
@@ -140,11 +140,11 @@ tags:
 - 智慧仙桃树：演出，没体验
 - 餐厅：平先生面馆，熊猫婆婆私房菜，功夫小吃
 
-![功夫熊猫盖世之地导览图](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-17/1631891594545-image.png)
+![功夫熊猫盖世之地导览图](/resources/gitee-blog-resources/2021-9-17/1631891594545-image.png)
 
 ### 5. 变形金刚基地 
 
-![变形金刚基地](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-13/1631547468522-image.png)
+![变形金刚基地](/resources/gitee-blog-resources/2021-9-13/1631547468522-image.png)
 
 - 霸天虎过山车：必体验，小心吐
 - 变形金刚：火种源争夺战：必必必体验，比洛杉矶的牛逼
@@ -152,14 +152,14 @@ tags:
 - 传奇现场：和变形金刚交互，有威震天、擎天柱和锋刃，一小时换班
 - 在微信公众号“程序猿石头”后台回复“环球影城”可获取 “攻略.pdf”，方便游览。
 
-![变形金刚传奇现场](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-17/1631891968132-image.png)
+![变形金刚传奇现场](/resources/gitee-blog-resources/2021-9-17/1631891968132-image.png)
 
-<![变形金刚基地导览图](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-17/1631891637697-image.png),![变形金刚基地导览图](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-17/1631891663097-image.png)>
+<![变形金刚基地导览图](/resources/gitee-blog-resources/2021-9-17/1631891637697-image.png),![变形金刚基地导览图](/resources/gitee-blog-resources/2021-9-17/1631891663097-image.png)>
 
 
 ### 6. 小黄人乐园 
 
-![小黄人乐园](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-13/1631547494101-image.png)
+![小黄人乐园](/resources/gitee-blog-resources/2021-9-13/1631547494101-image.png)
 
 - 萌转过山车：最小的过山车，刚好1分钟，小朋友推荐
 - 超萌漩漩涡：旋转飞船（虫），小朋友推荐
@@ -168,7 +168,7 @@ tags:
 - 餐厅：小黄人雪糕可以体验
 
 
-![小黄人乐园导览图](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-17/1631892054062-image.png)
+![小黄人乐园导览图](/resources/gitee-blog-resources/2021-9-17/1631892054062-image.png)
 
 ### 7. 好莱坞 
 
@@ -176,19 +176,19 @@ tags:
 - 不可驯服：驯龙高手舞台剧，比较推荐，每两小时一场，近千人，偶数小时开始，需提前半小时排队，留意门口时间牌
 - 餐厅：好几家餐厅，没有体验
 
-<![好莱坞导览图](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-17/1631892119775-image.png),![好莱坞导览图](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-17/1631892140813-image.png)>
+<![好莱坞导览图](/resources/gitee-blog-resources/2021-9-17/1631892119775-image.png),![好莱坞导览图](/resources/gitee-blog-resources/2021-9-17/1631892140813-image.png)>
 
 
 ## 其他
 
 ### 环球大巡游 
 
-![漂亮MM](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-17/1631892683083-image.png)
+![漂亮MM](/resources/gitee-blog-resources/2021-9-17/1631892683083-image.png)
 
 - 傍晚6:00左右，留意景区屏幕
 - 顺时针经好莱坞、侏罗纪、小黄人，就近即可
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-17/1631892598188-image.png)
+![](/resources/gitee-blog-resources/2021-9-17/1631892598188-image.png)
 
 ### 环球城市大道 
 
@@ -214,7 +214,7 @@ tags:
 
 - 不让带含酒精、需要加工加热食物、玻璃器皿、刺激气味食物
 
-![入园须知](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-17/1631892233221-image.png)
+![入园须知](/resources/gitee-blog-resources/2021-9-17/1631892233221-image.png)
 
 ### 关于儿童 
 
@@ -232,7 +232,7 @@ tags:
 - 穿跟脚的舒适运动鞋，一是排队走路舒服，二是甩不飞。。。
 - 优速通可以免排队，有钱人请准备好你滴钱包，充人民币可以变强
 
-![优速通说明](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-17/1631892360848-image.png)
+![优速通说明](/resources/gitee-blog-resources/2021-9-17/1631892360848-image.png)
 
 **其它**
 

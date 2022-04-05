@@ -13,7 +13,7 @@ tags:
 > 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s/aawkRKhh4ad08-A-oU0L6A)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-29/1640790472269-9f35753feb7a893d545e786a26956b1.jpg)
+![](/resources/gitee-blog-resources/2021-12-29/1640790472269-9f35753feb7a893d545e786a26956b1.jpg)
 
 
 ## 背景

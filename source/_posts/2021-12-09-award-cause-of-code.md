@@ -13,7 +13,7 @@ tags:
 > 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s/XQOqlW9S2AOoyC0br9-MDw)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
 
-![代码特别贡献奖](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-11/1631350847986-image.png)
+![代码特别贡献奖](/resources/gitee-blog-resources/2021-9-11/1631350847986-image.png)
 
 ## 背景
 
@@ -21,7 +21,7 @@ tags:
 
 前一阵有幸获得了一个代码贡献奖，有不少同学感兴趣，我这里就简单给大家掰扯几句。
 
-![代码贡献奖 —— 获奖理由](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-11/1631350898141-image.png)
+![代码贡献奖 —— 获奖理由](/resources/gitee-blog-resources/2021-9-11/1631350898141-image.png)
 
 ## 代码贡献奖？
 
@@ -31,7 +31,7 @@ tags:
 
 这也承认了一线的基层技术同学的价值，营造追求卓越代码的工程师文化氛围。
 
-![代码贡献奖-奖品](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-8/1638893070636-3dcd60175569bed7d1adaf052761c14.jpg)
+![代码贡献奖-奖品](/resources/gitee-blog-resources/2021-12-8/1638893070636-3dcd60175569bed7d1adaf052761c14.jpg)
 
 评选过程是，先由每个小团队（一般10来人）提名，然后被提名的同学准备获奖材料。
 
@@ -49,7 +49,7 @@ tags:
 
 如下是整个大的事业部下面的获奖名单，有的人的花名还挺牛X的。
 
-![代码贡献奖](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-7/1638892010661-%E4%BB%A3%E7%A0%81%E8%B4%A1%E7%8C%AE%E5%A5%96.jpg)
+![代码贡献奖](/resources/gitee-blog-resources/2021-12-7/1638892010661-%E4%BB%A3%E7%A0%81%E8%B4%A1%E7%8C%AE%E5%A5%96.jpg)
 
 ## 获奖理由
 
@@ -63,7 +63,7 @@ tags:
 
 这里就不太方便展开具体的业务了（度不太好把控啊，所以我很少在公众号谈工作上的具体事项）。
 
-![代码贡献奖-奖品](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-8/1638893123334-3b649fca8ad6e085b0f15ac43f4c87a.jpg)
+![代码贡献奖-奖品](/resources/gitee-blog-resources/2021-12-8/1638893123334-3b649fca8ad6e085b0f15ac43f4c87a.jpg)
 
 另外，从评选的数据维度可以看出，Code Review 也是其中很重要的环节。
 
@@ -81,7 +81,7 @@ tags:
 
 当时是开发一款 B/S 的 3D 渲染引擎（后来还有移动端的），其中 Web 部分由我负责，在大师兄在对我进行 code review 的过程中，对我提出了“严厉”的批评（也一直很感谢他当时的严格要求）。
 
-![3D 渲染引擎-SDK](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-8/1638929121266-image.png)
+![3D 渲染引擎-SDK](/resources/gitee-blog-resources/2021-12-8/1638929121266-image.png)
 
 原因不是别的，就是我开发的网页中有一部分是文字介绍，里面的标点符号是**中英文混用**，且代码也不规范，比如**缩进不一致**、该有的空格没有等等问题。
 
@@ -99,7 +99,7 @@ tags:
 
 https://v.qq.com/x/page/h0310ie8zhc.html
 
-![space-or-tab](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-8/1638930219223-space-or-tabs.jpg)
+![space-or-tab](/resources/gitee-blog-resources/2021-12-8/1638930219223-space-or-tabs.jpg)
 
 不过在一个 team 里保持统一的代码风格还是有必要的，毕竟你写的代码不是只有你一个人看，在不同的终端，不同的编辑器来讲空格和 tab 可能显示效果都不一样，也就影响了阅读体验。
 
@@ -109,7 +109,7 @@ https://v.qq.com/x/page/h0310ie8zhc.html
 
 比如之前在前东家的 hackthon 中，我就组队发起了一个叫 “code review advisor” 项目，实现的目的其实也很简单，就是让大家在预先统一的规范下编码，如果有违反规范的，直接以 Comment 形式告诉代码提交者需要修改。
 
-![hackthon 团队合影，对“朝阳群众”队](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-19/1632063150831-image.png)
+![hackthon 团队合影，对“朝阳群众”队](/resources/gitee-blog-resources/2021-9-19/1632063150831-image.png)
 
 尽管上文提到的Java开发手册源于阿里，但实际上，即便在阿里，严格的代码规范也只能是一个美好的愿景，因为各种历史等原因，其实大家的代码并没有按照预期的规范去执行和实施。
 
@@ -119,11 +119,11 @@ https://v.qq.com/x/page/h0310ie8zhc.html
 
 - 再推荐一本书 —— 《Clean Code》，中文译作《代码整洁之道》，原作者是 Robert.C.Martin，下面这个图是之前石头哥收藏的来源不详的此书的提纲。（可私信我获取此书）
 
-![Clean Code-提纲](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-19/1632063602341-image.png)
+![Clean Code-提纲](/resources/gitee-blog-resources/2021-9-19/1632063602341-image.png)
 
 - 其他的，再推荐 google 的 code style 吧，各种语言都有：`https://google.github.io/styleguide/` 
 
-![google code styleguide](https://gitee.com/tangleithu/blog-resources/raw/master/2021-9-19/1632064613777-image.png)
+![google code styleguide](/resources/gitee-blog-resources/2021-9-19/1632064613777-image.png)
 
 为了方便，我已经收集整理到一起，大家可以点击下方名片（或者微信搜索“程序猿石头”），回复`代码规范`获取相应资料。
 

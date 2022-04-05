@@ -16,7 +16,7 @@ tags:
 
 大家好，我是石头哥。
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-19/1639908310960-image.png)
+![](/resources/gitee-blog-resources/2021-12-19/1639908310960-image.png)
 
 之前我不是写了一篇文章讲了健身房老板跑路的事情嘛 —— [刚办的健身卡，老板跑路了！！！](https://mp.weixin.qq.com/s/nRTQ2zpXZcpkRU7Z3CphMw)，这篇文章给大家讲述了：
 
@@ -34,7 +34,7 @@ tags:
 
 前文提到，当得知跑路后，受害者们陆陆续续建立了维权群，我所在的群就有 1200+人， 这还是其中一个门店的，（北京一共有 3 家门店）
 
-![维权群](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-19/1639908627085-image.png)
+![维权群](/resources/gitee-blog-resources/2021-12-19/1639908627085-image.png)
 
 然后网友自发教大家如何投诉、各种维权说明流程、方案等：
 
@@ -54,11 +54,11 @@ tags:
 
 这其实都很能理解，因为每个人损失金额不同，对待损失的承受程度不一样，或者针对这个事件的本身看法也不一样。
 
-![立案申请通过](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-19/1639903598741-image.png)
+![立案申请通过](/resources/gitee-blog-resources/2021-12-19/1639903598741-image.png)
 
 最终参与提交立案申请的 200+人，立案通过的 100+人。
 
-![立案维权群](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-19/1639908534194-image.png)
+![立案维权群](/resources/gitee-blog-resources/2021-12-19/1639908534194-image.png)
 
 然而，接下来发生的事情，就劝退了绝大多数人了。
 
@@ -66,7 +66,7 @@ tags:
 
 立案通过后，隔了一段时间，接到法院电话，告知要去法院做一个统一的说明，被告知带身份证和笔。
 
-![法官后续流程说明](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-19/1639904418543-image.png)
+![法官后续流程说明](/resources/gitee-blog-resources/2021-12-19/1639904418543-image.png)
 
 因当天有其他事情，我自己并没有前往，以下内容根据群友反馈整理所得。
 
@@ -78,11 +78,11 @@ tags:
 
 >公告送达是用公开宣告的方式送达诉讼文书，经过法律规定的一定时间，即视为送达。在受送达人下落不明，或者用其他方式无法送达的情况下采用。方法：将需要送达的诉讼文书张贴在人民法院布告栏内或公共场所，或者登报、广播、在电视上播映。
 
-![公告送达案件流程说明](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-19/1639904607566-gaogao-songda.jpg)
+![公告送达案件流程说明](/resources/gitee-blog-resources/2021-12-19/1639904607566-gaogao-songda.jpg)
 
 然而，这个公告送达的费用，需要原告先行支付的，整个过程，需要 2 次公告，费用 520，再加上诉讼费 50，合计 570 元。（不能合并，一份合同一个案件）
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-19/1639905524386-image.png)
+![](/resources/gitee-blog-resources/2021-12-19/1639905524386-image.png)
 
 一个一两千的健身卡，已经损失了，为了起诉，还得再搭进去 570 元，且结果还不一定，大概率钱还是回不来，换做是你，你愿意继续下去吗？
 
@@ -92,7 +92,7 @@ tags:
 
 [在前文中](https://mp.weixin.qq.com/s/nRTQ2zpXZcpkRU7Z3CphMw)也提到了，健身房员工工资被拖欠，员工劳动仲裁胜诉，最终貌似仍然没拿到钱？
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-19/1639906215961-image.png)
+![](/resources/gitee-blog-resources/2021-12-19/1639906215961-image.png)
 
 会上，法院鼓励所有公民拿起法律武器保护自己，但同时提示，当理想与现实冲撞时，要保持一个良好的心态：
 
@@ -117,7 +117,7 @@ tags:
 
 如果警察明确表示不能以刑事案接受报警，我们仍然认定纠纷涉及刑事案，我们有权以个体名义向人民法院申请刑事案申诉。
 
-![债权清偿担保说明](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-19/1639907300390-50-5.jpg)
+![债权清偿担保说明](/resources/gitee-blog-resources/2021-12-19/1639907300390-50-5.jpg)
 
 刑事案申诉办理与民事纠纷申诉办理，法院取证力度不同。
 
@@ -125,7 +125,7 @@ tags:
 
 如果健身房明知经营不下去，仍然大量售卖会员卡等，就可以涉嫌诈骗进行刑事立案。
 
-![律师朋友的反馈](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-19/1639907498396-image.png)
+![律师朋友的反馈](/resources/gitee-blog-resources/2021-12-19/1639907498396-image.png)
 
 如果大家有能力尽力促成警察以刑事罪立案，将是最佳结果。
 
@@ -133,7 +133,7 @@ tags:
 
 于是，赶紧去派出所报案吧。（办案民警告知，该案件和之前的合并了，并没有给我出具受理回执）
 
-![诉讼权利告知书](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-19/1639907794619-gaozhishu.jpg)
+![诉讼权利告知书](/resources/gitee-blog-resources/2021-12-19/1639907794619-gaozhishu.jpg)
 
 ## 后记
 

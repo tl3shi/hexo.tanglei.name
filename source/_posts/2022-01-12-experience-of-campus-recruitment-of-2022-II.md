@@ -12,7 +12,7 @@ tags:
 >
 > 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247499004&idx=1&sn=dda9a3a378e370f323e7593762aa03eb&chksm=eb44fd18dc33740ef375b1ed304aafa55c8e783d56095f581ea164b19eee8cb4cf6d4d388735&token=1946031599&lang=zh_CN#rd)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-19/1639883978140-image.png)
+![](/resources/gitee-blog-resources/2021-12-19/1639883978140-image.png)
 
 ## 背景
 
@@ -24,7 +24,7 @@ tags:
 
 幸运的是，经过学弟的不断努力，最终还是锁定了另外一个大厂的 Offer。下面就来看看学弟的经验教训总结吧。 
 
-![本文提纲](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-18/1639831142938-image.png)
+![本文提纲](/resources/gitee-blog-resources/2021-12-18/1639831142938-image.png)
 
 其他校招系列文章[请戳这里](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI3OTUzMzcwNw==&action=getalbum&album_id=1551696282304495619&scene=173&from_msgid=2247489734&from_itemidx=1&count=3&nolastread=1#wechat_redirect)。
 
@@ -38,7 +38,7 @@ tags:
 
 直到 10 月被告知部门 HC 调整，Leader 劝说看看其他机会，意识到转正失败。
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2021-12-19/1639884313319-image.png)
+![](/resources/gitee-blog-resources/2021-12-19/1639884313319-image.png)
 
 此时才开始重新投递简历，秋招早已接近尾声，经历了心理压力非常大的挣扎期、反复 kpi面被拒的挫败期，历时一个多月，最终还是拿到了满意的 offer。
 

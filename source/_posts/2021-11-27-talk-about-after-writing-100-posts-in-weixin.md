@@ -18,7 +18,7 @@ tags:
 
 不知不觉，今天这篇文章刚好是第 100 篇原创的推送。今天就给大家聊聊，在写文过程中的一些感受。
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-21/1637424380938-5113c88ee3aa5f1cdbee5528af6363d.jpg)
+![](/resources/gitee-blog-resources/2021-11-21/1637424380938-5113c88ee3aa5f1cdbee5528af6363d.jpg)
 
 主要包括写文目的，过程中遇到的一些人，有不少有意思的，也有不少奇葩的，最后再聊聊广告问题。
 
@@ -153,11 +153,11 @@ tags:
 
 然后有时候会尽量帮读者解决一些能帮忙做的事情。比如，有读者签了阿里部门A，但部门A只在baseA，读者期望转到baseB的部门B。我也尽可能帮忙张罗。最后确实也推进了流程。
 
-![](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-23/1637681014135-image.png)
+![](/resources/gitee-blog-resources/2021-11-23/1637681014135-image.png)
 
 建了交流群，提供一个大家交流的地方，偶尔能帮读者解决个问题，或者帮读者朋友内推等等，也算是提供了价值。
 
-![内推群成功帮读者内推新公司](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-21/1637424301857-image.png)
+![内推群成功帮读者内推新公司](/resources/gitee-blog-resources/2021-11-21/1637424301857-image.png)
 
 但有的读者就是那种不太会“做人”的……
 
@@ -167,11 +167,11 @@ tags:
 
 比如有遇到过，一哥们半夜发简历给我，说你不是说帮忙 review 简历吗，快给看看吧。我当时有事情在忙，没有及时回复，结果 “视频弹框” 就来了。 
 
-![深夜视频申请](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-23/1637678902275-image.png)
+![深夜视频申请](/resources/gitee-blog-resources/2021-11-23/1637678902275-image.png)
 
 还遇到过，之前帮一个哥们内推，加了微信。后来有一次我发了个朋友圈，大概就是吐槽了下微信有个小 bug，结果被喷得那个叫惨啊……
 
-![被喷得惨](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-23/1637678941965-image.png)
+![被喷得惨](/resources/gitee-blog-resources/2021-11-23/1637678941965-image.png)
 
 还有一些从公众号后台留言的，也有一些键盘侠。遇到得多了也就知道怎么处理了，直接拉黑即可，不要让键盘侠们影响自己的心情。
 
@@ -213,7 +213,7 @@ tags:
 
 最后，我从这 100 篇原创文章中挑选了部分精华内容，放到一个 PDF 了，大家可以回复 “历史文章” 下载。
 
-![精华文章总结](https://gitee.com/tangleithu/blog-resources/raw/master/2021-11-25/1637769741148-image.png)
+![精华文章总结](/resources/gitee-blog-resources/2021-11-25/1637769741148-image.png)
 
 最后，不免俗套的，求关注、求星标，本号会定期分享一些技术干货、职场经验等，如果大家对阿里或者其他大厂感兴趣，也可以找我内推，我可以帮忙提供简历 review 等，希望能和大家积极交流讨论，一起学习、共同进步。
 
