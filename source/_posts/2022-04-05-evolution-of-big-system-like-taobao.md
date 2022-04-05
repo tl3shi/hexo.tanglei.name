@@ -41,13 +41,13 @@ tags:
 >原文作者：huashiou
 >链接：https://segmentfault.com/a/1190000018626163
 
-# 1. 概述
+## 1. 概述
 
 本文以淘宝作为例子，介绍从一百个到千万级并发情况下服务端的架构的演进过程，同时列举出每个演进阶段会遇到的相关技术，让大家对架构的演进有一个整体的认知，文章最后汇总了一些架构设计的原则。
 
 > **特别说明：本文以淘宝为例仅仅是为了便于说明演进过程可能遇到的问题，并非是淘宝真正的技术演进路径**
 
-# 2. 基本概念
+## 2. 基本概念
 
 在介绍架构之前，为了避免部分读者对架构设计中的一些概念不了解，下面对几个最基础的概念进行介绍：
 
@@ -62,59 +62,59 @@ tags:
 - **正向代理和反向代理**
   系统内部要访问外部网络时，统一通过一个代理服务器把请求转发出去，在外部网络看来就是代理服务器发起的访问，此时代理服务器实现的是正向代理；当外部请求进入系统时，代理服务器把该请求转发到系统中的某台服务器上，对外部请求来说，与之交互的只有代理服务器，此时代理服务器实现的是反向代理。简单来说，正向代理是代理服务器代替系统内部来访问外部网络的过程，反向代理是外部请求访问系统时通过代理服务器转发到内部服务器的过程。
 
-# 3. 架构演进
+## 3. 架构演进
 
-## 3.1 单机架构
+### 3.1 单机架构
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/OyweysCSeLVMHgibtbyGn5TQD9eUGDZLCdHVfWMnzBN9xOZVelibwamGKvGVLbDiayZvicUibticlPe4JkvaHMPabCbw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/resources/evolution-of-big-system-like-taobao/640-20220405213830152.png)
 
 以淘宝作为例子。在网站最初时，应用数量与用户数都较少，可以把Tomcat和数据库部署在同一台服务器上。浏览器往www.taobao.com发起请求时，首先经过DNS服务器（域名系统）把域名转换为实际IP地址10.102.4.1，浏览器转而访问该IP对应的Tomcat。
 
 > **随着用户数的增长，Tomcat和数据库之间竞争资源，单机性能不足以支撑业务**
 
-## 3.2 第一次演进：Tomcat与数据库分开部署
+### 3.2 第一次演进：Tomcat与数据库分开部署
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/OyweysCSeLVMHgibtbyGn5TQD9eUGDZLCibiaQWBC9QosX26KXQpHcvS9kLibXRHQ8JibmG5aDtk9J9w7aY7PKUDIRg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/resources/evolution-of-big-system-like-taobao/640-20220405213834708.png)
 
 Tomcat和数据库分别独占服务器资源，显著提高两者各自性能。
 
 > **随着用户数的增长，并发读写数据库成为瓶颈**
 
-## 3.3 第二次演进：引入本地缓存和分布式缓存
+### 3.3 第二次演进：引入本地缓存和分布式缓存
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/OyweysCSeLVMHgibtbyGn5TQD9eUGDZLCSJOibeiaknN8c9M3CrE0kr2Rg8E9T9UkfoOKqAqEr22GhFUCfqplyeTA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/resources/evolution-of-big-system-like-taobao/640-20220405213839149.png)
 
 在Tomcat同服务器上或同JVM中增加本地缓存，并在外部增加分布式缓存，缓存热门商品信息或热门商品的html页面等。通过缓存能把绝大多数请求在读写数据库前拦截掉，大大降低数据库压力。其中涉及的技术包括：使用memcached作为本地缓存，使用Redis作为分布式缓存，还会涉及缓存一致性、缓存穿透/击穿、缓存雪崩、热点数据集中失效等问题。
 
 > **缓存抗住了大部分的访问请求，随着用户数的增长，并发压力主要落在单机的Tomcat上，响应逐渐变慢**
 
-## 3.4 第三次演进：引入反向代理实现负载均衡
+### 3.4 第三次演进：引入反向代理实现负载均衡
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/OyweysCSeLVMHgibtbyGn5TQD9eUGDZLCsraQZH0n0EF9QLszG22FJd8jGpq11rrs8WIGDa1HUtCiccJ4g0ltzvQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/resources/evolution-of-big-system-like-taobao/640-20220405213844247.png)
 
 在多台服务器上分别部署Tomcat，使用反向代理软件（Nginx）把请求均匀分发到每个Tomcat中。此处假设Tomcat最多支持100个并发，Nginx最多支持50000个并发，那么理论上Nginx把请求分发到500个Tomcat上，就能抗住50000个并发。其中涉及的技术包括：Nginx、HAProxy，两者都是工作在网络第七层的反向代理软件，主要支持http协议，还会涉及session共享、文件上传下载的问题。
 
 > **反向代理使应用服务器可支持的并发量大大增加，但并发量的增长也意味着更多请求穿透到数据库，单机的数据库最终成为瓶颈**
 
-## 3.5 第四次演进：数据库读写分离
+### 3.5 第四次演进：数据库读写分离
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/OyweysCSeLVMHgibtbyGn5TQD9eUGDZLCXYtpe4vIlzRbkUUtPeYa9uw7ZHzYvYlE0jDLBhfUBibibMYby385lP8g/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/resources/evolution-of-big-system-like-taobao/640-20220405213849041.png)
 
 把数据库划分为读库和写库，读库可以有多个，通过同步机制把写库的数据同步到读库，对于需要查询最新写入数据场景，可通过在缓存中多写一份，通过缓存获得最新数据。其中涉及的技术包括：Mycat，它是数据库中间件，可通过它来组织数据库的分离读写和分库分表，客户端通过它来访问下层数据库，还会涉及数据同步，数据一致性的问题。
 
 > **业务逐渐变多，不同业务之间的访问量差距较大，不同业务直接竞争数据库，相互影响性能**
 
-## 3.6 第五次演进：数据库按业务分库
+### 3.6 第五次演进：数据库按业务分库
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/OyweysCSeLVMHgibtbyGn5TQD9eUGDZLCbnze4xOla2jSp0T4ET26bmz457HyicqBNDB9eicfz019lcy15qsUTiawQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/resources/evolution-of-big-system-like-taobao/640-20220405213853789.png)
 
 把不同业务的数据保存到不同的数据库中，使业务之间的资源竞争降低，对于访问量大的业务，可以部署更多的服务器来支撑。这样同时导致跨业务的表无法直接做关联分析，需要通过其他途径来解决，但这不是本文讨论的重点，有兴趣的可以自行搜索解决方案。
 
 > **随着用户数的增长，单机的写库会逐渐会达到性能瓶颈**
 
-## 3.7 第六次演进：把大表拆分为小表
+### 3.7 第六次演进：把大表拆分为小表
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/OyweysCSeLVMHgibtbyGn5TQD9eUGDZLCOyJwVeRQL5ckutNwWtCgBNco4noW0V9CzTgTurIIZ7VPDexf9ZtTLQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/resources/evolution-of-big-system-like-taobao/640-20220405213859117.png)
 
 比如针对评论数据，可按照商品ID进行hash，路由到对应的表中存储；针对支付记录，可按照小时创建表，每个小时表继续拆分为小表，使用用户ID或记录编号来路由数据。只要实时操作的表数据量足够小，请求能够足够均匀的分发到多台服务器上的小表，那数据库就能通过水平扩展的方式来提高性能。其中前面提到的Mycat也支持在大表拆分为小表情况下的访问控制。
 
@@ -124,61 +124,65 @@ Tomcat和数据库分别独占服务器资源，显著提高两者各自性能�
 
 > **数据库和Tomcat都能够水平扩展，可支撑的并发大幅提高，随着用户数的增长，最终单机的Nginx会成为瓶颈**
 
-## 3.8 第七次演进：使用LVS或F5来使多个Nginx负载均衡
+### 3.8 第七次演进：使用LVS或F5来使多个Nginx负载均衡
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/OyweysCSeLVMHgibtbyGn5TQD9eUGDZLCF8K7K1kQdFKeGSnp95CFkXib49EQrkC8RfLqEnWghvGFdZKsKY9Uxgw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/resources/evolution-of-big-system-like-taobao/640-20220405213905128.png)
 
-由于瓶颈在Nginx，因此无法通过两层的Nginx来实现多个Nginx的负载均衡。图中的LVS和F5是工作在网络第四层的负载均衡解决方案，其中LVS是软件，运行在操作系统内核态，可对TCP请求或更高层级的网络协议进行转发，因此支持的协议更丰富，并且性能也远高于Nginx，可假设单机的LVS可支持几十万个并发的请求转发；F5是一种负载均衡硬件，与LVS提供的能力类似，性能比LVS更高，但价格昂贵。由于LVS是单机版的软件，若LVS所在服务器宕机则会导致整个后端系统都无法访问，因此需要有备用节点。可使用keepalived软件模拟出虚拟IP，然后把虚拟IP绑定到多台LVS服务器上，浏览器访问虚拟IP时，会被路由器重定向到真实的LVS服务器，当主LVS服务器宕机时，keepalived软件会自动更新路由器中的路由表，把虚拟IP重定向到另外一台正常的LVS服务器，从而达到LVS服务器高可用的效果。
+由于瓶颈在Nginx，因此无法通过两层的Nginx来实现多个Nginx的负载均衡。图中的LVS和F5是工作在网络第四层的负载均衡解决方案，其中LVS是软件，运行在操作系统内核态，可对TCP请求或更高层级的网络协议进行转发，因此支持的协议更丰富，并且性能也远高于Nginx，可假设单机的LVS可支持几十万个并发的请求转发；F5是一种负载均衡硬件，与LVS提供的能力类似，性能比LVS更高，但价格昂贵。
+
+由于LVS是单机版的软件，若LVS所在服务器宕机则会导致整个后端系统都无法访问，因此需要有备用节点。可使用keepalived软件模拟出虚拟IP，然后把虚拟IP绑定到多台LVS服务器上，浏览器访问虚拟IP时，会被路由器重定向到真实的LVS服务器，当主LVS服务器宕机时，keepalived软件会自动更新路由器中的路由表，把虚拟IP重定向到另外一台正常的LVS服务器，从而达到LVS服务器高可用的效果。
 
 此处需要注意的是，上图中从Nginx层到Tomcat层这样画并不代表全部Nginx都转发请求到全部的Tomcat，在实际使用时，可能会是几个Nginx下面接一部分的Tomcat，这些Nginx之间通过keepalived实现高可用，其他的Nginx接另外的Tomcat，这样可接入的Tomcat数量就能成倍的增加。
 
 > **由于LVS也是单机的，随着并发数增长到几十万时，LVS服务器最终会达到瓶颈，此时用户数达到千万甚至上亿级别，用户分布在不同的地区，与服务器机房距离不同，导致了访问的延迟会明显不同**
 
-## 3.9 第八次演进：通过DNS轮询实现机房间的负载均衡
+### 3.9 第八次演进：通过DNS轮询实现机房间的负载均衡
 
-![图片](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
+![clipboard.png](/resources/evolution-of-big-system-like-taobao/bVbqkuH.png)
 
 在DNS服务器中可配置一个域名对应多个IP地址，每个IP地址对应到不同的机房里的虚拟IP。当用户访问www.taobao.com时，DNS服务器会使用轮询策略或其他策略，来选择某个IP供用户访问。此方式能实现机房间的负载均衡，至此，系统可做到机房级别的水平扩展，千万级到亿级的并发量都可通过增加机房来解决，系统入口处的请求并发量不再是问题。
 
 > **随着数据的丰富程度和业务的发展，检索、分析等需求越来越丰富，单单依靠数据库无法解决如此丰富的需求**
 
-## 3.10 第九次演进：引入NoSQL数据库和搜索引擎等技术
+### 3.10 第九次演进：引入NoSQL数据库和搜索引擎等技术
 
-![图片](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
+![clipboard.png](/resources/evolution-of-big-system-like-taobao/bVbqHtd.png)
 
-当数据库中的数据多到一定规模时，数据库就不适用于复杂的查询了，往往只能满足普通查询的场景。对于统计报表场景，在数据量大时不一定能跑出结果，而且在跑复杂查询时会导致其他查询变慢，对于全文检索、可变数据结构等场景，数据库天生不适用。因此需要针对特定的场景，引入合适的解决方案。如对于海量文件存储，可通过分布式文件系统HDFS解决，对于key value类型的数据，可通过HBase和Redis等方案解决，对于全文检索场景，可通过搜索引擎如ElasticSearch解决，对于多维分析场景，可通过Kylin或Druid等方案解决。
+当数据库中的数据多到一定规模时，数据库就不适用于复杂的查询了，往往只能满足普通查询的场景。对于统计报表场景，在数据量大时不一定能跑出结果，而且在跑复杂查询时会导致其他查询变慢，对于全文检索、可变数据结构等场景，数据库天生不适用。因此需要针对特定的场景，引入合适的解决方案。
+
+如对于海量文件存储，可通过分布式文件系统HDFS解决，对于key value类型的数据，可通过HBase和Redis等方案解决，对于全文检索场景，可通过搜索引擎如ElasticSearch解决，对于多维分析场景，可通过Kylin或Druid等方案解决。
 
 当然，引入更多组件同时会提高系统的复杂度，不同的组件保存的数据需要同步，需要考虑一致性的问题，需要有更多的运维手段来管理这些组件等。
 
 > **引入更多组件解决了丰富的需求，业务维度能够极大扩充，随之而来的是一个应用中包含了太多的业务代码，业务的升级迭代变得困难**
 
-## 3.11 第十次演进：大应用拆分为小应用
+### 3.11 第十次演进：大应用拆分为小应用
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/OyweysCSeLVMHgibtbyGn5TQD9eUGDZLCoic65U17KdUaiacxRAEXUfQwZ1vLaMCFDM9uJCokT5O50x0uSibLXJZsg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/resources/evolution-of-big-system-like-taobao/640-20220405213923432.png)
 
 按照业务板块来划分应用代码，使单个应用的职责更清晰，相互之间可以做到独立升级迭代。这时候应用之间可能会涉及到一些公共配置，可以通过分布式配置中心Zookeeper来解决。
 
 > **不同应用之间存在共用的模块，由应用单独管理会导致相同代码存在多份，导致公共功能升级时全部应用代码都要跟着升级**
 
-## 3.12 第十一次演进：复用的功能抽离成微服务
+### 3.12 第十一次演进：复用的功能抽离成微服务
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/OyweysCSeLVMHgibtbyGn5TQD9eUGDZLCeSRJia0ClPm8cQwTwoocIRKZstNugOjoYnsr36qo6aeYcSEIicgGtfsA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/resources/evolution-of-big-system-like-taobao/640-20220405213928917.png)
 
 如用户管理、订单、支付、鉴权等功能在多个应用中都存在，那么可以把这些功能的代码单独抽取出来形成一个单独的服务来管理，这样的服务就是所谓的微服务，应用和服务之间通过HTTP、TCP或RPC请求等多种方式来访问公共服务，每个单独的服务都可以由单独的团队来管理。此外，可以通过Dubbo、SpringCloud等框架实现服务治理、限流、熔断、降级等功能，提高服务的稳定性和可用性。
 
 > **不同服务的接口访问方式不同，应用代码需要适配多种访问方式才能使用服务，此外，应用访问服务，服务之间也可能相互访问，调用链将会变得非常复杂，逻辑变得混乱**
 
-## 3.13 第十二次演进：引入企业服务总线ESB屏蔽服务接口的访问差异
+### 3.13 第十二次演进：引入企业服务总线ESB屏蔽服务接口的访问差异
 
-![图片](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
+![clipboard.png](/resources/evolution-of-big-system-like-taobao/bVbqHBi-20220405213936290.png)
 
 通过ESB统一进行访问协议转换，应用统一通过ESB来访问后端服务，服务与服务之间也通过ESB来相互调用，以此降低系统的耦合程度。这种单个应用拆分为多个应用，公共服务单独抽取出来来管理，并使用企业消息总线来解除服务之间耦合问题的架构，就是所谓的SOA（面向服务）架构，这种架构与微服务架构容易混淆，因为表现形式十分相似。个人理解，微服务架构更多是指把系统里的公共服务抽取出来单独运维管理的思想，而SOA架构则是指一种拆分服务并使服务接口访问变得统一的架构思想，SOA架构中包含了微服务的思想。
 
 > **业务不断发展，应用和服务都会不断变多，应用和服务的部署变得复杂，同一台服务器上部署多个服务还要解决运行环境冲突的问题，此外，对于如大促这类需要动态扩缩容的场景，需要水平扩展服务的性能，就需要在新增的服务上准备运行环境，部署服务等，运维将变得十分困难**
 
-## 3.14 第十三次演进：引入容器化技术实现运行环境隔离与动态服务管理
+### 3.14 第十三次演进：引入容器化技术实现运行环境隔离与动态服务管理
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/OyweysCSeLVMHgibtbyGn5TQD9eUGDZLCRRUniao4uicqibI2PgG4wCQnQcoYfd2uPEzn4DzJ6bvqoS77C1SZ3HFvA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/resources/evolution-of-big-system-like-taobao/640-20220405213943783.png)
 
 目前最流行的容器化技术是Docker，最流行的容器管理服务是Kubernetes(K8S)，应用/服务可以打包为Docker镜像，通过K8S来动态分发和部署镜像。Docker镜像可理解为一个能运行你的应用/服务的最小的操作系统，里面放着应用/服务的运行代码，运行环境根据实际的需要设置好。把整个“操作系统”打包为一个镜像后，就可以分发到需要部署相关服务的机器上，直接启动Docker镜像就可以把服务起起来，使服务的部署和运维变得简单。
 
@@ -186,11 +190,13 @@ Tomcat和数据库分别独占服务器资源，显著提高两者各自性能�
 
 > **使用容器化技术后服务动态扩缩容问题得以解决，但是机器还是需要公司自身来管理，在非大促的时候，还是需要闲置着大量的机器资源来应对大促，机器自身成本和运维成本都极高，资源利用率低**
 
-## 3.15 第十四次演进：以云平台承载系统
+### 3.15 第十四次演进：以云平台承载系统
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/OyweysCSeLVMHgibtbyGn5TQD9eUGDZLCxuw6IOWCr00k1zyuWsAzO5lwgFlh8EcfSR2h5HkYOA1v7GHP6CmatA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![图片](/resources/evolution-of-big-system-like-taobao/640-20220405213952805.png)
 
 系统可部署到公有云上，利用公有云的海量机器资源，解决动态硬件资源的问题，在大促的时间段里，在云平台中临时申请更多的资源，结合Docker和K8S来快速部署服务，在大促结束后释放资源，真正做到按需付费，资源利用率大大提高，同时大大降低了运维成本。
+
+>插播：阿里云神龙计算平台招聘后端开发啦，校招，社招均有，[戳这里了解详情](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247498645&idx=2&sn=3e8783e7e85f146a509c8b923a4a7e6f&chksm=eb44fa71dc337367204773eb1d483d629d77b1d2dfef78d5a874fa6f1c9f545f666b8325d3ff&token=1931883326&lang=zh_CN#rd) 
 
 所谓的云平台，就是把海量机器资源，通过统一的资源管理，抽象为一个资源整体，在之上可按需动态申请硬件资源（如CPU、内存、网络等），并且之上提供通用的操作系统，提供常用的技术组件（如Hadoop技术栈，MPP数据库等）供用户使用，甚至提供开发好的应用，用户不需要关系应用内部使用了什么技术，就能够解决需求（如音视频转码服务、邮件服务、个人博客等）。在云平台中会涉及如下几个概念：
 
@@ -212,8 +218,8 @@ Tomcat和数据库分别独占服务器资源，显著提高两者各自性能�
   所谓的“大数据”其实是海量数据采集清洗转换、数据存储、数据分析、数据服务等场景解决方案的一个统称，在每一个场景都包含了多种可选的技术，如数据采集有Flume、Sqoop、Kettle等，数据存储有分布式文件系统HDFS、FastDFS，NoSQL数据库HBase、MongoDB等，数据分析有Spark技术栈、机器学习算法等。总的来说大数据架构就是根据业务的需求，整合各种大数据组件组合而成的架构，一般会提供分布式存储、分布式计算、多维分析、数据仓库、机器学习算法等能力。而服务端架构更多指的是应用组织层面的架构，底层能力往往是由大数据架构来提供。
 
 - **有没有一些架构设计的原则？**
-
-- - N+1设计。系统中的每个组件都应做到没有单点故障；
+	
+	-  N+1设计。系统中的每个组件都应做到没有单点故障；
   - 回滚设计。确保系统可以向前兼容，在系统升级时应能有办法回滚版本；
   - 禁用设计。应该提供控制具体功能是否可用的配置，在系统出现故障时能够快速下线功能；
   - 监控设计。在设计阶段就要考虑监控的手段；
@@ -226,4 +232,19 @@ Tomcat和数据库分别独占服务器资源，显著提高两者各自性能�
   - 快速迭代。系统应该快速开发小功能模块，尽快上线进行验证，早日发现问题大大降低系统交付的风险；
   - 无状态设计。服务接口应该做成无状态的，当前接口的访问不依赖于接口上次访问的状态。
 
+## 后记
 
+这里有一份来自阿里巴巴开源的学习资料，涵盖了大前端、客户端、服务端、算法等多个技术领域，全书内容⻚数1600+，现在分享给大家，后台回复“阿里2020” 即可获取。
+
+![image](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-1-24/1611473548828-image.png),![image](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-1-24/1611473689783-image.png),![image](https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-1-24/1611473625970-image.png)
+
+另外，阿里巴巴最近招聘实习生，感兴趣在公众号后台回复“阿里内推”得到内推二维码。面试前看看如下文章兴趣有点帮助：
+
+- [秋招都结束了，才得知没 HC 了？](https://mp.weixin.qq.com/s/C3Smy6ldOhYJU14EztGhkQ)
+- [Google 工程师面试指南.pdf-免费下载](https://mp.weixin.qq.com/s/OGJhxM7FdeoIkAL2-uUI_Q)
+- [清华计算机系王牌课程——《数据结构》课件及源码包下载](https://mp.weixin.qq.com/s/iRcyW1dEeCxleTfOTyr2Lw)
+- [BAT大佬写的 1300 页 Leetcode刷题笔记，必须收藏！](https://mp.weixin.qq.com/s/7T9R9kFXke986vSoPNzC8g)
+- [码农必备 计算机基础知识总结.pdf 和 操作系统总结.pdf](https://mp.weixin.qq.com/s/DIVTVtChtd287ezWfriBYA)
+- [突击大厂网络面试题，「图解网络.pdf」白嫖！](https://mp.weixin.qq.com/s/rqTnQH_TTmgmbPm3qV-62Q)
+
+微信修改了推送机制（改推荐了，也就是你看到的内容不由你主导了），还请记得星标、在看、点赞、留言多互动，这样才能让我的文章及时送达到你手中，ღ 笔芯。
