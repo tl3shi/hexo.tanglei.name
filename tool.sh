@@ -8,8 +8,7 @@ do
        ;;
     d)
         echo "new draft: source/_drafts/$TITLE.md"
-        touch "source/_drafts/$TITLE.md"
-        echo -e "---\ntitle: $TITLE\nlayout: post\ncategories: \n  - 经验技巧 \ntags: \n  - 经验技巧\n---" >> "source/_drafts/$TITLE.md"
+        mv source/_drafts/template.md "source/_drafts/$TITLE.md"
         ;;
     p)
         titlepre=$(date +%Y-%m-%d)
