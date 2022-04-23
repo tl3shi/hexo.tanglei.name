@@ -13,7 +13,6 @@ do
     p)
         titlepre=$(date +%Y-%m-%d)
         sed -i "" 's|/Users/tanglei/github/hexo\.tanglei\.name||g' source/_drafts/$TITLE.md 
-        sed -i "" 's|/d:\/github\/hexo\.tanglei\.name|g' source/_drafts/$TITLE.md 
         mv source/_drafts/$TITLE.md source/_posts/$titlepre-$TITLE.md
         echo "publish post: $titlepre-$TITLE.md"
         ;;
