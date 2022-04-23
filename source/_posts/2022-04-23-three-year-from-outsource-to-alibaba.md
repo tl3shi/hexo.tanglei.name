@@ -9,7 +9,7 @@ tags:
 
 > 关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上**清华**（[点这里查看我的逆袭之路](https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ)），BAT某厂P7，是前大疆（无人机）技术主管。
 >
-> 本文首发于微信公众号，[原文链接]()，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
+> 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247500363&idx=1&sn=3bd6e69aa1d2d08f7a1e879afc088d34&chksm=eb44c3afdc334ab90e36b619621c7ebc0986300aa8786ed2846fd08a7f1f1c3b9091ea2fa416&token=1610668294&lang=zh_CN#rd)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
 
 ## 一、背景
