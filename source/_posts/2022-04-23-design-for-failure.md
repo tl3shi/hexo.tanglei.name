@@ -72,7 +72,7 @@ tags:
 
 理想中，机器硬件永不老化、系统软件永不过期、流量总在预期范围内、自己写的代码没有 bug、产品经理永不改需求，但现实往往给你饱以老拳，给你社会的毒打：硬件一定会在某个时间点故障、软件总在一个时间节点跟不上时代潮流、流量总在你意想不到的时候突增——即使你在婚礼上、没有程序员不写 bug、产品经理不但天天改需求，甚至还给你提自相矛盾或者存在逻辑漏洞的需求。
 
-![图片](D:\github\hexo.tanglei.name\resources\design-for-failure\1.jpg)
+![图片](/resources\design-for-failure\1.jpg)
 
 无论是在传统软件时代还是在互联网、云时代，系统终究会在某个时间点失败。面向失败设计不是消除失败，而是减少乃至消除失败造成的影响，守着企业和个人的钱袋子。
 
@@ -246,7 +246,7 @@ Redis 实现分布式锁有六个层次，看看大家平常用的分布式锁�
 
 **层次一：**
 
-```
+```go
 redis.SetNX(ctx, key, "1")
 defer redis.del(ctx, key)
 ```
@@ -255,7 +255,7 @@ defer redis.del(ctx, key)
 
 **层次二：**
 
-```
+```go
 redis.SetNX(ctx, key, "1", expiration)
 defer redis.del(ctx, key)
 ```
@@ -264,7 +264,7 @@ defer redis.del(ctx, key)
 
 **层次三：**
 
-```
+```go
 redis.SetNX(ctx, key, randomValue, expiration)
 defer redis.del(ctx, key, randomValue)
 
@@ -280,7 +280,7 @@ end
 
 **层次四：**
 
-```
+```java
 func myFunc() (errCode *constant.ErrorCode) {
     errCode := DistributedLock(ctx, key, randomValue, LockTime)
     defer DelDistributedLock(ctx, key, randomValue)
@@ -392,7 +392,7 @@ Redis 的主从同步（replication）是异步进行的，如果向 master 发�
 
 **方案一：**
 
-![图片](D:\github\hexo.tanglei.name\resources\design-for-failure\3.jpg)
+![图片](/resources\design-for-failure\3.jpg)
 
 存在问题：
 
@@ -400,7 +400,7 @@ Redis 的主从同步（replication）是异步进行的，如果向 master 发�
 
 **方案二：**
 
-![图片](D:\github\hexo.tanglei.name\resources\design-for-failure\4.jpg)
+![图片](/resources\design-for-failure\4.jpg)
 
 小量多次地分派库存，从而缓解分桶库存消耗不均问题。
 

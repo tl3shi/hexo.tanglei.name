@@ -20,11 +20,11 @@ tags:
 
 
 
-![](https://files.mdnice.com/user/71/00ff12c1-9520-48ea-8c71-bfb0068ff371.png)
+![](/Users/tanglei/github/hexo.tanglei.name/resources/a-friend-of-me-was-fired/00ff12c1-9520-48ea-8c71-bfb0068ff371.png)
 
 这才发现，原来裁员离自己这么近。
 
-![](https://files.mdnice.com/user/71/dcc595c4-812c-4965-b17b-783dc202e24f.png)
+![](/Users/tanglei/github/hexo.tanglei.name/resources/a-friend-of-me-was-fired/dcc595c4-812c-4965-b17b-783dc202e24f.png)
 
 ## 裁员离自己这么近 
 
@@ -32,7 +32,7 @@ tags:
 
 公司要生存下去，最终目的是要赚钱的，如果一个业务在短期（或者较长一段时间）之内都看不到希望，肯定不大愿意继续花钱养这么一群人；
 
-![开源节流](https://files.mdnice.com/user/71/e943d12d-6747-4f98-9f48-6a07259d0384.png)
+![开源节流](/Users/tanglei/github/hexo.tanglei.name/resources/a-friend-of-me-was-fired/e943d12d-6747-4f98-9f48-6a07259d0384.png)
 
 当然，对这个时间的容忍程度，各个公司实际情况不一样可能都不一样：
 
@@ -51,7 +51,7 @@ tags:
 
 再比如共享经济，OFO、摩拜单车等等，那会发展太迅猛了。周围朋友同学跳槽的，工资也是蹭蹭蹭往上涨。但是，看看现在呢？ 
 
-![堆积如山的共享单车，图片来源于网络](https://files.mdnice.com/user/71/8651804e-ece5-422b-ae83-6669e22e0bfc.png)
+![堆积如山的共享单车，图片来源于网络](/Users/tanglei/github/hexo.tanglei.name/resources/a-friend-of-me-was-fired/8651804e-ece5-422b-ae83-6669e22e0bfc.png)
 
 再比如，教育版块，前面股价跳楼式下跌，各大公司也都纷纷裁员。
 
@@ -61,7 +61,7 @@ tags:
 
 我前面几次跳槽，还真的都拿到了对应公司的 Offer（比如 XX 单车，猿X等），薪资给的都还不错，但我最终都没选择去。真的是，运气好罢了~ 
 
-![裁员，堆积如山的工牌，图片来源于网络](https://files.mdnice.com/user/71/6dbf6e07-6a3e-488f-af0c-2e9f20d76526.png)
+![裁员，堆积如山的工牌，图片来源于网络](/Users/tanglei/github/hexo.tanglei.name/resources/a-friend-of-me-was-fired/6dbf6e07-6a3e-488f-af0c-2e9f20d76526.png)
 
 其实，就算你在大厂也会有一样的。
 
@@ -69,7 +69,7 @@ tags:
 
 还有更悲催的，行权时，按照 $300 股价缴税，还选择现金缴税……到现在？
 
-![](https://files.mdnice.com/user/71/0019181c-3bdf-4684-9900-b7fbc4757385.png)
+![](/Users/tanglei/github/hexo.tanglei.name/resources/a-friend-of-me-was-fired/0019181c-3bdf-4684-9900-b7fbc4757385.png)
 
 [听一些朋友说，当年行权缴税太多](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247500065&idx=1&sn=ab0ddc76d0173ee980fa2fc9b95d5d06&chksm=eb44c0c5dc3349d335b368372362634c2a363d37e627ca15f652bf840e597a0fcb6a1f6f9d10&token=1931883326&lang=zh_CN#rd)，还办了贷款，每月还贷款，但到头来 ……  能想象其中的悲催。
 
@@ -85,7 +85,7 @@ tags:
 
 共勉！
 
-![](https://files.mdnice.com/user/71/f35e1666-b171-4cb3-8c40-e95f19c31e0d.png)
+![](/Users/tanglei/github/hexo.tanglei.name/resources/a-friend-of-me-was-fired/f35e1666-b171-4cb3-8c40-e95f19c31e0d.png)
 
 ## 后记
 
