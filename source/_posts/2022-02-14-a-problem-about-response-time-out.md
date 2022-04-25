@@ -2,10 +2,10 @@
 title: 该收心了：接口超时排查到了内核
 layout: post
 categories:
-  - MyLife
+  - 除臭虫
 tags:
-  - 总结
-  - MyLife
+  - 转载
+  - Bug
 ---
 
 > 关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上**清华**（[点这里查看我的逆袭之路](https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ)），BAT某厂P7，是前大疆（无人机）技术主管。
@@ -14,17 +14,13 @@ tags:
 
 ![图片](/resources/a-problem-about-response-time-out/dawutai.jpg)
 
-乡村大舞台，by：石头哥
-
-> 关于石头哥![图片](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibsKAs5WVMALjRZBEkialFibsGIVodUgj91dPZKPPlac6Jwdu4ia5VkfCTiaZyWgEDFeF3SwDfNN6F5Yvw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)：新时代农民工，末流985逆袭保送清华，BAT 大厂码农，欢迎关注程序猿石头(ID: tangleithu)，这里经常能get![图片](https://mmbiz.qpic.cn/mmbiz_png/b96CibCt70iaajvl7fD4ZCicMcjhXMp1v6Un8z2WcpUjD7iaAJtaMK87RCxS5k4Riawibz18PI6mOsP7lbqWmQknnktQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)意想不到的知识点![图片](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibsKAs5WVMALjRZBEkialFibsGdwiboweY5whQ1JicO5XHoKKa6fVPkm06Cdxv2HGjqzs1H24ia483nUf1w/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
-
 ## 背景
 
 大家好，我是石头哥。
 
-不知道大家过年过得肿么样![图片](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibtcAAuqEF1Xwq6bpMj18td2ib4MvicZjmQOHQNpbbbAdIq36tfaS7XcvBg5cCyzfUE05VibZRvib08AyQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1) 
+不知道大家过年过得肿么样 
 
-反正我今年春节回家还是学到了一些技能，比如打**打麻将**之类的，学费还是缴了不少的![图片](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibtcAAuqEF1Xwq6bpMj18td25P73lfaIGhZEQYfdTFhiaxhPo81YQLrRnQY6rBNiaKiaqmUqAjG3u6Hqg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+反正我今年春节回家还是学到了一些技能，比如打**打麻将**之类的，学费还是缴了不少的
 
 这周已经返工了，该收心了。
 

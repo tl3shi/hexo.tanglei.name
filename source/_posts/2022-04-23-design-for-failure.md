@@ -2,9 +2,10 @@
 title: 为什么要面向失败设计？
 layout: post
 categories:
-  - 转载
+  - 总结
 tags:
   - 转载
+  - 总结
 
 
 ---
