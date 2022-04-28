@@ -22,7 +22,7 @@ tags:
 
 下图是实习的时候在深圳腾讯总部拍的照片，有人知道图中所示的部门吗？（早拆分重组多少遍了）。
 
-![实习时候的照片，当初身材还不错！](https://files.mdnice.com/user/71/cf62f7b4-f44c-472d-b028-8513cf5893ff.png)
+![实习时候的照片，当初身材还不错！](/resources\process-of-intern-interview-of-tencent\cf62f7b4-f44c-472d-b028-8513cf5893ff.png)
 
 ## 是否要跨省去参加笔试？
 
@@ -54,7 +54,7 @@ tags:
 
 于是购买了当天晚上的火车票，绿皮火车那种，现在搜索当年的那趟已经停运了（因为时刻表没对上）。
 
-![绿皮火车，不知道你们坐过没？](https://files.mdnice.com/user/71/b63944c5-f3b9-4130-9ec5-c31ce13e133b.png)
+![绿皮火车，不知道你们坐过没？](/resources\process-of-intern-interview-of-tencent\b63944c5-f3b9-4130-9ec5-c31ce13e133b.png)
 
 凌晨2点到达了武昌站，然后在火车站周围找了家小旅店，住下（就是到达火车站，有很多叫卖“宾馆、住宿”的那种）。
 
@@ -64,7 +64,7 @@ tags:
 
 刚好公交车有402直接到武大工学部，就坐了。一坐就是一个小时，谁叫他是旅游专线呢。武汉长江大桥先过去，绕一下，然后再从长江大桥二桥绕回来。
 
-![武汉大学](https://files.mdnice.com/user/71/cd6efd13-479a-4ede-8b22-ddc61bed96b3.png)
+![武汉大学](/resources\process-of-intern-interview-of-tencent\cd6efd13-479a-4ede-8b22-ddc61bed96b3.png)
 
 上图是刚到武汉大学时拍的照片，哈哈，原谅当时手机的渣像素（照片我都习惯用网盘分门别类保存了）。
 
@@ -130,7 +130,9 @@ tags:
 
 当初就趁那个机会在武汉转悠了下，吃到了传说中的热干面，公交车路过传说中的“光谷”，当然还约了同学，去参观了下华科。
 
-<![路过光谷](https://files.mdnice.com/user/71/7d648413-8601-4dcc-9596-52e2b8e01ebc.png),![](https://files.mdnice.com/user/71/cc6b86b7-6b5b-4f03-b6e0-d6509a77acf8.png)>
+![路过光谷](/resources\process-of-intern-interview-of-tencent\7d648413-8601-4dcc-9596-52e2b8e01ebc.png)
+
+![](/resources\process-of-intern-interview-of-tencent\cc6b86b7-6b5b-4f03-b6e0-d6509a77acf8.png)
 
 现在想想，当初假设为了省钱，舍不得跑去武汉面试，当然，肯定不会有去腾讯实习的经历，也许后面保送清华也不会那么顺利，说不定可能就去了上交、浙大等等读研。
 
