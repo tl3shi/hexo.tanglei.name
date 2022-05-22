@@ -6,3 +6,4 @@ node_modules/
 public/
 source/_drafts/export*
 package-lock.json
+*.out
