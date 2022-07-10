@@ -1,5 +1,5 @@
 ---
-title: 找到了 Linux fork 的 Bug ？
+title: 膨胀了，找到了 Linux fork 的 Bug ？
 layout: post
 categories:
   - MyLife
@@ -21,7 +21,7 @@ tags:
 
 来看这段代码？
 
-![image-20220521122602936](/Users/tanglei/github/hexo.tanglei.name/resources/buffer-problem-in-linux-fork/image-20220521122602936.png)
+![fork Demo](/resources/buffer-problem-in-linux-fork/image-20220521122602936.png)
 
 很简短的一段代码，对吧？
 
@@ -37,7 +37,7 @@ tags:
 
 当然，既然在这样问题，答案可能就是“反常”的，如下图：
 
-![](/resources/buffer-problem-in-linux-fork/gcc-double-print-hello-tangleithu.gif)
+![打印 2 次](/resources/buffer-problem-in-linux-fork/gcc-double-print-hello-tangleithu.gif)
 
 居然打印了 2 次！是不是很神奇？
 
@@ -47,13 +47,13 @@ tags:
 
 我们再改一下代码的第 8 行，加个`\n`，再看看？
 
-![image-20220521222157189](/Users/tanglei/github/hexo.tanglei.name/resources/buffer-problem-in-linux-fork/image-20220521222157189.png)
+![加换行符](/resources/buffer-problem-in-linux-fork/image-20220521222157189.png)
 
 
 
 结果只打印了一次了。
 
-![](/Users/tanglei/github/hexo.tanglei.name/resources/buffer-problem-in-linux-fork/gcc-single-print-hello-tangleithu.gif)
+![打印 1 次](/resources/buffer-problem-in-linux-fork/gcc-single-print-hello-tangleithu.gif)
 
 当然，因为一个`\n` 的不同，导致结果的不同。你大概应该能猜到了，应该是缓冲区的问题。
 
@@ -65,11 +65,11 @@ tags:
 
 比如，我们再改改代码，去掉 `\n`，强制 flush 标准输出。
 
-![image-20220521224423747](/Users/tanglei/github/hexo.tanglei.name/resources/buffer-problem-in-linux-fork/image-20220521224423747.png)
+![强制 fflush](/resources/buffer-problem-in-linux-fork/image-20220521224423747.png)
 
 也会得到一样的答案（只打印1次），演示过程如下图：
 
-![主动 flush，只打印一次](/Users/tanglei/github/hexo.tanglei.name/resources/buffer-problem-in-linux-fork/flush-single-print.gif)
+![主动 flush，只打印一次](/resources/buffer-problem-in-linux-fork/flush-single-print.gif)
 
 ## 行缓存，全缓存
 
@@ -88,13 +88,13 @@ printf("%s, pid=%d\n", str, getpid());
 
 我们再看看，假设用管道会怎样？输出到文件又会怎样？
 
-![试试管道或文件](/Users/tanglei/github/hexo.tanglei.name/resources/buffer-problem-in-linux-fork/test-pipe-and-file.jpg)
+![试试管道或文件](/resources/buffer-problem-in-linux-fork/test-pipe-and-file.jpg)
 
 神奇的地方来了吧， 用管道或输出到文件，即使加上 `\n` 也仍然会输出 2 遍。
 
 因为用管道或者重定向到文件，其实都是属于上面的“全缓存”，即程序最终结束的时候，才刷缓存，因此子进程也有一份。完整的演示内容如下：
 
-![试试管道或文件](/Users/tanglei/github/hexo.tanglei.name/resources/buffer-problem-in-linux-fork/test-pipe-and-file.gif)
+![管道或文件-演示](/resources/buffer-problem-in-linux-fork/test-pipe-and-file.gif)
 
 好了，今天文章就到这里，很基础但却容易忽视，刻意花了不少时间做了动图，还请大家多多分享支持。
 
@@ -103,7 +103,7 @@ printf("%s, pid=%d\n", str, getpid());
 
 其实，今天的内容在经典书籍 ——《UNIX环境高级编程》中就有实例讲解了这个例子，如下图所示：
 
-![APUE Demo](/Users/tanglei/github/hexo.tanglei.name/resources/buffer-problem-in-linux-fork/APUE-demo.png)
+![APUE 讲解](/resources/buffer-problem-in-linux-fork/APUE-demo.png)
 
 经典书籍还是应该多读读。确实，不管上层应用、各种技术框架千变万化，底层基础技术始终就是哪些内容啊。
 
