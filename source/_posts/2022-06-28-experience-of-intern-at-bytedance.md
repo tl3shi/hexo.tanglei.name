@@ -22,7 +22,7 @@ tags:
 
 下面我们一起来看看师弟的分享吧（石头哥在原文基础上有些许改动）。  
 
-![](https://files.mdnice.com/user/71/890bd6db-883e-45dd-8776-c92af9957d34.png)
+![](D:\github\hexo.tanglei.name\resources\wechat-backup\890bd6db-883e-45dd-8776-c92af9957d34.png)
 
 ## 字节文化
 

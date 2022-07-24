@@ -24,15 +24,15 @@ tags:
 
 ## 你见过哪些极品论文？
 
-![](https://files.mdnice.com/user/71/ae55f665-ecbb-4740-bc34-d9f9f4da4c1b.png)
+![](D:\github\hexo.tanglei.name\resources\wechat-backup\ae55f665-ecbb-4740-bc34-d9f9f4da4c1b.png)
 
 以下是我的回答（**请点击图片看大图**）：
 
-![](https://files.mdnice.com/user/71/e2aeb7fb-a362-44e2-823f-51608ab873ac.png)
+![](D:\github\hexo.tanglei.name\resources\wechat-backup\e2aeb7fb-a362-44e2-823f-51608ab873ac.png)
 
 看看评论：`性、达、雅，全部满足`
 
-![](https://files.mdnice.com/user/71/d70bf4a1-eb1c-44b1-b347-7ecd9cd0336c.png)
+![](D:\github\hexo.tanglei.name\resources\wechat-backup\d70bf4a1-eb1c-44b1-b347-7ecd9cd0336c.png)
 
 ## 这说明什么问题？
 
