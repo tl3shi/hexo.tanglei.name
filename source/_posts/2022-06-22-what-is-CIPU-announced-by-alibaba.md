@@ -13,7 +13,7 @@ tags:
 > 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247501361&idx=1&sn=14ddc0bd9518cb79658fde101fd58c4f&chksm=eb44c7d5dc334ec311e24298ccb76fe1b36a86cd5e36b64a3c175c39ab8032f3dc41a07aa91c&token=337755141&lang=zh_CN#rd)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
 
-![](D:\github\hexo.tanglei.name\resources\what-is-CIPU-announced-by-alibaba\b53af633-1e5e-4f98-bfc1-5d18e359ed6d.png)
+![](/resources\what-is-CIPU-announced-by-alibaba\b53af633-1e5e-4f98-bfc1-5d18e359ed6d.png)
 
 
 ## 背景
@@ -28,7 +28,7 @@ tags:
 
 CIPU 被定义为替代 CPU 成为云计算的管控和加速中心，在这个全新体系架构下，CIPU向下对数据中心的计算、存储、网络资源快速云化并进行硬件加速，向上接入飞天云操作系统，将全球数百万台服务器构建为一台超级计算机。
 
-![文章来源于阿里云杨航，编辑：CSDN，排版：程序员石头](D:\github\hexo.tanglei.name\resources\what-is-CIPU-announced-by-alibaba\1573c922-3733-4563-b6c2-1e07192fc1ab.png)
+![文章来源于阿里云杨航，编辑：CSDN，排版：程序员石头](/resources\what-is-CIPU-announced-by-alibaba\1573c922-3733-4563-b6c2-1e07192fc1ab.png)
 
 众所周知，传统IT时代，微软Windows+Intel联盟取代了IBM PC霸主地位；移动计算时代，谷歌Android/苹果iOS+ARM共同主导了移动终端的技术架构；那么云计算时代，阿里云飞天操作系统+CIPU组合能发挥什么样的价值？
 
@@ -56,7 +56,7 @@ CIPU 被定义为替代 CPU 成为云计算的管控和加速中心，在这个�
 
 下图展示了一个公有云用户随着业务的极速扩张所购买的计算力的增长曲线，短短15个月，计算力需求从零爆发式增长到了数百万核。弹性计算充裕的计算力供给，让用户业务的发展如虎添翼。
 
-![图片](D:\github\hexo.tanglei.name\resources\what-is-CIPU-announced-by-alibaba\1.jpg)
+![图片](/resources\what-is-CIPU-announced-by-alibaba\1.jpg)
 
 **何谓多租？**
 
@@ -99,11 +99,11 @@ CIPU 被定义为替代 CPU 成为云计算的管控和加速中心，在这个�
 
 其六，IO和算力之间的鸿沟持续扩大。我们以Intel XEON 2 Socket服务器为例，分析存储和网络IO以及XEON CPU PCIe带宽扩展能力，与CPU算力的发展做一个简单对比分析：
 
-![图片](D:\github\hexo.tanglei.name\resources\what-is-CIPU-announced-by-alibaba\2.jpg)
+![图片](/resources\what-is-CIPU-announced-by-alibaba\2.jpg)
 
 进一步以2018年SkyLake 2S服务器的各个指标（CPU HT数量、DDR整机理论带宽等）为基准，横向对比各个技术指标的发展趋势。以CPU HT数量为例，96HT SkyLake设定为基线1，IceLake 128HT/96HT = 1.3，Sapphire Rapids 192HT/96HT = 2.0，我们可以得到如下Intel 2S XEON服务器 CPU vs. MEM vs. PCIe/存储/网络IO发展趋势：
 
-![图片](D:\github\hexo.tanglei.name\resources\what-is-CIPU-announced-by-alibaba\3.jpg)
+![图片](/resources\what-is-CIPU-announced-by-alibaba\3.jpg)
 
 从上图2018年到2022年四年数据对比，我们可以得到如下结论：
 
@@ -143,7 +143,7 @@ CIPU另一个设计思路来自通信领域（特别是数通技术）。数通�
 
 一言以蔽之，NFV就是通过标准x86服务器，标准以太交换网、标准IT存储等IT标准化和虚拟化的基础设施，来实现通信领域的网元功能，以此摆脱传统通信烟囱式和垂直化的非标紧耦合软硬件系统，从而达到运营商降本增效和提升业务敏捷度。
 
-![图片](D:\github\hexo.tanglei.name\resources\what-is-CIPU-announced-by-alibaba\4.jpg)
+![图片](/resources\what-is-CIPU-announced-by-alibaba\4.jpg)
 
 （图片来源：ETSI NFV Problem Statement and Solution Vision）
 
@@ -189,13 +189,13 @@ CIPU架构由以下部分组成：
 
 **1、网络带宽和CPU处理能力的差距日渐拉大**
 
-![图片](D:\github\hexo.tanglei.name\resources\what-is-CIPU-announced-by-alibaba\5.jpg)
+![图片](/resources\what-is-CIPU-announced-by-alibaba\5.jpg)
 
 （数据来源：xilinx）
 
 **2、DPDK纯软件网络转发性能优化瓶颈凸显**
 
-![图片](D:\github\hexo.tanglei.name\resources\what-is-CIPU-announced-by-alibaba\6.jpg)
+![图片](/resources\what-is-CIPU-announced-by-alibaba\6.jpg)
 
 对上述两个问题做进一步分析，可以看出如下三个根本困难：
 
@@ -259,7 +259,7 @@ RDMA网络在HPC、AI、大数据、数据库、存储等data centric业务中�
 
 弹性裸金属在具体定义层面必须实现如下八项关键业务特征：
 
-![图片](D:\github\hexo.tanglei.name\resources\what-is-CIPU-announced-by-alibaba\7.jpg)
+![图片](/resources\what-is-CIPU-announced-by-alibaba\7.jpg)
 
 同时，云计算弹性业务必然要求弹性裸金属、虚拟机、安全容器等计算资源的并池生产和调度。
 
@@ -285,13 +285,13 @@ XEON算力可以简化为：ALU等计算处理能力 + 数据层级化cache和�
 
 如下图，Intel精确定义workload算力特征，以及最佳匹配算力芯片：
 
-![图片](D:\github\hexo.tanglei.name\resources\what-is-CIPU-announced-by-alibaba\8.jpg)（图片来源：Intel）
+![图片](/resources\what-is-CIPU-announced-by-alibaba\8.jpg)（图片来源：Intel）
 
 那么问题来了，CIPU这个socket，最适合的业务workload有什么共同特征？
 
 深入分析第五小节的10个业务，可以看出它们的共同业务特征：在数据流动（移动）过程中，通过深度垂直软硬件协同设计，尽最大可能减少数据移动，以此提升计算效率。因此，CIPU在计算机体系架构视角的主要工作是：优化云计算服务器之间和服务器内部的数据层级化cache、内存和存储的访问效率（如下图所示）。
 
-![图片](D:\github\hexo.tanglei.name\resources\what-is-CIPU-announced-by-alibaba\9.jpg)
+![图片](/resources\what-is-CIPU-announced-by-alibaba\9.jpg)
 
 行文至此，谨以Nvidia首席计算机科学家Bill Dally的精辟阐述“Locality is efficiency, Efficiency is power, Power is performance, Performance is king.”作为小结。
 
@@ -308,7 +308,7 @@ Nvidia/Mellanox已经持续倡导in networking computing（近网络计算）多
 
 DPU：Data Processing Unit，从业内信息来看，应该源自Fungible；而这个名字真正发扬光大和名噪一时，则要归功于Nvidia的大力宣传推广。在Nvidia收购Mellanox之后，NVidia CEO 黄仁勋对行业趋势的核心判断：数据中心的未来将是CPU、GPU和DPU三足鼎立，并以此为Nvidia Bluefield DPU造势。
 
-![图片](D:\github\hexo.tanglei.name\resources\what-is-CIPU-announced-by-alibaba\10.jpg)
+![图片](/resources\what-is-CIPU-announced-by-alibaba\10.jpg)
 
 
 
