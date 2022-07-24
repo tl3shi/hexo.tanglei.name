@@ -11,7 +11,7 @@ tags:
 
 > 关于程序员石头(ID: tangleithu)：从十八县贫困农村一路逆袭上**清华**（[点这里查看我的逆袭之路](https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ)），BAT某厂P7，是前大疆（无人机）技术主管。
 >
-> 本文首发于微信公众号，[原文链接]()，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
+> 本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&mid=2247501156&idx=1&sn=9dc9e760c7fbb29fcd6b3fd689c8b043&chksm=eb44c480dc334d968ced45ad62e8084efa2f3624f1e8525109d3c2a9044f50718814787deeb7&token=337755141&lang=zh_CN#rd)，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。
 
 ## 背景 
 
