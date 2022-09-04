@@ -1,11 +1,11 @@
 ---
-title: 35+的科级小领导薪资多少？
+title: 和阿里的同事们去大内蒙古自驾游团建了~
 layout: post
 categories:
   - MyLife
 tags:
-  - 转载
   - MyLife
+  - 旅游
 ---
 
 > 关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上**清华**（[点这里查看我的逆袭之路](https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ)），BAT某厂P7，是前大疆（无人机）技术主管。
