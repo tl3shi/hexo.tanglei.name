@@ -82,7 +82,7 @@ tags:
 
 确实也产出了不少自认为还不错的文章，从被转载数量也可看出。不知道你是看到我哪篇文章开始关注我的？
 
-![热门转载文章](https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibt2jjWlzYH0CsURuWXZKuYQWliadmnDvDpibkQWjZLVZGHL2PPW8wnJLhhggEPgpcLsaIUia0Bzcf6wA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![热门转载文章](/resources/2020-summary/640.png)
 
 我将其中的文章做了大致分类，并在每个分类中选取其中的 5 篇文章供大家参考，希望能让你有收获。
 
