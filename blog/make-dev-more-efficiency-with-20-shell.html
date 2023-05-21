@@ -1,0 +1,1045 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="MyLife,Shell,Mac,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。以每篇文章都让人有收获为目的，欢迎关注，交流和指导！文章首发于微信公众号，欢迎关注。后台回复关键字 “1024” 获取程序员大厂面试指南。  读者福利：点这里送几本我们部门出的新书——《弹性计算：无处不在的算力》，免费包邮到家，欢迎大家来抽奖，也帮忙 review 下抽奖的代码。 本文">
+<meta name="keywords" content="MyLife,Shell,Mac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="提升开发效率N倍的20+命令行神器!(附 demo)">
+<meta property="og:url" content="https://www.tanglei.name/blog/make-dev-more-efficiency-with-20-shell.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。以每篇文章都让人有收获为目的，欢迎关注，交流和指导！文章首发于微信公众号，欢迎关注。后台回复关键字 “1024” 获取程序员大厂面试指南。  读者福利：点这里送几本我们部门出的新书——《弹性计算：无处不在的算力》，免费包邮到家，欢迎大家来抽奖，也帮忙 review 下抽奖的代码。 本文">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.165Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="提升开发效率N倍的20+命令行神器!(附 demo)">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。以每篇文章都让人有收获为目的，欢迎关注，交流和指导！文章首发于微信公众号，欢迎关注。后台回复关键字 “1024” 获取程序员大厂面试指南。  读者福利：点这里送几本我们部门出的新书——《弹性计算：无处不在的算力》，免费包邮到家，欢迎大家来抽奖，也帮忙 review 下抽奖的代码。 本文">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/make-dev-more-efficiency-with-20-shell.html">
+
+
+
+
+
+  <title> 提升开发效率N倍的20+命令行神器!(附 demo) | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/make-dev-more-efficiency-with-20-shell.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                提升开发效率N倍的20+命令行神器!(附 demo)
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-10T00:00:00+00:00">
+                2020-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/make-dev-more-efficiency-with-20-shell.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/make-dev-more-efficiency-with-20-shell.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。以每篇文章都让人有收获为目的，欢迎关注，交流和指导！文章首发于<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247489026&amp;idx=1&amp;sn=cf1650652a44d65730c5ee04258ad9e1&amp;chksm=eb4717e6dc309ef037674943645abe8356aa726416ea46f3349ba227520bd40c95f8a49aa3e5&amp;token=553253061&amp;lang=zh_CN#rd" target="_blank" rel="noopener">微信公众号</a>，欢迎关注。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<p>读者福利：<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247488892&amp;idx=1&amp;sn=1b026c5a8688b880ca06c51c816265b1&amp;chksm=eb471498dc309d8eaac5bd296a3971901e624e9abfc5a0add8928f5ebc3a83b8402ebfadd95d&amp;scene=21&amp;token=1758347384&amp;lang=zh_CN#wechat_redirect" target="_blank" rel="noopener">点这里送几本我们部门出的新书——《弹性计算：无处不在的算力》</a>，免费包邮到家，欢迎大家来抽奖，也帮忙 review 下抽奖的代码。</p>
+<p>本文主要来源于在之前公司的小组内部的一个小分享，整理成一篇文章po出来。<br>题目叫 “Shell 助力开发效率提升”，更切题的应该是叫“命令行”提升开发效率，这里并没有讲到 Shell 编程，而是主要介绍 Linux 或者 Mac 下常用的一些基本工具命令来帮助处理一些日常事务。</p>
+<p>通过本文的介绍，你应该对相关命令有一个初步的了解，知道比如用什么命令可以完成怎样的操作，<br>至于具体的参数，不需要刻意地背诵，等到需要用到的时候，再去 <code>cmd --help</code> 或者 <code>man cmd</code>，用得多了，常用的命令也就自然记住了。 </p>
+<p>本文首先介绍了 Linux/Mac 下一些常用的命令行工具，然后用具体的示例阐述了常用的命令用法，最后通过一两个案例来说明这些工具的强大之处：</p>
+<ul>
+<li>比如给定一个 nginx 日志文件，能够找出 HTTP 404 请求最多的 top 10 是什么? 比如能找到请求耗时最多的 top 10是什么? </li>
+<li>再比如能够简单的得到每小时的”PV”是多少? 再比如拿到一篇文章， 能否简单统计一下这篇文章单次词频最高的10个词语是什么?</li>
+<li>需要批量改某个文件夹下的文件名，批量将文件夹下的图片压缩成固定大小的，等等。</li>
+</ul>
+<h2 id="Mac-环境"><a href="#Mac-环境" class="headerlink" title="Mac 环境"></a>Mac 环境</h2><ul>
+<li>zsh</li>
+<li>on-my-zsh</li>
+<li>plugin <ul>
+<li>git</li>
+<li>autojump</li>
+<li>osx(man-preview/quick-look/pfd(print Finder director)/cdf(cd Finder))</li>
+</ul>
+</li>
+<li>常用快捷键(<code>bindkey</code>)</li>
+<li>演示: 高亮/git/智能补全/跳转(j, d)…</li>
+</ul>
+<p>这里给大家展示一个小 Demo，之前在视频号（程序猿石头，欢迎关注）中分享的一个小视频，演示了如何在目录之间快速跳转。</p>
+<p>关于 Mac 程序猿提高效率的相关技巧，更多的可以参考以下三篇文章：</p>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247485871&amp;idx=1&amp;sn=c877775df684d8ab8c90bf2d38eee98a&amp;chksm=eb47084bdc30815d19182c51571b096a20b79bdee0956f68167ebc8ed3117364ac0602f83658&amp;token=551126633&amp;lang=zh_CN&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">工欲善其事，必先利其器 – Mac 软件推荐（序）</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247486659&amp;idx=1&amp;sn=b574d3f2a6af4544ceab48aadaa0a726&amp;chksm=eb470d27dc308431e8789a87e32a597c72cc0f2fe02d6fc80424aec11e41e712326b62603f27&amp;token=551126633&amp;lang=zh_CN&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">有了这几个神器，瞬间逼格就上去了</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247487786&amp;idx=1&amp;sn=842202cc524477ec1546b4747bdbf1a8&amp;chksm=eb4710cedc3099d86953451729c7f569866e6e58abbbec5c7ebe7423d12e1f11e189bb417f80&amp;token=242044315&amp;lang=zh_CN#rd" target="_blank" rel="noopener">优秀的程序员是如何利用工具来提升工作效率的？
+</a></li>
+</ul>
+<h2 id="Shell-基础命令"><a href="#Shell-基础命令" class="headerlink" title="Shell 基础命令"></a>Shell 基础命令</h2><ul>
+<li><p>which/whereis， 常用 <code>whatis</code>， <code>man</code>， <code>--help</code></p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  .oh-my-zsh git:(master)$ whereis ls</span><br><span class="line">/bin/ls</span><br><span class="line">➜  .oh-my-zsh git:(master)$ <span class="built_in">which</span> ls</span><br><span class="line">ls: aliased to ls -G</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>基本文件目录操作</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rm， mkdir， mv， cp， <span class="built_in">cd</span>， ls， ln， file， <span class="built_in">stat</span>， wc(-l/w/c)， head， more， tail， cat...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利器 管道: <code>|</code></p>
+</li>
+</ul>
+<h2 id="Shell-文本处理"><a href="#Shell-文本处理" class="headerlink" title="Shell 文本处理"></a>Shell 文本处理</h2><p>这里就是通过案例讲了一下12个命令的大致用法和参数，可以通过点击右边的目录（我博客有目录，公众号上木有）直达你想要了解的命令。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">find, grep, xargs, cut, paste, comm</span><br><span class="line">join, sort, uniq, tr, sed, awk</span><br></pre></td></tr></table></figure>
+<h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><ul>
+<li>常用参数<ul>
+<li>文件名 <code>-name</code>， 文件类型<code>-type</code>， 查找最大深度<code>-maxdepth</code></li>
+<li>时间过滤(create/access/modify) <code>-[cam]time</code></li>
+<li>执行动作 <code>-exec</code></li>
+</ul>
+</li>
+<li><p>示例</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">find ./ -name <span class="string">"*.json"</span></span><br><span class="line">find . -maxdepth 7 -name <span class="string">"*.json"</span> -<span class="built_in">type</span> f</span><br><span class="line">find . -name <span class="string">"*.log.gz"</span> -ctime +7 -size +1M -delete (atime/ctime/mtime)</span><br><span class="line">find . -name <span class="string">"*.scala"</span> -atime -7 -<span class="built_in">exec</span> du -h &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><ul>
+<li><p>常用参数</p>
+<ul>
+<li>-v(invert-match)， </li>
+<li>-c(count)， </li>
+<li>-n(line-number)， </li>
+<li>-i(ignore-case)， </li>
+<li>-l， -L， -R(-r， –recursive)， -e</li>
+</ul>
+</li>
+<li><p>示例</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">grep <span class="string">'partner'</span> ./*.scala -l</span><br><span class="line">grep -e <span class="string">'World'</span> -e <span class="string">'first'</span> -i -R ./  (-e: or)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>相关命令: <code>grep -z / zgrep / zcat xx | grep</code></p>
+</li>
+</ul>
+<h3 id="xargs"><a href="#xargs" class="headerlink" title="xargs"></a>xargs</h3><ul>
+<li><p>常用参数</p>
+<ul>
+<li>-n(每行列数)， </li>
+<li>-I(变量替换)</li>
+<li>-d(分隔符)， Mac 不支持，注意与GNU版本的区别</li>
+</ul>
+</li>
+<li><p>示例    </p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">find . -<span class="built_in">type</span> f -name <span class="string">"*.jpg"</span> | xargs -n1 -I &#123;&#125; du -sh &#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="cut"><a href="#cut" class="headerlink" title="cut"></a>cut</h3><ul>
+<li><p>常用参数</p>
+<ul>
+<li>-b(字节)</li>
+<li>-c(字符)</li>
+<li>-f(第几列)，-d(分隔符)，f 范围: <code>n, n-, -m, n-m</code></li>
+</ul>
+</li>
+<li><p>示例    </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"helloworldhellp"</span> | cut -c1-10</span><br><span class="line">cut -d， -f2-8 csu.db.export.csv</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="paste"><a href="#paste" class="headerlink" title="paste"></a>paste</h3><ul>
+<li><p>常用参数</p>
+<ul>
+<li>-d 分隔符</li>
+<li>-s 列转行</li>
+</ul>
+</li>
+<li><p>示例</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  Documents$ cat file1</span><br><span class="line">1 11</span><br><span class="line">2 22</span><br><span class="line">3 33</span><br><span class="line">4 44</span><br><span class="line">➜  Documents$ cat file2</span><br><span class="line">one     1</span><br><span class="line">two     2</span><br><span class="line">three   3</span><br><span class="line">one1    4</span><br><span class="line"></span><br><span class="line">➜  Documents$ paste -d, file1 file2</span><br><span class="line">1 11, one     1</span><br><span class="line">2 22, two     2</span><br><span class="line">3 33, three   3</span><br><span class="line">4 44, one1    4</span><br><span class="line">➜  Documents$ paste -s -d: file1 file2</span><br><span class="line">a 11:b bb:3 33:4 44</span><br><span class="line">one     1:two     2:three   3:one1    4</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="join"><a href="#join" class="headerlink" title="join"></a>join</h3><p>类似sql中的 <code>...inner join ...on ...</code>， <code>-t</code> 分隔符，默认为空格或tab</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  Documents$ cat j1</span><br><span class="line">1 11</span><br><span class="line">2 22</span><br><span class="line">3 33</span><br><span class="line">4 44</span><br><span class="line">5 55</span><br><span class="line">➜  Documents$ cat j2</span><br><span class="line">one     1   0</span><br><span class="line">one     2   1</span><br><span class="line">two     4   2</span><br><span class="line">three   5   3</span><br><span class="line">one1    5   4</span><br><span class="line">➜  Documents$ join -1 1 -2 3 j1 j2</span><br><span class="line">1 11 one 2</span><br><span class="line">2 22 two 4</span><br><span class="line">3 33 three 5</span><br><span class="line">4 44 one1 5</span><br></pre></td></tr></table></figure>
+<h3 id="comm"><a href="#comm" class="headerlink" title="comm"></a>comm</h3><ul>
+<li><p>常用参数</p>
+<ul>
+<li>用法 <code>comm [-123i] file1 file2</code></li>
+<li><strong>字典序列</strong>， 3列: 只在file1/file2/both</li>
+<li><code>-</code> 去掉某列，<code>i</code> 忽略大小写</li>
+</ul>
+</li>
+<li><p>示例</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  Documents$ seq 1 5 &gt;file11</span><br><span class="line">➜  Documents$ seq 2 6 &gt;file22</span><br><span class="line">➜  Documents$ cat file11</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">➜  Documents$ cat file22</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">➜  Documents$ comm file11 file22</span><br><span class="line">1</span><br><span class="line">        2</span><br><span class="line">        3</span><br><span class="line">        4</span><br><span class="line">        5</span><br><span class="line">    6</span><br><span class="line">➜  Documents$ comm -1 file11 file22</span><br><span class="line">    2</span><br><span class="line">    3</span><br><span class="line">    4</span><br><span class="line">    5</span><br><span class="line">6</span><br><span class="line">➜  Documents$ comm -2 file11 file22</span><br><span class="line">1</span><br><span class="line">    2</span><br><span class="line">    3</span><br><span class="line">    4</span><br><span class="line">    5</span><br><span class="line">➜  Documents$ comm -23 file11 file22</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>相关命令 <strong>diff</strong>(类似<em>git diff</em>)</p>
+<h3 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h3><ul>
+<li>常用参数<ul>
+<li>-d， –dictionary-order</li>
+<li>-n， –numeric-sort</li>
+<li>-r， –reverse</li>
+<li>-b， –ignore-leading-blanks</li>
+<li>-k， –key</li>
+</ul>
+</li>
+<li><p>示例</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  Documents$ cat file2</span><br><span class="line">one     1</span><br><span class="line">two     2</span><br><span class="line">three   3</span><br><span class="line">one1    4</span><br><span class="line">➜  Documents$ sort file2</span><br><span class="line">one     1</span><br><span class="line">one1    4</span><br><span class="line">three   3</span><br><span class="line">two     2</span><br><span class="line">➜  Documents$ sort -b -k2 -r file2</span><br><span class="line">one1    4</span><br><span class="line">three   3</span><br><span class="line">two     2</span><br><span class="line">one     1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="uniq"><a href="#uniq" class="headerlink" title="uniq"></a>uniq</h3><ul>
+<li>常用参数<ul>
+<li>-c 重复次数</li>
+<li>-d 重复的</li>
+<li>-u 没重复的</li>
+<li>-f 忽略前几列</li>
+</ul>
+</li>
+<li><p>示例</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  Documents$ cat file4</span><br><span class="line">11</span><br><span class="line">22</span><br><span class="line">33</span><br><span class="line">11</span><br><span class="line">11</span><br><span class="line">➜  Documents$ sort file4 | uniq -c</span><br><span class="line">   3 11</span><br><span class="line">   1 22</span><br><span class="line">   1 33</span><br><span class="line">➜  Documents$ sort file4 | uniq -d</span><br><span class="line">11</span><br><span class="line">➜  Documents$ sort file4 | uniq -u</span><br><span class="line">22</span><br><span class="line">33</span><br><span class="line">➜  Documents$ cat file3</span><br><span class="line">one     1</span><br><span class="line">two     1</span><br><span class="line">three   3</span><br><span class="line">one1    4</span><br><span class="line">➜  Documents$ uniq -c -f 1 file3</span><br><span class="line">   2 one     1</span><br><span class="line">   1 three   3</span><br><span class="line">   1 one1    4</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>注意：<code>uniq</code>比较相邻的是否重复，一般与<code>sort</code>联用</p>
+<h3 id="tr"><a href="#tr" class="headerlink" title="tr"></a>tr</h3><ul>
+<li><p>常用参数</p>
+<ul>
+<li>-c 补集</li>
+<li>-d 删除</li>
+<li>-s 压缩相邻重复的</li>
+</ul>
+</li>
+<li><p>示例</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  Documents$ <span class="built_in">echo</span> <span class="string">'1111234444533hello'</span> | tr  <span class="string">'[1-3]'</span> <span class="string">'[a-c]'</span></span><br><span class="line">aaaabc44445cchello</span><br><span class="line">➜  Documents$ <span class="built_in">echo</span> <span class="string">'1111234444533hello'</span> | tr -d <span class="string">'[1-3]'</span></span><br><span class="line">44445hello</span><br><span class="line">➜  Documents$ <span class="built_in">echo</span> <span class="string">'1111234444533hello'</span> | tr -dc <span class="string">'[1-3]'</span></span><br><span class="line">11112333</span><br><span class="line">➜  Documents$ <span class="built_in">echo</span> <span class="string">'1111234444533hello'</span> | tr -s <span class="string">'[0-9]'</span></span><br><span class="line">123453hello</span><br><span class="line">➜  Documents$ <span class="built_in">echo</span> <span class="string">'helloworld'</span> | tr <span class="string">'[:lower:]'</span> <span class="string">'[:upper:]'</span></span><br><span class="line">HELLOWORLD</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h3><ul>
+<li>常用参数<ul>
+<li>-d 删除</li>
+<li>-s 替换， g 全局</li>
+<li>-e 多个命令叠加</li>
+<li>-i 修改原文件(Mac下加参数 “”，备份)</li>
+</ul>
+</li>
+<li><p>示例</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  Documents$ cat file2</span><br><span class="line">one     1</span><br><span class="line">two     2</span><br><span class="line">three   3</span><br><span class="line">one1    4</span><br><span class="line">➜  Documents$ sed <span class="string">"2,3d"</span> file2</span><br><span class="line">one     1</span><br><span class="line">one1    4</span><br><span class="line">➜  Documents$ sed <span class="string">'/one/d'</span> file2</span><br><span class="line">two     2</span><br><span class="line">three   3</span><br><span class="line">➜  Documents$ sed <span class="string">'s/one/111/g'</span> file2</span><br><span class="line">111     1</span><br><span class="line">two     2</span><br><span class="line">three   3</span><br><span class="line">1111    4</span><br><span class="line"><span class="comment">#将one替换成111 并将含有two的行删除</span></span><br><span class="line">➜  Documents$ sed -e <span class="string">'s/one/111/g'</span> -e <span class="string">'/two/d'</span> file2</span><br><span class="line">111     1</span><br><span class="line">three   3</span><br><span class="line">1111    4</span><br><span class="line"><span class="comment"># ()标记(转义), \1 引用</span></span><br><span class="line">➜  Documents$ sed <span class="string">'s/\([0-9]\)/\1.html/g'</span> file2</span><br><span class="line">one     1.html</span><br><span class="line">two     2.html</span><br><span class="line">three   3.html</span><br><span class="line">one1.html    4.html</span><br><span class="line"><span class="comment"># 与上面一样 &amp; 标记匹配的字符</span></span><br><span class="line">➜  Documents$ sed <span class="string">'s/[0-9]/&amp;.html/g'</span> file2</span><br><span class="line">one     1.html</span><br><span class="line">two     2.html</span><br><span class="line">three   3.html</span><br><span class="line">one1.html    4.html</span><br><span class="line">➜  Documents$ cat mobile.csv</span><br><span class="line"><span class="string">"13090246026"</span></span><br><span class="line"><span class="string">"18020278026"</span></span><br><span class="line"><span class="string">"18520261021"</span></span><br><span class="line"><span class="string">"13110221022"</span></span><br><span class="line">➜  Documents$ sed <span class="string">'s/\([0-9]\&#123;3\&#125;\)[0-9]\&#123;4\&#125;/\1xxxx/g'</span> mobile.csv</span><br><span class="line"><span class="string">"130xxxx6026"</span></span><br><span class="line"><span class="string">"180xxxx8026"</span></span><br><span class="line"><span class="string">"185xxxx1021"</span></span><br><span class="line"><span class="string">"131xxxx1022"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h3><ul>
+<li><p>基本参数和语法</p>
+<ul>
+<li>NR 行号， NF 列数量</li>
+<li><code>$1</code> 第1列， <code>$2, $3</code>…</li>
+<li>-F fs  fs分隔符，字符串或正则</li>
+<li>语法:  <code>awk &#39;BEGIN{ commands } pattern{ commands } END{ commands }&#39;</code>， 流程如下:<ol>
+<li>执行begin</li>
+<li>对输入每一行执行 <code>pattern{ commands }</code>， pattern 可以是 正则<code>/reg exp/</code>， 关系运算等</li>
+<li>处理完毕， 执行 end</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>示例</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  Documents$ cat file5</span><br><span class="line">11  11 aa cc</span><br><span class="line">22  22 bb</span><br><span class="line">33  33 d</span><br><span class="line">11  11</span><br><span class="line">11  11</span><br><span class="line"><span class="comment">#行号， 列数量， 第3列</span></span><br><span class="line">➜  Documents$ awk <span class="string">'&#123;print NR"("NF"):"， $3&#125;'</span> file5</span><br><span class="line">1(4): aa</span><br><span class="line">2(3): bb</span><br><span class="line">3(3): d</span><br><span class="line">4(2):</span><br><span class="line">5(2):</span><br><span class="line"><span class="comment">#字符串分割， 打印1，2列</span></span><br><span class="line">➜  Documents$ awk -F<span class="string">"xxxx"</span> <span class="string">'&#123;print $1， $2&#125;'</span> mobile.csv</span><br><span class="line"><span class="string">"130 6026"</span></span><br><span class="line"><span class="string">"180 8026"</span></span><br><span class="line"><span class="string">"185 1021"</span></span><br><span class="line"><span class="string">"131 1022"</span></span><br><span class="line"><span class="comment">#添加表达式</span></span><br><span class="line">➜  Documents$ awk <span class="string">'$1&gt;=22 &#123;print NR":"， $3&#125;'</span> file5</span><br><span class="line">2: bb</span><br><span class="line">3: d</span><br><span class="line"><span class="comment">#累加1到36，奇数，偶数</span></span><br><span class="line">➜  Documents$ seq 36 | awk <span class="string">'BEGIN&#123;sum=0; print "question:"&#125; &#123;print $1" +"; sum+=$1&#125; END&#123;print "="; print sum&#125;'</span> | xargs | sed <span class="string">'s/+ =/=/'</span></span><br><span class="line">question: 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 + 17 + 18 + 19 + 20 + 21 + 22 + 23 + 24 + 25 + 26 + 27 + 28 + 29 + 30 + 31 + 32 + 33 + 34 + 35 + 36 = 666</span><br><span class="line">➜  Documents$ seq 36 | awk <span class="string">'BEGIN&#123;sum=0; print "question:"&#125; $1 % 2 ==1 &#123;print $1" +"; sum+=$1&#125; END&#123;print "="; print sum&#125;'</span> | xargs | sed <span class="string">'s/+ =/=/'</span></span><br><span class="line">question: 1 + 3 + 5 + 7 + 9 + 11 + 13 + 15 + 17 + 19 + 21 + 23 + 25 + 27 + 29 + 31 + 33 + 35 = 324</span><br><span class="line">➜  Documents$ seq 36 | awk <span class="string">'BEGIN&#123;sum=0; print "question:"&#125; $1 % 2 !=1 &#123;print $1" +"; sum+=$1&#125; END&#123;print "="; print sum&#125;'</span> | xargs | sed <span class="string">'s/+ =/=/'</span></span><br><span class="line">question: 2 + 4 + 6 + 8 + 10 + 12 + 14 + 16 + 18 + 20 + 22 + 24 + 26 + 28 + 30 + 32 + 34 + 36 = 342</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>其他高级语法：<code>for, while</code> 等， 各种函数等，本身<code>awk</code>是一个强大的语言，可以掌握一些基本的用法。</p>
+<h2 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h2><h3 id="日志统计分析"><a href="#日志统计分析" class="headerlink" title="日志统计分析"></a>日志统计分析</h3><p>例如拿到一个nginx日志文件，可以做很多事情，比如看哪些请求是耗时最久的进而进行优化，比如看每小时的”PV”数 等等。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  Documents$ head -n5 std.nginx.log</span><br><span class="line">106.38.187.225 - - [20/Feb/2017:03:31:01 +0800] www.tanglei.name <span class="string">"GET /baike/208344.html HTTP/1.0"</span> 301 486 <span class="string">"-"</span> <span class="string">"Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322) 360JK yunjiankong 975382"</span> <span class="string">"106.38.187.225, 106.38.187.225"</span> - 0.000</span><br><span class="line">106.38.187.225 - - [20/Feb/2017:03:31:02 +0800] www.tanglei.name <span class="string">"GET /baike/208344.html HTTP/1.0"</span> 301 486 <span class="string">"-"</span> <span class="string">"Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322) 360JK yunjiankong 975382"</span> <span class="string">"106.38.187.225, 106.38.187.225"</span> - 0.000</span><br><span class="line">10.130.64.143 - - [20/Feb/2017:03:31:02 +0800] stdbaike.bdp.cc <span class="string">"POST /baike/wp-cron.php?doing_wp_cron=1487532662.2058920860290527343750 HTTP/1.1"</span> 200 182 <span class="string">"-"</span> <span class="string">"WordPress/4.5.6; http://www.tanglei.name/baike"</span> <span class="string">"10.130.64.143"</span> 0.205 0.205</span><br><span class="line">10.130.64.143 - - [20/Feb/2017:03:31:02 +0800] www.tanglei.name <span class="string">"GET /external/api/login-status HTTP/1.0"</span> 200 478 <span class="string">"-"</span> <span class="string">"-"</span> <span class="string">"10.130.64.143"</span> 0.003 0.004</span><br><span class="line">10.130.64.143 - - [20/Feb/2017:03:31:02 +0800] www.tanglei.name <span class="string">"GET /content_util/authorcontents?count=5&amp;offset=0&amp;israndom=1&amp;author=9 HTTP/1.0"</span> 200 11972 <span class="string">"-"</span> <span class="string">"-"</span> <span class="string">"10.130.64.143"</span> 0.013 0.013</span><br></pre></td></tr></table></figure>
+<p>上面是nginx的一个案例， 例如希望找到top 10 请求的path:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">head -n 10000 std.nginx.log | awk <span class="string">'&#123;print $8 ", " $10&#125;'</span> | grep <span class="string">',404'</span> | sort | uniq -c | sort -nr -k1 | head -n 10</span><br><span class="line"><span class="comment">#or</span></span><br><span class="line">head -n 10000 std.nginx.log | awk <span class="string">'$10==404 &#123;print $8&#125;'</span> |sort | uniq -c | sort -nr -k1 | head -n 10</span><br></pre></td></tr></table></figure>
+<p>当然，你可能一次不会直接处理成功，一般会先少拿一部分数据进行处理看逻辑是否正常， 或者你可以缓存一些中间结果. </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat std.nginx.log | awk <span class="string">'&#123;print $8 "," $10&#125;'</span> | grep <span class="string">',404'</span> &gt;404.log</span><br><span class="line">sort 404.log | uniq -c | sort -nr -k1 | head -n 10</span><br></pre></td></tr></table></figure>
+<p>再比如每小时请求数量，请求耗时等等</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  Documents$ head -n 100000 std.nginx.log | awk -F: <span class="string">'&#123;print $1 $2&#125;'</span> | cut -f3 -d/ | uniq -c</span><br><span class="line">8237 201703</span><br><span class="line">15051 201704</span><br><span class="line">16083 201705</span><br><span class="line">18561 201706</span><br><span class="line">22723 201707</span><br><span class="line">19345 201708</span><br></pre></td></tr></table></figure>
+<p>其他实际案例 ip block</p>
+<h3 id="案例-db数据订正"><a href="#案例-db数据订正" class="headerlink" title="案例: db数据订正"></a>案例: db数据订正</h3><p>背景: 因为某服务bug，导致插入到db的图片路径不对，需要将形如(安全需要已经将敏感数据替换)<br><code>https://www.tanglei.name/upload/photos/129630//internal-public/shangtongdai/2017-02-19-abcdefg-eb85-4c24-883e-hijklmn.jpg</code><br>替换成<br><code>http://www.tanglei.me/internal-public/shangtongdai/2017-02-19-abcdefg-eb85-4c24-883e-hijklmn.jpg</code>，因为mysql等db貌似不支持直接正则的替换，所以不能够很方便的进行写sql进行替换（就算支持，直接改也有风险的，还是先备份再修改留个“后悔药”）。</p>
+<p>当然将数据导出，然后写 python 等脚本处理也是一种解决方案，但如果用上面的命令行处理，只需要几十秒即可完成。</p>
+<p>步骤:</p>
+<ol>
+<li><p>准备数据</p>
+ <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">id</span>, photo_url_1, photo_url_2, photo_url_3 <span class="keyword">from</span> somedb.sometable <span class="keyword">where</span> </span><br><span class="line">photo_url_1 <span class="keyword">like</span> <span class="string">'https://www.tanglei.name/upload/photos/%//internal-public/%'</span> <span class="keyword">or</span></span><br><span class="line">photo_url_2 <span class="keyword">like</span> <span class="string">'https://www.tanglei.name/upload/photos/%//internal-public/%'</span> <span class="keyword">or</span></span><br><span class="line">photo_url_3 <span class="keyword">like</span> <span class="string">'https://www.tanglei.name/upload/photos/%//internal-public/%'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>替换原文件<br> 一般在用sed替换的时候，先测试一下是否正常替换。 </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#测试是否OK</span></span><br><span class="line">head -n 5 customers.csv | sed <span class="string">'s|https://www.tanglei.name/upload/photos/[0-9]\&#123;1,\&#125;/|http://www.tanglei.me|g'</span></span><br><span class="line"><span class="comment"># 直接替换原文件， 可以sed -i ".bak" 替换时保留原始备份文件</span></span><br><span class="line">sed -i <span class="string">""</span> <span class="string">'s|https://www.tanglei.name/upload/photos/[0-9]\&#123;1,\&#125;/|http://www.tanglei.me|g'</span> customers.csv</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>拼接sql， 然后执行</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">awk -F， <span class="string">'&#123;print "update sometable set photo_url_1 = " $2, ", photo_url_2 = " $3, ", photo_url_3 = " $4, " where id = " $1 ";" &#125;'</span> customers.csv &gt; customer.sql</span><br><span class="line"><span class="comment">#然后执行sql 即可</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
+<li><p>play framework session</p>
+<ul>
+<li><p>老方式: 需要启play环境， 慢</p>
+<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line">sbt <span class="string">"project site"</span> consoleQuick</span><br><span class="line"><span class="keyword">import</span> play.api.libs._</span><br><span class="line"><span class="keyword">val</span> sec = <span class="string">"secret...secret"</span></span><br><span class="line"><span class="keyword">var</span> uid = <span class="string">"10086"</span></span><br><span class="line"><span class="type">Crypto</span>.sign(<span class="string">s"uid=<span class="subst">$uid</span>"</span>， sec.getBytes(<span class="string">"UTF-8"</span>)) + <span class="string">s"-uid=<span class="subst">$uid</span>"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新方式: </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  Documents$  ~/stdcookie.sh 97522</span><br><span class="line">918xxxxdf64abcfcxxxxc465xx7554dxxxx21e-uid=97522</span><br><span class="line">➜  Documents$ cat ~/stdcookie.sh</span><br><span class="line"><span class="comment">#!/bin/bash ##  cannot remove this line</span></span><br><span class="line">uid=<span class="variable">$1</span></span><br><span class="line"><span class="built_in">hash</span>=`<span class="built_in">echo</span> -n <span class="string">"uid=<span class="variable">$uid</span>"</span> | openssl dgst -sha1 -hmac <span class="string">"secret...secret"</span>`</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$hash</span>-uid=<span class="variable">$uid</span>"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>统计文章单词频率: 下面案例统计了川普就职演讲原文中词频最高的10个词。</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  Documents$ head -n3 chuanpu.txt</span><br><span class="line">Chief Justice Roberts， President Carter， President Clinton， President Bush， President Obama， fellow Americans and people of the world， thank you.</span><br><span class="line"></span><br><span class="line">We， the citizens of America， are now joined <span class="keyword">in</span> a great national effort to rebuild our country and restore its promise <span class="keyword">for</span> all of our people. Together we will determine the course of America and the world <span class="keyword">for</span> many， many years to come.</span><br><span class="line">➜  Documents$ cat chuanpu.txt | tr -dc <span class="string">'a-zA-Z '</span> | xargs -n 1 | sort | uniq -c | sort -nr -k1 | head -n 20</span><br><span class="line">  65 the</span><br><span class="line">  63 and</span><br><span class="line">  48 of</span><br><span class="line">  46 our</span><br><span class="line">  42 will</span><br><span class="line">  37 to</span><br><span class="line">  21 We</span><br><span class="line">  20 is</span><br><span class="line">  18 we</span><br><span class="line">  17 America</span><br><span class="line">  15 a</span><br><span class="line">  14 all</span><br><span class="line">  13 <span class="keyword">in</span></span><br><span class="line">  13 <span class="keyword">for</span></span><br><span class="line">  13 be</span><br><span class="line">  13 are</span><br><span class="line">  10 your</span><br><span class="line">  10 not</span><br><span class="line">  10 And</span><br><span class="line">  10 American</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>随机数：比如常常新注册一个网站，随机生成一个密码之类的。  </p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  Documents$ cat /dev/urandom | LC_CTYPE=C tr -dc <span class="string">'a-zA-Z0-9'</span> | fold -w 32 | head -n 5</span><br><span class="line">cpBnvC0niwTybSSJhUUiZwIz6ykJxBvu</span><br><span class="line">VDP56NlHnugAt2yDySAB9HU2Nd0LlYCW</span><br><span class="line">0WEDzpjPop32T5STvR6K6SfZMyT6KvAI</span><br><span class="line">a9xBwBat7tJVaad279fOPdA9fEuDEqUd</span><br><span class="line">hTLrOiTH5FNP2nU3uflsjPUXJmfleI5c</span><br><span class="line">➜  Documents$ cat /dev/urandom | head -c32 | base64</span><br><span class="line">WoCqUye9mSXI/WhHODHDjzLaSb09xrOtbrJagG7Kfqc=</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>图片处理压缩，可批量改图片大小等等 <code>sips</code></p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  linux-shell-more-effiency$ sips -g all <span class="built_in">which</span>-whereis.png</span><br><span class="line">/Users/tanglei/Documents/linux-shell-more-effiency/<span class="built_in">which</span>-whereis.png</span><br><span class="line">  pixelWidth: 280</span><br><span class="line">  pixelHeight: 81</span><br><span class="line">  typeIdentifier: public.png</span><br><span class="line">  format: png</span><br><span class="line">  formatOptions: default</span><br><span class="line">  dpiWidth: 72.000</span><br><span class="line">  dpiHeight: 72.000</span><br><span class="line">  samplesPerPixel: 4</span><br><span class="line">  bitsPerSample: 8</span><br><span class="line">  hasAlpha: yes</span><br><span class="line">  space: RGB</span><br><span class="line">  profile: DELL U2412M</span><br><span class="line">➜  linux-shell-more-effiency$ sips -Z 250 <span class="built_in">which</span>-whereis.png</span><br><span class="line">/Users/tanglei/Documents/linux-shell-more-effiency/<span class="built_in">which</span>-whereis.png</span><br><span class="line">  /Users/tanglei/Documents/linux-shell-more-effiency/<span class="built_in">which</span>-whereis.png</span><br><span class="line">➜  linux-shell-more-effiency$ sips -g all <span class="built_in">which</span>-whereis.png</span><br><span class="line">/Users/tanglei/Documents/linux-shell-more-effiency/<span class="built_in">which</span>-whereis.png</span><br><span class="line">  pixelWidth: 250</span><br><span class="line">  pixelHeight: 72</span><br><span class="line">  typeIdentifier: public.png</span><br><span class="line">  format: png</span><br><span class="line">  formatOptions: default</span><br><span class="line">  dpiWidth: 72.000</span><br><span class="line">  dpiHeight: 72.000</span><br><span class="line">  samplesPerPixel: 4</span><br><span class="line">  bitsPerSample: 8</span><br><span class="line">  hasAlpha: yes</span><br><span class="line">  space: RGB</span><br><span class="line">  profile: DELL U2412M</span><br><span class="line">➜  linux-shell-more-effiency$ sips -z 100 30 <span class="built_in">which</span>-whereis.png</span><br><span class="line">/Users/tanglei/Documents/linux-shell-more-effiency/<span class="built_in">which</span>-whereis.png</span><br><span class="line">  /Users/tanglei/Documents/linux-shell-more-effiency/<span class="built_in">which</span>-whereis.png</span><br><span class="line">➜  linux-shell-more-effiency$ sips -g pixelWidth -g pixelHeight <span class="built_in">which</span>-whereis.png</span><br><span class="line">/Users/tanglei/Documents/linux-shell-more-effiency/<span class="built_in">which</span>-whereis.png</span><br><span class="line">  pixelWidth: 30</span><br><span class="line">  pixelHeight: 100</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>命令行处理 JSON 的神器：随着 JSON 通用性，常常需要处理 JSON 数据，这里推荐这个命令行 JSON 处理神器<a href="https://stedolan.github.io/jq/" title="jq is a lightweight and flexible command-line JSON processor" target="_blank" rel="noopener">jq is a lightweight and flexible command-line JSON processor</a></p>
+</li>
+<li>其他还有一个综合应用可参考：<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247488114&amp;idx=1&amp;sn=b6191483135ecd7f7c0b735bc2dbe7a7&amp;chksm=eb471396dc309a80ba8df35f9e04ab585a80cb3f9e485fdf4c9afd380200c2d109b28335a00b&amp;token=242044315&amp;lang=zh_CN#rd" target="_blank" rel="noopener">没想到 Shell 命令竟然还能这么玩？| Shell 玩转大数据分析
+</a></li>
+</ul>
+<p>推荐以下参考材料：</p>
+<ul>
+<li>[1] JSON processor: <a href="https://stedolan.github.io/jq/" target="_blank" rel="noopener">https://stedolan.github.io/jq/</a></li>
+<li>[2] Linux工具快速教程: <a href="http://linuxtools-rst.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="noopener">http://linuxtools-rst.readthedocs.io/zh_CN/latest/index.html</a></li>
+<li>[3] Linux命令大全: <a href="http://man.linuxde.net/" target="_blank" rel="noopener">http://man.linuxde.net/</a></li>
+<li>[4] Advanced Bash-Scripting Guide: <a href="http://tldp.org/LDP/abs/html/" target="_blank" rel="noopener">http://tldp.org/LDP/abs/html/</a></li>
+<li>[5] UNIX环境高级编程: <a href="https://book.douban.com/subject/25900403" target="_blank" rel="noopener">https://book.douban.com/subject/25900403</a></li>
+</ul>
+<p>送几本我们部门出的新书，免费包邮到家，欢迎大家来抽奖（两种抽奖方式，详情见下文），也帮忙review下抽奖的代码。</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247488892&amp;idx=1&amp;sn=1b026c5a8688b880ca06c51c816265b1&amp;chksm=eb471498dc309d8eaac5bd296a3971901e624e9abfc5a0add8928f5ebc3a83b8402ebfadd95d&amp;scene=21&amp;token=1758347384&amp;lang=zh_CN#wechat_redirect" target="_blank" rel="noopener">关于 AI 的数百个问题，清华男神刘云浩教授的 3 万字回复给整得明明白白|附抽奖送书</a></p>
+<p>上文是一个超级大牛关于AI的相关问题解答，抽奖活动在文末。直接公众号后台回复“抽奖” 也是其中一种抽奖方式哦。 </p>
+<p>觉得本号分享的文章有价值，记得添加星标哦。周更很累，不要白 piao，需要来点正反馈，安排个 “一键三连”（点赞、在看、分享）如何？😝 这将是我持续输出优质文章的最强动力。</p>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader，欢迎关注，交流和指导！</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MyLife/" rel="tag"># MyLife</a>
+          
+            <a href="/tags/Shell/" rel="tag"># Shell</a>
+          
+            <a href="/tags/Mac/" rel="tag"># Mac</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/how-to-blog-elegantly-as-a-software-engineer.html" rel="next" title="10 年 bloger 告诉你要不要写博客，又该如何优雅地写博客？">
+                <i class="fa fa-chevron-left"></i> 10 年 bloger 告诉你要不要写博客，又该如何优雅地写博客？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/data-analysis-of-first-new-energy-car-tickets.html" rel="prev" title="分析了获得家庭摇号新能源指标的数据后，我发现了一个秘密">
+                分析了获得家庭摇号新能源指标的数据后，我发现了一个秘密 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mac-环境"><span class="nav-number">1.</span> <span class="nav-text">Mac 环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell-基础命令"><span class="nav-number">2.</span> <span class="nav-text">Shell 基础命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell-文本处理"><span class="nav-number">3.</span> <span class="nav-text">Shell 文本处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#find"><span class="nav-number">3.1.</span> <span class="nav-text">find</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grep"><span class="nav-number">3.2.</span> <span class="nav-text">grep</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xargs"><span class="nav-number">3.3.</span> <span class="nav-text">xargs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cut"><span class="nav-number">3.4.</span> <span class="nav-text">cut</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#paste"><span class="nav-number">3.5.</span> <span class="nav-text">paste</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#join"><span class="nav-number">3.6.</span> <span class="nav-text">join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#comm"><span class="nav-number">3.7.</span> <span class="nav-text">comm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort"><span class="nav-number">3.8.</span> <span class="nav-text">sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#uniq"><span class="nav-number">3.9.</span> <span class="nav-text">uniq</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tr"><span class="nav-number">3.10.</span> <span class="nav-text">tr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sed"><span class="nav-number">3.11.</span> <span class="nav-text">sed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#awk"><span class="nav-number">3.12.</span> <span class="nav-text">awk</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实际应用"><span class="nav-number">4.</span> <span class="nav-text">实际应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#日志统计分析"><span class="nav-number">4.1.</span> <span class="nav-text">日志统计分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例-db数据订正"><span class="nav-number">4.2.</span> <span class="nav-text">案例: db数据订正</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">4.3.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/make-dev-more-efficiency-with-20-shell.html';
+
+      var disqus_title = "提升开发效率N倍的20+命令行神器!(附 demo)";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

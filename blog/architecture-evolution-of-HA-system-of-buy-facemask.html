@@ -1,0 +1,919 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="高并发,高可用,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="本文首发于微信公众号，原文链接，转载请全文保留。   本文作者：杨牧原（花名牧原），阿里云技术专家，多年操作系统和应用调试经验，理论功底深厚，实践经验丰富。目前专注Linux性能调优，容器集群和系统网络。  本文经原作者授权发于公众号【程序猿石头】，原文基础上稍作措辞改动。 背景疫情初期某地政府决定发放一批免费口罩面向该市市民，该市市民均可免费预约领取，预约时间为早上9点-12点，因此该场景为限">
+<meta name="keywords" content="高并发,高可用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高并发口罩抢购项目架构演进记录&amp;优化经验分享">
+<meta property="og:url" content="https://www.tanglei.name/blog/architecture-evolution-of-HA-system-of-buy-facemask.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="本文首发于微信公众号，原文链接，转载请全文保留。   本文作者：杨牧原（花名牧原），阿里云技术专家，多年操作系统和应用调试经验，理论功底深厚，实践经验丰富。目前专注Linux性能调优，容器集群和系统网络。  本文经原作者授权发于公众号【程序猿石头】，原文基础上稍作措辞改动。 背景疫情初期某地政府决定发放一批免费口罩面向该市市民，该市市民均可免费预约领取，预约时间为早上9点-12点，因此该场景为限">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/2%E6%9C%882%E5%8F%B7%E6%99%9A%E4%B8%8A22%E7%82%B9%E5%B7%A6%E5%8F%B3%E7%9A%84%E5%8E%9F%E5%A7%8B%E6%9E%B6%E6%9E%84.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/2%E6%9C%883%E5%8F%B7%E6%97%A9%E4%B8%8A9%E7%82%B9%E5%B7%A6%E5%8F%B3%E7%9A%84%E6%9E%B6%E6%9E%84.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/2%E6%9C%885%E5%8F%B7%E7%9A%84%E6%9E%B6%E6%9E%84.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/%E7%90%86%E6%83%B3%E6%9E%B6%E6%9E%84.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/%E6%88%90%E6%9E%9C%E7%BB%9F%E8%AE%A1%EF%BC%88%E9%87%87%E6%A0%B7%E5%88%86%E6%9E%90%EF%BC%89.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/ECS%E8%BF%90%E7%BB%B4%E6%8C%87%E5%8D%97%E4%B9%8BLinux%E7%B3%BB%E7%BB%9F%E8%AF%8A%E6%96%AD.png">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.161Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="高并发口罩抢购项目架构演进记录&amp;优化经验分享">
+<meta name="twitter:description" content="本文首发于微信公众号，原文链接，转载请全文保留。   本文作者：杨牧原（花名牧原），阿里云技术专家，多年操作系统和应用调试经验，理论功底深厚，实践经验丰富。目前专注Linux性能调优，容器集群和系统网络。  本文经原作者授权发于公众号【程序猿石头】，原文基础上稍作措辞改动。 背景疫情初期某地政府决定发放一批免费口罩面向该市市民，该市市民均可免费预约领取，预约时间为早上9点-12点，因此该场景为限">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/2%E6%9C%882%E5%8F%B7%E6%99%9A%E4%B8%8A22%E7%82%B9%E5%B7%A6%E5%8F%B3%E7%9A%84%E5%8E%9F%E5%A7%8B%E6%9E%B6%E6%9E%84.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/architecture-evolution-of-HA-system-of-buy-facemask.html">
+
+
+
+
+
+  <title> 高并发口罩抢购项目架构演进记录&优化经验分享 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/architecture-evolution-of-HA-system-of-buy-facemask.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                高并发口罩抢购项目架构演进记录&优化经验分享
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-12T00:00:00+00:00">
+                2020-06-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/architecture-evolution-of-HA-system-of-buy-facemask.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/architecture-evolution-of-HA-system-of-buy-facemask.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247485980&amp;idx=1&amp;sn=7f0ca5a9ea5c982c3841dd18f89dd092&amp;chksm=eb470bf8dc3082ee92bed3ed6718279998d5fad6337a15b342c638269b5cbd86c11bc3f7b616&amp;scene=178&amp;cur_album_id=1338658897502191616#rd" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。</p>
+</blockquote>
+<blockquote>
+<p>本文作者：杨牧原（花名牧原），阿里云技术专家，多年操作系统和应用调试经验，理论功底深厚，实践经验丰富。目前专注Linux性能调优，容器集群和系统网络。</p>
+</blockquote>
+<p>本文经原作者授权发于公众号【程序猿石头】，原文基础上稍作措辞改动。</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>疫情初期某地政府决定发放一批免费口罩面向该市市民，该市市民均可免费预约领取，预约时间为早上9点-12点，因此该场景为限时抢购类型场景，会面临非常大的定时超大流量超大并发问题，在该项目的落地过程中，涉及的架构演变，做了一些记录和思考。</p>
+<h2 id="架构图-amp-分析-V1"><a href="#架构图-amp-分析-V1" class="headerlink" title="架构图&amp;分析-V1"></a>架构图&amp;分析-V1</h2><p>原始架构图示&amp;分析（2月2号晚上22点左右的原始架构）</p>
+<p><img src="https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/2%E6%9C%882%E5%8F%B7%E6%99%9A%E4%B8%8A22%E7%82%B9%E5%B7%A6%E5%8F%B3%E7%9A%84%E5%8E%9F%E5%A7%8B%E6%9E%B6%E6%9E%84.png" alt="2月2号晚上22点左右的原始架构"> </p>
+<ol>
+<li>客户端走 HTTPS 协议直接访问 ECS；</li>
+<li>ECS 上使用 Nginx 监听 HTTPS 443 端口；</li>
+<li>Nginx 反代 Tomcat，Nginx 处理静态文件，Tomcat 处理动态请求；</li>
+<li>程序先去 Redis 查缓存，如未命中则去数据库查询数据，同时Redis 与 Mysql 之间的数据同步靠程序控制。</li>
+</ol>
+<p>这样架构设计：</p>
+<ul>
+<li>优点：易管理，易部署；</li>
+<li>缺点：性能差，无扩展性，存在单点风险；</li>
+</ul>
+<p>结果：事实证明该应用一经上线就立刻被打挂了，因未知原因预约页面被泄露，导致还未到预约时间，服务即被打挂。</p>
+<h2 id="架构图-amp-分析-V2"><a href="#架构图-amp-分析-V2" class="headerlink" title="架构图&amp;分析-V2"></a>架构图&amp;分析-V2</h2><p>随后我方介入，进行架构调整，24点左右找的我们，早上9点要开服，时间太紧，任务太重，程序不能动的情况下，几十万的并发架构如何做？</p>
+<p>2月3号早上9点左右的架构，4号也恢复了这个架构。</p>
+<p><img src="https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/2%E6%9C%883%E5%8F%B7%E6%97%A9%E4%B8%8A9%E7%82%B9%E5%B7%A6%E5%8F%B3%E7%9A%84%E6%9E%B6%E6%9E%84.png" alt="2月3号早上9点左右的架构"></p>
+<ol>
+<li>接入 SLB，通过镜像横向扩展负载能力；</li>
+<li>接入读写分离数据库架构，通过阿里云数据库自动进行读写分离，自动同步数据；</li>
+<li>调整 Nginx 协议；</li>
+<li>同架构备集群启用（域名解析做了两个A记录）；</li>
+<li>分析访问日志发现失败原因在获取短信和登陆初始化 Cookie 的点上。</li>
+</ol>
+<p>这样架构设计：</p>
+<ul>
+<li>优点：增加了高可用性，扩展了负载能力；</li>
+<li>缺点：对流量预估不足，静态页面也在 ECS 上，因此 SLB 的出带宽一度达到最大值 5.X G，并发高达 22w+。</li>
+</ul>
+<p>结果：因为流量太大导致用户一度打不开页面，同时由于域名服务商 XX 的限制，客户无法自助添加解析，且当晚联系不到域名服务商客服，导致 CDN 方案搁浅。</p>
+<h2 id="架构图-amp-分析-V3"><a href="#架构图-amp-分析-V3" class="headerlink" title="架构图&amp;分析-V3"></a>架构图&amp;分析-V3</h2><p><img src="https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/2%E6%9C%885%E5%8F%B7%E7%9A%84%E6%9E%B6%E6%9E%84.png" alt="2月5号的架构"></p>
+<ol>
+<li>接入 CDN 分流超大带宽；</li>
+<li>取消 Nginx 的代理；</li>
+<li>做了新程序无法准时上线的灾备切换方案（没想到还真用到了）；</li>
+<li>使用虚拟服务器组做新老程序的切换，但是缺点是一个七层监听的 SLB 后端只能挂 200 个机器，再多 SLB 也扛不住了，导致老程序刚承接的时候再度挂掉；</li>
+<li>5 号使用这个架构上线，7 分钟库存售罄，且体验极度流程，丝般顺滑，健康同学开发的新程序真是太爽的。</li>
+</ol>
+<p>这样架构设计：</p>
+<ul>
+<li>优点：CDN 负担静态资源的流量降低了 SLB 的出带宽，压测的效果也非常理想；</li>
+<li>缺点：需要多一个独立的域名在页面里面，涉及跨域，4 号临开服之际测试发现入库&amp;预约短信乱码返回，紧急切换回了老程序，即二代架构。</li>
+</ul>
+<h2 id="理想架构图-amp-分析-V4"><a href="#理想架构图-amp-分析-V4" class="headerlink" title="理想架构图&amp;分析-V4"></a>理想架构图&amp;分析-V4</h2><p><img src="https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/%E7%90%86%E6%83%B3%E6%9E%B6%E6%9E%84.png" alt="理想架构"></p>
+<ol>
+<li>主域名接入CDN；</li>
+<li>CDN通过设置回源 Http、Https 协议去访问 SLB 的不同监听实现新老程序之间的切换，具体实现为回源协议对应。不同监听，监听对应不同的程序。</li>
+</ol>
+<p>这样架构设计：</p>
+<ul>
+<li>优点：静态加速降低SLB带宽，动态回源，无跨域问题，切换方便；</li>
+<li>缺点：仍需手工设置，镜像部署ecs不方便，如果时间充足，可以直接上容器的架构该有多美好呢，一个 scale 可以扩出来几十上百的 pod，也可以做节点自动扩容。</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>时间紧任务重，遇到了N多的坑：</p>
+<ol>
+<li>vcpu 购买额度；</li>
+<li>SLB 后端挂载额度；</li>
+<li>客户余额不足欠费停机；</li>
+<li>域名服务商解析需要联系客服才能添加；</li>
+<li>第一次考虑 CDN 架构的时候未考虑跨域问题；</li>
+<li>新程序开发期间未连接主库测试，导致上线失败（主库乱码）；</li>
+<li>第一次（3号）被打挂的时候只关注了 SLB 的流量，未详细分析失败最多的环节；</li>
+<li>上线前压测缺失，纯靠人工测试功能；</li>
+<li>压测靠人手一台 Jmeter（4号晚上到5号早上引入了 PTS 进行压测）；</li>
+<li>突然想起来客户原始的程序是放在 Windows上的，<code>Windows + 烂程序</code>性能真的极差；</li>
+<li>这个“小项目”前后竟然耗费了小十万，如果一开始就给我们做的话，应该可以减少一半的成本。</li>
+</ol>
+<p>最后的成果统计（采样分析，实际数据比这个还大）：</p>
+<p><img src="https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/%E6%88%90%E6%9E%9C%E7%BB%9F%E8%AE%A1%EF%BC%88%E9%87%87%E6%A0%B7%E5%88%86%E6%9E%90%EF%BC%89.png" alt="成果统计（采样分析）"></p>
+<p>最后上线的三代架构，为了保险起见上了 150 台机器，但是根据活动期间的观察，以及对压测结果的评估，上 50 台机器应该就可以抗住了，从持续 5 小时一直崩溃被终端用户骂街，到 7 分钟库存售罄的领导赞赏，虽然经历了 3 个通宵的戮战，依然可以隐隐约约感觉到身心都得到了升华。</p>
+<h2 id="各种优化笔记"><a href="#各种优化笔记" class="headerlink" title="各种优化笔记"></a>各种优化笔记</h2><h3 id="参数优化"><a href="#参数优化" class="headerlink" title="参数优化"></a>参数优化</h3><ul>
+<li>网络调参</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">net.ipv4.tcp_max_tw_buckets = 5000 --&gt; 50000</span><br><span class="line">net.ipv4.tcp_max_syn_backlog = 1024 --&gt; 4096</span><br><span class="line">net.core.somaxconn = 128 --&gt; 4096</span><br><span class="line">net.ipv4.tcp_tw_reuse = 1</span><br><span class="line">net.ipv4.tcp_timestamps = 1(5和6同时开启可能会导致nat上网环境建联概率失败)</span><br><span class="line">net.ipv4.tcp_tw_recycle = 1</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>/etc/security/limits.conf</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* soft nofile 65535</span><br><span class="line">* hard nofile 65535</span><br></pre></td></tr></table></figure>
+<ul>
+<li>nginx参数优化</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">worker_connections  1024--&gt;10240;</span><br><span class="line">worker_processes  1--&gt;16;（根据实际情况设置，可以设置成auto）</span><br><span class="line">worker_rlimit_nofile 1024--&gt;102400;</span><br><span class="line">listen 80 backlog 511--&gt;65533；</span><br></pre></td></tr></table></figure>
+<p>部分场景也可以考虑nginx开启长连接来优化短链接带来的开销</p>
+<h3 id="架构优化"><a href="#架构优化" class="headerlink" title="架构优化"></a>架构优化</h3><ul>
+<li>扩容SLB后端ECS数量，ECS 配置统一；</li>
+<li>Nginx 反代后端 upstream 无效端口去除；</li>
+<li><strong>云助手</strong>批量处理服务，参数优化，添加实例标识；（划重点，大家批量使用 ECS，可以考虑利用<strong>云助手</strong>这个产品）</li>
+<li>云监控大盘监控，ECS、SLB、DCDN、Redis等；</li>
+<li>调整 SLB 为 7 层监听模式，前 7 后 4 关闭会话保持导致登录状态失效。</li>
+</ul>
+<h3 id="程序优化"><a href="#程序优化" class="headerlink" title="程序优化"></a>程序优化</h3><ul>
+<li>添加 GC log，捕捉 GC 分析问题，设置进程内存；</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/usr/bin/java -server -Xmx8g -verbose:gc -XX:+PrintGCDetails -Xloggc:/var/<span class="built_in">log</span>/xxxx.gc.log -Dserver.port=xxxx -jar /home/app/we.*****.com/serverboot-0.0.1-SNAPSHOT.jar</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>优化短信发送逻辑，登陆先查询 Redis 免登 Session，无免登 Session 再允许发送短信验证码（降短信的量，优化登陆体验）；</p>
+</li>
+<li><p>jedis连接池优化；</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">maxTotal 8--&gt;20 </span><br><span class="line">acceptcount优化（对标somaxconn）</span><br></pre></td></tr></table></figure>
+<ul>
+<li>bug：<br>springboot1.5 带的 jedis2.9.1 的 Redis 连接泄漏的问题，导致 Tomcat 800 进程用满后都无限等待 Redis 连接。<br>后来进一步调研发现这个问题在 2.10.2 已经修复，而且 2.10.2 向后兼容 2.9.1。</li>
+</ul>
+<h3 id="数据库优化"><a href="#数据库优化" class="headerlink" title="数据库优化"></a>数据库优化</h3><ul>
+<li>Redis 公网地址变更为内网地址；</li>
+<li>Redis Session 超时设置缩短，用于释放 Redis 连接；</li>
+<li>慢SQL优化（RDS的 CloudDBA 非常好用）；</li>
+<li>添加只读实例，自动读写分离；</li>
+<li>优化 backlog；</li>
+<li>添加读写分离实例数量。</li>
+</ul>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p><img src="https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/ECS%E8%BF%90%E7%BB%B4%E6%8C%87%E5%8D%97%E4%B9%8BLinux%E7%B3%BB%E7%BB%9F%E8%AF%8A%E6%96%AD.png" alt="ECS运维指南之Linux系统诊断"></p>
+<p>本文节选自《ECS运维指南之Linux系统诊断》，《ECS运维指南之Linux系统诊断》是牧原呕心沥血之作，不仅内容精益求精，代码的编排作者也花了不少心思。你也可以直接登录阿里云开发者社区下载本书——<a href="https://developer.aliyun.com/article/763939" target="_blank" rel="noopener">《ECS运维指南之Linux系统诊断》</a>，或者直接在公众号后台回复关键字“ecs”获取本合集。</p>
+<p>阿里云开发者社区有不少高质量技术文章，大家可以去观摩学习，有很多书籍都是可以直接免费下载的。 </p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/高并发/" rel="tag"># 高并发</a>
+          
+            <a href="/tags/高可用/" rel="tag"># 高可用</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/a-security-vulnerability-of-spring-validator.html" rel="next" title="一行代码引来的安全漏洞就让我们丢失了整个服务器的控制权">
+                <i class="fa fa-chevron-left"></i> 一行代码引来的安全漏洞就让我们丢失了整个服务器的控制权
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/how-to-calculate-apr.html" rel="prev" title="你有被银行套路过吗？| 一文教你计算真实的年化利率">
+                你有被银行套路过吗？| 一文教你计算真实的年化利率 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#架构图-amp-分析-V1"><span class="nav-number">2.</span> <span class="nav-text">架构图&amp;分析-V1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#架构图-amp-分析-V2"><span class="nav-number">3.</span> <span class="nav-text">架构图&amp;分析-V2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#架构图-amp-分析-V3"><span class="nav-number">4.</span> <span class="nav-text">架构图&amp;分析-V3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理想架构图-amp-分析-V4"><span class="nav-number">5.</span> <span class="nav-text">理想架构图&amp;分析-V4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#各种优化笔记"><span class="nav-number">7.</span> <span class="nav-text">各种优化笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参数优化"><span class="nav-number">7.1.</span> <span class="nav-text">参数优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#架构优化"><span class="nav-number">7.2.</span> <span class="nav-text">架构优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程序优化"><span class="nav-number">7.3.</span> <span class="nav-text">程序优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库优化"><span class="nav-number">7.4.</span> <span class="nav-text">数据库优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">8.</span> <span class="nav-text">最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/architecture-evolution-of-HA-system-of-buy-facemask.html';
+
+      var disqus_title = "高并发口罩抢购项目架构演进记录&优化经验分享";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

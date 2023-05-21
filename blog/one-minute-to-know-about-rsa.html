@@ -1,0 +1,847 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="MyLife,总结,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景大家好，我是石头哥。 RSA 算法大家肯定都听说过了，它是一种常见的非对称加密算法，常用来对一些在网络上传输的敏感信息进行加密。">
+<meta name="keywords" content="MyLife,总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一分钟了解 RSA 算法是什么鬼？">
+<meta property="og:url" content="https://www.tanglei.name/blog/one-minute-to-know-about-rsa.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景大家好，我是石头哥。 RSA 算法大家肯定都听说过了，它是一种常见的非对称加密算法，常用来对一些在网络上传输的敏感信息进行加密。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/rsa-and-timing-attack/bc-calculate.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/rsa-and-timing-attack/MessageDigest.isEqual.timing-attack.png">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.189Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一分钟了解 RSA 算法是什么鬼？">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景大家好，我是石头哥。 RSA 算法大家肯定都听说过了，它是一种常见的非对称加密算法，常用来对一些在网络上传输的敏感信息进行加密。">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/rsa-and-timing-attack/bc-calculate.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/one-minute-to-know-about-rsa.html">
+
+
+
+
+
+  <title> 一分钟了解 RSA 算法是什么鬼？ | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/one-minute-to-know-about-rsa.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                一分钟了解 RSA 算法是什么鬼？
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-02-23T00:00:00+00:00">
+                2022-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MyLife/" itemprop="url" rel="index">
+                    <span itemprop="name">MyLife</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/one-minute-to-know-about-rsa.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/one-minute-to-know-about-rsa.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上<strong>清华</strong>（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点这里查看我的逆袭之路</a>），BAT某厂P7，是前大疆（无人机）技术主管。</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247499787&amp;idx=1&amp;sn=b3d7c199fc656dff698e134dc03d877e&amp;chksm=eb44c1efdc3348f9fb5e8a500d9db2afeb8db6feec924e6384b1376c20f2d94110b44566c4b7&amp;token=1931883326&amp;lang=zh_CN#rd" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>大家好，我是石头哥。</p>
+<p>RSA 算法大家肯定都听说过了，它是一种常见的非对称加密算法，常用来对一些在网络上传输的敏感信息进行加密。</p>
+<p>但具体流程不知道大家清楚不？本文将概述 RSA 算法的流程以及一种意想不到的”旁门左道”的破解方式。</p>
+<h2 id="RSA-算法流程"><a href="#RSA-算法流程" class="headerlink" title="RSA 算法流程"></a>RSA 算法流程</h2><p>具体算法流程如下：</p>
+<ol>
+<li>找到互质的两个数， <code>p</code> 和 <code>q</code>， 计算 <code>N = p*q</code></li>
+<li>确定一个数 <code>e</code>， 使得 <code>e</code> 与 <code>(p-1)(q-1)</code> 互质， 此时公钥为 <code>(N, e)</code>， 告诉给对方</li>
+<li>确定私钥 <code>d</code>， 使得 <code>e*d-1</code>能够被<code>(p-1)(q-1)</code>整除</li>
+<li>消息传输方传输消息 <code>M</code>， 加密密文<code>C</code>为: $C = M^e \mod N$</li>
+<li>消息接受方通过收到密文消息 <code>C</code>， 解密消息 <code>M</code>: $M= C^d \mod N$</li>
+</ol>
+<p>RSA算法依赖于欧拉定理，一个简化版本为大致为 <code>a</code> 和 <code>p</code> 互质，那么有， </p>
+<p>$ a^{p-1} \equiv 1 \mod p$， <code>a</code> 的 <code>p-1</code> 次方 对 <code>p</code> 取余为<code>1</code>，（<code>a</code> 的 <code>p-1</code>次方减去<code>1</code>可以整除 <code>p</code>）</p>
+<p>欧拉定理的证明比较复杂，可以参考下文末的参考资料。</p>
+<h2 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h2><p><code>N = pq</code>， 取俩素数 <code>p=11, q = 3, N = p * q = 33</code>， 取 <code>e</code> 与 <code>(p-1)(q-1) = 20</code> 互质的数 <code>e = 3</code>， 然后通过 $ed \equiv 1 \mod (p-1)(q-1)$ 确定私钥，<br>即取一个 <code>d</code> 使得 <code>3*d -1</code> 能 20 被整除， 假设取 <code>d=7</code> 或者<code>d=67</code>。 （<code>3*7-1=20</code> 当然能被20整除， <code>3*67-1=200</code> 也能被20整除）</p>
+<p>因此 public key 为 <code>(N=33, e=3)</code>， private key 为 <code>d=7</code> 或者<code>d=67</code>。</p>
+<p>假设加密消息<code>M=8</code>， 通过加密算法 $C = M^e \mod N$，得到密文 <code>C=8^3 % 33 = 17</code>。</p>
+<p>再来看解密， 由$M= C^d \mod N$， 得到明文 <code>M = 17^7 % 33 = 8</code> 或者 <code>M=17^67 % 33=8</code>， 是不是很神奇? （这里<code>^</code> 表示多少次方，后文中的有的表示异或）</p>
+<blockquote>
+<p>来， 安利一个计算器的工具， <code>bc</code> 命令， 支持任意精度的计算， 其实 Mac简单的计算就可以通过前面介绍的 <a href="https://mp.weixin.qq.com/s?__biz=MzkzNTI1NjYxNg==&amp;mid=2247483920&amp;idx=1&amp;sn=a739ba4173f029c7fe2f6bd4d08a5270&amp;chksm=c2b1f557f5c67c417dacab347d1104446514be3e4531ffb4933be17adcbceebe1fc0c51af6fa&amp;token=1375203675&amp;lang=zh_CN#rd" target="_blank" rel="noopener">Alfred</a> 可以方便得完成。</p>
+</blockquote>
+<p><img src="https://www.tanglei.name/resources/rsa-and-timing-attack/bc-calculate.png" alt="linux计算器"></p>
+<h2 id="RSA-破解"><a href="#RSA-破解" class="headerlink" title="RSA 破解"></a>RSA 破解</h2><p>如果需要破解 RSA 的话，就是需要找到 <code>p</code> 和 <code>q</code>， 使得 <code>pq=33</code>， 如果知道了 <code>p</code> 和 <code>q</code> 就能通过公钥 <code>N</code> 和 <code>e</code> 反推出私钥 <code>d</code> 了。</p>
+<p>当然上面所述的案例较简单，当 N 很大时，就特别困难了。大数分解在历史以来就一直是数学上的难题。</p>
+<p>曾经有人花了五个月时间分解了这个数<code>39505874583265144526419767800614481996020776460304936454139376051579355626529450683609727842468219535093544305870490251995655335710209799226484977949442955603</code>(159位数)， RSA-155 (512 bits) [from wikipedia]。</p>
+<p>这条路走不通， 就有人走了”旁门左道”了， Stanford 的几个研究者用了两个小时破解了 OpenSSL 0.9.7 的 1024-bit 的 RSA 私钥 (感兴趣的同学可以看他们的论文<code>Remote Timing Attacks are Practical</code>)，用到的方法就是后面提到的时序攻击(或译为”计时攻击”)。</p>
+<h2 id="计时攻击-Timing-Attack"><a href="#计时攻击-Timing-Attack" class="headerlink" title="计时攻击(Timing Attack)"></a>计时攻击(Timing Attack)</h2><p>计时攻击是边信道攻击(或称”侧信道攻击”，Side Channel Attack，简称 SCA) 的一种， 主要是一种利用不同的输入会有不同的执行时间这个特点进行的。 </p>
+<p>刚开始看到这个，我还是大为震惊的。凭直觉想，感觉要实际应用起来干扰项太多了，是不是可以直接忽略？</p>
+<p>不过，看到上述论文有实际攻破成功的案例，以及各大编程语言纷纷补丁来看，这样做还是非常需要的，至少是“政治”正确的。</p>
+<p>例如 JDK 1.6.0_17 中的Release Notes 中就提到了<br><code>MessageDigest.isEqual</code>中的 bug 的修复，如下图所示：</p>
+<p><img src="https://www.tanglei.name/resources/rsa-and-timing-attack/MessageDigest.isEqual.timing-attack.png" alt="MessageDigest.isEqual计时攻击"></p>
+<p>关于这个话题，更多内容可以参考我之前写的这篇文章 —— <a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247485939&amp;idx=1&amp;sn=cad3cf49aa345783a93ce5d9b631ba1d&amp;chksm=eb470817dc308101c95aff74fa63d530f02bef50f91ba18d4ff25b8715933a404bd03ffc8b7b&amp;token=44584916&amp;lang=zh_CN#rd" target="_blank" rel="noopener">这 10 行比较字符串相等的代码给我整懵了，不信你也来看看</a></p>
+<p>参考资料: </p>
+<ul>
+<li><a href="http://www.cs.sjsu.edu/faculty/stamp/students/article.html" target="_blank" rel="noopener">Timing Attacks on RSA: Revealing Your Secrets through the Fourth Dimension</a></li>
+<li><a href="http://crypto.stanford.edu/~dabo/papers/ssl-timing.pdf" target="_blank" rel="noopener">Remote Timing Attacks are Practical</a> </li>
+<li><a href="http://www.ruanyifeng.com/blog/2013/07/rsa_algorithm_part_two.html" target="_blank" rel="noopener">RSA算法原理</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86" target="_blank" rel="noopener">费马小定理</a></li>
+</ul>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>其他校招经验分享：</p>
+<ul>
+<li><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI3OTUzMzcwNw==&amp;action=getalbum&amp;album_id=1551696282304495619&amp;scene=173&amp;from_msgid=2247489734&amp;from_itemidx=1&amp;count=3&amp;nolastread=1#wechat_redirect" target="_blank" rel="noopener">校招分享合集</a></li>
+<li><a href="https://mp.weixin.qq.com/s/OGJhxM7FdeoIkAL2-uUI_Q" target="_blank" rel="noopener">Google 工程师面试指南.pdf-免费下载</a></li>
+<li><a href="https://mp.weixin.qq.com/s/iRcyW1dEeCxleTfOTyr2Lw" target="_blank" rel="noopener">清华计算机系王牌课程——《数据结构》课件及源码包下载</a></li>
+<li><a href="https://mp.weixin.qq.com/s/7T9R9kFXke986vSoPNzC8g" target="_blank" rel="noopener">BAT大佬写的 1300 页 Leetcode刷题笔记，必须收藏！</a></li>
+</ul>
+<p>如果你觉得这文章对你有那么一点点收获，请不要犹豫点击文末名片关注我的公众号，如果你再能帮忙三连一发，我就当你给我赞赏了66.6元。</p>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点击这里查看我的逆袭之路</a>），目前在BAT某厂打工，是前大疆（无人机）技术主管。</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MyLife/" rel="tag"># MyLife</a>
+          
+            <a href="/tags/总结/" rel="tag"># 总结</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/a-problem-about-response-time-out.html" rel="next" title="该收心了：接口超时排查到了内核">
+                <i class="fa fa-chevron-left"></i> 该收心了：接口超时排查到了内核
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/experience-of-a-software-engineer-at-google.html" rel="prev" title="在谷歌工作十年后的感悟">
+                在谷歌工作十年后的感悟 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RSA-算法流程"><span class="nav-number">2.</span> <span class="nav-text">RSA 算法流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#举个例子"><span class="nav-number">3.</span> <span class="nav-text">举个例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RSA-破解"><span class="nav-number">4.</span> <span class="nav-text">RSA 破解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计时攻击-Timing-Attack"><span class="nav-number">5.</span> <span class="nav-text">计时攻击(Timing Attack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">6.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/one-minute-to-know-about-rsa.html';
+
+      var disqus_title = "一分钟了解 RSA 算法是什么鬼？";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

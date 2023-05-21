@@ -1,0 +1,857 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="考试,软件度量,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="上接：/blog/metrics_softwaremetrics3.html  Modularity and Information Flow AttributesModule: a contiguous sequence of program statements, bounded by boundary elements, having an aggregate identifier (Y">
+<meta name="keywords" content="考试,软件度量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件度量复习整理-Software Metrics[四]">
+<meta property="og:url" content="https://www.tanglei.name/blog/metrics_softwaremetrics4.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="上接：/blog/metrics_softwaremetrics3.html  Modularity and Information Flow AttributesModule: a contiguous sequence of program statements, bounded by boundary elements, having an aggregate identifier (Y">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2011/04/Software%20Metrics.files//image010.gif">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2011/04/Software%20Metrics.files//image014.gif">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.062Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软件度量复习整理-Software Metrics[四]">
+<meta name="twitter:description" content="上接：/blog/metrics_softwaremetrics3.html  Modularity and Information Flow AttributesModule: a contiguous sequence of program statements, bounded by boundary elements, having an aggregate identifier (Y">
+<meta name="twitter:image" content="https://www.tanglei.name/wp-content/uploads/2011/04/Software%20Metrics.files//image010.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/metrics_softwaremetrics4.html">
+
+
+
+
+
+  <title> 软件度量复习整理-Software Metrics[四] | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/metrics_softwaremetrics4.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                软件度量复习整理-Software Metrics[四]
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-04-25T11:07:04+00:00">
+                2011-04-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">课程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/metrics_softwaremetrics4.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/metrics_softwaremetrics4.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <address><br>  上接：<a href="/blog/metrics_softwaremetrics3.html">/blog/metrics_softwaremetrics3.html</a><br></address>
+
+<h2 id="Modularity-and-Information-Flow-Attributes"><a href="#Modularity-and-Information-Flow-Attributes" class="headerlink" title="Modularity and Information Flow Attributes"></a>Modularity and Information Flow Attributes</h2><p>Module: a contiguous sequence of program statements, bounded by boundary elements, having an aggregate identifier (Yourdon and Constantine 1979).模块的定义：程序当中连续的代码序列，以分解元素界定，有一系列标识符。</p>
+<p>– A module can be any object.一个模块可以是任意的对象。</p>
+<p>– A program, unit, procedure, or function.一个程序，单元，过程或者函数。</p>
+<h3 id="Coupling"><a href="#Coupling" class="headerlink" title="Coupling"></a>Coupling</h3><p>Coupling is the degree of interdependence between mouldes.耦合说的是模块之间的互相依赖度。</p>
+<p>Ri &gt; Rj for i &gt; j</p>
+<p>No coupling relation R0: module x and module y have no communication.没有耦合，模块X和Y之间没有通信。</p>
+<p>Data coupling relation R1 : x and y communicate by parameters, where each parameter is either a single data element or a homogeneous set of data items (no control element).数据耦合，X，Y之间通过参数进行通讯，每个参数是单一的数据元素，或者是同种数据集合（不含有控制元素）；</p>
+<p>Stamp coupling relation R2 : x and y accept the same record type as a parameter.特征耦合：X和Y接受同种记录类型的参数。</p>
+<p>Control coupling relation R3 : x passes a parameter (flag) to y with the intention of controlling its behavior.控制耦合：X传递一个标志参数去控制了Y的行为。</p>
+<p>Common coupling relation R4 : x and y refer to the same global data.公共耦合：X和Y引用了相同的全局变量。</p>
+<p>Content coupling relation R5 : x refers to the inside of y.内容耦合：X引用了Y的内部内容。</p>
+<p>Loosely coupling: R1, R2. R1, R2.属于松散耦合。</p>
+<p>Tightly coupling: R4, R5. R4, R5属于紧耦合。</p>
+<p><strong>Coupling Measurement (1)</strong></p>
+<p>Coupling between x and y:</p>
+<p>c(x, y) = i + n/(n+1).</p>
+<p>where i is the number corresponding to the worst coupling relation Ri between x and y, and n is the number of interconnections between x and y.(Fenton and Melton 1990)。X,Y的耦合度 = 最大级别耦合数i + n/(n+1) n是连接次数。</p>
+<p><strong>Coupling Measurement (2)</strong></p>
+<p>A measure of global coupling C of a system S consisting of modules D1, …, Dn, is defined in the following way:</p>
+<p>C(S) is the median value of the set  {c(Di, Dj):1&lt;=i&lt;j&lt;=n}</p>
+<p>系统S的全局耦合度可以这样定义：其中S包含模块Di,集合的平均值就是系统S的全局耦合度。</p>
+<h3 id="Cohesion"><a href="#Cohesion" class="headerlink" title="Cohesion"></a>Cohesion</h3><p>The cohesion of a module is the extent to which its individual components are needed to perform the same task.模块的内聚说的是它为了完成某个相同的任务，内部组件联合的强度。</p>
+<p><img class="alignnone" title="内聚" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image010.gif" alt></p>
+<p>功能内聚：模块完成独立良好定义的功能。(这是最强的内聚，指模块内所有元素共同完成一个功能，缺一不可)</p>
+<p>顺序内聚：模块完成对于一个功能。（指一个模块中各个处理元素都密切相关于同一功能且必须顺序执行，前一功能元素输出就是下一功能元素的输入。）；</p>
+<p>通信内聚：模块完成多个功能，但是是不同的数据。（指模块内所有处理元素都在同一个数据结构上操作（有时称之为信息内聚），或者指各处理使用相同的输入数据或者产生相同的输出数据。）</p>
+<p>过程内聚：模块完成多个功能，他们都只跟一个总体过程相关。（构件或者操作的组合方式是，允许在调用前面的构件或操作之后，马上调用后面的构件或操作，即使两者之间没有数据进行传递）</p>
+<p>时间内聚：在同一时间戳内完成了多个功能。（把需要同时执行的动作组合在一起形成的模块为时间内聚模块。）</p>
+<p>偶然内聚：模块完成多个功能，它们不相关。（模块中的代码无法定义其不同功能的调用。但它使该模块能执行不同的功能，这种模块称为巧合强度模块。）</p>
+<p>PPT上翻译出来不咋懂，后面参考百度百科。</p>
+<p>Cohesion Ratio= no. of modules having functional cohesion / totoal no. of modules</p>
+<p>内聚率=功能内聚模块个数/总共的模块数。</p>
+<h3 id="Information-Flow"><a href="#Information-Flow" class="headerlink" title="Information Flow"></a>Information Flow</h3><p>Researchers have tried to examine elements information flow like the follow of information:</p>
+<p>Total level of information flow through the system.</p>
+<p>Total level of information flow between the individual modules and the rest of the system.</p>
+<p>研究者试图从下面两个方面来测出信息流元素。系统的总过信息流级别；个别模块和系统剩余模块的信息流级别。</p>
+<p>Information flow is based on fan-in and fan-out. 信息流基于扇入和扇出。</p>
+<p>Fan-in of a module M is the number of local flows that terminate at M, plus the number of data structures from which information is retrieved by M.模块M的扇入是本地流终止于M加上重新返回M的数据流。[PPT有错，PPT上说的都是Fan-out]</p>
+<p>Fan-out of a module M is the number of local flows that emanate from M, plus the number of data structures that are updated by M。模块M的扇出是从M散出的，加上被M更新的数据结构。</p>
+<p>a local direct flow occurs if either:</p>
+<p>A module invokes a second module and passes information to it; or</p>
+<p>The invoked module returns an outcome to the calling module.</p>
+<p>局部直接流出现的情况：一个模块调用另一个模块，将信息传递给它。或者，被调用的模块返回结果给调用它的模块。</p>
+<p><strong>Henry and Kafura’s Metrics</strong></p>
+<p>Information flow complexity(M)= length(M)*((fan-in(M)*(fan-out(M))<sup>2</sup></p>
+<p><strong>Shepperd’s Metric</strong></p>
+<p>Shepperd complexity (M)= ((fan-in(M)*(fan-out(M))<sup>2</sup></p>
+<p><img class="alignnone" title="shepperd" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image014.gif" alt></p>
+<p>Shepperd宣称他的方法是在原有的基础上有改进滴：我们的度量特征是它们消除信息和控制流的模糊性，集中在信息流的度量上，而henry和kafura度量是不能做到的</p>
+<p><strong>Information flow Advantages</strong> <strong>优点</strong></p>
+<p>Measures total level of information flow between the modules of a system.测量了系统的总体信息流级别。</p>
+<p>Evaluates potential design changes.评估了潜在的设计改变。</p>
+<p>Allows the identification of design problems such as modules with a large amount of fan-in and fan-out.能够鉴别设计错误比如一个模块含有大量的扇入扇出。</p>
+<p>Can be produced in the design stage。在设计阶段能够出结果。</p>
+<p>Takes into account data-driven programs. 将数据驱动的程序纳入了考虑范围。</p>
+<p>Address issues such as complexity and cohesion.说名了复杂度和内聚性。</p>
+<p>Suitable for identifying software that exhibits maintenance problems and may be error prone and unreliable. 适于鉴定软件有维护性问题，易于发现错误和不可靠。</p>
+<p>Appropriate for identifying lack of cohesion, stress points and missing levels of design abstraction.适于发现缺少内聚度，敏感点，和抽象设计缺失。</p>
+<p>Provides motivation for their use in the prediction of cohesion.推动了内聚性的预测。</p>
+<p><strong>Information flow disadvantages</strong> <strong>缺点</strong></p>
+<p>All the flows have equal weighting.所有的流有相同的权重。</p>
+<p>If there is no external interactions can give misleading values.如果没有外部交互可能引起误判。</p>
+<p>Underestimates local and global information flows.低估了局部和全局信息流。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/考试/" rel="tag"># 考试</a>
+          
+            <a href="/tags/软件度量/" rel="tag"># 软件度量</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/metrics_softwaremetrics3.html" rel="next" title="软件度量复习整理-Software Metrics[三]">
+                <i class="fa fa-chevron-left"></i> 软件度量复习整理-Software Metrics[三]
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/metrics_softwaremetrics5.html" rel="prev" title="软件度量复习整理-Software Metrics[五]">
+                软件度量复习整理-Software Metrics[五] <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Modularity-and-Information-Flow-Attributes"><span class="nav-number">1.</span> <span class="nav-text">Modularity and Information Flow Attributes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Coupling"><span class="nav-number">1.1.</span> <span class="nav-text">Coupling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cohesion"><span class="nav-number">1.2.</span> <span class="nav-text">Cohesion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Information-Flow"><span class="nav-number">1.3.</span> <span class="nav-text">Information Flow</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/metrics_softwaremetrics4.html';
+
+      var disqus_title = "软件度量复习整理-Software Metrics[四]";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

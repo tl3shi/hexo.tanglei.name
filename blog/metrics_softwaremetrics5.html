@@ -1,0 +1,874 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="软件度量,CMM,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="Measuring External Product Attributes测试产品外部属性 Predicting external attributes via measuring and analyzing internal attributes, because: The internal attributes are often available for measurement early">
+<meta name="keywords" content="软件度量,CMM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件度量复习整理-Software Metrics[五]">
+<meta property="og:url" content="https://www.tanglei.name/blog/metrics_softwaremetrics5.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="Measuring External Product Attributes测试产品外部属性 Predicting external attributes via measuring and analyzing internal attributes, because: The internal attributes are often available for measurement early">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2011/04/Software%20Metrics.files//image016.gif">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2011/04/Software%20Metrics.files//image018.gif">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2011/04/Software%20Metrics.files//image020.gif">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2011/04/cmm.png">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2011/04/Software%20Metrics.files//image022.gif">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2011/04/Software%20Metrics.files//image026.jpg">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2011/04/Software%20Metrics.files//image028.jpg">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.062Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软件度量复习整理-Software Metrics[五]">
+<meta name="twitter:description" content="Measuring External Product Attributes测试产品外部属性 Predicting external attributes via measuring and analyzing internal attributes, because: The internal attributes are often available for measurement early">
+<meta name="twitter:image" content="https://www.tanglei.name/wp-content/uploads/2011/04/Software%20Metrics.files//image016.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/metrics_softwaremetrics5.html">
+
+
+
+
+
+  <title> 软件度量复习整理-Software Metrics[五] | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/metrics_softwaremetrics5.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                软件度量复习整理-Software Metrics[五]
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-04-25T11:19:25+00:00">
+                2011-04-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">课程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/metrics_softwaremetrics5.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/metrics_softwaremetrics5.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Measuring-External-Product-Attributes"><a href="#Measuring-External-Product-Attributes" class="headerlink" title="Measuring External Product Attributes"></a>Measuring External Product Attributes</h2><p>测试产品外部属性</p>
+<p>Predicting external attributes via measuring and analyzing internal attributes, because:</p>
+<p>The internal attributes are often available for measurement early in the life cycle, whereas external attributes are measurable only when the product is complete.</p>
+<p>Internal attributes are often easier to measure than external ones.</p>
+<p>预测外部属性通过测试和分析内部属性，因为：内部属性通常在生命周期的早期，然后外部属性只能是在产品完成后才可以测试。</p>
+<p>External attributes  – Software quality. 外部属性就是说软件的质量。</p>
+<p><strong>What is “Quality”?</strong></p>
+<p>IEEE: The totality of features and characteristics of a product or service that bears on its ability to satisfy given needs.</p>
+<p>R. Glass: The degree of excellence of something. We measure the excellence of software via a set of attributes.</p>
+<p>质量的定义：</p>
+<p>IEEE：产品的总体特征或者服务能够满足需求。</p>
+<p>R. Glass：优秀度，通过软件的一系列属性描述的一个产品优秀程度。</p>
+<h3 id="Quality-Model-ISO-9126-Quality-Model"><a href="#Quality-Model-ISO-9126-Quality-Model" class="headerlink" title="Quality Model: ISO 9126 Quality Model"></a>Quality Model: ISO 9126 Quality Model</h3><hr>
+<p><img class="alignnone" title="ISO9126" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image016.gif" alt></p>
+<p>6个特性，27个子特性</p>
+<table border="0" cellspacing="0" cellpadding="0"><br>  <tr><br>    <td width="80"><br>      功能性<br>    </td><br><br>    <td width="405"><br>      准确性、适合性、互操作性、保密安全性+依从性<br>    </td><br>  </tr><br><br>  <tr><br>    <td width="80"><br>      效率<br>    </td><br><br>    <td width="405"><br>      时间、资源+依从性<br>    </td><br>  </tr><br><br>  <tr><br>    <td width="80"><br>      易用性<br>    </td><br><br>    <td width="405"><br>      易操作性、易理解性、易学性、吸引性 +依从性<br>    </td><br>  </tr><br><br>  <tr><br>    <td width="80"><br>      可靠性<br>    </td><br><br>    <td width="405"><br>    </td><br>  </tr><br><br>  <tr><br>    <td width="80"><br>      维护性<br>    </td><br><br>    <td width="405"><br>    </td><br>  </tr><br><br>  <tr><br>    <td width="80"><br>      可移植性<br>    </td><br><br>    <td width="405"><br>    </td><br>  </tr><br></table>
+
+<hr>
+<h3 id="Boehm-software-Quality-Model"><a href="#Boehm-software-Quality-Model" class="headerlink" title="Boehm software Quality Model"></a>Boehm software Quality Model</h3><p><img class="alignnone" title="Boehm" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image018.gif" alt></p>
+<hr>
+<p><strong>模型的三层次式框架如图所示。总体适用性：可移植性</strong> <strong>可维护性</strong></p>
+<h3 id="McCall’s-Quality-Model-1978"><a href="#McCall’s-Quality-Model-1978" class="headerlink" title="McCall’s Quality Model (1978)"></a>McCall’s Quality Model (1978)</h3><p><img class="alignnone" title="McCall" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image020.gif" alt></p>
+<hr>
+<p><strong>正确性、可靠性、效率、完整性、可用性</strong></p>
+<h3 id="Capability-Maturity-Model-CMM"><a href="#Capability-Maturity-Model-CMM" class="headerlink" title="Capability Maturity Model (CMM)"></a>Capability Maturity Model (CMM)</h3><p>A framework to determine process maturity。过程成熟度</p>
+<p>Initial: Few defined processes; success depends on individual effort.</p>
+<p>Repeatable: Cost, schedule, and product tracking processes in place.</p>
+<p>Defined: Standard processes are defined and used.</p>
+<p>Managed: Defined processes and product qualities are meaningfully measured.</p>
+<p>Optimizing: Measures used to improve process/product.</p>
+<p>初始级：很少的定义过程，通过个人努力能够成功。</p>
+<p>可重复级：成本，进度和产品过程。</p>
+<p>已定义级：定义和遵循了标准过程。</p>
+<p>可管理级：良好定义的过程，产品质量可以良好测试。</p>
+<p>优化级：持续改进过程/产品。</p>
+<p style="text-align: center;"><br>  <a href="/wp-content/uploads/2011/04/cmm.png"><img class="size-medium wp-image-528 aligncenter" title="cmm" src="/wp-content/uploads/2011/04/cmm.png" alt></a><br></p>
+
+<h3 id="Portability"><a href="#Portability" class="headerlink" title="Portability"></a>Portability</h3><p>“A set of attributes that bear on the capability of software to be transferred from one environment to another.”</p>
+<p><img class="alignnone" title="可移植" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image022.gif" alt></p>
+<h3 id="Reliability"><a href="#Reliability" class="headerlink" title="Reliability"></a>Reliability</h3><p>“A set of attributes that bear on the capability of software to maintain its evel of performance under stated conditions and a stated period of time.”</p>
+<p>defect density 缺陷密度= no. of known defctes / product size. 一直的缺陷数量处于产品大小</p>
+<p>where product size is measured in terms of LOC, and the known defects are discovered through testing, inspection or other techniques.</p>
+<h3 id="Usability"><a href="#Usability" class="headerlink" title="Usability"></a>Usability</h3><p>Usability of a software product is the extent to which the product is convenient and practical to use. (Boehm 1978)</p>
+<p>Good usability includes:</p>
+<p>– Well-structured manuals</p>
+<p>– Good use of menus and graphics</p>
+<p>– Information error messages</p>
+<p>– Help function</p>
+<p>– Consistent interfaces</p>
+<h3 id="The-MUSiC-project"><a href="#The-MUSiC-project" class="headerlink" title="The MUSiC project"></a>The MUSiC project</h3><p><img class="alignnone" title="Music" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image026.jpg" alt></p>
+<hr>
+<h3 id="Maintainability"><a href="#Maintainability" class="headerlink" title="Maintainability"></a>Maintainability</h3><p><img class="alignnone" title="可维护性" src="/wp-content/uploads/2011/04/Software%20Metrics.files//image028.jpg" alt></p>
+<hr>
+<h3 id="Quality-by-Domain"><a href="#Quality-by-Domain" class="headerlink" title="Quality by Domain"></a>Quality by Domain</h3><p>Product quality can also vary across application domains.</p>
+<p>Within a domain, requirements may also call for qualities that are at odds with each other.</p>
+<h3 id="Real-Time-System-Qualities"><a href="#Real-Time-System-Qualities" class="headerlink" title="Real-Time System Qualities"></a>Real-Time System Qualities</h3><p>Systems that monitor/control/analyze real world events in real-time</p>
+<p>Response time constraints</p>
+<p>Reliability</p>
+<p>Safety (absence of undesirable behaviors that can cause hazards)</p>
+<p>Usability</p>
+<h3 id="Embedded-Systems"><a href="#Embedded-Systems" class="headerlink" title="Embedded Systems"></a>Embedded Systems</h3><p>Systems that interface only with hardware</p>
+<p>Reliability</p>
+<p>Efficiency of performance</p>
+<p>Safety</p>
+<p>Robustness</p>
+<h3 id="Information-Systems"><a href="#Information-Systems" class="headerlink" title="Information Systems"></a>Information Systems</h3><p>Systems that process and deliver information to facilitate business processes</p>
+<p>Data Integrity</p>
+<p>Usability</p>
+<p>Robustness</p>
+<p>Maintainability</p>
+<h3 id="Distributed-Systems"><a href="#Distributed-Systems" class="headerlink" title="Distributed Systems"></a>Distributed Systems</h3><p>Systems in which computing elements and data storage are physically distributed</p>
+<p>Fault tolerance</p>
+<p>Reliability</p>
+<p>Availability</p>
+<p>Data integrity</p>
+<p>Transparency</p>
+<p>本节完……</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/软件度量/" rel="tag"># 软件度量</a>
+          
+            <a href="/tags/CMM/" rel="tag"># CMM</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/metrics_softwaremetrics4.html" rel="next" title="软件度量复习整理-Software Metrics[四]">
+                <i class="fa fa-chevron-left"></i> 软件度量复习整理-Software Metrics[四]
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/metrics_oometrics.html" rel="prev" title="软件度量-面向对象软件度量">
+                软件度量-面向对象软件度量 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Measuring-External-Product-Attributes"><span class="nav-number">1.</span> <span class="nav-text">Measuring External Product Attributes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Quality-Model-ISO-9126-Quality-Model"><span class="nav-number">1.1.</span> <span class="nav-text">Quality Model: ISO 9126 Quality Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Boehm-software-Quality-Model"><span class="nav-number">1.2.</span> <span class="nav-text">Boehm software Quality Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#McCall’s-Quality-Model-1978"><span class="nav-number">1.3.</span> <span class="nav-text">McCall’s Quality Model (1978)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Capability-Maturity-Model-CMM"><span class="nav-number">1.4.</span> <span class="nav-text">Capability Maturity Model (CMM)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Portability"><span class="nav-number">1.5.</span> <span class="nav-text">Portability</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reliability"><span class="nav-number">1.6.</span> <span class="nav-text">Reliability</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Usability"><span class="nav-number">1.7.</span> <span class="nav-text">Usability</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-MUSiC-project"><span class="nav-number">1.8.</span> <span class="nav-text">The MUSiC project</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maintainability"><span class="nav-number">1.9.</span> <span class="nav-text">Maintainability</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quality-by-Domain"><span class="nav-number">1.10.</span> <span class="nav-text">Quality by Domain</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Real-Time-System-Qualities"><span class="nav-number">1.11.</span> <span class="nav-text">Real-Time System Qualities</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Embedded-Systems"><span class="nav-number">1.12.</span> <span class="nav-text">Embedded Systems</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Information-Systems"><span class="nav-number">1.13.</span> <span class="nav-text">Information Systems</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Distributed-Systems"><span class="nav-number">1.14.</span> <span class="nav-text">Distributed Systems</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/metrics_softwaremetrics5.html';
+
+      var disqus_title = "软件度量复习整理-Software Metrics[五]";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

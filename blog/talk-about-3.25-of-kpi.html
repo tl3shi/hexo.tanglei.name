@@ -1,0 +1,873 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="MyLife,总结,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景 大家好呀，我是石头哥。 最近恰逢阿里S1的绩效季，看到武哥讲的一篇大厂绩效的文章，觉得不错，特意分享给大家。  某匿名社区，绩效">
+<meta name="keywords" content="MyLife,总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3.25？">
+<meta property="og:url" content="https://www.tanglei.name/blog/talk-about-3.25-of-kpi.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景 大家好呀，我是石头哥。 最近恰逢阿里S1的绩效季，看到武哥讲的一篇大厂绩效的文章，觉得不错，特意分享给大家。  某匿名社区，绩效">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/alibaba/1111.jpg">
+<meta property="og:image" content="https://www.tanglei.name/resources/alibaba/3.25.jpg">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.184Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="3.25？">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景 大家好呀，我是石头哥。 最近恰逢阿里S1的绩效季，看到武哥讲的一篇大厂绩效的文章，觉得不错，特意分享给大家。  某匿名社区，绩效">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/alibaba/1111.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/talk-about-3.25-of-kpi.html">
+
+
+
+
+
+  <title> 3.25？ | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/talk-about-3.25-of-kpi.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                3.25？
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-11-25T00:00:00+00:00">
+                2021-11-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MyLife/" itemprop="url" rel="index">
+                    <span itemprop="name">MyLife</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/talk-about-3.25-of-kpi.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/talk-about-3.25-of-kpi.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上<strong>清华</strong>（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点这里查看我的逆袭之路</a>），BAT某厂P7，是前大疆（无人机）技术主管。</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s/VJHsrc_g4auVztYuCP9GNw" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><img src="/resources/alibaba/1111.jpg" alt="阿里某园区双11装饰"></p>
+<p>大家好呀，我是石头哥。</p>
+<p>最近恰逢阿里S1的绩效季，看到武哥讲的一篇大厂绩效的文章，觉得不错，特意分享给大家。</p>
+<p><img src="/resources/alibaba/3.25.jpg" alt="图片"></p>
+<p>某匿名社区，绩效325，相当于一般的C/C-</p>
+<p>今天就好好聊聊<strong>大厂打工人最最关心的「绩效考核」</strong>，谈谈它背后的逻辑以及潜规则，摸清楚了它，你在大厂这片丛林里才能更好的生存下去。</p>
+<p><strong>大厂的绩效到底有多重要？</strong></p>
+<p>先从公司角度，谈谈为什么需要绩效考核？</p>
+<p>有一个著名的管理者言论，即：企业战略的上三路和下三路。</p>
+<blockquote>
+<p>上三路是使命、愿景、价值观，下三路是组织、人才、KPI。下三路需要确保上三路能执行下去，否则便是空谈。那怎么才能达成呢？</p>
+</blockquote>
+<p>马老板在湖畔大学的课堂上，对底下众多 CEO 学员说，“只能靠 KPI。没有 KPI，一切都是空话，组织和公司是不会进步的”。</p>
+<p>所以，KPI 一般是用来承接企业战略的。身处大厂的打工者们，也能深深感受到：每个季度的 KPI 是如何从大 Boss、到 Boss、再到基层，一层层拆解下来的，最终让所有人朝着一个方向行动，这便是 KPI 对于公司的意义。</p>
+<p>然鹅，并非每个员工都会站在 CEO 的高度去理解 KPI 的价值，大家更关注的是 KPI 对于我个人来说到底有什么意义？</p>
+<p>在互联网大厂，每家公司都会设定一套绩效考核体系，字节用的是 OKR，阿里用的是 KPI，通常都是「271」 制度（石头哥注：有361的说法哈，即比例有变化），即 ：</p>
+<blockquote>
+<p>20% 的比例是 A+ 和 A，对应明星员工。</p>
+<p>70% 的比例是 B，对应普通员工。</p>
+<p>10% 的比例是 C 和 C-，对应需要绩效改进或者淘汰的员工。</p>
+</blockquote>
+<p>有了三六九等，然后才有了利益分配。</p>
+<p><strong>在大厂，绩效结果跟奖金、晋升、薪水涨幅、股票授予是直接相关的。在内卷的今天，甚至可以直接划上等号。</strong></p>
+<p>绩效好的员工，奖金必然多，一年可能调薪两次，晋升答辩时能 PK 掉绩效一般的人，职级低的人甚至可以晋升免试。</p>
+<p>而绩效差的人，有可能一年白干，甚至走人（大厂的末尾淘汰是不成文的规定）。</p>
+<p>总之，你能想到的直接利益都和「绩效」息息相关。所以，在大厂这片高手众多的丛林里，多琢磨下绩效背后的逻辑，既是生存之道，更是一技之长。</p>
+<p><strong>你是怎么看待绩效的？</strong></p>
+<p>凡是用来考核人的规则，大部分人在潜意识里都想去突破它，而不是被束缚。</p>
+<p>至少在我刚工作的前几年，看着身边有些同事因为背个 C 黯然离开的时候，觉得绩效考核就是一个冷血的管理工具。</p>
+<p>尤其遇到自己看不上的领导时，对于他给我打的绩效，其实也是很不屑的。</p>
+<p>到今天，实在见过太多的反面案例了，自己也踩过一些坑，逐渐认识到：当初的想法除了让自己心里爽一点，好像起不到任何作用，甚至会让我的工作方式变形。</p>
+<p>当思维方式变了，也就改变了我对绩效的态度，至少有两点我认为是打工人需要看清的。</p>
+<p><strong>第一，你的上级、上上级对你的绩效拥有绝对的话语权，这是潜规则，放到任何公司都是。</strong></p>
+<p>大家可以去看看身边发展特别好的人，除了有很强的个人能力以外，几乎都是善于利用规则，而不是去挑战规则的人。</p>
+<p>当然，我并不是说你要一味地去跪舔你的领导，而是表达：工作中不要站在领导的对立面去做对抗，如果领导做法很过分，要么直接沟通去影响他，要么选择离开。</p>
+<p><strong>第二，成年人的世界，没有绝对的公平，绩效考核尤为明显。</strong></p>
+<p>我所待过的团队，绩效考核还是相对公平的，虽然也存在受照顾的情况，但都是个例。</p>
+<p>另外就是，技术岗的绩效考核不同于销售或者运营岗，很容易指标化。</p>
+<p>需求吞吐量、BUG数、线上事故… 的确有一大堆研发效能指标，但这些指标在绩效考核时是否会被参考？具体又该如何分配比重？本身就是一个扯不清楚的难题。</p>
+<p>最终决定你绩效结果的还是你领导的主观判断。你所见到的 360 环评，以及弄一些指标排序，这些都只是将绩效结果合理化的一种方式，并非关键所在。</p>
+<p>因此，多琢磨如何去影响你的领导？站在他的视角去审视他在绩效考核时到底关注哪些核心点？这才是至关重要的。</p>
+<p>上面讲了一堆潜规则，是不是意味着绩效考核是可以投机取巧，完全不看工作业绩呢，当然不是。</p>
+<p>“你的努力不一定会被看见” 、“你的努力应该有的放矢”，大家先记住这两条。</p>
+<p>下面我再展开聊聊，大家最最关心的 A 和 C，它们背后的逻辑。</p>
+<p><strong>绩效被打A和C的逻辑是什么？</strong></p>
+<p>“铆足了劲拿不到 A，一不留神居然拿了个 C”，这是绝大多数打工人最真实的职场现状。</p>
+<p>A 和 C 属于绩效的两个极端，背后的逻辑类似，反着理解即可，下面我详细分析下 C。</p>
+<p>先从我身边人的情况说起，我所看到的案例绝大多数都属于：绩效被打了 C，完全没有任何预感，主管跟他沟通结果时，还是一脸懵逼，“为什么会给我打 C？一定是黑我呀！”。</p>
+<p>前阵子听公司一位大佬分享，用他的话说，这种人就是没有「角色认知」，他不知道他所处的角色和职级该做好哪些事？做成什么样才算「做好了」？被打 C 后自然觉得是在背锅。</p>
+<p>所以，务必确保你对于当前角色是认知到位的，这样才称得上进入了「工作状态」，否则你的一次松懈，一段不太好的表现，很可能导致 C 落在你的头上，岗位越高，摔得越重。</p>
+<p>有了角色认知，再说下对绩效的认知。</p>
+<p>第一，团队很优秀，是不是不用背 C？不是！大厂的 C 都是强制分配的，再优秀的团队也会有 C。所以团队越厉害，竞争越惨烈。</p>
+<p>第二，完成了 KPI，没有工作失误，是不是就万事大吉，不用背 C？不是，绩效是相对的，你必须清楚你在团队所处的位置，你在老板眼中的排序，慢慢练出这种嗅觉。</p>
+<p>懂了上面这些道理，很自然就能知道打 C 的逻辑，C 会集中在两类人上：</p>
+<blockquote>
+<p>1、工作表现称不上角色要求的人。</p>
+<p>2、在老板眼里排序靠后，就算离开，对团队影响也很小的人。</p>
+</blockquote>
+<p>要规避 C，有两种打法。</p>
+<p>第 1 种是短期打法：抓关键事件，能不能找出 1-2 件事，体现出你的独特价值（比如本身影响力很大的项目，或者是领导最重视的事），相当于让你的排序有了最基本的保障。</p>
+<p>这种打法，你不能等到评价时再去改变，一定是在前期就抓住机会，承担起最有挑战的任务，然后全力以赴，做好了拿 A，不弄砸也不至于背 C，就怕静水潜流，躺平了去工作。</p>
+<p>第 2 种是长期打法：通过一步步信任的建立，成为团队的核心人员或者是老板的心腹，具备不可替代性。</p>
+<p>上面两种打法都是大的思路，还有很多锦上添花的技巧，比如：加强主动汇报（抹平领导的信息差）、让关键干系人给你点赞（能影响到你领导做出绩效决策的人）。</p>
+<p><strong>写在最后</strong> </p>
+<p>有人的地方就有江湖，有江湖就一定有规则，大厂平面看似平静，其实在绩效考核、晋升等利益点面前，都是一场厮杀。</p>
+<p>当大家攻山头的能力都很强时，<strong>到底做成什么样才算做好了？</strong>当你弄清楚了这个玄机，职场也就看透了。</p>
+<p>要想不被325，或者要跳槽，下面的文章（资料）可能有些帮助，可供参考：</p>
+<ul>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247494214&amp;idx=1&amp;sn=fc21811d2dd413cf338b17d6ce50d6c9&amp;chksm=eb44eba2dc3362b47a189993c3fabc28d77b9e49d898cb8120b195430fc6c98de213df6f094b&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">曝光了，清华计算机系最牛的课！</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247495225&amp;idx=1&amp;sn=c99a906c2e2dc591d7ecaac798330fb3&amp;chksm=eb44efdddc3366cb1ed31d3468097ceef0d41f00dcc8ed8f6eb0804d0b895576a4fcc5718249&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">面试阿里，看这一篇就够了！</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247496779&amp;idx=1&amp;sn=afbdc3fa174e9d20799ea10e79f70f71&amp;chksm=eb44f5afdc337cb9e7774fb772283a0aa603cb87f9c6b38b11cb31e005ed821054588492ad04&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">阿里9年之路</a></li>
+</ul>
+<p>有收获请记得下方点赞、在看、分享，<strong>这对我很重要</strong>，感谢!</p>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点击这里查看我的逆袭之路</a>），目前在BAT某厂打工，是前大疆（无人机）技术主管。</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MyLife/" rel="tag"># MyLife</a>
+          
+            <a href="/tags/总结/" rel="tag"># 总结</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/receive-a-fraud-call-by-fake-alipay.html" rel="next" title="骗子冒充阿里员工诈骗阿里员工是一种怎样的体验？">
+                <i class="fa fa-chevron-left"></i> 骗子冒充阿里员工诈骗阿里员工是一种怎样的体验？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/talk-about-after-writing-100-posts-in-weixin.html" rel="prev" title="第100篇原创，聊几句心里话">
+                第100篇原创，聊几句心里话 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/talk-about-3.25-of-kpi.html';
+
+      var disqus_title = "3.25？";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

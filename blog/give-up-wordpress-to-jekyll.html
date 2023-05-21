@@ -1,0 +1,933 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="我做站长,Wordpress,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="起因这个Blog搭建也有好多年了, 一直用Wordpress, 累计也Po了300+文章(虽然里面包括了刚开始搭建blog时放的大量水文), 自从慢慢用markdown作为写作(暂且用这个词吧)的主要工具以来，想换掉Wordpress的愿望越来越强烈。 曾经也写了一个工具， 只用了Wordpress这个外壳，写作的时候用markdown书写， 这个工具一方面满足了我的要求, 技术方案是: 本地ma">
+<meta name="keywords" content="我做站长,Wordpress">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最终还是放弃了Wordpress">
+<meta property="og:url" content="https://www.tanglei.name/blog/give-up-wordpress-to-jekyll.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="起因这个Blog搭建也有好多年了, 一直用Wordpress, 累计也Po了300+文章(虽然里面包括了刚开始搭建blog时放的大量水文), 自从慢慢用markdown作为写作(暂且用这个词吧)的主要工具以来，想换掉Wordpress的愿望越来越强烈。 曾经也写了一个工具， 只用了Wordpress这个外壳，写作的时候用markdown书写， 这个工具一方面满足了我的要求, 技术方案是: 本地ma">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/give-up-wordpress-to-jekyll/try-hexo.tanglei.name.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/give-up-wordpress-to-jekyll/try-jekyll.tanglei.name.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/give-up-wordpress-to-jekyll/wordpress.tanglei.name.png">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.148Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="最终还是放弃了Wordpress">
+<meta name="twitter:description" content="起因这个Blog搭建也有好多年了, 一直用Wordpress, 累计也Po了300+文章(虽然里面包括了刚开始搭建blog时放的大量水文), 自从慢慢用markdown作为写作(暂且用这个词吧)的主要工具以来，想换掉Wordpress的愿望越来越强烈。 曾经也写了一个工具， 只用了Wordpress这个外壳，写作的时候用markdown书写， 这个工具一方面满足了我的要求, 技术方案是: 本地ma">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/give-up-wordpress-to-jekyll/try-hexo.tanglei.name.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/give-up-wordpress-to-jekyll.html">
+
+
+
+
+
+  <title> 最终还是放弃了Wordpress | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/give-up-wordpress-to-jekyll.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                最终还是放弃了Wordpress
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-03-05T00:00:00+00:00">
+                2016-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MyLife/" itemprop="url" rel="index">
+                    <span itemprop="name">MyLife</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/give-up-wordpress-to-jekyll.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/give-up-wordpress-to-jekyll.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>这个Blog搭建也有好多年了, 一直用Wordpress, 累计也Po了300+文章(虽然里面包括了刚开始搭建blog时放的大量水文), 自从慢慢用markdown作为写作(暂且用这个词吧)的主要工具以来，想换掉Wordpress的愿望越来越强烈。</p>
+<p>曾经也写了一个<a href="/blog/codecolorer-adapted-to-highlight.html">工具</a>， 只用了Wordpress这个外壳，写作的时候用markdown书写， 这个工具一方面满足了我的要求, 技术方案是: <code>本地markdown+pandoc——&gt;html——&gt;wordpress-xmlrpc——&gt;wordpress server</code>, 有兴趣的同学可以试用。 也用这个工具写了几个月的blog(然而并没写多少篇, 懒). 最近突然网上看到了Hexo这个框架，并发现了一个比较简洁的<a href="https://github.com/tufu9441/maupassant-hexo" target="_blank" rel="noopener">Hexo主题</a>, 就准备试用下，效果<a href="http://hexo.tanglei.name" target="_blank" rel="noopener">点击这里</a>, 如下图</p>
+<p><img src="https://www.tanglei.name/resources/give-up-wordpress-to-jekyll/try-hexo.tanglei.name.png" alt></p>
+<p>然而并不是这么顺利.</p>
+<h3 id="Hexo尝试"><a href="#Hexo尝试" class="headerlink" title="Hexo尝试"></a>Hexo尝试</h3><ul>
+<li>Hexo环境安装等, 直接跟着<a href="http://hexo.io" target="_blank" rel="noopener">官网</a>来即可.</li>
+<li>寻找主题，发现这两款 <code>jacman, maupassant</code> 不错.</li>
+<li><p>Wordpress导出markdown格式的文件用wordpress插件<a href="https://wordpress.org/plugins/jekyll-exporter/" target="_blank" rel="noopener">jekyll-exporter</a>, 本地preview一下，发现了不少问题。一个一个说下这些坑.</p>
+</li>
+<li><p>分类目录重复的问题</p>
+<ul>
+<li>原因: 多级分类目录, 不能直接用wordpress导出的分类目录。 wordpress导出的分类目录多级的话, 在hexo就会显示重复（jekyll不会有这个问题）。比如 cat1 / cat2, cat3 / cat2 。 这里分类目录里就会显示两个cat2. 分别链接上cat1 / cat2, cat3 / cat2 。 如果修改category.jade种的 <code>(list_categories({show_count: true, depth: -1}))</code> 的话， 就会只把第一级cat列出来。 （jekyll 会把这些都列出来，没有层级概念）</li>
+<li>Fix: <code>themes/maupassant/layout/_widget/category.jade</code> 中 <code>list_categories({show_count: false, depth: -1})</code></li>
+</ul>
+</li>
+<li>上线github看看效果<br>用了二级域名 <code>hexo.tanglei.name</code> (添加CNAME到gh-pages分支即可)</li>
+<li><p>留言迁移</p>
+<p>  用wordpress中的Disqus插件，将所有评论导出到Disqus. 此时操作的先后顺序注意域名。较好的方案是如果换blog框架不换域名的话，先访问wordpress将所有评论导出到Disqus后再切换域名指向新的github pages。不过这个也没关系，Disqus操作是将每个post的url和评论关联起来，如果域名换了，或者permalink换了，评论和页面就对应不上，Disqus就找不到原来相应post的评论。 不过Disqus提供了一个urlmapping的机制可以调整。可参考<a href="https://hexo-tanglei.disqus.com/admin/discussions/migrate/" target="_blank" rel="noopener">Upload a URL mapping</a>。</p>
+</li>
+<li><p>调整permalink</p>
+<p>  我之前wordpress的blog的url都是形如 <code>www.tanglei.name/blog-url-id/</code>, 这样 Hexo就会生成很多<code>blog-url-id</code>这样的目录，访问这个页面请求时实际上是到<code>blog-url-id/index.html</code>， 这样不爽， 于是我将所有的permalink调整了， 变成 <code>blog/blog-url-id.html</code>, <code>_config.yml</code>可直接配置，但需要对wordpress导出的permalink进行调整. 例如将 <code>permalink: /return-object-in-cpp-and-return-value-optimazation/</code> 调整成 <code>return-object-in-cpp-and-return-value-optimazation</code>， 用<code>sed</code>替换即可 <code>sed -i &quot;&quot; &#39;s|^permalink: /\([^/]*\)/|permalink: \1|&#39; `ls *.md`</code></p>
+</li>
+<li><p>pictures 迁移，改变链接，去掉host</p>
+<ul>
+<li><p>去掉绝对路径， 去掉host</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#去掉绝对路径</span></span><br><span class="line">sed -i <span class="string">""</span> <span class="string">'s|http://www\.tanglei\.name\/wp-content|/wp-content|g'</span> `ls`</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修正一些图片格式因为缩进问题(例如<code>![](xx.pnag)</code>前面有tab符)被markdow误认为是<code>reference/preview block</code>错误</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sed -i <span class="string">""</span> <span class="string">'s|[[:space:]]!\[|![|g'</span> `ls`</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>代码高亮</p>
+<ul>
+<li><p>之前mardown2wordpress工具将代码插件变换后，export成md后，标签被转义了。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span><span class="symbol">&amp;lt;</span>cc class="cpp"&gt;</span><br><span class="line">#include <span class="symbol">&amp;lt;</span>iostream&gt;</span><br><span class="line">int main(int argc, char** argv)</span><br><span class="line">&#123;</span><br><span class="line">    std::cout <span class="symbol">&amp;lt;</span><span class="symbol">&amp;lt;</span> "Hello world." <span class="symbol">&amp;lt;</span><span class="symbol">&amp;lt;</span> std::endl;</span><br><span class="line">    std::cout <span class="symbol">&amp;lt;</span><span class="symbol">&amp;lt;</span> "argc: " <span class="symbol">&amp;lt;</span><span class="symbol">&amp;lt;</span> argc <span class="symbol">&amp;lt;</span><span class="symbol">&amp;lt;</span> std::endl;</span><br><span class="line">    for(int i = 0; i <span class="symbol">&amp;lt;</span> argc; i++)</span><br><span class="line">        std::cout <span class="symbol">&amp;lt;</span><span class="symbol">&amp;lt;</span> argv[i] <span class="symbol">&amp;lt;</span><span class="symbol">&amp;lt;</span> std::endl;</span><br><span class="line">    int t;</span><br><span class="line">    std::cin &gt;&gt; t;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"><span class="symbol">&amp;lt;</span>/cc&gt;<span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p>整体进行替换</p>
+<pre><code>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sed -i <span class="string">""</span> <span class="string">'s|&lt;pre&gt;&amp;lt;cc class="\([a-zA-Z]*\)"&gt;|```\1|g'</span> `ls`</span><br><span class="line">sed -i <span class="string">""</span> <span class="string">'s|&amp;lt;/cc&gt;&lt;/pre&gt;|```|g'</span> `ls`</span><br><span class="line">sed -i <span class="string">""</span> <span class="string">'s|&amp;lt;|&lt;|g'</span>  `ls`</span><br><span class="line"></span><br><span class="line">sed -i <span class="string">""</span> <span class="string">'s|&lt;/cc&gt;&lt;/pre&gt;|```|g'</span> `ls`</span><br><span class="line">sed -i <span class="string">""</span> <span class="string">'s|&lt;pre&gt;&lt;cc&gt;|```|g'</span> `ls`</span><br></pre></td></tr></table></figure>
+
+- 还有codecolorer的一些插件生产的代码。
+
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sed -i <span class="string">""</span> <span class="string">'s|&lt;cc lang="\([a-zA-Z]*\)"&gt;|```\1|g'</span> `ls`</span><br><span class="line">sed -i <span class="string">""</span> <span class="string">'s|&lt;/cc&gt;|```|g'</span> `ls` 得新增一行</span><br><span class="line">&amp;<span class="comment">#038; --&gt; &amp; //&amp;需要转义</span></span><br><span class="line">sed -i <span class="string">""</span> <span class="string">'s|&amp;#038;|\&amp;|g'</span> `ls`</span><br></pre></td></tr></table></figure>
+</code></pre><ul>
+<li>Hexo 不支持用用三个”`”进行代码高亮，也要进行调整。而这个github和jekyll都是支持的。所有Hexo官网声称的支持所有GFM也是假的。</li>
+</ul>
+<ul>
+<li>其他资源<ul>
+<li>hexo generate 的时候 会删除 public folder 重新生成里面的每个文件</li>
+<li>这个自己写diploy脚本可以解决。</li>
+</ul>
+</li>
+</ul>
+<h4 id="放弃Hexo"><a href="#放弃Hexo" class="headerlink" title="放弃Hexo"></a>放弃Hexo</h4><p>最后的最后，尝试了这么多, 我最终并没有选择用hexo， 原因是~ Hexo build太慢太慢太慢了, 我build需要半个小时, 谁有空帮忙解决下啊， <a href="https://github.com/tl3shi/hexo.tanglei.name/tree/master" target="_blank" rel="noopener">repo在此</a>。目前原因还不清楚， 我也尝试了各种方法都不知道(虽然官网生成Hexo用nodejs比什么Jekyll之类的都快很多)。 太慢的原因并不是因为:</p>
+<ul>
+<li>文章太多, 300+文章, 然后别人也有500+文章20+秒就build出来了。<a href="https://travis-ci.org/Xuanwo/xuanwo.github.io/builds/111696580" target="_blank" rel="noopener">ref</a></li>
+<li>代码高亮问题, 我关闭代码高亮也一样</li>
+<li>分页，分类目录太多, tag太多, 我关闭分类目录和tag也一样，并且在build的过程中，并不是到最后<code>generate tags/xxx</code>才慢的,     前面post也慢。</li>
+<li>主题的影响， 我切换主题，用默认的主题也一样慢~ (Update: 之前测试的时候可能没有clean之类的没准，应该就是主题的原因，后面有时间再研究下)</li>
+</ul>
+<p>没辙了~, 我不可能每次po一篇文章，发布的时候得半小时吧~ 况且后来用travis-ci，10分钟build不出来就被kill了。难道是因为wordpress 导出的markdown含有各种html标签导致hexo解析markdown很慢? maybe~</p>
+<p>所以最终结果就是， hexo尝试了下， 并没有使用。 <a href="http://hexo.tanglei.name" target="_blank" rel="noopener">hexo.tanglei.name</a>这个域名也暂时保留并解析吧，后面哪天万一Jekyll用着不爽，Hexo升级fix了这个问题了，可能还会切过来了。</p>
+<h3 id="尝试Jekyll"><a href="#尝试Jekyll" class="headerlink" title="尝试Jekyll"></a>尝试Jekyll</h3><p>最后还是用了Jekyll， 这个blog引擎之前就玩过， 切挂了我另外一个域名<a href="http://tanglei.me" target="_blank" rel="noopener">tanglei.me</a>。 为啥要换成这个呢:</p>
+<ul>
+<li>反正不准备用Wordpress了，折腾了下Hexo，目前对于我来说不太合适</li>
+<li>找了个还比较简洁清晰的主题, 就是现在用的这个, 虽然还很不成熟，但也趁这个机会熟悉下前端，慢慢摸索吧。主题源自<a href="https://github.com/guovz/jekyll-pithy" target="_blank" rel="noopener">guovz</a>， 本blog在基础上改了不少。</li>
+<li>gihub能够帮忙编译，本地写好markdown，自己commit就行了。(最后发现这个不太靠谱， 自己写的插件代码之类的github禁用了，比如原来主题的国际化之类的刚开始到github上就翻译不出来等。) 所以刚开始自己写了deploy的脚本，本地生成再push到github，这个时间还可以接受，二十几秒的时间。呃~ 最后才发现原来可以用<a href="https://travis-ci.org/" target="_blank" rel="noopener">travis-ci</a>这样的神器，果然我之前连这个玩意都不知道用。帮忙拉环境build代码并push。</li>
+</ul>
+<p><img src="https://www.tanglei.name/resources/give-up-wordpress-to-jekyll/try-jekyll.tanglei.name.png" alt><br>记录下在适配Jekyll的时候做的一些改动和Reference.</p>
+<ul>
+<li><p>每个markdown中的permalink， 会覆盖全局的url设置, 将每个md中的permalink删除</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sed -i <span class="string">""</span> <span class="string">'/^permalink: /d'</span> 2015-07-06-travel-to-northwest-of-china.md</span><br><span class="line">sed -i <span class="string">""</span> <span class="string">'/^permalink: /d'</span> `ls`</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删掉资源文件夹中，wordpress生产的缩略图 <code>find . -name &quot;*-*x*&quot;</code></p>
+</li>
+<li>tags 过多 <code>for tag in site.tags limit:60</code> <a href="https://docs.shopify.com/themes/liquid/tags/iteration-tags" target="_blank" rel="noopener">Ref Liquid语法</a></li>
+<li>post中的author如果没有的话就用全局的 <a href="2c45efe74cd70c9778051763d127d9be3768eb05">commitid</a></li>
+<li><a href="http://jekyll-china.com/2016/02/jekyll-gfm-regression-issue/?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="noopener">Jekyll 3.1.1 无法正确解析 GFM 的解决方法</a></li>
+<li><a href="https://pages.github.com/versions/" target="_blank" rel="noopener">github pages 支持的插件</a></li>
+<li>最新的github支持rouge代码高亮<a href="http://platinhom.github.io/2016/02/04/update-github-rouge/" target="_blank" rel="noopener">代码高亮</a></li>
+<li>disqus 评论 this.page.identifier 用了其他的identifier就加载失败， wordpress导出的会用 <code>guid: http://www.tanglei.name/?p=2504</code>中的2504会失败, 直接改为url即可。</li>
+<li>git 当前分支push到远程另外分支上<br><code>git push -u origin local_branch_name:romote_branch_name</code> 一般 remote_branch_name为空则远程会创建同名分支, local 和remote可以不一样，当使用了 -u 参数后，push local时候 默认的远程分支就是remote了</li>
+<li><p>disqus 总是加载有问题， 上传url mapping后。</p>
+<ul>
+<li>要么把script中的disqus_config注释掉，直接用完成的域名shortname，让disqus自己去匹配加载。</li>
+<li>要么 script中要加上<code>‘’</code>， 防止 script错误。 另外，<code>this.page.url = &#39;http://example.com/article/1/&#39;;</code> siteurl加上http://与disqus完全一致。<a href="https://help.disqus.com/customer/portal/articles/472007-i-m-receiving-the-message-%22we-were-unable-to-load-disqus-%22" target="_blank" rel="noopener">ref</a></li>
+</ul>
+</li>
+<li><p>分页目录整理 之前总是 <code>/page1/, /page2/</code> 这样的，改成了 <code>/page/1/, /page/2/</code></p>
+</li>
+<li><p>tag权重整理</p>
+<ul>
+<li>删除只有1个的tag</li>
+<li>按照权重排序显示在首页 <del>TODO</del>(最后还是在前端解决的)</li>
+</ul>
+</li>
+<li><p>分页太多，拆分, 可以<a href="https://github.com/levinxo/jekyll-blog/blob/master/_includes/JB/posts_paginator" target="_blank" rel="noopener">ref</a></p>
+</li>
+<li>文章页面显示 前/后一篇 <a href="https://github.com/tl3shi/jekyll.tanglei.name/commit/c85194471053db8e6f782b9d29f98ca5e64d27dd" target="_blank" rel="noopener">Commit</a></li>
+<li>移动端Bug, 点击菜单不弹框 <a href="https://github.com/tl3shi/jekyll.tanglei.name/commit/b7a2bdda7d4cfef4359127c3b10a863ede56199a" target="_blank" rel="noopener">commit</a></li>
+<li><p>文章内链得重新修改</p>
+<ul>
+<li><p>tag 替换 <code>sed -i &quot;&quot; &#39;s|http://www.tanglei.name/tag/|/tag/#|g&#39; `ls`</code></p>
+<ul>
+<li><p>tag后面不能有 <code>/</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#替换前 预览下</span></span><br><span class="line">sed <span class="string">'s|/tag/#\([^/]*\)\/|/tag/#\1|g'</span> `ls` | grep <span class="string">'/tag/#'</span></span><br><span class="line">sed -i <span class="string">""</span> <span class="string">'s|/tag/#\([^/]*\)\/|/tag/#\1|g'</span> `ls`</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>其他链接 <code>sed -i &quot;&quot; &#39;s|http://www.tanglei.name/\([^/]*\)\/|/blog/\1.html|g&#39; `ls`</code></p>
+</li>
+<li>少数之前含有目录的链接就不对了, 其他的遇到了再改吧.</li>
+</ul>
+</li>
+<li><p>搜索引擎收录页面跳转。可以用插件jekyll-redirect, 但这个还是会生成太多的目录就放弃了。301 太麻烦，跳转就算了, 搜索引擎的链接404后，在404页面中用一个js跳转即可。(301的话，可以在原有的机器上写<code>htaccess</code>将原来的url访问跳转至新的， 过一段时间搜索引擎重新搜录新url后，再完全用static的html) <a href="/404.html">404页面请戳这里</a></p>
+</li>
+<li>sitemap.xml  用插件 jekyll-sitemap.</li>
+<li><p>图片响应式布局， wordpress导出时 自动添加了width， 在mobile端显示不友好.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sed -i <span class="string">""</span> <span class="string">'s|width="[0-9]*" height="[0-9]*" border="0"||g'</span> `ls`</span><br><span class="line">sed -i <span class="string">""</span> <span class="string">'s|width="[0-9]*" height="[0-9]*"||g'</span> `ls`</span><br><span class="line"><span class="comment"># 去掉所有img标签里的style</span></span><br><span class="line">sed -i <span class="string">""</span> <span class="string">'s|&lt;img style="[a-z0-9 -:;]*"|&lt;img|g'</span> `ls`</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Disqus Bug</p>
+<ul>
+<li>首页无评论狂, 找不到 <code>&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;</code> 因此报了一下错误<code>&quot;Cannot read property &#39;appendChild&#39; of null&quot; with Disqus ...</code></li>
+<li>Fix: 添加 <code>if($(&quot;#disqus_thread&quot;).length)</code></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>自动部署脚本deploy.sh 替换成 travis-ci<ul>
+<li><a href="http://stackoverflow.com/questions/23277391/how-to-publish-to-github-pages-from-travis-ci" target="_blank" rel="noopener">travis添加环境变量</a></li>
+<li><a href="https://xuanwo.org/2015/02/07/Travis-CI-Hexo-Autodeploy/" target="_blank" rel="noopener">travis设置ssh</a></li>
+</ul>
+</li>
+</ul>
+<p>纪念我那逝去的Wordpress, 放截图一张如下， 暂时还可以用 <a href="http://wordpress.tanglei.name" target="_blank" rel="noopener">wordpress.tanglei.name</a>访问. </p>
+<p><img src="https://www.tanglei.name/resources/give-up-wordpress-to-jekyll/wordpress.tanglei.name.png" alt></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/我做站长/" rel="tag"># 我做站长</a>
+          
+            <a href="/tags/Wordpress/" rel="tag"># Wordpress</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/summary-of-year-2015.html" rel="next" title="2015年终总结">
+                <i class="fa fa-chevron-left"></i> 2015年终总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/travel-to-jiangxi-wuyuan.html" rel="prev" title="婺源之旅">
+                婺源之旅 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#起因"><span class="nav-number">1.</span> <span class="nav-text">起因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo尝试"><span class="nav-number">2.</span> <span class="nav-text">Hexo尝试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#放弃Hexo"><span class="nav-number">2.1.</span> <span class="nav-text">放弃Hexo</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#尝试Jekyll"><span class="nav-number">3.</span> <span class="nav-text">尝试Jekyll</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/give-up-wordpress-to-jekyll.html';
+
+      var disqus_title = "最终还是放弃了Wordpress";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

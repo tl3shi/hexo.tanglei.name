@@ -1,0 +1,824 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="经验技巧,除臭虫,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="本文为 6 年前的旧文整理重发，因为最开始是 workdpress 的程序，后改为静态 blog 过程中，导致格式等混乱，这篇年久失修旧文可点击访问。  问题背景背景就简单点儿说，当初一个项目 C# 编写，涉及浮点运算，来龙去脉省去，直接看如下代码。（为什么有这个问题产生，是因为当初线上产生了很诡异的问题，和本地调试效果不一致。） float p3x = 80838.0f;float p2y =">
+<meta name="keywords" content="经验技巧,除臭虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一个跨平台的浮点数 bug">
+<meta property="og:url" content="https://www.tanglei.name/blog/a-bug-relate-with-float-point-cross-platform.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="本文为 6 年前的旧文整理重发，因为最开始是 workdpress 的程序，后改为静态 blog 过程中，导致格式等混乱，这篇年久失修旧文可点击访问。  问题背景背景就简单点儿说，当初一个项目 C# 编写，涉及浮点运算，来龙去脉省去，直接看如下代码。（为什么有这个问题产生，是因为当初线上产生了很诡异的问题，和本地调试效果不一致。） float p3x = 80838.0f;float p2y =">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/a-bug-relate-with-float-point-cross-platform.md/float.webp">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.160Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一个跨平台的浮点数 bug">
+<meta name="twitter:description" content="本文为 6 年前的旧文整理重发，因为最开始是 workdpress 的程序，后改为静态 blog 过程中，导致格式等混乱，这篇年久失修旧文可点击访问。  问题背景背景就简单点儿说，当初一个项目 C# 编写，涉及浮点运算，来龙去脉省去，直接看如下代码。（为什么有这个问题产生，是因为当初线上产生了很诡异的问题，和本地调试效果不一致。） float p3x = 80838.0f;float p2y =">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/a-bug-relate-with-float-point-cross-platform.md/float.webp">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/a-bug-relate-with-float-point-cross-platform.html">
+
+
+
+
+
+  <title> 一个跨平台的浮点数 bug | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/a-bug-relate-with-float-point-cross-platform.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                一个跨平台的浮点数 bug
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-01T00:00:00+00:00">
+                2020-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/除臭虫/" itemprop="url" rel="index">
+                    <span itemprop="name">除臭虫</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/a-bug-relate-with-float-point-cross-platform.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/a-bug-relate-with-float-point-cross-platform.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>本文为 6 年前的旧文整理重发，因为最开始是 workdpress 的程序，后改为静态 blog 过程中，导致格式等混乱，这篇<a href="https://www.tanglei.name/blog/a-bug-relate-with-float-point-between-x86-and-x64-in-csharp.html">年久失修旧文可点击访问</a>。</p>
+</blockquote>
+<h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>背景就简单点儿说，当初一个项目 C# 编写，涉及浮点运算，来龙去脉省去，直接看如下代码。（为什么有这个问题产生，是因为当初线上产生了很诡异的问题，和本地调试效果不一致。）</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">float</span> p3x = <span class="number">80838.0f</span>;</span><br><span class="line"><span class="keyword">float</span> p2y = <span class="number">-2499.0f</span>;</span><br><span class="line"><span class="keyword">double</span> v321 = p3x * p2y;</span><br><span class="line">Console.WriteLine(v321);</span><br></pre></td></tr></table></figure>
+<p>很简单吧，马上笔算下结果为 -202014162，没问题，难道C#没有产生这样的结果？不可能吧，开启 VisualStudio，copy代码试试，果然结果是-202014162。就这样完了么？显然没有！把编译时的选项从AnyCPU改成x64试试~(服务器环境正是64位滴哦！！)结果居然变成了-202014160，对没错，就是-202014160。细想一下，因为浮点运算的误差，-202014160 这个结果是合理的。嗯，再试试C++。// 测试环境Intel(R) i7-3770 CPU, windows OS 64. Visual Studio 2012 默认设置。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">float</span> p3x = <span class="number">80838.0f</span>;</span><br><span class="line"><span class="keyword">float</span> p2y = <span class="number">-2499.0f</span>;</span><br><span class="line"><span class="keyword">double</span> v321 = p3x * p2y;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span>.precision(<span class="number">15</span>);</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; v321 &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+<p>呃，好像x86、x64都是这个合理的结果 -202014160。奇了个怪了。其实上面这段C++代码在不同的平台下的结果如下：</p>
+<ul>
+<li>Windows 32/64位下：-202014160</li>
+<li>Linux 64位下（CentOS 6 gcc 4.4.7）：-202014160</li>
+<li>Linux 32位下（Ubuntu 12.04+ gcc 4.6.3）是：-202014162</li>
+</ul>
+<blockquote>
+<p>补充说明：当初这篇文章投稿到酷壳，著名程序员左耳朵耗子那边，这部分结果数据来自耗子叔对文章做的部分调整。（因为当初行文没抓住重点，还引来了不少吐槽）</p>
+</blockquote>
+<p>合理的运算结果，应该是-202014160，正确的运算结果是-202014162，合理性是浮点精度不够造成的（后文解释了合理性）。若是用两个double相乘可得正确且合理的运算结果。// 就别纠结我用的“正确、合理”这两个词是否恰当了。问题是为何C#下X64和X86结果不一致？</p>
+<h2 id="浮点运算结果错误但合理的解释"><a href="#浮点运算结果错误但合理的解释" class="headerlink" title="浮点运算结果错误但合理的解释"></a>浮点运算结果错误但合理的解释</h2><p>为何  80838.0f * -2499.0f = -202014160.0 是合理的？</p>
+<p>32位浮点数在计算机中的表示方式为：1位符号位(s)-8位指数位(E)-23位有效数字(M)，即：</p>
+<p><img src="https://www.tanglei.name/resources/a-bug-relate-with-float-point-cross-platform.md/float.webp" alt></p>
+<p>其中E是实际转换成1.xxxxx*2^E的指数，M是去掉 1 后的前面的xxxxx(节约1位)。</p>
+<h3 id="1-80838-0-如何表达？"><a href="#1-80838-0-如何表达？" class="headerlink" title="1.  80838.0 如何表达？"></a>1.  80838.0 如何表达？</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">80838.0 = 1 0011 1011 1100 0110.0(二进制) = 1.0011 1011 1100 0110 0*2^16</span><br><span class="line">有效位M = 0011 1011 1100 0110 0000 000（一共 23 位）</span><br><span class="line">指数位E = 16 + 127 = 143 = 10001111</span><br><span class="line">内部表示 80838.0 = 0 [10001111] [0011 1011 1100 0110 0000 000] = 0100 0111 1001 1101 1110 0011 0000 0000 = 47 9d e3 00 //实际调试时看到的内存值 可能是00 e3 9d 47是因为调试环境用了小端表示法法：低位字节排内存低地址端，高位排内存高地址</span><br></pre></td></tr></table></figure>
+<h3 id="2-2499-0-如何表达？"><a href="#2-2499-0-如何表达？" class="headerlink" title="2. -2499.0 如何表达？"></a>2. -2499.0 如何表达？</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-2499.0 = -100111000011.0 = -1.001110000110 * 2^11</span><br><span class="line">有效位M = 0011 1000 0110 0000 0000 000</span><br><span class="line">指数位E = 11+127=138= 10001010</span><br><span class="line">符号位s = 1</span><br><span class="line">内部表示-2499.0 = 1 [10001010] [0011 1000 0110 0000 0000 000]</span><br><span class="line">=1100 0101 0001 1100 0011 0000 0000 0000 =c5 1c 30 00</span><br></pre></td></tr></table></figure>
+<h3 id="3-如何计算-80838-0-2499-0"><a href="#3-如何计算-80838-0-2499-0" class="headerlink" title="3. 如何计算 80838.0 * -2499.0 = ?"></a>3. 如何计算 80838.0 * -2499.0 = ?</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">指数 e = 11+16 = 27</span><br><span class="line">则指数位 E = e + 127 = 154 = 10011010</span><br><span class="line">有效位相乘结果为 1.1000 0001 0100 1111 1011 1010 01 （可以自己动手实际算下），实际中只能有23位，后面的被截断即1000 0001 0100 1111 1011 1010 01，相乘结果内部表示=1[10011010][1000 0001 0100 1111 1011 101] = 1100 1101 0100 0000 1010 0111 1101 1101 = cd 40 a7 dd</span><br><span class="line">结果 = -1.1000 0001 0100 1111 1011 101 *2^27</span><br><span class="line">= -11000 0001 0100 1111 1011 1010000</span><br><span class="line">= -202014160</span><br></pre></td></tr></table></figure>
+<p>通过上面得知，32 位浮点数，-202014160 就是合理的结果，完全能解释清楚。但如果有效数字更长的话， 上面的就不会被截断。</p>
+<h3 id="4-正确的结果-202014162怎么得来？"><a href="#4-正确的结果-202014162怎么得来？" class="headerlink" title="4. 正确的结果-202014162怎么得来？"></a>4. 正确的结果-202014162怎么得来？</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">有效位相乘结果为 1.1000 0001 0100 1111 1011 1010 01</span><br><span class="line">即结果 = -1.1000 0001 0100 1111 1011 101001 *2^27</span><br><span class="line">= -11000 0001 0100 1111 1011 101001 = -202014162</span><br></pre></td></tr></table></figure>
+<h2 id="根因挖掘"><a href="#根因挖掘" class="headerlink" title="根因挖掘"></a>根因挖掘</h2><p>上面部分解释了两种结果的来源，但貌似没从根本回到为什么？用C++同样的代码，X86，X64（DEBUG下，这个后面会说）下得到一致的结果-202014160，容易理解且也是合理的。原因何在？看下编译后生成的代码(截取关键部分)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//C# x86 下</span><br><span class="line">......</span><br><span class="line">float p3x = 80838.0f;</span><br><span class="line">0000003b mov dword ptr [ebp-40h],479DE300h</span><br><span class="line">float p2y = -2499.0f;</span><br><span class="line">00000042  mov dword ptr [ebp-44h],0C51C3000h</span><br><span class="line">double v321 = p3x * p2y;</span><br><span class="line">00000049  fld dword ptr [ebp-40h]</span><br><span class="line">0000004c fmul dword ptr [ebp-44h]</span><br><span class="line">0000004f  fstp qword ptr [ebp-4Ch]</span><br><span class="line">.......</span><br><span class="line"></span><br><span class="line">//C# X64下</span><br><span class="line">......</span><br><span class="line">float p3x = 80838.0f;</span><br><span class="line">00000045  movss xmm0,dword ptr [00000098h]</span><br><span class="line">0000004d  movss dword ptr [rbp+3Ch],xmm0</span><br><span class="line">float p2y = -2499.0f;</span><br><span class="line">00000052  movss xmm0,dword ptr [000000A0h]</span><br><span class="line">0000005a movss dword ptr [rbp+38h],xmm0</span><br><span class="line">double v321 = p3x * p2y;</span><br><span class="line">0000005f  movss xmm0,dword ptr [rbp+38h]</span><br><span class="line">00000064  mulss xmm0,dword ptr [rbp+3Ch]</span><br><span class="line">00000069  cvtss2sd xmm0,xmm0</span><br><span class="line">0000006d  movsd mmword ptr [rbp+30h],xmm0</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>C++ x86 / x64下都生成了类似的代码（这也就是为何 C++ x86/x64与C#x64结果一致）即都用了先用浮点乘起来(mulss)，然后转成double(cvtss2sd)。从上面的汇编代码可以看出 C# X86生成代码用的指令fld/fmul/fstp等。其中fld/fmul/fstp等指令是由FPU(float point unit)浮点运算处理器做的，FPU在进行浮点运算时，用了80位的寄存器做相关浮点运算，然后再根据是float/double截取成32位或64位。非FPU的情况是用了SSE中128位寄存器(float实际只用了其中的32位，计算时也是以32位计算的)，这就是导致上述问题产生的最终原因。</p>
+<p>浮点运算标准IEEE-754 推荐标准实现者提供浮点可扩展精度格式(Extended precision)，Intel x86处理器有FPU(float point unit)浮点运算处理器支持这种扩展。C#的浮点是支持该标准的，其中其官方文档也提到了浮点运算可能会产生比返回类型更高精度的值（<strong>正如上面的返回值精度就超过了float的精度</strong>），并说明如果硬件支持可扩展浮点精度的话，那么所有的浮点运算都将用此精度进行以提高效率，举个例子<code>x*y/z, x*y</code>的值可能都在double的能力范围之外了，但真实情况可能除以z后又能把结果拉回到double范围内，这样的话，用了FPU的结果就会得到一个准确的double值，而非FPU的就是无穷大之类的了。</p>
+<p>即产生如上的结果原因是，两个浮点数相乘在非FPU的情况下，用了32位计算产生的结果导致结果存在误差，而FPU是用了80位进行计算的，所以得到的结果是精度很高的，体现在本文的案例上就是个位数上的2。所以大家在写代码的时候得保证实际运行环境/测试环境/开发环境的一致性(包括OS架构啊、编译选项等)啊，不然莫名其妙的问题会产生（本文就是开发环境与运行环境不一致导致的问题，纠结了好久才发现是这个原因）；遇到涉及浮点运算的时候别忘了有可能是这个原因产生的；另外，float/double混用的情况得特别注意。</p>
+<p>总结一下，本文通过分析之前遇到的一个疑难杂症带着大家一块回顾或者学习了一下计算机内部浮点数的表达，解决了疑问。有时候可能需要跟进到硬件底层，当然随着硬件技术的发展，可能以前理所当然的东西在新硬件的情况下也会有所不同（例如文中提到的 FPU 也有更高端的技术来替换了，本人对于硬件这块了解不多，感兴趣可以查阅更多材料，阅读原文有更多参考资料）。</p>
+<p>老规矩，如果有帮助（对你身边的其他人有帮助也行呀），写篇文章不容易，希望亲多多帮忙“在看”，转发分享支持。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/经验技巧/" rel="tag"># 经验技巧</a>
+          
+            <a href="/tags/除臭虫/" rel="tag"># 除臭虫</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/simpledateformat-demo-of-alibaba-java-development-manual.html" rel="next" title="开发规范真的很重要">
+                <i class="fa fa-chevron-left"></i> 开发规范真的很重要
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/tail-recursive-optimization.html" rel="prev" title="大家都知道递归，尾递归呢？什么又是尾递归优化？">
+                大家都知道递归，尾递归呢？什么又是尾递归优化？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题背景"><span class="nav-number">1.</span> <span class="nav-text">问题背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮点运算结果错误但合理的解释"><span class="nav-number">2.</span> <span class="nav-text">浮点运算结果错误但合理的解释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-80838-0-如何表达？"><span class="nav-number">2.1.</span> <span class="nav-text">1.  80838.0 如何表达？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2499-0-如何表达？"><span class="nav-number">2.2.</span> <span class="nav-text">2. -2499.0 如何表达？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-如何计算-80838-0-2499-0"><span class="nav-number">2.3.</span> <span class="nav-text">3. 如何计算 80838.0 * -2499.0 = ?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-正确的结果-202014162怎么得来？"><span class="nav-number">2.4.</span> <span class="nav-text">4. 正确的结果-202014162怎么得来？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根因挖掘"><span class="nav-number">3.</span> <span class="nav-text">根因挖掘</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/a-bug-relate-with-float-point-cross-platform.html';
+
+      var disqus_title = "一个跨平台的浮点数 bug";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

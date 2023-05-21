@@ -1,0 +1,766 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Android关机闹钟,Android自动切换飞行模式,Android自动开机">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="这是好久以前的代码了，给贴出来。当时拿到defy不久。网上找自动开机啊，或者关机闹钟啊之类的都一个答案。没有。想想自己的电脑，没有自动关机的吧，关机了啥软件也不能运行了。但仔细想，每次开机，手机能定位正确的时间，肯定还是有个啥在运行的，不过要想利用它，估计够呛。不过有定时运行各种软件等。然后好多人建议飞行模式跟关机相比，是最接近的了，就切换飞行模式吧。网上也有相应的软件，不过挂了广告，显然不爽。然">
+<meta name="keywords" content="Android关机闹钟,Android自动切换飞行模式,Android自动开机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="android手机定时切换飞行模式代码(一)">
+<meta property="og:url" content="https://www.tanglei.name/blog/android-switch-airplanemode-1.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="这是好久以前的代码了，给贴出来。当时拿到defy不久。网上找自动开机啊，或者关机闹钟啊之类的都一个答案。没有。想想自己的电脑，没有自动关机的吧，关机了啥软件也不能运行了。但仔细想，每次开机，手机能定位正确的时间，肯定还是有个啥在运行的，不过要想利用它，估计够呛。不过有定时运行各种软件等。然后好多人建议飞行模式跟关机相比，是最接近的了，就切换飞行模式吧。网上也有相应的软件，不过挂了广告，显然不爽。然">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.088Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="android手机定时切换飞行模式代码(一)">
+<meta name="twitter:description" content="这是好久以前的代码了，给贴出来。当时拿到defy不久。网上找自动开机啊，或者关机闹钟啊之类的都一个答案。没有。想想自己的电脑，没有自动关机的吧，关机了啥软件也不能运行了。但仔细想，每次开机，手机能定位正确的时间，肯定还是有个啥在运行的，不过要想利用它，估计够呛。不过有定时运行各种软件等。然后好多人建议飞行模式跟关机相比，是最接近的了，就切换飞行模式吧。网上也有相应的软件，不过挂了广告，显然不爽。然">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/android-switch-airplanemode-1.html">
+
+
+
+
+
+  <title> android手机定时切换飞行模式代码(一) | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/android-switch-airplanemode-1.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                android手机定时切换飞行模式代码(一)
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-06-28T11:38:02+00:00">
+                2011-06-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/coding小工具/" itemprop="url" rel="index">
+                    <span itemprop="name">coding小工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/android-switch-airplanemode-1.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/android-switch-airplanemode-1.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这是好久以前的代码了，给贴出来。当时拿到defy不久。网上找自动开机啊，或者关机闹钟啊之类的都一个答案。没有。想想自己的电脑，没有自动关机的吧，关机了啥软件也不能运行了。但仔细想，每次开机，手机能定位正确的时间，肯定还是有个啥在运行的，不过要想利用它，估计够呛。不过有定时运行各种软件等。然后好多人建议飞行模式跟关机相比，是最接近的了，就切换飞行模式吧。网上也有相应的软件，不过挂了广告，显然不爽。然后想着自己就写一个，参照了网上各种资源，代码如下。AirPlaneModeActivity 类主要用于获取用户定义的时间，告诉系统。另一个类(二)中会有。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.i3zhai;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.app.Activity;</span><br><span class="line"><span class="keyword">import</span> android.app.AlarmManager;</span><br><span class="line"><span class="keyword">import</span> android.app.PendingIntent;</span><br><span class="line"><span class="keyword">import</span> android.app.TimePickerDialog;</span><br><span class="line"><span class="keyword">import</span> android.content.Intent;</span><br><span class="line"><span class="keyword">import</span> android.content.SharedPreferences;</span><br><span class="line"><span class="keyword">import</span> android.os.Bundle;</span><br><span class="line"><span class="keyword">import</span> android.provider.Settings.System;</span><br><span class="line"><span class="keyword">import</span> android.util.Log;</span><br><span class="line"><span class="keyword">import</span> android.view.View;</span><br><span class="line"><span class="keyword">import</span> android.widget.Button;</span><br><span class="line"><span class="keyword">import</span> android.widget.RadioButton;</span><br><span class="line"><span class="keyword">import</span> android.widget.TimePicker;</span><br><span class="line"><span class="keyword">import</span> android.widget.Toast;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AirPlaneModeActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">final</span> String TAG = <span class="string">"tl3shi"</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String ALARM_ACTION_START = <span class="string">"com.i3zhai.ALARM_ACTION_START"</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String ALARM_ACTION_END = <span class="string">"com.i3zhai.ALARM_ACTION_END"</span>;</span><br><span class="line">	<span class="keyword">private</span> Calendar calendar;</span><br><span class="line">	RadioButton startBtn;</span><br><span class="line">	 RadioButton  stopBtn;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">		setContentView(R.layout.main);</span><br><span class="line">		calendar = Calendar.getInstance();</span><br><span class="line">		<span class="keyword">final</span> Button startTimeBtn = (Button) findViewById(R.id.startTimeBtn);</span><br><span class="line">		startTimeBtn.setOnClickListener(<span class="keyword">new</span> TimeButtonClickListener(</span><br><span class="line">				startTimeBtn, <span class="keyword">true</span>));</span><br><span class="line">		<span class="keyword">final</span> Button endTimeBtn = (Button) findViewById(R.id.endTimeBtn);</span><br><span class="line">		endTimeBtn.setOnClickListener(<span class="keyword">new</span> TimeButtonClickListener(endTimeBtn,</span><br><span class="line">				<span class="keyword">false</span>));</span><br><span class="line">		<span class="comment">// 根据之前的设置，恢复开始时间和结束时间</span></span><br><span class="line">		SharedPreferences preferences = getSharedPreferences(</span><br><span class="line">				<span class="string">"TimerAirPlaneMode"</span>, MODE_PRIVATE);</span><br><span class="line">		<span class="keyword">int</span> sh = preferences.getInt(<span class="string">"startHour"</span>, -<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">int</span> sm = preferences.getInt(<span class="string">"startMinute"</span>, -<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">int</span> eh = preferences.getInt(<span class="string">"endHour"</span>, -<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">int</span> em = preferences.getInt(<span class="string">"endMinute"</span>, -<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">if</span> (sh != -<span class="number">1</span> &amp;&amp; sm != -<span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			startTimeBtn.setText(formatTime(sh, sm));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (eh != -<span class="number">1</span> &amp;&amp; em != -<span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			endTimeBtn.setText(formatTime(eh, em));</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		startBtn = (RadioButton) findViewById(R.id.start);</span><br><span class="line">		startBtn.setOnClickListener(<span class="keyword">new</span> ControlButtonClickListener(<span class="keyword">true</span>));</span><br><span class="line">		 stopBtn = (RadioButton) findViewById(R.id.stop);</span><br><span class="line">		stopBtn.setOnClickListener(<span class="keyword">new</span> ControlButtonClickListener(<span class="keyword">false</span>));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">ControlButtonClickListener</span> <span class="keyword">implements</span> <span class="title">RadioButton</span>.<span class="title">OnClickListener</span></span></span><br><span class="line"><span class="class">	</span>&#123;</span><br><span class="line">		<span class="keyword">private</span> <span class="keyword">boolean</span> flag;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="title">ControlButtonClickListener</span><span class="params">(<span class="keyword">boolean</span> flag)</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="keyword">this</span>.flag = flag;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View arg0)</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="comment">//已经选择了  </span></span><br><span class="line">			<span class="keyword">if</span>(startBtn.isChecked())&#123;</span><br><span class="line">				startBtn.setEnabled(<span class="keyword">false</span>);</span><br><span class="line">				stopBtn.setEnabled(<span class="keyword">true</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(stopBtn.isChecked())&#123;</span><br><span class="line">				stopBtn.setEnabled(<span class="keyword">false</span>);</span><br><span class="line">				startBtn.setEnabled(<span class="keyword">true</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (flag)</span><br><span class="line">			&#123;</span><br><span class="line">				Log.d(AirPlaneModeActivity.TAG, <span class="string">"start the auto fly mode"</span>);</span><br><span class="line">				SharedPreferences preferences = getSharedPreferences(</span><br><span class="line">						<span class="string">"AirPlaneModeActivity"</span>, MODE_PRIVATE);</span><br><span class="line"></span><br><span class="line">				<span class="keyword">int</span> sh = preferences.getInt(<span class="string">"startHour"</span>, -<span class="number">1</span>);</span><br><span class="line">				<span class="keyword">int</span> sm = preferences.getInt(<span class="string">"startMinute"</span>, -<span class="number">1</span>);</span><br><span class="line">				<span class="keyword">if</span> (sh == -<span class="number">1</span> || sm == -<span class="number">1</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					Toast.makeText(AirPlaneModeActivity.<span class="keyword">this</span>, <span class="string">"请设置开始时间"</span>,</span><br><span class="line">							Toast.LENGTH_LONG);</span><br><span class="line">					<span class="keyword">return</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">int</span> eh = preferences.getInt(<span class="string">"endHour"</span>, -<span class="number">1</span>);</span><br><span class="line">				<span class="keyword">int</span> em = preferences.getInt(<span class="string">"endMinute"</span>, -<span class="number">1</span>);</span><br><span class="line">				<span class="keyword">if</span> (eh == -<span class="number">1</span> || em == -<span class="number">1</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					Toast.makeText(AirPlaneModeActivity.<span class="keyword">this</span>, <span class="string">"请设置结束时间"</span>,</span><br><span class="line">							Toast.LENGTH_LONG);</span><br><span class="line">					<span class="keyword">return</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="comment">// 设置日历的时间，主要是让日历的年月日和当前同步</span></span><br><span class="line">				calendar.setTimeInMillis(java.lang.System.currentTimeMillis());</span><br><span class="line">				<span class="comment">// 设置日历的小时和分钟</span></span><br><span class="line">				calendar.set(Calendar.HOUR_OF_DAY, sh);</span><br><span class="line">				calendar.set(Calendar.MINUTE, sm);</span><br><span class="line">				<span class="comment">// 将秒和毫秒设置为0</span></span><br><span class="line">				calendar.set(Calendar.SECOND, <span class="number">0</span>);</span><br><span class="line">				calendar.set(Calendar.MILLISECOND, <span class="number">0</span>);</span><br><span class="line">				<span class="comment">// 建立Intent和PendingIntent来调用闹钟管理器</span></span><br><span class="line">				Intent startIntent = <span class="keyword">new</span> Intent(ALARM_ACTION_START);</span><br><span class="line">				startIntent.putExtra(<span class="string">"startState"</span>, <span class="number">1</span>);</span><br><span class="line">				PendingIntent startPendingIntent = PendingIntent.getBroadcast(</span><br><span class="line">						AirPlaneModeActivity.<span class="keyword">this</span>, <span class="number">0</span>, startIntent, <span class="number">0</span>);</span><br><span class="line">				<span class="comment">// 获取闹钟管理器</span></span><br><span class="line">				AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);</span><br><span class="line">				<span class="comment">// 设置开始时间对应的闹钟</span></span><br><span class="line">				alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar</span><br><span class="line">						.getTimeInMillis(), <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>,</span><br><span class="line">						startPendingIntent);</span><br><span class="line">				<span class="comment">// 设置结束时间对应的闹钟</span></span><br><span class="line">				<span class="comment">// 设置日历的小时和分钟</span></span><br><span class="line">				Intent endIntent = <span class="keyword">new</span> Intent(ALARM_ACTION_END);</span><br><span class="line">				endIntent.putExtra(<span class="string">"endState"</span>, <span class="number">1</span>);</span><br><span class="line">				PendingIntent endPendingIntent = PendingIntent.getBroadcast(</span><br><span class="line">						AirPlaneModeActivity.<span class="keyword">this</span>, <span class="number">1</span>, endIntent, <span class="number">0</span>);</span><br><span class="line">				calendar.set(Calendar.HOUR_OF_DAY, eh);</span><br><span class="line">				calendar.set(Calendar.MINUTE, em);</span><br><span class="line">				alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar</span><br><span class="line">						.getTimeInMillis(), <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>,</span><br><span class="line">						endPendingIntent);</span><br><span class="line">				Toast.makeText(AirPlaneModeActivity.<span class="keyword">this</span>, <span class="string">"设置已经启用"</span>, Toast.LENGTH_LONG).show();</span><br><span class="line">			&#125; <span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				Log.d(AirPlaneModeActivity.TAG, <span class="string">"shutdown the auto flg mode"</span>);</span><br><span class="line">				Intent intent = <span class="keyword">new</span> Intent(ALARM_ACTION_START);</span><br><span class="line">				PendingIntent pendingIntent = PendingIntent.getBroadcast(</span><br><span class="line">						AirPlaneModeActivity.<span class="keyword">this</span>, <span class="number">0</span>, intent, <span class="number">0</span>);</span><br><span class="line">				<span class="comment">// 获取闹钟管理器</span></span><br><span class="line">				AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);</span><br><span class="line">				<span class="comment">// 取消开始和结束闹钟</span></span><br><span class="line">				alarmManager.cancel(pendingIntent);</span><br><span class="line"></span><br><span class="line">				Intent intent2 = <span class="keyword">new</span> Intent(ALARM_ACTION_END);</span><br><span class="line">				PendingIntent pendingIntent2 = PendingIntent.getBroadcast(</span><br><span class="line">						AirPlaneModeActivity.<span class="keyword">this</span>, <span class="number">1</span>, intent2, <span class="number">0</span>);</span><br><span class="line">				alarmManager.cancel(pendingIntent2);</span><br><span class="line">				<span class="comment">// 关闭飞行模式</span></span><br><span class="line">				System.putString(getContentResolver(), System.AIRPLANE_MODE_ON,</span><br><span class="line">						<span class="string">"0"</span>);</span><br><span class="line">				Intent flyIntent = <span class="keyword">new</span> Intent(</span><br><span class="line">						Intent.ACTION_AIRPLANE_MODE_CHANGED);</span><br><span class="line">				flyIntent.putExtra(<span class="string">"state"</span>, <span class="keyword">false</span>);</span><br><span class="line">				sendBroadcast(flyIntent);</span><br><span class="line">				Toast.makeText(AirPlaneModeActivity.<span class="keyword">this</span>, <span class="string">"设置已经取消！"</span>,</span><br><span class="line">						Toast.LENGTH_SHORT).show();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">TimeButtonClickListener</span> <span class="keyword">implements</span> <span class="title">Button</span>.<span class="title">OnClickListener</span></span></span><br><span class="line"><span class="class">	</span>&#123;</span><br><span class="line">		<span class="keyword">private</span> <span class="keyword">final</span> Button button;</span><br><span class="line">		<span class="keyword">private</span> <span class="keyword">boolean</span> flag;<span class="comment">// true 表示开始时间 false表示结束时间</span></span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="title">TimeButtonClickListener</span><span class="params">(<span class="keyword">final</span> Button button, <span class="keyword">boolean</span> flag)</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="keyword">this</span>.button = button;</span><br><span class="line">			<span class="keyword">this</span>.flag = flag;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View arg0)</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="keyword">new</span> TimePickerDialog(AirPlaneModeActivity.<span class="keyword">this</span>,</span><br><span class="line">					<span class="keyword">new</span> TimePickerDialog.OnTimeSetListener()</span><br><span class="line">					&#123;</span><br><span class="line">						<span class="meta">@Override</span></span><br><span class="line">						<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onTimeSet</span><span class="params">(TimePicker arg0, <span class="keyword">int</span> h, <span class="keyword">int</span> m)</span></span></span><br><span class="line"><span class="function">						</span>&#123;</span><br><span class="line">							Log.d(TAG, <span class="string">"set the time:"</span> + h + <span class="string">":"</span> + m);</span><br><span class="line">							SharedPreferences preferences = getSharedPreferences(</span><br><span class="line">									<span class="string">"AirPlaneModeActivity"</span>, <span class="number">0</span>);</span><br><span class="line">							SharedPreferences.Editor editor = preferences</span><br><span class="line">									.edit();</span><br><span class="line">							editor.putInt(<span class="string">"flag"</span>, flag ? <span class="number">1</span> : <span class="number">0</span>);</span><br><span class="line">							<span class="keyword">if</span> (flag)</span><br><span class="line">							&#123;</span><br><span class="line">								editor.putInt(<span class="string">"startHour"</span>, h);</span><br><span class="line">								editor.putInt(<span class="string">"startMinute"</span>, m);</span><br><span class="line">							&#125; <span class="keyword">else</span></span><br><span class="line">							&#123;</span><br><span class="line">								editor.putInt(<span class="string">"endHour"</span>, h);</span><br><span class="line">								editor.putInt(<span class="string">"endMinute"</span>, m);</span><br><span class="line">							&#125;</span><br><span class="line">							editor.commit();<span class="comment">// 这步很关键</span></span><br><span class="line">							<span class="comment">// button.setText(String.valueOf(h)+":"+String.valueOf(m));</span></span><br><span class="line">							button.setText(formatTime(h, m));</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;, calendar.get(Calendar.HOUR_OF_DAY), calendar</span><br><span class="line">							.get(Calendar.MINUTE), <span class="keyword">true</span>).show();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	* 格式化时间为00:00   </span></span><br><span class="line"><span class="comment">	* <span class="doctag">@param</span> h</span></span><br><span class="line"><span class="comment">	* <span class="doctag">@param</span> m           </span></span><br><span class="line"><span class="comment">	* <span class="doctag">@return</span> </span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">formatTime</span><span class="params">(<span class="keyword">int</span> h, <span class="keyword">int</span> m)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		StringBuffer buf = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">		<span class="keyword">if</span> (h &lt; <span class="number">10</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			buf.append(<span class="string">"0"</span> + h);</span><br><span class="line">		&#125; <span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			buf.append(h);</span><br><span class="line">		&#125;</span><br><span class="line">		buf.append(<span class="string">" : "</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (m &lt; <span class="number">10</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			buf.append(<span class="string">"0"</span> + m);</span><br><span class="line">		&#125; <span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			buf.append(m);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> buf.toString();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/google-pr-change-tanglei-name-up-to-pr1.html" rel="next" title="今天Google PageRank 大范围更新">
+                <i class="fa fa-chevron-left"></i> 今天Google PageRank 大范围更新
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/android-switch-airplanemode-2.html" rel="prev" title="android手机定时切换飞行模式代码(二)">
+                android手机定时切换飞行模式代码(二) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/android-switch-airplanemode-1.html';
+
+      var disqus_title = "android手机定时切换飞行模式代码(一)";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

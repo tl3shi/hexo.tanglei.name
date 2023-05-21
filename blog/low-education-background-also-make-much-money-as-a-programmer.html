@@ -1,0 +1,892 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="经验技巧,程序员,爬虫,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   这篇文章来自我的一个读者朋友，虽然是大专学历，但精通爬虫技术。一般大厂相对比较卡学历，经过之前我的内推，阿里进行了 4 轮面试（当然内推只是第一步，能经历">
+<meta name="keywords" content="经验技巧,程序员,爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大专被裁失业，却拒绝了 42k 的 Offer？">
+<meta property="og:url" content="https://www.tanglei.name/blog/low-education-background-also-make-much-money-as-a-programmer.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   这篇文章来自我的一个读者朋友，虽然是大专学历，但精通爬虫技术。一般大厂相对比较卡学历，经过之前我的内推，阿里进行了 4 轮面试（当然内推只是第一步，能经历">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-1-8/1610102217047-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2020-12-27/1609079668083-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2020-12-27/1609064189354-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2020-12-28/1609169253630-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2020-12-28/1609169452140-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2020-12-28/1609169175331-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2020-12-27/1609060307272-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2020-12-28/1609153352570-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2020-12-28/1609170574758-image.png">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.170Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="大专被裁失业，却拒绝了 42k 的 Offer？">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   这篇文章来自我的一个读者朋友，虽然是大专学历，但精通爬虫技术。一般大厂相对比较卡学历，经过之前我的内推，阿里进行了 4 轮面试（当然内推只是第一步，能经历">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-1-8/1610102217047-image.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/low-education-background-also-make-much-money-as-a-programmer.html">
+
+
+
+
+
+  <title> 大专被裁失业，却拒绝了 42k 的 Offer？ | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/low-education-background-also-make-much-money-as-a-programmer.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                大专被裁失业，却拒绝了 42k 的 Offer？
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-12-31T00:00:00+00:00">
+                2020-12-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/low-education-background-also-make-much-money-as-a-programmer.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/low-education-background-also-make-much-money-as-a-programmer.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1610101863&amp;ver=2816&amp;signature=NfsIyt2KiIMSTPVwWmAnF93eIvto2H0RAY4DoJpCEGVP8psTO1U8kuVut695df4W6bPIlOucbU1xsyqmoyEB8uh5p46yOYaP-AFsPlTP0JBxygC9uRgJT3bN01o1xn7p&amp;new=1" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-1-8/1610102217047-image.png" alt="image"></p>
+<p>这篇文章来自我的一个读者朋友，虽然是大专学历，但精通爬虫技术。一般大厂相对比较卡学历，经过之前我的内推，阿里进行了 4 轮面试（当然内推只是第一步，能经历 4 轮面试还是得自己本身技术牛 X 才行），虽然最后还是遗憾离场。</p>
+<p>但他的经历还是值得分享和学习的。因此我找到他，让他给大家分享分享相关经验和看法。全文提纲如下，分享了自己的亲身经历：从疫情被裁，转战上海成功入职，然后学历被鄙视、但靠技术站稳脚根，拒绝 42k+100W 的 Offer，内推面试阿里 4 面终被拒，最终入职北京某独角兽公司。其中大佬还重点分享了爬虫相关技术栈，并给出了爬虫、逆向体系思维导图，供对爬虫感兴趣的同学参考。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2020-12-27/1609079668083-image.png" alt="本文提纲"></p>
+<p>作者原文分享中有一些不太合适公开分享和传播的关键词，我做了河蟹处理。另外，针对作者遇到的情况，可能有每个人都会有自己的见解，也许会有不同的选择，我们尊重不同人的选择，适合自己的才是最好的。欢迎大家可以留言讨论。</p>
+<p>另外，内推还是很有效果的，随便看一个读者朋友给我的反馈。当然，石头在收到简历的时候还是会进行 review 和筛选，不会都一股脑提交内推系统，欢迎大家通过文末方式联系我进行内推。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2020-12-27/1609064189354-image.png" alt="读者内推反馈"></p>
+<h2 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h2><p>大家好，我是一名程序员。专做爬虫的程序员，2015年毕业于某大专院校。爬过淘宝、搞过京东、干过微信，总之你们平时所用的几乎每个平台都被我的爬虫光顾过。</p>
+<p>2016年我从某大厂离职跟着当时这个大厂的副总裁去创业。本计划5年内坐拥千万身价，不料创业失败于2019年低离开了呆了3年零6个月的公司，重新开始了求职打工生涯。</p>
+<h2 id="我被裁了"><a href="#我被裁了" class="headerlink" title="我被裁了"></a>我被裁了</h2><p>2019年互联网裁员风波，大家混的都不好。我肯定是一样的，我找了将近一个月的工作才找到合适的，我记得刚毕业时找工作也才花了2周。</p>
+<p>不过皇天不负有心人，我于2019年12月2日我入职某小公司（100人左右），不是我鄙视这小公司。实在后面他做的事情太绝了，我没曝光他就是给他面子。</p>
+<p>我的title是高级golang工程师，负责公司某事业部的推荐系统研发工作。经过3个月的努力我把推荐系统从0到1干出来。</p>
+<p>项目1.0版本一收尾，2月25号事业部leader突然把我叫到办公室，说公司近期有人员调整让我离职。我签的6个月试用期的合同，才做了3个月。</p>
+<p>我对leader说我会尽快交接完成，争取两周内交接完。他说：‘就这就两天吧…… MD，当时那个人事拿着离职申请放在我面前，催着我签，我就不签……我说还没交接完，我能拖一天是一天。跟我交接的兄弟很配合我说太难了，还要两天。</p>
+<p>hr说：“你先离职，等后面出了问题再微信问你，你应该也不会不帮忙对吧”。</p>
+<p>我内心：“xxx(敏感词)，你们这样赶人走你还想我帮你后续解决问题！”。硬是又拖了一天，我才签了离职申请。</p>
+<p>后来我才知道试用期被辞退可以拿半个月的补偿。当时就不应该签人事给的那个自愿离职申请表，我以为试用期被辞退没有补偿是正常的。也怪我之前没好好普法，所以希望各位记得提防小公司卸磨杀驴的操作，试用期被辞一定至少要半个月补偿不然就上仲裁，小公司一般吃软怕硬，只要你开口他就会给。</p>
+<p>在这里我要感谢跟我交接的兄弟。是他硬生生帮我把交接流程拖延了近一周，为我找下个工作带来缓冲的时间。不过他在我离职后一天就向领导提了离职，因为他也不想在这傻 X 公司干了哈哈…… 不过他现在因为病情，已经半年没有上班，只能在家静养。好人怎么没有好报？</p>
+<p>经过疫情许多公司这一轮裁员，我发现我并不适合搞纯后台开发。因为我工作已经5年了，所接触的知识全部是围绕爬虫、逆向方面的技术栈。</p>
+<p>爬虫是一直对抗型的工作，反爬的技术不断升级，爬虫也要升级。人家搞加密，你就得搞解密，人家搞加壳，你就要脱壳。爬虫很轻易转到后端去码砖。后端却不能轻易转到爬虫来。</p>
+<p>总之，一个顶级的爬虫工程师公司被裁的概率很小。我想好了，我还是继续干爬虫，毕竟咱学历不行，一定要搞点掐脖子的技术公司才能重视你，否则你还会被裁。</p>
+<h2 id="失业的日子不好过"><a href="#失业的日子不好过" class="headerlink" title="失业的日子不好过"></a>失业的日子不好过</h2><p>我离职这家小公司是3月3日。后面我就每天开始投简历，疫情期间工作相当难找。Boss、拉钩海投之后的回电都寥寥无几，要么是几个外包公司的电话。</p>
+<p>疫情期间除了BATJ这种巨头公司还能维持给员工正常发工资，不裁员。其他公司都是裁员、降薪、停薪，还有那种给不起补偿又想削减人员的公司说要搬到怀柔去办公，上下班交通让员工自己想办法，然后员工就自己离职了。</p>
+<p>没有工作的日子我比较窘迫，因为背负了两套房的房贷，月供不能停。平时没有存粮意识，所以一下被动离职整的我还真挺被动的。</p>
+<p>那段时间我银行账户上就剩下2万多块钱了，每个月房贷+租房+生活费至少1.8W的刚性输出。也就说我下一份工作就算降薪税后收入至少也得1.8W。</p>
+<p>压力巨大，能节省开支就尽量节省。以前喝矿泉水，现在去小区自助取水机上打水喝。以前出门打车，现在坐地铁公交。</p>
+<p>为了节约开支，我每天早上和中午就吃一个苹果，晚上再去买菜自己做饭。这样每天就能节省大概50-70的餐费。</p>
+<p>期间面试也很窘迫，大多小公司给不起钱，我还不愿降太多薪。不过我发现很多公司做不了APP逆向/抓取，因为这块技术上不了台面，而且还晦涩难懂。我再反思，我是否要直接破解一两个大厂的app，录成视频教程上传到网盘，然后把观看地址放简历里面。这样我的简历会非常有特色，HR就大概率会把简历投递给面试官。</p>
+<p>只要面试官我见到了，我就可以用技术镇住他。牛逼的大专和985、211一等学府的人综合能力都差不多。唯一的区别人家有更多的面试机会，而你如果不是特别优秀，不能在有限的机会里抓住的话，你就很难了。</p>
+<p>所以能进大厂的大专有时候他的闪光点是很一般是很强的。否则同等能力公司更愿意要学历高的，能要你说明你有不可替代性。 </p>
+<h2 id="上海成功入职，学历却被老总鄙视"><a href="#上海成功入职，学历却被老总鄙视" class="headerlink" title="上海成功入职，学历却被老总鄙视"></a>上海成功入职，学历却被老总鄙视</h2><p>我发现疫情期间北京管控非常严格，导致北京的公司不能正常运转。所以我往上海、杭州那边开始投简历……. </p>
+<p>不知道是老天爷的眷顾还是自己的努力终于上海一家公司给我打电话了，经过1、2面，面试官每个问题都被我虎住了。但是他们还是不放心，主要是我觉得我要价太高。</p>
+<p>对方技术总监给我出了一个作业，要我逆向 xx APP。我从早上9点干到晚上11点终于逆向出来，中间除了上个厕所、吃个饭啥的我基本没有离开过电脑。我把逆向结果发给面试官。 </p>
+<p>4月9号周四 HR 给我电话，问我什么时候可以入职？我说下周一（4月13号）。即使这家公司远在1300多公里外的上海，我也是觉得我等不起了。我已经近1个半月没有收入了，加之之前杠杆玩的太高贷款买了两套房。</p>
+<p>我已经算好了每个月存多少花多少，所以导致几乎没有什么存粮。我得赶紧入职，简单收拾一下带几件短期换洗得衣服买上飞往上海得机票周六就出发了。入职很顺利…..</p>
+<p>我入职大概第二周吧，这家公司老板在一个高层会议上。直接怼这位招聘我进去的技术总监：</p>
+<p>“你招的这是什么人？以后我们只要985、211的，我们不要这种学校。这是什么学校？”。</p>
+<p>后来技术总监就把这事跟我说了，我心里那个怒。我虽然学历低，好歹我技术也还OK。爬虫，985、211能干的，我能干。不能干的，我也能干。</p>
+<h2 id="靠技术站稳脚"><a href="#靠技术站稳脚" class="headerlink" title="靠技术站稳脚"></a>靠技术站稳脚</h2><p>我现在只是还没产出，等我帮你搞几个 app 你就知道我的厉害了…… 其实，一个人真正的力量来自于愤怒，那种沉淀在内心深处，把能量全部释放在某件事情上的愤怒。</p>
+<p>这家公司业务模式很受爬虫技术的限制，客户买不买帐全看你数据分析出来。而数据分析又基于你能不能有撸数据的能力。就是那种需要监控全网视频、文章数据的场景，前几年这家公司做的顺风顺水。</p>
+<p>近几年不行了，业务越来越难做。主要是因为短视频产业为代表的新兴数据全部集中到了APP上面，抓APP和以前做网站web爬虫的技术完全不一样。</p>
+<p>我第一个任务就是抓取 xx视频号，贼尼玛 xx。由于搞APP工作得高度集中精力，不然逆向思路中断的话非常不好。看 xx 混淆源码结合frida动态hook调试分析逻辑，每天晚上9点下班回家洗完澡就瘫倒在床上。</p>
+<p>经过1个月的奋战，我终于把 xx 视频号搞定了。商务立马拿研发成果去跟甲方公司吹牛逼，看我们可以撸某 APP 数据，其他投标公司不能做。然后公司顺利拿到某大公司的合作合同。这一签就是3000万！后面又搞了几个APP，反正都是大家手机上天天用的那几个APP吧。</p>
+<h2 id="对“42k，100万股票”-说-“No”"><a href="#对“42k，100万股票”-说-“No”" class="headerlink" title="对“42k，100万股票” 说 “No”"></a>对“42k，100万股票” 说 “No”</h2><p>我站稳脚跟了，下一步我要“教”这个老板做人。只要985、211是吧？OK！我骑驴找马，继续投简历，找下家。面了N多公司吧，反正有很多公司都没过。原因大家自己想吧，前面我也给大家普及了爬虫技术栈的误区。当然也有我其他方面的原因吧。</p>
+<p>反正我确定下家提离职几天之后，老板跟总监开会指定下一步的数据采集策略。总监跟老板说我提离职了，还补了一句‘你招到他算是招到宝了’。老板叫我去他办公室，问了下为什么离职？</p>
+<p>我当然不能说因为你那句‘我们只要985、211’的话，我就告诉他去意已决…….省略很多….老板:”我给你涨到42k+100W股票（分四年拿清），我想你做我的技术合伙人。目前公司市值x个亿，三年内公司会在创业板上市…….</p>
+<p>“我开这家公司9年了，从来遇到像你这么能做爬虫的，你要是能留下来，以后你直接汇报给我（连升两级），8个人的爬虫团队给你带”。我内心：“你不是要985、211的吗？”。我拒绝了，做我的老板可以没能力、没背景、甚至“没钱”。但是你要是看学历，就不行。这是我的底线。</p>
+<h2 id="爬虫技术科普"><a href="#爬虫技术科普" class="headerlink" title="爬虫技术科普"></a>爬虫技术科普</h2><p>爬虫不是http(s)这么简单！！！各种混淆、签名、私有协议、防抓包等等…… </p>
+<p>下面是我梳理的爬虫、逆向相关技术栈思维导图，预览图如下所示，整个知识体系太大了，不太方便展示，完整大图可后台回复”爬虫导图”获取，供大家参考。</p>
+<p>&lt;<img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2020-12-28/1609169253630-image.png" alt="爬虫技术栈2">,<img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2020-12-28/1609169452140-image.png" alt="爬虫技术栈3">,<img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2020-12-28/1609169175331-image.png" alt="爬虫技术栈1">&gt;</p>
+<p>我这么给大家打个比方吧，你们搞前后端、客户端、Java、Python、C++的都是正向工程，你们每天都是在熟练驾驶着各种框架，有时候把框架做些小小改动就认为自己牛逼了。感觉没啥事就去研究算法，看看怎么码砖更优美。</p>
+<p>爬虫/逆向的人，工作性质决定了我们不太需要关注什么 JVM 内存模型、GC调优、各种排序算法、数据结构什么b+树、红黑树…..，我们也没有时间去了解。这些需求每个编程语言的标准库已经完全够用了。</p>
+<p>爬虫工程师不像你们正向开发工程师需要去了解开发语言和框架的“发动机引擎”。所以我有时候遇到面试官很偏向问什么算法的、开发框架底层原理我内心那个火。</p>
+<p>你爬虫技术垃圾可以，但是对爬虫技术也没有一个正确的认知，那必定你招的人也很垃圾啊。因为你用做后台的考核方式去招聘做爬虫的人，那你招的到也都是工程能力OK，但是对爬虫略知一二这样的人。</p>
+<p>其实，爬虫/逆向工程师最重要的是去了解各个操作系统的设计规则和一些应用加载机制。比如你做web爬虫的，你得懂浏览器内核渲染机制吧，js反机器识别原理？怎么去机器指纹？怎么定位加密函数？AST语法树解混淆代码？动态字体怎么破？滑块怎么破？</p>
+<p>非爬虫工程师所了解的搞IP池那都是基本功，能光靠搭建代理池就能解决问题，还要我们这些专业的爬虫工程师干什么？</p>
+<p>你搞Android逆向，你得懂一些安卓应用开发的知识吧。安卓四大组件是什么？别上来就用jadx看app源代码，那你只会一脸懵逼。安卓反调试机制怎么实现的？怎么找签名方法？</p>
+<p>某年轻人：“直接源代码搜索关键词不就行了吗”。源代码混淆了怎么办？加壳了怎么办？就算你把java层签名函数搞定了，后面你会发现你的知识还是不够用。</p>
+<p>别人后面把签名函数放在so里面，你得懂汇编吧。代码寄存器、段地址寄存器、偏移地址寄存器、跳转指令、返回指令、ollvm等等。这些知识，那才叫真正的晦涩难懂。</p>
+<p>等你学会了95%以上逆向分析的技术，别人突然不玩http(s)了。人家搞一套自己的协议，mmtls听过没有？你们现在每天用的微信就是走的这个协议。你还想抓包？想得美！</p>
+<p>年轻人说：“那用tcpdump、Wireshark抓包不就行了吗？”。能说这话的都是外行，现在哪里还是20年前的互联网。什么协议没有加密？你用这些抓的原始tcp数据包能看到的都是加密1010。</p>
+<p>所以，APP逆向/爬虫技术发展到后面就有了诸如沙盒（其实就是安卓上的虚拟机）、注入调用、hook等一些比较淫乱的技术。从某种概念上去理解这些技术的发展，就是为了用工程化的能力尽量替代更加底层低效的纯逆向工程。</p>
+<p>于是就有了半脱机协议，就是难以破解还原的加密方法我通过注入调用的方式去调（黑盒调用），拿到加密结果后面接着走接口。但是慢慢人家调用链路检测上来了，你直接调用也不好使了。</p>
+<p>我有一次做 xxx App 的逆向发现， xxx App 就会对调用链路进行检测。总之，爬虫本质是一种作弊的行为，而作弊又有高级和低级之分。低级的爬虫，就是玩自动化的，搞个类似按键精灵的东西去点点点。手机上再配一个mitmproxy截取流量，更低级的直接从屏幕上的元素读取信息。抓取量大了，这种技术就费劲了。</p>
+<p>爬虫真是苦逼的职业，干着最脏最累最有难度的活。却因为爬虫门槛低被许多人误认为不是个事儿，然后面试爬虫问题寥寥无几，全问些有关后端的问题，拿些后台评判标准来评判爬虫工程师。那你会问怎么没有好学历专做爬虫的人，他们干嘛去了？答案在下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2020-12-27/1609060307272-image.png" alt></p>
+<h2 id="阿里爬虫面经"><a href="#阿里爬虫面经" class="headerlink" title="阿里爬虫面经"></a>阿里爬虫面经</h2><p>首先，我就一句话：阿里的人，很强！你可以放心大胆的说各种爬虫技术里面冷门、高难度的技术关键词，这对你面试阿里有加分。</p>
+<p>一面，自我介绍、Java、C/C++语言基础、apk反编译、smali、IDA动态调试、arm汇编、注入调用、android反调试机制、怎么检测对方在做调试、几个爬app的项目经验。<br>（各位面试官，看看人家阿里的人面爬虫问问题的水平，这就是人家对技术栈了解。）</p>
+<p>二面，自我介绍、KS怎么爬的？WX怎么爬的？滑块怎么破？……..问的问题都跟一面差不多吧。聊之前做的几个项目比较多。最后，面试官：“我感觉你的经验挺丰富，挺适合这边的。后面面试流程会加快， 后面你要好好表现哦！！！希望你尽快入职。”。</p>
+<p>三面，算法题目：</p>
+<ul>
+<li>算法1：由逗号分隔的字符串，如“北京,吉林,吉林,北京”，输入一个匹配模式（简单的以字符来写）比如 aabb, 来判断该字符串是否符合该模式</li>
+<li>算法2：给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。（阿里就是阿里，算法跟爬虫这玩意基本没关系，所以该简单考核的就简单考核。）</li>
+</ul>
+<p>四面，自我介绍、为什么毕业5年换了这么多次工作？为什么要来阿里？为什么近期一份工作干这么短就想跳？你对未来有什么规划？</p>
+<p>按照阿里的正常流程，我第五面应该是HR。我都背好“台词”了，我要来修福报，我期望工资是x（降了20%），让天下没有难做的生意，能进阿里不是正规编制也可以（签外包也可以）…..</p>
+<p>可是 HR 竟然没有给我电话，直接来一封邮件：“感谢您关注阿里巴巴集团并应聘飞猪技术部-高级 爬虫工程师/爬虫专家-杭州职位！经过认真评估，很遗憾您的职业经历与该职位的要求略有差异”。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>我现在在一个独角兽公司，从事爬虫/反爬虫方面的工作。我在B站开了自己的视频课程，专门搞些黑技术的分享。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2020-12-28/1609153352570-image.png" alt></p>
+<p>看上图，来找我“搞事情”的人络绎不绝。反正以后不会再有每天只吃一顿饭的事情发生了，欢迎有爬虫需求的同学和我取得联系。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2020-12-28/1609170574758-image.png" alt="爬虫技术栈"></p>
+<p>对爬虫、逆向等方向感兴趣的同学可以参考我总结的思维导图（微信对图片大小有限制），高清完整大图可后台回复”爬虫导图”获取。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>有不少读者跟我反馈，学历低怎么办？以上就是一个例子，搞技术的，只要有真本事，学历低的缺点其实会被技术牛X 盖过去的，需要你付出更多努力，希望本文的案例能够给大家带来收获。</p>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader，欢迎关注，交流和指导！</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/经验技巧/" rel="tag"># 经验技巧</a>
+          
+            <a href="/tags/程序员/" rel="tag"># 程序员</a>
+          
+            <a href="/tags/爬虫/" rel="tag"># 爬虫</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/share-interview-experience-when-gradudate-in-2021-part-2.html" rel="next" title="又一位大牛斩获 BAT 大厂 Offer，看看他精心准备的面试总结">
+                <i class="fa fa-chevron-left"></i> 又一位大牛斩获 BAT 大厂 Offer，看看他精心准备的面试总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/summary-of-year-2020.html" rel="prev" title="2020年终总结">
+                2020年终总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#自我介绍"><span class="nav-number">1.</span> <span class="nav-text">自我介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我被裁了"><span class="nav-number">2.</span> <span class="nav-text">我被裁了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#失业的日子不好过"><span class="nav-number">3.</span> <span class="nav-text">失业的日子不好过</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上海成功入职，学历却被老总鄙视"><span class="nav-number">4.</span> <span class="nav-text">上海成功入职，学历却被老总鄙视</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#靠技术站稳脚"><span class="nav-number">5.</span> <span class="nav-text">靠技术站稳脚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对“42k，100万股票”-说-“No”"><span class="nav-number">6.</span> <span class="nav-text">对“42k，100万股票” 说 “No”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#爬虫技术科普"><span class="nav-number">7.</span> <span class="nav-text">爬虫技术科普</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阿里爬虫面经"><span class="nav-number">8.</span> <span class="nav-text">阿里爬虫面经</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">9.</span> <span class="nav-text">最后</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">10.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/low-education-background-also-make-much-money-as-a-programmer.html';
+
+      var disqus_title = "大专被裁失业，却拒绝了 42k 的 Offer？";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

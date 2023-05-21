@@ -1,0 +1,787 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="我做站长,Wordpress,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="看其他人的Wordpress站点等都有相关文章，所以自己也弄了个。之前装了个插件，不过感觉不怎么样，如图。 用户体验不好，放在侧边栏去了。于是网上找代码实现相关文章的。本文也是参照这篇文章的，  访问支教第十天-感恩的心,效果上图1，因其标签比较丰富,可以提取到相同tag的,但遇到这种情况例如:之前发过的一篇: 技术贴-把妹高手谈如何跟刚搭讪认识的妹子发短信时,因为tag没有没有设置或者其他没有相">
+<meta name="keywords" content="我做站长,Wordpress">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Wordpress纯代码实现相关文章">
+<meta property="og:url" content="https://www.tanglei.name/blog/code-for-relative-posts-in-wordpress.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="看其他人的Wordpress站点等都有相关文章，所以自己也弄了个。之前装了个插件，不过感觉不怎么样，如图。 用户体验不好，放在侧边栏去了。于是网上找代码实现相关文章的。本文也是参照这篇文章的，  访问支教第十天-感恩的心,效果上图1，因其标签比较丰富,可以提取到相同tag的,但遇到这种情况例如:之前发过的一篇: 技术贴-把妹高手谈如何跟刚搭讪认识的妹子发短信时,因为tag没有没有设置或者其他没有相">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://i1123.photobucket.com/albums/l549/tl3shi/1.jpg">
+<meta property="og:image" content="http://i1123.photobucket.com/albums/l549/tl3shi/1-2.jpg">
+<meta property="og:image" content="http://i1123.photobucket.com/albums/l549/tl3shi/1-1.jpg">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.113Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Wordpress纯代码实现相关文章">
+<meta name="twitter:description" content="看其他人的Wordpress站点等都有相关文章，所以自己也弄了个。之前装了个插件，不过感觉不怎么样，如图。 用户体验不好，放在侧边栏去了。于是网上找代码实现相关文章的。本文也是参照这篇文章的，  访问支教第十天-感恩的心,效果上图1，因其标签比较丰富,可以提取到相同tag的,但遇到这种情况例如:之前发过的一篇: 技术贴-把妹高手谈如何跟刚搭讪认识的妹子发短信时,因为tag没有没有设置或者其他没有相">
+<meta name="twitter:image" content="http://i1123.photobucket.com/albums/l549/tl3shi/1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/code-for-relative-posts-in-wordpress.html">
+
+
+
+
+
+  <title> Wordpress纯代码实现相关文章 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/code-for-relative-posts-in-wordpress.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                Wordpress纯代码实现相关文章
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-12-24T01:19:08+00:00">
+                2011-12-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/code-for-relative-posts-in-wordpress.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/code-for-relative-posts-in-wordpress.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>看其他人的Wordpress站点等都有相关文章，所以自己也弄了个。之前装了个插件，不过感觉不怎么样，如图。<a href="http://s1123.photobucket.com/albums/l549/tl3shi/?action=view&current=1.jpg" target="_blank"><img src="http://i1123.photobucket.com/albums/l549/tl3shi/1.jpg" alt="Photobucket" border="0"></a></p>
+<p>用户体验不好，放在侧边栏去了。于是网上找代码实现相关文章的。本文也是参照<a href="http://www.92app.com/related-posts-Wordpress.html" target="_blank" rel="noopener">这篇文章</a>的，</p>
+<p><img class="alignnone" title="代码实现相关文章" src="http://i1123.photobucket.com/albums/l549/tl3shi/1-2.jpg" alt></p>
+<p>访问<a href="/blog/volenteer-teaching-day10.html">支教第十天-感恩的心</a>,效果上图1，因其标签比较丰富,可以提取到相同tag的,但遇到这种情况例如:之前发过的一篇:</p>
+<p><a href="/blog/tell-you-how-to-get-a-girl.html">技术贴-把妹高手谈如何跟刚搭讪认识的妹子发短信</a>时,因为tag没有没有设置或者其他没有相关的tag于此匹配,此时就只能展示随机文章了,上图2.</p>
+<p>曾想,这里的随机是有点不爽,此时展示同分类目录下的文章要比这个好吧. 于是想法取出当前文章所在同分类下的文章,开始是试图找一个sql语句把所有的文章的tag中都将本文所在的分类目录加进去,但这样似乎有点不符合逻辑.看之前用代码实现的相关文章的源代码:查看随机文章时调用如下的函数</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">wp_get_random_posts</span> <span class="params">($limitclause=<span class="string">""</span>)</span> </span>&#123;</span><br><span class="line"> <span class="keyword">global</span> $wpdb, $post;</span><br><span class="line"></span><br><span class="line"> $q = <span class="string">"SELECT ID, post_title, post_content,post_excerpt, post_date, comment_count FROM $wpdb-&gt;posts WHERE post_status = 'publish' AND post_type = 'post' AND ID != $post-&gt;ID ORDER BY RAND() $limitclause"</span>;</span><br><span class="line"> <span class="keyword">return</span> $wpdb-&gt;get_results($q);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先要获取当前文章所在的分类目录的ID,为了方便管理调试Wordpress,我的机子上也配好了Wordpress环境了.随时配置下host就能正常访问本地的博客.通过各种关键字试图搜索(Wordpress下所有文件递归关键字，eg: wp_get_post_category啊之类)显示分类目录的ID,最后找到这个函数</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Return or Print Category ID.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 0.71</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@deprecated</span> 0.71</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@deprecated</span> use get_the_category()</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> get_the_category()</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> bool $echo</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> null|int</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">the_category_ID</span><span class="params">($echo = true)</span> </span>&#123;</span><br><span class="line">	_deprecated_function( <span class="keyword">__FUNCTION__</span>, <span class="string">'0.71'</span>, <span class="string">'get_the_category()'</span> );</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Grab the first cat in the list.</span></span><br><span class="line">	$categories = get_the_category();</span><br><span class="line">	$cat = $categories[<span class="number">0</span>]-&gt;term_id;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> ( $echo )</span><br><span class="line">		<span class="keyword">echo</span> $cat;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> $cat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>不过意思好像是废弃了，就直接调用这个函数吧</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$categories = get_the_category();</span><br><span class="line">$cat = $categories[0]-&gt;term_id;</span><br></pre></td></tr></table></figure>
+<p>就得到当前分类目录的ID，然后就是调试sql了。先打印出来试试，正确的。</p>
+<p>分类目录保存在wp_terms 表中，select * from wp_terms where term_id = 56;</p>
+<p>然后就慢慢一层一层找，如下sql能找到对应分类下的文章：再然后就改掉之前的代码就OK了。<a href="http://s1123.photobucket.com/albums/l549/tl3shi/?action=view&current=1-1.jpg" target="_blank"><img src="http://i1123.photobucket.com/albums/l549/tl3shi/1-1.jpg" alt="Photobucket" border="0"></a></p>
+<p>本地sql数据库调试出来结果来再改。写成一个函数</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">wp_get_category_posts</span> <span class="params">($limitclause=<span class="string">""</span>)</span> </span>&#123; </span><br><span class="line"> <span class="keyword">global</span> $wpdb, $post; </span><br><span class="line"></span><br><span class="line"><span class="comment">//$cid = the_category_ID(false);</span></span><br><span class="line">$categories = get_the_category();</span><br><span class="line">$cid = $categories[<span class="number">0</span>]-&gt;term_id;</span><br><span class="line">		 </span><br><span class="line"> $q = <span class="string">"SELECT ID, post_title, post_content,post_excerpt, post_date, comment_count FROM $wpdb-&gt;posts WHERE post_status = 'publish' AND post_type = 'post' AND ID != $post-&gt;ID AND ID in (select object_id  from wp_term_relationships where term_taxonomy_id = ( select term_taxonomy_id from wp_term_taxonomy where term_id = $cid )) ORDER BY RAND() $limitclause"</span>; </span><br><span class="line"> <span class="keyword">return</span> $wpdb-&gt;get_results($q); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面的显示</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//不存在相关日志则显示随机日志 </span></span><br><span class="line"> <span class="keyword">if</span> (!$related_posts) </span><br><span class="line"> &#123;</span><br><span class="line">	 <span class="comment">//tag搜索不到，再通过目录搜</span></span><br><span class="line">	 $related_posts =  wp_get_category_posts($limitclause); </span><br><span class="line">	 <span class="keyword">if</span> (!$related_posts)</span><br><span class="line">	 &#123;</span><br><span class="line">		 <span class="keyword">if</span>($wp_rp[<span class="string">'wp_no_rp'</span>] == <span class="string">"text"</span>) </span><br><span class="line">		 &#123; </span><br><span class="line">			 $output  .= <span class="string">'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;li&gt;</span></span><br><span class="line"><span class="string">  木有相关文章</span></span><br><span class="line"><span class="string">&lt;/li&gt;'</span>;            <span class="comment">//无相关文章时显示标题 </span></span><br><span class="line">		 &#125; </span><br><span class="line">		 <span class="keyword">else</span> </span><br><span class="line">		&#123; </span><br><span class="line">			 <span class="keyword">if</span>($wp_rp[<span class="string">'wp_no_rp'</span>] == <span class="string">"random"</span>) </span><br><span class="line">		 &#123; </span><br><span class="line">			 $wp_no_rp_text= <span class="string">'随机文章'</span>;                                        <span class="comment">//随机文显示标题 </span></span><br><span class="line">			 $related_posts = wp_get_random_posts($limitclause);</span><br><span class="line">		 &#125;   </span><br><span class="line">	 </span><br><span class="line">		$wp_rp_title = $wp_no_rp_text; </span><br><span class="line">		 &#125;</span><br><span class="line">	 &#125; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>然后得到的效果就是现在这个样子了。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/我做站长/" rel="tag"># 我做站长</a>
+          
+            <a href="/tags/Wordpress/" rel="tag"># Wordpress</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/run-linux-command-in-windows.html" rel="next" title="windows下运行linux命令工具">
+                <i class="fa fa-chevron-left"></i> windows下运行linux命令工具
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/what-i-have-done-in-the-whole-year-of-2011.html" rel="prev" title="整个2011年,我都干了些啥">
+                整个2011年,我都干了些啥 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/code-for-relative-posts-in-wordpress.html';
+
+      var disqus_title = "Wordpress纯代码实现相关文章";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

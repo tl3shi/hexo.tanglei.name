@@ -1,0 +1,914 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="系统架构师,软考,软件设计师,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="这两天整理了下电脑，发现自己之前考软件设计师啊，系统架构师啊之类用到的一些资料，现在决定把它稍微整理下，放到网上了。其实也都是来自网络的。也就转载下吧相当于。 先从计算机系统知识开始了。 &amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;">
+<meta name="keywords" content="系统架构师,软考,软件设计师">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软考：计算机系统知识(一)">
+<meta property="og:url" content="https://www.tanglei.name/blog/computer_system1.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="这两天整理了下电脑，发现自己之前考软件设计师啊，系统架构师啊之类用到的一些资料，现在决定把它稍微整理下，放到网上了。其实也都是来自网络的。也就转载下吧相当于。 先从计算机系统知识开始了。 &amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.051Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软考：计算机系统知识(一)">
+<meta name="twitter:description" content="这两天整理了下电脑，发现自己之前考软件设计师啊，系统架构师啊之类用到的一些资料，现在决定把它稍微整理下，放到网上了。其实也都是来自网络的。也就转载下吧相当于。 先从计算机系统知识开始了。 &amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/computer_system1.html">
+
+
+
+
+
+  <title> 软考：计算机系统知识(一) | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/computer_system1.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                软考：计算机系统知识(一)
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-04-16T12:04:32+00:00">
+                2011-04-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">课程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/computer_system1.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/computer_system1.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这两天整理了下电脑，发现自己之前考软件设计师啊，系统架构师啊之类用到的一些资料，现在决定把它稍微整理下，放到网上了。其实也都是来自网络的。也就转载下吧相当于。</p>
+<p>先从计算机系统知识开始了。</p>
+<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;浑割线&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+<p><strong>1.1**</strong>计算机系统结构** </p>
+<p> <strong>计算机的发展历史：</strong></p>
+<p>1946年，世界上第一台电子计算机ENIAC出现，之后经历了5个发展阶段：</p>
+<p>电子管——&gt;晶体管——&gt;集成电路——&gt;大规模集成电路——&gt;超大规模集成电路。</p>
+<p><strong>冯式结构计算机的组成部分：</strong>存储器、运算器、控制器、输入设备和输出设备。</p>
+<p><strong>强化的概念：</strong> </p>
+<p> <em>**</em>计算机的工作过程：一般是由用户使用各种编程语言把所需要完成的任务以程序的形式提交给计算机，然后翻译成计算机能直接执行的机器语言程序，在计算机上运行。计算机系统从里到外可以由下面的表示：</p>
+<p>物理机器——操作系统机器——汇编语言机器——高级语言机器</p>
+<p><strong>计算机系统结构</strong>（computer architecture）：指机器语言级机器（物理机器）的系统结构，它主要研究软件、硬件功能分配，确定软件、硬件界面（机器级界面），即从机器语言程序员或编译程序设计者的角度所看到的机器物理系统的抽象。</p>
+<p><strong>计算机组成（computer organization）</strong>：是指计算机系统的逻辑实现，包括机器内部数据流和控制流的组成以及逻辑设计等，其目标是合理的把各种部件、设备组成计算机，以实现特定的系统结构，同时满足所希望达到的性能价格比。</p>
+<p><strong>计算机实现（computer implementation）</strong>是指计算机组成的物理实现。</p>
+<p>这几个概念之间的关系可以用下面的图加以说明：</p>
+<p>计算机系统结构——1:n——计算机组成——1:n——计算机物理实现</p>
+<p> <strong>计算机系统的分类</strong>：Flynn分类、冯氏分类、Handler分类和Kuck分类；</p>
+<p>Flynn分类：根据不同指令流—数据流组织方式把计算机系统分成4类。（重点理解）</p>
+<p><strong>指令流</strong>：机器指令的执行序列；</p>
+<p><strong>数据流</strong>：由指令流调用的数据序列，包括输入数据和中间结果；</p>
+<p><strong>多倍性</strong>：在系统性能的瓶颈部件上同时处于同样执行阶段的指令和数据的最大可能个数；</p>
+<p>I.     单指令流单数据流SISD——如单处理机</p>
+<p>II.    单指令流多数据流SIMD——如相联处理机</p>
+<p>III.   多指令流单数据流MISD——如流水线计算机</p>
+<p>IV.    多指令流多数据流MIMD——如多处理机</p>
+<p><strong>冯氏分类</strong>：以最大并行度Pm把计算机系统结构分为4类，其中字宽W表示在一个字中同时处理的二进制位数，位宽B表示在一个位片中能同时处理的字数。</p>
+<p>I.    字串位串WSBS（serial）(parallel)</p>
+<p>II.   字并位串WPBS</p>
+<p>III.  字串位并WSBP</p>
+<p>IV.   字并位并WPBP</p>
+<p><strong>Handler**</strong>分类**：根据并行度和流水线处理的程度将计算机系统结构分成3个层次</p>
+<p>I.    程序控制部件PCU的个数K</p>
+<p>II.   算术逻辑部件ALU或处理部件PE的个数D</p>
+<p>III.  每个算术逻辑部件包含基本逻辑线路ELC的套数W</p>
+<p><strong>Kuck**</strong>分类**：与Flynn分类法类似，根据指令流、执行流和多倍性来分类。</p>
+<p>I.    单指令流单执行流SISE——典型的单处理机</p>
+<p>II.   单指令流多执行流SIME——带多操作部件的处理机</p>
+<p>III.  多指令流单执行流MISE——带指令级多道程序的单处理机</p>
+<p>IV.      多指令流多执行流MIME——多处理机</p>
+<p><strong>计算机不同级别程序员所见的计算机部分，透明性的概念：</strong></p>
+<p>透明性：一种实际存在的事物或属性，从某个角度看似乎不存在的现象。</p>
+<p>低层机器级的概念结构和功能特性对于高级语言的程序员来说是透明的。</p>
+<p><strong>1.2</strong> <strong>计算机中的编码：</strong></p>
+<p>(1)二进制、十进制和十六进制等常用数制及其相互转换：</p>
+<p>由于计算机的存储器和寄存器是两态部件，所以各种信息在计算机中是以二进制的方式存储和计算的。数制是由基数和基数个不同的数码组成的。</p>
+<p>BCD码：十进制的二进制表示，</p>
+<p>0：0000     1：0001    2：0010   3：0011  4：0100    5：0101</p>
+<p>6：0110     7：0111    8：1000   9：1001</p>
+<p>十进制的202可以表示成BCD码为0010 0000 0010；</p>
+<p><strong>十六进制 <-> 二进制</-></strong>:十六进制表示法是用16位二进制数字组成的,每4位二进制数字表示一位十六进制数,十六进制的数字表示从0-9,A,B,C,D,E,F共十六个字符.十六进制与二进制相互转换就是一位十六进制字符与四位二进制数字的相互转换过程.</p>
+<p><strong>十进制　　<->　二进制</-></strong>:十进制向二进制转换分两步进行:首先把该数的整数部分和小数部分转换为二进制数;然后再把这两部分合并起来即可.十进制的整数部分向二进制转换是通过对十进制不断的除2取余数得到，十进制小数部分通过乘2取整的方法获得，直到小数部分为0，所得到的整数部分就形成了二进制编码；同样的，二进制向十进制转换如下所示：</p>
+<p>十进制数N=（R<sub>n</sub>R<sub>n-1</sub>&#8230;R<sub>1</sub>R<sub></sub>R<sub>-1</sub>&#8230;R<sub>-m</sub>）</p>
+<p>= R<sub>n </sub><em>2<sup>n</sup>+R<sub>n-1</sub></em>2<sup>n-1</sup>+&#8230;+R<sub>1</sub><em>2+R<sub></sub>+R<sub>-1</sub></em>2<sup>-1</sup>&#8230;R<sub>-m</sub>*2<sup>-m</sup></p>
+<p><strong>八进制   <-> 二进制:</-></strong>二进制向八进制转换的方法是从小数点开始分别向左右每3位二进制数编成一组,若不够3位 ,则小数点左侧的最高位和右侧的最低位用0补充,每一组用对应的八进制的数码表示即可;八进制向二进制转换的方法是从小数点开始,把每一位八进制的数码转换成对应的3位二进制即可.其小数点左侧的最高位或右侧的最低位的0可以省去.</p>
+<p>⑵ 计算机中的二进制数运算方法： <em>**</em></p>
+<p>1．   定点数运算：要判断是否溢出？()</p>
+<p>加法：[X+Y]=（[X]<sub>补</sub>+[Y]<sub>补</sub>） MOD 2</p>
+<p>减法：[X-Y]=（[X]<sub>补</sub>+[-Y]<sub>补</sub>）MOD 2</p>
+<p>乘法：采用原码比较方便，使用原码一位乘法来求两个定点数的乘积。运算规则为：</p>
+<p>n          乘积的符号位等于乘数和被乘数的符号位进异或；</p>
+<p>n          乘积的值等于两数绝对值之积，即乘数和被乘数的绝对值进行移位相加；</p>
+<p>除法：采用原码比较方便。运算规则为：</p>
+<p>商的符号位同定点数原码乘法的处理方法，由两数的符号位进行异或</p>
+<p>两数的绝对值部分进行相除。</p>
+<p>2．  浮点运算</p>
+<p>1) 加减法：</p>
+<p>a)        对阶</p>
+<p>b)        尾数进行加、减运算</p>
+<p>c)        规格化</p>
+<p>d)        舍入</p>
+<p>e)        溢出判断</p>
+<p>2) 乘除法：</p>
+<p>浮点相乘，其积的阶码为两数阶码相加，积的尾数为两尾数相乘。</p>
+<p>浮点数相除，其商的阶码为两数阶码之差，商的尾数为两尾数相除。</p>
+<p>其结果都需要进行规格化处理，同时还需要进行溢出判断。</p>
+<p>⑶ 逻辑代数的基本运算和逻辑表达式的化简： <em>**</em></p>
+<p> <em>**</em>逻辑表达式就是以逻辑运算符把若干逻辑变量连接在一起表示某种关系的表达式。一个逻辑函数往往有多种不同的表达式。可以利用其本逻辑运算规律和一些常用的逻辑恒等式对逻辑表达式进行合并项、吸收项、配项、消去项等操作来化简。</p>
+<p>基本的逻辑运算有“与”、“或”、“非”、“异或”。</p>
+<p>常用的逻辑运算公式：</p>
+<p>交换律：A+B=B+A  A*B=B*A</p>
+<p>结合律：A+（B+C）=（A+B）+C</p>
+<p>分配律：A*（B+C）=A*B+A*C  A+（B*C）=（A+B）*（A+C）</p>
+<p>反演律：A+B= A * B</p>
+<p>重叠律：A+A=A A*A=A</p>
+<p>互补律：A+ A =1 A* A =0</p>
+<p>对合律： A =A</p>
+<p>0-1律：0+A=A A*A=0</p>
+<p>⑷ 定点数与浮点数的机内表示 ：</p>
+<p>定点数的表示方法：</p>
+<ol>
+<li><p>定点整数：（符号位）（最高数据位）。。。（最低数据位）</p>
+</li>
+<li><p>定点小数：（符号位）小数点（最高数据位）。。。（最低数据位）</p>
+</li>
+</ol>
+<p>浮点数表示方法：</p>
+<p>浮点数编码：符号位-阶码-尾数，阶码由移码表示，尾数由补码或原码表示；</p>
+<p>规格化处理：以纯小数表示尾数，分为原码和补码；</p>
+<p>⑸ 原码、补码、反码、移码 ；</p>
+<p> <em>**</em> 数值数据的机器内表示形式称为机器码，机器码所代表的数值为该机器码的真值。</p>
+<p>原码表示：[X]=X或2<sup>n-1</sup>-X；+0和-0的表示不同；（定点整数）</p>
+<p>[X]=X或1-X；                              （定点小数）</p>
+<p>+0=00000000     -0=10000000            (2的n次方-1个编码)</p>
+<p>补码表示：[X]=X或2<sup>n</sup>+X；                      （定点整数）</p>
+<p>[X]=X或2+X；                              （定点小数）</p>
+<p>0的编码唯一；00000000                 (2的n次方个编码)</p>
+<p>-1=10000000 (小数)                 -1=11111111（整数）</p>
+<p>反码表示：[X]=X或(2<sup>n</sup>-1)+X；                （定点整数）</p>
+<p>[X]=X或(2-2<sup>-n+1</sup>)+X          （定点小数）</p>
+<p>+0=00000000        -0=11111111        (2的n次方-1个编码)</p>
+<p>移码表示：[X]=X或2­­­­­­­的(n-1)次方+X；0表示方法唯一10000000    (定点整数)</p>
+<p>[X]=1+X；                                  （定点小数）</p>
+<p>0的编码唯一：10000000                  (2的n次方个编码)</p>
+<p>⑹ ASCII码及汉字编码等常用的编码 ：  <em>**</em></p>
+<p> <em>**</em>ASCII码采用7bit编码， 共有128种编码；表示128个不同的字符；计算机里存储和传送单位通常使用Byte，所以7位的ASCII码也用一个字节来表示，最高一位没有用，通常也添0，也可以把它作为校验位或用来扩展字符集。</p>
+<p>EBCDIC码采用8bit编码，共有256个编码，表示256个不同字符；</p>
+<p>汉字编码：</p>
+<ol>
+<li><p>数字编码：每个汉字分配一个数字码，用以代表汉字；</p>
+</li>
+<li><p>拼音码：用每个汉字的汉语拼音符号作为汉字的输入编码；</p>
+</li>
+<li><p>字形码：以汉字的形状特点编码，例如五笔字型编码</p>
+</li>
+</ol>
+<p>汉字存储：以内码形式存放，以连续两个字节表示，两个字节的最高位均为1，汉字的内码是在计算机内处理汉字信息时采用的机内代码，把汉字的输入编码称为外码。</p>
+<p>汉字输出：汉字的点阵字型码，点阵的密度决定了汉字的美观程度，汉字需要大量的存储空间，例如16*16点阵，每个汉字要占用16*16=32Byte</p>
+<p>(7) 数据校验码：计算机在存储和传送数据过程中，为了保证数据的准确性，一般都要进行数据校验和纠错。通常使用校验码的方法来检测数据是否出错。其基本思想是把数据可能出现的编码区分为合法编码和错误编码。</p>
+<p>使用校验码来查错，涉及到一个重要概念——码距。它是指一个编码系统中任意两个合法编码之间至少有多少个二进制位不同。码距为1的编码是不能发现错误的。</p>
+<p>常用的校验码有3种。</p>
+<p>▲奇偶校验码：不能发现偶数位错误</p>
+<p>该编码通过增加一位校验位来使编码中1的个数为奇数（奇校验）或者为偶数（偶校验）从而使码距变为2，来检测数据代码中奇数出错的编码。因为其利用的是编码中1的个数的奇偶性作为依据，所以不能发现偶数位错误。</p>
+<p>校验位的添加方法有三种：</p>
+<p>n          水平奇偶校验码：对每个数据的编码添加校验位</p>
+<p>n          垂直奇偶校验码：对一组数据的相同位添加一个校验位；</p>
+<p>n          水平垂直奇偶校验码：先对一组数据垂直校验，所得结果再添加一位水平校验位；</p>
+<p>▲海明校验码：2^k &#8211; 1 &gt;= n+k</p>
+<p>也是利用奇偶性来检错和纠错，通过在数据之间插入k个校验位，扩大数据编码的码距，从而有能力检测出n位错，并能纠正1位或n位错。</p>
+<p>▲循环校验码（CRC）校验码：采用模2运算，可检测所有等于、小于校验位长度的突发错，利用生成多项式为k个数据位产生r个校验位进行编码，其编码长度为n=k+rk,又称为（n，k）码，生成的多项式与被校验的数据无关。</p>
+<p>编码效率=（log<sub>2</sub>（码字数））/总位数</p>
+<p><strong>举一个例子：关于二进制的编码的考试题目</strong> </p>
+<p>根据“冗余校验”的思想，码距可用来判断使校验码制冗余的程度，并估价其查错、纠错能力。“8421”码的码距为<strong>A</strong> ，因而它<strong>B</strong> 。若一组海明（Hamming）码有效信息位k=4，校验位r=3，则其码距为<strong>C</strong> ，用它能够发现<strong>D</strong>位错，并可纠正<strong>E</strong>位错。</p>
+<p> <strong>A**</strong>、C、D、E：** ①0         ②1         ③2         ④3         ⑤4         ⑥7</p>
+<p><strong>B**</strong>：** ①能发现1位错   ②能纠正1位错   ③能发现并纠正1位错   ④不能查错、纠错</p>
+<p> <em>**</em>本题主要考查数据校验方法的相关知识。</p>
+<p>在这部分知识点中有个很重要的概念——码距。码距是指一个编码系统中任意两个合法编</p>
+<p>这里有个定理，即若一种校验码合法码字集的码矩为2d+1，则它能够发现2d位错，并能纠正d位错</p>
+<p><strong>A: 2   B: 4  C: 4  D: 3  E: 2</strong></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/系统架构师/" rel="tag"># 系统架构师</a>
+          
+            <a href="/tags/软考/" rel="tag"># 软考</a>
+          
+            <a href="/tags/软件设计师/" rel="tag"># 软件设计师</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/donot_cancel_gprs.html" rel="next" title="流量包不能取消掉">
+                <i class="fa fa-chevron-left"></i> 流量包不能取消掉
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/computer_system2-2.html" rel="prev" title="软考：计算机系统知识(二)">
+                软考：计算机系统知识(二) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/computer_system1.html';
+
+      var disqus_title = "软考：计算机系统知识(一)";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

@@ -1,0 +1,902 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="MyLife,总结,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景大家好，我是石头哥。 今天的文章是之前筹划的 在XX工作是一种怎样的体验 系列文章。 今天，我们继续来聊聊亚马逊，谈到 Amaz">
+<meta name="keywords" content="MyLife,总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在亚麻工作是一种怎样的体验（下）">
+<meta property="og:url" content="https://www.tanglei.name/blog/experience-with-work-at-amazon-II.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景大家好，我是石头哥。 今天的文章是之前筹划的 在XX工作是一种怎样的体验 系列文章。 今天，我们继续来聊聊亚马逊，谈到 Amaz">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/gitee-blog-resources/2022-1-15/1642252071210-image.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/gitee-blog-resources/2021-12-25/1640429880467-image.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/gitee-blog-resources/2022-1-15/1642257725500-image.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/gitee-blog-resources/2022-1-15/1642259939985-image.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/gitee-blog-resources/2022-1-15/1642258908348-image.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/gitee-blog-resources/2022-1-15/1642259026377-image.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/gitee-blog-resources/2022-1-15/1642259903531-image.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/gitee-blog-resources/2022-1-15/1642258840339-image.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/gitee-blog-resources/2022-1-15/1642258263906-image.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/gitee-blog-resources/2022-1-15/1642259580077-image.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/gitee-blog-resources/2022-1-15/1642259693822-image.png">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.188Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在亚麻工作是一种怎样的体验（下）">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景大家好，我是石头哥。 今天的文章是之前筹划的 在XX工作是一种怎样的体验 系列文章。 今天，我们继续来聊聊亚马逊，谈到 Amaz">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/gitee-blog-resources/2022-1-15/1642252071210-image.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/experience-with-work-at-amazon-II.html">
+
+
+
+
+
+  <title> 在亚麻工作是一种怎样的体验（下） | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/experience-with-work-at-amazon-II.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                在亚麻工作是一种怎样的体验（下）
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-01-18T00:00:00+00:00">
+                2022-01-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MyLife/" itemprop="url" rel="index">
+                    <span itemprop="name">MyLife</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/experience-with-work-at-amazon-II.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/experience-with-work-at-amazon-II.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上<strong>清华</strong>（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点这里查看我的逆袭之路</a>），BAT某厂P7，是前大疆（无人机）技术主管。</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247499506&amp;idx=1&amp;sn=37fac5a7d1718234d22845c8dc36a8cf&amp;chksm=eb44ff16dc337600a59819684474f9b17914c1f7413c4835c9f398c0ea46f4843b532167a57b&amp;scene=178&amp;cur_album_id=2225655022002978819#rd" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<p><img src="/resources/gitee-blog-resources/2022-1-15/1642252071210-image.png" alt="西雅图- 亚马逊球（Amazon Spheres），来源于网络"></p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>大家好，我是石头哥。</p>
+<p>今天的文章是之前筹划的 <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI3OTUzMzcwNw==&amp;action=getalbum&amp;album_id=2225655022002978819#wechat_redirect" target="_blank" rel="noopener">在XX工作是一种怎样的体验</a> 系列文章。</p>
+<p>今天，我们继续来聊聊亚马逊，谈到 Amazon，估计大家并不陌生，不过亚马逊中国具体情况，估计大家了解得不多。</p>
+<p>在 <a href="https://mp.weixin.qq.com/s/Vd8czTWOJXpLV0LaUU39qA" target="_blank" rel="noopener">上期</a>，我们聊到了公司氛围、工作岗位以及办公地点等话题，今天我们接着聊聊公司的福利以及招聘面试流程等。</p>
+<p><img src="/resources/gitee-blog-resources/2021-12-25/1640429880467-image.png" alt></p>
+<p>[toc]</p>
+<p>注：本人亚麻电商技术岗，本文仅限于亚麻中国电商业务的技术岗体验，AWS与电商业务是相互独立的，不在本文范围之内。</p>
+<p>非技术岗的情况与技术岗也有很大差别，也不再本文范围之内。而且组与组之间情况难免有所不同，如有不符之处，敬请谅解。</p>
+<p>本文仅代表个人观点，不代表公司任何立场。</p>
+<h2 id="公司福利"><a href="#公司福利" class="headerlink" title="公司福利"></a>公司福利</h2><p><img src="/resources/gitee-blog-resources/2022-1-15/1642257725500-image.png" alt></p>
+<h3 id="五险一金"><a href="#五险一金" class="headerlink" title="五险一金"></a>五险一金</h3><p>正规企业都会按国家要求正常为员工缴纳五险一金，这个不用多说。</p>
+<p>值得一提的是住房公积金的缴纳比例，按国家规定，“单位及个人的缴存比例可在5%~12%自行选择，个人缴存比例应等于或高于单位缴存比例。”</p>
+<p>亚麻北京是按公司12%个人12%缴满的。</p>
+<h3 id="商业保险"><a href="#商业保险" class="headerlink" title="商业保险"></a>商业保险</h3><p><img src="/resources/gitee-blog-resources/2022-1-15/1642259939985-image.png" alt></p>
+<p>也叫做补充医疗保险。主要是重疾险和意外险，重疾能赔10万元，意外能赔36倍月薪，最低20万元。</p>
+<p>其实平时用的最多的还是门诊报销，北京医保的起付线是1800元，也就是你一年看病的前超过1800元才可以报销，1800元以内自付。</p>
+<p>对于我们广大青年来说，一般也就是平时拿个感冒药啥的，是用不到医保报销的。</p>
+<p>这时候公司的商业保险就用上了，<strong>商业保险门诊90%报销，住院和生育100%报销</strong>。报销金额小于1000元的直接在app上提交病历和收费单就可以直接报销，超过1000元邮寄或者每周有人去公司收。</p>
+<p>同时还可以给配偶或子女购买商业保险，一年一千多。</p>
+<h3 id="年度体检"><a href="#年度体检" class="headerlink" title="年度体检"></a>年度体检</h3><p><img src="/resources/gitee-blog-resources/2022-1-15/1642258908348-image.png" alt></p>
+<p>每年9月1日前入职的员工都可以参加本年度体检。</p>
+<p>以前一般是跟爱康国宾和慈铭两家供应商合作，今年只有慈铭。</p>
+<p>怀疑是不是因为慈铭比较便宜，因为就个人体验而言，爱康国宾要比慈铭好（垃圾慈铭）。</p>
+<p>从前两年开始，也可以选择不体检换成拜博口腔的两次洁牙。有同事就每年都选择洁牙，然后自己花钱去医院体检。</p>
+<p>毕竟慈铭也好，爱康国宾也好，这种第三方机构的体检质量很难说。</p>
+<p>也支持自己去医院体检，报销额度不超过 400（爱康国宾或慈铭的体检套餐应该只会比这个价格低，所以条件服务肯定好不到哪里去），而且报销流程也比较麻烦。</p>
+<h3 id="带薪休假"><a href="#带薪休假" class="headerlink" title="带薪休假"></a>带薪休假</h3><p><img src="/resources/gitee-blog-resources/2022-1-15/1642259026377-image.png" alt></p>
+<p>法定节假日里值得一说的就是三八妇女节和五四青年节，妇女节女性员工可以休半天，青年节未满28岁的员工可以休半天，但实际上这两个半天休假的并不多。</p>
+<p>技术部门女性本来就少，大家都在干活，你自己去休假有点不合适。非技术部门往往比技术部门还卷。</p>
+<p>青年节，一般符合条件的都是组里的新员工，前辈们都在，自己也不好意思去休假。</p>
+<p>其次是带薪年假，这个外企比国内公司要好些。</p>
+<p>国家规定，工作1至10年的年假5天，工作10至20年的年假10天，工作满20年年假15天。国内很多企业是按这个执行的，而且据我所知有些公司是不让一次性休的，毕竟一下好几天不做，项目进度怎么办。</p>
+<p>亚麻的年假相对比较宽裕，<strong>工作前两年是12天年假，工作3至7年是15天年假，工作第8年及以上是20天年假</strong>。</p>
+<p>年假这块，之前我讲到，阿里的<a href="https://mp.weixin.qq.com/s/lvvItCkPGuFY3GCviwBK5g" target="_blank" rel="noopener">福利大升级</a>（陪伴假、育儿假）后，还是蛮不错的。</p>
+<p>美国那边假期更多，据说各种假期加在一起能有一个月，有时候跟那边的人合作会发现对方怎么休假一个月才回来。</p>
+<p>国内这边15天年假其实也相当充裕了，一般除去过年前后休上几天，平时还能休两次一周的假，一次5天的年假拼上前后周末就是9天长假，即使出国玩也基本够了，如果再跟五一国庆这种长假拼一起就更爽歪歪了。</p>
+<p><img src="/resources/gitee-blog-resources/2022-1-15/1642259903531-image.png" alt></p>
+<p>还有值得一说的是，有些组平时请个半天假啥的都不计入年假，有些组会比较严格，半天假也要在系统内登记。</p>
+<p>我们组是相对宽松的，平时有个事儿请假啥的发个邮件就好。</p>
+<p>其他还有婚假、产假/陪产假、丧假以及病假。婚假是按北京市政策，10个连续的自然日（注意不是工作日）。</p>
+<p>产假是工作不满一年14周，满一年16周，<strong>陪产假是6周</strong>。丧假3个工作日。</p>
+<p>病假值得说的就是每个月有一天全薪病假，但这个假有时去医院用用挺好，但每个月都请就不太好意思了。</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>亚麻没有年终奖（一年12薪），也没有年会，平时过节啥的也没有礼品，全年只有中秋会发100块的礼品卡，能买的东西有限。</p>
+<p><img src="/resources/gitee-blog-resources/2022-1-15/1642258840339-image.png" alt></p>
+<h2 id="招聘面试"><a href="#招聘面试" class="headerlink" title="招聘面试"></a>招聘面试</h2><h3 id="校招"><a href="#校招" class="headerlink" title="校招"></a>校招</h3><p><img src="/resources/gitee-blog-resources/2022-1-15/1642258263906-image.png" alt></p>
+<p>作为一个成熟的大公司，亚麻每年还是会招一些应届毕业生来培养的。</p>
+<p>不过规模是没法跟国内大厂比的，记得前几年的规模大概是技术四五十人，非技术四五十人，这两年随着国内业务的没落应该会少一些。</p>
+<p>虽然只有几十人，亚麻还是会去国内几个城市宣讲（这两年疫情改线上了），比如天津、西安、武汉等。</p>
+<p>这两年外地校招过来的逐渐变多，可能是因为外地招来的不用解决户口吧，当然也可能是北京的学生看不上亚麻。</p>
+<p>亚麻的校招步骤是，先线上测试，选取分数高的校园宣讲时线下面试。</p>
+<p><a href="https://mp.weixin.qq.com/s/cpje2Uo3db9nAlXlk17rxQ" target="_blank" rel="noopener">线上测试</a>一般是三道题，难度逐渐增大，一般能做出第三题的都能通过。</p>
+<p>但是做不出的也不要紧，它是把所有人的分数从高到低往下排，选取前面一定数量的人进行面试的。有点类似于高考分数线的划定。</p>
+<p>在准备面试前，建议多刷刷题。算法面试是在程序猿面试时的重中之重（特别是大厂，看中编码能力和基础），在这里也送大家一本个人收藏的算法笔记，对于算法薄弱或者想要提高数据结构算法基本功的同学都十分受用：</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=100008768&amp;idx=1&amp;sn=44592c1acc2e0c5fc1e3b7c3852fca29&amp;chksm=6b44e2a45c336bb2fcc04d356250d22c0735d207a1e9d1486a41b5ba4a58cc725281af261e05#rd" target="_blank" rel="noopener">BAT 大佬写的 1300 页 Leetcode刷题笔记，必须收藏！</a></p>
+<p>亚麻的题目有个特点，就是特别长，就跟高考做英文阅读理解似的，如果题意没理解对，是很难拿到分数的，这也算变相考察了一些英文能力吧。</p>
+<p><img src="/resources/gitee-blog-resources/2022-1-15/1642259580077-image.png" alt="刷题 - 题海战术"></p>
+<p>我有幸参加过两年的校招题目选题，HR 给了我们一个大约20页（A4 纸）的题库，我们先花半小时看一遍这些题目，从中选出自己觉得比较好的几个题目，分低、中、高三个难度。</p>
+<p>然后大家核对一下选择的题目，逐次商量选择每个难度放哪个题目合适。</p>
+<p>题目的类型要分开，比如别两道题都是考链表的。同时我们还会尽量避免那些题目特别长的（考虑到国内情况），然后根据自己平时的面试经验挑那些得分区分度比较大的题目。</p>
+<p>当然，因为时间有限，要半个小时读完二三十道英文题目，并每道题有个大概的思路，这个工作还是蛮有挑战性的。 <a href="https://mp.weixin.qq.com/s/NM6hnIx94gCbSwWORpBKRg" target="_blank" rel="noopener">算法面试套路知多少</a>。</p>
+<p>可能是亚麻的题库跟大家平时网上刷的题风格不太一样或者计分方式不太一样，所以有时候的结果挺令人意外的。</p>
+<p>好多平时感觉很厉害的同学竟然没有过，这也是无可奈何的事情，毕竟这些系统都是老外们开发的，中国人有时候不习惯也正常。</p>
+<p><img src="/resources/gitee-blog-resources/2022-1-15/1642259693822-image.png" alt></p>
+<p>所以想毕业来亚麻的同学可以提前找找网上的亚麻面试题，提前适应一下。或者问问往届的师兄师姐，学习点经验。</p>
+<h3 id="社招"><a href="#社招" class="headerlink" title="社招"></a>社招</h3><p>以前社招会有六面（2+4），前两轮决定能不能进入后面四轮面试，一轮考 coding + algorithm，一轮考 OO (object oriented ) Design + System Design，一般是两个 peer 来面试或者 peer + manager。</p>
+<p>这两轮一定会面完，不论你第一轮是否通过。</p>
+<p>不像<a href="https://mp.weixin.qq.com/s/cpje2Uo3db9nAlXlk17rxQ" target="_blank" rel="noopener">国内有些公司</a>，是前一轮通过才能进行下一轮，任何一轮没通过，面试就到此为止。作为对比，<a href="https://mp.weixin.qq.com/s/h_pCxpAP0BaJjs--PHDWCA" target="_blank" rel="noopener">阿里面试流程可以参考这个</a>。</p>
+<p>前两轮并行面试完，两个面试官会讨论共同决定要不要继续进行后续的面试，这里面会有三种情况：</p>
+<ol>
+<li>如果两个面试官都给过那无疑是通过的；</li>
+<li>如果两个面试官都给不过，那面试就结束了；</li>
+<li>如果一个面试官给过，另一个面试官给不过，那两个面试官会互相讨论，决定要不要给继续往下的机会。</li>
+</ol>
+<p>可能有时候其中一个面试官觉得应聘者表现虽然不够好，但可以再给次机会重新考察一下，或者应聘者跟 HR 说没发挥好，也会给通过继续后面四轮面试（是不是很人性化），因为后面四轮还会重新考察前面两轮的一些能力，可以再次确认有疑惑的地方。</p>
+<p>当然如果其中一个面试官说这个应聘者，某项能力实在太差，硬性指标不达标，那就没戏了。 <a href="https://mp.weixin.qq.com/s/3MEOZJLhFcEBMB__tnjkmA" target="_blank" rel="noopener">国内互联网大厂的薪资、职级、绩效考核是怎样的？</a></p>
+<p>后面四轮面试除了有不同的面试官重新考察前两轮面试的一些重要能力之外，还有一轮 Bar Raiser 面试，对应国内比较接近压力面吧，然后还有一轮 HR 面。</p>
+<p>这四轮面试也是平行面试，不会因为其中一轮面试失败就停止其他轮面试。</p>
+<p>等所有轮面试完，然后6个面试官一起讨论决定要不要发 offer。由于疫情后面试简化了，所以就不再过多介绍之前的情况。</p>
+<p>欢迎大家找我内推，可以加微信【codershitou】。 <a href="https://mp.weixin.qq.com/s/EMv6yfi6Blt_dKvQn7Tbng" target="_blank" rel="noopener">为什么内推靠谱？</a></p>
+<p>现在相对简化了一下，先是做线上测试，通过后直接四轮技术面，两轮 peer 面分别面上面的前两轮，然后一轮招聘经理面，还有一轮 Bar Raiser 面（有可能是经理的经理，也可能是别的组的经理）。</p>
+<p>四轮面试并行进行，不会因为一轮没过就 gg。</p>
+<p>四轮面完开会讨论一起决定要不要发 offer。</p>
+<p>面完一般能在一周内收到结果通知，不论通过与否都会收到答复，这就是外企对人的尊重。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><ul>
+<li><a href="https://mp.weixin.qq.com/s/C3Smy6ldOhYJU14EztGhkQ" target="_blank" rel="noopener">秋招都结束了，才得知没 HC 了？</a></li>
+<li><a href="https://mp.weixin.qq.com/s/OGJhxM7FdeoIkAL2-uUI_Q" target="_blank" rel="noopener">Google 工程师面试指南.pdf-免费下载</a></li>
+<li><a href="https://mp.weixin.qq.com/s/iRcyW1dEeCxleTfOTyr2Lw" target="_blank" rel="noopener">清华计算机系王牌课程——《数据结构》课件及源码包下载</a></li>
+<li><a href="https://mp.weixin.qq.com/s/7T9R9kFXke986vSoPNzC8g" target="_blank" rel="noopener">BAT大佬写的 1300 页 Leetcode刷题笔记，必须收藏！</a></li>
+<li><a href="https://mp.weixin.qq.com/s/DIVTVtChtd287ezWfriBYA" target="_blank" rel="noopener">码农必备 计算机基础知识总结.pdf 和 操作系统总结.pdf</a></li>
+<li><a href="https://mp.weixin.qq.com/s/rqTnQH_TTmgmbPm3qV-62Q" target="_blank" rel="noopener">突击大厂网络面试题，「图解网络.pdf」白嫖！</a></li>
+</ul>
+<p>微信修改了推送机制（改推荐了，也就是你看到的内容不由你主导了），还请记得星标、在看、点赞、留言多互动，这样才能让我的文章及时送达到你手中，ღ 笔芯。</p>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点击这里查看我的逆袭之路</a>），目前在BAT某厂打工，是前大疆（无人机）技术主管。</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MyLife/" rel="tag"># MyLife</a>
+          
+            <a href="/tags/总结/" rel="tag"># 总结</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/experience-with-work-at-amazon-I.html" rel="next" title="在亚麻工作是一种怎样的体验（上）">
+                <i class="fa fa-chevron-left"></i> 在亚麻工作是一种怎样的体验（上）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/a-problem-about-response-time-out.html" rel="prev" title="该收心了：接口超时排查到了内核">
+                该收心了：接口超时排查到了内核 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#公司福利"><span class="nav-number">2.</span> <span class="nav-text">公司福利</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#五险一金"><span class="nav-number">2.1.</span> <span class="nav-text">五险一金</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#商业保险"><span class="nav-number">2.2.</span> <span class="nav-text">商业保险</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#年度体检"><span class="nav-number">2.3.</span> <span class="nav-text">年度体检</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#带薪休假"><span class="nav-number">2.4.</span> <span class="nav-text">带薪休假</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">2.5.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#招聘面试"><span class="nav-number">3.</span> <span class="nav-text">招聘面试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#校招"><span class="nav-number">3.1.</span> <span class="nav-text">校招</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#社招"><span class="nav-number">3.2.</span> <span class="nav-text">社招</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/experience-with-work-at-amazon-II.html';
+
+      var disqus_title = "在亚麻工作是一种怎样的体验（下）";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

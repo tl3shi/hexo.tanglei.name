@@ -1,0 +1,1024 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="转载,Bug,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景大家好，我是石头哥。 不知道大家过年过得肿么样  反正我今年春节回家还是学到了一些技能，比如打打麻将之类的，学费还是缴了不少的">
+<meta name="keywords" content="转载,Bug">
+<meta property="og:type" content="article">
+<meta property="og:title" content="该收心了：接口超时排查到了内核">
+<meta property="og:url" content="https://www.tanglei.name/blog/a-problem-about-response-time-out.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景大家好，我是石头哥。 不知道大家过年过得肿么样  反正我今年春节回家还是学到了一些技能，比如打打麻将之类的，学费还是缴了不少的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/a-problem-about-response-time-out/dawutai.jpg">
+<meta property="og:image" content="https://www.tanglei.name/resources/a-problem-about-response-time-out/2.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/a-problem-about-response-time-out/3.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/a-problem-about-response-time-out/4.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/a-problem-about-response-time-out/5.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/a-problem-about-response-time-out/6.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/a-problem-about-response-time-out/7.png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibtVsC4SXy75tw2183kZQicH45vLq2RQY8Hy4QSuP5yUCxUHh2nrJ0sw0xBxsZxbvlLQd3Fo8k5098Q/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.188Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="该收心了：接口超时排查到了内核">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景大家好，我是石头哥。 不知道大家过年过得肿么样  反正我今年春节回家还是学到了一些技能，比如打打麻将之类的，学费还是缴了不少的">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/a-problem-about-response-time-out/dawutai.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/a-problem-about-response-time-out.html">
+
+
+
+
+
+  <title> 该收心了：接口超时排查到了内核 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/a-problem-about-response-time-out.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                该收心了：接口超时排查到了内核
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-02-14T00:00:00+00:00">
+                2022-02-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/除臭虫/" itemprop="url" rel="index">
+                    <span itemprop="name">除臭虫</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/a-problem-about-response-time-out.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/a-problem-about-response-time-out.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上<strong>清华</strong>（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点这里查看我的逆袭之路</a>），BAT某厂P7，是前大疆（无人机）技术主管。</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247499506&amp;idx=1&amp;sn=37fac5a7d1718234d22845c8dc36a8cf&amp;chksm=eb44ff16dc337600a59819684474f9b17914c1f7413c4835c9f398c0ea46f4843b532167a57b&amp;scene=178&amp;cur_album_id=2225655022002978819#rd" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<p><img src="/resources/a-problem-about-response-time-out/dawutai.jpg" alt="图片"></p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>大家好，我是石头哥。</p>
+<p>不知道大家过年过得肿么样 </p>
+<p>反正我今年春节回家还是学到了一些技能，比如打<strong>打麻将</strong>之类的，学费还是缴了不少的</p>
+<p>这周已经返工了，该收心了。</p>
+<p>这不，最近就看到了一个非常厉害的关于“接口超时”问题排查的帖子，从应用排查到内核级别。虽然看到后面的时候我已经有点跟不上了，但是对于整个问题排查的过程还是比较清晰的。（细节不重要，排查思路，方向值得学习）</p>
+<p>虽然很难，但是还是啃下去了，这其中体现出来的就是我所追求的工匠精神，分享给你。</p>
+<blockquote>
+<p>文章来源：<a href="https://zhenbianshu.github.io/2018/10/app_to_kernel_solve_api_timeout_3.html" target="_blank" rel="noopener">https://zhenbianshu.github.io/2018/10/app_to_kernel_solve_api_timeout_3.html</a></p>
+</blockquote>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>最近在查一个问题，花费了近两个星期，问题算是有了一个小结，是时候总结一下了。</p>
+<p>排查过程走了很多弯路，由于眼界和知识储备问题，也进入了一些思维误区，希望此问题能以后再查询此类问题时能有所警示和参考。</p>
+<p>而且很多排查方法和思路都来自于部门 leader 和 组里大神给的提示和启发，总结一下也能对这些知识有更深的理解。</p>
+<p>这个问题出现在典型的高并发场景下，现象是某个接口会偶尔超时。</p>
+<p>查了几个 case 的日志，发现 httpClient 在请求某三方接口结束后输出一条日志时间为 A，方法返回后将请求结果解析成为 JSON 对象后，再输出的日志时间为 B， AB之间的时间差会特别大，100-700ms 不等，而 JSON 解析正常是特别快的，不应该超过 1ms。</p>
+<h2 id="GC"><a href="#GC" class="headerlink" title="GC"></a>GC</h2><p>首先考虑导致这种现象的可能：</p>
+<ul>
+<li>应用上有锁导致方法被 block 住了，但 JSON 解析方法上并不存在锁，排除这种可能。</li>
+<li>JVM 上，GC 可能导致 STW。</li>
+<li>系统上，如果系统负载很高，操作系统繁忙，线程调度出现问题可能会导致这种情况，但观察监控系统发现系统负载一直处于很低的水平，也排除了系统问题。</li>
+</ul>
+<p>我们都知道 JVM 在 GC 时会导致 STW，进而导致所有线程都会暂停，接下来重点排查 GC 问题。</p>
+<p>首先我们使用 jstat 命令查看了 GC 状态，发现 fullGC 并不频繁，系统运行了两天才有 100 来次，而 minorGC 也是几秒才会进行一次，且 gcTime 一直在正常范围。</p>
+<p>由于我们的 JVM 在启动时添加了 -XX:+PrintGCApplicationStoppedTime 参数，而这个参数的名字跟它的意义并不是完全相对的，在启用此参数时，gclog 不仅会打印出 GC 导致的 STW，其他原因导致的 STW 也会被记录到 gclog 中，于是 gclog 就可以成为一个重要的排查工具。</p>
+<p>查看 gclog 发现确实存在异常状况，如下图：</p>
+<p><img src="/resources/a-problem-about-response-time-out/2.png" alt="图片"></p>
+<p>系统 STW 有时会非常频繁地发生，且持续时间也较长，其中间隔甚至不足 1ms。</p>
+<p>也就是说一次停顿持续了几十 ms 之后，系统还没有开始运行，又会进行第二次 STW，如上图的情况，系统应该会一次 hang 住 120ms，如果次数再频繁一些，确实有可能会导致接口超时。</p>
+<h3 id="安全点"><a href="#安全点" class="headerlink" title="安全点"></a>安全点</h3><p>那么这么频繁的 STW 是由什么产生的呢，minorGC 的频率都没有这么高。</p>
+<p>我们知道，系统在 STW 前，会等待所有线程安全点，在安全点里，线程的状态是确定的，其引用的 heap 也是静止的，这样，JVM 才能安心地进行 GC 等操作。</p>
+<p>至于安全点的常见位置和安全点的实现方式网卡有很多文章介绍这里不再多提了，这里重点说一下安全点日志。</p>
+<p>安全点日志是每次 JVM 在所有线程进入安全点 STW 后输出的日志，日志记录了进入安全点用了多久，STW 了多久，安全点内的时间都是被哪个步骤消耗的，通过它我们可以分析出 JVM STW 的原因。</p>
+<p>服务启动时，使用 <code>-XX:+UnlockDiagnosticVMOptions -XX:+PrintSafepointStatistics -XX:+LogVMOutput -XX:LogFile=./safepoint.log</code> 参数，可以将安全点日志输出到 safepoint.log 中。</p>
+<p>在安全点日志中，我发现有很多下图类似的日志输出：</p>
+<p><img src="/resources/a-problem-about-response-time-out/3.png" alt="图片"></p>
+<p>从前面的 vmopt 列可以得知，进入安全点的原因是 RevokeBias， <a href="https://mp.weixin.qq.com/s?__biz=MzkzNTI1NjYxNg==&amp;mid=2247483837&amp;idx=4&amp;sn=59f4b03cc403706870d806c4f8c35fea&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">查资料</a>得知，这是在释放 偏向锁。**</p>
+<h2 id="偏向锁"><a href="#偏向锁" class="headerlink" title="偏向锁"></a>偏向锁</h2><p>偏向锁是 JVM 对锁的一种优化，JVM 的开发人员统计发现绝大部分的锁都是由同一个线程获取，锁争抢的可能性很小，而系统调用一次加锁释放锁的开销相对很大，所以引入偏向锁默认锁不会被竞争，偏向锁中的 “偏向” 便指向第一个获取到锁的线程。</p>
+<p>在一个锁在被第一次获取后，JVM 并不需要用系统指令加锁，而是使用偏向锁来标志它，将对象头中 MarkWord 的偏向锁标识设置为1，将偏向线程设置为持续锁的线程 ID，这样，之后线程再次申请锁时如果发现这个锁已经 “偏向” 了当前线程，直接使用即可。</p>
+<p>而且持有偏向锁的线程不会主动释放锁，只有在出现锁竞争时，偏向锁才会释放，进而膨胀为更高级别的锁。</p>
+<p>有利则有弊，偏向锁在单线程环境内确实能极大降低锁消耗，但在多线程高并发环境下，线程竞争频繁，而偏向锁在释放时，为了避免出现冲突，需要等到进入全局安全点才能进行，所以每次偏向锁释放会有更大的消耗。</p>
+<p>明白了 JVM 为什么会频繁进行 STW，再修改服务启动参数，添加 <code>-XX:-UseBiasedLocking</code> 参数禁用偏向锁后，再观察服务运行。</p>
+<p>发现停顿问题的频率下降了一半，但还是会出现，问题又回到原点。</p>
+<h2 id="Log4j"><a href="#Log4j" class="headerlink" title="Log4j"></a>Log4j</h2><h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><p>这时候就需要猜想排查了。</p>
+<p><strong>首先提出可能导致问题的点，再依次替换掉这些因素压测，看能否复现来确定问题点。</strong></p>
+<p>考虑到的问题点有 HttpClient、Hystrix、Log4j2。</p>
+<p>使用固定数据替换了三方接口的返回值，删去了 Hystrix，甚至将逻辑代码都删掉，只要使用 Log4j2 输出大量日志，问题就可以复现，终于定位到了 Log4j2，原来是监守自盗啊…</p>
+<p>虽然定位到 Log4j2，但日志也不能不记啊，还是要查问题到底出在哪里。</p>
+<h3 id="使用-btrace-排查-log4j2-内的锁性能。"><a href="#使用-btrace-排查-log4j2-内的锁性能。" class="headerlink" title="使用 btrace 排查 log4j2 内的锁性能。"></a>使用 btrace 排查 log4j2 内的锁性能。</h3><p>首先考虑 Log4j2 代码里的锁，怀疑是由于锁冲突，导致输出 log 时被 block 住了。</p>
+<p>查看源码，统计存在锁的地方有三处：</p>
+<ul>
+<li>rollover() 方法，在检测到日志文件需要切换时会锁住进行日志文件的切分。</li>
+<li>encodeText() 方法，日志输出需要将各种字符集的日志都转换为 byte 数组，在进行大日志输出时，需要分块进行。为了避免多线程块之间的乱序，使用synchronized 关键字对方法加锁。</li>
+<li>flush() 方法，同样是为了避免不同日志之间的穿插乱序，需要对此方法加锁。</li>
+</ul>
+<p>具体是哪一处代码出现了问题呢，我使用 btrace 这一 Java 性能排查利器进行了排查。</p>
+<p>使用 btrace 分别在这三个方法前后都注入代码，将方法每次的执行时间输出，然后进行压测，等待问题发生，最终找到了执行慢的方法: encodeText()。</p>
+<p>排查代码并未发现 encodeText 方法的异常（千锤百炼的代码，当然看不出什么问题）。</p>
+<h3 id="使用-jmc-分析问题"><a href="#使用-jmc-分析问题" class="headerlink" title="使用 jmc 分析问题"></a>使用 jmc 分析问题</h3><p>这时，组内大神建议我使用 jmc 来捕捉异常事件。给 docker-compose 添加以下参数来启用环境的 JFR。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">environment:</span><br><span class="line">   - JFR=true</span><br><span class="line">   - JMX_PORT=port</span><br><span class="line">   - JMX_HOST=ip</span><br><span class="line">   - JMX_LOGIN=user:pwd</span><br></pre></td></tr></table></figure>
+<p>在记录内查找停顿时间附近的异常事件，发现耗时统计内有一项长耗时引人注目：调用 RandomAccessFile.write() 方法竟然耗时 1063 ms，而这个时间段和线程 ID 则完全匹配。</p>
+<p>查看这个耗时长的方法，它调用的是 native 方法 write()…</p>
+<h2 id="阶段性小结"><a href="#阶段性小结" class="headerlink" title="阶段性小结"></a>阶段性小结</h2><p>native 方法再查下去就是系统问题了，但是目前我们可以给出两个对症下药的解决方案。</p>
+<ul>
+<li>服务少记一些日志，日志太多的话才会导致这个问题。</li>
+<li>使用 Log4j2 的异步日志，虽然有可能会在缓冲区满或服务重启时丢日志。</li>
+</ul>
+<p>同时可以进行一个阶段性的小结。</p>
+<p>查问题的过程确实学习到了很多知识，让我更熟悉了 Java 的生态，但我觉得更重要的是排查问题的思路，于是我总结了一个排查问题的一般步骤，当作以后排查此类问题的 checkList。</p>
+<ul>
+<li><strong>尽量分析更多的问题 case</strong>。找出他们的共性，避免盯错问题点。比如此次问题排查开始时，如果多看几个 case 就会发现，日志停顿在任何日志点都会出现，由此就可以直接排除掉 HttpClient 和 Hystrix 的影响。</li>
+<li><strong>在可控的环境复现问题</strong>。在测试环境复现问题可能帮助我们随时调整排查策略，极大地缩短排查周期。当然还需要注意的是一定要跟线上环境保持一致，不一致的环境很可能把你的思路带歪，比如我在压测复现问题时，由于堆内存设置得太小，导致频繁发生 GC，让我错认为是 GC 原因导致的停顿。</li>
+<li><strong>对比变化，提出猜想</strong>。在服务出现问题时，我们总是先问最近上线了什么内容，程序是有惯性的，如果没有变化，系统一般会一直正常运行。当然变化不止是时间维度上的，我们还可以在多个服务之间对比差异。</li>
+<li><strong>排除法定位问题</strong>。一般我们会提出多个导致问题的可能性，排查时，保持一个变量在变化，再对比问题的发生，从而总结出变量对问题的影响。解决。当我们定位到问题之后，问题的解决一般都很简单，可能只需要改一行代码。</li>
+</ul>
+<p>当然还有一个非常重要的点，贯穿始末，那就是<strong>数据支持，排查过程中一定要有数据作为支持。通过总量、百分比数据的前后对比来说服其他人相信你的理论，也就是用数据说话。</strong></p>
+<h2 id="应用复现"><a href="#应用复现" class="headerlink" title="应用复现"></a>应用复现</h2><p>Jdk 的 native 方法当然不是终点，虽然发现 Jdk、docker、操作系统 Bug 的可能性极小，但再往底层查却很可能发现一些常见的配置错误。</p>
+<p>为了便于复现，我用 JMH 写了一个简单的 demo，控制速度不断地通过 log4j2 写入日志。将项目打包成 jar 包，就可以很方便地在各处运行了。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@BenchmarkMode(Mode.AverageTime)</span><br><span class="line">@OutputTimeUnit(TimeUnit.MICROSECONDS)</span><br><span class="line">@State(Scope.Benchmark)</span><br><span class="line">@Threads(5)</span><br><span class="line">public class LoggerRunner &#123;</span><br><span class="line">    public static void main(String[] args) throws RunnerException &#123;</span><br><span class="line"></span><br><span class="line">        Options options = new OptionsBuilder()</span><br><span class="line">                .include(LoggerRunner.class.getName())</span><br><span class="line">                .warmupIterations(2)</span><br><span class="line">                .forks(1)</span><br><span class="line">                .measurementIterations(1000)</span><br><span class="line">                .build();</span><br><span class="line">        new Runner(options).run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我比较怀疑是 docker 的原因。</p>
+<p>但是在 docker 内外运行了 jar 包却发现都能很简单地复现日志停顿问题。而 jdk 版本众多，我准备首先排查操作系统配置问题。</p>
+<h2 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h2><p>这里需要使用到 strace 命令。</p>
+<p>这个命令很早就使用过，但我还是不太习惯把 Java 和它联系起来，幸好有部门的老司机指点，于是就使用 strace 分析了一波 Java 应用。</p>
+<p>命令跟分析普通脚本一样，<code>strace -T -ttt -f -o strace.log java -jar log.jar</code>， -T 选项可以将每一个系统调用的耗时打印到系统调用的结尾。</p>
+<p>当然排查时使用 -p pid 附加到 tomcat 上也是可以的，虽然会有很多容易混淆的系统调用。</p>
+<p>对比 jmh 压测用例输出的 log4j2.info() 方法耗时，发现了下图中的状况：</p>
+<p><img src="/resources/a-problem-about-response-time-out/4.png" alt="图片"></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247499589&amp;idx=2&amp;sn=6f1e334d709110c2f4d67e53664baa3c&amp;chksm=eb44fea1dc3377b7f21e26ac1a099ccde69028ccf725cc0470f3f7c0a476963f245072adb804&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">x</a></p>
+<p>一次 write 系统调用竟然消耗了 147ms，很明显地，问题出在 write 系统调用上。</p>
+<h2 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h2><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>这时候就要好好回想一下操作系统的知识了。</p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247497629&amp;idx=1&amp;sn=d293f09e031d8eac89092ae4be91e05a&amp;chksm=eb44f679dc337f6f67582611c140ef00a5971a71da458d503fd54d8a0ae836f14c81f559373c&amp;scene=21#wechat_redirect" target="_blank" rel="noopener"><img src="/resources/a-problem-about-response-time-out/5.png" alt="图片"></a></p>
+<p>在 linux 系统中，万物皆文件，而为了给不同的介质提供一种抽象的接口，在应用层和系统层之间，抽象了一个虚拟文件系统层（virtual file system, VFS）。</p>
+<p>上层的应用程序通过 系统调用 system call 操作虚拟文件系统，进而反馈到下层的硬件层。</p>
+<p>由于硬盘等介质操作速度与内存不在同一个数量级上，为了平衡两者之间的速度，linux 便把文件映射到内存中，将硬盘单位块(block)对应到内存中的一个 页(page)上。</p>
+<p>这样，当需要操作文件时，直接操作内存就可以了。</p>
+<p>当缓冲区操作达到一定量或到达一定的时间后，再将变更统一刷到磁盘上。这样便有效地减少了磁盘操作，应用也不必等待硬盘操作结束，响应速度得到了提升。</p>
+<p>而 write 系统调用会将数据写到内存中的 page cache，将 page 标记为 脏页(dirty) 后返回。</p>
+<h3 id="linux-的-writeback-机制"><a href="#linux-的-writeback-机制" class="headerlink" title="linux 的 writeback 机制"></a>linux 的 writeback 机制</h3><p>对于将内存缓冲区的内容刷到磁盘上，则有两种方式：</p>
+<p>首先，应用程序在调用 write 系统调用写入数据时，如果发现 page cache 的使用量大于了设定的大小，便会主动将内存中的脏页刷到硬盘上。在此期间，所有的 write 系统调用都会被阻塞。</p>
+<p>系统当然不会容忍不定时的 write 阻塞，linux 还会定时启动 pdflush 线程，判断内存页达到一定的比例或脏页存活时间达到设定的时间，将这些脏页刷回到磁盘上，以避免被动刷缓冲区，这种机制就是 linux 的 writeback 机制。</p>
+<h3 id="猜测"><a href="#猜测" class="headerlink" title="猜测"></a>猜测</h3><p>了解了以上基础知识，那么对于 write 系统调用为什么会被阻塞，提出了两种可能：</p>
+<ul>
+<li>page cache 可用空间不足，导致触发了主动的 flush，此时会阻塞所有对此 device 的 write。</li>
+<li>写入过程被其他事务阻塞。</li>
+</ul>
+<p>首先对于第一种可能。查看系统配置 dirty_ratio 的大小：20。</p>
+<p>此值是 page cache 占用系统可用内存(real mem + swap)的最大百分比，我们的内存为 32G，没有启用 swap，则实际可用的 page cache 大小约为 6G。</p>
+<p>另外，与 pdflush 相关的系统配置：系统会每 <code>vm.dirty_writeback_centisecs</code> (5s) 唤醒一次 pdflush 线程， 发现脏页比例超过 <code>vm.dirty_background_ratio</code> (10%) 或 脏页存活时间超过 <code>vm.dirty_expire_centisecs</code>(30s) 时，会将脏页刷回硬盘。</p>
+<p>查看 /proc/meminfo 内 Dirty/Writeback 项的变化，并对比服务的文件写入速度，结论是数据会被 pdflush 刷回到硬盘，不会触发被动 flush 以阻塞 write 系统调用。</p>
+<h2 id="ext4-的-journal-特性"><a href="#ext4-的-journal-特性" class="headerlink" title="ext4 的 journal 特性"></a>ext4 的 journal 特性</h2><h3 id="write-被阻塞的原因"><a href="#write-被阻塞的原因" class="headerlink" title="write 被阻塞的原因"></a>write 被阻塞的原因</h3><p>继续搜索资料，在一篇文章(Why buffered writes are sometimes stalled)中看到 write 系统调用被阻塞有以下可能：</p>
+<blockquote>
+<p><a href="http://yoshinorimatsunobu.blogspot.com/2014/03/why-buffered-writes-are-sometimes.html" target="_blank" rel="noopener">http://yoshinorimatsunobu.blogspot.com/2014/03/why-buffered-writes-are-sometimes.html</a></p>
+</blockquote>
+<ul>
+<li>要写入的数据依赖读取的结果时。但记录日志不依赖读文件；</li>
+<li>wirte page 时有别的线程在调用 fsync() 等主动 flush 脏页的方法。但由于锁的存在，log 在写入时不会有其他的线程操作；</li>
+<li>格式为 ext3/4 的文件系统在记录 journal log 时会阻塞 write。而我们的系统文件格式为 ext4。维基百科上的一个条目（<a href="https://en.wikipedia.org/wiki/Journaling_block_device" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Journaling_block_device</a> ） 也描述了这种可能。</li>
+</ul>
+<h3 id="journal"><a href="#journal" class="headerlink" title="journal"></a>journal</h3><p>journal 是 文件系统保证数据一致性的一种手段，在写入数据前，将即将进行的各个操作步骤记录下来，一旦系统掉电，恢复时读取这些日志继续操作就可以了。</p>
+<p>但批量的 journal commit 是一个事务，flush 时会阻塞 write 的提交。</p>
+<p>我们可以使用 <code>dumpe2fs /dev/disk | grep features</code> 查看磁盘支持的特性，其中有 has_journal 代表文件系统支持 journal 特性。</p>
+<p>ext4 格式的文件系统在挂载时可以选择 (jouranling、ordered、writeback) 三种之一的 journal 记录模式。</p>
+<p>三种模式分别有以下特性：</p>
+<ul>
+<li>journal：在将数据写入文件系统前，必须等待 metadata 和 journal 已经落盘了。</li>
+<li>ordered：不记录数据的 journal，只记录 metadata 的 journal 日志，且需要保证所有数据在其 metadata journal 被 commit 之前落盘。ext4 在不添加挂载参数时使用此模式。</li>
+<li>writeback: 数据可能在 metadata journal 被提交之后落盘，可能导致旧数据在系统掉电后恢复到磁盘中。</li>
+</ul>
+<p>当然，我们也可以选择直接禁用 journal，使用 <code>tune2fs -O ^has_journal /dev/disk</code>，只能操作未被挂载的磁盘。</p>
+<p><strong>猜测因为 journal 触发了脏页落盘，而脏页落盘导致 write 被阻塞，所以解决 journal 问题就可以解决接口超时问题。</strong></p>
+<h2 id="解决方案与压测结果"><a href="#解决方案与压测结果" class="headerlink" title="解决方案与压测结果"></a>解决方案与压测结果</h2><p>以下是我总结的几个接口超时问题的解决方案：</p>
+<ul>
+<li>log4j2 日志模式改异步。但有可能会在系统重启时丢失日志，另外在异步队列 ringbuffer 被填满未消费后，新日志会自动使用同步模式。</li>
+<li>调整系统刷脏页的配置，将检查脏页和脏页过期时间设置得更短(1s 以内)。但理论上会略微提升系统负载（未明显观察到）。</li>
+<li>挂载硬盘时使用 data=writeback 选项修改 journal 模式。但可能导致系统重启后文件包含已删除的内容。</li>
+<li>禁用 ext4 的 journal 特性。但可能会导致系统文件的不一致。</li>
+<li>把 ext4 的 journal 日志迁移到更快的磁盘上，如 ssd、闪存等。操作复杂，不易维护。</li>
+<li>使用 xfs、fat 等文件系统格式。特性不了解，影响不可知。</li>
+</ul>
+<p>当然，对于这几种方案，我也做了压测，以下是压测的结果：</p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247490048&amp;idx=1&amp;sn=868a6eed7b199023429c26f2a1b2abea&amp;chksm=eb471be4dc3092f24c284dce9e76765d68ea9b4dc345c3bb45f2e29d5cc02da7136ebc7f68ad&amp;scene=21#wechat_redirect" target="_blank" rel="noopener"><img src="/resources/a-problem-about-response-time-out/6.png" alt="图片"></a></p>
+<p>所以，程序员还是要懂些操作系统知识的，不仅帮我们在应对这种诡异的问题时不至于束手无策，也可以在做一些业务设计时能有所参考。</p>
+<h2 id="打印进程内核栈"><a href="#打印进程内核栈" class="headerlink" title="打印进程内核栈"></a>打印进程内核栈</h2><p>前面我们查到是因为 journal 导致 write 系统调用被阻塞进而导致超时，但是总感觉证据还不够充分，没有一个完美的交待。</p>
+<p>所以我们还需要继续追踪问题。</p>
+<p>回到问题的原点，对于此问题，我能确定的资料只有稳定复现的环境和不知道什么时候会触发 write system call 延迟的 jar 包。</p>
+<p>考虑到 write system call 被阻塞可长达几百 ms，我想我能抓出当前进程的内核栈来看一下 write system call 此时被阻塞在什么位置。</p>
+<p>具体步骤为：</p>
+<ul>
+<li>多个线程不便于抓内核栈，先将程序修改为单线程定量写入。</li>
+<li>使用 jar 包启动一个进程，使用 ps 拿到进程号。</li>
+<li>再通过 top -H -p pid 拿到占用 cpu、内存等资源最多的线程 ID，或使用 strace 启动，查看其输出里正在写入的线程 ID。</li>
+<li>使用 watch 命令搭配 pstack 或 cat /proc/pid/stack 不停打印进程内核栈。具体命令为 watch -n 0.1 “date +%s &gt;&gt; stack.log;cat /proc/pid/stack &gt;&gt; stack.log”</li>
+<li>找到 write system call 被阻塞时的时间戳，在 stack.log 里查看当时的进程内核栈。</li>
+</ul>
+<p>可稳定收集到 write system call 被阻塞时，进程内核栈为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[&lt;ffffffff812e31f4&gt;] call_rwsem_down_read_failed+0x14/0x30</span><br><span class="line">[&lt;ffffffffa0195854&gt;] ext4_da_get_block_prep+0x1a4/0x4b0 [ext4]</span><br><span class="line">[&lt;ffffffff811fbe17&gt;] __block_write_begin+0x1a7/0x490</span><br><span class="line">[&lt;ffffffffa019b71c&gt;] ext4_da_write_begin+0x15c/0x340 [ext4]</span><br><span class="line">[&lt;ffffffff8115685e&gt;] generic_file_buffered_write+0x11e/0x290</span><br><span class="line">[&lt;ffffffff811589c5&gt;] __generic_file_aio_write+0x1d5/0x3e0</span><br><span class="line">[&lt;ffffffff81158c2d&gt;] generic_file_aio_write+0x5d/0xc0</span><br><span class="line">[&lt;ffffffffa0190b75&gt;] ext4_file_write+0xb5/0x460 [ext4]</span><br><span class="line">[&lt;ffffffff811c64cd&gt;] do_sync_write+0x8d/0xd0</span><br><span class="line">[&lt;ffffffff811c6c6d&gt;] vfs_write+0xbd/0x1e0</span><br><span class="line">[&lt;ffffffff811c76b8&gt;] SyS_write+0x58/0xb0</span><br><span class="line">[&lt;ffffffff81614a29&gt;] system_call_fastpath+0x16/0x1b</span><br><span class="line">[&lt;ffffffffffffffff&gt;] 0xffffffffffffffff</span><br></pre></td></tr></table></figure>
+<h2 id="内核栈分析"><a href="#内核栈分析" class="headerlink" title="内核栈分析"></a>内核栈分析</h2><h3 id="write-system-call-阻塞位置"><a href="#write-system-call-阻塞位置" class="headerlink" title="write system call 阻塞位置"></a>write system call 阻塞位置</h3><p>通过内核栈函数关键字找到了 OenHan 大神的博客：读写信号量与实时进程阻塞挂死问题。</p>
+<blockquote>
+<p><a href="https://oenhan.com/rwsem-realtime-task-hung" target="_blank" rel="noopener">https://oenhan.com/rwsem-realtime-task-hung</a></p>
+</blockquote>
+<p>这篇文章描述的问题虽然跟我遇到的问题不同，但进程内核栈的分析对我很有启发。为了便于分析内核函数，我 clone 了一份 linux 3.10.0 的源码，在本地查看。</p>
+<p>搜索源码可以证实，栈顶的汇编函数 <code>ENTRY call_rwsem_down_read_failed</code> 会调用 <code>rwsem_down_read_failed()</code>, 而此函数会一直阻塞在获取 inode 的锁。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">struct rw_semaphore __sched *rwsem_down_read_failed(struct rw_semaphore *sem) &#123;</span><br><span class="line">        .....</span><br><span class="line"> /* wait to be given the lock */</span><br><span class="line"> while (true) &#123;</span><br><span class="line">  set_task_state(tsk, TASK_UNINTERRUPTIBLE);</span><br><span class="line">  if (!waiter.task)</span><br><span class="line">   break;</span><br><span class="line">  schedule();</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> tsk-&gt;state = TASK_RUNNING;</span><br><span class="line"></span><br><span class="line"> return sem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="延迟分配"><a href="#延迟分配" class="headerlink" title="延迟分配"></a>延迟分配</h3><p>知道了 write system call 阻塞的位置，还要查它会什么会阻塞在这里。</p>
+<p>这时，栈顶的函数名 <code>call_rwsem_down_read_failed</code> 让我觉得很奇怪，这不是 “write” system call 么，为什么会 <code>down_read_failed</code>？</p>
+<p>直接搜索这个函数没有什么资料，但向栈底方向，再搜索其他函数就有了线索了，原来这是在做系统磁盘块的准备，于是就牵扯出了 ext4 的 delayed allocation 特性。</p>
+<blockquote>
+<p>延迟分配(delayed allocation)：ext4 文件系统在应用程序调用 write system call 时并不为缓存页面分配对应的物理磁盘块，当文件的缓存页面真正要被刷新至磁盘中时，才会为所有未分配物理磁盘块的页面缓存分配尽量连续的磁盘块。</p>
+</blockquote>
+<p>这一特性，可以避免磁盘的碎片化，也可以避免存活时间极短文件的磁盘块分配，能很大提升系统文件 I/O 性能。</p>
+<p>而在 write 向内存页时，就需要查询这些内存页是否已经分配了磁盘块，然后给未分配的脏页打上延迟分配的标签。</p>
+<p>写入的详细过程可以查看 ext4 的延迟分配：</p>
+<blockquote>
+<p><a href="https://blog.csdn.net/kai_ding/article/details/9914629" target="_blank" rel="noopener">https://blog.csdn.net/kai_ding/article/details/9914629</a></p>
+</blockquote>
+<p>此时需要获取此 inode 的读锁，若出现锁冲突，write system call 便会 hang 住。</p>
+<p>在挂载磁盘时使用 -o nodelalloc 选项禁用掉延迟分配特性后再进行测试，发现 write system call 被阻塞的情况确实消失了，证明问题确定跟延迟分配有关。</p>
+<h2 id="不算结论的结论"><a href="#不算结论的结论" class="headerlink" title="不算结论的结论"></a>不算结论的结论</h2><h3 id="寻找写锁"><a href="#寻找写锁" class="headerlink" title="寻找写锁"></a>寻找写锁</h3><p>知道了 write system call 阻塞在获取读锁，那么一定是内核里有哪些地方持有了写锁。</p>
+<p>ipcs 命令可以查看系统内核此时的进程间通信设施的状态，它打印的项目包括消息列表(-q)、共享内存(-m)和信号量(-q)的信息，用 ipcs -q 打印内核栈的函数查看 write system call 被阻塞时的信号量，却没有输出任何信息。</p>
+<p>仔细想了一下发现其写锁 i_data_sem 是一把读写锁，而信号量是一种 非0即1 的PV量，虽然名字里带有 sem，可它并不是用信号量实现的。</p>
+<p>perf lock 可以用来分析系统内核的锁信息，但要使用它需要重新编译内核，添加 CONFIG_LOCKDEP、CONFIG_LOCK_STAT 选项。先不说我们测试机的重启需要建提案等两天，编译完能不能启动得来我真的没有信心，第一次试图使用 perf 分析 linux 性能问题就这么折戟了。</p>
+<h3 id="转变方法"><a href="#转变方法" class="headerlink" title="转变方法"></a>转变方法</h3><p>问题又卡住了，这时我也没有太多办法了，现在开始研究 linux 文件系统源码是来不及了，但我还可以问。</p>
+<p>在 stackOverflow 上问没人理我：how metadata journal stalls write system call?，</p>
+<blockquote>
+<p><a href="https://stackoverflow.com/questions/52778498/how-metadata-journal-stalls-write-system-call" target="_blank" rel="noopener">https://stackoverflow.com/questions/52778498/how-metadata-journal-stalls-write-system-call</a></p>
+</blockquote>
+<p>追着 OenHan 问了几次也没有什么结论：Linux内核写文件流程。</p>
+<blockquote>
+<p><a href="http://oenhan.com/linux-kernel-write#comment-201" target="_blank" rel="noopener">http://oenhan.com/linux-kernel-write#comment-201</a></p>
+</blockquote>
+<p>虽然自己没法测试 upstream linux，还是在 kernel bugzilla 上发了个帖子：ext4 journal stalls write system call。</p>
+<blockquote>
+<p><a href="https://bugzilla.kernel.org/show_bug.cgi?id=201461" target="_blank" rel="noopener">https://bugzilla.kernel.org/show_bug.cgi?id=201461</a></p>
+</blockquote>
+<p>终于有内核大佬回复我：在 ext4_map_blocks() 函数中进行磁盘块分配时内核会持有写锁。</p>
+<p>查看了源码里的函数详情，证实了这一结论：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/*</span><br><span class="line"> * The ext4_map_blocks() function tries to look up the requested blocks,</span><br><span class="line"> * and returns if the blocks are already mapped.</span><br><span class="line"> *</span><br><span class="line"> * Otherwise it takes the write lock of the i_data_sem and allocate blocks</span><br><span class="line"> * and store the allocated blocks in the result buffer head and mark it</span><br><span class="line"> * mapped.</span><br><span class="line">*/</span><br><span class="line">int ext4_map_blocks(handle_t *handle, struct inode *inode,</span><br><span class="line">      struct ext4_map_blocks *map, int flags)</span><br><span class="line">&#123;</span><br><span class="line">.....</span><br><span class="line"> /*</span><br><span class="line">  * New blocks allocate and/or writing to uninitialized extent</span><br><span class="line">  * will possibly result in updating i_data, so we take</span><br><span class="line">  * the write lock of i_data_sem, and call get_blocks()</span><br><span class="line">  * with create == 1 flag.</span><br><span class="line">  */</span><br><span class="line"> down_write((&amp;EXT4_I(inode)-&gt;i_data_sem));</span><br><span class="line">.....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但又是哪里引用了 ext4_map_blocks() 函数，长时间获取了写锁呢？</p>
+<p>再追问时大佬已经颇有些无奈了，linux 3.10.0 的 release 已经是 5年 前了，当时肯定也有一堆 bug 和缺陷，到现在已经发生了很大变动，追查这个问题可能并没有很大的意义了，我只好识趣停止了。</p>
+<p><strong>推论</strong></p>
+<p>其实再向下查这个问题对我来说也没有太大意义了，缺少对源码理解的积累，再看太多的资料也没有什么收益。</p>
+<p>就如向建筑师向小孩子讲建筑设计，知道窗子要朝南，大门要靠近电梯这些知识并无意义，不了解建筑设计的原则，只专注于一些自己可以推导出来的理论点，根本没办法吸收到其中精髓。</p>
+<p>那么只好走到最后一步，根据查到的资料和测试现象对问题原因做出推论，虽然没有直接证据，但肯定跟这些因素有关。</p>
+<blockquote>
+<p>在 ext4 文件系统下，默认为 ordered journal 模式，所以写 metadata journal 可能会迫使脏页刷盘， 而在 ext4 启用 delayed allocation 特性时，脏页可能在落盘时发现没有分配对应的磁盘块而分配磁盘块。在脏页太多的情况下，分配磁盘块慢时会持有 inode 的写锁时间过长，阻塞了 write 系统调用。</p>
+</blockquote>
+<p>追求知识的每一步或多或少都有其中意义，查这个问题就迫使我读了很多外语文献，也了解了一部分文件系统设计思想。</p>
+<p>linux 真的是博大精深啊。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>以上内容若有不清楚或不正确的地方，还望大家指出。看到了这里了， 转发、在看、点赞 随便安排一个吧，要是你都安排上我也不介意。</p>
+<p>写文章很累的，需要一点正反馈。</p>
+<p><img src="/resources/a-problem-about-response-time-out/7.png" alt="图片"></p>
+<p>你可能感兴趣：</p>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzkzNTI1NjYxNg==&amp;mid=2247483837&amp;idx=1&amp;sn=2e8e9f1245e02d8e047ff0a729530e06&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">Google 工程师面试指南.pdf-免费下载</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247499502&amp;idx=1&amp;sn=6f990e6dc50f65eebc70ec89d77d57dd&amp;chksm=eb44ff0adc33761ccf4a2d8986dd6e08573f1681f6ae6c83ebb25d43edbe7e3d569930f87e6f&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">在亚麻工作是一种怎样的体验（上）</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzkzNTI1NjYxNg==&amp;mid=2247483837&amp;idx=2&amp;sn=142cdbe17ff7262b94dc01876c7fe0be&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">清华计算机系王牌课程——《数据结构》课件及源码包下载</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247490048&amp;idx=1&amp;sn=868a6eed7b199023429c26f2a1b2abea&amp;chksm=eb471be4dc3092f24c284dce9e76765d68ea9b4dc345c3bb45f2e29d5cc02da7136ebc7f68ad&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">物理内存充足，但是为什么用代码总申请不到内存呢？</a></li>
+</ul>
+<p>有收获请记得下方点赞、在看、分享，<strong>这对我很重要</strong>，感谢<img src="https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibtVsC4SXy75tw2183kZQicH45vLq2RQY8Hy4QSuP5yUCxUHh2nrJ0sw0xBxsZxbvlLQd3Fo8k5098Q/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片">。</p>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点击这里查看我的逆袭之路</a>），目前在BAT某厂打工，是前大疆（无人机）技术主管。</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/转载/" rel="tag"># 转载</a>
+          
+            <a href="/tags/Bug/" rel="tag"># Bug</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/experience-with-work-at-amazon-II.html" rel="next" title="在亚麻工作是一种怎样的体验（下）">
+                <i class="fa fa-chevron-left"></i> 在亚麻工作是一种怎样的体验（下）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/one-minute-to-know-about-rsa.html" rel="prev" title="一分钟了解 RSA 算法是什么鬼？">
+                一分钟了解 RSA 算法是什么鬼？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">2.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GC"><span class="nav-number">3.</span> <span class="nav-text">GC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安全点"><span class="nav-number">3.1.</span> <span class="nav-text">安全点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#偏向锁"><span class="nav-number">4.</span> <span class="nav-text">偏向锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Log4j"><span class="nav-number">5.</span> <span class="nav-text">Log4j</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定位"><span class="nav-number">5.1.</span> <span class="nav-text">定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-btrace-排查-log4j2-内的锁性能。"><span class="nav-number">5.2.</span> <span class="nav-text">使用 btrace 排查 log4j2 内的锁性能。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-jmc-分析问题"><span class="nav-number">5.3.</span> <span class="nav-text">使用 jmc 分析问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阶段性小结"><span class="nav-number">6.</span> <span class="nav-text">阶段性小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用复现"><span class="nav-number">7.</span> <span class="nav-text">应用复现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统调用"><span class="nav-number">8.</span> <span class="nav-text">系统调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件系统"><span class="nav-number">9.</span> <span class="nav-text">文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构"><span class="nav-number">9.1.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-的-writeback-机制"><span class="nav-number">9.2.</span> <span class="nav-text">linux 的 writeback 机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#猜测"><span class="nav-number">9.3.</span> <span class="nav-text">猜测</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ext4-的-journal-特性"><span class="nav-number">10.</span> <span class="nav-text">ext4 的 journal 特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#write-被阻塞的原因"><span class="nav-number">10.1.</span> <span class="nav-text">write 被阻塞的原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#journal"><span class="nav-number">10.2.</span> <span class="nav-text">journal</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案与压测结果"><span class="nav-number">11.</span> <span class="nav-text">解决方案与压测结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打印进程内核栈"><span class="nav-number">12.</span> <span class="nav-text">打印进程内核栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内核栈分析"><span class="nav-number">13.</span> <span class="nav-text">内核栈分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#write-system-call-阻塞位置"><span class="nav-number">13.1.</span> <span class="nav-text">write system call 阻塞位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#延迟分配"><span class="nav-number">13.2.</span> <span class="nav-text">延迟分配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不算结论的结论"><span class="nav-number">14.</span> <span class="nav-text">不算结论的结论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#寻找写锁"><span class="nav-number">14.1.</span> <span class="nav-text">寻找写锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转变方法"><span class="nav-number">14.2.</span> <span class="nav-text">转变方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">15.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/a-problem-about-response-time-out.html';
+
+      var disqus_title = "该收心了：接口超时排查到了内核";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

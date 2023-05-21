@@ -1,0 +1,855 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="MyLife,总结,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  大家好，我是石头哥。  最近网传互联网公司都在集中裁员（或者叫毕业吧），还有类似 BAT 这样的大厂~  之前总觉得离自己很遥远，一直">
+<meta name="keywords" content="MyLife,总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="没想到裁员离我这么近">
+<meta property="og:url" content="https://www.tanglei.name/blog/a-friend-of-me-was-fired.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  大家好，我是石头哥。  最近网传互联网公司都在集中裁员（或者叫毕业吧），还有类似 BAT 这样的大厂~  之前总觉得离自己很遥远，一直">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/a-friend-of-me-was-fired/00ff12c1-9520-48ea-8c71-bfb0068ff371.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/a-friend-of-me-was-fired/dcc595c4-812c-4965-b17b-783dc202e24f.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/a-friend-of-me-was-fired/e943d12d-6747-4f98-9f48-6a07259d0384.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/a-friend-of-me-was-fired/8651804e-ece5-422b-ae83-6669e22e0bfc.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/a-friend-of-me-was-fired/6dbf6e07-6a3e-488f-af0c-2e9f20d76526.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/a-friend-of-me-was-fired/0019181c-3bdf-4684-9900-b7fbc4757385.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/a-friend-of-me-was-fired/f35e1666-b171-4cb3-8c40-e95f19c31e0d.png">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.191Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="没想到裁员离我这么近">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  大家好，我是石头哥。  最近网传互联网公司都在集中裁员（或者叫毕业吧），还有类似 BAT 这样的大厂~  之前总觉得离自己很遥远，一直">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/a-friend-of-me-was-fired/00ff12c1-9520-48ea-8c71-bfb0068ff371.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/a-friend-of-me-was-fired.html">
+
+
+
+
+
+  <title> 没想到裁员离我这么近 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/a-friend-of-me-was-fired.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                没想到裁员离我这么近
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-04-23T00:00:00+00:00">
+                2022-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MyLife/" itemprop="url" rel="index">
+                    <span itemprop="name">MyLife</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/a-friend-of-me-was-fired.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/a-friend-of-me-was-fired.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上<strong>清华</strong>（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点这里查看我的逆袭之路</a>），BAT某厂P7，是前大疆（无人机）技术主管。</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247499506&amp;idx=1&amp;sn=37fac5a7d1718234d22845c8dc36a8cf&amp;chksm=eb44ff16dc337600a59819684474f9b17914c1f7413c4835c9f398c0ea46f4843b532167a57b&amp;scene=178&amp;cur_album_id=2225655022002978819#rd" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<p>大家好，我是石头哥。 </p>
+<p>最近网传互联网公司都在集中裁员（或者叫毕业吧），还有类似 BAT 这样的大厂~ </p>
+<p>之前总觉得离自己很遥远，一直不以为然。直到今天，曾经的共同奋斗的一个同事突然说 ta 被裁了。。。</p>
+<p><img src="/resources/a-friend-of-me-was-fired/00ff12c1-9520-48ea-8c71-bfb0068ff371.png" alt></p>
+<p>这才发现，原来裁员离自己这么近。</p>
+<p><img src="/resources/a-friend-of-me-was-fired/dcc595c4-812c-4965-b17b-783dc202e24f.png" alt></p>
+<h2 id="裁员离自己这么近"><a href="#裁员离自己这么近" class="headerlink" title="裁员离自己这么近"></a>裁员离自己这么近</h2><p>前面参与面试的时候，也有候选人问我对裁员问题怎么看待。记得当时就跟他说了几个点：</p>
+<p>公司要生存下去，最终目的是要赚钱的，如果一个业务在短期（或者较长一段时间）之内都看不到希望，肯定不大愿意继续花钱养这么一群人；</p>
+<p><img src="/resources/a-friend-of-me-was-fired/e943d12d-6747-4f98-9f48-6a07259d0384.png" alt="开源节流"></p>
+<p>当然，对这个时间的容忍程度，各个公司实际情况不一样可能都不一样：</p>
+<ul>
+<li>有资本支持的大公司，愿意从其他业务赚的钱持续投入（或者有投资人持续投入），寄希望于万一这事儿就成了呢。比如，当年的阿里云；当然也有可能投资人持续投入看不到希望，就放弃的；</li>
+<li>体量小一些的公司，觉得投入产出比太低，为了 <strong>降本增效</strong> ，可能就是要将一些相对边缘的部门给裁掉；又或者是公司高层战略调整，可能就决定不做不在主赛道上的某某业务了。</li>
+</ul>
+<p>再加上，<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247500065&amp;idx=1&amp;sn=ab0ddc76d0173ee980fa2fc9b95d5d06&amp;chksm=eb44c0c5dc3349d335b368372362634c2a363d37e627ca15f652bf840e597a0fcb6a1f6f9d10&amp;token=1931883326&amp;lang=zh_CN#rd" target="_blank" rel="noopener">最近整个中概股都一直低迷</a>，整个行业确实在走下坡路，大家多多少少都会受到一些影响。</p>
+<h2 id="选择大于努力"><a href="#选择大于努力" class="headerlink" title="选择大于努力"></a>选择大于努力</h2><p>说白了，有时候， 真的是得看命（运气）。</p>
+<p>记得我刚从清华毕业那会儿，互联网金融火得一塌糊涂，也有不少同学投入了互联网金融这个行业，我也不例外；</p>
+<p>当刚工作一两年，就各种 P2P 暴雷，各种政策风险，再看看之前的蚂蚁。</p>
+<p>再比如共享经济，OFO、摩拜单车等等，那会发展太迅猛了。周围朋友同学跳槽的，工资也是蹭蹭蹭往上涨。但是，看看现在呢？ </p>
+<p><img src="/resources/a-friend-of-me-was-fired/8651804e-ece5-422b-ae83-6669e22e0bfc.png" alt="堆积如山的共享单车，图片来源于网络"></p>
+<p>再比如，教育版块，前面股价跳楼式下跌，各大公司也都纷纷裁员。</p>
+<p>一个企业的发展，肯定不可能那么一帆风顺。</p>
+<p>比如当年曾经飞黄腾达的外企，什么 IBM、摩托罗拉、诺基亚等等，那都是当年应届生首选的香饽饽啊，但现在呢？</p>
+<p>我前面几次跳槽，还真的都拿到了对应公司的 Offer（比如 XX 单车，猿X等），薪资给的都还不错，但我最终都没选择去。真的是，运气好罢了~ </p>
+<p><img src="/resources/a-friend-of-me-was-fired/6dbf6e07-6a3e-488f-af0c-2e9f20d76526.png" alt="裁员，堆积如山的工牌，图片来源于网络"></p>
+<p>其实，就算你在大厂也会有一样的。</p>
+<p>再举个例子，XX 入职阿里，当时股价 $300+，谈 Offer 可能也按照 $300+ 谈的，现在呢？缩水多少？</p>
+<p>还有更悲催的，行权时，按照 $300 股价缴税，还选择现金缴税……到现在？</p>
+<p><img src="/resources/a-friend-of-me-was-fired/0019181c-3bdf-4684-9900-b7fbc4757385.png" alt></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247500065&amp;idx=1&amp;sn=ab0ddc76d0173ee980fa2fc9b95d5d06&amp;chksm=eb44c0c5dc3349d335b368372362634c2a363d37e627ca15f652bf840e597a0fcb6a1f6f9d10&amp;token=1931883326&amp;lang=zh_CN#rd" target="_blank" rel="noopener">听一些朋友说，当年行权缴税太多</a>，还办了贷款，每月还贷款，但到头来 ……  能想象其中的悲催。</p>
+<h2 id="调整心态，充实自己"><a href="#调整心态，充实自己" class="headerlink" title="调整心态，充实自己"></a>调整心态，充实自己</h2><p>那我们能怎么办呢？</p>
+<ul>
+<li><p>一方面，我们要调整心态，意识到裁员是一件正常的事情，不要心灰意冷；</p>
+</li>
+<li><p>另一方面，“打铁还需自身硬”，我们得充实自己，有一手<strong>真本事</strong>，还担心哪里找不到工作吗？换份工作，还有一个 n+1 的补贴，香！（一定记得维护自己的合法权益）</p>
+</li>
+</ul>
+<p><strong>不管外界环境如何变化，把自己变得更强大</strong>，这一点永远都不过时。</p>
+<p>共勉！</p>
+<p><img src="/resources/a-friend-of-me-was-fired/f35e1666-b171-4cb3-8c40-e95f19c31e0d.png" alt></p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>阿里巴巴最近招聘实习生（社招也还有少量 hc，欢迎咨询），感兴趣在公众号后台回复“阿里内推”得到内推二维码。面试前看看如下文章兴趣有点帮助：</p>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/C3Smy6ldOhYJU14EztGhkQ" target="_blank" rel="noopener">秋招都结束了，才得知没 HC 了？</a></li>
+<li><a href="https://mp.weixin.qq.com/s/OGJhxM7FdeoIkAL2-uUI_Q" target="_blank" rel="noopener">Google 工程师面试指南.pdf-免费下载</a></li>
+<li><a href="https://mp.weixin.qq.com/s/iRcyW1dEeCxleTfOTyr2Lw" target="_blank" rel="noopener">清华计算机系王牌课程——《数据结构》课件及源码包下载</a></li>
+<li><a href="https://mp.weixin.qq.com/s/7T9R9kFXke986vSoPNzC8g" target="_blank" rel="noopener">BAT大佬写的 1300 页 Leetcode刷题笔记，必须收藏！</a></li>
+<li><a href="https://mp.weixin.qq.com/s/DIVTVtChtd287ezWfriBYA" target="_blank" rel="noopener">码农必备 计算机基础知识总结.pdf 和 操作系统总结.pdf</a></li>
+<li><a href="https://mp.weixin.qq.com/s/rqTnQH_TTmgmbPm3qV-62Q" target="_blank" rel="noopener">突击大厂网络面试题，「图解网络.pdf」白嫖！</a></li>
+</ul>
+<p>微信修改了推送机制（改推荐了，也就是你看到的内容不由你主导了），还请记得星标、在看、点赞、留言多互动，这样才能让我的文章及时送达到你手中，ღ 笔芯。</p>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点击这里查看我的逆袭之路</a>），目前在BAT某厂打工，是前大疆（无人机）技术主管。</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MyLife/" rel="tag"># MyLife</a>
+          
+            <a href="/tags/总结/" rel="tag"># 总结</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/design-for-failure.html" rel="next" title="为什么要面向失败设计？">
+                <i class="fa fa-chevron-left"></i> 为什么要面向失败设计？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/my-answer-on-zhihu-become-hot.html" rel="prev" title="没想到，知乎的这个回答居然火了！">
+                没想到，知乎的这个回答居然火了！ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#裁员离自己这么近"><span class="nav-number">1.</span> <span class="nav-text">裁员离自己这么近</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择大于努力"><span class="nav-number">2.</span> <span class="nav-text">选择大于努力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调整心态，充实自己"><span class="nav-number">3.</span> <span class="nav-text">调整心态，充实自己</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/a-friend-of-me-was-fired.html';
+
+      var disqus_title = "没想到裁员离我这么近";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

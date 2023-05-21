@@ -1,0 +1,784 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="中南大学|清华大学软件学院唐磊的博客, 主攻软件工程, 数据挖掘, 这里记录了我的学习, 生活和工作">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="几天不上javaeye了。才发现javaeye已经被重定向至ITeye了。看原因才知道。。以下内容转自：http://www.iteye.com/news/20605 今天，也就是2011年4月1日愚人节，我们不得不在这样一个特殊含义的节日，向JavaEye会员宣布这样一个富有讽刺性和纪念意义的网站公告：由于Oracle公司通过授权的律师事务所，对JavaEye网站提出了我们无法接受的苛刻条件，在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[转]JavaEye被逼改名ItEye">
+<meta property="og:url" content="https://www.tanglei.name/blog/javaeye2iteye.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="几天不上javaeye了。才发现javaeye已经被重定向至ITeye了。看原因才知道。。以下内容转自：http://www.iteye.com/news/20605 今天，也就是2011年4月1日愚人节，我们不得不在这样一个特殊含义的节日，向JavaEye会员宣布这样一个富有讽刺性和纪念意义的网站公告：由于Oracle公司通过授权的律师事务所，对JavaEye网站提出了我们无法接受的苛刻条件，在">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.050Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[转]JavaEye被逼改名ItEye">
+<meta name="twitter:description" content="几天不上javaeye了。才发现javaeye已经被重定向至ITeye了。看原因才知道。。以下内容转自：http://www.iteye.com/news/20605 今天，也就是2011年4月1日愚人节，我们不得不在这样一个特殊含义的节日，向JavaEye会员宣布这样一个富有讽刺性和纪念意义的网站公告：由于Oracle公司通过授权的律师事务所，对JavaEye网站提出了我们无法接受的苛刻条件，在">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/javaeye2iteye.html">
+
+
+
+
+
+  <title> [转]JavaEye被逼改名ItEye | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/javaeye2iteye.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                [转]JavaEye被逼改名ItEye
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-04-06T10:54:12+00:00">
+                2011-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络文摘/" itemprop="url" rel="index">
+                    <span itemprop="name">网络文摘</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/javaeye2iteye.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/javaeye2iteye.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>几天不上javaeye了。才发现javaeye已经被重定向至ITeye了。看原因才知道。。以下内容转自：<a href="http://www.iteye.com/news/20605" target="_blank" rel="noopener">http://www.iteye.com/news/20605</a></p>
+<p>今天，也就是2011年4月1日愚人节，我们不得不在这样一个特殊含义的节日，向JavaEye会员宣布这样一个富有讽刺性和纪念意义的网站公告：由于Oracle公司通过授权的律师事务所，对JavaEye网站提出了我们无法接受的苛刻条件，在经过我们长期努力的交涉无效之后，Oracle授权的律师事务所 以强硬的姿态要求我们服从，并且以停用javaeye.com的域名作为威胁，因此，我们只能被迫放弃已经运营了7年的JavaEye的域名和JavaEye品牌，更名为ItEye。</p>
+<p>JavaEye网站从4月1日起，正式更名为ItEye技术网站，同时网站域名从javaeye.com重定向到iteye.com。</p>
+<p>事情要从2010年的11月26日说起：</p>
+<p>11月26日我们收到了Oracle授权的联德律师事务所发来的律师函（律师函请看附件），声称：我方未经Oracle公司授权，擅自使用了javaeye.com的域名，涉嫌误导JAVA商标，要求我方如下：</p>
+<div><br>  Oracle 写道<br></div>
+
+<div><br>  1. 不在javaeye.com网站首页使用“JavaEye”标识,并改用其他名称,例如“EyeonJava”;<br> 2. 在javaeye.com网站醒目位置添加声明,表明该网站与甲骨文美国有限公司没有任何关<br> 系,如: “[Eye on Java]—有关 JAVA 的非官方社区网站 An Unofficial Community on JAVA”,或者 “[Eye on Java]—独立的 JAVA 社区网站 An Independent Community on JAVA”;<br></div>
+
+<p>这两个条件很诡异的地方在于：</p>
+<p>1、一个运营了7年的JavaEye品牌，网站竟然不能出现JavaEye的字样，那让我们的用户和我们公司的客户怎么看，让我情何以堪？ 而且尤其诡异的地方在于：javaeye和eyeonjava这两个标示并没有任何本质的区别，如果javaeye涉嫌误导，那么凭什么eyeonjava就不涉嫌误导了呢？ 如果我今天按照你的要求改成eyeonjava了，明天你又告我eyeonjava也涉嫌误导，难道我还得天天改来改去不成？</p>
+<p>2、众所周知，JavaEye现在并不是一个纯Java社区，而是一个综合性技术网站，让我们在首页挂一个“有关Java的非官方社区”的标语，让我们网站的非Java程序员情何以堪？那不是摆明要逼走所有不做java的程序员吗？</p>
+<p>总之，我们觉得Oracle要求十分无理，对JavaEye网站的发展也极其有害，根本无法接受这样的条件。为此，我们双方展开了长期的拉锯和交涉。经过多次拉锯之后，我们最终明确拒绝了Oracle提出的条件，我们认为：</p>
+<div><br>  引用<br></div>
+
+<div><br>  JAVA(TM) 是一个注册商标，但是java是一个通用的英文单词，我们使用的是java，而不是JAVA(TM)，因此，应该不构成侵权的事实， 我们javaeye.com域名的使用，并不会让公众产生不必要的误解，特别是，我们网站上面没有使用任何Oracle或者SUN公司相关JAVA(TM)商标的任何标示或者图标，因此不存在侵权。<br></div>
+
+<p>Oracle在3月29日则给出了最后的通牒：</p>
+<div><br>  Oracle 写道<br></div>
+
+<div><br>  您注册和使用的域名“javaeye.com”完整包含了甲骨文美国有限公司的“JAVA”注册商标，与其构成近似，而且该网站登载有商业性质广告，满足域名争议以及计算机网络域名侵权的法律要件。因此，从法律角度讲，无论是通过域名争议或法院诉讼，甲骨文美国有限公司都可以要求贵方停止使用该域名。<br></div>
+
+<p>为此，我们不得不考虑更换网站域名和标示。其实ItEye是我们很早之前就已经获得的域名，但考虑到JavaEye作为一个社区已经运营了7年，具备了很高的知名度和品牌忠诚度，更换域名会造成品牌延续性的中断，对网站SEO来说也会造成巨大的冲击，而且对网站用户特别是博客用户也会造成很多的不便。因此我们不倾向于轻易的更换域名和品牌。</p>
+<p>但是众所周知， Oracle公司对开源社区一直不友善，收购所到之处，开源社区寸草不生：Oracle收购BEA之后，悍然关闭了BEA运营多年的dev2dev社区；Oracle收购SUN之后，连续关闭了SUN的多个开源项目和社区，Netbeans项目也奄奄一息；Oracle和最大的开源组织Apache基金会也矛盾重重，Apache基金会差点宣布退出JCP组织；特别是和JAVA有关的公司，Oracle更是频频挥舞法律的大棒，连Google都不放过，，最终连JAVA之父James Gosling也离开了Oracle投奔了Google。因此谁有能保证以后不继续拿JAVA商标无端生事，将JavaEye网站逼入死路？</p>
+<p>所以，我们不得不下定决心更换域名，忍一时之痛，彻底解决域名侵权的法律威胁。我们知道，更换域名之后，ItEye新的网站SEO排名将从零开始，网站用户也会有一部分流失，这对于网站来说将是一个沉重的打击，但是我们不得不做出这个决定，来换取网站的生存权。我们相信，更换了ItEye域名之后，通过我们团队的共同努力，也通过新的ItEye网站从产品创新，从代码重写，从内容运营和建设方面的共同提升下，我们的新ItEye网站将迅速从低谷中走出，超越原来的JavaEye网站，愚人节对我们来说，并不是一个糟糕的节日，而是一个值得纪念的开始，这个具有戏剧性的愚人节将见证ItEye从零走向辉煌。</p>
+<p>最后，我们也以自身的悲催经历善意的提醒那些可能和我们同样遭遇的网站，对于任何Oracle未来可能收购的公司的商标，要尽量避免使用，以免将来遭到Oracle法律武器的攻击。</p>
+<p>关于本公告相关问题的解释请看：<a href="http://www.iteye.com/news/20625" target="_blank">JavaEye被迫改名ItEye网站的FAQ(常见问题解答)</a></p>
+<p>不相信Oracle会给我们发律师函的请看前SUN社区经理蒋清野揭露的内幕：<a href="http://www.qyjohn.net/?p=1155" target="_blank">从JavaEye社区被迫改名说起</a></p>
+<p>附件是Oracle委托的律师事务所发给我们的律师函</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/fenghuang.html" rel="next" title="清明凤凰行">
+                <i class="fa fa-chevron-left"></i> 清明凤凰行
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/a-mx-dns.html" rel="prev" title="A记录,MX记录">
+                A记录,MX记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/javaeye2iteye.html';
+
+      var disqus_title = "[转]JavaEye被逼改名ItEye";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

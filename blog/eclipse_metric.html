@@ -1,0 +1,798 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Eclipse,软件度量,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="软件度量的课就要这么完了，都还没有感觉呀。要检查项目，用了eclipse的插件，metrics感觉还不错。不过有的结果不知道啥意思，网上查了下，结合自己的理解，在这里记下来了，分享了。刚开始准备就在图片里面写写了事，不过有的太长了。还是另外再加些内容吧。     主要参考内容来自：http://metrics.sourceforge.net/ Normalized Distance**: 在ecl">
+<meta name="keywords" content="Eclipse,软件度量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="eclipse插件Metrics结果分析">
+<meta property="og:url" content="https://www.tanglei.name/blog/eclipse_metric.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="软件度量的课就要这么完了，都还没有感觉呀。要检查项目，用了eclipse的插件，metrics感觉还不错。不过有的结果不知道啥意思，网上查了下，结合自己的理解，在这里记下来了，分享了。刚开始准备就在图片里面写写了事，不过有的太长了。还是另外再加些内容吧。     主要参考内容来自：http://metrics.sourceforge.net/ Normalized Distance**: 在ecl">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2011/04/eclipse_metrics.jpg">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.051Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="eclipse插件Metrics结果分析">
+<meta name="twitter:description" content="软件度量的课就要这么完了，都还没有感觉呀。要检查项目，用了eclipse的插件，metrics感觉还不错。不过有的结果不知道啥意思，网上查了下，结合自己的理解，在这里记下来了，分享了。刚开始准备就在图片里面写写了事，不过有的太长了。还是另外再加些内容吧。     主要参考内容来自：http://metrics.sourceforge.net/ Normalized Distance**: 在ecl">
+<meta name="twitter:image" content="https://www.tanglei.name/wp-content/uploads/2011/04/eclipse_metrics.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/eclipse_metric.html">
+
+
+
+
+
+  <title> eclipse插件Metrics结果分析 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/eclipse_metric.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                eclipse插件Metrics结果分析
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-04-13T08:29:18+00:00">
+                2011-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">课程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/eclipse_metric.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/eclipse_metric.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>软件度量的课就要这么完了，都还没有感觉呀。要检查项目，用了eclipse的插件，metrics感觉还不错。不过有的结果不知道啥意思，网上查了下，结合自己的理解，在这里记下来了，分享了。刚开始准备就在图片里面写写了事，不过有的太长了。还是另外再加些内容吧。</p>
+<p style="text-align: center;"><br>  <a href="/wp-content/uploads/2011/04/eclipse_metrics.jpg" target="_blank"><img class="aligncenter size-medium wp-image-432" title="eclipse_metrics" src="/wp-content/uploads/2011/04/eclipse_metrics.jpg" alt></a><br></p>
+
+<p>主要参考内容来自：<a href="http://metrics.sourceforge.net/" target="_blank" rel="noopener">http://metrics.sourceforge.net/</a></p>
+<p><strong>Normalized Distance**</strong>:<strong> 在eclipse插件的官网上也没详细说明。| A + I &#8211; 1 |, this number should be small, close to zero for good packaging design.就说了计算方法，然后值越小越好，越接近0越能说明包设计好。至于A是啥I是啥也没说。网上查了下才搞明白了。 **</strong></p>
+<p>也是Distance from the Main Sequence (DMS).The <em>Distance from the Main Sequence</em> metric measures the balance between the abstraction and instability rates of the package.衡量抽象性和不稳定率之间的平衡率.</p>
+<p>According to what function a package has to perform, it must be able to be unstable, in other words, often significantly or abstractly modified.  It must be sufficiently general to be adaptable to widely diverse situations, either without being modified or with only minimal modifications.  It is preferable to have a balance between these contradictory criteria.根据一个包功能的定义，包应该是不稳定的，换句话说，就是要在没有修改或者修改量很笑的情况下适应不同环境的变化，要有一个较好的平衡与这两个冲突的标准。</p>
+<p>Computation计算For a package, the balance between abstraction and instability is obtained through the following expression: | A + I &#8211; 1 |是Abstraction+Instablity-1的绝对值，Abstraction抽率，Instablity不稳定率。一般范围在50%到100%之间。I和A后面会讲。</p>
+<p><strong>Number of Classes**</strong>：<strong>类数量</strong>。**</p>
+<p><strong>Specialization Index**</strong>：*<em>Average of the specialization index, defined as NORM \</em> DIT / NOM. This is a class level metric 覆盖方法的数量*继承深度/方法数。是一个类级别的度量。</p>
+<p><strong>Instability (I)</strong>: The Instability metric measures the rate of instability of a package.  A package is unstable if it depends more on other packages than they depend on it.说的是包的不稳定性。一个包不稳定当它依赖的包多余其他包依赖它的时就说一个包不稳定。 The ratio of efferent coupling (Ce) to total coupling. I = Ce / (Ce + Ca). This metric is an indicator of the package&#8217;s resilience to change. The range for this metric is 0 to 1, with I=0 indicating a completely stable package and I=1 indicating a completely instable package.</p>
+<p><strong>Abstractness</strong> (A): The number of abstract classes (and interfaces) divided by the total number of types in a package。measure<strong>s a</strong> package&#8217;s abstraction rate度量一个包的抽象性。The package&#8217;s abstraction level corresponds to its stability level.是跟它稳定性级别是相符的。</p>
+<p><strong>Number of Attributes**</strong>：<strong>属性数量 **</strong></p>
+<p><strong>Number of Packages</strong>：包数量</p>
+<p><strong>Method Lines of Code**</strong>：<strong>方法代码行**</strong></p>
+<p><strong>Weighted methods per Class**</strong>：**Sum of the McCabe Cyclomatic Complexity for all methods in a class.每个方法的圈复杂度和。</p>
+<p>每个类的加权方法WMC (weighed Methods per Class)</p>
+<p>WMC=∑Ci (i=1～n)</p>
+<p>其中，Ci为一个类的各个方法（或操作或服务）的复杂性，相当于传统方法中的环路复杂性，Ci可相加。方法的数量和它们的复杂性是用来实现和测试一个类工作量总量的指示器。方法的数量越大，继承树（所有子类都继承父类的方法）就越复杂。对一个给定的类，随着方法的数量增大，其应用很可能变得越来越专门化，由此将限制其可能的重用。所以，WMC的值应当合理。</p>
+<p><strong>Number of Overridden Methods**</strong>：**覆盖方法数</p>
+<p><strong>Number of Static Attributes**</strong>：<strong>static属性数量**</strong></p>
+<p><strong>Nested Block Depth**</strong>：**The depth of nested blocks of code.代码块的嵌套深度</p>
+<p><strong>Number of Methods;</strong>方法数量<em>**</em></p>
+<p><strong>Lack of Cohesion of Methods:</strong> A measure for the Cohesiveness of a class. Calculated with the Henderson-Sellers method: If m(A) is the number of methods accessing an attribute A, calculate the average of m(A) for all attributes, subtract the number of methods m and divide the result by (1-m). A low value indicates a cohesive class and a value close to 1 indicates a lack of cohesion and suggests the class might better be split into a number of (sub)classes.缺少的方法内聚。如果m(A)是方法中访问属性A的次数，计算所有属性的访问次数的平均值，再减去方法数量，除以1-m。这个值越小说明内聚性越好，如果大了接近1则按时缺少内聚，建议把它分成几个子类。</p>
+<p>一个类内的每种方法访问一个或多个属性（也称实例变量）。LCOM是访问一个或多个相同属性方法的数量。 如果LCOM很大，则说明方法可以通过属性与其他方法耦合，这就增加了类设计的复杂性。通常，对LCOM值很大的类，可以把它分为两个或多个单独的类，这样每个类能的设计更方便。这里讲的耦合和聚合与传统软件中所讲的是一样的。我们希望高聚合和低耦合，即保持低的LCOM。但在某些情况下，LCOM值很大也是合理的。</p>
+<p><strong>McCabe Cyclomatic Complexity</strong>：圈复杂度。我还记得有3种计算方法，圈数量=边-节点+2=判断+1 ，网上讲得很多，在此不说了。</p>
+<p><strong>Number of Parameters**</strong>：<strong>参数数量**</strong></p>
+<p><strong>Abstractness**</strong>：**The number of abstract classes (and interfaces) divided by the total number of types in a package</p>
+<p><strong>Number of Interfaces**</strong>：<strong>接口数量**</strong></p>
+<p><strong>Number of Children**</strong>：<strong>子类数量</strong>，**子类在类的层次内，子类可以最直接地从属于一类。随着子类数量的增大，重用也增加了。但父类抽象的表示可能减少，即一些子类可能不是父类真正的成员，同时，测试数量（用来检查每个子类在操作前后的要求）也将增加。</p>
+<p><strong>Depth of Inheritance Tree**</strong>：**继承树深度，DIT的值越大，复杂性就越高。因为随着DIT的增大，层次的类可能会继承许多方法。当试图预测一个类行为时，困难不仅会增大，而且会增加设计的复杂性。当然DIT较大时，则表示有许多方法被重用，这是其好的一方面。</p>
+<hr>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Eclipse/" rel="tag"># Eclipse</a>
+          
+            <a href="/tags/软件度量/" rel="tag"># 软件度量</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/words-after-bug.html" rel="next" title="[转]程序出错后，程序员给测试人员的20条高频回复">
+                <i class="fa fa-chevron-left"></i> [转]程序出错后，程序员给测试人员的20条高频回复
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/donot_cancel_gprs.html" rel="prev" title="流量包不能取消掉">
+                流量包不能取消掉 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/eclipse_metric.html';
+
+      var disqus_title = "eclipse插件Metrics结果分析";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

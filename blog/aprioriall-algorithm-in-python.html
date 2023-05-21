@@ -1,0 +1,851 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Python,数据挖掘,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; 序列数据是非常重要的一种，在很多领域里面都频繁出现，例如：医药，商业，财政，客户行为，教育，安全等等。相关研究可以大致将序列数据的挖掘分为两类，发现序列模式和挖掘周期模式。Agrawal 等人[1]首次提出了挖掘频繁序列模式，利用支持度的概念来发现频繁模式，AprioriALL算法也是一种基于Apriori性质的算法，采用逐层搜索的算法">
+<meta name="keywords" content="Python,数据挖掘">
+<meta property="og:type" content="article">
+<meta property="og:title" content="序列模式挖掘-AprioriAll算法详解(附python源码)">
+<meta property="og:url" content="https://www.tanglei.name/blog/aprioriall-algorithm-in-python.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; 序列数据是非常重要的一种，在很多领域里面都频繁出现，例如：医药，商业，财政，客户行为，教育，安全等等。相关研究可以大致将序列数据的挖掘分为两类，发现序列模式和挖掘周期模式。Agrawal 等人[1]首次提出了挖掘频繁序列模式，利用支持度的概念来发现频繁模式，AprioriALL算法也是一种基于Apriori性质的算法，采用逐层搜索的算法">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/03/image2.png">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/03/aprioriall_in_paper.jpg">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.120Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="序列模式挖掘-AprioriAll算法详解(附python源码)">
+<meta name="twitter:description" content="&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; 序列数据是非常重要的一种，在很多领域里面都频繁出现，例如：医药，商业，财政，客户行为，教育，安全等等。相关研究可以大致将序列数据的挖掘分为两类，发现序列模式和挖掘周期模式。Agrawal 等人[1]首次提出了挖掘频繁序列模式，利用支持度的概念来发现频繁模式，AprioriALL算法也是一种基于Apriori性质的算法，采用逐层搜索的算法">
+<meta name="twitter:image" content="https://www.tanglei.name/wp-content/uploads/2012/03/image2.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/aprioriall-algorithm-in-python.html">
+
+
+
+
+
+  <title> 序列模式挖掘-AprioriAll算法详解(附python源码) | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/aprioriall-algorithm-in-python.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                序列模式挖掘-AprioriAll算法详解(附python源码)
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2012-03-20T19:24:25+00:00">
+                2012-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/我不会算法/" itemprop="url" rel="index">
+                    <span itemprop="name">我不会算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/aprioriall-algorithm-in-python.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/aprioriall-algorithm-in-python.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#160;&#160;&#160;&#160;&#160; 序列数据是非常重要的一种，在很多领域里面都频繁出现，例如：医药，商业，财政，客户行为，教育，安全等等。相关研究可以大致将序列数据的挖掘分为两类，发现序列模式和挖掘周期模式。Agrawal 等人<sup>[1]</sup>首次提出了挖掘频繁序列模式，利用支持度的概念来发现频繁模式，AprioriALL算法也是一种基于Apriori性质的算法，采用逐层搜索的算法来挖掘模式。<a href="http://rakesh.agrawal-family.com/papers/icde95seq.pdf" target="_blank">这篇论文</a>本身还讲了另外基于Apriori的变种序列模式挖掘算法，AprioriSome和DynamicSome。下面将根据这篇论文和结合自己的理解来说明下AprioriAll算法。总体来说，自我感觉这个AprioriAll算法相当于利用了两次前面提到的<a href="/blog/apriori-algorithm-in-python.html" target="_blank">Apriori算法</a>，中间包含一个频繁项的映射Map。区别在于其<strong>支持度的定义有所区分</strong>：本文所述的序列模式的支持度是指支持某特定某次的<strong>custom数量</strong>，而前面提到的关联规则Apriori算法中的支持度是在项集的交易数量上（就是下面的<strong>baskets数量</strong>）。</p>
+<p>&#160;&#160;&#160;&#160;&#160; AprioriAll算法大致分为5个步骤：</p>
+<ol>
+<li><strong>Sort Phase</strong>：排序阶段，这个过程将根据客户ID和交易时间排序。在本文中，这一步在初始化读取交易数据文件时完成。</li>
+<li><strong>Litemset Phase</strong>：频繁项集挖掘阶段，这个过程相当于利用了一次Apriori算法，找出所有大于给定支持度的频繁项集。为后面的转换成map阶段做准备工作。</li>
+<li><strong>Transformation Phase</strong>：转化阶段，利用上面生成的频繁项集，扫描原交易序列数据，根据构造出的Map进行映射得到新的序列。</li>
+<li><strong>Sequence Phase</strong>：序列阶段，根据上一步得到的新序列数据集，再进行一次Apriori算法，得到新的”频繁项集”。</li>
+<li><strong>Maximal Phase</strong>：最大化序列阶段，经过以上步骤后将得到所有满足条件的序列模式，然后找出‘最大长度’的序列模式，即删除其父模式也在这个集合里的模式。</li>
+</ol>
+<p>举个例子：</p>
+<p><a href="/wp-content/uploads/2012/03/image2.png"><img title="AprioriAll算法" border="0" alt="AprioriAll算法" src="/wp-content/uploads/2012/03/image2.png"></a> </p>
+<p>以上为输入序列数据文件，此文件代表5个custom的购买记录，每行代表一个basket，用空行将custom间隔开。表示成的序列seqences为：</p>
+<ul>
+<li>seq1:&lt;(30)(90)&gt;,</li>
+<li>seq2:&lt;(10,20)(30)(40,60,70)&gt;</li>
+<li>seq3:&lt;(30,50,70)&gt;</li>
+<li>seq4&lt;(30),(40,70),(90)&gt;</li>
+<li>seq5&lt;(90)&gt;</li>
+</ul>
+<p>然后就是<strong>LitemPhase(频繁项集挖掘阶段)：</strong>假设给定支持度阈值0.4，则项集计算最小的重复次数应该为supportCount=0.4*len(sequcences)=0.4*5=2。同样首先得到频繁1项集，为[&#8217;30&#8217;], [&#8217;40&#8217;], [&#8217;70&#8217;], [&#8217;90&#8217;] （因为10只在seq2中出现一次，&lt;supportCount,排除掉，其他以此类推），然后再根据频繁1项集生成候选2项集，这个过程可以利用Apriori性质，为[[&#8217;30&#8217;, &#8217;40&#8217;], [&#8217;30&#8217;, &#8217;70&#8217;], [&#8217;30&#8217;, &#8217;90&#8217;], [&#8217;40&#8217;, &#8217;70&#8217;], [&#8217;40&#8217;, &#8217;90&#8217;], [&#8217;70&#8217;, &#8217;90&#8217;]]，再次扫描原交易序列数据，得到频繁2项集<a href="分别在seq2和seq4中出现">&#8217;40&#8217;, &#8217;70&#8217;\</a>。重复这个过程<del datetime="2013-01-12T07:57:43+00:00">知道</del>直到不能产生候选项集为止。本例中得到的频繁项集为4个频繁1-itemset和1个频繁2-itemset：[[&#8217;30&#8217;], [&#8217;40&#8217;], [&#8217;70&#8217;], [&#8217;90&#8217;], [&#8217;40&#8217;, &#8217;70&#8217;]]。</p>
+<p>接下来是<strong>Mapping转换阶段</strong>，构造一个Map，例如本例中transformation map :{1: [&#8217;30&#8217;], 2: [&#8217;40&#8217;], 3: [&#8217;70&#8217;], 4: [&#8217;90&#8217;], 5: [&#8217;40&#8217;, &#8217;70&#8217;]}，然后再次扫描交易序列数据，得到新的序列数据集【<font color="red">update:此转换阶段有误，详见文末的解释</font>】：</p>
+<ul>
+<li>newseq1:{1, 4}</li>
+<li>newseq2: {1, 2, 3, 5},</li>
+<li>newseq3: {1, 3}</li>
+<li>newseq4:{1, 2, 3, 4, 5},</li>
+<li>newseq5: {4}</li>
+</ul>
+<p>然后， <strong>Sequence Phase</strong>：序列阶段，采取同样的方式计数，子集在newseq中则count++,最后count数量大于supportCount保留下来，先得到频繁</p>
+<ul>
+<li>1-itemset：[1], [2], [3], [4], [5]，进而得到</li>
+<li>2-itemset：[1, 2], [1, 3], [1, 4], [1, 5], [2, 3], [2, 5], [3, 5]；</li>
+<li>3-itemset：[1, 2, 3], [1, 2, 5], [1, 3, 5], [2, 3, 5]</li>
+<li>4-itemset：[1, 2, 3, 5] (这个很明显，在newseq2和newseq4中出现两次刚好等于给定的阈值)</li>
+</ul>
+<p>最后就是<strong>Maximal Phase</strong>最大化序列阶段，例如在本例中，一个频繁3-itemset:[1, 2, 3],就包含了频繁1-itemset3个，频繁2-itemset也是3个（[1, 2], [1, 3],[2, 3], ）那么这些被包含的也都将被删除，悲剧的是它自己也被那个频繁4-itemset：[1, 2, 3, 5]包含，所以也删除掉。最后就剩下一个频繁2-itemset，和一个频繁4-itemset：[[1, 4], [1, 2, 3, 5]]，已经得到最大化的序列了，最后只需要根据前面用到的map，转换一下即可，即得到序列模式两个&lt;[&#8217;30&#8217;], [&#8217;90&#8217;]&gt; 和&lt;[&#8217;30&#8217;], [&#8217;40&#8217;], [&#8217;70&#8217;], [&#8217;40&#8217;, &#8217;70&#8217;]&gt;</p>
+<p>整个过程完成了。近期学python，还是用python实现了，python中的列表多了几层，我就容易搞混淆，所以另外弄了几个类，使代码好看些。哈哈。</p>
+<p>参考代码如下。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Created on Mar 15, 2012</span></span><br><span class="line"><span class="string">@author: tanglei|www.tanglei.name</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Basket</span><span class="params">()</span>:</span></span><br><span class="line">    items=[]<span class="comment">#Apple,orange,....</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,items)</span>:</span></span><br><span class="line">        self.items = items</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setItems</span><span class="params">(self,items)</span>:</span></span><br><span class="line">        self.items = items</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        mystr=<span class="string">'Basket[ '</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> self.items:</span><br><span class="line">            mystr = mystr + i +<span class="string">' , '</span></span><br><span class="line">        mystr += <span class="string">']'</span></span><br><span class="line">        <span class="keyword">return</span> mystr</span><br><span class="line">            </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Custom</span><span class="params">()</span>:</span></span><br><span class="line">    baskets=[]<span class="comment">#basket1,basket2</span></span><br><span class="line">    mapNums=set()<span class="comment">#maped num</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,baskets)</span>:</span></span><br><span class="line">        self.baskets = baskets</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setBaskets</span><span class="params">(self,baskets)</span>:</span></span><br><span class="line">        self.baskets = baskets</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setMapedNums</span><span class="params">(self,mapNums)</span>:</span></span><br><span class="line">        self.mapNums = mapNums</span><br><span class="line">    <span class="function"><span class="keyword">def</span>  <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        mystr=<span class="string">'Custom[ '</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> self.baskets:</span><br><span class="line">            mystr = mystr + i.__str__() +<span class="string">' , '</span></span><br><span class="line">        mystr += <span class="string">']'</span></span><br><span class="line">        <span class="keyword">return</span> mystr</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getMapedNums</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.mapNums</span><br><span class="line">        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AprioriAll</span><span class="params">()</span>:</span></span><br><span class="line">    customs=[]</span><br><span class="line">    minSuppCount = <span class="number">0</span><span class="comment">#count  number ,considering the min_supp and the num of transactions</span></span><br><span class="line">    allBaskets=[]</span><br><span class="line">    transMap=&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,min_supp=<span class="number">0.4</span>,datafile=<span class="string">'aprioriall.txt'</span>)</span>:</span></span><br><span class="line">        inputfile = open(datafile,<span class="string">"r"</span>)</span><br><span class="line">        self.min_supp = min_supp</span><br><span class="line">        baskets=[]</span><br><span class="line">        self.customs=[]</span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> inputfile.readlines():</span><br><span class="line">            <span class="keyword">if</span>(line != <span class="string">"\n"</span>):</span><br><span class="line">                items = re.compile(<span class="string">r"\w+"</span>).findall(line)</span><br><span class="line">                basket = Basket(items)</span><br><span class="line">                baskets.append(basket)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                custom = Custom((baskets))</span><br><span class="line">                self.customs.append(custom)</span><br><span class="line">                baskets=[] </span><br><span class="line">        <span class="comment">#add the last custom         </span></span><br><span class="line">        custom = Custom((baskets))</span><br><span class="line">        self.customs.append(custom)</span><br><span class="line">        </span><br><span class="line">        self.minSuppCount = math.ceil(min_supp * len(self.customs))</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sortPhase</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">'''sort the transaction db :with  customer-id as the major key and </span></span><br><span class="line"><span class="string">        transaction-time as the minor key. '''</span></span><br><span class="line">        <span class="comment">#has been done in the constructor</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">litemsetPhase</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">''' find all the fequent-itemsets whose support is above the threshold'''</span></span><br><span class="line">        litemset = []</span><br><span class="line">        items = []</span><br><span class="line">        allBaskets = []</span><br><span class="line">        <span class="keyword">for</span> custom <span class="keyword">in</span> self.customs:</span><br><span class="line">            <span class="keyword">for</span> basket <span class="keyword">in</span> custom.baskets:</span><br><span class="line">                allBaskets.append(basket)</span><br><span class="line">                <span class="keyword">for</span> item <span class="keyword">in</span> basket.items:</span><br><span class="line">                    <span class="keyword">if</span> [item] <span class="keyword">not</span> <span class="keyword">in</span> items:</span><br><span class="line">                        items.append([item])</span><br><span class="line">                    </span><br><span class="line">        items.sort()</span><br><span class="line">        </span><br><span class="line">        <span class="comment">#remove who blow the threshold</span></span><br><span class="line">        candidates=items</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            temp=[]</span><br><span class="line">            <span class="keyword">for</span> item1 <span class="keyword">in</span> candidates:</span><br><span class="line">                count = <span class="number">0</span></span><br><span class="line">                <span class="keyword">for</span> basket <span class="keyword">in</span> allBaskets:</span><br><span class="line">                    set1 = set(item1)</span><br><span class="line">                    <span class="keyword">if</span> set1.issubset(basket.items):</span><br><span class="line">                        count += <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> count &gt;= self.minSuppCount:</span><br><span class="line">                    print(<span class="string">"Frequent %d-itemset : %s"</span> %(len(item1),item1))</span><br><span class="line">                    temp.append(item1)</span><br><span class="line">                    litemset.append(item1)</span><br><span class="line">            </span><br><span class="line">            candidates = self.__genCandidate(temp)</span><br><span class="line">            <span class="keyword">if</span> len(candidates) == <span class="number">0</span> :</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        self.allBaskets = allBaskets</span><br><span class="line">        <span class="keyword">return</span> litemset</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">transformationPhase</span><span class="params">(self,transmap)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> custom <span class="keyword">in</span> self.customs:</span><br><span class="line">            mapNums=set()<span class="comment">#store the maped numbers of each custom</span></span><br><span class="line">            <span class="keyword">for</span> basket <span class="keyword">in</span> custom.baskets:</span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> transmap.keys():</span><br><span class="line">                    s1 = set(transmap[k])</span><br><span class="line">                    s2 = set(basket.items)</span><br><span class="line">                    <span class="keyword">if</span> s1.issubset(s2):</span><br><span class="line">                        mapNums.add(k)</span><br><span class="line">            custom.setMapedNums(mapNums)   </span><br><span class="line">            </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sequencePhase</span><span class="params">(self,mapNums)</span>:</span></span><br><span class="line">        </span><br><span class="line">        item1set = set()<span class="comment">#</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> mapNums :</span><br><span class="line">            item1set=item1set.union(num)</span><br><span class="line">                      </span><br><span class="line">        item1list=list(item1set)</span><br><span class="line">        item1list.sort()</span><br><span class="line">        </span><br><span class="line">        seqresult=[]</span><br><span class="line">        candidates=[]</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> item1list:</span><br><span class="line">            candidates.append([item])</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> candidates:</span><br><span class="line">                count = <span class="number">0</span> </span><br><span class="line">                <span class="keyword">for</span> seq <span class="keyword">in</span> mapNums:</span><br><span class="line">                    s1 = set(item)</span><br><span class="line">                    <span class="keyword">if</span> s1.issubset(seq):</span><br><span class="line">                        count += <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> count &gt;= self.minSuppCount:</span><br><span class="line">                    print(<span class="string">"Frequent %-itemsets : %s"</span> %(len(item),item))</span><br><span class="line">                    seqresult.append(item)       </span><br><span class="line">            candidates = self.__genCandidate(candidates) </span><br><span class="line">            <span class="keyword">if</span> len(candidates) == <span class="number">0</span> :</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">return</span> seqresult</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxSeq</span><span class="params">(self,seqs)</span>:</span></span><br><span class="line">        maxSeq=copy.deepcopy(seqs)</span><br><span class="line">        <span class="keyword">for</span> seq <span class="keyword">in</span> seqs:</span><br><span class="line">            t_set = set(seq)</span><br><span class="line">            <span class="keyword">for</span> seq1 <span class="keyword">in</span> seqs:</span><br><span class="line">                t_set1 = set(seq1)</span><br><span class="line">                <span class="keyword">if</span> t_set1 != t_set <span class="keyword">and</span> t_set1.issuperset(t_set):</span><br><span class="line">                    maxSeq.remove(seq)</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">return</span> self.__map2seq(maxSeq)          </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">createTransMap</span><span class="params">(self,litemset)</span>:</span></span><br><span class="line">        transmap = &#123;&#125;</span><br><span class="line">        value = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> litemset:</span><br><span class="line">            transmap[value]=each</span><br><span class="line">            value += <span class="number">1</span></span><br><span class="line">        self.transMap = transmap</span><br><span class="line">        <span class="keyword">return</span> transmap</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__map2seq</span><span class="params">(self,seqs)</span>:</span></span><br><span class="line">        <span class="comment">#transform numseq to original seq</span></span><br><span class="line">        origSeqs = []</span><br><span class="line">        <span class="keyword">for</span> seq <span class="keyword">in</span> seqs:</span><br><span class="line">            origSeq=[]</span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> seq:    </span><br><span class="line">                origSeq.append(self.transMap[item])</span><br><span class="line">            origSeqs.append(origSeq)</span><br><span class="line">        <span class="keyword">return</span> origSeqs    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__genCandidate</span><span class="params">(self,frequentItems)</span>:</span>    </span><br><span class="line">        <span class="comment">#gen new canidate</span></span><br><span class="line">        length = len(frequentItems) </span><br><span class="line">        result = []<span class="comment">#add one item   </span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(length):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>,length):</span><br><span class="line">                <span class="keyword">if</span> self.__lastDiff(frequentItems[i],frequentItems[j]):</span><br><span class="line">                    item = copy.deepcopy(frequentItems[i])</span><br><span class="line">                    item.insert(len(frequentItems[i]),frequentItems[j][len(frequentItems[j])<span class="number">-1</span>])</span><br><span class="line">                    <span class="keyword">if</span> <span class="literal">False</span> == self.__has_inFrequentItemsets(frequentItems, item):</span><br><span class="line">                        result.append(item)</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">    <span class="comment">#check if there is none  subsets of item in the frequentItems </span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__has_inFrequentItemsets</span><span class="params">(self,frequentItems,item)</span>:</span></span><br><span class="line">        <span class="keyword">import</span> SetTool</span><br><span class="line">        subs = SetTool.getSubSets(item,len(item)<span class="number">-1</span>) </span><br><span class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> subs:</span><br><span class="line">            flag=<span class="literal">False</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> frequentItems:</span><br><span class="line">                <span class="keyword">if</span> i == each:</span><br><span class="line">                    flag=<span class="literal">True</span></span><br><span class="line">                    <span class="keyword">break</span> </span><br><span class="line">            <span class="keyword">if</span> flag==<span class="literal">False</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span>  </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span> <span class="comment">#there is at least one subset in the freq-items</span></span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__lastDiff</span><span class="params">(self,items1,items2)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> len(items2) != len(items1):<span class="comment">#length should be the same</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> items1 == items2:<span class="comment">#if all the same,return false</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> items1[:<span class="number">-1</span>] == items2[:<span class="number">-1</span>]    </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    aa = AprioriAll(min_supp=<span class="number">0.4</span>,datafile=<span class="string">'aprioriall2.txt'</span>)</span><br><span class="line">    litemset = aa.litemsetPhase()</span><br><span class="line">    print(<span class="string">"litemset:"</span>);print(litemset)</span><br><span class="line">    transmap = aa.createTransMap(litemset);</span><br><span class="line">    print(<span class="string">"transformation map :"</span>);print(transmap)</span><br><span class="line">    aa.transformationPhase(transmap)</span><br><span class="line">    customs = aa.customs</span><br><span class="line">    mapNums = []</span><br><span class="line">    <span class="keyword">for</span> each <span class="keyword">in</span> customs:</span><br><span class="line">        mapNums.append(each.getMapedNums())</span><br><span class="line">    seqNums = aa.sequencePhase(mapNums)</span><br><span class="line">    maxSeqs= aa.maxSeq(seqNums)</span><br><span class="line">    print(<span class="string">"The sequential patterns :"</span>);print(maxSeqs)</span><br></pre></td></tr></table></figure>
+<p>利用例子中的数据，运行结果如下：</p>
+<p>[cc lang=&#8221;python&#8221;]</p>
+<p>Frequent 1-itemset : [&#8217;30&#8217;]</p>
+<p>Frequent 1-itemset : [&#8217;40&#8217;]</p>
+<p>Frequent 1-itemset : [&#8217;70&#8217;]</p>
+<p>Frequent 1-itemset : [&#8217;90&#8217;]</p>
+<p>Frequent 2-itemset : [&#8217;40&#8217;, &#8217;70&#8217;]</p>
+<p>litemset:</p>
+<p>[[&#8217;30&#8217;], [&#8217;40&#8217;], [&#8217;70&#8217;], [&#8217;90&#8217;], [&#8217;40&#8217;, &#8217;70&#8217;]]</p>
+<p>transformation map :</p>
+<p>{1: [&#8217;30&#8217;], 2: [&#8217;40&#8217;], 3: [&#8217;70&#8217;], 4: [&#8217;90&#8217;], 5: [&#8217;40&#8217;, &#8217;70&#8217;]}</p>
+<p>Frequent 1temsets : [1]</p>
+<p>Frequent 1temsets : [2]</p>
+<p>Frequent 1temsets : [3]</p>
+<p>Frequent 1temsets : [4]</p>
+<p>Frequent 1temsets : [5]</p>
+<p>Frequent 2temsets : [1, 2]</p>
+<p>Frequent 2temsets : [1, 3]</p>
+<p>Frequent 2temsets : [1, 4]</p>
+<p>Frequent 2temsets : [1, 5]</p>
+<p>Frequent 2temsets : [2, 3]</p>
+<p>Frequent 2temsets : [2, 5]</p>
+<p>Frequent 2temsets : [3, 5]</p>
+<p>Frequent 3temsets : [1, 2, 3]</p>
+<p>Frequent 3temsets : [1, 2, 5]</p>
+<p>Frequent 3temsets : [1, 3, 5]</p>
+<p>Frequent 3temsets : [2, 3, 5]</p>
+<p>Frequent 4temsets : [1, 2, 3, 5]</p>
+<p>The sequential patterns :</p>
+<p>[[[&#8217;30&#8217;], [&#8217;90&#8217;]], [[&#8217;30&#8217;], [&#8217;40&#8217;], [&#8217;70&#8217;], [&#8217;40&#8217;, &#8217;70&#8217;]]]</p>
+<p><code>`</code></p>
+<p>&#160;</p>
+<font size="5" color="red">【update,2013-1-12】</font>
+
+<p>以上文章是大四时写的，之前有读者指出了错误之处。后发现确实有误，在mapping阶段，本来第一个cusomer的序列是[<30>,<90>]是两次购物数据，不能笼统的合并成[30,90]即上述本文中的newseq1：{1,4}，同理newseq2也应该是[(1),(2,3,5)]&#8230;&#8230;这影响了后面子集的计算，举个例子而言比如 [(3) (5)]不是[(3 5)]的子集，因为前者代表先买了3，再买的5，而后者是3，5一起买的……因此上述算法逻辑有问题。</90></30></p>
+<p>【BUT】在参考文献提到的原论文中也有没有理解到的地方，后面再找时间向高手咨询咨询。例如文章中的</p>
+<p><a href="/wp-content/uploads/2012/03/aprioriall_in_paper.jpg"><img src="/wp-content/uploads/2012/03/aprioriall_in_paper.jpg" alt="aprioriall算法例子" title="aprioriall_in_paper" class="aligncenter size-full wp-image-2027"></a></p>
+<p>从中可以看出，明显[{1}{2,3,4}]和[{1}{5}]是最大的频繁序列，如果这个时候再根据mapping后跟我得到的结果应该是一样的。不知道是不是再根据map返回原始的数据的时候得经过处理，即将得到的[[&#8217;30 &#8216;], [&#8217;40&#8217;], [&#8217;70 &#8216;], [&#8217;40&#8217;, &#8217;70 &#8216;]]直接合并成 [[&#8217;30 &#8216;], [&#8217;40&#8217;, &#8217;70 &#8216;]]，这样就比较符合预期的结果。但是……这个过程在原文中也并没有讲呀。。。还不知道怎么解释比较合理，期待哪位高手帮忙解释下……</p>
+<p>网上查找相关资料也仅仅是参考这个论文，并没有详细完整的把那个例子讲完……</p>
+<font size="5" color="red">【/update】</font>
+
+<p>参考文献 </p>
+<hr align="left" size="1" width="33%">
+
+<p>[1]Agrawal,R.,Srikant,R.,Institute of Electric and Electronic Engineer et al.<strong>Mining sequential patterns</strong>[C].Proceedings of the Eleventh International Conference on Data Engineering, Washington DC, USA: IEEE Computer Society,1995:3-14.</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/数据挖掘/" rel="tag"># 数据挖掘</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/books-of-design-pattern-recommendation.html" rel="next" title="设计模式书籍推荐">
+                <i class="fa fa-chevron-left"></i> 设计模式书籍推荐
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/the-yongest-professor-in-central-south-university.html" rel="prev" title="中南出牛人啊——22岁教授级别的本科生">
+                中南出牛人啊——22岁教授级别的本科生 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/aprioriall-algorithm-in-python.html';
+
+      var disqus_title = "序列模式挖掘-AprioriAll算法详解(附python源码)";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

@@ -1,0 +1,857 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="软件配置管理,工具,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="软件配置管理的重要性已被大多数软件及相关企业所认识，而配置管理工具的使用是实施配置管理的重要部分。本文对目前较为流行的配置管理工具VSS,CVS,ClearCase,StarTeam做出比较分析。 一、Visual Source Safe(简称VSS） VSS是美国微软公司的产品，目前常用的版本为6.0版。VSS是配置管理的一种很好的入门级的工具。 评价如下： 易用性：★★★★★ 易学易用是VSS">
+<meta name="keywords" content="软件配置管理,工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件配置管理工具比较分析">
+<meta property="og:url" content="https://www.tanglei.name/blog/scm-tools-analysis.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="软件配置管理的重要性已被大多数软件及相关企业所认识，而配置管理工具的使用是实施配置管理的重要部分。本文对目前较为流行的配置管理工具VSS,CVS,ClearCase,StarTeam做出比较分析。 一、Visual Source Safe(简称VSS） VSS是美国微软公司的产品，目前常用的版本为6.0版。VSS是配置管理的一种很好的入门级的工具。 评价如下： 易用性：★★★★★ 易学易用是VSS">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.083Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软件配置管理工具比较分析">
+<meta name="twitter:description" content="软件配置管理的重要性已被大多数软件及相关企业所认识，而配置管理工具的使用是实施配置管理的重要部分。本文对目前较为流行的配置管理工具VSS,CVS,ClearCase,StarTeam做出比较分析。 一、Visual Source Safe(简称VSS） VSS是美国微软公司的产品，目前常用的版本为6.0版。VSS是配置管理的一种很好的入门级的工具。 评价如下： 易用性：★★★★★ 易学易用是VSS">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/scm-tools-analysis.html">
+
+
+
+
+
+  <title> 软件配置管理工具比较分析 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/scm-tools-analysis.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                软件配置管理工具比较分析
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-06-14T18:32:34+00:00">
+                2011-06-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">课程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/scm-tools-analysis.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/scm-tools-analysis.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>软件配置管理的重要性已被大多数软件及相关企业所认识，而配置管理工具的使用是实施配置管理的重要部分。本文对目前较为流行的配置管理工具VSS,CVS,ClearCase,StarTeam做出比较分析。</p>
+<p>一、Visual Source Safe(简称VSS）</p>
+<p>VSS是美国微软公司的产品，目前常用的版本为6.0版。VSS是配置管理的一种很好的入门级的工具。</p>
+<p>评价如下：</p>
+<p>易用性：★★★★★</p>
+<p>易学易用是VSS的强项，VSS采用标准的windows操作界面，只要对微软的产品熟悉，就能很快上手。VSS的安装和配置非常简单，对于该产品，不需要外部的培训（可以为公司省去一笔不菲的费用）。只要参考微软完备的随机文档，就可以很快的用到实际的工程当中。</p>
+<p>功能：★★★</p>
+<p>VSS的配置管理的功能比较基本，提供文件的版本跟踪功能，对于build和基线的管理，VSS的打标签的功能可以提供支持。VSS提供share（共享)、branch(分支）和合并（merge)的功能，对于团队的开发进行支持。VSS不提供对流程的管理功能，如对变更的流程进行控制。VSS不能提供对异地团队开发的支持。此外VSS只能在windows平台上运行，不能运行在其他操作系统上。</p>
+<p>安全性：★★★</p>
+<p>VSS的安全性不高，对于VSS的用户，可以在文件夹上设置不可读，可读，可读/写,可完全控制四级权限。但由于VSS的文件夹是要完全共享给用户后，用户才能进入，所以用户对VSS的文件夹都可以删除。这一点也是VSS的一个比较大的缺点。</p>
+<p>总体成本：★★★★</p>
+<p>VSS没有采用对许可证进行收费的方式，只要安装了VSS，对用户的数目是没有限制的。因此使用VSS的费用是较低的。</p>
+<p>技术支持：★★★★★</p>
+<p>由于VSS是微软的产品，可以得到稳定的技术支持。</p>
+<p>二、Concurrent Version System(简称CVS)</p>
+<p>CVS是开发源代码的配置管理工具，其源代码和安装文件都可以免费下载。</p>
+<p>易用性:★★★</p>
+<p>CVS是源于unix的版本控制工具，对于CVS的安装和使用最好对unix的系统有所了解能更容易学习，CVS的服务器管理需要进行各种命令行操作。目前，CVS的客户端有winCVS的图形化界面，服务器端也有CVSNT的版本，易用性正在提高。</p>
+<p>功能：★★★★</p>
+<p>CVS的功能除具备VSS的功能外，还具有：</p>
+<p>它的客户机/服务器存取方法使得开发者可以从任何因特网的接入点存取最新的代码；它的无限制的版本管理检出(checkout：注1)的模式避免了通常的因为排它检出模式而引起的人工冲突；它的客户端工具可以在绝大多数的平台上使用。同样，CVS也不提供对变更流程的自动管理功能。</p>
+<p>安全性：★★★★</p>
+<p>一般来说，CVS的权限设置单一，通常只能通过CVSROOT/passwd, CVSROOT/readers,</p>
+<p>CVSROOT/writers文件，同时还要设置CVS REPOS的物理目录权限来完成权限设置，无法完成复杂的权限控制；但是CVS通过CVS</p>
+<p>ROOT目录下的脚本，提供了相应功能扩充的接口，不但可以完成精细的权限控制，还能完成更加个性化的功能。</p>
+<p>总体成本：★★★★★</p>
+<p>CVS是开发源码软件，无需支付购买费用。</p>
+<p>技术支持：★★★</p>
+<p>同样因为CVS是开发源码软件，没有生产厂家为其提供技术的支持。如发现问题，通常只能靠自己查找网上的资料进行解决。</p>
+<p>三、StarTeam</p>
+<p>StarTeam是Borland公司的配置管理工具，StarTeam属于高端的工具，在易用性，功能和安全性等方面都很不错。</p>
+<p>易用性：★★★★★</p>
+<p>StarTeam的用户界面同VSS的类似，它的所有的操作都可通过图形用户界面来完成，同时，对于习惯使用命令方式的用户，StarTeam也提供命令集进行支持。同时，StarTeam的随机文档也非常详细。</p>
+<p>功能：★★★★★</p>
+<p>除了具备VSS，CVS所具有功能外，StarTeam还提供了对基于数据库的变更管理功能，是相应工具中独树一帜的。StarTeam还提供了流程定制的工具，用户可跟据自己的需求灵活的定制流程。与VSS和CVS不同，VSS和CVS是基于文件系统的配置管理工具，而StarTeam是基于数据库的。StarTeam的用户可根据项目的规模，选取多种数据库系统。</p>
+<p>安全性：★★★★★</p>
+<p>STARTEAM无需通过物理路径的权限设置，而是通过自己的数据库管理，实现了类似WINDOWSNT的域用户管理和目录文件ACL控制。StarTeam完全是域独立的。这个优势可以为用户模型提供灵活性，而不会影响到现有的安全设置。StarTeam的访问控制非常灵活并且系统。您可以对工程，视图，文件夹一直向下到每一个小的item设置权限。对于高级别的视图（view），访问控制可以与用户组、用户、项目甚至视图等链接起来。</p>
+<p>总体成本：★★★</p>
+<p>StarTeam是按license来收费的，比起VSS，CVS来，企业在启动StarTeam进行配置管理需要投入一定资金。</p>
+<p>技术支持：★★★★★</p>
+<p>Borland公司将对用户进行培训，并协作用户建立配置管理系统。并对用户提供技术升级等完善的支持。</p>
+<p>四、ClearCase</p>
+<p>ClearCase是Rational公司的产品，也是目前使用较多的配置管理工具。</p>
+<p>易用性：★★★</p>
+<p>ClearCase的安装和维护远比StarTeam复杂，要成为一个合格的ClearCase的系统管理员，需要接收专门的培训。ClearCase提供命令行和图形界面的操作方式，但从ClearCase的图形界面不能实现命令行的所有功能。</p>
+<p>功能：★★★★★</p>
+<p>ClearCase提供VSS,CVS，StarTeam所支持的功能，但不提供变更管理的功能。Rational另提供了ClearQuest工具提供对变更管理的功能，与StarTeam不同，ClearCase后台的数据库是专有的结构。ClearCase对于windows和unix平台都提供支持。ClearCase通过多点复制支持多个服务器和多个点的可扩展性，并擅长设置复杂的开发过程。</p>
+<p>安全性：★★★★</p>
+<p>ClearCase的权限设置功能与StarTeam相比，StarTeam有独立的安全管理机制，ClearCase没有专用的安全性管理机制，依赖于操作系统。</p>
+<p>总体成本：★★</p>
+<p>要选用ClearCase，需要考虑的费用除购买license的费用外，还有必不可少的技术服务费用，没有Rational公司的专门的技术服务，很难发挥出ClearCase的威力。如现在网上虽有ClearCase的破解软件，但尝试应用的公司大多失败的缘故。另外，对于web访问的支持，对于变更管理的支持功能都要另行购买相应的软件。</p>
+<p>技术支持：★★★★★</p>
+<p>Rational公司已被IBM公司收购，所以有可靠的售后服务保证。</p>
+<p>五、总结</p>
+<p>工具对比一览表</p>
+<table border="0" cellspacing="1" cellpadding="1" width="90%" align="center" bgcolor="#333333"><br>  <tr class="content" bgcolor="#ffffff"><br>    <td width="14%"><br>      特性<br>    </td><br><br>    <td width="19%"><br>      VSS<br>    </td><br><br>    <td width="17%"><br>      CVS<br>    </td><br><br>    <td width="20%"><br>      StarTeam<br>    </td><br><br>    <td width="30%"><br>      ClearCase<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      易用性<br>    </td><br><br>    <td><br>      ★★★★★<br>    </td><br><br>    <td><br>      ★★★<br>    </td><br><br>    <td><br>      ★★★★★<br>    </td><br><br>    <td><br>      ★★★<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      功能<br>    </td><br><br>    <td><br>      ★★★<br>    </td><br><br>    <td><br>      ★★★★<br>    </td><br><br>    <td><br>      ★★★★★<br>    </td><br><br>    <td><br>      ★★★★★<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      安全性<br>    </td><br><br>    <td><br>      ★★★<br>    </td><br><br>    <td><br>      ★★★★<br>    </td><br><br>    <td><br>      ★★★★★<br>    </td><br><br>    <td><br>      ★★★★<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      总体成本<br>    </td><br><br>    <td><br>      ★★★★<br>    </td><br><br>    <td><br>      ★★★★★<br>    </td><br><br>    <td><br>      ★★★<br>    </td><br><br>    <td><br>      ★★<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      技术支持<br>    </td><br><br>    <td><br>      ★★★★★<br>    </td><br><br>    <td><br>      ★★★<br>    </td><br><br>    <td><br>      ★★★★★<br>    </td><br><br>    <td><br>      ★★★★★<br>    </td><br>  </tr><br></table>
+
+<p>以上几种工具的总结如下：VSS的使用简便易学，但VSS的功能和安全性较弱，且只对windows平台进行支持，建议作为项目配置管理的入门时采用的工具；CVS的安全性和版本管理功能较强，可以实现异地开发的支持，但CVS安装和使用多采用命令行方式，学习曲线高，同时不提供对变更管理的功能，对于小型团队，可以采用CVS进行管理。ClearCase功能完善，安全性好，可以支持复杂的管理，但学习曲线和学习成本高，需要集成ClearQuest才能完成完整的配置管理功能；StarTeam很好地平衡了功能性、易用性和安全性，同时集成了版本管理、变更管理和缺陷管理。对大型的团队开发和建立组织级的配置管理体系，建议采用ClearCase和StarTeam作为配置管理工具。</p>
+<p>Microsoft Visual Source Safe（VSS）</p>
+<p>优点：操作简单，容易掌握；权限划分可到文件夹级，有Read、CheckOut&amp;&amp;CheckIn、Add/Rename/Delete、Destroy四种权限级别。</p>
+<p>缺点：权限管理基于文件共享形式，只能从文件夹共享的权限设定对整个库文件夹的权限，而且必须要有可写权限；版本管理和分支管理只能靠人为的手工设置；版本发行时，只能手工挑选对应的版本文件进行发布。</p>
+<p>注一：checkout是指从配置库中取出配置项，相对应的动作为checkin,及将配置项放入配置库中。</p>
+<p>表一、并行开发支持比较表</p>
+<table border="0" cellspacing="1" cellpadding="1" width="90%" bgcolor="#000000"><br>  <tr class="content" bgcolor="#ffffff"><br>    <td width="22%"><br>      工具名称<br>    </td><br><br>    <td width="78%"><br>      说明<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      ClearCase<br>    </td><br><br>    <td><br>      Copy-Modify-Merge 模式<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      Firefly<br>    </td><br><br>    <td><br>      Copy-Modify-Merge 模式<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      CVS<br>    </td><br><br>    <td><br>      Copy-Modify-Merge 模式<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      PVCS<br>    </td><br><br>    <td><br>      Check out-Modify-Check in 模式<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      VSS<br>    </td><br><br>    <td><br>      Check out-Modify-Check in 模式<br>    </td><br>  </tr><br></table>
+
+<p>表二异地开发支持比较表</p>
+<table border="0" cellspacing="1" cellpadding="1" width="90%" bgcolor="#000000"><br>  <tr class="content" bgcolor="#ffffff"><br>    <td width="22%"><br>      工具名称<br>    </td><br><br>    <td width="78%"><br>      说明<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      ClearCase<br>    </td><br><br>    <td><br>      提供MultiSite 模块，通过自动或手动同步位于不同开发地点的存储库的方式，支持异地开发<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      Firefly<br>    </td><br><br>    <td><br>      提供ServerSync 模块，通过自动或手动同步位于不同开发地点的存储库的方式，支持异地开发<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      CVS<br>    </td><br><br>    <td><br>      无专门支持的模块<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      PVCS<br>    </td><br><br>    <td><br>      无专门支持的模块<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      VSS<br>    </td><br><br>    <td><br>      无专门支持的模块<br>    </td><br>  </tr><br></table>
+
+<p>表三跨平台开发支持比较表</p>
+<table border="0" cellspacing="1" cellpadding="1" width="90%" bgcolor="#000000"><br>  <tr class="content" bgcolor="#ffffff"><br>    <td width="22%"><br>      工具名称<br>    </td><br><br>    <td width="78%"><br>      说明<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      ClearCase<br>    </td><br><br>    <td><br>      支持常见的平台<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      Firefly<br>    </td><br><br>    <td><br>      软件本身基于Java开发，可在Windows、Linux、Solaris、HP-UX、AIX等常见平台上使用，平台之间的移植也非常方便<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      CVS<br>    </td><br><br>    <td><br>      支持几乎所有的操作系统<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      PVCS<br>    </td><br><br>    <td><br>      软件本身基于Java 开发，能够支持常见的平台<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      VSS<br>    </td><br><br>    <td><br>      仅支持Windows 操作系统<br>    </td><br>  </tr><br></table>
+
+<p>表四与开发工具集成性比较表</p>
+<table border="0" cellspacing="1" cellpadding="1" width="90%" bgcolor="#000000"><br>  <tr class="content" bgcolor="#ffffff"><br>    <td width="22%"><br>      工具名称<br>    </td><br><br>    <td width="78%"><br>      说明<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      ClearCase<br>    </td><br><br>    <td><br>      直接与资源管理器集成，十分易用<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      Firefly<br>    </td><br><br>    <td><br>      与常见开发工具无缝集成<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      CVS<br>    </td><br><br>    <td><br>      对开发工具集成性较差<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      PVCS<br>    </td><br><br>    <td><br>      仅支持Windows 操作系统<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      VSS<br>    </td><br><br>    <td><br>      与Visual Studio开发工具包无缝连接，其它开发工具集成性差<br>    </td><br>  </tr><br></table>
+
+<p>表五运行性能比较表</p>
+<table border="0" cellspacing="1" cellpadding="1" width="90%" bgcolor="#000000"><br>  <tr class="content" bgcolor="#ffffff"><br>    <td width="22%"><br>      工具名称<br>    </td><br><br>    <td width="78%"><br>      说明<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      ClearCase<br>    </td><br><br>    <td><br>      服务器采用多进程机制，使用自带多版本文件系统MVFS，对性能有较大负面影响。做为一款企业级、全面的开发配置管理工具，适用于大型开发团队<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      Firefly<br>    </td><br><br>    <td><br>      服务器采用了多线程的应用服务器，性能表现优秀，做为一款企业级、全面的开发配置管理，能适用于50人到上千人的团队<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      CVS<br>    </td><br><br>    <td><br>      较高的运行性能，适用于各种级别的开发团队<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      PVCS<br>    </td><br><br>    <td><br>      服务器采用文件系统共享方式，对CPU、内存及网络要求较高，性能一般，仅适用于中小型项目团队，不适合于企业级应用<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      VSS<br>    </td><br><br>    <td><br>      相对功能单一、简陋，适用于几个人的小型团队，在数据量不大的情况下，性能可以接受<br>    </td><br>  </tr><br></table>
+
+<p>表六易用性比较表</p>
+<table border="0" cellspacing="1" cellpadding="1" width="90%" bgcolor="#000000"><br>  <tr class="content" bgcolor="#ffffff"><br>    <td width="22%"><br>      工具名称<br>    </td><br><br>    <td width="78%"><br>      说明<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      ClearCase<br>    </td><br><br>    <td><br>      安装、配置、使用相对较复杂，需要进行团队培训<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      Firefly<br>    </td><br><br>    <td><br>      在提供全面配置管理功能的情况下，安装、配置、使用较为简单，包括安装、配置、培训在内的整个实施周期一般不会超过一个月。<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      CVS<br>    </td><br><br>    <td><br>      安装、配置较复杂，但使用比较简单，只需对配置管理做简单培训即可<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      PVCS<br>    </td><br><br>    <td><br>      使用比较简单，只需对配置管理做简单培训即可<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      VSS<br>    </td><br><br>    <td><br>      安装、配置、使用均较简单，很容易上手使用<br>    </td><br>  </tr><br></table>
+
+<p>表七安全性比较表</p>
+<table border="0" cellspacing="1" cellpadding="1" width="90%" bgcolor="#000000"><br>  <tr class="content" bgcolor="#ffffff"><br>    <td width="22%"><br>      工具名称<br>    </td><br><br>    <td width="78%"><br>      说明<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      ClearCase<br>    </td><br><br>    <td><br>      采用C/S模式，需要共享服务器上的存储目录以供客户端访问，这将带来一定安全隐患<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      Firefly<br>    </td><br><br>    <td><br>      服务器上的存储目录不用共享，对客户端不透明，客户端不可直接访问存储目录，使系统更安全可靠<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      CVS<br>    </td><br><br>    <td><br>      采用C/S 模式，不需要共享服务器上的存储目录，安全性较好<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      PVCS<br>    </td><br><br>    <td><br>      基于文件系统共享，而且需要以&#8221;可写&#8221;的权限共享存储目录，存在较大的安全隐患<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      VSS<br>    </td><br><br>    <td><br>      基于文件系统共享实现对服务器的访问，需要共享存储目录，这将带来一定安全隐患<br>    </td><br>  </tr><br></table>
+
+<p>费用是否可以接受</p>
+<p>Rational ClearCase、Hansky Firefly 两款均属于企业级配置管理工具软件,ClearCase价格较贵，，相比之下Hansky</p>
+<p>Firefly 是一款不错的选择。</p>
+<p>而PVCS其价格大约是每客户端几百美元的水平，对于国内企业来说，性价比不太划算。VSS 是微软打包在Visual</p>
+<p>Studio开发工具包之中的，显然花费的精力不大，价格也比较便宜，可以做为个人、小项目团队版本控制之用。</p>
+<p>而CVS则是一款完全免费的开源软件，性能较之企业级配置管理工具差距不大，也是一种不错的选择。</p>
+<p>表八售后服务比较表</p>
+<table border="0" cellspacing="1" cellpadding="1" width="90%" bgcolor="#000000"><br>  <tr class="content" bgcolor="#ffffff"><br>    <td width="22%"><br>      工具名称<br>    </td><br><br>    <td width="78%"><br>      说明<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      ClearCase<br>    </td><br><br>    <td><br>      大型商用软件，已被IBM公司收购，但国内市场拓展有限，因此服务支持会受到限制。现在中国用户的支持是由位于澳大利亚悉尼的支持中心联系<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      Firefly<br>    </td><br><br>    <td><br>      大型商用软件，已在中国成立分公司，全面拓展市场之中，在北京设有支持中心<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      CVS<br>    </td><br><br>    <td><br>      做为开源软件，无官方支持，需要用户自己查找资料解决技术问题，现在也出现专门为CVS做技术支持的公司<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      PVCS<br>    </td><br><br>    <td><br>      在中国市场开拓有限，国内没有支持中心<br>    </td><br>  </tr><br><br>  <tr class="content" bgcolor="#ffffff"><br>    <td><br>      VSS<br>    </td><br><br>    <td><br>      做为微软的非核心产品，技术支持有限。在其网站上有提供一些常见问题，只有对正式购买的用户提供一定的技术支持<br>    </td><br>  </tr><br></table>
+
+<p>本文转自：<a href="http://www.uml.org.cn/pzgl/200704061.asp" target="_blank" rel="noopener">http://www.uml.org.cn/pzgl/200704061.asp</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/软件配置管理/" rel="tag"># 软件配置管理</a>
+          
+            <a href="/tags/工具/" rel="tag"># 工具</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/scm-tools.html" rel="next" title="软件配置工具">
+                <i class="fa fa-chevron-left"></i> 软件配置工具
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/the-university-is-nearly-over-after-scm-exam.html" rel="prev" title="大学最后一门考试完了，大学就这样完了">
+                大学最后一门考试完了，大学就这样完了 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/scm-tools-analysis.html';
+
+      var disqus_title = "软件配置管理工具比较分析";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

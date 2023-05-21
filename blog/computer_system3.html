@@ -1,0 +1,1435 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="系统架构师,软考,软件设计师,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="1.6 计算机总线结构   **总线：一种连接多个设备的信息传递通道。 典型的计算机总线结构由内部总和外部总线组成。 Ø         内部总线用于连接CPU内部各个模块； Ø         外部总线用于连接CPU、存储器和I/O系统，又称为系统总线。 系统总线：可分为 数据总线、地址总线、控制总线3类。 数据总线：各个模块间传送数据的通道； 地址总线：传递地址信息，来指示数据总线上的数据的来">
+<meta name="keywords" content="系统架构师,软考,软件设计师">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软考：计算机系统知识(三)">
+<meta property="og:url" content="https://www.tanglei.name/blog/computer_system3.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="1.6 计算机总线结构   **总线：一种连接多个设备的信息传递通道。 典型的计算机总线结构由内部总和外部总线组成。 Ø         内部总线用于连接CPU内部各个模块； Ø         外部总线用于连接CPU、存储器和I/O系统，又称为系统总线。 系统总线：可分为 数据总线、地址总线、控制总线3类。 数据总线：各个模块间传送数据的通道； 地址总线：传递地址信息，来指示数据总线上的数据的来">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.052Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软考：计算机系统知识(三)">
+<meta name="twitter:description" content="1.6 计算机总线结构   **总线：一种连接多个设备的信息传递通道。 典型的计算机总线结构由内部总和外部总线组成。 Ø         内部总线用于连接CPU内部各个模块； Ø         外部总线用于连接CPU、存储器和I/O系统，又称为系统总线。 系统总线：可分为 数据总线、地址总线、控制总线3类。 数据总线：各个模块间传送数据的通道； 地址总线：传递地址信息，来指示数据总线上的数据的来">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/computer_system3.html">
+
+
+
+
+
+  <title> 软考：计算机系统知识(三) | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/computer_system3.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                软考：计算机系统知识(三)
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-04-16T12:34:22+00:00">
+                2011-04-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">课程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/computer_system3.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/computer_system3.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>1.6</strong> <strong>计算机总线结构</strong> </p>
+<p> <em>**</em>总线：一种连接多个设备的信息传递通道。</p>
+<p>典型的计算机总线结构由内部总和外部总线组成。</p>
+<p>Ø         内部总线用于连接CPU内部各个模块；</p>
+<p>Ø         外部总线用于连接CPU、存储器和I/O系统，又称为系统总线。</p>
+<p>系统总线：可分为 数据总线、地址总线、控制总线3类。</p>
+<p>数据总线：各个模块间传送数据的通道；</p>
+<p>地址总线：传递地址信息，来指示数据总线上的数据的来源或去向，CPU根据地址信息从相应的存储单元读出数据或向该存储单元写入数据；</p>
+<p>控制总线：控制数据总线和地址总线。</p>
+<p>多层总线结构：大多数计算机系统都使用多总线体系结构进行互联。它的优点就在于根据各个部件对数据传输率的不同要求，用不同层次的总线进行互联，以适应各自的特性与需求，不同层次目的总线相对独立，允许使用不同的信号和以不同的速率运行。对某一层次总线结构的修改不会影响其他层次的总线结构。</p>
+<p>常用的微机总线：ISA（工业标准体系结构）、EISA（扩展ISA）、VESA、PCI（外围元件互联结构）总线。</p>
+<p>例题：</p>
+<p>某系统总线的一个总线周期包含3个时钟周期，每个总线周期中可以传送32位数据。若总线的时钟频率为33MHz，则总线带宽为 (55) 。</p>
+<p>(55) A．132MB/s B．33MB/s <span style="color: #ff0000;">C．44MB/s</span> D．396MB/s</p>
+<p><strong>1.7</strong> <strong>体系结构其他的知识</strong></p>
+<p> <strong>1**</strong>．流水线技术**</p>
+<p>流水线技术其实是通过并行硬件来提高系统性能的常用方法，其基本思想在冯·诺依曼第一台存储程序计算机中已经提出。</p>
+<p>流水线技术的基本原理实际上是一种任务分解的技术。把一件任务分解成若干顺序执行的子任务，不同的子任务由不同的执行机构负责执行，而这些机构可以同时并行的工作。在任一时刻，任一任务只占用其中一个执行机构，这样就可以实现多个任务的重叠执行，以提高工作效率。</p>
+<p>流水线技术包括指令流水线和运算操作流水线。需要注意的是，对流水线技术而言，其对性能的提高程度取决于其执行顺序中最慢的一步。</p>
+<p>在实际情况中，流水线各个阶段可能会相互影响，阻塞流水线，使其性能下降。影响流水线性能的主要因素有两个：执行转移指令和共享资源冲突。</p>
+<p>在实际处理中，为了使流水线能维持最大的吞吐率，同时确保流水线各段不会产生冲突，就需要对流水线进行很好的控制。一般采用预留表来预测冲突。预留表是从流水线设计直接推导出来的，表中列出的是流水线上各个部件操作的时间信息，每一行代表流水线中的一段，而每一列则代表一个时间步。</p>
+<p>流水线周期：</p>
+<p>另外，流水线计算机处理中断的方法通常有两种。</p>
+<p>Ø         不精确断点法</p>
+<p>Ø         精确断点法</p>
+<p><strong>2**</strong>．RISC技术**</p>
+<p><strong>RISC</strong>（reduced instruction set computer）即精简指令集计算机，它的主要特点是CPU的指令集大大简化，从而减少指令的执行周期数，提高运算速度。</p>
+<p>一般来说，CPU的执行速度受三个因素的影响：</p>
+<p>Ø         程序中的指令数I</p>
+<p>Ø         每条指令执行所需的周期数CPI</p>
+<p>Ø         每个周期的时间T</p>
+<p>它们之间的关系可表示为：程序执行时间=I*CPI*T</p>
+<p>与CISC（复杂指令集系统）相比，RISC具有以下的特点。</p>
+<table border="0" cellspacing="0" cellpadding="0"><br>  <tr><br>    <td width="276" valign="top"><br>      <strong>CISC</strong><br>    </td><br><br>    <td width="264" valign="top"><br>      <strong>RISC</strong><br>    </td><br>  </tr><br><br>  <tr><br>    <td width="276" valign="top"><br>      1)指令数量众多<p></p><br><br>      <p><br>        2)指令使用频率相差悬殊<br>      </p><br><br>      <p><br>        3)支持很多种寻址方式<br>      </p><br><br>      <p><br>        4)变长的指令格式<br>      </p><br><br>      <p><br>        5)指令可以对存储器中数据直接进行处理</p></td><br><br>        <td width="264" valign="top"><br>          1) 指令数量少<p></p><br><br>          <p><br>            2) 指令的寻址方式少<br>          </p><br><br>          <p><br>            3) 指令长度固定<br>          </p><br><br>          <p><br>            4) 只提供了Load/Store指令访问存储器<br>          </p><br><br>          <p><br>            5) 以硬布线逻辑控制为主<br>          </p><br><br>          <p><br>            6) 单周期指令执行<br>          </p><br><br>          <p><br>            7) 拥有相当多的寄存器<br>          </p><br><br>          <p><br>            8) 优化的编译器</p></td> </tr>  </table> 
+
+<pre><code>&lt;p&gt;
+  RISC采用窗口重叠技术完成寄存器的组织和参数的传递，对于RISC的流水线的处理是采用延迟转移的方法解决流水线阻塞和互锁。
+&lt;/p&gt;
+
+&lt;p&gt;
+  另外，采用RISC技术的CPU硬件一般具有寄存器数量多、采用流水线组织、控制器的实现采用硬布线逻辑电路等特点。
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;strong&gt;3&lt;/strong&gt;&lt;strong&gt;．并行处理技术&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  并行性（parallelism）就是指在同一时刻或同一时间间隔内完成两种或两种以上性质相同或不同的工作，只要时间上相互重叠，就都蕴含了并行性。并行性有两重含义：
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         同时性（simultaneity）：两个或两个以上事件在同一时刻发生
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         并发性（concurrency）：两个或两个以上事件在同一时间间隔内发生
+&lt;/p&gt;
+
+&lt;p&gt;
+  并行性有不同的层次，从不同的角度看其层次结构也不一样。
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;strong&gt;程序执行的并行性&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         指令内部并行：一条指令内的微操作之间的并行；
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         指令间并行：多条指令的并行执行；
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         任务或进程并行：软件的进程任务分解
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         作业或程序并行：软件和硬件的分配
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;strong&gt;数据处理的并行性&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         位串字串：一次只对一个字的一位进行处理
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         位并字串
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         位串字并
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         位并字并（全并行）
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;strong&gt;操作并行性&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         存储器操作并行：多个存储单元同时被访问
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         处理器操作步骤并行：指令的执行步骤重叠
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         处理器操作并行：大量的处理单元按同一指令对多个数据操作；
+&lt;/p&gt;
+
+&lt;p&gt;
+  提高计算机系统并行性的措施主要有3类。
+&lt;/p&gt;
+
+&lt;p&gt;
+  ◆时间重叠
+&lt;/p&gt;
+
+&lt;p&gt;
+  在并行性概念中导入时间因素，让多个处理过程在时间上错开，轮流重叠的使用同一套硬件设备的各个部件，以加快硬件周转，提高处理速度。
+&lt;/p&gt;
+
+&lt;p&gt;
+  ◆资源重复
+&lt;/p&gt;
+
+&lt;p&gt;
+  在并行性概念中导入空间因素，基于“以数量取胜”的原则，通过重复设置硬件资源来提高系统可靠性或性能。
+&lt;/p&gt;
+
+&lt;p&gt;
+  ◆资源共享
+&lt;/p&gt;
+
+&lt;p&gt;
+  多个用户按一定时间顺序轮流的使用同一套资源，以提高其利用率，从而相应的提高整个系统的性能。
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;strong&gt;并行处理机（也称为阵列处理机）&lt;/strong&gt;使用按地址访问的RAM，以SIMD方式工作，主要用于要求大量高速进行向量或矩阵运算的应用领域。并行处理机的并行性来源于资源重复，它依靠操作级的并行处理来提高系统性能。
+&lt;/p&gt;
+
+&lt;p&gt;
+  根据存储器的不同组织形式，并行处理机有两种典型的结构。
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         具有分布式存储器的并行处理机
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         具有集中共享存储器的并行处理机
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;strong&gt;并行性处理机的特点：&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         强大的向量运算能力
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         并行方式
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         适用于专门领域，如矩阵运算、向量运算
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         标量运算速度对系统性能的影响也很明显
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         具有向量化功能的高级语言编译程序有助于提高并行处理机的通用性，以及减少编译时间
+&lt;/p&gt;
+
+&lt;p&gt;
+  例题：
+&lt;/p&gt;
+
+&lt;p&gt;
+  利用并行处理技术可以缩短计算机的处理时间,所谓并行性是指__(51)__。可以采用多种措施来提高计算机系统的并行性,它们可分成三类,即__(52)__。
+&lt;/p&gt;
+
+&lt;p&gt;
+  提供专门用途的一类并行处理机(亦称阵列处理机)以__(53)__方式工作,它适用于__(54)__。多处理机是目前较高性能计算机的基本结构,它的并行任务的派生是__(55)__。
+&lt;/p&gt;
+
+&lt;p&gt;
+  (51):A.多道程序工作                    B.多用户工作
+&lt;/p&gt;
+
+&lt;p&gt;
+  C.非单指令流单数据流方式工作      D.在同一时间完成两种或两种以上工作
+&lt;/p&gt;
+
+&lt;p&gt;
+  (52):A.多处理机,多级存储器和互连网络   B.流水结构,高速缓存和精简指令集
+&lt;/p&gt;
+
+&lt;p&gt;
+  C.微指令,虚拟存储和I/O通道        D.资源重复,资源共享和时间重叠。
+&lt;/p&gt;
+
+&lt;p&gt;
+  (53):A.SISD         B.SIMD         C.MISD         D.MB4D
+&lt;/p&gt;
+
+&lt;p&gt;
+  (54):A.事务处理     B.工业控制     C.矩阵运算     D.大量浮点计算
+&lt;/p&gt;
+
+&lt;p&gt;
+  (55):A.需要专门的指令来表示程序中并发关系和控制并发执行
+&lt;/p&gt;
+
+&lt;p&gt;
+  B.靠指令本身就可以启动多个处理单元并行工作
+&lt;/p&gt;
+
+&lt;p&gt;
+  C.只执行没有并发约束关系的程序
+&lt;/p&gt;
+
+&lt;p&gt;
+  D.先并行执行,事后再用专门程序去解决并发约束
+&lt;/p&gt;
+
+&lt;p&gt;
+  51：D 52: D 53: B 54: C 55: A
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;strong&gt; 4&lt;/strong&gt;&lt;strong&gt;．多处理机&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  多处理机具有两个或两个以上的处理机，共享输入/输出子系统，在统一的操作系统控制下，通过共享主存或高速通信网络进行通信，协同求解一个大而复杂的问题。
+&lt;/p&gt;
+
+&lt;p&gt;
+  多处理机通过利用多台处理机进行多任务处理来提高速度，利用系统的重组能力来提高可靠性、适应性和可用性。多处理机是新一代计算机结构的基本特征。
+&lt;/p&gt;
+
+&lt;p&gt;
+  多处理机具有共享存储器和分布存储器两种不同的结构。
+&lt;/p&gt;
+
+&lt;p&gt;
+  多处理机属于MIMD系统，与SIMD的并行处理机相比有很大差异。其根源在于两者的并行性等层次不同，多处理机要实现的是更高一层的作业任务间的并行。
+&lt;/p&gt;
+
+&lt;p&gt;
+  大规模并行处理机MPP是由众多的微处理器组成的大规模并行处理系统。对称多处理机SMP与MPP最大的差别在于存储系统，SMP有一个统一的共享主存空间，而MPP则每个微处理器都拥有自己本地存储器。
+&lt;/p&gt;
+
+&lt;p&gt;
+  MPP和SMP都是基于RISC处理器的。
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;strong&gt;1.8 &lt;/strong&gt;&lt;strong&gt;计算机的安全、可靠性评价&lt;/strong&gt; *&lt;软件设计师&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  安全与保密
+&lt;/p&gt;
+
+&lt;p&gt;
+  数据加密即是对明文（未经加密的数据）按照某种的加密算法（数据的变换算法）进行处理，而形成难以理解的密文（经加密后的数据）。这是计算机安全中最重要的技术措施之一。
+&lt;/p&gt;
+
+&lt;p&gt;
+  数据加密和解密是一对可逆的过程，其关键在于密钥的管理和加密/解密算法。通常加密/解密算法的设计需要满足3个条件：
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         可逆性
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         密钥安全
+&lt;/p&gt;
+
+&lt;p&gt;
+  Ø         数据安全
+&lt;/p&gt;
+
+&lt;p&gt;
+  按照加密密钥K&lt;sub&gt;1&lt;/sub&gt;和解密密钥K&lt;sub&gt;2&lt;/sub&gt;的异同，分为两种密钥体制，比较如下：
+&lt;/p&gt;
+
+&lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; width=&quot;543&quot;&gt;
+  &lt;tr&gt;
+    &lt;td width=&quot;120&quot; valign=&quot;top&quot;&gt;
+      密钥体制
+    &lt;/td&gt;
+
+    &lt;td width=&quot;228&quot; valign=&quot;top&quot;&gt;
+      特点
+    &lt;/td&gt;
+
+    &lt;td width=&quot;195&quot; valign=&quot;top&quot;&gt;
+      典型算法
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td width=&quot;120&quot;&gt;
+      秘密密钥加密体制（K&lt;sub&gt;1&lt;/sub&gt;=K&lt;sub&gt;2&lt;/sub&gt;）或对称密钥体制
+    &lt;/td&gt;
+
+    &lt;td width=&quot;228&quot; valign=&quot;top&quot;&gt;
+      1. 加密与解密采用相同密钥&lt;/p&gt; 
+
+      &lt;p&gt;
+        2. 加密速度快，通常用于加密大批量的数据&lt;/td&gt; 
+
+        &lt;td width=&quot;195&quot; valign=&quot;top&quot;&gt;
+          1.日本NTT的快速加密标准FEAL&lt;/p&gt; 
+
+          &lt;p&gt;
+            2.瑞士的国际数据加密算法IDEA
+          &lt;/p&gt;
+
+          &lt;p&gt;
+            3.美国的数据加密标准DES&lt;/td&gt; &lt;/tr&gt; 
+
+            &lt;tr&gt;
+              &lt;td width=&quot;120&quot;&gt;
+                公开密钥加密体制（K&lt;sub&gt;1&lt;/sub&gt;≠K&lt;sub&gt;2&lt;/sub&gt;）或不对称密钥体制
+              &lt;/td&gt;
+
+              &lt;td width=&quot;228&quot; valign=&quot;top&quot;&gt;
+                1.加密和解密使用不同的密钥，其中一个公开，另一个是保密的&lt;/p&gt; 
+
+                &lt;p&gt;
+                  2.加密速度较慢，往往用在少量数据的通信中&lt;/td&gt; 
+
+                  &lt;td width=&quot;195&quot; valign=&quot;top&quot;&gt;
+                    1. RSA算法&lt;/p&gt; 
+
+                    &lt;p&gt;
+                      2. NTT的ESIGN&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt; 
+
+                      &lt;p&gt;
+                        数据完整性保护是数据中加入一定的冗余信息，从而能发现对数据的任何修改、增加或删除。
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        在某些商业或金融领域经常需要一种“数字签名”的技术，防止通信的一方否认或伪造通信内容。数字签名是利用密码技术进行的，其安全性取决于密码体制的安全程度。它的目的是在保证真实的发送方和真实的接受方之间传送真实的信息。
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        数字签名有两个特点：
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         动态变化，随着密钥和数据的不同而不同
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         签名和数据不可分离
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        数据加密的安全性在很大程度上取决于密钥的安全性。
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        对于密钥的管理主要包括以下几个方面：
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         密钥体制的选择
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         密钥的分发
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         现场密钥保护
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         密钥的销毁
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        例题：
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        常规的数据加密标准DES采用__(l)__位。有效密钥对____(2)__位的数据块进行加密。
+                      &lt;/p&gt;
+
+                      &lt;table border=&quot;0&quot; cellspacing=&quot;1&quot; cellpadding=&quot;0&quot; width=&quot;94%&quot;&gt;
+                        &lt;tr&gt;
+                          &lt;td width=&quot;25%&quot;&gt;
+                            (1) A. 56
+                          &lt;/td&gt;
+
+                          &lt;td width=&quot;25%&quot;&gt;
+                            B. 64
+                          &lt;/td&gt;
+
+                          &lt;td width=&quot;25%&quot;&gt;
+                            C. 112
+                          &lt;/td&gt;
+
+                          &lt;td width=&quot;25%&quot;&gt;
+                            D. 128
+                          &lt;/td&gt;
+                        &lt;/tr&gt;
+
+                        &lt;tr&gt;
+                          &lt;td width=&quot;25%&quot;&gt;
+                            (2) A. 32
+                          &lt;/td&gt;
+
+                          &lt;td width=&quot;25%&quot;&gt;
+                            B. 64
+                          &lt;/td&gt;
+
+                          &lt;td width=&quot;25%&quot;&gt;
+                            C. 128
+                          &lt;/td&gt;
+
+                          &lt;td width=&quot;25%&quot;&gt;
+                            D. 256
+                          &lt;/td&gt;
+                        &lt;/tr&gt;
+                      &lt;/table&gt;
+
+                      &lt;p&gt;
+                        1．A    2. B
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        计算机可靠性、可用性和可维护性（computer reliability、availability and serviceability ,RAS）技术和容错技术是研究、设计、生产、评价计算机系统的重要内容。
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        &lt;strong&gt;计算机可靠性&lt;/strong&gt;
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        计算机系统的可靠性是指从它开始运行（t=0）到某个时刻t这段时间内能正常运行的概率，用R（t）表示。失效率则是指单位时间内失效的元件数与元件总数的比例，以λ表示。当为λ常数时，可靠性与失效率的关系为：
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        R(t) = e^(-2t)
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        两次故障之间系统能正常工作的时间的平均值称为平均无故障时间：MTBF=1/λ
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        通常用平均修复时间（MTRF）来表示计算机的可维修性，即计算机的维修效率，指从故障发生到机器修复平均所需要的时间。计算机的可用性是指计算机的使用效率，它以系统到执行任务的任意时刻能正常工作的概率A来表示：
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        A=MTBF/（MTBF+MTRF）
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        计算机的RAS技术，就是指用可靠性R、可用性A和可维修性S三个指标来衡量一个计算机系统。
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        常见的计算机系统可靠性数学模型有3种。
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                          &lt;strong&gt;串联系统：&lt;/strong&gt;
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        该系统由N个子系统组成，当且仅当所有的子系统都能正常工作时，系统才能正常工作。整个系统的可靠性R和失效率λ分别为：
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        可靠性：R=R&lt;sub&gt;1&lt;/sub&gt;R&lt;sub&gt;2&lt;/sub&gt;…R&lt;sub&gt;n&lt;/sub&gt;
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        失效率：λ=λ&lt;sub&gt;1&lt;/sub&gt;+λ&lt;sub&gt;2&lt;/sub&gt;+…+λ&lt;sub&gt;n&lt;/sub&gt;
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                          &lt;strong&gt;并联系统：&lt;/strong&gt;
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        该系统由N个子系统组成，只要有一个子系统正常工作，系统就能正常运行。整个系统的可靠性R和失效率μ分别为：
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        可靠性：R=1-(1- R&lt;sub&gt;1&lt;/sub&gt;)(1-R&lt;sub&gt;2&lt;/sub&gt;)…(1- R&lt;sub&gt;n&lt;/sub&gt;)
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        失效率μ = 1/[(1/λ)sum(1/j)] 其中j=1..N
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        &lt;strong&gt;计算机可用性： &lt;/strong&gt;是指该系统在某一时刻提供有效使用的程度，以可用度A表示，可用度是在任意指定时刻系统能正确运行的概率。一般情况下，系统发生故障是可以修复的，，可用下列公式计算：A=MTBF/（MTBF+MTTR），其中MTBF为平均无故障时间，MTTR是平均修复时间。平均修复时间是指多次故障中，从开始失效到系统修复所用的平均时间，可用下式计算：
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        &lt;strong&gt;系统修复时间=申请维修时间+等待时间+维修时间+恢复时间&lt;/strong&gt;
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        提高计算机可用性的途径是：提高计算机可靠性；提高计算机的可维护性，完善故障诊断与测试技术以及系统恢复和部件更换技术；提高维护人员的素质。
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        &lt;strong&gt;计算机可维护性：&lt;/strong&gt;是指系统失效后在规定时间内可修复到规定功能的能力，参数修复率和平均修复时间MTTR。
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        &lt;strong&gt;故障诊断与容错：&lt;/strong&gt;容错是指计算机系统在运行过程中发生一定的硬件故障或软件故障时仍能保持正常工作而不影响正确结果的一种性能或措施。
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        计算机的故障根据表现特点可以分为三类。
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         永久性故障：表现出稳定性和持续性，特点是故障可重复出现。
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         间歇性故障：表现出不稳定性和对系统状态的依赖性
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         瞬时性故障：偶然原因引起的短暂故障
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         软件故障：来源于程序错误
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        故障诊断包括故障检测和故障定位两个方面。通常，故障诊断的主要方法有三种：
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         对电路直接进行测试的故障定位测试法
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         “检查诊断程序”法
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         微诊断法
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        容错是采用冗余方法来消除故障影响。针对硬件，有时间冗余和元器件冗余两种方法。主要的容错技术有简单的双机备份和操作系统支持的双机容错。
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        &lt;strong&gt;计算机性能评价：&lt;/strong&gt;
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        计算机性能评测是为了一定目的、按照一定步骤、选用一定的度量项目通过建模、计算和实验，对计算机性能进行测试并对测试结果作出评价的技术。
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        &lt;strong&gt;计算机性能评测的度量项目：&lt;/strong&gt;
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        n          性能指标：
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         工作量类，吞吐率、指令执行速率和数据处理速率；
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         响应性类：响应时间
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         利用率： 资源利用率
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        n          可靠性、可用性和可维护性
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        n          环境适应性
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        n          兼容性和开放性
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        n          可扩充性
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        n          安全性
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        n          性能价格比
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        计算机性能评估的常用方法主要有：
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         时钟频率和指令执行速度：可用于比较和评价同一系统上求解同一问题的不同算法的性能。
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         等效指令速度法：通过各种指令在程序中所占的比例进行计算得到的
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         核心程序法：
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         数据处理速率： 主要对CPU和主存数据处理速度进行计算得出的
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        基准程序法（benchmark）是目前一致承认的测试性能较好方法，有多种多样的基准程序。
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         整数测试程序
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         浮点测试程序
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         SPEC基准程序
+                      &lt;/p&gt;
+
+                      &lt;p&gt;
+                        Ø         TPC基准程序
+                      &lt;/p&gt;
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/系统架构师/" rel="tag"># 系统架构师</a>
+          
+            <a href="/tags/软考/" rel="tag"># 软考</a>
+          
+            <a href="/tags/软件设计师/" rel="tag"># 软件设计师</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/computer_system2-2.html" rel="next" title="软考：计算机系统知识(二)">
+                <i class="fa fa-chevron-left"></i> 软考：计算机系统知识(二)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/computer_system4.html" rel="prev" title="软考：计算机系统知识(四)">
+                软考：计算机系统知识(四) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/computer_system3.html';
+
+      var disqus_title = "软考：计算机系统知识(三)";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

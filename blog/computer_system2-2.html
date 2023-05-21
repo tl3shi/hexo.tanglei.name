@@ -1,0 +1,968 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="系统架构师,软考,软件设计师,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="上接&amp;lt;/blog/computer_system1.html&amp;gt; 1.3**存储器系统：** 概述： 计算机中的存储系统是用来保存数据和程序的。对存储器最基本的要求就是存储容量要大、存取速度快、成本价格低。为了满足这一要求，提出了多级存储体系结构。一般可分为高速缓冲存储器、主存、外存3个层次，有时候还包括CPU内部的寄存器以及控制存储器。 n          衡量存储器的主要因素：存储">
+<meta name="keywords" content="系统架构师,软考,软件设计师">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软考：计算机系统知识(二)">
+<meta property="og:url" content="https://www.tanglei.name/blog/computer_system2-2.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="上接&amp;lt;/blog/computer_system1.html&amp;gt; 1.3**存储器系统：** 概述： 计算机中的存储系统是用来保存数据和程序的。对存储器最基本的要求就是存储容量要大、存取速度快、成本价格低。为了满足这一要求，提出了多级存储体系结构。一般可分为高速缓冲存储器、主存、外存3个层次，有时候还包括CPU内部的寄存器以及控制存储器。 n          衡量存储器的主要因素：存储">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.051Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软考：计算机系统知识(二)">
+<meta name="twitter:description" content="上接&amp;lt;/blog/computer_system1.html&amp;gt; 1.3**存储器系统：** 概述： 计算机中的存储系统是用来保存数据和程序的。对存储器最基本的要求就是存储容量要大、存取速度快、成本价格低。为了满足这一要求，提出了多级存储体系结构。一般可分为高速缓冲存储器、主存、外存3个层次，有时候还包括CPU内部的寄存器以及控制存储器。 n          衡量存储器的主要因素：存储">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/computer_system2-2.html">
+
+
+
+
+
+  <title> 软考：计算机系统知识(二) | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/computer_system2-2.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                软考：计算机系统知识(二)
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-04-16T12:16:38+00:00">
+                2011-04-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">课程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/computer_system2-2.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/computer_system2-2.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>上接&lt;/blog/computer_system1.html&gt;</p>
+<p><strong>1.3**</strong>存储器系统：**</p>
+<p><strong>概述</strong>：</p>
+<p>计算机中的存储系统是用来保存数据和程序的。对存储器最基本的要求就是存储容量要大、存取速度快、成本价格低。为了满足这一要求，提出了多级存储体系结构。一般可分为高速缓冲存储器、主存、外存3个层次，有时候还包括CPU内部的寄存器以及控制存储器。</p>
+<p>n          衡量存储器的主要因素：存储器访问速度、存储容量和存储器的价格；</p>
+<p>n          存储器的介质：半导体、磁介质和光存储器。</p>
+<p>n          存储器的组成：存储芯片+控制电路（存储体+地址寄存器+数据缓冲器+时序控制）；</p>
+<p>n          存储体系结构从上层到下层离CPU越来越远、存储量越来越大、每位的价格越来越便宜，而且访问的速度越来越慢</p>
+<p>存储器系统分布在计算机各个不同部件的多种存储设备组成，位于CPU内部的寄存器以及用于CU的控制寄存器。内部存储器是可以被处理器直接存取的存储器，又称为主存储器，外部存储器需要通过I/O模块与处理器交换数据，又称为辅助存储器，弥补CPU处理器速度之间的差异还设置了CACHE，容量小但速度极快，位于CPU和主存之间，用于存放CPU正在执行的程序段和所需数据。</p>
+<p>通常衡量主存容量大小的单位是字节或者字，而外存的容量则用字节来表示。字是存储器组织的基本单元，一个字可以是一个字节，也可以是多个字节。</p>
+<p><strong>信息存取方式</strong>：信息的存取方式影响到存储信息的组织，常用的有4种，</p>
+<p>◆顺序存取</p>
+<p>存储器的数据是以记录的形式进行组织，对数据的访问必须按特定的线性顺序进行。磁带存储器的存取方式就是顺序存取。</p>
+<p>◆直接存取</p>
+<p>共享读写装置，但是每个记录都有一个唯一的地址标识，共享的读写装置可以直接移动到目的数据块所在位置进行访问。因此存取时间也是可变的。磁盘存储器采用的这种方式。</p>
+<p>◆随机存取</p>
+<p>存储器的每一个可寻址单元都具有唯一地址和读写装置，系统可以在相同的时间内对任意一个存储单元的数据进行访问，而与先前的访问序列无关。主存储器采用的是这种方式。</p>
+<p>◆相联存取</p>
+<p>也是一种随机存取的形式，但是选择某一单元进行读写是取决于其内容而不是其地址。Cache可能采用该方法进行访问。</p>
+<p>衡量存储器系统性能的指标有以下几种：</p>
+<p>Ø         存取时间：一次读/写存储器的时间</p>
+<p>Ø         存储器带宽：每秒能访问的位数。</p>
+<p>Ø         存储器周期：两次相邻的存取之间的时间</p>
+<p>Ø         数据传输率：每秒钟数据传输的bit数目。</p>
+<p><strong>主存储器：</strong></p>
+<p>主存储器是指能由CPU直接编程访问的存储器，它存放需要执行的程序与需要处理的数据。因为它通常位于所谓主机的范畴，常称为内存。如果内存的地址为n位，容量为2的n次。</p>
+<p>主存储器的种类很多，主要有：</p>
+<p>Ø         随机存储器（RAM）：可以读出和写入，随机访问存取，断电消失</p>
+<p>Ø         只读存储器（ROM）：只能读出原有的内容，不能写入新内容</p>
+<p>Ø         可编程ROM（PROM）</p>
+<p>Ø         可擦除PROM（EPROM）</p>
+<p>Ø         电可擦除PROM（E<sup>2</sup>PROM）</p>
+<p>Ø         闪速存储器（flash memory）</p>
+<p>实际的存储器总是由一片或多片存储芯片配以控制电路组成的，其容量往往是W×B来表示。W表示该存储器的存储单元（word）的数量，而B表示每一个word由多少bit组成。</p>
+<p><strong>辅助存储器：</strong></p>
+<p>由于主存容量有限（受地址位数、成本、速度等因素制约），在大多数计算机系统中设置一级大容量存储器作为对主存的补充与后援。它们位于主机的逻辑范畴之外，常称为外存储器，简称外存。</p>
+<p>外存的最大特点是容量大、可靠性高、价格低，主要有两大类。</p>
+<p>◆磁表面存储器：这类外存储器主要包括磁带和磁盘存储器。</p>
+<p>▲磁带</p>
+<p>磁带存储设备是一种顺序存取的设备，存取时间较长，但存储容量大。磁带上的信息是以文件块的形式存放的，而且便于携带，价格便宜。按它的读写方式可分为两种：启停式和数据流。</p>
+<p>▲磁盘存储器</p>
+<p>磁盘存储器是目前应用最广泛的外存储器。它存取速度较快，具有较大的存储容量，适用于调用较频繁的场合，往往作为主存的直接后援，为虚拟存储提供了物理基础。可分为软盘和硬盘。</p>
+<p>◆光存储器</p>
+<p>光盘存储器是利用激光束在记录表面存储信息，根据激光束的反射光来读出信息。按照它的记录原理可分为形变型、相变型（晶相结构）和磁光型。有CD、CD-ROM、WORM、EOD等。</p>
+<p>CD-ROM：只读光盘，只能一次性写入数据，由生产厂家将数据写入，永远保存</p>
+<p>CD-WO：可由用户写入一次，写入后不能修改或擦除，但是可以多次读出</p>
+<p>CD-MO：可改写光盘，可以读出也可以写入数据；</p>
+<p>光盘存储器的特点：</p>
+<p>大容量、标准化、相容性、持久性、实用性</p>
+<p><strong>辅助存储器方面的计算：</strong></p>
+<p>1.存储容量为capacity=n*t*s*b，n为存放数据的总盘面数；t为每面的磁道数；s为每道的扇区数；b为每个扇区存储的字节数</p>
+<p>2.寻道时间为磁头移动到目标磁道所需的时间。</p>
+<p>3.等待时间为待读写的扇区旋转到磁头下方所用的时间。一般用磁道旋转一周所用的时</p>
+<p>间的一半作为平均等待时间。</p>
+<p>4．磁盘存取时间=寻道时间+等待时间。</p>
+<p>5．位密度：沿磁道方向，单位长度存储二进制信息的个数；</p>
+<p>6．道密度：沿磁盘半径方向，单位长度内磁道的数目；</p>
+<ol start="7">
+<li>数据传输速率R=B/T，B为一个磁道上记录的字节数，T为每转一周的时间</li>
+</ol>
+<p>8．磁带机的容量计算：（这些公式要熟悉记住）</p>
+<p>数据传输率=磁带记录密度*带速；</p>
+<p>数据块长度=字节数*块因子/记录密度+块间间隔；</p>
+<p>读N条记录所需时间T=启停时间+有效时间+间隔时间；</p>
+<p>例题：</p>
+<p>假设一个有 3 个盘片的硬盘，共有 4 个记录面，转速为 7200 转/分，盘面有效记录区域的外直径为 30cm，内直径为 lOcm，记录位密度为 250位/mm，磁道密度为 8道/mm，每磁道分16个扇区，每扇区 512字节，则该硬盘的非格式化容量和格式化容量约为__(58)__，数据传输率约为__(58)__若一个文件超出一个磁道容量，剩下的部分__(60)__。</p>
+<table border="0" cellspacing="1" cellpadding="0" width="94%"><br>  <tr><br>    <td width="25%"><br>      (58) A.120MB和1OOMB<br>    </td><br><br>    <td width="25%"><br>      B.30MB和25MB<br>    </td><br><br>    <td width="25%"><br>      C. 60MB和50MB<br>    </td><br><br>    <td width="25%"><br>      D.22.5MB 和 25MB<br>    </td><br>  </tr><br><br>  <tr><br>    <td width="25%"><br>      (59) A.2356KB/s<br>    </td><br><br>    <td width="25%"><br>      B.3534KB/s<br>    </td><br><br>    <td width="25%"><br>      C.7069KB/s<br>    </td><br><br>    <td width="25%"><br>      D.1178KB/s<br>    </td><br>  </tr><br><br>  <tr><br>    <td colspan="2" width="50%"><br>      (60) A.存于同一盘面的其它编号的磁道上<br>    </td><br><br>    <td colspan="2" width="50%"><br>      B.存于其它盘面的同一编号的磁道上<br>    </td><br>  </tr><br><br>  <tr><br>    <td colspan="2" width="50%"><br>      C.存于其它盘面的其它编号的磁道上<br>    </td><br><br>    <td colspan="2" width="50%"><br>      D.存放位置随机<br>    </td><br>  </tr><br></table>
+
+<p>58：B  59: D  60: B</p>
+<p><strong>RAID**</strong>存储器（廉价磁盘冗余阵列）：**基本思想是用多个小的磁盘存储器，通过合理的分布数据，支持多个磁盘同时进行访问，从而改善磁盘存储器的性能。其采用的主要技术：</p>
+<p>1．   分块技术：把数据分块写到阵列中的磁盘上；</p>
+<p>2．   交叉技术：对分布式的数据采用交叉式进行读写，提高访问速度；</p>
+<p>3．   重聚技术：对多个磁盘空间重新编址，数据按照编址后的空间存放；</p>
+<p>主要特点如下：</p>
+<p>1．   物理上多个磁盘，但操作系统看是一个逻辑磁盘<strong>；</strong></p>
+<p>2．   数据分布在磁盘阵列中的磁盘存储器上；</p>
+<p>3．   采用冗余技术和校验技术提高可靠性，可恢复数据；</p>
+<p>4．   RAID速度快、容量大、功耗低、价格便宜、容易扩展。</p>
+<p>RAID0：无冗余、无校验，具有最高的I/O性能和最高的磁盘空间利用率</p>
+<p>RAID1：磁盘镜像、磁盘利用率50%，具有最高的安全性</p>
+<p>RAID2：海明码纠错、数据分块、并行访问、适合大批量数据、已很少使用</p>
+<p>RAID3：奇偶校验、数据分块、并行访问、单独校验盘</p>
+<p>RAID4：奇偶校验、独立存取、单独校验盘、适合访问频繁、传输率低</p>
+<p>RAID5：独立存取、无单独校验盘、适合访问频繁、传输率低</p>
+<p><strong>Cache**</strong>存储器：（对系统和应用程序员都是透明的）（重点）**</p>
+<p>Cache位于主存储器与CPU通用寄存器组之间，全部由硬件来调度，用于提高CPU的数据I/O效率，对程序员和系统程序员都是透明的。Cache容量小但速度快，它在计算机的存储体系中是访问速度最快的层次。</p>
+<p>使用Cache改善系统性能的依据是程序的局部性原理，即程序的地址访问流有很强的时序相关性，未来的访问模式与最近已发生的访问模式相似。根据这一局部性原理，把主存储器中访问概率最高的内容存放在Cache中，当CPU需要读取数据时就首先在Cache中查找是否有所需内容，如果有则直接从Cache中读取；若没有再从主存中读取该数据，然后同时送往CPU和Cache。</p>
+<p>系统的平均存储周期t<sub>3</sub>与命中率h有很密切的关系，如下的公式：</p>
+<p>t<sub>3</sub>=h×t<sub>1</sub>+(1-h)×t<sub>2</sub></p>
+<p>其中，t<sub>1</sub>表示Cache的周期时间，t<sub>2</sub>表示主存的周期时间。</p>
+<p>当CPU发出访存请求后，存储器地址先被送到Cache控制器以确定数据是否已在Cache中，若命中则直接对Cache进行访问，否则直接进行主存访问。</p>
+<p>Cache的地址映射是指把主存地址空间映射到Cache地址空间，Cache和主存都使用同样大小的块为单位。Cache中常见的映射方法有三种。</p>
+<p>Ø         直接映射：一对一,(不需要替换算法)</p>
+<p>Ø         全相联映射：多对多</p>
+<p>Ø         组相联映射：将块划分成组，主存中的一组与Cache相对应，根据高位地址标志符来访问数据，组相联可以允许相同的Block和word标志，而tag标志不同。</p>
+<p>随着程序的执行，访问频繁地区将逐渐迁移，Cache中的内容逐渐变得陈旧，访问命中率下降，就需要更新内容。常用的替换算法有三种。</p>
+<p>Ø         随机淘汰法：</p>
+<p>Ø         先进先出法FIFO：</p>
+<p>Ø         近期最少使用法LRU：</p>
+<p>对于这个算法可以从整体上把握，每个的优点、缺点，不需要记算法的过程。</p>
+<p>另外，为了保证环存在Cache中得数据与主存中的内容一致，对写操作来说有以下几种方法：</p>
+<p>Ø         写直达：同时</p>
+<p>Ø         写回：</p>
+<p>Ø         标记法</p>
+<p><strong>虚拟存储器：（重点）（对应用程序员透明）</strong></p>
+<p>虚拟存储系统的作用是给程序员一个更大的虚拟的存储空间，其容量可远远超过主存储器的容量，而与辅助存储器容量相当。</p>
+<p>我们提供给用户的这个存储器，即在软件编程上可以使用的存储器，就称为虚拟存储器。它的容量即虚拟存储空间，简称虚拟空间。面向虚拟存储器的编程地址称为虚拟地址，或称为逻辑地址。与主存和辅助存储器地址相对应。</p>
+<p>为了实现虚拟存储器，需将虚拟存储空间与物理实存空间，按一定的格式分区组织管理，根据管理的方式不同可以分为三种虚拟存储器：页式、段式和段页式。</p>
+<p>Ø         页式管理：</p>
+<p>Ø         段式管理：</p>
+<p>Ø         段页式管理：</p>
+<p>此外还可以增加一个小容量的高速存储器实现一种快表查询，而快表和慢表也构成了两级存储器系统</p>
+<p>另外，与Cache一样，虚拟存储器系统还需采用一定的调度策略实现主存内容的变换，使当前需要的程序和数据都在主存之中。常用的淘汰算法有：</p>
+<p>Ø         FIFO算法：选择最先进入主存的页面淘汰</p>
+<p>Ø         LRU算法：选择在最近一段时间内访问频率最低的页面淘汰</p>
+<p><strong>1.4**</strong>中央处理器CPU** </p>
+<p>CPU由寄存器组、算术逻辑单元ALU和控制单元CU这3部分组成。</p>
+<p>CPU的功能：</p>
+<p>Ø         读取指令</p>
+<p>Ø         解释指令</p>
+<p>Ø         读取数据</p>
+<p>Ø         处理数据</p>
+<p>Ø         保存数据</p>
+<ol>
+<li>寄存器组分为两大类：</li>
+</ol>
+<p>Ø         用户可见的寄存器，有通用寄存器、数据寄存器、地址寄存器、标志寄存器等；</p>
+<p>Ø         状态寄存器，包括程序计数器PC、指令寄存器IR、存储器地址寄存器MAR、存储器缓冲寄存器MBR、程序状态字PSW。</p>
+<p>2.运算器ALU：负责对数据进行算术和逻辑运算。</p>
+<p>3.控制器CU：负责控制整个计算机系统的运行，读取指令寄存器、状态控制寄存器以及外部来的控制信号，发布外控制信号控制CPU与存储器、I/O设备进行数据交换；发布内控制信号控制寄存器间的数据交换；控制ALU完成指定的运算功能；管理其他的CPU内部操作。</p>
+<p>控制器的实现有硬布线逻辑和微程序控制两种方案</p>
+<p>中断控制机制：</p>
+<p>计算机系统通常提供了中断机制，允许某一事件中止CPU正在执行的程序，转去对该事件进行处理，然后再返回原程序被中止处继续执行。其作用是提高CPU的处理效率，使CPU与I/O设备并行工作，还可以实现分时操作过程。</p>
+<p>中断处理过程可分为：中断响应过程和中断服务过程。</p>
+<p>中断的分类：按中断源位置可分为内部中断和外部中断；</p>
+<p>按中断源的类型可分为硬件中断和软件中断；</p>
+<p>按中断源的屏蔽特性可分为可屏蔽中断和不可屏蔽中断。</p>
+<p>CPU处理中断有两种策略：中断排队和中断嵌套。</p>
+<p><strong>计算机的指令系统：</strong></p>
+<p>机器指令的格式、分类及功能:</p>
+<p>CPU所完成的操作是由其执行的指令来决定的，这些指令被称为机器指令。</p>
+<p>CPU所能执行的所有机器指令的集合称为该CPU的指令系统。</p>
+<p>机器指令一般由操作码、源操作数、目的操作数和下一条指令的地址组成。</p>
+<p>Ø         操作码指明要执行的操作；</p>
+<p>Ø         源操作数是该操作的输入数据；</p>
+<p>Ø         目的操作数是该操作的输出数据；</p>
+<p>Ø         下一条指令地址通知CPU到该地址去取下一条将执行的指令。</p>
+<p>指令系统可分为数据传送类、算术运算类、逻辑类、数据变换类、输入/输出类、系统控制类、控制权转移类等类型。</p>
+<p>指令的寻址方式</p>
+<p>常用的寻址方式有立即数寻址、直接寻址、间接寻址、寄存器寻址、基址寻址、变址寻址、相对寻址。</p>
+<p>指令的执行过程</p>
+<p>1.计算下一条要执行的指令的地址；</p>
+<p>2.从该地址读取指令；</p>
+<p>3.对指令译码以确定其所要实现的功能；</p>
+<p>4.计算操作数的地址；</p>
+<p>5.从该地址读取操作数；</p>
+<p>6.执行操作；</p>
+<p>7.保存结果；</p>
+<p><strong>1.5</strong> <strong>输入/**</strong>输出系统**</p>
+<p><strong>I/O**</strong>系统在CPU、存储器和各种外部设备之间负责协调和控制数据的输入/输出。**</p>
+<p>I/O系统控制器基本结构：</p>
+<p>n          数据寄存器：</p>
+<p>n          状态寄存器：</p>
+<p>n          控制寄存器：</p>
+<p>n          控制电路：</p>
+<p>n          外设接口控制：</p>
+<p>I/O系统的工作方式：</p>
+<p>Ø         程序控制：CPU完全控制，CPU必须时时查询I/O设备的状态；</p>
+<p>Ø         程序中断：I/O设备以中断方式通知CPU，定期查询状态</p>
+<p>Ø         DMA方式：CPU只在数据传输前和完成后才介入</p>
+<p>I/O系统的发展主要阶段：</p>
+<p>Ø         数据通信：CPU直接控制外设；</p>
+<p>Ø         程序控制：CPU不关心外设的具体细节，I/O增加了数据交换的功能；</p>
+<p>Ø         中断方式：中断机制减少了CPU的等待时间，</p>
+<p>Ø         DMA方式：暂停、周期窃取、共享方式</p>
+<p>Ø         输入输出通道：专门的处理器控制I/O功能；</p>
+<p>Ø         输入输出处理机：不仅拥有处理器，还有本地存储器</p>
+<p>根据外部设备和I/O系统交换数据方式，设备接口可分为串行和并行接口。</p>
+<p>常见的磁盘设备接口有：总线、DMA、通道、SCSI、并行口、RS232C、USB、IEEE1394</p>
+<p>SCSI接口：并行接口；系统级的设备接口</p>
+<p>P1394接口：高速串行总线，数据传输率高，价格低容易实现</p>
+<p>I/O设备的类型和特性：</p>
+<p>键盘：标准101键，主要作为字符、数字和汉字的输入</p>
+<p>鼠标：坐标定位部件，有机械式、光电式和混合式三种。</p>
+<p>显示器：输出设备，输出图象和字符，性能参数是分辨率和灰度级</p>
+<p>打印机：输出设备，分击打式和非击打式打印机</p>
+<p>扫描仪：图象输入设备，扫描图象或文本成数字图片，然后输入计算机处理</p>
+<p>摄像头：图象输入设备图象数字化后存入到磁盘。</p>
+<p>例题：</p>
+<p>为了快速传送大量数据，微型计算机中采用存储器直接访问技术，简称DMA。用DMA方式传送时，在存储器和<strong>A</strong>之间直接建立高速传输数据的通路，不需要<strong>B</strong>的干预。利用DMA方式传送数据时，数据的传送过程完全由成为DMA控制器的硬件控制。DMA控制器具有如下功能：</p>
+<p>1)        向CPU申请<strong>C</strong>传送。</p>
+<p>2)        在CPU允许DMA工作时，处理总线控制的传交。</p>
+<p>3)        在DMA期间管理<strong>D</strong>，控制数据传送。</p>
+<p>4)        确定数据传送的起始地址和<strong>E</strong> ，并在传送过程中不断修正。</p>
+<p>5)        数据传送结束时，给出表示DMA操作完成的信号。</p>
+<p> <strong>A~E**</strong>：** ①控制台       ②硬件       ③外部设备       ④数据长度</p>
+<p>⑤CPU          ⑥存储器     ⑦DMA            ⑧系统总线</p>
+<p>⑨数据方向     ⑩传输速率</p>
+<p><strong>[**</strong>分析]**</p>
+<p>DMA（Direct Memory Access，直接存储器访问）是一种不需要CPU干预，在存储器和外部设备之间直接通过系统总线高速传输数据的方法。DMA方法使用DMA控制器DMAC来控制和管理数据传输。</p>
+<p><strong>[**</strong>答案]**</p>
+<p><strong>A**</strong>：<strong>③ </strong>B：<strong>⑤  </strong>C：<strong>⑦ </strong>D：<strong>⑧ </strong>E：**④</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/系统架构师/" rel="tag"># 系统架构师</a>
+          
+            <a href="/tags/软考/" rel="tag"># 软考</a>
+          
+            <a href="/tags/软件设计师/" rel="tag"># 软件设计师</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/computer_system1.html" rel="next" title="软考：计算机系统知识(一)">
+                <i class="fa fa-chevron-left"></i> 软考：计算机系统知识(一)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/computer_system3.html" rel="prev" title="软考：计算机系统知识(三)">
+                软考：计算机系统知识(三) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/computer_system2-2.html';
+
+      var disqus_title = "软考：计算机系统知识(二)";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

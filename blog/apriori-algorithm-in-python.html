@@ -1,0 +1,806 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Python,数据挖掘,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="Apriori algorithm是关联规则里一项基本算法。是由Rakesh Agrawal和Ramakrishnan Srikant两位在1994年提出的布尔关联规则的频繁项集挖掘算法(详情：Fast Algorithms for Mining Association Rules)。算法的名字是因为算法基于先验知识(prior knowledge).根据前一次找到的频繁项来生成本次的频繁项。关联">
+<meta name="keywords" content="Python,数据挖掘">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关联规则-Apriori算法详解(附python版源码)">
+<meta property="og:url" content="https://www.tanglei.name/blog/apriori-algorithm-in-python.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="Apriori algorithm是关联规则里一项基本算法。是由Rakesh Agrawal和Ramakrishnan Srikant两位在1994年提出的布尔关联规则的频繁项集挖掘算法(详情：Fast Algorithms for Mining Association Rules)。算法的名字是因为算法基于先验知识(prior knowledge).根据前一次找到的频繁项来生成本次的频繁项。关联">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/03/image_thumb1.png">
+<meta property="og:image" content="http://i1123.photobucket.com/albums/l549/tl3shi/apriori.jpg">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.119Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关联规则-Apriori算法详解(附python版源码)">
+<meta name="twitter:description" content="Apriori algorithm是关联规则里一项基本算法。是由Rakesh Agrawal和Ramakrishnan Srikant两位在1994年提出的布尔关联规则的频繁项集挖掘算法(详情：Fast Algorithms for Mining Association Rules)。算法的名字是因为算法基于先验知识(prior knowledge).根据前一次找到的频繁项来生成本次的频繁项。关联">
+<meta name="twitter:image" content="https://www.tanglei.name/wp-content/uploads/2012/03/image_thumb1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/apriori-algorithm-in-python.html">
+
+
+
+
+
+  <title> 关联规则-Apriori算法详解(附python版源码) | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/apriori-algorithm-in-python.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                关联规则-Apriori算法详解(附python版源码)
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2012-03-17T14:27:23+00:00">
+                2012-03-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/我不会算法/" itemprop="url" rel="index">
+                    <span itemprop="name">我不会算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/apriori-algorithm-in-python.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/apriori-algorithm-in-python.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Apriori algorithm是关联规则里一项基本算法。是由Rakesh Agrawal和Ramakrishnan Srikant两位在1994年提出的布尔关联规则的频繁项集挖掘算法(详情：<a href="http://rakesh.agrawal-family.com/papers/vldb94apriori.pdf" target="_blank">Fast Algorithms for Mining Association Rules</a>)。算法的名字是因为算法基于先验知识(prior knowledge).根据前一次找到的频繁项来生成本次的频繁项。关联规则的目的在于在一个数据集中找出项之间的关系，也称之为购物蓝分析 (market basket analysis)。例如，购买佳能的顾客，有70%的可能也会买在一个月之类买HP打印机。这其中最有名的例子就是&#8221;<a href="http://baike.baidu.com/view/1978239.htm" target="_blank">尿布和啤酒</a>&#8220;的故事了。</p>
+<p>几个概念：</p>
+<p>关联规则A-&gt;B的<strong>支持度</strong>support=P(AB)，指的是事件A和事件B同时发生的概率。<strong>置信度</strong>confidence=P(B|A)=P(AB)/P(A),指的是发生事件A的基础上发生事件B的概率。比如说在规则Computer =&gt; antivirus_software , 其中 support=2%, confidence=60%中，就表示的意思是所有的商品交易中有2%的顾客同时买了电脑和杀毒软件，并且购买电脑的顾客中有60%也购买了杀毒软件。</p>
+<p>如果事件A中包含k个元素，那么称这个事件A为<strong>k**</strong>项集，<strong>并且事件A满足最小支持度阈值的事件称为</strong>频繁<strong><strong>k</strong></strong>项集**。</p>
+<p>Apriori算法的基本思想：</p>
+<p>过程分为两个步骤：第一步通过迭代，检索出事务数据库中的所有频繁项集，即支持度不低于用户设定的阈值的项集；第二步利用频繁项集构造出满足用户最小信任度的规则。具体做法就是：首先找出频繁1-项集，记为L<sub>1</sub>；然后利用L<sub>1</sub>来产生候选项集C<sub>2</sub>，对C<sub>2</sub>中的项进行判定挖掘出L<sub>2</sub>，即频繁2-项集；不断如此循环下去直到无法发现更多的频繁k-项集为止。每挖掘一层L<sub>k</sub>就需要扫描整个数据库一遍。算法利用了一个性质：<strong>Apriori 性质</strong>：任一频繁项集的所有非空子集也必须是频繁的。意思就是说，生成一个k-itemset的候选项时，如果这个候选项有子集不在(k-1)-itemset(已经确定是frequent的)中时，那么这个候选项就不用拿去和支持度判断了，直接删除。具体而言：</p>
+<p>1） 连接步</p>
+<p>为找出L<sub>k</sub>（所有的频繁k项集的集合），通过将L<sub>k-1</sub>（所有的频繁k-1项集的集合）与自身连接产生候选k项集的集合。候选集合记作C<sub>k</sub>。设l<sub>1</sub>和l<sub>2</sub>是L<sub>k-1</sub>中的成员。记l<sub>i</sub>[j]表示l<sub>i</sub>中的第j项。假设Apriori算法对事务或项集中的项按字典次序排序，即对于（k-1）项集l<sub>i</sub>，l<sub>i</sub>[1]&lt;l<sub>i</sub>[2]&lt;……….&lt;l<sub>i</sub>[k-1]。将L<sub>k-1</sub>与自身连接，如果(l<sub>1</sub>[1]=l<sub>2</sub>[1])&amp;&amp;( l<sub>1</sub>[2]=l<sub>2</sub>[2])&amp;&amp;……..&amp;&amp; (l<sub>1</sub>[k-2]=l<sub>2</sub>[k-2])&amp;&amp;(l<sub>1</sub>[k-1]&lt;l<sub>2</sub>[k-1])，那认为l<sub>1</sub>和l<sub>2</sub>是可连接。连接l<sub>1</sub>和l<sub>2</sub> 产生的结果是{l<sub>1</sub>[1],l<sub>1</sub>[2],……,l<sub>1</sub>[k-1],l<sub>2</sub>[k-1]}。</p>
+<p>2） 剪枝步</p>
+<p>C<sub>K</sub>是L<sub>K</sub>的超集，也就是说，C<sub>K</sub>的成员可能是也可能不是频繁的。通过扫描所有的事务（交易），确定C<sub>K</sub>中每个候选的计数，判断是否小于最小支持度计数，如果不是，则认为该候选是频繁的。为了压缩C<sub>k</sub>,可以利用Apriori性质：任一频繁项集的所有非空子集也必须是频繁的，反之，如果某个候选的非空子集不是频繁的，那么该候选肯定不是频繁的，从而可以将其从C<sub>K</sub>中删除。</p>
+<p>算法伪代码如下：</p>
+<figure class="highlight pascal"><table><tr><td class="code"><pre><span class="line"><span class="comment">//算法：Apriori</span></span><br><span class="line"><span class="comment">//输入：D - 事务数据库；min_sup - 最小支持度计数阈值</span></span><br><span class="line"><span class="comment">//输出：L - D中的频繁项集</span></span><br><span class="line"><span class="comment">//方法：</span></span><br><span class="line">     L1=find_frequent_1-itemsets(D); <span class="comment">// 找出所有频繁1项集</span></span><br><span class="line">     <span class="keyword">For</span>(k=<span class="number">2</span>;Lk-<span class="number">1</span>!=null;k++)<span class="comment">&#123;</span></span><br><span class="line"><span class="comment">        Ck=apriori_gen(Lk-1); // 产生候选，并剪枝</span></span><br><span class="line"><span class="comment">        For each 事务t in D&#123; // 扫描D进行候选计数</span></span><br><span class="line"><span class="comment">            Ct =subset(Ck,t); // 得到t的子集</span></span><br><span class="line"><span class="comment">            For each 候选c 属于 Ct</span></span><br><span class="line"><span class="comment">                         c.count++;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line">        Lk=<span class="comment">&#123;c属于Ck | c.count&gt;=min_sup&#125;</span></span><br><span class="line">&#125;</span><br><span class="line">Return L=所有的频繁集；</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">Procedure</span> <span class="title">apriori_gen</span><span class="params">(Lk-1:frequent(k-1)</span>-<span class="title">itemsets</span>)</span></span><br><span class="line"><span class="function">      <span class="title">For</span> <span class="title">each</span>项集<span class="title">l1</span>属于<span class="title">Lk</span>-1</span></span><br><span class="line"><span class="function">              <span class="title">For</span> <span class="title">each</span>项集 <span class="title">l2</span>属于<span class="title">Lk</span>-1</span></span><br><span class="line"><span class="function">                       <span class="title">If</span><span class="params">((l1[1]=l2[1])</span>&amp;&amp;<span class="params">( l1[2]=l2[2])</span>&amp;&amp;……..</span></span><br><span class="line"><span class="function">&amp;&amp; <span class="params">(l1[k-2]=l2[k-2])</span>&amp;&amp;<span class="params">(l1[k-1]&lt;l2[k-1])</span>) <span class="title">then</span><span class="comment">&#123;</span></span></span><br><span class="line"><span class="function"><span class="comment">                   c=l1连接l2 //连接步：产生候选</span></span></span><br><span class="line"><span class="function"><span class="comment">                   if has_infrequent_subset(c,Lk-1) then</span></span></span><br><span class="line"><span class="function"><span class="comment">                       delete c; //剪枝步：删除非频繁候选</span></span></span><br><span class="line"><span class="function"><span class="comment">                   else add c to Ck;</span></span></span><br><span class="line"><span class="function"><span class="comment">                  &#125;</span></span></span><br><span class="line"><span class="function">          <span class="title">Return</span> <span class="title">Ck</span>;</span></span><br><span class="line"> </span><br><span class="line">     <span class="function"><span class="keyword">Procedure</span> <span class="title">has_infrequent_sub</span><span class="params">(c:candidate k-itemset; Lk-1:frequent(k-1)</span>-<span class="title">itemsets</span>)</span></span><br><span class="line"><span class="function">        <span class="title">For</span> <span class="title">each</span><span class="params">(k-1)</span>-<span class="title">subset</span> <span class="title">s</span> <span class="title">of</span> <span class="title">c</span></span></span><br><span class="line"><span class="function">            <span class="title">If</span> <span class="title">s</span>不属于<span class="title">Lk</span>-1 <span class="title">then</span></span></span><br><span class="line"><span class="function">               <span class="title">Return</span> <span class="title">true</span>;</span></span><br><span class="line">        Return false;</span><br></pre></td></tr></table></figure>
+<p>举个例子,来源于书中(见参考文献1)的例子。</p>
+<p><a href="/wp-content/uploads/2012/03/image1.png"><img title="apriori算法" src="/wp-content/uploads/2012/03/image_thumb1.png" alt="apriori算法" data-pinit="registered"></a></p>
+<p>如图中所示,有9个事务，其算法流程如下：</p>
+<p><img src="http://i1123.photobucket.com/albums/l549/tl3shi/apriori.jpg" alt="apriori算法,关联规则,数据挖掘"></p>
+<p>以上就有了频繁项集，然后根据得到的频繁项集和给定置信度算关联规则。置信度其实是一个条件概率。关联规则产生就是根据每个生成的频繁项集，产生其所有非空子集，然后根据子集和原来的事务库中循环比较。大于给定重复次数的就是满足条件的。例如针对频繁集{I1，I2，I5}。可以产生哪些关联规则？该频繁集的非空真子集（求子集的具体方法在前面<a href="/blog/a-python-problem-about-a-plusequal-b-and-a-equal-a-plus-b.html" target="_blank">python中a+=b和a=a+b的问题</a>中已经阐述）有{I1，I2}，{I1，I5}，{I2，I5}，{I1 }，{I2}和{I5}，对应置信度如下：</p>
+<p align="center"><br>  I1&amp;&amp;I2-&gt;I5 confidence=2/4=50%<br></p>
+
+<p align="center"><br>  I1&amp;&amp;I5-&gt;I2 confidence=2/2=100%<br></p>
+
+<p align="center"><br>  I2&amp;&amp;I5-&gt;I1 confidence=2/2=100%<br></p>
+
+<p align="center"><br>  I1 -&gt;I2&amp;&amp;I5 confidence=2/6=33%<br></p>
+
+<p align="center"><br>  I2 -&gt;I1&amp;&amp;I5 confidence=2/7=29%<br></p>
+
+<p align="center"><br>  I5 -&gt;I1&amp;&amp;I2 confidence=2/2=100%<br></p>
+
+<p>如果min_conf=70%,则强规则有I1&amp;&amp;I5-&gt;I2，I2&amp;&amp;I5-&gt;I1，I5 -&gt;I1&amp;&amp;I2。</p>
+<p>&nbsp;</p>
+<p>具体而言：因为这几天在学python,所以就用python实现如下。里面有注释，刚开始用python，所以把一些问题也注释在里面了，代码可能不怎么清晰。仅供参考。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># coding=UTF-8</span></span><br><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Created on Mar 10, 2012</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">@author: tanglei|www.tanglei.name</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Item</span>:</span></span><br><span class="line">    elements=[]</span><br><span class="line">    supp=<span class="number">0.0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,elements,supp=<span class="number">0.0</span>)</span>:</span></span><br><span class="line">        self.elements = elements</span><br><span class="line">        self.supp = supp</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        returnstr = <span class="string">'[ '</span></span><br><span class="line">        <span class="keyword">for</span> e <span class="keyword">in</span> self.elements:</span><br><span class="line">            returnstr += e+<span class="string">','</span></span><br><span class="line">        returnstr+=<span class="string">' ]'</span>+<span class="string">' (support :%.3f)\t'</span> %(self.supp)</span><br><span class="line">        <span class="keyword">return</span> returnstr</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getSubset</span><span class="params">(self,k,size)</span>:</span></span><br><span class="line">        subset=[]</span><br><span class="line">        <span class="keyword">if</span> k == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(size):</span><br><span class="line">                subset.append([self.elements[i]])</span><br><span class="line">            <span class="keyword">return</span> subset </span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            i = size - <span class="number">1</span>        </span><br><span class="line">            <span class="keyword">while</span> i &gt;= k<span class="number">-1</span> :</span><br><span class="line">                myset = self.getSubset(k<span class="number">-1</span>,i)</span><br><span class="line">                j = <span class="number">0</span></span><br><span class="line">                <span class="keyword">while</span> j &lt; len(myset):</span><br><span class="line">                    <span class="comment">#Attention a+=b  a=a+b  </span></span><br><span class="line">                    myset[j] +=  [self.elements[i]]   <span class="comment">#Why Elements change here?</span></span><br><span class="line">                    j += <span class="number">1</span></span><br><span class="line">                subset += (myset)</span><br><span class="line">                i -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">return</span> subset</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lastDiff</span><span class="params">(self,items)</span>:</span></span><br><span class="line">        length = len(self.elements)</span><br><span class="line">        <span class="keyword">if</span> length != len(items.elements):<span class="comment">#length should be the same</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> self.elements == items:<span class="comment">#if all the same,return false</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> self.elements[<span class="number">0</span>:length<span class="number">-1</span>] == items.elements[<span class="number">0</span>:length<span class="number">-1</span>]</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setSupport</span><span class="params">(self,supp)</span>:</span></span><br><span class="line">        self.supp = supp</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">join</span><span class="params">(self,items)</span>:</span></span><br><span class="line">        temp = copy.copy(self.elements)</span><br><span class="line">        temp.insert(len(self.elements), items.elements[len(items.elements) - <span class="number">1</span>])</span><br><span class="line">        it = Item(temp,<span class="number">0.0</span>)</span><br><span class="line">        <span class="keyword">return</span> it</span><br><span class="line"><span class="comment">#        self.elements.insert(len(self.elements), items.elements[len(items.elements) - 1])#Wrong,if so ,self.elements will change</span></span><br><span class="line"><span class="comment">#        it = Item(self.elements,0.0)</span></span><br><span class="line"><span class="comment">#        print(self.elements)</span></span><br><span class="line"><span class="comment">#        return it</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">#        the following is Wrong ,Because the Constructor Item(),First par is None</span></span><br><span class="line"><span class="comment">#        return copy.deepcopy(Item(\</span></span><br><span class="line"><span class="comment">#                                  self.elements.insert(\</span></span><br><span class="line"><span class="comment">#                                                       len(self.elements), items.elements[len(items.elements) - 1]\</span></span><br><span class="line"><span class="comment">#                                                       )\</span></span><br><span class="line"><span class="comment">#                                  ,0.0)\</span></span><br><span class="line"><span class="comment">#                             )</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span>:</span></span><br><span class="line">    <span class="string">'''candidate '''</span></span><br><span class="line">    elements=[]</span><br><span class="line">    k = <span class="number">0</span> <span class="comment">#order</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,elements,k)</span>:</span></span><br><span class="line">        self.elements = elements</span><br><span class="line">        self.k = k</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isEmpty</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> len(self.elements) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="comment">#get the same order of itemsets whose support is at lease the threshold</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getL</span><span class="params">(self,threshold)</span>:</span></span><br><span class="line">        items=[]</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> self.elements:</span><br><span class="line">            <span class="keyword">if</span> item.supp &gt;= threshold:</span><br><span class="line">                items.append(copy.copy(item))</span><br><span class="line">        <span class="keyword">if</span> len(items) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> L([],self.k)</span><br><span class="line">        <span class="keyword">return</span> L(copy.deepcopy(items),self.k)   </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        returnstr = str(self.k)+<span class="string">'-itemset:'</span>+str(len(self.elements))+<span class="string">' \r\n&#123; '</span></span><br><span class="line">        <span class="keyword">for</span> e <span class="keyword">in</span> self.elements:</span><br><span class="line">            <span class="keyword">if</span> <span class="literal">True</span> == isinstance(e,Item):</span><br><span class="line">                returnstr += e.__str__()</span><br><span class="line">        returnstr +=<span class="string">' &#125;'</span></span><br><span class="line">        <span class="keyword">return</span> returnstr</span><br><span class="line">    </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">L</span>:</span></span><br><span class="line">    <span class="string">'''store all the  1-itemsets,2-itemsets,...k-itemsets'''</span></span><br><span class="line">    items=[] <span class="comment">#all the item in order K</span></span><br><span class="line">    k=<span class="number">0</span>  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,items,k)</span>:</span></span><br><span class="line">        self.items = items</span><br><span class="line">        self.k = k</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">has_inFrequentItemsets</span><span class="params">(self,item)</span>:</span></span><br><span class="line"><span class="comment">#        return False</span></span><br><span class="line"><span class="comment">#        #先不优化</span></span><br><span class="line">        subs = item.getSubset(self.k, len(item.elements))</span><br><span class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> subs:</span><br><span class="line">            flag=<span class="literal">False</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> self.items:</span><br><span class="line">                <span class="keyword">if</span> i.elements==each:</span><br><span class="line">                    flag=<span class="literal">True</span></span><br><span class="line">                    <span class="keyword">break</span> </span><br><span class="line">            <span class="keyword">if</span> flag==<span class="literal">False</span>:</span><br><span class="line"><span class="comment">#                print("remove");print(item)</span></span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span>  </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span> <span class="comment">#there is at least one subset in the freq-items</span></span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">aprioriGen</span><span class="params">(self)</span>:</span></span><br><span class="line">        length=len(self.items)</span><br><span class="line">        result=[]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(length):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>,length):</span><br><span class="line">                <span class="keyword">if</span> self.items[i].lastDiff(self.items[j]):</span><br><span class="line">                    item = self.items[i].join(self.items[j])</span><br><span class="line">                    <span class="keyword">if</span> <span class="literal">False</span> == self.has_inFrequentItemsets(item):<span class="comment">#用Apriori性质：任一频繁项集的所有非空子集也必须是频繁的，反之，如果某个候选的非空子集不是频繁的，那么该候选肯定不是频繁的，从而可以将其从CK中删除。</span></span><br><span class="line">                        result.append(item)</span><br><span class="line">        <span class="keyword">if</span>(len(result) == <span class="number">0</span>):</span><br><span class="line">            <span class="keyword">return</span> C([],self.k+<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> C(result,self.k+<span class="number">1</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        returnstr=<span class="string">"\r\n"</span>+str(self.k) + <span class="string">'-itemsets :'</span>+str(len(self.items))+<span class="string">"\r\n&#123;"</span></span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> self.items:</span><br><span class="line">            returnstr += item.__str__()</span><br><span class="line">        returnstr += <span class="string">'&#125;'</span></span><br><span class="line">        <span class="keyword">return</span> returnstr</span><br><span class="line">        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LS</span>:</span></span><br><span class="line">    <span class="string">'''store from 1-itemset to k-itemset'''</span></span><br><span class="line">    values=&#123;&#125;<span class="comment">#L1,L2,Lk</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self,k)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.values[k]</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">size</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> len(self.values)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">put</span><span class="params">(self,l,k)</span>:</span></span><br><span class="line">        self.values[k]=l</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isEmpty</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.size()==<span class="number">0</span>    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        returnstr = <span class="string">'-----result--------\r\n'</span></span><br><span class="line">        <span class="keyword">for</span> l <span class="keyword">in</span> self.values:</span><br><span class="line">            returnstr += self.values[l].__str__()</span><br><span class="line">        <span class="keyword">return</span> returnstr</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rule</span>:</span></span><br><span class="line">    confidence=<span class="number">.0</span></span><br><span class="line">    str_rule=<span class="string">''</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,confidence,str_rule)</span>:</span></span><br><span class="line">        self.confidence = confidence</span><br><span class="line">        self.str_rule = str_rule</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Rule:'</span> + self.str_rule + <span class="string">'  confidence:'</span> + str(self.confidence)</span><br><span class="line">      </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Apriori</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,min_supp=<span class="number">0.07</span>,datafile=<span class="string">'apriori.test.data'</span>)</span>:</span></span><br><span class="line">        inputfile = open(datafile,<span class="string">"r"</span>)</span><br><span class="line">        self.data=[]</span><br><span class="line">        self.size=<span class="number">0</span></span><br><span class="line">        self.min_supp = min_supp</span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> inputfile.readlines():</span><br><span class="line">            linearray = re.compile(<span class="string">"[\d]+"</span>).findall(line)</span><br><span class="line">            self.data.append(linearray)</span><br><span class="line">        </span><br><span class="line">        self.size=len(self.data)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span>  <span class="title">findFrequent1Itemsets</span><span class="params">(self)</span>:</span></span><br><span class="line">        totalItemsets=[]</span><br><span class="line">        <span class="keyword">for</span> temp <span class="keyword">in</span> self.data:</span><br><span class="line">            totalItemsets.extend(temp)</span><br><span class="line">        items = []<span class="comment">#store the 1-itemset s</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> len(totalItemsets)&gt;<span class="number">0</span>:</span><br><span class="line">            item=totalItemsets[<span class="number">0</span>]</span><br><span class="line">            count=<span class="number">0</span> </span><br><span class="line">            j=<span class="number">0</span></span><br><span class="line">            <span class="keyword">while</span> j&lt;len(totalItemsets):</span><br><span class="line">                <span class="keyword">if</span> (item == totalItemsets[j]) :</span><br><span class="line">                    count += <span class="number">1</span> </span><br><span class="line">                    totalItemsets.remove(item) <span class="comment">#remove the first occurence</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    j += <span class="number">1</span></span><br><span class="line">            t_supp = count/self.size</span><br><span class="line"><span class="comment">#            print(t_supp)</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> t_supp &gt;= self.min_supp:</span><br><span class="line">                items.append(Item([item],t_supp))</span><br><span class="line">            </span><br><span class="line">        temp = L(copy.deepcopy(items),<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>   temp</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">ralationRules</span><span class="params">(self,maxSequence,min_confidence)</span>:</span></span><br><span class="line">        ruls=[]</span><br><span class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> maxSequence:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(len(each.elements)<span class="number">-1</span>):<span class="comment">#real subsets </span></span><br><span class="line">                subsets = each.getSubset(i+<span class="number">1</span>,len(each.elements))<span class="comment">#get the subsets of the i+1 events</span></span><br><span class="line">                <span class="keyword">for</span> subset <span class="keyword">in</span> subsets:</span><br><span class="line">                    count=<span class="number">0</span></span><br><span class="line">                    <span class="keyword">for</span> tran_item <span class="keyword">in</span> self.data:</span><br><span class="line">                        flag = <span class="literal">False</span> <span class="comment">#标记subset中的每个元素都在源中出现</span></span><br><span class="line">                        <span class="keyword">for</span> ele <span class="keyword">in</span> subset:</span><br><span class="line">                            <span class="keyword">if</span> ele <span class="keyword">not</span> <span class="keyword">in</span> tran_item:</span><br><span class="line">                                flag=<span class="literal">True</span></span><br><span class="line">                                <span class="keyword">break</span></span><br><span class="line">                        <span class="keyword">if</span> flag == <span class="literal">False</span>: <span class="comment">#subset出现一次，计数</span></span><br><span class="line">                            count += <span class="number">1</span>  </span><br><span class="line">                    confidence = (each.supp*self.size)/count         </span><br><span class="line">                    <span class="keyword">if</span>  confidence &gt;= min_confidence: <span class="comment">#confidence/the number of the frequent pattern </span></span><br><span class="line">                        str_rule = str(set(subset)) + <span class="string">'--&gt;'</span> + str(set(each.elements)-set(subset))</span><br><span class="line">                        rule =Rule(confidence,str_rule)           </span><br><span class="line">                        ruls.append(rule)</span><br><span class="line">        <span class="keyword">return</span> ruls</span><br><span class="line">          </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">do</span><span class="params">(self)</span>:</span>      </span><br><span class="line">        ls = LS()</span><br><span class="line">        oneitemset = self.findFrequent1Itemsets()</span><br><span class="line">        ls.put(oneitemset, <span class="number">1</span>)</span><br><span class="line">        k = <span class="number">2</span></span><br><span class="line">        <span class="keyword">while</span> <span class="literal">False</span> == ls.isEmpty():</span><br><span class="line">            cand = ls.get(k - <span class="number">1</span>).aprioriGen()</span><br><span class="line">            <span class="keyword">if</span> cand.isEmpty():</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">for</span> each <span class="keyword">in</span> cand.elements:</span><br><span class="line">                count = <span class="number">0</span></span><br><span class="line">                <span class="keyword">for</span> each_src <span class="keyword">in</span> self.data:</span><br><span class="line">        <span class="comment">#            count = each_src.count(each.elements)#only count the single element,can not be used to count if containing more than 2 elements</span></span><br><span class="line">        <span class="comment">#            need a function like Collection.containAll(Collection) in Java</span></span><br><span class="line">                    <span class="keyword">if</span> len(each_src)&lt;len(each.elements):</span><br><span class="line">                        <span class="keyword">pass</span></span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment">#不是必须连续 相等才满足条件，只要元素都在里面即可</span></span><br><span class="line">        <span class="comment">#                for i in range(len(each_src)):</span></span><br><span class="line">        <span class="comment">#                    if each.elements == each_src[i:len(each.elements)]:</span></span><br><span class="line">        <span class="comment">#                         break #no need continue ,We have supposed the elements be sequential</span></span><br><span class="line">                        flag = <span class="literal">True</span></span><br><span class="line">                        <span class="keyword">for</span> just_one_e <span class="keyword">in</span> each.elements:</span><br><span class="line">                                flag = just_one_e <span class="keyword">in</span> each_src</span><br><span class="line">                                <span class="keyword">if</span> flag == <span class="literal">False</span>: <span class="comment">#只要有一个不在，即退出</span></span><br><span class="line">                                    <span class="keyword">break</span></span><br><span class="line">                        <span class="keyword">if</span> flag == <span class="literal">True</span>:   <span class="comment">#当前候选事件都在的话，计数     </span></span><br><span class="line">                            count += <span class="number">1</span></span><br><span class="line">                           </span><br><span class="line">                supp = count/self.size</span><br><span class="line">                each.setSupport(supp)</span><br><span class="line">            ls.put(cand.getL(a.min_supp), k)</span><br><span class="line">            k += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> ls</span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">starttime = time.time() </span><br><span class="line">a = Apriori(<span class="number">0.2</span>,<span class="string">'apriori_blog.txt'</span>)</span><br><span class="line">ls = a.do() </span><br><span class="line">print(ls) </span><br><span class="line">endtime =  time.time() </span><br><span class="line">print(<span class="string">"It takes %d milliseconds to find the above  patterns"</span> %((endtime-starttime) * <span class="number">1000</span>))    </span><br><span class="line">print()</span><br><span class="line">print(ls.get(ls.size()))</span><br><span class="line">rules = a.ralationRules(ls.get(ls.size()).items,<span class="number">0.5</span>)</span><br><span class="line"><span class="keyword">for</span> rule <span class="keyword">in</span> rules:</span><br><span class="line">    print(rule)</span><br></pre></td></tr></table></figure>
+<p>运行结果如下：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">-----result--------</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>-itemsets :<span class="number">5</span></span><br><span class="line">&#123;[ <span class="number">1</span>, ] (support :<span class="number">0.667</span>)	[ <span class="number">2</span>, ] (support :<span class="number">0.778</span>)	[ <span class="number">5</span>, ] (support :<span class="number">0.222</span>)	[ <span class="number">4</span>, ] (support :<span class="number">0.222</span>)	[ <span class="number">3</span>, ] (support :<span class="number">0.667</span>)	&#125;</span><br><span class="line"><span class="number">2</span>-itemsets :<span class="number">6</span></span><br><span class="line">&#123;[ <span class="number">1</span>,<span class="number">2</span>, ] (support :<span class="number">0.444</span>)	[ <span class="number">1</span>,<span class="number">5</span>, ] (support :<span class="number">0.222</span>)	[ <span class="number">1</span>,<span class="number">3</span>, ] (support :<span class="number">0.444</span>)	[ <span class="number">2</span>,<span class="number">5</span>, ] (support :<span class="number">0.222</span>)	[ <span class="number">2</span>,<span class="number">4</span>, ] (support :<span class="number">0.222</span>)	[ <span class="number">2</span>,<span class="number">3</span>, ] (support :<span class="number">0.444</span>)	&#125;</span><br><span class="line"><span class="number">3</span>-itemsets :<span class="number">2</span></span><br><span class="line">&#123;[ <span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>, ] (support :<span class="number">0.222</span>)	[ <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>, ] (support :<span class="number">0.222</span>)	&#125;</span><br><span class="line">It takes <span class="number">0</span> milliseconds to find the above  patterns</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">3</span>-itemsets :<span class="number">2</span></span><br><span class="line">&#123;[ <span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>, ] (support :<span class="number">0.222</span>)	[ <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>, ] (support :<span class="number">0.222</span>)	&#125;</span><br><span class="line">Rule:&#123;'5'&#125;--&gt;&#123;'1', '2'&#125;  confidence:1.0</span><br><span class="line">Rule:&#123;'1', '5'&#125;--&gt;&#123;'2'&#125;  confidence:1.0</span><br><span class="line">Rule:&#123;'2', '5'&#125;--&gt;&#123;'1'&#125;  confidence:1.0</span><br><span class="line">Rule:&#123;'1', '2'&#125;--&gt;&#123;'5'&#125;  confidence:0.5</span><br><span class="line">Rule:&#123;'1', '3'&#125;--&gt;&#123;'2'&#125;  confidence:0.5</span><br><span class="line">Rule:&#123;'3', '2'&#125;--&gt;&#123;'1'&#125;  confidence:0.5</span><br><span class="line">Rule:&#123;'1', '2'&#125;--&gt;&#123;'3'&#125;  confidence:0.5</span><br></pre></td></tr></table></figure>
+<p><strong>有网友指出，本页代码在其python环境运行结果不正确，因其环境用的是python2.x，而本人用的环境是python3.x，在python3.x中，两个整数相除是得到小数的，而python2.x里是整数，因此导致支持度计算不正确，只需要改正本页代码中的196行和256行将分子转换成浮点即可（例如分别改为t_supp = count*1.0/self.size，supp = count*1.0/self.size）。本人初学python，一些细节不清楚，望理解。感谢网友指出。</strong></p>
+<p>参考文献：</p>
+<p>Jiawei Han and Micheline Kamber.Data Mining: Concepts and Techniques[M]. San Francisco: Morgan Kaufmann Publishers.2006：234-240</p>
+<p><a href="http://blog.sina.com.cn/s/blog_4882f26d0100spl1.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_4882f26d0100spl1.html</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/数据挖掘/" rel="tag"># 数据挖掘</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/undergraduate-history-of-book-in-lab.html" rel="next" title="我的本科借阅史">
+                <i class="fa fa-chevron-left"></i> 我的本科借阅史
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/books-of-design-pattern-recommendation.html" rel="prev" title="设计模式书籍推荐">
+                设计模式书籍推荐 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/apriori-algorithm-in-python.html';
+
+      var disqus_title = "关联规则-Apriori算法详解(附python版源码)";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

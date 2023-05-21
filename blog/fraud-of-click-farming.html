@@ -1,0 +1,935 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="经验技巧,网络安全,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="背景 点这里跳转阅读原文，可能体验更好。  大家好，我是石头哥。 最近，公司内网又爆出有不少阿里员工被诈骗。 说实话，刚开始我是不相信的，不过看到大家一个个血淋淋的事实，我又不得不承认。如果大家感兴趣，我后面有空也可以整理下，同事们遇到的诈骗套路。 不知道有收到过类似下图的短信吗？  没想到这背后的套路可深了。 恰好，最近看到一个深入诈骗团伙的案例，就特此过来分享给大家，希望大家能有收获，大家千万">
+<meta name="keywords" content="经验技巧,网络安全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="被拉进一个刷单群，赚了75元 | 就真的只是刷单吗？">
+<meta property="og:url" content="https://www.tanglei.name/blog/fraud-of-click-farming.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="背景 点这里跳转阅读原文，可能体验更好。  大家好，我是石头哥。 最近，公司内网又爆出有不少阿里员工被诈骗。 说实话，刚开始我是不相信的，不过看到大家一个个血淋淋的事实，我又不得不承认。如果大家感兴趣，我后面有空也可以整理下，同事们遇到的诈骗套路。 不知道有收到过类似下图的短信吗？  没想到这背后的套路可深了。 恰好，最近看到一个深入诈骗团伙的案例，就特此过来分享给大家，希望大家能有收获，大家千万">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-4-29/1619710407692-image.png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnTcTLSibKBpPeibMLicKOIra5cfO84JXGMfQ2Q7VIxicBkr8N4L5eddwPMw/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnRsULstxP4VPeB3gL2fzakGy7o5EOXia4kjDibclIibpr0RLOYwqeFHeag/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnvDWa7w4geSSfWhX5PfsCPQh5ODGUI8X28licO7yRpmEOdIVyIGgXfEg/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnKNGqLQdCgS2kkX2icK4DcOQJQxKrFVxJZtmE1K6f0rJe6FD8auNcNSg/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxn1S9TDVcty2jj9b2Um8UTEic7f1K7BbM0rINPQtstASz8j1SPk4Nr1Gg/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnWKZqNoVNgKmokSCCXSMd7qE0atMREUCozImxwktLLhxdSz4Etnb8qg/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxn5oNxwg29fuEvsIV7EgXzDLUpdXNWALmCJicFwtRkxW42CUDic0Mmax7A/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnNvN5A51CBs41RV9jo2Mnw0Jf42ADqbglljRK4qdl3RHoqP7RetibPDQ/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnpkULZykCCFWyO7TZ8Ih2pyYqCc4DAUlBworP7u13Lo3pG1ibt5nmfwQ/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnxjysdfvYvQwx9VAmGbae8FZ6aibxiaCltRaE0tQEm08ATAowuYvqzkEQ/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnvT6jps92dBNl5jEOHicT8cuPKugI5a7mcCv5Xibk51kMw01PTKYxkUiaA/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxn8g4pQhHxe1JlRZWolbxXJ6t7QxwAQTfFAF2vPILXmXE31RLu5Vffwg/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnBCN949PmFuv9DZdibibP3amiaZjLD23x9ZthibhadMPrTbZTVBiaYw4rGXg/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnM8BdQ4BeYNJ1SIhnGuKKCTjPMMI8A4y06MlIKicAdHjacD2Piau0iceEQ/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxn4fnh5IBBnOvpqzvEG4bt4DFE5uslOuxZppnGHuw6CjKpJGgy4QrjNw/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxncpTH1VSsUeJnXaLSTMO6eibBYcP6WWiaLHwl4a0MLHXYCdeNNicRJTVUA/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnGzb3ZzibMTbPb5yyPVhPGQ8XuOzcoABGZqmXh2Xsernf7vVvttIt40w/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnzSmzcfgatEevdUENTYKj9hR8SCu36utGsHXaNcKRoOXZcVDB4uf5Bg/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnuxsVnMTGIwkeA493uM7ECDGzqLf0h3icx87FTD493SY1GsGCdF9Yia9g/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnQ68plj2R8LL37Ayeic7rDiaoqWMGV5cS2ibaIib4nMjVpe0yibAeaHUe23A/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxneVwodPh9QKzAWmekHAB7u7nqo0Vib9LTRrOiby3MwhSFPZicYtR8yIGew/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxn2F5w7jgsYVYDBgTMZAuN4XozlzVEh3A4rx0hkxSib5t8GXiacHicKzZpQ/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnYth862ldUQNu79UmoBRxoNE6uNnIEtPrgPwwrial5f1VlQaDH6BAC1w/640?wx_fmt=png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnyUpiaK5YKLCibzQFK3d7gALIr1BqlbrLFNjamNQ50KXqkicZwyPULt4cw/640?wx_fmt=png">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.177Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="被拉进一个刷单群，赚了75元 | 就真的只是刷单吗？">
+<meta name="twitter:description" content="背景 点这里跳转阅读原文，可能体验更好。  大家好，我是石头哥。 最近，公司内网又爆出有不少阿里员工被诈骗。 说实话，刚开始我是不相信的，不过看到大家一个个血淋淋的事实，我又不得不承认。如果大家感兴趣，我后面有空也可以整理下，同事们遇到的诈骗套路。 不知道有收到过类似下图的短信吗？  没想到这背后的套路可深了。 恰好，最近看到一个深入诈骗团伙的案例，就特此过来分享给大家，希望大家能有收获，大家千万">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-4-29/1619710407692-image.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/fraud-of-click-farming.html">
+
+
+
+
+
+  <title> 被拉进一个刷单群，赚了75元 | 就真的只是刷单吗？ | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/fraud-of-click-farming.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                被拉进一个刷单群，赚了75元 | 就真的只是刷单吗？
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-04-30T00:00:00+00:00">
+                2021-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/fraud-of-click-farming.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/fraud-of-click-farming.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247493052&amp;idx=1&amp;sn=577948f73e728f1059788190f14fa511&amp;chksm=eb44e458dc336d4ec960ba352fd6bc4f93ef217e6f89d1e568a0b00833dc6a7ba6f3ed679b4c&amp;token=1336735893&amp;lang=zh_CN#rd" target="_blank" rel="noopener">点这里跳转阅读原文</a>，可能体验更好。</p>
+</blockquote>
+<p>大家好，我是石头哥。</p>
+<p>最近，公司内网又爆出有不少阿里员工被诈骗。</p>
+<p>说实话，刚开始我是不相信的，不过看到大家一个个血淋淋的事实，我又不得不承认。如果大家感兴趣，我后面有空也可以整理下，同事们遇到的诈骗套路。</p>
+<p>不知道有收到过类似下图的短信吗？</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-4-29/1619710407692-image.png" alt="日赚300刷单"></p>
+<p>没想到这背后的套路可深了。</p>
+<p>恰好，最近看到一个深入诈骗团伙的案例，就特此过来分享给大家，希望大家能有收获，大家千万别被骗了。</p>
+<p>请无情转发给朋友家人，特别是家里的老人。</p>
+<blockquote>
+<p>注：本文授权转载自信息安全老骆驼，以下文中的”我”均指老骆驼。</p>
+</blockquote>
+<p>我坐飞机遇到旁边的阿姨在运营商合作营业厅被人骗走几千，有同事来咨询我说有朋友被贷款公司骗走几十万，实际是遇到了网贷诈骗。</p>
+<p>直到电信诈骗主动找上我了，这次终于有了机会写下这篇文章。我的一贯作风，给大家讲讲故事，希望大家能看完，实在不想看，就拉到最后瞧热闹也行！</p>
+<h2 id="01-与骗子的初次相遇"><a href="#01-与骗子的初次相遇" class="headerlink" title="01 与骗子的初次相遇"></a>01 与骗子的初次相遇</h2><p>2021年2月1日晚上7点，微信收到一条好友请求，当时就认定对方是骗子，但想看看对方的诈骗手法，将其备注为骗子，通过了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnTcTLSibKBpPeibMLicKOIra5cfO84JXGMfQ2Q7VIxicBkr8N4L5eddwPMw/640?wx_fmt=png" alt></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnRsULstxP4VPeB3gL2fzakGy7o5EOXia4kjDibclIibpr0RLOYwqeFHeag/640?wx_fmt=png" alt></p>
+<p>通过请求后对方一直没再说话，过了两个多月，骗子主动联系我了，骗局要开始了。</p>
+<p>至于为何要过这么久才联系，我想对于陌生人的好友请求一般人都会比较警惕吧，如果以加好友就直入主题，很容易被拉黑名单。</p>
+<p>类似的操作还有冒充快递、外卖、邻居加好友的。</p>
+<blockquote>
+<p>石头注：我就有不少“邻居”加我好友的，大多数微商还好，还遇到过茶叶女孩。</p>
+</blockquote>
+<h2 id="02-有备而战"><a href="#02-有备而战" class="headerlink" title="02 有备而战"></a>02 有备而战</h2><p>此前自己稍微了解一些这种“刷单”、“兼职”类的诈骗手法，无非就是给个接单平台：</p>
+<p>一开始给点甜头，后面以升级VIP交费的方式一步一步深入，还有代付费刷单的发现钱不给返还了。</p>
+<p>正所谓你看中别人的“佣金”，人家看的是你的本金。但只要坚持一点：<strong>“不给钱”</strong>，自然也就不会被骗。</p>
+<p>我计划的是：</p>
+<ol>
+<li>在给“甜头”时按他们要求去做</li>
+<li>取得“信任”的同时拿到“甜头”，要到兼职的接单APP或者平台</li>
+<li>用自己的技术入侵后台，通过后台对诈骗活动进行“捣乱”，通知其他受害者。</li>
+</ol>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnvDWa7w4geSSfWhX5PfsCPQh5ODGUI8X28licO7yRpmEOdIVyIGgXfEg/640?wx_fmt=png" alt></p>
+<p>对方拉我进了一个企业微信里的“任务群”，群里近200人左右，有几个人备注为“派单员”，然后有人私聊我，说明刷单规则。需要完成两个任务才能正式开始“刷单”。</p>
+<p>自然，群聊功能是被管理员关闭的，这样受害者之间无法进行沟通，不会露馅。</p>
+<p>但同时我也不知道群里谁是诈骗团伙谁是受害者，不敢贸然聊天，怕自己暴露。</p>
+<p>所谓的注册认证任务很简单，第一个任务是关注一个抖音号码，点赞20个作品，然后对方给我的支付宝转了5元“佣金”。</p>
+<p>为了完成任务，我重新把我之前卸载的抖音装回来了（抖音算法太厉害，一刷就没个完，我觉得它太浪费我时间了）。</p>
+<p>第一个任务通过后对方会要求提交个人基本信息，如姓名、年龄、性别、是否有手机银行、网银。</p>
+<blockquote>
+<p>这里提醒大家一定要注意自己的信息安全啊，不明网站不要随便提交信息，也不要连接不明 WiFi，上网注意网站是不是 HTTPS，不要轻易信任不明证书，原因看这篇。<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247491331&amp;idx=1&amp;sn=5f6167f4f7ec08e8255abe40535050b9&amp;chksm=eb471ee7dc3097f1fd69e4c335f2697d0f601f25c4ca55b30aa2576c3c07fbc2961b1fb8cb6c&amp;token=1960062541&amp;lang=zh_CN#rd" target="_blank" rel="noopener">可怕，原来 HTTPS 也没用</a></p>
+</blockquote>
+<p>这是为了筛选标记是否容易被骗，是否有继续骗的价值。</p>
+<p>比如后面了解到有进群的是位未成年小朋友，就不让参与“刷单”，我猜测是未成年一是没多少钱，二是没有银行账户不容易实施诈骗。</p>
+<p>刷单、兼职诈骗，最喜欢的受害者就是在家全职带娃的宝妈了。有时间参与，有兼职赚钱的迫切渴望，带娃精力容易被分散不会多想更易被骗。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnKNGqLQdCgS2kkX2icK4DcOQJQxKrFVxJZtmE1K6f0rJe6FD8auNcNSg/640?wx_fmt=png" alt></p>
+<p>中间工作原因中断了两天，继续换个派单员又完成了两个美团“刷单”任务。</p>
+<p>在美团下单某商品，再申请退款，发送截图后对方又往我支付宝转了15元、20元。</p>
+<p>这一步的目的是让你觉得好像他们真的是和美团商家在合作刷单，骗取你的信任，但实际上美团上的下单、付款、退款，都是你和商家之间的事，跟骗子毫无关系，骗子只是给了我40元的“甜头”而已。</p>
+<p>甜头给足之后，自然要开始布陷阱了，但我还没要到“接单平台”的信息，所以还要继续装下去。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxn1S9TDVcty2jj9b2Um8UTEic7f1K7BbM0rINPQtstASz8j1SPk4Nr1Gg/640?wx_fmt=png" alt></p>
+<p>这里是个关键点了，骗子让再下一个订单，然后不在美团上直接支付，要求直接网银转账到指定账号。</p>
+<p>如果转了，那就是入套了。接下来没猜错的话就是：</p>
+<ul>
+<li>先损失272元  —&gt; </li>
+<li>要多刷几笔才能返现，加大转账金额至几千 —-&gt;</li>
+<li>操作错误导致刷单被发现，需要转更多的“保证金”—–&gt;</li>
+</ul>
+<p>反正就是不停的要钱。</p>
+<p>这群家伙不按套路出牌啊，我原本是想要到“接单平台”的信息，到现在突然发现，根本没有什么接单平台，腾讯企业微信就是他们的“接单平台”。</p>
+<p>自然，我是不会去转那个272元的，只好找个借口，拖延下时间。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnWKZqNoVNgKmokSCCXSMd7qE0atMREUCozImxwktLLhxdSz4Etnb8qg/640?wx_fmt=png" alt></p>
+<p>心有不甘，还想继续下去。既然接单平台没有了，那就想办法试着给骗子发个木马，碰碰运气了。</p>
+<p>还记得上次分享的手机掉了，钱被转走的场景吗？ 没看过的，强烈推荐 —— <a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247489895&amp;idx=1&amp;sn=fc8e9e795404cfdea60a8860e6ebbb35&amp;chksm=eb471883dc3091955623123593286f1977ee28f5c213edc73e392919fbb29215c2558729210b&amp;token=1960062541&amp;lang=zh_CN#rd" target="_blank" rel="noopener">【重要】一部手机失窃而揭露的黑色产业链—完整修订版</a></p>
+<p>编了个剧情：装有手机银行的手机忘在家里，让家人帮忙转账并发送转账截图。</p>
+<p>把截图发给骗子，同时在手机银行里用技术手段拍了一张转账成功的截图，留着备用（hook加密解密算法，篡改返回值，ps用不好，怕被发现破绽）。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxn5oNxwg29fuEvsIV7EgXzDLUpdXNWALmCJicFwtRkxW42CUDic0Mmax7A/640?wx_fmt=png" alt></p>
+<p>担心对方用手机无法运行木马，提示对方在电脑上输入密码打开，同时提示对方我卡里有房子的首付款。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnNvN5A51CBs41RV9jo2Mnw0Jf42ADqbglljRK4qdl3RHoqP7RetibPDQ/640?wx_fmt=png" alt></p>
+<h2 id="03-马失前蹄，结束战斗"><a href="#03-马失前蹄，结束战斗" class="headerlink" title="03 马失前蹄，结束战斗"></a>03 马失前蹄，结束战斗</h2><p>计划再好，算计再多，无赖骗子没有电脑用的手机，无法运行木马，期间还发错一张图片，被对方警觉的发现了，只能草草结束卧底了。</p>
+<p>虽然接单群是禁言的，但自己可以再建一个群。</p>
+<p>于是重新拉了一个群，把企业微信里的“目标受害者”拉进来，给大家提出电信诈骗的警告。</p>
+<p>不过可惜已经有人之前上当了的，有被骗一万多的，有被骗2万多的。</p>
+<p>这里吐槽下腾讯，找遍整个企业微信，没找到投诉举报的地方，审核不严让对方用虚假材料建了企业微信当成接单平台实施诈骗，想投诉举报都找不到途径。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnpkULZykCCFWyO7TZ8Ih2pyYqCc4DAUlBworP7u13Lo3pG1ibt5nmfwQ/640?wx_fmt=png" alt></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnxjysdfvYvQwx9VAmGbae8FZ6aibxiaCltRaE0tQEm08ATAowuYvqzkEQ/640?wx_fmt=png" alt></p>
+<h2 id="04-完了？"><a href="#04-完了？" class="headerlink" title="04 完了？"></a>04 完了？</h2><p>其实在这篇文章之前，我原本是想写篇揭露网贷骗局和二次诈骗相关的文章，在这里顺便就提一下“二次诈骗”。</p>
+<p>有些电信诈骗受害者在被骗后觉得不甘心，想找人帮忙追回损失，于是便招来了“<strong>黑客</strong>”、“<strong>律师</strong>”，遭遇了二次诈骗。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnvT6jps92dBNl5jEOHicT8cuPKugI5a7mcCv5Xibk51kMw01PTKYxkUiaA/640?wx_fmt=png" alt></p>
+<p><strong>女子网贷被骗五千多，网上找律师维权又被骗十几万！</strong> </p>
+<p>你要问这样的律师哪里找？对不起，我不知道啊，万事问百度嘛，往上看看那两个广告，专业提供律师追损服务，能从境外犯罪分子那里帮你追回执法部门都追不回的被骗损失。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxn8g4pQhHxe1JlRZWolbxXJ6t7QxwAQTfFAF2vPILXmXE31RLu5Vffwg/640?wx_fmt=png" alt></p>
+<p>刚才那谁，可别瞎说啊！我们只是说全力帮你去追回，可没保证一定能追回。</p>
+<p>至于我们追没追，怎么追，这个无可奉告。我们出力了，收1、2千服务费是理所当然的吧？</p>
+<p>什么？你要报警，我们这个属于经济纠纷，不归警察管！</p>
+<p>当然，如果你还有钱可骗，我不介意帮你再加深下防骗安全意识！但这事和百度没关系，我们之间只是纯洁的商务合作关系！</p>
+<p>说起“百度”，我只能联想到“莆田系”、“魏则西”，虽然大家都在喊“<strong>百度做恶</strong>”。</p>
+<p>但本着万物本善的角度出发，我是不认为百度会做这样的坏事的，一定是技术层面的难题，不好区分哪个广告金主爸爸是骗子，其他搜索引擎肯定也存在类似问题，不信大家来看看：</p>
+<h3 id="百度："><a href="#百度：" class="headerlink" title="百度："></a>百度：</h3><p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnBCN949PmFuv9DZdibibP3amiaZjLD23x9ZthibhadMPrTbZTVBiaYw4rGXg/640?wx_fmt=png" alt></p>
+<h3 id="微软-bing："><a href="#微软-bing：" class="headerlink" title="微软 bing："></a>微软 bing：</h3><p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnM8BdQ4BeYNJ1SIhnGuKKCTjPMMI8A4y06MlIKicAdHjacD2Piau0iceEQ/640?wx_fmt=png" alt></p>
+<h3 id="搜狗："><a href="#搜狗：" class="headerlink" title="搜狗："></a>搜狗：</h3><p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxn4fnh5IBBnOvpqzvEG4bt4DFE5uslOuxZppnGHuw6CjKpJGgy4QrjNw/640?wx_fmt=png" alt></p>
+<h3 id="360搜索："><a href="#360搜索：" class="headerlink" title="360搜索："></a>360搜索：</h3><p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxncpTH1VSsUeJnXaLSTMO6eibBYcP6WWiaLHwl4a0MLHXYCdeNNicRJTVUA/640?wx_fmt=png" alt></p>
+<h3 id="谷哥哥："><a href="#谷哥哥：" class="headerlink" title="谷哥哥："></a>谷哥哥：</h3><p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnGzb3ZzibMTbPb5yyPVhPGQ8XuOzcoABGZqmXh2Xsernf7vVvttIt40w/640?wx_fmt=png" alt></p>
+<p><strong>这是我不小心输错了：</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnzSmzcfgatEevdUENTYKj9hR8SCu36utGsHXaNcKRoOXZcVDB4uf5Bg/640?wx_fmt=png" alt></p>
+<h2 id="05-这回真完了"><a href="#05-这回真完了" class="headerlink" title="05 这回真完了"></a>05 这回真完了</h2><p>种种迹象表明，<strong>百度是没有作恶的。</strong></p>
+<p>我个人觉得：他们只是碰巧没注意到那些投广告的“律所”公司，注册资金都是10万元，每年纳税1000元，网站简陋不堪。</p>
+<p>百度的广告业务审核人肯定也是因为缺乏常识，误认为确实有律师能帮忙追回境外的电信诈骗资金，或者说坚持了“客户是上帝的原则，上帝没有好坏之分”，这一坚持就坚持了几年。</p>
+<p>没有关系，我们相信大众舆论和行业监管部门对这些互联网巨头的要求会越来越高。</p>
+<p>如果是在打“擦边球”，那我们就帮他把“边”削掉，如果缺乏防电信诈骗的常识，我们可以义务帮忙普及常识的嘛！</p>
+<p>不证明<strong>百度不作恶</strong> 我睡不着。</p>
+<p>于是起床，在百度搜索了“电信诈骗 维权”，点开百度推荐的第一家“律师事务所”，开始我的模拟维权。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnuxsVnMTGIwkeA493uM7ECDGzqLf0h3icx87FTD493SY1GsGCdF9Yia9g/640?wx_fmt=png" alt></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnQ68plj2R8LL37Ayeic7rDiaoqWMGV5cS2ibaIib4nMjVpe0yibAeaHUe23A/640?wx_fmt=png" alt></p>
+<p>按照客服提示，加了对方QQ。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxneVwodPh9QKzAWmekHAB7u7nqo0Vib9LTRrOiby3MwhSFPZicYtR8yIGew/640?wx_fmt=png" alt></p>
+<p>网络追回、<a href="mailto:110@qq.com" target="_blank" rel="noopener">110@qq.com</a>、为人民服务 ，这明显是电信诈骗受害者的救星啊，怎么就二次诈骗了！</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxn2F5w7jgsYVYDBgTMZAuN4XozlzVEh3A4rx0hkxSib5t8GXiacHicKzZpQ/640?wx_fmt=png" alt></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnYth862ldUQNu79UmoBRxoNE6uNnIEtPrgPwwrial5f1VlQaDH6BAC1w/640?wx_fmt=png" alt></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/cNr3Izo5UjicJNUndj1jdnSuv2xrpQzxnyUpiaK5YKLCibzQFK3d7gALIr1BqlbrLFNjamNQ50KXqkicZwyPULt4cw/640?wx_fmt=png" alt></p>
+<h2 id="06-我的维权结果"><a href="#06-我的维权结果" class="headerlink" title="06 我的维权结果"></a>06 我的维权结果</h2><p>继续伪造了一张转账37万的手机银行转账照片，告诉律师我被诈骗了。</p>
+<p>对方要走了电信诈骗者账号，我的手机号码和姓名。</p>
+<p>在我焦急等待20分钟后，对方来电，斥责了我防骗意识不足的毛病，并告诉我资金已经流到境外，成功冻结了，要我操作手机银行把钱打回给我。</p>
+<p>操作步骤就是给公安专用账号再转一笔钱，我有点困了，实在听不下去了。 </p>
+<p><strong>百度，我谢谢你哈。你推荐的律师给我平白无故赚回了37万！让我死心塌地的确认了，</strong> </p>
+<p><strong>百度不作恶！</strong></p>
+<p>最后，呼吁下看到这篇文章的大家，老骆驼自认为是个有正义感的人，写文章不为名不为钱，只想着能通过自己和大家的努力，改变一些“错误”！</p>
+<p>欢迎大家点赞、转发，让更多的人看到我们的努力。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/经验技巧/" rel="tag"># 经验技巧</a>
+          
+            <a href="/tags/网络安全/" rel="tag"># 网络安全</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/the-history-of-my-growth-part-4-university-life.html" rel="next" title="万字长文讲述我是怎样保送清华的|寒门学子的奋斗史(四)">
+                <i class="fa fa-chevron-left"></i> 万字长文讲述我是怎样保送清华的|寒门学子的奋斗史(四)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/interview-p7-of-alibaba-so-easy.html" rel="prev" title="面阿里P7，竟问这么简单题目？">
+                面阿里P7，竟问这么简单题目？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#01-与骗子的初次相遇"><span class="nav-number">2.</span> <span class="nav-text">01 与骗子的初次相遇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#02-有备而战"><span class="nav-number">3.</span> <span class="nav-text">02 有备而战</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#03-马失前蹄，结束战斗"><span class="nav-number">4.</span> <span class="nav-text">03 马失前蹄，结束战斗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#04-完了？"><span class="nav-number">5.</span> <span class="nav-text">04 完了？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#百度："><span class="nav-number">5.1.</span> <span class="nav-text">百度：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微软-bing："><span class="nav-number">5.2.</span> <span class="nav-text">微软 bing：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜狗："><span class="nav-number">5.3.</span> <span class="nav-text">搜狗：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#360搜索："><span class="nav-number">5.4.</span> <span class="nav-text">360搜索：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#谷哥哥："><span class="nav-number">5.5.</span> <span class="nav-text">谷哥哥：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#05-这回真完了"><span class="nav-number">6.</span> <span class="nav-text">05 这回真完了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#06-我的维权结果"><span class="nav-number">7.</span> <span class="nav-text">06 我的维权结果</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/fraud-of-click-farming.html';
+
+      var disqus_title = "被拉进一个刷单群，赚了75元 | 就真的只是刷单吗？";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

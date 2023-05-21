@@ -1,0 +1,892 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Android,Defy,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="买了DEFY，发现里面有很多app自己用不了。琢磨着删掉。系统自带的uninstall工具不行。有android system app romover可以用。参照了网上有关人士的总结。删除前肯定得做备份啊…………………………… 一下是删除前备份的所有apk以及图标文件。   驱动器 L 中的卷是 life    卷的序列号是 A3AD-01EA    L:\Defy\删除defy系统软件备份 的目">
+<meta name="keywords" content="Android,Defy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的Defy[MB525]优化">
+<meta property="og:url" content="https://www.tanglei.name/blog/defy-opiti.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="买了DEFY，发现里面有很多app自己用不了。琢磨着删掉。系统自带的uninstall工具不行。有android system app romover可以用。参照了网上有关人士的总结。删除前肯定得做备份啊…………………………… 一下是删除前备份的所有apk以及图标文件。   驱动器 L 中的卷是 life    卷的序列号是 A3AD-01EA    L:\Defy\删除defy系统软件备份 的目">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2011/02/wushan.png">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.044Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我的Defy[MB525]优化">
+<meta name="twitter:description" content="买了DEFY，发现里面有很多app自己用不了。琢磨着删掉。系统自带的uninstall工具不行。有android system app romover可以用。参照了网上有关人士的总结。删除前肯定得做备份啊…………………………… 一下是删除前备份的所有apk以及图标文件。   驱动器 L 中的卷是 life    卷的序列号是 A3AD-01EA    L:\Defy\删除defy系统软件备份 的目">
+<meta name="twitter:image" content="https://www.tanglei.name/wp-content/uploads/2011/02/wushan.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/defy-opiti.html">
+
+
+
+
+
+  <title> 我的Defy[MB525]优化 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/defy-opiti.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                我的Defy[MB525]优化
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-02-18T06:57:44+00:00">
+                2011-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/defy-opiti.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/defy-opiti.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>买了DEFY，发现里面有很多app自己用不了。琢磨着删掉。系统自带的uninstall工具不行。有android system app romover可以用。参照了网上有关人士的总结。删除前肯定得做备份啊……………………………</p>
+<p>一下是删除前备份的所有apk以及图标文件。</p>
+<div id="_mcePaste"><br>  驱动器 L 中的卷是 life<br></div>
+
+<div id="_mcePaste"><br>  卷的序列号是 A3AD-01EA<br></div>
+
+<div id="_mcePaste"><br>  L:\Defy\删除defy系统软件备份 的目录<br></div>
+
+<div id="_mcePaste"><br>  2011-02-18  14:43    <dir>          .<br></dir></div>
+
+<div id="_mcePaste"><br>  2011-02-18  14:43    <dir>          ..<br></dir></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:09            11,061 AdService.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:09            33,008 AdService.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:12           154,840 BlurCalendar.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:12           414,504 BlurCalendar.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:12           173,559 BlurCalendarProvider.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:12           272,960 BlurCalendarProvider.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:16           545,248 BlurEmail.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:16           455,304 BlurEmail.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  18:26            17,301 CalendarSync.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  18:26           145,400 CalendarSync.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:41           843,763 CarDock.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:41           122,464 CarDock.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:41           394,443 ClockWidget.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:41            59,984 ClockWidget.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:42         2,891,944 CMP_AmazonUK_InternalFM_1.0.179.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:42           562,272 DLNA.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:42           673,720 DLNA.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:42             8,727 DlnaSystemService.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:42             3,424 DlnaSystemService.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:43           205,646 Dock.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:43           194,848 Dock.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:43            40,324 Fota.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:43           146,128 Fota.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:43           225,009 FriendFeed.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:43           404,856 FriendFeed.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:46         2,090,783 HomeSyncWizard.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:46           240,240 HomeSyncWizard.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:44             2,717 ImDmPlugin.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:44            73,112 ImDmPlugin.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-17  17:07         4,762,415 Maps.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:47           198,536 MessagesWidget.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:47            83,944 MessagesWidget.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-18  14:36            31,979 Mynet.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-18  14:36            75,120 Mynet.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:25           205,816 NewsWidget.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:25           222,616 NewsWidget.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-18  14:37             4,661 PicoTts.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-18  14:37             6,640 PicoTts.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  18:08           890,169 SetupWizard.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:54            43,820 SocialMessaging.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:54           218,120 SocialMessaging.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:57            34,359 SocialShare.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  17:57            71,936 SocialShare.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  18:02           111,775 StatusWidget.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  18:02            59,360 StatusWidget.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  20:20            55,682 StickyNoteWidget.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  20:20            40,824 StickyNoteWidget.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  18:04         6,925,283 Swype.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-18  14:39            10,593 TtsService.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-18  14:39            27,944 TtsService.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-18  06:16         4,405,212 VoiceCommands.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-18  06:16           197,744 VoiceCommands.odex<br></div>
+
+<div id="_mcePaste"><br>  2011-02-18  06:16           444,993 VoiceSearch.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  18:05         1,486,194 WeatherWidget.apk<br></div>
+
+<div id="_mcePaste"><br>  2011-02-10  18:05           101,248 WeatherWidget.odex<br></div>
+
+<p>其中开始删掉了内置的短信程序<span style="color: #0000ff;">Conversation.apk和</span><span style="color: #0000ff;">Messaging.apk </span> <span style="color: #0000ff;">。后发现删除后没办法接受彩信。还有哪个什么</span>BlurEmailEngin也是不能删除的[BlurEmailEngine删除对文本信息有影响：自动退出。第三方程序不会退出,但不能收到彩信]。当晚删除了手机报就没有收到了。内置的信息程序没办法看手机报，只能看到第一页。所以装了第三方Go短信。但删除<span style="color: #0000ff;">Conversation后，以前的信息通过Go短信直接能读取到 。就是没办法收新的短信。新消息来的时候能提到短信提示音，就是看不到内容。当时急了，还好备份了。于是有将备份的</span><span style="color: #0000ff;">Conversation短信和</span><span style="color: #0000ff;">Messaging.apk   给重新安装下。发现直接按照普通程序安装总是安装失败。于是直接移动到/system/app下还是不行。后来用android开发工具ddms才发现原来权限不对。</span></p>
+<p><span style="color: #0000ff;"><a href="/wp-content/uploads/2011/02/误删.png"><img class="aligncenter size-medium wp-image-312" title="误删" src="/wp-content/uploads/2011/02/wushan.png" alt></a><br> </span></p>
+<p><span style="color: #0000ff;">于是将权限修改为其他系统程序一样的权限110100100.然后重启机子就OK了。</span></p>
+<p><span style="color: #0000ff;">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</span></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/Defy/" rel="tag"># Defy</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2010-system-artch-score.html" rel="next" title="系统架构设计师分数出来啦">
+                <i class="fa fa-chevron-left"></i> 系统架构设计师分数出来啦
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/surprise_software_arch.html" rel="prev" title="系统架构师成绩-意外的惊喜">
+                系统架构师成绩-意外的惊喜 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/defy-opiti.html';
+
+      var disqus_title = "我的Defy[MB525]优化";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

@@ -1,0 +1,870 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="经验技巧,信息安全,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景大家好，我是石头哥。  前几天，公司内网又频繁爆出各种同事或者家人“被诈骗，造成巨额资金损失，这样的帖子。  其实，刚开始，我觉得">
+<meta name="keywords" content="经验技巧,信息安全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="辛苦搬砖挣的钱，被骗了！">
+<meta property="og:url" content="https://www.tanglei.name/blog/income-frauded-how-to-prevent.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景大家好，我是石头哥。  前几天，公司内网又频繁爆出各种同事或者家人“被诈骗，造成巨额资金损失，这样的帖子。  其实，刚开始，我觉得">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-29/1622301883016-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-29/1622301048503-%E5%88%9B%E5%A7%8B%E4%BA%BA%E5%AE%A3%E4%BC%A0%E8%AF%88%E9%AA%97.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-30/1622305604625-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-30/1622305902287-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-29/1622299857525-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-30/1622355339401-fraud-1.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-30/1622355312490-fraud-2.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-30/1622355339372-fraud-3.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-30/1622355312438-fraud-4.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-29/1622300520051-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-17/1621265620209-image.png">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.178Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="辛苦搬砖挣的钱，被骗了！">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景大家好，我是石头哥。  前几天，公司内网又频繁爆出各种同事或者家人“被诈骗，造成巨额资金损失，这样的帖子。  其实，刚开始，我觉得">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-29/1622301883016-image.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/income-frauded-how-to-prevent.html">
+
+
+
+
+
+  <title> 辛苦搬砖挣的钱，被骗了！ | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/income-frauded-how-to-prevent.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                辛苦搬砖挣的钱，被骗了！
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-31T00:00:00+00:00">
+                2021-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MyLife/" itemprop="url" rel="index">
+                    <span itemprop="name">MyLife</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/income-frauded-how-to-prevent.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/income-frauded-how-to-prevent.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上<strong>清华</strong>（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点这里查看我的逆袭之路</a>），BAT某厂P7，是前大疆（无人机）技术主管。</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247493855&amp;idx=1&amp;sn=55c507ac2a459c4fd9ce69ca2ef9e0e8&amp;chksm=eb44e93bdc33602db26a4737f60dce11d5656fe682420a05362d806adb58d0a050da02087d6d&amp;token=674734982&amp;lang=zh_CN#rd" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>大家好，我是石头哥。 </p>
+<p>前几天，公司内网又频繁爆出各种同事或者家人“被诈骗，造成巨额资金损失，这样的帖子。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-29/1622301883016-image.png" alt="内网热帖，前5有3个被骗"></p>
+<p>其实，刚开始，我觉得挺诧异的，家里老人被骗也就算了，连同事们自己也频繁被骗。</p>
+<p>我心想，能进阿里的人，虽说不一定都是如上所述的“高学历、高智商”，但不管从哪方面来说，大部分人都不算太差吧，大家日常接触的信息也多，为什么也会被骗？</p>
+<p>直到我点进去看一个一个被骗的案例，才不由得感叹：“卧槽，骗子居然还有这种操作”。事后，旁观者清，但当你真正遇到那种情况，各种机缘巧合的情况下，确实也很有可能被骗的。</p>
+<p>正如后文的公安反诈中队队长所说的那样“反而自我认知越强的人，越容易被骗”。（划重点：后文蓝底背景图片）</p>
+<p>因此，我觉得很有必要再次扩散一下各种诈骗套路，也就有了今天这篇推文。希望对大家有帮助，主要分为几个方面：</p>
+<ul>
+<li>同事频繁被骗，合伙人内网呼吁</li>
+<li>自己被骗经历</li>
+<li>骗子是真的很专业！</li>
+<li>反诈骗公安：为什么高学历高智商也会被骗 </li>
+<li>反诈骗灵魂拷问</li>
+</ul>
+<h2 id="同事频繁被骗，合伙人内网呼吁"><a href="#同事频繁被骗，合伙人内网呼吁" class="headerlink" title="同事频繁被骗，合伙人内网呼吁"></a>同事频繁被骗，合伙人内网呼吁</h2><p>其实，早在前不久，阿里巴巴创始人之一（也是合伙人），都已经在内网呼吁，大家注意防止各种诈骗。</p>
+<p>她发帖当天接到了杭州警方给她打的电话，被告知公司又有两位员工被骗了：其中一个被骗了几十万，还有一个被骗了200多万。</p>
+<p>被骗200多万的员工，不仅把自己多年的积蓄搭进去了，还从各银行贷款出巨资汇给了骗子。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-29/1622301048503-%E5%88%9B%E5%A7%8B%E4%BA%BA%E5%AE%A3%E4%BC%A0%E8%AF%88%E9%AA%97.jpg" alt="阿里合伙人内网呼吁转发防止诈骗"></p>
+<p>上面已经说明了常见诈骗场景，冒充公检法、网店客服、贷款等等。后文也总结了常见诈骗套路，墙裂建议大家看看同事采访公安反诈中队的队长后，精心整理和总结的防骗指南。</p>
+<p>大家记得多多转发，尤其是转给自己周围的家人朋友。</p>
+<h2 id="说说我被骗的经历"><a href="#说说我被骗的经历" class="headerlink" title="说说我被骗的经历"></a>说说我被骗的经历</h2><p>其实，严格意义上不知道这算不算是被“诈骗”，就是被奸商忽悠了（年少无知的我）。</p>
+<p>我讲这件事情是想说，当发现周围人被骗的时候，我们不要急于去怀疑和讽刺受害者“太SB，连这都被骗？” ，有可能这仅仅是最普通、最常见的诈骗套路。</p>
+<p>比如，内网里面有一个被骗的案例，就是骗子假装领导，短信说着急签合同，差几万块，赶紧转钱。</p>
+<p>还有常见的套路，比如收到短信，在 XX 活动中大奖，要求汇一笔税金，然后把奖金发给你。</p>
+<p>有时候，被骗，真的是各种机缘巧合，骗子能成也确实是“天时地利与人和”。</p>
+<p>10 年左右，当年自己还是学生，在深圳腾讯总部实习，准备买一部卡片相机。都已经咨询朋友同学型号，网上也查好了价格。准备直接去往华强北购买。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-30/1622305604625-image.png" alt="华强北、图源网络"></p>
+<p>华强北是怎样一个地方呢？就是一个电子产品集散地，跟北京中关村一样。</p>
+<p>第一次去这种地方的，肯定会被各种门口拉客的那种“热情”给吓到吧？</p>
+<p>我当初其实是有购买目标的，某卡片机，心理价位也有，且也知道要“货比三家”。</p>
+<p>其中到某一柜台，老板先是说你这机器有，我拿给你看，然后就忽悠讲解，你这款机器怎么怎么不好。推荐你另外一款机器，拍照效果比你这个好，价格还更便宜。</p>
+<p>balabala…一阵乱忽悠，说得我心动了都。</p>
+<p>因为他确实对比了两款相机，拍了实物，印象很深刻，拍实物对比图就是百元钞票，他推荐的那款相机确实拍得更清晰，细节都在。</p>
+<p>于是就准备接受买他这款了。但价格我之前没调研过呀，准备拿出手机查价格，而这个时候，恰好手机没电了，没电了，没电了。</p>
+<p>于是，就按照他说的价格买了。心想，反正比我之前预期还便宜，效果还更好。</p>
+<p>等我回到宿舍，充好电，查了价格，才发现比实际价格高出几百块。</p>
+<p>当初就直接认怂了，也没回去退、理论啥的（当初应该是说开机后就不能退了？）。</p>
+<p>现在网上还能随处还能搜到各种被骗的案例。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-30/1622305902287-image.png" alt></p>
+<p>不知道 2021 年了，北京中关村电子市场好像关停了，深圳华强北关了没？有深圳的朋友告诉一下？</p>
+<h2 id="各种诈骗套路"><a href="#各种诈骗套路" class="headerlink" title="各种诈骗套路"></a>各种诈骗套路</h2><p>还记得之前分享的吗？</p>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247493052&amp;idx=1&amp;sn=577948f73e728f1059788190f14fa511&amp;chksm=eb44e458dc336d4ec960ba352fd6bc4f93ef217e6f89d1e568a0b00833dc6a7ba6f3ed679b4c&amp;token=1336735893&amp;lang=zh_CN#rd" target="_blank" rel="noopener">刷单诈骗，二次诈骗套路吗？</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247489895&amp;idx=1&amp;sn=fc8e9e795404cfdea60a8860e6ebbb35&amp;chksm=eb471883dc3091955623123593286f1977ee28f5c213edc73e392919fbb29215c2558729210b&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">手机丢了，钱怎么没的？</a></li>
+</ul>
+<p>10 年安全大佬都中招了，更何况我们平民老百姓？一方面信息安全问题真的不容忽视，另外一方面，因为：</p>
+<p><strong>骗子是真的很专业！！！</strong></p>
+<p>他们有专业道具、专业导演演员、专业技术手段，专业话术。</p>
+<p>骗子能掌握了你的详细的个人资料，你在哪里消费过，开过卡，都知道，有些人一下子就信了。</p>
+<p>有些骗子有真警察的工作证，不用p，网上能扒到，会第一时间出示工作证，并且语气严肃，普通话标准。</p>
+<p>骗子能做出各种真实的app，看着像是银行app，让人相信。估计你也有看到过网上报道过程序员被骗到国外做涉赌博、诈骗等业务吧？</p>
+<p>有些骗子集团甚至真的装修了一个房间甚至一幢楼，外面刷得跟公安局一模一样，再给你视频通话让你相信他的身份！</p>
+<p>通常被骗的人，维权意识都强。“骗子一冤枉你，就有了强烈的情绪，觉得我没干这事，我不能被冤枉，你要还我清白，我要证明我是清白的！情绪一旦被激起来，理性就下降了。”</p>
+<h2 id="为什么高学历高智商也会被骗"><a href="#为什么高学历高智商也会被骗" class="headerlink" title="为什么高学历高智商也会被骗"></a>为什么高学历高智商也会被骗</h2><p>详细看看同事采访公安反诈中队的队长后，精心整理和总结的经验吧，大家记得多多转发，尤其是转给自己周围的家人朋友。</p>
+<p>原图图片太大，微信放不了，特地拆分多个图片，左右可滑动，高清长图可后台回复“防骗”获取。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-29/1622299857525-image.png" alt="为什么高学历高智商也会被骗"></p>
+<p>&lt;<img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-30/1622355339401-fraud-1.png" alt="fraud-1">,<img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-30/1622355312490-fraud-2.png" alt="fraud-2">,<img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-30/1622355339372-fraud-3.png" alt="fraud-3">,<img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-30/1622355312438-fraud-4.png" alt="fraud-4">&gt;</p>
+<h2 id="反诈骗灵魂拷问"><a href="#反诈骗灵魂拷问" class="headerlink" title="反诈骗灵魂拷问"></a>反诈骗灵魂拷问</h2><p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-29/1622300520051-image.png" alt="反诈骗灵魂 8 问"></p>
+<p>始终记住：</p>
+<p>不听！<br>不信！！<br>不转账！！！</p>
+<p>记住一招：遇事多确认，千万别转钱！！！防范电信网络诈骗，你必须做一毛不拔“铁公鸡”。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点击这里查看我的逆袭之路</a>），目前在BAT某厂打工，是前大疆（无人机）技术主管。<br><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2021-5-17/1621265620209-image.png" alt="image"><br>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/经验技巧/" rel="tag"># 经验技巧</a>
+          
+            <a href="/tags/信息安全/" rel="tag"># 信息安全</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/how-to-calculate-tax-of-income.html" rel="next" title="崩溃！补税10W+ —— 每个人都应该懂的个税计算方法">
+                <i class="fa fa-chevron-left"></i> 崩溃！补税10W+ —— 每个人都应该懂的个税计算方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/talk-about-games-on-children-day-.html" rel="prev" title="儿童节，每人送游戏机一台！">
+                儿童节，每人送游戏机一台！ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同事频繁被骗，合伙人内网呼吁"><span class="nav-number">2.</span> <span class="nav-text">同事频繁被骗，合伙人内网呼吁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#说说我被骗的经历"><span class="nav-number">3.</span> <span class="nav-text">说说我被骗的经历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#各种诈骗套路"><span class="nav-number">4.</span> <span class="nav-text">各种诈骗套路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么高学历高智商也会被骗"><span class="nav-number">5.</span> <span class="nav-text">为什么高学历高智商也会被骗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反诈骗灵魂拷问"><span class="nav-number">6.</span> <span class="nav-text">反诈骗灵魂拷问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">7.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/income-frauded-how-to-prevent.html';
+
+      var disqus_title = "辛苦搬砖挣的钱，被骗了！";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

@@ -1,0 +1,873 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="转载,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  大家好，我是石头哥。 Google 是很多程序员的理想公司，不管是其中的文化还是技术。我曾经换工作的时候也去进行了面试，虽然最后结果并">
+<meta name="keywords" content="转载">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在谷歌工作十年后的感悟">
+<meta property="og:url" content="https://www.tanglei.name/blog/experience-of-a-software-engineer-at-google.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  大家好，我是石头哥。 Google 是很多程序员的理想公司，不管是其中的文化还是技术。我曾经换工作的时候也去进行了面试，虽然最后结果并">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/experience-of-a-software-engineer-at-google/1.png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/b2YlTLuGbKDsbJzupnILVFhPtMaRjmvPKYRqTMjibE9pnd8oiawLVrQbOHQe4wBXkBQkzpKCWPKBqWgOLgwccBug/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/b2YlTLuGbKDsbJzupnILVFhPtMaRjmvPKYRqTMjibE9pnd8oiawLVrQbOHQe4wBXkBQkzpKCWPKBqWgOLgwccBug/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/b2YlTLuGbKDsbJzupnILVFhPtMaRjmvPKYRqTMjibE9pnd8oiawLVrQbOHQe4wBXkBQkzpKCWPKBqWgOLgwccBug/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibtVsC4SXy75tw2183kZQicH45vLq2RQY8Hy4QSuP5yUCxUHh2nrJ0sw0xBxsZxbvlLQd3Fo8k5098Q/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.189Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在谷歌工作十年后的感悟">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  大家好，我是石头哥。 Google 是很多程序员的理想公司，不管是其中的文化还是技术。我曾经换工作的时候也去进行了面试，虽然最后结果并">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/experience-of-a-software-engineer-at-google/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/experience-of-a-software-engineer-at-google.html">
+
+
+
+
+
+  <title> 在谷歌工作十年后的感悟 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/experience-of-a-software-engineer-at-google.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                在谷歌工作十年后的感悟
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-02-24T00:00:00+00:00">
+                2022-02-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MyLife/" itemprop="url" rel="index">
+                    <span itemprop="name">MyLife</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/experience-of-a-software-engineer-at-google.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/experience-of-a-software-engineer-at-google.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上<strong>清华</strong>（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点这里查看我的逆袭之路</a>），BAT某厂P7，是前大疆（无人机）技术主管。</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247499787&amp;idx=1&amp;sn=b3d7c199fc656dff698e134dc03d877e&amp;chksm=eb44c1efdc3348f9fb5e8a500d9db2afeb8db6feec924e6384b1376c20f2d94110b44566c4b7&amp;token=1931883326&amp;lang=zh_CN#rd" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<p>大家好，我是石头哥。</p>
+<p>Google 是很多程序员的理想公司，不管是其中的文化还是技术。我曾经换工作的时候也去进行了面试，虽然最后结果并不理想，但也体验了一番面试流程和面试官看中的能力。之前的面经记录在这里了，供感兴趣的同学参考 —— <a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247483912&amp;idx=1&amp;sn=520bbca6a2056ab4df6b0e1d0ebaf6e0&amp;chksm=eb4703ecdc308afa83b288b1469f0927c1916189f219ee5e8c3c5194defc0b8f313ff7607730&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">面试 Google, 我失败了 | Google 面经分享</a></p>
+<p>最近读到了一位在Google工作10年+的“老”工程师关于技术、管理和职场生涯的感悟，我看完后觉得很有收获，因此在这里也分享给大家。以下是全文，后文中的我均指原作者。</p>
+<p>我在Google呆了10年半，离开时的头衔/职位是 Staff Software Engineer / Manager。大致分三期：</p>
+<p>前两年关注 Linux 桌面搜索产品和 Google 的开源项目；中间三年花了许多力气在 Google 中国相关的产品上，诸如输入法、谷歌音乐之类；后面四五年大致都在 Knowledge Graph 的范畴内工作，这些工作和 Google 搜索、Google Now 最近几次大幅度的变革密不可分。</p>
+<p>其间，代码写了不少，团队也带过好几个。除此以外，这些年还长期在 Google Doodles 团队作为 20% 的开发人员帮忙开发那些好玩的首页涂鸦——嗯，这是真的，好多好玩的 Doodle 里面，都有我的一点小贡献。</p>
+<p>学到了啥？</p>
+<p>嗯，很多，很杂，拣最重要的四条来说说。</p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247483912&amp;idx=1&amp;sn=520bbca6a2056ab4df6b0e1d0ebaf6e0&amp;chksm=eb4703ecdc308afa83b288b1469f0927c1916189f219ee5e8c3c5194defc0b8f313ff7607730&amp;scene=21#wechat_redirect" target="_blank" rel="noopener"><img src="/resources/experience-of-a-software-engineer-at-google/1.png" alt="图片"></a></p>
+<p>差异化</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/b2YlTLuGbKDsbJzupnILVFhPtMaRjmvPKYRqTMjibE9pnd8oiawLVrQbOHQe4wBXkBQkzpKCWPKBqWgOLgwccBug/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
+<p>第一次真实地生活在一个差异化的世界里国内教育氛围向来是不喜欢差异化的，个人爱好、冒险精神、特立独行之类的语词，总会让家长、老师乃至领导、官员操碎了心。从小到大，我基本生活在一个试图将所有孩子圈养在尺子、框子、笼子里的世界；可以想象，像我这样的 70 后一脚踏入 Google 时，会有怎样的感慨。</p>
+<p>Google、Apple、Facebook、Twitter……对雇员来说，这些公司本身就是一种鼓励差异化生存的大家庭、大社会。其中，Google 又总是扮演引领者的角色，这是在 Google 工作很值得骄傲的一件事。</p>
+<p>差异化的最大好处，就是你有机会认识形形色色的神奇人物，然后，当你和人生观、生活方式、个人爱好乃至行为习惯差异巨大的人一起工作时，你会真真切切地感受到，自己生活的这个世界一点儿也不单调，这里有太多好玩的人、好玩的事等着你去发现。</p>
+<p>在 Google，看见什么样的差别都不该奇怪。</p>
+<p>往小了说，身边既有缩在角落里闷头写代码，讨厌和人交流的社交恐惧症患者，也有精神焕发的社交明星。办公室里，有带狗上班的爱心族，有重视家庭的好爸好妈，有整夜整夜奋斗的梦想家，有痴迷奇特爱好的技术极客……</p>
+<p>就拿爱好来说，跟我一起工作过的同事里，说起来好玩的爱好就包括：天天在车库里打造奇形怪状的自行车，休一个无薪假期去帮别人竞选总统，每个周末都跑到一个从没去过的地方留下到此一游照，研究古音韵学，出远海调查海洋生物，长期倒卖二手摄影器材，写科幻小说，尝试大气层外跳伞并打破世界纪录……</p>
+<p>当然，要尊重差异化，你就没法阻止任何人从早睡到晚然后每天只花两个小时干完别人十二个小时才能干完的活儿。</p>
+<p>往大了说，Google 对 LGBT 群体的支持众所皆知。我当初更多地将这种支持理解为“政治正确”层面的东西。没过多少时间，我就知道我的理解有多么肤浅。有一次，Google 旧金山办公室一对男同在公司餐厅的浪漫求婚视频广为传播，感动了许多同事。事后我才想起，自己曾在硅谷一次会议上，见过那对幸福恋人中的一个。</p>
+<p>另有一次，自己所在的整个团队收到了一位高管宣布自己性别改变的邮件，说从那天开始，大家需要称呼他为“她”。与许多人理解的相反，这些发生在身边的事情并没有时时提醒你 LGBT 群体的存在，反之，经历愈多，你会愈加淡化对他们的注意——他们或她们就是人类的普通成员，与你我并没有太大的分别。</p>
+<p>去年在 YouTube 上追看 Google 推介的纪录片 HUMAN 时，我已经很清楚，Diversity 这个词早已是自己血液的一部分，我的大脑与纪录片制作者的大脑之间，完全没有任何隔阂。那时，我会对着屏幕上一张张陌生的面孔陷入冥想。</p>
+<p>我觉得，这个世界最可笑的一件事就是人类进化明明得益于基因与性格的差异，许多人竟会嘲笑别人与自己的不同之处，并竭力迫使他人改变，恨不得全世界的人都如自己一般固执、愚昧。性取向如此，恋爱、婚姻、家庭、工作、事业无不如此。</p>
+<p>Google 员工经常面临一个典型的两难困境：因为许多同事早早离开 Google 去融资、创业、上市、发财，像我这样安心在 Google 工作了十年的普通工程师就变成了另类——当面问我“为什么还没离开 Google”的人，他们眼睛里鄙夷的目光藏都藏不住；反过来，在家人眼中，我打算离开 Google 的举动无异于自己砸碎金饭碗，放着稳定的收入和丰厚的福利不要，非要和不确定性为伍。</p>
+<p>其实，如果懂得“多样性”的重要，这种左右两难的困局就不再成立。既然有人选择快节奏和世俗生活，为什么我就不能辞了职，慢悠悠地随着自己的兴趣，由着性子，从不同的角度理解这个世界与自我的关系？为什么“慢生活”就必须是一种逃避？</p>
+<p>宇宙很大，人很渺小。安全感是扯淡，特立独行地活着才最重要。</p>
+<p>改变看技术心态</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/b2YlTLuGbKDsbJzupnILVFhPtMaRjmvPKYRqTMjibE9pnd8oiawLVrQbOHQe4wBXkBQkzpKCWPKBqWgOLgwccBug/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
+<p>到 Google 以前，我在国内做银行业的业务软件研发，给工行、中行之类的大企业做软件。这和 Google 这种面向最终用户的互联网背景是有天壤之别的。</p>
+<p>以前看待技术，觉得是身外之物，是工具，是砖木，是用来解决用户需求的必需品。这个心态其实也没什么错，但不自觉地就把自己放在技术追随者的位置上了。</p>
+<p>那时的我，很多时间都拼命在了解、学习和追赶新技术，生怕落伍。从这个语言追到那个语言，从这个框架追到那个框架，从这个模式追到那个模式，从这个平台追到那个平台……根本停不下来。</p>
+<p>那时的我只是个技术的“用户”，就像搬砖盖房子，如果不天天关心今年流行什么材质的砖，明年流行什么样的房子架构，后年流行什么样的房子外观，那肯定被客户和其他程序员骂“老土”。</p>
+<p>到 Google 撸胳膊挽袖子一忙活，才发现以前的自己狭隘了，小气了，井底之蛙了。原来以前追的好多顶尖技术，根本就是 Google 工程师主导或参与鼓捣出来的。而且，Google 内部还藏着许多外界不大知道的神奇玩意儿。最最重要的不同是——自己现在是引领技术潮流的大团队中的一员了。</p>
+<p>以前是不断学别人怎么设计房子，看别人推荐什么材料盖房子。现在，最顶尖的房屋设计专家、材料专家就在身边，自己也很快就能和他们一样指导别人盖房子了。这种感觉，就像跳进了一个大宝藏，还清楚地知道自己并非盗贼，而是宝藏的主人。盗窃宝藏 vs. 创建宝藏，这两者间的差别很微妙。</p>
+<p>心态一下子大不一样了，从技术的“用户”变成了技术的“主人”。</p>
+<p>比如，有段时间要解决 C++ 的 ABI 相关问题，猛想起 C++ 标准委员会的相当一部分人都是在 Google 工作的，有一年的全体大会还是在 Google 总部开的——那直接拉着既是同事也是 C++ 权威决策人的家伙一起开会讨论不就是了？</p>
+<p>类似的，Linux 内核的维护者、Python 的发明人、UNIX 的元老、Google Brain 的创建者……跟那么多牛人在一个公司里工作，你肯定不好意思只是单方面地跟人讨教，但凡有机会，你总会希望自己也像那些牛人一样，为技术发展做点儿贡献，哪怕只是一丁点儿。</p>
+<p>再比如，像 MapReduce、Bigtable、TensorFlow 之类由 Google 原创、对业界影响深远的技术，在 Google 内部可不仅仅是身外的工具，它们都是 Google 工程师这个大集体的作品和骄傲。因为大家都是主人，对哪些东西不爽，可以去鼓捣源代码，可以去提交自己的补丁或者新功能，甚至推翻重做。</p>
+<p>别小瞧这推翻重做，虽然很难很难，因为你得一边说服老板和用户，一边找到足够的开发人手，但事实上， Google 内部重新发明一遍、两遍、三遍的框架、工具、库、接口、服务比比皆是。</p>
+<p>一言不合就动手做个新版本、新系统，这毛病既带来数不清的流程混乱，也带来一山又比一山高的良性竞争——表面的混乱之下，良性竞争引发的技术飞跃常常超出想象。</p>
+<p>在 Google，工程师有好几万，不能说每个人都渴望做技术的主人，但踌躇满志的大有人在。因为 Google 走在技术最前沿，有追求的工程师确实没脸当个纯粹的技术追随者。当然，我的意思不是说 Google 里没人去做那些不那么酷的“苦力活儿”，而是说大多数人都有个争强好胜的心态，即便是做相对简单的技术工作，也时常会想想怎么能做出世界一流的效果来。</p>
+<blockquote>
+<p>石头曾经换工作的时候也参与了Google的面试流程，面经在这里，供感兴趣的同学参考 —— <a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247483912&amp;idx=1&amp;sn=520bbca6a2056ab4df6b0e1d0ebaf6e0&amp;chksm=eb4703ecdc308afa83b288b1469f0927c1916189f219ee5e8c3c5194defc0b8f313ff7607730&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">面试 Google, 我失败了 | Google 面经分享</a></p>
+</blockquote>
+<p>拿面试来说，有个工程师想出了一道与月球相关的面试题，把算法、编程、设计、维护问题放在太阳系的大背景下，层层追问。我在一次内部面试技术培训时拿这道题当过样例。结果，参加讨论的工程师表达了截然相反的两种意见，有人说这题设计精妙如天马行空，另一些人则批评这题目远离实际如镜花水月。</p>
+<p>其实，Google 的技术宅们几乎每天都在深入实际与憧憬未来这两个极端的对位、矛盾、转化中工作。常说的“仰望星空、脚踏实地”远不能形容 Google 工程师的两面性。</p>
+<p>一方面，工程师们深知自己的代码是如何参与了这个地球乃至这个星系里最前卫、最大胆的计算机系统，如何为诸如十年后的搜索引擎、拥有人工智能的手机或机器人、量子计算机、基因工程、无人驾驶汽车等贡献力量；</p>
+<p>另一方面，工程师们“极客”和“宅”的一面常常在外人难以注意的工作细节里表露无遗——这里有十数年如一日致力于优化编译器的语言高手，有设计最好的代码审读系统的工具专家，有亲自动手实现软硬件原型的技术总监，有坚持为地球上每一种人类语言提供输入输出解决方案的国际化团队……</p>
+<p>这是心态的差别，或者说，是技术境界的差别，烙在 Google 工程师的基因里，旁人想学也未必学得到。</p>
+<p>“管理”二字的意义</p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
+<p>有时候工程师很难管理，因为大多数人都想法新、主意多、眼光高、个性强。在 Google，有时候工程师也很容易管理，只要鼓励他们把一件看似普通的事儿做出世界级的水准，他们自己就有足够优秀的执行力，用不着督促。</p>
+<p>在 Google 做技术经理带团队，和我以前在其他公司带团队，完全是两码事。这也许和技术团队的平均水平有关，但根本还是管理境界的问题。</p>
+<p>记得以前在别的公司，花大力气搞开发流程管理，现在想想，大多是繁文缛节，程式化，教条化，最极端的像 ISO9000 之类的流程认证，弄得所有人筋疲力尽，效果未必有多好。</p>
+<p>到了 Google，发现一个秘诀，再多的规章制度，再多的流程，不如一套好用的工具来得有效。比如 Code Style 和 Code Review，以前能把技术经理烦死，三令五申也执行不下去，顶多三天热度之后，大家就阳奉阴违了。在 Google，这件事不完全是个制度的问题。</p>
+<p>刚进来的工程师没有过 Readability Review，他就没法方便地自主提交代码，这是代码管理工具设置的硬性限制。这直接把工程师们送到评审委员会那里接受“再教育”，没错，真的是“再教育”，连 Python 之父 Guido van Rossum 也花了挺大力气才通过了 Python 语言代码的 Readability Review。</p>
+<blockquote>
+<p>代码规范其实非常重要，石头曾经在这篇文章中也有提到 —— <a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247498379&amp;idx=1&amp;sn=c7b49017c76d049889876225dca16619&amp;chksm=eb44fb6fdc337279235a55726d20fbc3df29ed291a968d0e8b66bb7f68b86d09ad070513f15d&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">获奖了 —— 写了20k代码</a></p>
+</blockquote>
+<p>接下来，提交新代码前，各种静态、动态检查工具自动运行，帮你报出一系列风格错误、编译错误、单元测试错误和简单的逻辑错误，你得先依着工具的提示，把这些低级别错误改一遍，然后才进入 Peer Review 的环节。整个 Code Review 都在非常方便的网页工具里完成，写代码的和审阅代码的人可以方便地交互、讨论，甚至在线修改代码。</p>
+<p>工具的“强制性”保证了制度的执行，工具的“便捷性”最大程度减轻了工程师执行制度的负担，二者相辅相成。当然，Google 内部也不乏对制度敷衍了事的，但相对其他公司，Google 的确做得更好些。</p>
+<p>说到管理，在 Google 带技术团队的其实都苦哈哈的。我就先后两次把团队交给别人带，自己乐得去做些单纯的代码工作。道理很简单，头衔是 Manager，可你没法高高在上指手画脚，Google 最好的团队带头人都是冲在第一线带着大家一起干，除了主动包揽大家不想干的脏活、累活、杂活之外，还要做管理者必须的非技术工作，比如给每个人写评语、定奖金，帮每个人申请升职，跟心理负担重的谈心……</p>
+<p>一个人做两份工，吃力不讨好，对团队成员的晋升也没有决定权（这事儿也挺神的），这种 Manager 的活儿，谁愿意干谁干去，我是不大喜欢干的。不过，不喜欢归不喜欢，Google 这种挺不一样的管理既显着混乱无序，又运行良好，确实很神奇。</p>
+<p>严格地说，聪明人在一起，只需要激励，不需要管理，Google 的办法主要也是强调这一点。</p>
+<p>必须坦白，我加入 Google 时，工程师才三千人上下，无序管理、自发管理、扁平管理占主流。Google 越来越大以后，大公司病也如约而至。流程越来越复杂，层级越来越多，职权重叠和模糊越来越严重，不同团队之间管理风格的差异也越来越大。</p>
+<p>但即便如此，Google 基因里那种蔑视陈规、抵制办公室政治、抗拒繁文缛节的管理风格还是能在许多团队带头人的身上找到——这是 Google 肌体里的健康因素，活力因子，弥足珍贵。</p>
+<p>顺便说一句，最近中文圈子热传不写代码/不会写代码的 CTO 一事，许多 Google 工程师出身的 CEO/CTO 都在朋友圈里晒自己写的代码，以表明态度。我自己对技术管理者写不写代码没啥倾向，写不写都可以是好的管理者，但如果“不会写代码”还以此为荣，就完全没法接受，这个是底线。</p>
+<p>我在 Google 面试了不少 Manager 和 Director 的候选人，都考过对方写代码或者至少讨论一段代码的能力——不是要他一定在管理过程中写代码，而是怕他和 Google 工程师没法交流，和 Google 技术基因没法共存。</p>
+<p>在 Google 做技术管理，学不到啥成文的规矩，能学到的其实主要靠“悟”。</p>
+<p>看待职业生涯的心态</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/b2YlTLuGbKDsbJzupnILVFhPtMaRjmvPKYRqTMjibE9pnd8oiawLVrQbOHQe4wBXkBQkzpKCWPKBqWgOLgwccBug/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
+<p>很多人来 Google 还是奔着一份优越的薪资待遇来的。所以，这里只谈我自己。</p>
+<p>有一种感觉是我开始在 Google 工作才有的。而且，那感觉越来越清晰，越来越吸引人，以至于十年下来，我几乎把这种感觉视为我工作时的第一推动力了。怎么说呢，这种感觉可能很多人都有，描述出来大概是：</p>
+<p>在整个职业生涯里，至少要有一部分（哪怕是一小部分）时间，可以比较纯粹地为了开心而工作。一家公司是否适合自己，主要就是看这家公司能不能，或者在多大程度上能满足这个需求。</p>
+<p>我在 Google 做不同项目，有时很吃力，有时很痛苦，有时很紧张，当然有时也会开心。但普通项目没法让我比较纯粹地享受那种开心、愉悦的幸福感，于是乎，我在最近五六年里，把我的 20% 时间，都投入到了 Google Doodles 这个既有趣，也适合我的项目里。</p>
+<p>Doodle，嗯，首页涂鸦，纯粹为了让用户开心而设立的项目。这项目既需要画画的艺术家，也需要写动画、音效和游戏代码的成员，不但好玩，还特别有品，特别有文化。因为参与其中，我有机会跟 Google 总部那些厉害的艺术家一起合作，真的开心。</p>
+<p>有一次做 Google 生日的 Doodle，大家选中的是美国小孩子在生日常玩的一种叫 Piñata 的游戏。在电脑里实现这样的游戏，需要简洁的美术风格，支持 JavaScript 的物理引擎，还有平滑、高效的动画引擎，这些是技术细节，不展开谈。</p>
+<p>可在技术之外，我们这群追求开心的人硬是嚷着要亲自玩一次现实里的 Piñata。那次在 Mountain View，就在 Google 总部有一只霸王龙骨架的那片空地上，我们把一个真的 Piñata 挂在树上，轮流用竹竿去打，直到打出一地的糖果来。十几个艺术家和工程师开心得像小孩子。</p>
+<p>就是很纯粹的，很简单的，很开心的那种体验。无论工作里有多少烦恼，至少要给自己保留这样一块空间，叫心情家园也好，叫随便什么名字也好，哪怕再小，也得有那么一个。</p>
+<p>对我来说，在参与 Doodles 项目的过程里，可以和 Doodles 纪念的伟大科学家、艺术家们跨时空交流，可以和正在设计、制作的小动画、小游戏随时互动，可以预测到最终用户看到每个 Doodle 时的快乐，这的确是一件超赞的事。</p>
+<p>很幸运，Google 可以为我这样追求开心的人提供合适的机会。很不幸，（我确切地知道）不少公司从不考虑员工的这种需求。这大概也是公司基因决定的事，没法强求。正因为有了在 Google 的十年工作经历，我才会毫不犹豫地将职业生涯中最重要的追求定义为“开心”。</p>
+<p>十年职业生涯，除了快乐，还有历史的厚重感。特别是 Google 中国这十年，我有幸亲历历史，可算人生里的大风浪。不幸，许多历史是不能详尽言说或评价的，所谓春秋笔法，绝不仅仅是史官的政治妥协，更多情况下也是从更高维度审视历史的一种大智慧。</p>
+<p>总的说来，我喜欢一种本质上不是消极避世的“慢生活”，“快乐”和“多样化”是这种生活的力量源泉。离开 Google 后，我坚信这种生活就是自己的未来。想法渐多，身心渐老。下一个十年，请慢一些到来吧。</p>
+<blockquote>
+<p>来源：电子发烧友网</p>
+<p>版权申明：内容来源网络，仅供分享学习，版权归原创者所有。除非无法确认，我们都会标明作者及出处，如有侵权烦请告知，我们会立即删除并表示歉意。谢谢!</p>
+</blockquote>
+<p><strong>你可能感兴趣：</strong></p>
+<ul>
+<li><p><a href="https://mp.weixin.qq.com/s?__biz=MzkzNTI1NjYxNg==&amp;mid=2247483837&amp;idx=1&amp;sn=2e8e9f1245e02d8e047ff0a729530e06&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">Google 工程师面试指南.pdf-免费下载</a></p>
+</li>
+<li><p><a href="https://mp.weixin.qq.com/s?__biz=MzkzNTI1NjYxNg==&amp;mid=2247483837&amp;idx=2&amp;sn=142cdbe17ff7262b94dc01876c7fe0be&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">清华计算机系王牌课程——《数据结构》课件及源码包下载</a></p>
+</li>
+<li><p><a href="https://mp.weixin.qq.com/s?__biz=MzkzNTI1NjYxNg==&amp;mid=2247483837&amp;idx=3&amp;sn=5e11d64403b006b0ba76bd347b952e13&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">BAT大佬写的 1300 页 Leetcode刷题笔记，必须收藏！</a></p>
+</li>
+</ul>
+<p>有收获请记得下方点赞、在看、分享，<strong>这对我很重要</strong>，感谢<img src="https://mmbiz.qpic.cn/mmbiz_png/ZMXDhhGnYibtVsC4SXy75tw2183kZQicH45vLq2RQY8Hy4QSuP5yUCxUHh2nrJ0sw0xBxsZxbvlLQd3Fo8k5098Q/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片">。</p>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点击这里查看我的逆袭之路</a>），目前在BAT某厂打工，是前大疆（无人机）技术主管。</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/转载/" rel="tag"># 转载</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/one-minute-to-know-about-rsa.html" rel="next" title="一分钟了解 RSA 算法是什么鬼？">
+                <i class="fa fa-chevron-left"></i> 一分钟了解 RSA 算法是什么鬼？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/experience-of-campus-recruitment-of-2022-III.html" rel="prev" title="985天坑本，跳槽到 Top2 计算机的学妹分享秋招之路">
+                985天坑本，跳槽到 Top2 计算机的学妹分享秋招之路 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/experience-of-a-software-engineer-at-google.html';
+
+      var disqus_title = "在谷歌工作十年后的感悟";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

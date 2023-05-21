@@ -1,0 +1,872 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Java,程序员,编程,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="本文作者：杨牧原（花名牧原），阿里云技术专家，多年操作系统和应用调试经验，理论功底深厚，实践经验丰富。目前专注Linux性能调优，容器集群和系统网络。 本文经原作者授权发于公众号【程序猿石头】，原文基础上稍作措辞改动。原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景某次遇到一个客户尝试用 Java （其实跟具体用什么语言没关系）申请使用 4G 的内存申请，">
+<meta name="keywords" content="Java,程序员,编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="内存充足，但是为什么 Java 总申请不到内存呢？">
+<meta property="og:url" content="https://www.tanglei.name/blog/why-java-cannot-allocate-mem-with-enough-physical-memory.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="本文作者：杨牧原（花名牧原），阿里云技术专家，多年操作系统和应用调试经验，理论功底深厚，实践经验丰富。目前专注Linux性能调优，容器集群和系统网络。 本文经原作者授权发于公众号【程序猿石头】，原文基础上稍作措辞改动。原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景某次遇到一个客户尝试用 Java （其实跟具体用什么语言没关系）申请使用 4G 的内存申请，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/why-java-cannot-allocate-mem-with-enough-physical-memory/bug.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/why-java-cannot-allocate-mem-with-enough-physical-memory/nobug.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/why-java-cannot-allocate-mem-with-enough-physical-memory/1.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/ECS%E8%BF%90%E7%BB%B4%E6%8C%87%E5%8D%97%E4%B9%8BLinux%E7%B3%BB%E7%BB%9F%E8%AF%8A%E6%96%AD.png">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.168Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="内存充足，但是为什么 Java 总申请不到内存呢？">
+<meta name="twitter:description" content="本文作者：杨牧原（花名牧原），阿里云技术专家，多年操作系统和应用调试经验，理论功底深厚，实践经验丰富。目前专注Linux性能调优，容器集群和系统网络。 本文经原作者授权发于公众号【程序猿石头】，原文基础上稍作措辞改动。原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景某次遇到一个客户尝试用 Java （其实跟具体用什么语言没关系）申请使用 4G 的内存申请，">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/why-java-cannot-allocate-mem-with-enough-physical-memory/bug.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/why-java-cannot-allocate-mem-with-enough-physical-memory.html">
+
+
+
+
+
+  <title> 内存充足，但是为什么 Java 总申请不到内存呢？ | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/why-java-cannot-allocate-mem-with-enough-physical-memory.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                内存充足，但是为什么 Java 总申请不到内存呢？
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-11-03T00:00:00+00:00">
+                2020-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/why-java-cannot-allocate-mem-with-enough-physical-memory.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/why-java-cannot-allocate-mem-with-enough-physical-memory.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>本文作者：杨牧原（花名牧原），阿里云技术专家，多年操作系统和应用调试经验，理论功底深厚，实践经验丰富。目前专注Linux性能调优，容器集群和系统网络。</p>
+<p>本文经原作者授权发于公众号【程序猿石头】，原文基础上稍作措辞改动。<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247490048&amp;idx=1&amp;sn=868a6eed7b199023429c26f2a1b2abea&amp;chksm=eb471be4dc3092f24c284dce9e76765d68ea9b4dc345c3bb45f2e29d5cc02da7136ebc7f68ad&amp;token=60521723&amp;lang=zh_CN#rd" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “<strong>1024</strong>” 获取程序员大厂面试指南。</p>
+</blockquote>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>某次遇到一个客户尝试用 Java （其实跟具体用什么语言没关系）申请使用 4G 的内存申请，机器（ECS）总内存是 8G，free 的内存也超过 4G，按道理是 OK 的，但总是直接 OOM。</p>
+<p>于是便找上门来说，“你们这玩意有问题啊？”</p>
+<p><img src="https://www.tanglei.name/resources/why-java-cannot-allocate-mem-with-enough-physical-memory/bug.png" alt="img"></p>
+<p>内心 ：“bug 是不可能有的，一定是你的打开姿势不对”，恩，不行，本着“客户第一”的原则，还是要来帮客户解锁姿势的。</p>
+<p><img src="https://www.tanglei.name/resources/why-java-cannot-allocate-mem-with-enough-physical-memory/nobug.png" alt="img"></p>
+<p>本文就详细记录了这个 case 的排查过程。</p>
+<h2 id="具体过程"><a href="#具体过程" class="headerlink" title="具体过程"></a>具体过程</h2><p><img src="https://www.tanglei.name/resources/why-java-cannot-allocate-mem-with-enough-physical-memory/1.png" alt="申请4g内存失败"></p>
+<p>如上图所示，记录显示为申请 4G 内存失败（<code>4294967296 B / 1024 / 1024 = 4096 M</code>）。</p>
+<h3 id="是否是-min-free-kbytes-amp-nr-hugepage-配置错误？"><a href="#是否是-min-free-kbytes-amp-nr-hugepage-配置错误？" class="headerlink" title="是否是 min_free_kbytes &amp; nr_hugepage 配置错误？"></a>是否是 <code>min_free_kbytes &amp; nr_hugepage</code> 配置错误？</h3><ol>
+<li>第一反应是想起来之前的 <code>vm.min_free_kbytes &amp; nr_hugepage</code> 导致的free大于available案例有关</li>
+</ol>
+<p><code>memfree</code> 统计的是所有内存的 <code>free</code> 内存，而 <code>memavailable</code> 统计的是可以拿来给程序用的内存，而客户设置了 <code>vm.min_free_kbytes（2.5G）</code>，这个内存在 <code>free</code> 统计，但是不在 <code>memavailable</code> 统计，<code>nr_hugepage</code> 也会有这个问题。</p>
+<p>二者的统计方式不一样， 具体参考 <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=34e431b0ae398fc54ea69ff85ec700722c9da773" target="_blank" rel="noopener">Documentation/filesystems/proc.txt</a></p>
+<ul>
+<li>MemFree: The sum of LowFree+HighFree</li>
+<li>MemAvailable: An estimate of how much memory is available for starting new applications, without swapping. Calculated from MemFree, SReclaimable, the size of the file LRU lists, and the low watermarks in each zone. The estimate takes into account that the system needs some page cache to function well, and that not all reclaimable slab will be reclaimable, due to items being in use. The impact of those factors will vary from system to system.</li>
+</ul>
+<ol start="2">
+<li>跟客户要 <code>free -m &amp;&amp; sysctl -p &amp;&amp; /proc/meminfo</code> 等信息分析问题。</li>
+</ol>
+<ul>
+<li><code>HugePages_Total</code> 为0，说明没有设置 <code>nr_hugepage</code>。</li>
+<li><code>MemAvailable: 7418172 kB</code>， 说明这么多内存可用。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># sysctl -p</span></span><br><span class="line">net.ipv4.ip_forward = 0</span><br><span class="line">net.ipv4.conf.default.accept_source_route = 0</span><br><span class="line">kernel.sysrq = 1</span><br><span class="line">kernel.core_uses_pid = 1</span><br><span class="line">net.ipv4.tcp_syncookies = 1</span><br><span class="line">...</span><br><span class="line">net.ipv4.tcp_tw_recycle=1</span><br><span class="line">net.ipv4.tcp_max_syn_backlog=4096</span><br><span class="line">net.core.netdev_max_backlog=10000</span><br><span class="line">vm.overcommit_memory=2</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#cat /proc/meminfo</span></span><br><span class="line">MemTotal:        8009416 kB</span><br><span class="line">MemFree:         7347684 kB</span><br><span class="line">MemAvailable:    7418172 kB</span><br><span class="line">Buffers:           18924 kB</span><br><span class="line">Cached:           262836 kB</span><br><span class="line">SwapCached:            0 kB</span><br><span class="line">Active:           315188 kB</span><br><span class="line">Inactive:         222364 kB</span><br><span class="line">Active(anon):     256120 kB</span><br><span class="line">Inactive(anon):      552 kB</span><br><span class="line">Active(file):      59068 kB</span><br><span class="line">Inactive(file):   221812 kB</span><br><span class="line">....</span><br><span class="line">HugePages_Total:       0  </span><br><span class="line">HugePages_Free:        0</span><br><span class="line">HugePages_Rsvd:        0</span><br><span class="line">HugePages_Surp:        0</span><br><span class="line">Hugepagesize:       2048 kB</span><br><span class="line">DirectMap4k:      114560 kB</span><br><span class="line">DirectMap2M:     4079616 kB</span><br><span class="line">DirectMap1G:     6291456 kB</span><br></pre></td></tr></table></figure>
+<h3 id="尝试重现"><a href="#尝试重现" class="headerlink" title="尝试重现"></a>尝试重现</h3><ol start="3">
+<li>尝试自行测试使用<code>java</code>命令，去申请超出我的测试机物理内存，拿到报错。</li>
+</ol>
+<p>实际上面的meminfo已经说明了问题，但是由于经验不足，一时没有看明白怎么回事。</p>
+<p>下面测试证明正常申请内存不会有问题，超额的内存才会 OOM。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@<span class="built_in">test</span> ~]<span class="comment"># java -Xms4096M -version</span></span><br><span class="line">openjdk version <span class="string">"1.8.0_242"</span></span><br><span class="line">OpenJDK Runtime Environment (build 1.8.0_242-b08)</span><br><span class="line">OpenJDK 64-Bit Server VM (build 25.242-b08, mixed mode)</span><br><span class="line">[root@<span class="built_in">test</span> ~]<span class="comment"># java -Xms5000M -version</span></span><br><span class="line">OpenJDK 64-Bit Server VM warning: INFO: os::commit_memory(0x0000000687800000, 3495428096, 0) failed; error=<span class="string">'Cannot allocate memory'</span> (errno=12)</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>系统信息如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---------------  S Y S T E M  ---------------</span><br><span class="line">OS:CentOS Linux release 7.4.1708 (Core)</span><br><span class="line">uname:Linux 3.10.0-693.2.2.el7.x86_64 <span class="comment">#1 SMP Tue Sep 12 22:26:13 UTC 2017 x86_64</span></span><br><span class="line">libc:glibc 2.17 NPTL 2.17</span><br><span class="line">rlimit: STACK 8192k, CORE 0k, NPROC 15088, NOFILE 65535, AS infinity</span><br><span class="line">load average:0.05 0.05 0.05</span><br><span class="line">/proc/meminfo:</span><br><span class="line">MemTotal:        3881692 kB</span><br><span class="line">MemFree:         2567724 kB</span><br><span class="line">MemAvailable:    2968640 kB</span><br><span class="line">Buffers:           69016 kB</span><br><span class="line">Cached:           536116 kB</span><br><span class="line">SwapCached:            0 kB</span><br><span class="line">Active:           355280 kB</span><br><span class="line">Inactive:         326020 kB</span><br><span class="line">...</span><br><span class="line">VmallocTotal:   34359738367 kB</span><br><span class="line">VmallocUsed:       14280 kB</span><br><span class="line">VmallocChunk:   34359715580 kB</span><br><span class="line">HardwareCorrupted:     0 kB</span><br><span class="line">AnonHugePages:     30720 kB</span><br><span class="line">HugePages_Total:     256</span><br><span class="line">HugePages_Free:      256</span><br><span class="line">HugePages_Rsvd:        0</span><br><span class="line">HugePages_Surp:        0</span><br><span class="line">Hugepagesize:       2048 kB</span><br><span class="line">DirectMap4k:       57216 kB</span><br><span class="line">DirectMap2M:     3088384 kB</span><br><span class="line">DirectMap1G:     3145728 kB</span><br><span class="line">....</span><br><span class="line">Memory: 4k page, physical 3881692k(2567600k free), swap 0k(0k free)</span><br><span class="line">vm_info: OpenJDK 64-Bit Server VM (25.242-b08) <span class="keyword">for</span> linux-amd64 JRE (1.8.0_242-b08), built on Jan 28 2020 14:28:22 by <span class="string">"mockbuild"</span> with gcc 4.8.5 20150623 (Red Hat 4.8.5-39)</span><br><span class="line">time: Thu Feb 20 15:13:30 2020</span><br><span class="line">timezone: CST</span><br><span class="line">elapsed time: 0 seconds (0d 0h 0m 0s)</span><br></pre></td></tr></table></figure>
+<h3 id="重现失败，继续分析"><a href="#重现失败，继续分析" class="headerlink" title="重现失败，继续分析"></a>重现失败，继续分析</h3><ol start="4">
+<li><code>Java</code> 测试证明正常申请内存不会有问题，超额的内存才会 OOM，那么为什么超额呢，视线回归到 <code>sysctl -p</code> 有所发现。</li>
+</ol>
+<p><code>vm.overcommit_memory=2</code></p>
+<p>关于 <code>overcommit_memory</code> 设置项：</p>
+<h4 id="overcommit-memory-0"><a href="#overcommit-memory-0" class="headerlink" title="overcommit_memory=0"></a>overcommit_memory=0</h4><p>默认设置，当应用进程尝试申请内存时，内核会做一个检测。内核将检查是否有足够的可用内存供应用进程使用；</p>
+<p>如果有足够的可用内存，内存申请允许；否则，内存申请失败，并把错误返回给应用进程。</p>
+<p>举个例子，比如1G的机器，A进程已经使用了500M，当有另外进程尝试malloc 500M的内存时，内核就会进行check，发现超出剩余可用内存，就会提示失败。</p>
+<h4 id="overcommit-memory-1"><a href="#overcommit-memory-1" class="headerlink" title="overcommit_memory=1"></a>overcommit_memory=1</h4><p>对于内存的申请请求，内核不会做任何check，直到物理内存用完，触发 OOM 杀用户态进程。</p>
+<p>同样是上面的例子，1G 的机器，A进程500M，B进程尝试 malloc 500M，会成功，但是一旦kernel发现内存使用率接近1个G(内核有策略)，就触发OOM，杀掉一些用户态的进程(有策略的杀)。</p>
+<h4 id="overcommit-memory-2"><a href="#overcommit-memory-2" class="headerlink" title="overcommit_memory=2"></a>overcommit_memory=2</h4><p>当请求申请的内存 &gt;= SWAP内存大小 + 物理内存 <em> N，则拒绝此次内存申请。解释下这个N：N是一个百分比，根据<code>overcommit_ratio/100</code>来确定，比如<code>overcommit_ratio=50</code>（我的测试机默认50%），那么N就是50%。<br><code>vm.overcommit_ratio</code> 只有当 <code>vm.overcommit_memory = 2</code> 的时候才会生效，内存可申请内存为 `SWAP内存大小 + 物理内存 </em> overcommit_ratio/100`。 </p>
+<p>看看上面日志的 <code>overcommit</code> 信息： </p>
+<ul>
+<li>CommitLimit:     4004708 kB  （小于客户申请的4096M）</li>
+<li>Committed_AS:    2061568 kB</li>
+</ul>
+<p>具体而言： </p>
+<ul>
+<li>CommitLimit：最大能分配的内存（测试下来在<code>vm.overcommit_memory=2</code>时候生效），具体的值是：SWAP内存大小（ecs均未开启） + 物理内存 * overcommit_ratio / 100；</li>
+<li>Committed_AS：当前已经分配的内存大小；</li>
+</ul>
+<p>5，两相对照，说明客户设置的 <code>vm.overcommit_memory</code>在生效，建议改回 <code>0</code> 再试试。</p>
+<ul>
+<li>用 <code>vm.overcommit_memory = 2</code> 测试，分配内存失败；</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@test ~]# grep -i commit /proc/meminfo</span><br><span class="line">CommitLimit:     1940844 kB</span><br><span class="line">Committed_AS:     480352 kB</span><br><span class="line"># java -Xms2048M -version 失败了</span><br><span class="line">OpenJDK 64-Bit Server VM warning: INFO: os::commit_memory(0x0000000080000000, 1431830528, 0) failed; error=&apos;Cannot allocate memory&apos; (errno=12)</span><br><span class="line">#</span><br><span class="line"># There is insufficient memory for the Java Runtime Environment to continue.</span><br><span class="line"># Native memory allocation (mmap) failed to map 1431830528 bytes for committing reserved memory.</span><br><span class="line"># An error report file with more information is saved as:</span><br><span class="line"># /root/hs_err_pid1267.log</span><br></pre></td></tr></table></figure>
+<ul>
+<li>用如下配置，即可恢复： <code>vm.overcommit_memory = 0, vm.overcommit_ratio = 50</code> </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#vm.overcommit_memory = 0</span><br><span class="line">#vm.overcommit_ratio = 50</span><br><span class="line">[root@test ~]# java -Xms2048M -version</span><br><span class="line">openjdk version &quot;1.8.0_242&quot;</span><br><span class="line">OpenJDK Runtime Environment (build 1.8.0_242-b08)</span><br><span class="line">OpenJDK 64-Bit Server VM (build 25.242-b08, mixed mode)</span><br></pre></td></tr></table></figure>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>可以看出，这其实跟具体的编程语言没有关系，用 Java 申请不到，用 c++/c 也一样。一个容易忽略的小知识点，你 get 到了吗？</p>
+<p><img src="https://www.tanglei.name/resources/architecture-evolution-of-HA-system-of-buy-facemask/ECS%E8%BF%90%E7%BB%B4%E6%8C%87%E5%8D%97%E4%B9%8BLinux%E7%B3%BB%E7%BB%9F%E8%AF%8A%E6%96%AD.png" alt="ECS运维指南之Linux系统诊断"></p>
+<p>本文节选自《ECS运维指南之Linux系统诊断》，《ECS运维指南之Linux系统诊断》是牧原呕心沥血之作，不仅内容精益求精，代码的编排作者也花了不少心思。你也可以直接登录阿里云开发者社区下载本书——<a href="https://developer.aliyun.com/article/763939" target="_blank" rel="noopener">《ECS运维指南之Linux系统诊断》</a>，或者直接在公众号后台回复关键字<strong>“ecs”</strong>获取本合集。</p>
+<p>阿里云开发者社区有不少高质量技术文章，大家可以去观摩学习，有很多书籍都是可以直接免费下载的。 </p>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader，欢迎关注，交流和指导！</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/程序员/" rel="tag"># 程序员</a>
+          
+            <a href="/tags/编程/" rel="tag"># 编程</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/share-interview-experience-with-no-cs-background-when-gradudate-in-2021.html" rel="next" title="非科班学弟如何转行斩获 ATM 大厂的 Offer ？">
+                <i class="fa fa-chevron-left"></i> 非科班学弟如何转行斩获 ATM 大厂的 Offer ？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/constuct-of-string-is-not-easy.html" rel="prev" title="你可能也会掉进这个简单的 String 的坑">
+                你可能也会掉进这个简单的 String 的坑 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具体过程"><span class="nav-number">2.</span> <span class="nav-text">具体过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#是否是-min-free-kbytes-amp-nr-hugepage-配置错误？"><span class="nav-number">2.1.</span> <span class="nav-text">是否是 min_free_kbytes &amp; nr_hugepage 配置错误？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#尝试重现"><span class="nav-number">2.2.</span> <span class="nav-text">尝试重现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重现失败，继续分析"><span class="nav-number">2.3.</span> <span class="nav-text">重现失败，继续分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#overcommit-memory-0"><span class="nav-number">2.3.1.</span> <span class="nav-text">overcommit_memory=0</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#overcommit-memory-1"><span class="nav-number">2.3.2.</span> <span class="nav-text">overcommit_memory=1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#overcommit-memory-2"><span class="nav-number">2.3.3.</span> <span class="nav-text">overcommit_memory=2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">3.</span> <span class="nav-text">最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/why-java-cannot-allocate-mem-with-enough-physical-memory.html';
+
+      var disqus_title = "内存充足，但是为什么 Java 总申请不到内存呢？";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

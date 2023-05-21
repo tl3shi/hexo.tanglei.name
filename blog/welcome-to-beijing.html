@@ -1,0 +1,900 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="MyLife,总结,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于程序员石头(ID: tangleithu)：从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景 北京欢迎你 为你开天辟地 流动中的魅力充满着朝气  北京欢迎你 在太阳下分享呼吸 在黄土地刷新成绩 …  北京欢迎你 像音乐感动你 让">
+<meta name="keywords" content="MyLife,总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="北京“欢迎”你 —— 附最全北京健康宝弹簧③解决方案">
+<meta property="og:url" content="https://www.tanglei.name/blog/welcome-to-beijing.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于程序员石头(ID: tangleithu)：从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景 北京欢迎你 为你开天辟地 流动中的魅力充满着朝气  北京欢迎你 在太阳下分享呼吸 在黄土地刷新成绩 …  北京欢迎你 像音乐感动你 让">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/welcome-to-beijing/378093f4-49d3-48b6-bf64-fcc5cedb79e1.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/welcome-to-beijing/ea9857c8-9146-41ab-bb8b-7d161e622851.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/welcome-to-beijing/8c732459-9cb3-44c5-bec1-3ac97fdf2ea3.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/welcome-to-beijing/001e7190-a5f9-46d4-9018-744693939f9d.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/welcome-to-beijing/7fd5de15-5222-4d05-a08a-346e5fd7ec1e.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/welcome-to-beijing/0c07c7e7-e03d-4cce-b0ab-ed1e3c2c8948.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/welcome-to-beijing/f6701492-f365-4b7d-9fca-bbd2c72e83f6.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/welcome-to-beijing/8c5556e8-3035-4dc3-b638-531009509339.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/welcome-to-beijing/54adfb30-5db3-4a8f-b659-6d9e2c9b022b.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/welcome-to-beijing/80e27fc4-67ea-4146-8b7a-e3e233dd9c48.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/welcome-to-beijing/wtf.gif">
+<meta property="og:image" content="https://www.tanglei.name/resources/welcome-to-beijing/9b335efa-d13b-4529-a822-e6b380b632db.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/welcome-to-beijing/42579162-2961-4941-bffd-e703d9c55d5e.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/welcome-to-beijing/827eb17d-5db6-4c33-9fad-9f172af39a68.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/welcome-to-beijing/789c54bf-0b82-4245-bc01-bf2c77321aa9.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/welcome-to-beijing/3bab9a96-6404-4618-8126-409188397582.png">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.196Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="北京“欢迎”你 —— 附最全北京健康宝弹簧③解决方案">
+<meta name="twitter:description" content="关于程序员石头(ID: tangleithu)：从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景 北京欢迎你 为你开天辟地 流动中的魅力充满着朝气  北京欢迎你 在太阳下分享呼吸 在黄土地刷新成绩 …  北京欢迎你 像音乐感动你 让">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/welcome-to-beijing/378093f4-49d3-48b6-bf64-fcc5cedb79e1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/welcome-to-beijing.html">
+
+
+
+
+
+  <title> 北京“欢迎”你 —— 附最全北京健康宝弹簧③解决方案 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/welcome-to-beijing.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                北京“欢迎”你 —— 附最全北京健康宝弹簧③解决方案
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-11-02T00:00:00+00:00">
+                2022-11-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MyLife/" itemprop="url" rel="index">
+                    <span itemprop="name">MyLife</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/welcome-to-beijing.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/welcome-to-beijing.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于程序员石头(ID: tangleithu)：从十八县贫困农村一路逆袭上<strong>清华</strong>（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点这里查看我的逆袭之路</a>），BAT某厂P7，是前大疆（无人机）技术主管。</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s/sdVudxubMvMkVin9ZOd6bg" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote>
+<p>北京欢迎你 为你开天辟地 流动中的魅力充满着朝气 </p>
+<p>北京欢迎你 在太阳下分享呼吸 在黄土地刷新成绩 … </p>
+<p>北京欢迎你 像音乐感动你 让我们都加油去超越自己 </p>
+<p>北京欢迎你 有梦想谁都了不起 有勇气就会有奇迹</p>
+</blockquote>
+<p>这首歌，毕竟毕竟从 2008 年就开始唱了，时过境迁，到了现在的 2022，似乎不太准确，或者至少没有那么热情了。</p>
+<p>上个月一直在和北京健康宝弹窗 ③ “作斗争”；这还不算，还得随时随地与航班、火车取消“做抗争” —— </p>
+<blockquote>
+<p>自己<strong>返京后弹窗③</strong>；家人还<strong>没进京就弹窗③</strong>，解除后继续弹，机票不断取消，不断弹，不断取消！😭</p>
+</blockquote>
+<p><img src="/resources/welcome-to-beijing/378093f4-49d3-48b6-bf64-fcc5cedb79e1.png" alt></p>
+<p>撰此文纪念下并不容易的“进京/返京”之路！</p>
+<p>原本以为重大会议之后就好了，没想到最近还听说不少朋友被这个问题困扰，因此分享下相关经验（北京健康宝弹窗③ 抵京/进京，弹窗没法解除如何进京），希望能助大家进京/返京道路上一臂之力！</p>
+<blockquote>
+<p>友情提醒：请遵守国家疫情防控相关措施，避免给自己惹不必要的麻烦。</p>
+</blockquote>
+<h2 id="抵京后弹窗③"><a href="#抵京后弹窗③" class="headerlink" title="抵京后弹窗③"></a>抵京后弹窗③</h2><p>上个月出差去杭州，返京后第 3 天突然弹窗③。 </p>
+<p>原以为按照要求，返京后核酸 3 天 2 检（当天检1 次，隔 24 小时后再一次），均阴性后就不会弹窗，但实际情况并非如此。 </p>
+<p>这个时候最有效的办法就是联系自己所属社区，社区一般会要求去填写承诺书，然后给开条，去 <strong>指定地点</strong> 进行 3 天 2 检（<strong>一般情况下</strong>按照要求日常核酸点是不会给弹窗③进行核酸采集的），期间会要求自觉进行居家隔离。但若去过中高风险地区要求更严格，<strong>具体情况请以社区为准</strong>。 </p>
+<p>再拿到核酸检测结果后，再去社区，社区根据核酸结果上报，申请解除弹窗。 一般情况下，社区上报后 1 小时左右，弹窗③解除。</p>
+<p>这里每个社区对疫情防控措施落地实施又不一样。我和同事行程一致，他们社区第 2 天就给解除了，我第 4 天都还没给解除。</p>
+<p>若实在找不到社区，可以在 “北京健康宝 - 京心相助” 上进行申报，不过我猜这条路估计就会更久了，因为上报一圈，最终工作的落实还是会回到社区。</p>
+<p><img src="/resources/welcome-to-beijing/ea9857c8-9146-41ab-bb8b-7d161e622851.png" alt></p>
+<p><img src="/resources/welcome-to-beijing/8c732459-9cb3-44c5-bec1-3ac97fdf2ea3.png" alt></p>
+<h2 id="进京前弹窗③"><a href="#进京前弹窗③" class="headerlink" title="进京前弹窗③"></a>进京前弹窗③</h2><p>进京前弹窗③就悲剧了，飞机/火车上不了（弹窗了可能连火车票都买不了），也就没办法进返京了。这个时候，解决方法就直接在公众号北京12345 进行申诉。</p>
+<p>申诉需要的材料：</p>
+<ol>
+<li>北京健康宝弹窗③截图；</li>
+<li>最近的核酸结果（最好 48小时内的）截图；</li>
+<li>大数据行程卡 截图；</li>
+<li>同行密接人员自查 截图；</li>
+<li>疫情风险等级查询（覆盖 3 中的所有） 截图；</li>
+</ol>
+<p>准备好上面的 5 张图，后 4 个在微信搜索小程序“国家政务服务平台”中截取。</p>
+<p><img src="/resources/welcome-to-beijing/001e7190-a5f9-46d4-9018-744693939f9d.png" alt></p>
+<p>找到上图中圈出来的 4 个地方（每个人看到的位置可能有变化，左右滑动去找），分别点进去之后授权截图。</p>
+<p>当然，如果第 4、5 不符合要求（比如密接，所在地中高风险等），那就凉凉了，先暂缓来京吧。当然，高端玩家可以去异地“洗码”（因为各地政策不一样，有的要求严格有的宽松），但也有一定风险，谁知道你去的“异地”接下来 7 天会不会有啥变化呢。</p>
+<p>准备好上述的 5 个截图后，前往公众号北京 12345 提交信息：</p>
+<ol>
+<li>在“北京12345”微信公众号，点击首页的“服务”选择“民意直通”，注册并登录；</li>
+<li>点击【疫情防控】选择【健康宝赋码状态、弹窗纠错】；</li>
+<li><strong>如实填写</strong>所有信息，将刚刚截图备用的 5 张图片全部上传；</li>
+</ol>
+<p><img src="/resources/welcome-to-beijing/7fd5de15-5222-4d05-a08a-346e5fd7ec1e.png" alt></p>
+<p><img src="/resources/welcome-to-beijing/0c07c7e7-e03d-4cce-b0ab-ed1e3c2c8948.png" alt></p>
+<p>然后就等着吧，一般情况下第二天能解除。</p>
+<p>期间可能会有短信，让填承诺书，有时候短信又收不到，这个时候可以主动点开这个网址用身份证查一下。</p>
+<p><img src="/resources/welcome-to-beijing/f6701492-f365-4b7d-9fca-bbd2c72e83f6.png" alt></p>
+<p>网址：<code>https://yqgz.beijing.gov.cn/wssryfw</code></p>
+<p>如果信息没有成功报备过，估计是查不到的，直接提示暂缓来京（我用了一直在北京的同学的身份证查询测试）。</p>
+<p><img src="/resources/welcome-to-beijing/8c5556e8-3035-4dc3-b638-531009509339.png" alt></p>
+<p>审核通过后，能查询到如图示的结果。</p>
+<p><img src="/resources/welcome-to-beijing/54adfb30-5db3-4a8f-b659-6d9e2c9b022b.png" alt></p>
+<p>拒绝就直接 GG 了。（得另辟蹊径了）</p>
+<p><img src="/resources/welcome-to-beijing/80e27fc4-67ea-4146-8b7a-e3e233dd9c48.png" alt></p>
+<p>还有有其他办法可以加急吗？拨打 010-12345，转人工是可以加急的（至少体感上加急了）。</p>
+<p>呼入后选择 2 等待人工接入，选择 1 是机器人，然后会被引导到公众号提交，（2 是给紧急求助就医等使用的，建议不太紧急不使用），人工接入后，说清楚述求表达：自己没风险、紧急需要解决弹窗，希望帮忙提交加急。</p>
+<p>客服会帮忙登记加急，后续流程应该和上面的一致。</p>
+<p>最终 12345 申诉流程后面的步骤中也仍然还是会到社区审核通过（如果大数据筛查有风险等肯定就直接拒绝了），中途也可以尝试打电话问社区询问，相关信息是否已经下发到社区这边，帮忙加急通过。</p>
+<p>弹窗解除了，要是飞机航班不被取消，火车不取消，也算幸运了，基本可以顺利抵京。</p>
+<h2 id="机票频繁取消"><a href="#机票频繁取消" class="headerlink" title="机票频繁取消"></a>机票频繁取消</h2><p>但问题来了，弹窗解除了，航班取消了？！ 只能改签后面的航班！</p>
+<p>然后你猜怎么着？改签后的航班起飞前一天，弹窗又 TM 地来了。</p>
+<p><img src="/resources/welcome-to-beijing/wtf.gif" alt></p>
+<p>网上还听说的版本有：本来北京健康宝还没有弹窗的，一订票，弹窗马上来了（网传，未取证）。</p>
+<p><img src="/resources/welcome-to-beijing/9b335efa-d13b-4529-a822-e6b380b632db.png" alt></p>
+<p>可以看看之前一周厦门飞北京的情况（上图中红色为取消），偶尔运气不错，某天有一趟航班能飞，你能顺利到达北京的前提是：</p>
+<ol>
+<li>刚好订上了没被取消的航班；</li>
+<li>刚好你的北京健康宝处于弹窗3的空档期；</li>
+</ol>
+<p>关键这个取消航班也很神奇，一般提前2天甚至 1 天才告诉你取消了，曾经也发过朋友圈吐槽过 —— 直接取消不售卖岂不更好，改一次取消一次，再改再取消，来回折腾！</p>
+<p><img src="/resources/welcome-to-beijing/42579162-2961-4941-bffd-e703d9c55d5e.png" alt></p>
+<p>有啥方法吗？这个时候只能看过去航班历史执飞情况，选执飞概率大的航班。</p>
+<p><img src="/resources/welcome-to-beijing/827eb17d-5db6-4c33-9fad-9f172af39a68.png" alt></p>
+<p>或者有朋友推荐的方案，选不直飞的，那种中转的航班，可能取消的概率会小一些。（建议也看下过去历史的执飞情况）</p>
+<p>再或者选火车/动车吧。</p>
+<h2 id="一直弹窗，还有办法进返京吗？"><a href="#一直弹窗，还有办法进返京吗？" class="headerlink" title="一直弹窗，还有办法进返京吗？"></a>一直弹窗，还有办法进返京吗？</h2><p>按照相关规定，弹窗③解除不了，是不允许进京得，当然网传也有一些野路子，周围也有朋友实操过。</p>
+<p>比如，乘坐火车，不买到终点，买到前一站，然后不下车，然后在车上进行补票，列车员会要求签各种承诺书。</p>
+<p><img src="/resources/welcome-to-beijing/789c54bf-0b82-4245-bc01-bf2c77321aa9.png" alt></p>
+<p>问题是这个方法现在感觉“暴雷”了，因为之前有个哥们用这样的方法进京了，然后他居然不按照承诺书去履行，然后还到处乱窜，现在出问题吃不了兜着走了。</p>
+<p>再比如还有类似“洗码”的方案，你从某地 A 没办法直接进京（因为北京政策比较严格），但某地 B 没有限制你从 A 过去，且 B 地一直没有疫情，这个时候你就可以先到 B 地，待满 7 天，然后再从 B 地进京。（具体情况，请看当地政策哈，政策有可能随时更新）</p>
+<p>我听朋友说还有另外的路子，自己和身边的人也没有实操过（只是朋友说他有朋友这样顺利进京了），这里就不推荐了（也不方便公开说）。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>这里还是奉劝大家做个遵纪守法的良好市民，不要给自己惹麻烦。</p>
+<p>最后，希望早日回到“北京欢迎你”的状态。</p>
+<p><img src="/resources/welcome-to-beijing/3bab9a96-6404-4618-8126-409188397582.png" alt></p>
+<blockquote>
+<p>关于程序员石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点击这里查看我的逆袭之路</a>），目前在BAT某厂打工，是前大疆（无人机）技术主管。</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MyLife/" rel="tag"># MyLife</a>
+          
+            <a href="/tags/总结/" rel="tag"># 总结</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/promote-to-be-father.html" rel="next" title="今天1024，我当爸爸啦！">
+                <i class="fa fa-chevron-left"></i> 今天1024，我当爸爸啦！
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/presentation-at-arch-summit-2022.html" rel="prev" title="去当讲师了">
+                去当讲师了 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抵京后弹窗③"><span class="nav-number">2.</span> <span class="nav-text">抵京后弹窗③</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进京前弹窗③"><span class="nav-number">3.</span> <span class="nav-text">进京前弹窗③</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#机票频繁取消"><span class="nav-number">4.</span> <span class="nav-text">机票频繁取消</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一直弹窗，还有办法进返京吗？"><span class="nav-number">5.</span> <span class="nav-text">一直弹窗，还有办法进返京吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">6.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/welcome-to-beijing.html';
+
+      var disqus_title = "北京“欢迎”你 —— 附最全北京健康宝弹簧③解决方案";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

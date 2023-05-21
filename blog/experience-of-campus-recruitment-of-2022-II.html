@@ -1,0 +1,927 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="MyLife,总结,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景大家好，我是石头哥。 今天的分享来自一个学弟，与其说是校招经验，更不如称为教训；文章分享了学弟整个秋招过程的感想和注意事项，希望">
+<meta name="keywords" content="MyLife,总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="崩溃了，秋招都快结束了，实习的公司却告诉我没 HC ？！">
+<meta property="og:url" content="https://www.tanglei.name/blog/experience-of-campus-recruitment-of-2022-II.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景大家好，我是石头哥。 今天的分享来自一个学弟，与其说是校招经验，更不如称为教训；文章分享了学弟整个秋招过程的感想和注意事项，希望">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/gitee-blog-resources/2021-12-19/1639883978140-image.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/gitee-blog-resources/2021-12-18/1639831142938-image.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/gitee-blog-resources/2021-12-19/1639884313319-image.png">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.187Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="崩溃了，秋招都快结束了，实习的公司却告诉我没 HC ？！">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT某厂P7，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景大家好，我是石头哥。 今天的分享来自一个学弟，与其说是校招经验，更不如称为教训；文章分享了学弟整个秋招过程的感想和注意事项，希望">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/gitee-blog-resources/2021-12-19/1639883978140-image.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/experience-of-campus-recruitment-of-2022-II.html">
+
+
+
+
+
+  <title> 崩溃了，秋招都快结束了，实习的公司却告诉我没 HC ？！ | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/experience-of-campus-recruitment-of-2022-II.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                崩溃了，秋招都快结束了，实习的公司却告诉我没 HC ？！
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-01-12T00:00:00+00:00">
+                2022-01-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MyLife/" itemprop="url" rel="index">
+                    <span itemprop="name">MyLife</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/experience-of-campus-recruitment-of-2022-II.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/experience-of-campus-recruitment-of-2022-II.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上<strong>清华</strong>（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点这里查看我的逆袭之路</a>），BAT某厂P7，是前大疆（无人机）技术主管。</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247499004&amp;idx=1&amp;sn=dda9a3a378e370f323e7593762aa03eb&amp;chksm=eb44fd18dc33740ef375b1ed304aafa55c8e783d56095f581ea164b19eee8cb4cf6d4d388735&amp;token=1946031599&amp;lang=zh_CN#rd" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<p><img src="/resources/gitee-blog-resources/2021-12-19/1639883978140-image.png" alt></p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>大家好，我是石头哥。</p>
+<p>今天的分享来自一个学弟，与其说是校招经验，更不如称为教训；文章分享了学弟整个秋招过程的感想和注意事项，希望能作为一个略微“反面”的教材，帮助后来的同学避免遇到这种情况。</p>
+<p>学弟刚开始在某大厂实习，实习结束也顺利转正（Leader口述转正通过）。然后就“高枕无忧” 躺平了。没想到最终被告知部门 HC 调整，与该团队无缘了。</p>
+<p>幸运的是，经过学弟的不断努力，最终还是锁定了另外一个大厂的 Offer。下面就来看看学弟的经验教训总结吧。 </p>
+<p><img src="/resources/gitee-blog-resources/2021-12-18/1639831142938-image.png" alt="本文提纲"></p>
+<p>其他校招系列文章<a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI3OTUzMzcwNw==&amp;action=getalbum&amp;album_id=1551696282304495619&amp;scene=173&amp;from_msgid=2247489734&amp;from_itemidx=1&amp;count=3&amp;nolastread=1#wechat_redirect" target="_blank" rel="noopener">请戳这里</a>。</p>
+<h2 id="个人情况"><a href="#个人情况" class="headerlink" title="个人情况"></a>个人情况</h2><p>本人985本硕，科班出身，无论文，有项目、专利、比赛，今年春招拿到某大厂后端实习offer，在暑假实习了三个月左右。</p>
+<p>实习结束后，Leader 口头告知转正答辩通过。当时还很开心~</p>
+<p>因为个人求职意向明确，加上毕业压力，想着有了口头 Offer 就够了，因此选择了 All in 转正安心等待意向。</p>
+<p>直到 10 月被告知部门 HC 调整，Leader 劝说看看其他机会，意识到转正失败。</p>
+<p><img src="/resources/gitee-blog-resources/2021-12-19/1639884313319-image.png" alt></p>
+<p>此时才开始重新投递简历，秋招早已接近尾声，经历了心理压力非常大的挣扎期、反复 kpi面被拒的挫败期，历时一个多月，最终还是拿到了满意的 offer。</p>
+<p>本文会复盘一下从实习开始到秋招最终签 offer 的整体经历，然后主要介绍遇到转正失败的问题该如何积极自救，调整心态，以及整个秋招过程的感想和注意事项，希望能作为一个略微“反面”的教材，帮助后来的同学避免遇到这种情况。</p>
+<h2 id="整体复盘——我是怎么错过秋招首班车的"><a href="#整体复盘——我是怎么错过秋招首班车的" class="headerlink" title="整体复盘——我是怎么错过秋招首班车的"></a>整体复盘——我是怎么错过秋招首班车的</h2><p>正常节奏：<code>实习（3-6月）→ 秋招提前批（6-8月）→ 秋招正式批（9-11月）→ 秋招补录（12月）→春招（3月起）</code></p>
+<p>我的节奏：<br>和很多同学一样，我也在研二就意识到了实习的重要性，尽早地开始准备了暑期实习的面试。</p>
+<blockquote>
+<p>石头注：确实，研究生期间，如果有实习机会，就尽量争取，我当年想实习，老板还不放呢。 </p>
+</blockquote>
+<blockquote>
+<p>但即便是这样，<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247483912&amp;idx=1&amp;sn=520bbca6a2056ab4df6b0e1d0ebaf6e0&amp;chksm=eb4703ecdc308afa83b288b1469f0927c1916189f219ee5e8c3c5194defc0b8f313ff7607730&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">我当初也去参与实习生面试</a>了，最终也拿了腾讯、阿里等 Offer。只不过最终没成行。但这也为秋招做了准备，很多公司有实习 Offer，秋招可以走绿色通道的。 </p>
+</blockquote>
+<h3 id="暑期实习"><a href="#暑期实习" class="headerlink" title="暑期实习"></a>暑期实习</h3><p>暑期实习面试相较于后期秋招，难度和要求都会低一些，于是背景过得去的我，也在寒假过后较为顺利的拿到了后来实习团队的 Offer。</p>
+<p>实习入职后，我们团队实习生比较多，相对比较“卷”，但我当时觉得这在大厂是标配，并未察觉到太多异样，我像大部分实习生一样学习→实践→产出→答辩。</p>
+<p>7月份许多公司吹响了提前批的号角，而当时我忙于实习课题，加上每天晚上接近11点到家的生活，并没有多余的时间和精力准备基础知识和刷 LeetCode，而又担心提前批留下不好的面评，所以打算正式批再战。</p>
+<h3 id="实习结束获口头意向"><a href="#实习结束获口头意向" class="headerlink" title="实习结束获口头意向"></a>实习结束获口头意向</h3><p>离职回学校后，周围的同学有的已经出了转正结果，而有的没去实习的同学甚至已经手握几个提前批意向了。</p>
+<p>而我简历都还停留在实习前未更新的状态，我也隐约有些焦虑感，想问问自己转正结果，Leader 大方地告诉我通过了，我悬着的心落下了一大半，觉得自己有满意的offer了。</p>
+<p>周围同学海投和面试的时候，我在准备实验室课题投稿论文。虽然没有收到意向书，但却放松了很多，觉得没必要当所谓的“offer收割机”。</p>
+<h3 id="成为“备胎”了"><a href="#成为“备胎”了" class="headerlink" title="成为“备胎”了"></a>成为“备胎”了</h3><p>10月份，听说同组有实习生收到了意向，我问 Leader 却只让继续等，朋友建议我拿点别的 offer。</p>
+<p>而当时的我，有着明确的求职方向，没有选择去投递一些相关方向的中小厂，只投了一些大厂对口的核心岗位，这时连简历筛选都几乎长达一周了。</p>
+<p>随着时间推移，还是没等到意向书，我变得越来越焦虑，却不知道如何开口去问具体情况，终于鼓起勇气联系了 Leader，得知了 hc 被调整。</p>
+<p>我被团队“备胎”的消息，至此，我的秋招之路才到了破釜沉舟、背水一战的境地，我深受打击。</p>
+<blockquote>
+<p>我<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247498463&amp;idx=1&amp;sn=ab28597fec94b4faa7c632c726aa6ab7&amp;chksm=eb44fb3bdc33722db2a308ef14827b86fc659868719d793a8217113ee9c5119e4b910a6af0ac&amp;token=1678373594&amp;lang=zh_CN#rd" target="_blank" rel="noopener">公众号（程序猿石头）</a>的读者中应该也有不少朋友招聘应届生，在这里也希望大佬们，如果遇到有 HC 调整等情况，尽量都提前跟候选人通知下。</p>
+</blockquote>
+<blockquote>
+<p>咱们毕竟也都是从校招走过来的，将心比心，毕竟这关系着候选人就业问题，某种程度上讲也很有可能改变了他的人生轨迹。</p>
+</blockquote>
+<blockquote>
+<p>另一方面，作为候选人，我们也应该多留个心眼，至少也一样也准备个“备胎”。</p>
+</blockquote>
+<h2 id="坚持自救-——-抓住一切上车机会"><a href="#坚持自救-——-抓住一切上车机会" class="headerlink" title="坚持自救 —— 抓住一切上车机会"></a>坚持自救 —— 抓住一切上车机会</h2><p>得到负面消息后，没有太多给我抱怨和难过的时间，秋招都快结束了，我知道我只能在压力中自我调整，我度过了一段非常艰难的时期，所幸最终重新收获了好运，为了自救我主要做的有这些：</p>
+<h3 id="1-调整心态，摆正定位"><a href="#1-调整心态，摆正定位" class="headerlink" title="1.调整心态，摆正定位"></a>1.调整心态，摆正定位</h3><p>前面提到，我在以为自己转正成功后，只看得上大于等于原团队的岗位，导致给自己选了地狱难度，且很多团队已经没有hc了。</p>
+<p>于是我开始海投，不分城市和公司规模，不分业务还是基架，甚至投递了设计院和银行等。</p>
+<p>我保持关注牛客、脉脉、论坛、就业群等各个平台的信息，遇到能有补坑的机会就积极投递简历。</p>
+<p>虽然秋招已经接近尾声，但海投还是让我又收到了一些回音，最多的时候我平均一天有三场面试。</p>
+<h3 id="2-积累经验，绝不放弃"><a href="#2-积累经验，绝不放弃" class="headerlink" title="2.积累经验，绝不放弃"></a>2.积累经验，绝不放弃</h3><p>由于起步较晚，中间经历实习和论文，我的刷题量和“八股”其实有过中断，对于状态保持不是很好。</p>
+<p>临近秋招末期，很多团队几乎没有hc了。</p>
+<p>和很多人一样，我在刚开始面试的时候，表现并不理想，甚至有一面就被刷掉的，非常打击自信心，也让我逐渐意识到过去的自己有多骄傲（苦笑）。</p>
+<p>而走到终面被刷掉就更难受了，可能是越迫切的需要什么就越难得到。</p>
+<p>虽然被打击了很多回，但我还是坚持了下去，及时总结每一场面试，有团队捞我我就面，也不管是不是对方的kpi，有一家大厂我面了3个组一共7场，人都麻了。</p>
+<p>但我安慰自己，准备面试都是在<strong>顺便复习基础知识，而且反正面试不要钱，面到就是赚到</strong>。</p>
+<p>由于我计算机基础知识经过多年的学习还是有一定的积累，对于实习的课题也很了解，其中的技术细节和方案都是手把手做出来的。</p>
+<p>很多团队如果方向匹配，面试官是会愿意和你深入聊项目细节的，而八股相应的占比就会减少。</p>
+<p>在这种状态下，我确实感受到了自己的进步，面试结果也开始逐渐有一些起色了。</p>
+<h3 id="3-坚守初心，谨慎抉择"><a href="#3-坚守初心，谨慎抉择" class="headerlink" title="3.坚守初心，谨慎抉择"></a>3.坚守初心，谨慎抉择</h3><p>具体的面经看其它大神们的分享肯定更有用（石头哥这里就有<a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI3OTUzMzcwNw==&amp;action=getalbum&amp;album_id=1551696282304495619&amp;scene=173&amp;from_msgid=2247489734&amp;from_itemidx=1&amp;count=3&amp;nolastread=1#wechat_redirect" target="_blank" rel="noopener">非常多</a>），我就不详细讲了。</p>
+<p>高强度的集中面试让我陆续收到了一些 offer，有的公司谈薪后很快逼签，我感到非常纠结：</p>
+<ul>
+<li>拒绝，怕自己就真的没有工作了</li>
+<li>接受，感觉人生就这么将就了</li>
+</ul>
+<p>在我 <strong>0 offer</strong> 的阶段，有一家中厂第一个向我抛出橄榄枝（给了<strong>总包45w</strong>左右，对当时的我觉得挺不错了）。</p>
+<p>但在 offer 有效期的最后半小时，我把鼠标停留在“接受”键上，突然意识到自己还是没法按下，我还是想再拼一下，我向 hr 表达了婉拒，暗暗告诉自己再坚持一下。</p>
+<p>再过了一段时间，我收到了 <strong>华为15级</strong> 的意向，但还不是最想去的，我打算用这个保底的时候，拿到了最终选择的团队（BAT核心组）的 offer，给自己的秋招终于画上了句号。</p>
+<p>这里具体说一下我在逼签和选择的时候的经验。</p>
+<p>通常我们可以通过这几个维度衡量对比每个offer：<code>平台、城市、薪酬、匹配度、氛围等</code>。</p>
+<p>每个人看重的方面肯定有所不同，对我个人来说，我认为平台和团队氛围的重要性远大于薪资。</p>
+<p>所以我先排除了规模较小的公司（某造车新势力、某芯片厂、某网安厂）和相对边缘的团队（鹅厂非wxg、ieg）；</p>
+<p>然后我根据个人发展情况选择了最想去的城市（北京上海能拿到户口、杭州生活成本相对低、深圳广州离家近，各有优劣势）。</p>
+<p>薪资方面，秋招末期还能招人的团队，通常诚意是比较足的，我在这个过程中也没有选择绕弯子和走套路，而是真挚的表达了能匹配其他 offer 就非常愿意去的态度，于是也幸运的收到了团队的正向反馈。</p>
+<h2 id="犯过的错误"><a href="#犯过的错误" class="headerlink" title="犯过的错误"></a>犯过的错误</h2><p>首先总结我在转正过程中犯过的错误：</p>
+<h3 id="专注实习没有合理安排时间准备秋招"><a href="#专注实习没有合理安排时间准备秋招" class="headerlink" title="专注实习没有合理安排时间准备秋招"></a>专注实习没有合理安排时间准备秋招</h3><p>大家都知道秋招面试一定会考察基础知识和算法题，这部分不靠平时持之以恒的积累是很难快速提高的，所以即使实习，也要同时保持对这些方面的准备；</p>
+<h3 id="忽视提前批的重要性"><a href="#忽视提前批的重要性" class="headerlink" title="忽视提前批的重要性"></a>忽视提前批的重要性</h3><p>事实证明提前批是机会最多、最容易上车的阶段，正式批逐渐神仙打架、hc减少。</p>
+<p>而补录和春招更是充满了未知性，不要对提前批的自己没信心，早准备早上战场是很有必要的，提前批甚至可以不影响后期的投递，一定要抓住提前批；</p>
+<h3 id="看重口头承诺而不以书面意向为准"><a href="#看重口头承诺而不以书面意向为准" class="headerlink" title="看重口头承诺而不以书面意向为准"></a>看重口头承诺而不以书面意向为准</h3><p>互联网的快节奏体现在方方面面，每个互联网公司都有可能突然出现政策性变化。</p>
+<p>我了解到我这样转正失败的也并不是个例，所以在<strong>收到正式的意向书之前，自己还是需要多做准备</strong>，以应对各种情况；</p>
+<h3 id="自视甚高只投大厂核心组"><a href="#自视甚高只投大厂核心组" class="headerlink" title="自视甚高只投大厂核心组"></a>自视甚高只投大厂核心组</h3><p>实际上中小厂面试难度小、还能锻炼面试能力，同时可以提高自信心，大厂的竞争一定是最激烈的，在自己的实力和经验有不足的时期，投一些中小厂来“练级”非常有帮助；</p>
+<h3 id="千万不要all-in"><a href="#千万不要all-in" class="headerlink" title="千万不要all in"></a>千万不要all in</h3><p>其实我的经历整个都是在讲 all in一家公司的后果，除了实习转正，all in 还可能导致选择被动、薪酬压价。</p>
+<p>有时候适当的给自己增加一些手上的筹码是很有必要而且很正常的，如果再来一次，我一定会愿意当一个 <strong> Offer 收割机</strong> 。</p>
+<h2 id="经验感想"><a href="#经验感想" class="headerlink" title="经验感想"></a>经验感想</h2><p>其次除了上一部分提到的措施外，我还想分享这些经验：</p>
+<h3 id="寻找合适的岗位"><a href="#寻找合适的岗位" class="headerlink" title="寻找合适的岗位"></a>寻找合适的岗位</h3><p>海投也是有技巧的，不分岗位和匹配度的投递。</p>
+<p>一个是容易浪费自己和面试官的时间，二是对面评没有帮助，挂了后可能导致再也不被捞出。</p>
+<p>可以在投递前多看看部门介绍或者岗位 JD，认识到自己感兴趣的点和今后发展的职业规划，一个合适的岗位可以帮助你更好的展现你的优势，和其他面试者拉开差距。</p>
+<h3 id="没有完全准备好的时候"><a href="#没有完全准备好的时候" class="headerlink" title="没有完全准备好的时候"></a>没有完全准备好的时候</h3><p>面试是一个在实战中提升能力的过程，很多时候就是面一个状态，把自己的优点在最短的时间内展现给面试官，就已经成功了一大半。</p>
+<p>不要用还没准备好、还有多少知识点没看完当做托词来逃避，先勇敢自信地递出简历吧。</p>
+<h3 id="抱团行动，众人拾柴火焰高"><a href="#抱团行动，众人拾柴火焰高" class="headerlink" title="抱团行动，众人拾柴火焰高"></a>抱团行动，众人拾柴火焰高</h3><p>在我了解到有其它同学和我的情况一样后，我们积极的互相交流，这能帮助彼此缓解焦虑感。（大家可添加【codershitou】进入大厂内推群和技术交流群）。</p>
+<p>同时秋招其实是信息战，找一个或者几个互相帮助的小伙伴，及时分享有效信息能有事半功倍的效果；</p>
+<h2 id="复习资料"><a href="#复习资料" class="headerlink" title="复习资料"></a>复习资料</h2><p>其实码农面试整体来讲都是那些套路，这里有一份 <a href="https://mp.weixin.qq.com/s/OGJhxM7FdeoIkAL2-uUI_Q" target="_blank" rel="noopener">Google 工程师面试指南.pdf</a>，说了大致的方向，感兴趣的同学可以看看。</p>
+<p>石头哥也让我分享一些复习相关的学习资料，于是我补充了一些我认为的重点。</p>
+<p>因为我投的是后端开发岗，所以复习重点主要放在了后台/服务器开发相关的知识；</p>
+<h3 id="八股"><a href="#八股" class="headerlink" title="八股"></a>八股</h3><p>复习时间紧张的话，我推荐阿秀的求职笔记（interviewguide）和 CS-Notes。</p>
+<p>阿秀的求职笔记对操作系统，计算机网络和数据库的内容，总结的很详细。一定要理解着去看，不能死记硬背。</p>
+<p>CS-Notes对Java基础，容器，JVM和并发的内容总结的比较详细。建议结合源码去学习，一定要Coding。</p>
+<p>八股文，石头哥还推荐这几份材料：</p>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/DIVTVtChtd287ezWfriBYA" target="_blank" rel="noopener">码农必备 计算机基础知识总结.pdf 和 操作系统总结.pdf</a></li>
+<li><a href="https://mp.weixin.qq.com/s/rqTnQH_TTmgmbPm3qV-62Q" target="_blank" rel="noopener">突击大厂网络面试题，「图解网络.pdf」白嫖！</a></li>
+</ul>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><p>刷算法题离不开 Leetcode了，可以看看这个：<a href="https://mp.weixin.qq.com/s/7T9R9kFXke986vSoPNzC8g" target="_blank" rel="noopener">BAT大佬写的 1300 页 Leetcode刷题笔记，必须收藏！</a></p>
+<ul>
+<li>前期入门：推荐左程云的视频，有初级班、中级班和高级班。</li>
+<li>实战：人手一份的剑指 offer 和 LeetCode 热题100。</li>
+<li>面试前：CodeTop（一个微软大哥做的汇总主流公司面经高频算法题的网站）</li>
+</ul>
+<h3 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h3><p>计算机网络、操作系统、数据库和算法的书，别的大神已经推荐很多了。我就不做赘述了。</p>
+<p>这里推荐一份 <a href="https://mp.weixin.qq.com/s/iRcyW1dEeCxleTfOTyr2Lw" target="_blank" rel="noopener">清华计算机系王牌课程——《数据结构》课件及源码包下载</a>，可结合学堂在线视频同时观看学习。</p>
+<p>现在网络资源这么发达，根据经典书单慢慢磨即可，比如这里有一些资源：<a href="https://gitee.com/programmer-xiaoshi/cs-books" target="_blank" rel="noopener">https://gitee.com/programmer-xiaoshi/cs-books</a></p>
+<p>我推荐一本《大规模分布式存储系统—原理解析与架构实践》（上文链接中已收录）。</p>
+<p>这本书系统讲解构建大规模存储系统的核心技术和原理，详细分析了Google、Amazon、Microsoft 和阿里大规模分布式存储系统的原理，深入分析了OceanBase的实现细节。</p>
+<p>看这本书可以有助于将计算机基础知识、一些经典的数据结构和业务应用结合起来，形成自己的理解。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我的秋招之路有坎坷、有挫折，最终柳暗花明，或许不能给后面的同学提供什么干货。</p>
+<p>但希望我的经历能够给不幸遇到同样境况的同学一些鼓励、给今后进行秋招的同学一些警示，祝福大家都能拿到自己满意的 Offer！</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>我的读者中应该也有不少朋友招聘应届生，在这里也希望大佬们，如果遇到有 HC 调整等情况，尽量都提前跟候选人通知下。</p>
+<p>咱们毕竟也都是从校招走过来的，将心比心，毕竟这关系着候选人就业问题，某种程度上讲也很有可能改变了他的人生轨迹。</p>
+<p>另一方面，作为候选人，虽然没必要个个都成为 Offer 收割机，但至少我们也应该准备个“备胎”。石头哥也鼓励大家校招时候也尽量至少拿他个三五个 Offer，毕竟给自己多一个选择的机会。</p>
+<p>其他校招经验分享：</p>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/dtoN36JAKX4Vq_VelkExpQ" target="_blank" rel="noopener">2022 秋招 | 拿10+大厂SSP Offer 是一种怎样的体验？
+</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247492598&amp;idx=1&amp;sn=5904b3800a2091ad4215aaf156d59133&amp;chksm=eb44e212dc336b04c37320664cb3bd4c036b1e2329810b91d393e100b9a34f495194d05c15f7&amp;token=402593151&amp;lang=zh_CN#rd" target="_blank" rel="noopener">谁说本科妹纸不能拿 BAT SP Offer？</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247491218&amp;idx=1&amp;sn=e20fe76a2ba3e4f9986c7a1fe9d93995&amp;chksm=eb471f76dc309660a3599c9ea11043a807ec48a81be76565a516fe989e63e8b9a6d5dce25bc6&amp;token=623576504&amp;lang=zh_CN&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">6个大厂Offer，牛逼！</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247489734&amp;idx=1&amp;sn=f9172000b917ea4e81f4e8b3b2afa1e3&amp;chksm=eb471922dc309034064a0420eeb9c21fca533f387a5a9a5bfbd0f25313d134753e490774bb9c&amp;token=1659374559&amp;lang=zh_CN&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">非科班学弟如何转行斩获 ATM 大厂的 Offer ？</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247490412&amp;idx=1&amp;sn=2512cb07a969ff50222c363dd7a6874a&amp;chksm=eb471a88dc30939ee95067ad13447e8b9e579f719d8a89deb95ff56ae81b0447ae2c86efcbaf&amp;token=1659374559&amp;lang=zh_CN&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">羡慕，又一清华学弟斩获 6 个大厂 SSP Offer | 面经分享</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247491116&amp;idx=1&amp;sn=676c6dab8dbb095a31e6fb45cb31a828&amp;chksm=eb471fc8dc3096dea5f1a8600fdc9163d3ce228e640ddb93fad310d44e739f9d719d0722efd7&amp;token=1903173876&amp;lang=zh_CN&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">一个读者大佬精心总结的阿里、腾讯、宇宙条大厂 Offer 面经和硬核面试攻略</a></li>
+</ul>
+<p>上面内容包含在前面整理的本号精华文章，（详见 <a href="https://mp.weixin.qq.com/s/MzNXdriVu-X1RwQ8GSc6dg" target="_blank" rel="noopener">100篇原创，聊几句心里话</a>），可在后台回复“历史文章”下载。</p>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点击这里查看我的逆袭之路</a>），目前在BAT某厂打工，是前大疆（无人机）技术主管。</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MyLife/" rel="tag"># MyLife</a>
+          
+            <a href="/tags/总结/" rel="tag"># 总结</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/summary-of-2021.html" rel="next" title="几组数据来总结我的 2021！">
+                <i class="fa fa-chevron-left"></i> 几组数据来总结我的 2021！
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/experience-with-work-at-amazon-I.html" rel="prev" title="在亚麻工作是一种怎样的体验（上）">
+                在亚麻工作是一种怎样的体验（上） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人情况"><span class="nav-number">2.</span> <span class="nav-text">个人情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整体复盘——我是怎么错过秋招首班车的"><span class="nav-number">3.</span> <span class="nav-text">整体复盘——我是怎么错过秋招首班车的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#暑期实习"><span class="nav-number">3.1.</span> <span class="nav-text">暑期实习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实习结束获口头意向"><span class="nav-number">3.2.</span> <span class="nav-text">实习结束获口头意向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#成为“备胎”了"><span class="nav-number">3.3.</span> <span class="nav-text">成为“备胎”了</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坚持自救-——-抓住一切上车机会"><span class="nav-number">4.</span> <span class="nav-text">坚持自救 —— 抓住一切上车机会</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-调整心态，摆正定位"><span class="nav-number">4.1.</span> <span class="nav-text">1.调整心态，摆正定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-积累经验，绝不放弃"><span class="nav-number">4.2.</span> <span class="nav-text">2.积累经验，绝不放弃</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-坚守初心，谨慎抉择"><span class="nav-number">4.3.</span> <span class="nav-text">3.坚守初心，谨慎抉择</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#犯过的错误"><span class="nav-number">5.</span> <span class="nav-text">犯过的错误</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#专注实习没有合理安排时间准备秋招"><span class="nav-number">5.1.</span> <span class="nav-text">专注实习没有合理安排时间准备秋招</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#忽视提前批的重要性"><span class="nav-number">5.2.</span> <span class="nav-text">忽视提前批的重要性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#看重口头承诺而不以书面意向为准"><span class="nav-number">5.3.</span> <span class="nav-text">看重口头承诺而不以书面意向为准</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自视甚高只投大厂核心组"><span class="nav-number">5.4.</span> <span class="nav-text">自视甚高只投大厂核心组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#千万不要all-in"><span class="nav-number">5.5.</span> <span class="nav-text">千万不要all in</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经验感想"><span class="nav-number">6.</span> <span class="nav-text">经验感想</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#寻找合适的岗位"><span class="nav-number">6.1.</span> <span class="nav-text">寻找合适的岗位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#没有完全准备好的时候"><span class="nav-number">6.2.</span> <span class="nav-text">没有完全准备好的时候</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抱团行动，众人拾柴火焰高"><span class="nav-number">6.3.</span> <span class="nav-text">抱团行动，众人拾柴火焰高</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复习资料"><span class="nav-number">7.</span> <span class="nav-text">复习资料</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#八股"><span class="nav-number">7.1.</span> <span class="nav-text">八股</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法"><span class="nav-number">7.2.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#书籍"><span class="nav-number">7.3.</span> <span class="nav-text">书籍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">9.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/experience-of-campus-recruitment-of-2022-II.html';
+
+      var disqus_title = "崩溃了，秋招都快结束了，实习的公司却告诉我没 HC ？！";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

@@ -1,0 +1,957 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="设计模式,Java,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于本文的说明：本文是本来从网上收集进过自己细心整理而得。参考文章来自：http://stackoverflow.com/questions/1673841/examples-of-gof-design-patterns，本人不保证内容的正确性。仅供参考，因用word排版，因此贴到Wordpress格式比较乱，时间关系，不作调整，还请谅解。 Creational patterns 1  Abstr">
+<meta name="keywords" content="设计模式,Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JDK里的设计模式">
+<meta property="og:url" content="https://www.tanglei.name/blog/designpatterninjdk.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于本文的说明：本文是本来从网上收集进过自己细心整理而得。参考文章来自：http://stackoverflow.com/questions/1673841/examples-of-gof-design-patterns，本人不保证内容的正确性。仅供参考，因用word排版，因此贴到Wordpress格式比较乱，时间关系，不作调整，还请谅解。 Creational patterns 1  Abstr">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.037Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JDK里的设计模式">
+<meta name="twitter:description" content="关于本文的说明：本文是本来从网上收集进过自己细心整理而得。参考文章来自：http://stackoverflow.com/questions/1673841/examples-of-gof-design-patterns，本人不保证内容的正确性。仅供参考，因用word排版，因此贴到Wordpress格式比较乱，时间关系，不作调整，还请谅解。 Creational patterns 1  Abstr">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/designpatterninjdk.html">
+
+
+
+
+
+  <title> JDK里的设计模式 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/designpatterninjdk.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                JDK里的设计模式
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2010-12-23T08:51:38+00:00">
+                2010-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">课程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/designpatterninjdk.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/designpatterninjdk.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>关于本文的说明：本文是本来从网上收集进过自己细心<strong>整理</strong>而得。参考文章来自：<a href="http://stackoverflow.com/questions/1673841/examples-of-gof-design-patterns" target="_blank" rel="noopener">http://stackoverflow.com/questions/1673841/examples-of-gof-design-patterns</a>，本人不保证内容的正确性。仅供参考，因用word排版，因此贴到Wordpress格式比较乱，时间关系，不作调整，还请谅解。</p>
+<p>Creational patterns 1</p>
+<ol>
+<li><p>Abstract factory 1</p>
+</li>
+<li><p>Builder 2</p>
+</li>
+<li><p>Factory method 2</p>
+</li>
+<li><p>Prototype 2</p>
+</li>
+<li><p>Singleton 3</p>
+</li>
+</ol>
+<p>Structural patterns 3</p>
+<ol start="6">
+<li><p>Adapter 3</p>
+</li>
+<li><p>Bridge 3</p>
+</li>
+<li><p>Composite 3</p>
+</li>
+<li><p>Decorator 4</p>
+</li>
+<li><p>Façade 4</p>
+</li>
+<li><p>Flyweight 4</p>
+</li>
+<li><p>Proxy 5</p>
+</li>
+</ol>
+<p>Behavioral patterns 5</p>
+<ol start="13">
+<li><p>Chain of responsibility 5</p>
+</li>
+<li><p>Command 5</p>
+</li>
+<li><p>Interpreter 6</p>
+</li>
+<li><p>Iterator 6</p>
+</li>
+<li><p>Mediator 6</p>
+</li>
+<li><p>Memento 6</p>
+</li>
+<li><p>Observer 7</p>
+</li>
+<li><p>State 7</p>
+</li>
+<li><p>Strategy 7</p>
+</li>
+<li><p>Template method 8</p>
+</li>
+<li><p>Visitor 8</p>
+</li>
+</ol>
+<p>————————————————————————————————————————————————————————</p>
+<p><strong>Creational patterns创建性模式</strong></p>
+<p><strong>1. Abstract factory创建一组有关联的对象，在JDK中比较常见，还有很多的框架也用了这个模式，例如spring等。</strong></p>
+<p>——recognizeable by creational methods returning an abstract/interface type</p>
+<p>**</p>
+<p>**  java.util.Calendar#getInstance()</p>
+<p> java.util.Arrays#asList()</p>
+<p> java.util.ResourceBundle#getBundle()</p>
+<p> java.net.URL#openConnection()</p>
+<p> java.sql.DriverManager#getConnection()</p>
+<p> java.sql.Connection#createStatement()</p>
+<p> java.sql.Statement#executeQuery()</p>
+<p> java.text.NumberFormat#getInstance()</p>
+<p> java.lang.management.ManagementFactory (all getXXX() methods)</p>
+<p> java.nio.charset.Charset#forName()</p>
+<p> javax.xml.parsers.DocumentBuilderFactory#newInstance()</p>
+<p> javax.xml.transform.TransformerFactory#newInstance()</p>
+<p> javax.xml.xpath.XPathFactory#newInstance()</p>
+<p><strong>2. Builder用来简化一个复杂的对象的创建。</strong></p>
+<p>——(recognizeable by creational methods returning the instance itself)</p>
+<p> java.lang.StringBuilder#append() (unsynchronized)</p>
+<p> java.lang.StringBuffer#append() (synchronized)</p>
+<p> java.nio.ByteBuffer#put() (also on CharBuffer, ShortBuffer, IntBuffer, LongBuffer, FloatBuffer and DoubleBuffer)</p>
+<p> javax.swing.GroupLayout.Group#addComponent()</p>
+<p> All implementations of java.lang.Appendable</p>
+<p><strong>3. Factory method按照需求返回一个类型的实例</strong></p>
+<p>—— (recognizeable by creational methods returning a concrete type)</p>
+<p> java.lang.Object#toString() (overrideable in all subclasses)</p>
+<p> java.lang.Class#newInstance()</p>
+<p> java.lang.Integer#valueOf(String) (also on Boolean, Byte, Character, Short, Long, Float and Double)</p>
+<p> java.lang.Class#forName()</p>
+<p> java.lang.reflect.Array#newInstance()</p>
+<p> java.lang.reflect.Constructor#newInstance()</p>
+<p><strong>4. Prototype使用自己的实例创建另一个实例</strong></p>
+<p>——recognizeable by creational methods returning a different instance of itself with the same properties)</p>
+<p> java.lang.Object#clone() (the class has to implement java.lang.Cloneable)</p>
+<p><strong>5. Singleton单例就不说了</strong></p>
+<p>——(recognizeable by creational methods returning the same instance (usually of itself) everytime)</p>
+<p> java.lang.Runtime#getRuntime()</p>
+<p> java.awt.Desktop#getDesktop()</p>
+<p>————————————————————————————————————————————————————————</p>
+<p><strong>Structural patterns结构性模式</strong></p>
+<p>**</p>
+<ol start="6">
+<li>Adapter把一个接口或者类变成另一个**</li>
+</ol>
+<p>——(recognizeable by creational methods taking an instance of different abstract/interface type and returning an implementation of own/another abstract/interface type which decorates/overrides the given instance)</p>
+<p> java.io.InputStreamReader(InputStream) (returns a Reader)</p>
+<p> java.io.OutputStreamWriter(OutputStream) (returns a Writer)</p>
+<p> javax.xml.bind.annotation.adapters.XmlAdapter#marshal() and #unmarshal()</p>
+<p><strong>7. Bridge抽象和实现解耦，使接口和实现独立出来</strong></p>
+<p>——(recognizeable by creational methods taking an instance of different abstract/interface type and returning an implementation of own abstract/interface type which delegates/uses the given instance)</p>
+<p> A fictive example would be new LinkedHashMap(LinkedHashSet, List) which returns an unmodifiable linked map which doesn&#8217;t clone the items, but uses them. The java.util.Collections#newSetFromMap() and singletonXXX() methods however comes close.</p>
+<p><strong>8. Composite把单独的对象和组合的对象混合使用</strong></p>
+<p>——( recognizeable by behavioral methods taking an instance of same abstract/interface type)</p>
+<p> java.util.Map#putAll(Map)</p>
+<p> java.util.List#addAll(Collection)</p>
+<p> java.util.Set#addAll(Collection)</p>
+<p> java.nio.ByteBuffer#put(ByteBuffer) (also on CharBuffer, ShortBuffer, IntBuffer, LongBuffer, FloatBuffer and DoubleBuffer)</p>
+<p> java.awt.Container#add(Component) (practically all over Swing thus)</p>
+<p><strong>9. Decorator为一个对象动态的创建不同的动作而不需要因为创建不同的动作而产生很多集成类</strong></p>
+<p>—— (recognizeable by creational methods taking an instance of same abstract/interface type) .All subclasses of java.io.InputStream, OutputStream, Reader and Writer have a constructor taking an instance of same type.</p>
+<p> Almost all implementations of java.util.List, Set and Map have a constructor taking an instance of same type.</p>
+<p> java.util.Collections, the checkedXXX(), synchronizedXXX() and unmodifiableXXX() methods.</p>
+<p> javax.servlet.http.HttpServletRequestWrapper and HttpServletResponseWrapper</p>
+<p><strong>10. Façade用一个简单的接口去调用其他的接口</strong></p>
+<p>—— (recognizeable by behavioral methods which internally uses instances of different independent abstract/interface types)</p>
+<p> javax.faces.webapp.FacesServlet, it internally uses under each the abstract/interface types ServletContext, LifeCycle, ViewHandler,</p>
+<p> NavigationHandler and many more without that the enduser has to worry about it (which are however overrideable by injection).</p>
+<p><strong>11. Flyweight有效率的存储大量的小对象</strong></p>
+<p>—— (recognizeable by creational methods returning a cached instance, a bit the &#8220;multiton&#8221; idea)</p>
+<p> java.lang.Integer#valueOf(int) (also on Boolean, Byte, Character, Short, Long, Float and Double)</p>
+<p> <strong>12. Proxy用一个简单的对象代替复杂的对象，或者代替其他特殊动作的对象</strong></p>
+<p>—— (recognizeable by creational methods which returns an implementation of given abstract/interface type which in turn delegates/uses a different implementation of given abstract/interface type)</p>
+<p> java.lang.reflect.Proxy</p>
+<p> java.rmi.*, the whole API actually.</p>
+<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p> <strong>Behavioral patterns行为型模式</strong></p>
+<p><strong>13. Chain of responsibility把一个对象在链接中传值一直到被处理，刘伟常举的例子就是请假的例子。</strong></p>
+<p>—— (recognizeable by behavioral methods which (indirectly) invokes the same method in another implementation of same abstract/interface type in a queue)</p>
+<p> java.util.logging.Logger#log()</p>
+<p> javax.servlet.Filter#doFilter()</p>
+<p><strong>14. Command把一个或者一组命令封装在一个对象当中</strong></p>
+<p>——(recognizeable by behavioral methods in an abstract/interface type which invokes a method in an implementation of a different abstract/interface type which has been encapsulated by the command implementation during its creation)</p>
+<p> All implementations of java.lang.Runnable</p>
+<p> All implementations of javax.swing.Action</p>
+<p><strong>15. Interpreter语法解释器</strong></p>
+<p>——( (recognizeable by behavioral methods returning a structurally different instance/type of the given instance/type; note that parsing/formatting is not part of the pattern, determining the pattern and how to apply it is)</p>
+<p> java.util.Pattern</p>
+<p> java.text.Normalizer</p>
+<p> All subclasses of java.text.Format</p>
+<p> All subclasses of javax.el.ELResolver</p>
+<p><strong>16. Iterator提供一个一致的方法来顺序遍历一个容器的所有元素</strong></p>
+<p>——(recognizeable by behavioral methods sequentially returning instances of a different type from a queue)</p>
+<p> All implementations of java.util.Iterator (thus under each also java.util.Scanner!).</p>
+<p> All implementations of java.util.Enumeration</p>
+<p><strong>17. Mediator减少对象间的直接依赖，用一个中介来管理消息的通讯</strong></p>
+<p>—— (recognizeable by behavioral methods taking an instance of different abstract/interface type (usually using the command pattern) which delegates/uses the given instance)</p>
+<p> java.util.Timer (all scheduleXXX() methods)</p>
+<p> java.util.concurrent.Executor#execute()</p>
+<p> java.util.concurrent.ExecutorService (the invokeXXX() and submit() methods)</p>
+<p> java.util.concurrent.ScheduledExecutorService (all scheduleXXX() methods)</p>
+<p> java.lang.reflect.Method#invoke()</p>
+<p><strong>18. Memento给一个对象做一个快照</strong></p>
+<p>——(recognizeable by behavioral methods which internally changes the state of the whole instance)</p>
+<p> java.util.Date (the setter methods do that, Date is internally represented by a long value)</p>
+<p> All implementations of java.io.Serializable</p>
+<p> All implementations of javax.faces.component.StateHolder</p>
+<p><strong>19. Observer让一个对象向所有侦听自己的所有对象广播自己的消息或者事件。</strong></p>
+<p>—— (or Publish/Subscribe) (recognizeable by behavioral methods which invokes a method on an instance of another abstract/interface type, depending on own state)</p>
+<p> java.util.Observer/java.util.Observable (rarely used in real world though)</p>
+<p> All implementations of java.util.EventListener (practically all over Swing thus)</p>
+<p> javax.servlet.http.HttpSessionBindingListener</p>
+<p> javax.servlet.http.HttpSessionAttributeListener</p>
+<p> javax.faces.event.PhaseListener</p>
+<p><strong>20. State根据自身的状态改变对象的行为</strong></p>
+<ol>
+<li>——(recognizeable by behavioral methods which changes its behaviour depending on the instance&#8217;s state which can be controlled externally)</li>
+</ol>
+<p> All implementations of java.util.Iterator</p>
+<p> javax.faces.lifecycle.LifeCycle#execute() (controlled by FacesServlet, the behaviour is dependent on current phase (state) of JSF lifecycle)</p>
+<p><strong>21. Strategy在一个对象中封装一组算法，运行时可以灵活运用</strong></p>
+<p>——(recognizeable by behavioral methods in an abstract/interface type which invokes a method in an implementation of a different abstract/interface type which has been passed-in as method argument into the strategy implementation)</p>
+<p> java.util.Comparator#compare(), executed by under each Collections#sort().</p>
+<p> javax.servlet.http.HttpServlet, the service() and all doXXX() methods take HttpServletRequest and HttpServletResponse and the implementor</p>
+<p> has to process them (and not to get hold of them as instance variables!).</p>
+<p> javax.servlet.Filter#doFilter()</p>
+<p><strong>22. Template method让子类重载部分而不需要全部重写。</strong></p>
+<p>—— (recognizeable by behavioral methods which already have a &#8220;default&#8221; behaviour definied by an abstract type)</p>
+<p> All non-abstract methods of java.io.InputStream, java.io.OutputStream, java.io.Reader and java.io.Writer.</p>
+<p> All non-abstract methods of java.util.AbstractList, java.util.AbstractSet and java.util.AbstractMap.</p>
+<p> javax.servlet.http.HttpServlet, all the doXXX() methods by default sends a HTTP 405 &#8220;Method Not Allowed&#8221; error to the response. You&#8217;re free to implement none or any of them.</p>
+<p><strong>23. Visitor不改变对象本身的情况下改变作用于该对象的新操作。</strong></p>
+<p>——(recognizeable by two different abstract/interface types which has methods definied which takes each the other abstract/interface type; the one actually calls the method of the other and the other executes the desired strategy on it)</p>
+<p> javax.lang.model.element.AnnotationValue and javax.lang.model.element.AnnotationValueVisitor</p>
+<p> javax.lang.model.element.Element and javax.lang.model.element.ElementVisitor</p>
+<p> javax.lang.model.type.TypeMirror and javax.lang.model.type.TypeVisitor</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/8-useful-wordpress-sql-hacks.html" rel="next" title="8 Useful WordPress SQL Hacks">
+                <i class="fa fa-chevron-left"></i> 8 Useful WordPress SQL Hacks
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/goodse10.html" rel="prev" title="明星软件工程师的10种特质">
+                明星软件工程师的10种特质 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/designpatterninjdk.html';
+
+      var disqus_title = "JDK里的设计模式";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

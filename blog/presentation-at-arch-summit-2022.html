@@ -1,0 +1,1011 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="MyLife,总结,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于程序员石头(ID: tangleithu)：从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT大厂码农，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景大家好，我是石头哥。  没错，封面图是我之前参加 InfoQ 主办的全球架构师峰会（ArchSummit 2022）的一张照片，脸上太">
+<meta name="keywords" content="MyLife,总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="去当讲师了">
+<meta property="og:url" content="https://www.tanglei.name/blog/presentation-at-arch-summit-2022.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于程序员石头(ID: tangleithu)：从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT大厂码农，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景大家好，我是石头哥。  没错，封面图是我之前参加 InfoQ 主办的全球架构师峰会（ArchSummit 2022）的一张照片，脸上太">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/presentation-at-arch-summit-2022/08959d0e-7004-44c1-b6c9-79dc16645e9e.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/presentation-at-arch-summit-2022/8fd6f155-9e8d-4919-8952-813f7b66b348.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/presentation-at-arch-summit-2022/30c0fb94-0226-451e-93a1-3a8d8b1ef84d.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/presentation-at-arch-summit-2022/640.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/presentation-at-arch-summit-2022/it-infra.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/presentation-at-arch-summit-2022/biz-complex.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/presentation-at-arch-summit-2022/2180b1bc-ddbe-4109-be91-9c575f018776.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/presentation-at-arch-summit-2022/83b65300-768b-4782-b51d-71a9497f481e.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/presentation-at-arch-summit-2022/30ea8721-1756-4c34-a233-fbb5d1ba111f.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/presentation-at-arch-summit-2022/6ee55288-99a8-4e82-a321-a24a39f7af6a.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/presentation-at-arch-summit-2022/68d5bec6-4ed5-4abb-ac02-b6af8d1897b9.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/presentation-at-arch-summit-2022/14a82e40-b574-408c-b192-e19de138e4ac.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/presentation-at-arch-summit-2022/918de4d6-8a75-49cc-a761-f406cd643f60.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/presentation-at-arch-summit-2022/76bde097-ad67-4908-858e-d5938b47ccaf.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/presentation-at-arch-summit-2022/ce403a21-c1a4-4b88-9e8c-64c96172c33a.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/presentation-at-arch-summit-2022/295c9568-7a02-4fda-8416-69b58852b87e.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/presentation-at-arch-summit-2022/97029edc-3cd7-4f06-80ad-1eac41e12ccb.png">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.197Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="去当讲师了">
+<meta name="twitter:description" content="关于程序员石头(ID: tangleithu)：从十八县贫困农村一路逆袭上清华（点这里查看我的逆袭之路），BAT大厂码农，是前大疆（无人机）技术主管。 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。   背景大家好，我是石头哥。  没错，封面图是我之前参加 InfoQ 主办的全球架构师峰会（ArchSummit 2022）的一张照片，脸上太">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/presentation-at-arch-summit-2022/08959d0e-7004-44c1-b6c9-79dc16645e9e.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/presentation-at-arch-summit-2022.html">
+
+
+
+
+
+  <title> 去当讲师了 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/presentation-at-arch-summit-2022.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                去当讲师了
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-12-04T00:00:00+00:00">
+                2022-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MyLife/" itemprop="url" rel="index">
+                    <span itemprop="name">MyLife</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/presentation-at-arch-summit-2022.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/presentation-at-arch-summit-2022.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于程序员石头(ID: tangleithu)：从十八县贫困农村一路逆袭上<strong>清华</strong>（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点这里查看我的逆袭之路</a>），BAT大厂码农，是前大疆（无人机）技术主管。</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s/nB9Q6emir_gAIF7gXq9LLg" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<p><img src="/resources/presentation-at-arch-summit-2022/08959d0e-7004-44c1-b6c9-79dc16645e9e.png" alt></p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>大家好，我是石头哥。 </p>
+<p>没错，封面图是我之前参加 InfoQ 主办的全球架构师峰会（ArchSummit 2022）的一张照片，脸上太多痘痘就先打码一下了图片。</p>
+<p>今天的这篇文章目的有两个：</p>
+<ol>
+<li>介绍我以及所在的团队在阿里云究竟是干啥的？哈哈，这还是我首次对外提及呢，这次就借这个机会分享一下，友情提示，大家对外分享时一定要<strong>注意合规</strong>哈。（本次分享内容不存在相关敏感数据，且走了<strong>数据对外披露</strong>流程）</li>
+<li>对我们做的事情感兴趣的，或者对云计算感兴趣的，欢迎私聊我（vx:tl3shi，最近部门（<a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247495138&amp;idx=1&amp;sn=c692cbd20f3ac9ae4f23cbf1914ae0f7&amp;chksm=eb44ec06dc33651085d5cd7bfa88e71f76e130e2640290b786f6bc0a9bd0b0f30c5f5b2ff797&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">阿里云-神龙计算平台</a>）释放了一些 HC，现在这行情，<strong>实属机会难得</strong>，说不定啥时候就关闭了，职位方向：<strong>基础研发/云原生/智能运维</strong>，详细 JD 见文末）</li>
+</ol>
+<p>此次分享的题目为 —— 《阿里云超大规模弹性计算节点自动化运维稳定性实践》。</p>
+<p><img src="/resources/presentation-at-arch-summit-2022/8fd6f155-9e8d-4919-8952-813f7b66b348.png" alt></p>
+<p>分享的内容提纲，大致分为 3 个部分：</p>
+<ol>
+<li>首先大概介绍下相关问题的背景以及要解决的问题，业务难点是什么；</li>
+<li>然后大致介绍下同类型的监控诊断产品方案和发展趋势；</li>
+<li>最后重点阐述下我们的解决方案，即云服务计算节点的自动化运维系统的落地实践和演进过程，把我们踩过的一些坑和一些经验分享给大家，希望给大家在建设类似系统时带来一些启发和参考。</li>
+</ol>
+<p>全文近 8k 字，预计阅读 10 min+，具体内容推荐先收藏，有时间再细看，<strong>不过文末的招聘 JD 不妨现在就看看</strong>？😄</p>
+<p>下面将逐步阐述，PPT 内容大家可以到 InfoQ 官网下载，或者直接在公众号程序员石头，后台回复“自动化运维” 即可获取。再次请求大家，周围有看工作机会的朋友，记得将文末的招聘信息分享给他。</p>
+<p><img src="/resources/presentation-at-arch-summit-2022/30c0fb94-0226-451e-93a1-3a8d8b1ef84d.png" alt></p>
+<h2 id="概述-amp-问题背景"><a href="#概述-amp-问题背景" class="headerlink" title="概述&amp;问题背景"></a>概述&amp;问题背景</h2><h3 id="客户用云的诉求"><a href="#客户用云的诉求" class="headerlink" title="客户用云的诉求"></a>客户用云的诉求</h3><p><img src="/resources/presentation-at-arch-summit-2022/640.png" alt="图片"></p>
+<p>对大部分客户而言，使用云计算服务多是因为 IT 系统及基础设施维护成本高，且资源利用率低、IT 资源管理运维十分繁琐和复杂等等原因。</p>
+<p>有了云之后，缺啥资源一键购买即可。</p>
+<p>比如需要计算资源，买 VM 也就是虚拟机即可。但用 VM 有个问题就是 VM 是 IaaS 层的产品，这玩意就不具备单 VM 的灾备能力的；</p>
+<p>为啥呢？因为从 VM 背后的物理机来说，服务器的软/硬件这种单机的异常不可能完全避免（就像自己的笔记本电脑始终都有使用期限的）。 </p>
+<p>因此在使用云产品时候会有如下的诉求，从需求层次上来讲：</p>
+<ul>
+<li>当然最基本的还是得稳定可靠，即你要提供相应的 SLA，这样客户用起来才会有安全感；</li>
+<li>然后出现问题能够可感知，有完整的监控能力，异常了就要及时告警，最好还能准确识别出根因；</li>
+<li>其次，要有相应的控制能力，即提供一些原子的控制能力，最好能有相应SDK方便自动化；</li>
+<li>最终趋于“无人值守”这样的终极目标，出问题不用人工参与，能自动自愈，最好还能预测出风险进行提前规避。</li>
+</ul>
+<p>这样自下而上的自动化运维就能提升幸福感。</p>
+<h3 id="业务难点"><a href="#业务难点" class="headerlink" title="业务难点"></a>业务难点</h3><p>理想很美好，现实却很残酷。这样的业务场景，其难点非常大，主要是因为：</p>
+<ol>
+<li>基础设施规模大</li>
+<li>产品形态多、业务领域广</li>
+<li>知识面广&amp;技术难度深</li>
+</ol>
+<p>下面我们分别来看。 </p>
+<h4 id="基础设施规模大"><a href="#基础设施规模大" class="headerlink" title="基础设施规模大"></a>基础设施规模大</h4><p><img src="/resources/presentation-at-arch-summit-2022/it-infra.png" alt="图片"><br>跟其他业务场景一样，任何问题数据量大了，规模上来了，其解决方案就不是那么的容易。</p>
+<ul>
+<li><p>阿里云的基础设施规模非常庞大：在全球有 28 个数据中心，200多个可用区，3000多个网络和CDN节点。百万+的物理机设备，这其中又划分了5000+集群，每个集群的物理机分布有大有小，从几十到几千不等，共亿级别cpu、磁盘等部件。</p>
+</li>
+<li><p>云计算基础设施规模决定了其运维复杂度和难度，没有现成的产品可以借鉴和参考，只能靠自己去摸索。</p>
+</li>
+</ul>
+<h4 id="产品形态多、业务领域广"><a href="#产品形态多、业务领域广" class="headerlink" title="产品形态多、业务领域广"></a>产品形态多、业务领域广</h4><p>阿里云除了基础设施规模大之外，还有的特点就是它的产品形态多，业务领域广。</p>
+<p><img src="/resources/presentation-at-arch-summit-2022/biz-complex.png" alt="图片"></p>
+<p>从售卖形态上来看，可以分为预付费实力和按量付费的，然后有竞价的，停机不收费，专用宿主机等等。不同的售卖形式，它的运维手段肯定不一样。</p>
+<p>然后客户的业务领域不一样，我们关注的点也不一样。 </p>
+<p>比如有用于通用计算的，高性能计算的，还有各种大内存的实例，内存出现ce的情况就比较多，然后因为内存很大，有的达数T级别，在这种情况下，热迁移的难度就比较高，很容易失败。 </p>
+<p>还有各种异构计算的场景，主机上插入了一些 GPU、FPGA卡等硬件，它就需要多一些额外的硬件检测和监控。</p>
+<p>像这种 EBM 的<a href="https://mp.weixin.qq.com/s/1GkF5j8k-lfcSRMbv0Z1Rg" target="_blank" rel="noopener">神龙裸金属</a>实例，整个物理机都是客户的，客户可以自己在上边做虚拟化，这样的场景，一些监控信息我们就没办法从外部进行获取。</p>
+<p>总之，就是它的不同的产品形态和不同的业务领域，它的监控诊断所关注的点不一样，后面的运维类型也不一样，我们在做这样的背景下做系统也挺复杂和繁琐的。</p>
+<h4 id="知识面广-amp-技术难度深"><a href="#知识面广-amp-技术难度深" class="headerlink" title="知识面广&amp;技术难度深"></a>知识面广&amp;技术难度深</h4><p><img src="/resources/presentation-at-arch-summit-2022/2180b1bc-ddbe-4109-be91-9c575f018776.png" alt></p>
+<p>此外，还有一个业务难点，就是他的知识面特别广，技术难度比较深，又特别是针对像我的这种半路杀进来这个行业的。 </p>
+<p>整个 ECS 全链路，它包括各种各样的业务领域。有云网络、块存储，服务器硬件，还有操作系统内核、基础设施，包括计算虚拟化等。除此外还包括部署在物理机上面的各种管控软件的监控，以及整个链路上各种组件发布和升级。阿里云整个 <a href="https://mp.weixin.qq.com/s/TNUn0lXyqvaLByX4E5R9WQ" target="_blank" rel="noopener">CIPU 相关介绍可以点这里</a>查看。</p>
+<p>每个子系统涉及的领域知识也非常多，比如基础设施IDC的，类似传统运维需要关注的一些指标，比如要关注它的功耗，温度，供电等。举个例子：就比如前面出现各种限电政策，这就苦了在当地有机房的云计算厂商了，这个时候，就得有成熟的系统去帮助解决。</p>
+<p>还有像这种物理网络的交互机，因为下挂的物理机很多，若出现异常，影响面就非常广。因为整个通信链路非常长，客户使用的是物理机中虚拟化出来的vm，他要和外部 vm 进行通信，需要走上层各种级别的交换机，再到对端物理机、VM 等。期间任何一个环节出现问题都会导致客户业务受到影响。</p>
+<p>每个子系统领域的难度还不小，以 CPU 子系统为例，从 CPU Core 上来看，不同的厂商，甚至相同厂商不同的架构，相同语义的特性表现形式也不一样。比如 Intel 的 CPU 就有 skyLake 和阿童木等等，还有其他厂商，比如：yitian、鲲鹏等等。 再比如我们需要监控 CPU 各级缓存，LLC争抢等。 </p>
+<p>说实话，每个子领域后的一个小点可能都需要一个 P7 甚至 P8 来 Cover，我们做 ECS 全链路系统的，在这样一些专业领域的细节积累的知识肯定还远远不够。 </p>
+<p>但作为物理机稳定性的 Owner，当物理机出现问题后，怎样快速定位到哪个子系统的问题，迅速找到各个子领域专家进行处理，这就就需要完整系统来支撑了。</p>
+<p>毕竟客户的业务受损了，首先找过来就说 VM 不能正常使用了，哪里不正常了，需要你去定位和排查。</p>
+<h2 id="业界方案和发展"><a href="#业界方案和发展" class="headerlink" title="业界方案和发展"></a>业界方案和发展</h2><p><img src="/resources/presentation-at-arch-summit-2022/83b65300-768b-4782-b51d-71a9497f481e.png" alt></p>
+<p>估计大家都知道 Zabbix，作为传统监控时代很重要的组件。但传统监控有一些缺点：灵活度不高，且节点过多情况下负载压力是一个瓶颈。</p>
+<p>后来出现了 Prometheus 这样的系统，并且还是开源的，越来越多的人都开始用它进行搭建监控报警系统。</p>
+<p>Prometheus 整体上有几个方向非常值得学习和借鉴：服务发现、告警，存储各自模块解耦，可以选择自己熟悉的或者已存在的组件，任意组合搭配出适合自己的。比如</p>
+<ul>
+<li>时序数据库：存储层面既支持本地存储，也支持远程存储，存储支持 OpenTsdb, InfluxDB, PostgreSQL 等各类主流时间序列数据库</li>
+<li>告警输出：支持各类的主流SMS、电话、邮件、DingTalk、webhook 等各类平台</li>
+<li>前端：支持Grafana，API、以及自身封装的 WebUI</li>
+</ul>
+<p>2020年9月CNCF发布了云原生可观测性的技术雷达，指出了可观测性的三大件：Metric、Log、Trace；慢慢地，像 Prometheus、OpenMetrics、Elastic（ELK）、Grafana 逐步成为开发者的核心依赖，慢慢的形成了一套事实的监控标准。</p>
+<h2 id="ECS-监控运维体系发展历程"><a href="#ECS-监控运维体系发展历程" class="headerlink" title="ECS 监控运维体系发展历程"></a>ECS 监控运维体系发展历程</h2><p><img src="/resources/presentation-at-arch-summit-2022/30ea8721-1756-4c34-a233-fbb5d1ba111f.png" alt></p>
+<p>和所有系统一样， 我们的 ECS 自动化运维系统也是慢慢迭代，逐渐发展起来的。上图是一个大致的时间线。<br>可以说从前往后经历了 3 个比较大的阶段：</p>
+<ul>
+<li>工具人肉时代：这个阶段的监控运维偏人肉，集群管控节点有很多各种 Shell 脚本写成的小工具，成千上万的shell 脚本，还是感到很震惊的。 </li>
+<li>平台半自动编排：具备了运维编排能力，当一些机器出现问题的时候，可以在白屏系统提交相应的运维，而不用像之前那样黑屏各种 shell 脚本去人肉操作了。</li>
+<li>数据智能化：自动运维系统上线标志着慢慢进入了数据化智能化。最近 1-2 年，我们也在建立自己的运维评价体系。</li>
+</ul>
+<p>当然在建设这套系统期间，也是踩了无数的坑，吃了不少故障逐渐演进过来的。</p>
+<h2 id="我们的方案"><a href="#我们的方案" class="headerlink" title="我们的方案"></a>我们的方案</h2><h3 id="整体架构"><a href="#整体架构" class="headerlink" title="整体架构"></a>整体架构</h3><p><img src="/resources/presentation-at-arch-summit-2022/6ee55288-99a8-4e82-a321-a24a39f7af6a.png" alt></p>
+<p>整体架构上来看，就是从采集到的监控数据通过分析得到异常特征，通过预定义好的规则进行匹配得到运维事件最终进行运维工作流的执行。</p>
+<p>整个链路非常长，所以我们需要一套 Trace 系统来支撑，Trace 系统能够回溯出从原始异常到最终运维各个环节的详细进度。</p>
+<p>整套系统的搭建离不开阿里的整个技术基础设施底座，比如：</p>
+<ul>
+<li>数据处理：离线 ODPS 在线 BLINK (apache-flink)</li>
+<li>日志服务：类似 ELK 产品栈，提供更完整的数据处理能力（数据投递、日志聚类），以及强大的计算聚合函数 (map, json, lamda 函数等）</li>
+<li>MNS： 高效、可靠、安全、便捷、可弹性扩展的分布式消息通知服务</li>
+<li>TDDL： 分库分表解决方案   （sharding-jdbc/MyCat）</li>
+<li>SchedulerX：基于Akka架构的分布式任务调度平台  （XXL-JOB/ElasticJob）</li>
+</ul>
+<h3 id="监控采集组件"><a href="#监控采集组件" class="headerlink" title="监控采集组件"></a>监控采集组件</h3><p>我们的监控组件首先要解决的问题就是规模问题。</p>
+<p>当采集节点达到百万~千万级别规模时，业界方案几乎难以直接复用。在控制面资源极其有限背景下（1-2HT），如何最大限度地采集资源，且不能影响其他控制面资源是一个比较难的问题。</p>
+<p><img src="/resources/presentation-at-arch-summit-2022/68d5bec6-4ed5-4abb-ac02-b6af8d1897b9.png" alt></p>
+<p>最后版本发布一定要可控： 一定要进行灰度发布，确保异常可控，最大限度的降低爆炸半径。在发布过程中，需要有一个可观测的系统，及时发现线上的所有问题或者潜在的问题，需要做及时的熔断处理（后文将要介绍的灰度&amp;熔断系统）。</p>
+<h3 id="运维策略定义"><a href="#运维策略定义" class="headerlink" title="运维策略定义"></a>运维策略定义</h3><p>这里是一些实现细节，就不详细展开了，就大致定义了监控异常、特征和运维规则以及最后运维动作。</p>
+<p><img src="/resources/presentation-at-arch-summit-2022/14a82e40-b574-408c-b192-e19de138e4ac.png" alt></p>
+<p>这里展示某个时间段内的各种数据情况以及监控异常可能的分类分布，可以简单做个参考。</p>
+<h3 id="运维评价"><a href="#运维评价" class="headerlink" title="运维评价"></a>运维评价</h3><p><img src="/resources/presentation-at-arch-summit-2022/918de4d6-8a75-49cc-a761-f406cd643f60.png" alt></p>
+<p>有了前文的相关定义和架构拆分，基本上就能搭建一套这样的自动化运维系统了，只需要根据线上实际情况去迭代专家规则即可。</p>
+<p>为什么我们要建立一套评价体系呢？ 这背后其实是因为我们很难回答下面这样的问题：</p>
+<ul>
+<li>区分运维动作的“好坏优劣”？</li>
+<li>是否存在过度运维的问题？</li>
+<li>对客户真实体感是什么？</li>
+</ul>
+<p>这里举几个运维动作的例子：</p>
+<ul>
+<li>锁定物理机：物理机有一定风险，锁定后，就不会让新的 VM 调度进来，但也不至于影响已有的 VM。</li>
+<li>热迁移：物理机有风险了，有大概率会影响上面的 VM，这个时候需要把 VM 尝试热迁移到另外健康的物理机上面。</li>
+<li>下线：物理机故障了，需要下线进行维修。当然下线过程中也会尽量地去进行热迁移。热迁移失败，会给客户发一个询问事件，啥时候方便重启一下 VM。</li>
+</ul>
+<p>当出现风险时，究竟哪种运维动作好？没有一个标准其实很难评估。</p>
+<p>例如：预测有风险，就发起下线运维，但最终这个“预测”失灵了呢？ 一些敏感客户能感受到热迁移的抖动；热迁移失败还会给客户事件，这样就会对用户有打扰。本来可能不会宕机，但这种运维给客户体感上相当于宕机了。</p>
+<p>如何用数据来证明你这次运维动作的执行是正确的。因此需要有这样一个评价体系。</p>
+<p>这里我们参考了微软的这篇论文 —— 《Predictive and Adaptive Failure Mitigation to Avert Production Cloud VM Interruptions》，在它的基础上，根据我们自己的业务情况进行了调整。</p>
+<p>然后再命中相同规则的时候，我们通过 A/B 测试，一批机器执行运维动作 A，另外一批执行 B，这样就有了对比数据。</p>
+<p>有了数据之后，就可以用统计学的一些方法来进行评价了，例如：显著性差异检验，相当于评价了运维动作是否有差异；功效分析（Cohen’s f） 可以用来控制 A/B 测试的流量。</p>
+<p>有了理论基础之后，工程实践就相对比较简单了，有公式直接离线算即可。<br>但面临的问题是，工程落地上：</p>
+<ul>
+<li>如何与现有的运维体系整合？</li>
+<li>如何<strong>安全高效</strong>地发布上线？</li>
+</ul>
+<p>需要有严格 DryRun 方案，灰度方案，以及 A/B 测试流程，本文不再详述。</p>
+<p>整套系统非常敏感且非常重要，毕竟最终运维出错了、多了、漏了就是吃故障，系统上做不好的话，故障能吃饱。下面分享几个在做类似系统时，提高安全性稳定性的几个工具。</p>
+<h3 id="业务流控"><a href="#业务流控" class="headerlink" title="业务流控"></a>业务流控</h3><p><img src="/resources/presentation-at-arch-summit-2022/76bde097-ad67-4908-858e-d5938b47ccaf.png" alt></p>
+<p>流控是整套系统中非常重要必不可少的环节之一，通过流控能够让自动运维维持在正常水位，有效组织故障的发生。</p>
+<p>提到流控，大家肯定并不陌生，比如限制 QPS 多少，这里也是类似的，只不过场景更多而已。</p>
+<p>具体而言，比如不同的运维 action，配置了不同的流控规则，每个规则 quota 数量（就是桶的大小）和统计维度不一样。</p>
+<p>当要执行某个 action 的时候，通过滑动窗口统计各个维度的数量，看是否超过预定好的阈值，只有每一个桶都有剩余的容量，这个 action 最终才会被执行。</p>
+<p>这里列举了一些常用的维度，有产品形态，集群、地域划分，物理机房等等。</p>
+<p>需要说明的是，有的阈值可能用绝对值并不合适，这个时候就需要按照比例进行配置，比如之前提到的集群粒度，大集群有几千台物理机，小的集群只有几十台，直接用统一的绝对值 xx 台就不太合适。 </p>
+<h3 id="灰度发布"><a href="#灰度发布" class="headerlink" title="灰度发布"></a>灰度发布</h3><p><img src="/resources/presentation-at-arch-summit-2022/ce403a21-c1a4-4b88-9e8c-64c96172c33a.png" alt></p>
+<p>之前看到一个数据说的是：业界大概 70%？的生产事故由变更而触发，集团全部故障中 60% ? +和变更相关。（具体数据真实性不做保证）</p>
+<p>既然这么多故障因为变更发布导致，我们能不能通过灰度的方式把故障扼杀在“摇篮”里呢 ？<br>这就要求灰度编排服务能够在早期的时候，尽量把各种可能产生不兼容的场景都覆盖掉。 </p>
+<p>比如我们发布的时候，就尽量进行多维度打散，包含的维度可能包含：计算、存储、网络各个组件版本，OS、CPU 机型等等 30+个维度。</p>
+<p>此外，还能控制发布的节奏，比如 8421 发布节奏，即有的组件发布要求先发布某地域后暂停 8 小时/4小时等等。</p>
+<p>再比如封网场景，高敏业务的发布窗口等等，比如白天业务高峰，某些组件的发布就尽量避开。</p>
+<p>编排服务本质上就是决定机器发布的顺序，先发什么后发什么，按照什么组合来发布。</p>
+<p>具体而言，比如组内需要按照优先级排序，高优先级的后发布，尽量降低风险。然后分组通过 hash 的方式，降低分组的亲和性。</p>
+<p>这套系统上线后，支持了百万级资源的发布。VM 的话更多，千万级别，且 VM 更难，比如云助手/云监控等，客户内部的组件，出问题还很不好排查。 </p>
+<h3 id="发布熔断"><a href="#发布熔断" class="headerlink" title="发布熔断"></a>发布熔断</h3><p><img src="/resources/presentation-at-arch-summit-2022/295c9568-7a02-4fda-8416-69b58852b87e.png" alt></p>
+<p>灰度服务和熔断服务往往是结合起来的。就是在发布过程中，通过诊断识别异常或隐患，主动阻断发布。</p>
+<p>本质上来讲，就是用所有的变更流水 和 所有的异常监控信息 做流式关联分析。</p>
+<p>简单理解，就是拿某个时间段内的异常和发布流水 join，关联上，那说明可能就有潜在的风险。</p>
+<p>实际情况很复杂，因为异常种类很多，发布组件也很多，经常会错误熔断，阻碍发布效率。</p>
+<p>比如像内存泄漏这种场景，可能观察窗口很久，观察窗口久了就会导致干扰数据较大，需要有噪声处理流程。 </p>
+<p>同时发布的组件和受损类型也会有一些对应关系，这里会有一些专家经验的输入。</p>
+<p>大家对这个课题感兴趣可以去看看下面这篇论文 —— 《Gandalf: An Intelligent, End-To-End Analytics Service for Safe Deployment in Large-Scale Cloud Infrastructure》。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最后总结一下，本文先介绍了相关问题的背景，业界监控告警体系方案，最后终点阐述我们的自动化运维的解决方案。 </p>
+<p>重点讲了运维策略、评价相关问题来源和设计，以及维护系统稳定少吃故障的利器：DryRun、A/B Test，流控、灰度、熔断。</p>
+<p><img src="/resources/presentation-at-arch-summit-2022/97029edc-3cd7-4f06-80ad-1eac41e12ccb.png" alt></p>
+<p>若大家对相关内容感兴趣，推荐可以参考以下这几篇论文（需要的也可以找我要）：</p>
+<ul>
+<li>Predictive and Adaptive Failure Mitigation to Avert Production Cloud VM Interruptions</li>
+<li>Gandalf: An Intelligent, End-To-End Analytics Service for Safe Deployment in Large-Scale Cloud Infrastructure</li>
+<li>Localizing Failure Root Causes in a Microservice through Causality Inference</li>
+<li>Predicting Node Failures in an Ultra-large-scale Cloud Computing Platform- an AIOps Solution</li>
+</ul>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>如果你能看到这里，相比是对我们团队感兴趣了，那就加入我们一起来搞事情吧。上面的内容只是其中一个很小的部分，整个团队做的事情还是蛮有挑战的。或者你对云计算这个行业感兴趣，也非常欢迎你来找我（+vx：tl3shi，或者<a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247501473&amp;idx=2&amp;sn=11d802eca56baa8a4fa371a0db03f8fd&amp;chksm=eb44c745dc334e53c6718cc18a77944924eac97a1dbad02d325800aac32643513b2968c6adcf&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">点这里扫码添加</a>）了解一下。</p>
+<h4 id="职位描述"><a href="#职位描述" class="headerlink" title="职位描述"></a>职位描述</h4><p>我们是神龙计算异常调度团队，通过建设大型高精度的监控、诊断、智能运维运维体系，实时守护 ECS 数据面稳定性，同时为大 ECS 团队提供异常调度中台服务能力。</p>
+<h4 id="职位要求"><a href="#职位要求" class="headerlink" title="职位要求"></a>职位要求</h4><p><strong>基础研发工程师方向</strong></p>
+<ol>
+<li>具有系统分析与架构能力，可独立开展相关领域软件系统研发工作</li>
+<li>熟悉常用设计模式，有大型分布式，高并发，高负载，高可用性系统设计开发经验</li>
+<li>熟悉Linux系统，熟悉MySQL、Oracle等关系型数据库，熟悉常用的应用服务器nginx、apache、tomcat等</li>
+<li>良好的代码能力，比如java， python， go 等</li>
+<li>有Bluemix， Cloudfoundry，Openstack，Vmware等私有云交付，架构设计者优先</li>
+<li>有过虚拟化开发、云管理平台开发，大型监控体系设计开发，大型运维体系设计开发经历的优先</li>
+<li>有大数据经验的优先</li>
+</ol>
+<p><strong>智能运维方向</strong></p>
+<ol>
+<li>熟悉异常检测、时序预测、因果推断、机器学习、运筹优化等多种类型算法和实践经验，参与开发过相关的中大型系统</li>
+<li>熟练掌握在Tensorflow/PyTorch等主流框架上的算法研发，且对算法有较强的实现能力</li>
+<li>具备扎实的Python、Java等编程基础</li>
+<li>拥有海量数据处理经验者优先, 有AIOPS经验者优先</li>
+<li>工作细致、善于思考，有很强的问题分析和推进解决的能力,有强烈的责任心、良好的沟通和协调能力、极强的业务推动能力、勇于接受挑战</li>
+</ol>
+<p><strong>云原生稳定性方向</strong></p>
+<ol>
+<li>熟悉k8s的体系，对kubelet、containerd、控制器（Controller）有了解，有过自定义控制器的开发经验更好</li>
+<li>熟悉node-exporter、node-problem-detecter、Prometheus等k8s稳定性生态</li>
+<li>对kernel有了解，能够排查guest上简单的性能问题</li>
+<li>具备扎实的Python、Golang编程基础</li>
+</ol>
+<p>好了，这下是真的全文完，大家点赞、收藏备用吧！ </p>
+<p>看到这里，真心希望你能帮忙点赞、分享支持一下，😝这将是我持续输出优质文章的最强动力！</p>
+<p>我是石头哥，咱们下期再见！</p>
+<p>扩展阅读：</p>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/TNUn0lXyqvaLByX4E5R9WQ" target="_blank" rel="noopener">CPU/GPU 都懂，DPU/NPU也略懂，但 CIPU 什么鬼？</a></li>
+<li><a href="https://mp.weixin.qq.com/s/OGJhxM7FdeoIkAL2-uUI_Q" target="_blank" rel="noopener">Google 工程师面试指南.pdf-免费下载</a></li>
+<li><a href="https://mp.weixin.qq.com/s/1GkF5j8k-lfcSRMbv0Z1Rg" target="_blank" rel="noopener">阿里云的“神龙”为何物？</a></li>
+</ul>
+<blockquote>
+<p>关于程序员石头(ID: tangleithu)，从十八县贫困农村一路逆袭上清华（<a href="https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ" target="_blank" rel="noopener">点击这里查看我的逆袭之路</a>），目前在BAT某厂打工，是前大疆（无人机）技术主管。</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MyLife/" rel="tag"># MyLife</a>
+          
+            <a href="/tags/总结/" rel="tag"># 总结</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/welcome-to-beijing.html" rel="next" title="北京“欢迎”你 —— 附最全北京健康宝弹簧③解决方案">
+                <i class="fa fa-chevron-left"></i> 北京“欢迎”你 —— 附最全北京健康宝弹簧③解决方案
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/summary-of-year-2022.html" rel="prev" title="2022 总结比以往来得更晚一些">
+                2022 总结比以往来得更晚一些 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概述-amp-问题背景"><span class="nav-number">2.</span> <span class="nav-text">概述&amp;问题背景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#客户用云的诉求"><span class="nav-number">2.1.</span> <span class="nav-text">客户用云的诉求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#业务难点"><span class="nav-number">2.2.</span> <span class="nav-text">业务难点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础设施规模大"><span class="nav-number">2.2.1.</span> <span class="nav-text">基础设施规模大</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#产品形态多、业务领域广"><span class="nav-number">2.2.2.</span> <span class="nav-text">产品形态多、业务领域广</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#知识面广-amp-技术难度深"><span class="nav-number">2.2.3.</span> <span class="nav-text">知识面广&amp;技术难度深</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#业界方案和发展"><span class="nav-number">3.</span> <span class="nav-text">业界方案和发展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ECS-监控运维体系发展历程"><span class="nav-number">4.</span> <span class="nav-text">ECS 监控运维体系发展历程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我们的方案"><span class="nav-number">5.</span> <span class="nav-text">我们的方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整体架构"><span class="nav-number">5.1.</span> <span class="nav-text">整体架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监控采集组件"><span class="nav-number">5.2.</span> <span class="nav-text">监控采集组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运维策略定义"><span class="nav-number">5.3.</span> <span class="nav-text">运维策略定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运维评价"><span class="nav-number">5.4.</span> <span class="nav-text">运维评价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#业务流控"><span class="nav-number">5.5.</span> <span class="nav-text">业务流控</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#灰度发布"><span class="nav-number">5.6.</span> <span class="nav-text">灰度发布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布熔断"><span class="nav-number">5.7.</span> <span class="nav-text">发布熔断</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">7.</span> <span class="nav-text">最后</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#职位描述"><span class="nav-number">7.0.1.</span> <span class="nav-text">职位描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#职位要求"><span class="nav-number">7.0.2.</span> <span class="nav-text">职位要求</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/presentation-at-arch-summit-2022.html';
+
+      var disqus_title = "去当讲师了";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

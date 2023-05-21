@@ -1,0 +1,928 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="经验技巧,程序员,校招,面经,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景最近秋招季，不知道参加校招的同学收获如何？ 下面这篇文章来自 zz 学弟（石头稍作改动），作为非CS专业的选手，分享自己转行互联网，参与校招、斩获大厂">
+<meta name="keywords" content="经验技巧,程序员,校招,面经">
+<meta property="og:type" content="article">
+<meta property="og:title" content="非科班学弟如何转行斩获 ATM 大厂的 Offer ？">
+<meta property="og:url" content="https://www.tanglei.name/blog/share-interview-experience-with-no-cs-background-when-gradudate-in-2021.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景最近秋招季，不知道参加校招的同学收获如何？ 下面这篇文章来自 zz 学弟（石头稍作改动），作为非CS专业的选手，分享自己转行互联网，参与校招、斩获大厂">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.167Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="非科班学弟如何转行斩获 ATM 大厂的 Offer ？">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景最近秋招季，不知道参加校招的同学收获如何？ 下面这篇文章来自 zz 学弟（石头稍作改动），作为非CS专业的选手，分享自己转行互联网，参与校招、斩获大厂">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/share-interview-experience-with-no-cs-background-when-gradudate-in-2021.html">
+
+
+
+
+
+  <title> 非科班学弟如何转行斩获 ATM 大厂的 Offer ？ | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/share-interview-experience-with-no-cs-background-when-gradudate-in-2021.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                非科班学弟如何转行斩获 ATM 大厂的 Offer ？
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-10-30T00:00:00+00:00">
+                2020-10-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/share-interview-experience-with-no-cs-background-when-gradudate-in-2021.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/share-interview-experience-with-no-cs-background-when-gradudate-in-2021.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247489734&amp;idx=1&amp;sn=f9172000b917ea4e81f4e8b3b2afa1e3&amp;chksm=eb471922dc309034064a0420eeb9c21fca533f387a5a9a5bfbd0f25313d134753e490774bb9c&amp;token=1813433917&amp;lang=zh_CN#rd" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “<strong>1024</strong>” 获取程序员大厂面试指南。</p>
+</blockquote>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>最近秋招季，不知道参加校招的同学收获如何？</p>
+<p>下面这篇文章来自 zz 学弟（石头稍作改动），作为非CS专业的选手，分享自己转行互联网，参与校招、斩获大厂 Offer 的经验。全篇干货满满，希望能给大家带来收获。</p>
+<p>后续我将逐步找优秀的同学给大家分享校招经验，敬请期待。</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>先介绍一下自己的情况吧，本科和研究生都是通信专业，本科是某 Top2，研究生是香港某大学。了解了通信行业的就业情况和工作内容后，大概今年3月份的时候开始想转互联网。</p>
+<p>本人相关的基础情况是：学校学了C++、数据结构与算法以及计算机网络，做大作业和毕业设计用的 python，毕业设计有接触机器学习。</p>
+<p>当时是投递暑期实习，没有什么经验，以刷 LeetCode、复习计算机网络和看面经为主，最终面试的情况是：</p>
+<ul>
+<li>字节视频架构实习3面挂</li>
+<li>阿里蚂蚁金服交叉面挂</li>
+<li>腾讯TEG实习offer</li>
+</ul>
+<p>因为参加过春招，所以我对秋招的时间点很敏感：</p>
+<ul>
+<li>6月中旬阿里巴巴和字节跳动开启提前批</li>
+<li>7月中阿里开启正式秋招</li>
+<li>8月初腾讯开启秋招</li>
+<li>9月基本都是Hr面和谈offer了</li>
+</ul>
+<p>牛客网上看到很多人8月底才开始投递，在那边抱怨为什么很久没有面试，这是因为时间安排上出了问题。所以想去什么公司，就要尽早做好准备，关注对应的招聘公众号和牛客网信息。</p>
+<blockquote>
+<p>（石头注）时间点确实很重要，不少人包括很多清华的学弟在 9 月中下旬才来找我帮忙内推，而这个时候很多部门都已经招满了，所以比较尴尬。除非特别出色的，我会去帮忙问各个部门是否招满，是否还有 HC。</p>
+<p>关于内推更多的内容可参考石头之前的这篇分享：<a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247489516&amp;idx=1&amp;sn=2caba785992af70305ff15f4a740af4a&amp;chksm=eb471608dc309f1ee4349dbedc0ff47a1670a804cba71818534ac3472fa12b183334397ea47b&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">互联网大厂内推求职的正确姿势？</a></p>
+</blockquote>
+<p>下面，我将按照如下提纲来分享自己的一些经验，希望能给大家带来帮助：</p>
+<ul>
+<li>面经分享：阿里、字节、网易、shopee、美团</li>
+<li>Offer情况与选择</li>
+<li>校招经验谈</li>
+</ul>
+<h2 id="阿里云"><a href="#阿里云" class="headerlink" title="阿里云"></a>阿里云</h2><h3 id="简历面"><a href="#简历面" class="headerlink" title="简历面"></a>简历面</h3><ul>
+<li>自我介绍</li>
+<li>在腾讯实习了多久了、做了哪些东西、技术栈如何、毕业设计的项目</li>
+<li>最近在看的书（因为是非科班生，当时在看MySQL技术内幕和微服务设计，唠嗑了很久）</li>
+</ul>
+<h3 id="二面（P9）"><a href="#二面（P9）" class="headerlink" title="二面（P9）"></a>二面（P9）</h3><ul>
+<li>计算机网络：为什么要进行三次握手四次挥手、UDP如何可靠、FastTCP、Https建立连接的过程</li>
+<li>数据库：说说对 MySQL 的了解，索引的底层实现，Redis老生常谈（持久化、雪崩、击穿）</li>
+<li>算法题：记不清了，大概率 LeetCode 的简单题难度</li>
+<li>项目：很详细的问了我毕设的项目，因为我本科是通信，但是毕设是机器学习相关的，问得很详细，追问我觉得的创新点在哪，为什么要从这个角度去优化，落地场景如何，如果继续去做，优化点在哪</li>
+</ul>
+<h3 id="交叉面（P9）"><a href="#交叉面（P9）" class="headerlink" title="交叉面（P9）"></a>交叉面（P9）</h3><ul>
+<li>主要是问的项目，问了我的三段实习经历，其中2段是通信的，然后毕设项目和一个小程序项目，以我讲为主，问的时候基本围绕是项目怎么去实现的，技术难点在哪，现在来优化的话怎么进行优化。</li>
+<li>然后问了一下本科和研究生的课程情况，对于计算机专业，自己学了哪些东西，看了哪些源码（菜鸡只看了看Redis和ConcurrentHashMap）</li>
+<li>理论知识：数据库的事务、脏读、对锁有了解吗（我只答了定义、乐观锁悲观锁、怎么实现）、数据库优化</li>
+</ul>
+<h2 id="字节（飞书）"><a href="#字节（飞书）" class="headerlink" title="字节（飞书）"></a>字节（飞书）</h2><h3 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h3><ul>
+<li>自我介绍</li>
+<li>俩算法题：单链表判断是否有环、LRU</li>
+<li>理论知识：浏览器输入一个url后的具体过程、HTTP与HTTPS、TCP三次握手四次挥手、linux调优、进程调度算法</li>
+</ul>
+<h3 id="二面"><a href="#二面" class="headerlink" title="二面"></a>二面</h3><ul>
+<li>自我介绍</li>
+<li>实习情况、学校学了哪些计算机相关课程</li>
+<li>俩算法题：两链表交叉的第一个节点、二叉树的左视图</li>
+<li>大量轰炸操作系统（这个是我的薄弱项）：进程线程、进程通信、进程调度算法、死锁、逻辑地址到物理地址的转换、虚拟内存</li>
+</ul>
+<h2 id="网易云音乐"><a href="#网易云音乐" class="headerlink" title="网易云音乐"></a>网易云音乐</h2><h3 id="一面-1"><a href="#一面-1" class="headerlink" title="一面"></a>一面</h3><ul>
+<li>自我介绍、为啥来互联网、学了哪些计算机的课程</li>
+<li>理论知识：TCP如何实现可靠的、TCP和UDP异同、数据库基础知识、数据库结构优化</li>
+<li>算法题：链表反转</li>
+<li>实习做了哪些东西、小程序的项目、毕设机器学习项目</li>
+<li>作为非科班生的来互联网的准备、规划</li>
+</ul>
+<h3 id="二面（主管面）"><a href="#二面（主管面）" class="headerlink" title="二面（主管面）"></a>二面（主管面）</h3><ul>
+<li>自我介绍</li>
+<li>实习情况</li>
+<li>理论知识：数据库范式、封锁类型、MVCC、乐观锁悲观锁、数据库索引的实现原理、B+树与B树、分布式的了解、线程不安全的情况、如何避免死锁、看了哪些源码</li>
+<li>实习做了哪些东西</li>
+<li>数据库日志相关的一个场景题</li>
+</ul>
+<h2 id="Shopee"><a href="#Shopee" class="headerlink" title="Shopee"></a>Shopee</h2><h3 id="一面-2"><a href="#一面-2" class="headerlink" title="一面"></a>一面</h3><ul>
+<li>自我介绍</li>
+<li>算法题：dfs实现层序遍历</li>
+<li>理论知识：数据库基础知识、B+树与B树、LSF、进程线程协程区别、linux调优、TCP老生常谈、Google的BBR算法</li>
+<li>实习的情况、小程序的项目</li>
+</ul>
+<h2 id="美团"><a href="#美团" class="headerlink" title="美团"></a>美团</h2><h3 id="一面-3"><a href="#一面-3" class="headerlink" title="一面"></a>一面</h3><ul>
+<li>自我介绍</li>
+<li>算法题：无重复字符的最长子串</li>
+<li>理论知识：TCP老生常谈（三次握手四次挥手、TCP可靠实现、与UDP区别）、进程线程、进程调度、跳表、固定分区与可变分区、段页式存储、页面置换算法、死锁定义、死锁条件、如何预防死锁</li>
+</ul>
+<h3 id="二面-1"><a href="#二面-1" class="headerlink" title="二面"></a>二面</h3><ul>
+<li>自我介绍</li>
+<li>实习情况</li>
+<li>场景题：秒杀系统</li>
+<li>理论知识：JAVA设计模式、进程通信、锁和 ThreadLocal</li>
+<li>毕设机器学习项目、小程序项目</li>
+<li>对于非科班转科班的看法、规划</li>
+</ul>
+<h2 id="Offer情况与选择"><a href="#Offer情况与选择" class="headerlink" title="Offer情况与选择"></a>Offer情况与选择</h2><p>目前手里的Offer情况是，腾讯TEG事业群、阿里云基础产品事业部、美团到店事业群、网易云音乐，岗位都是后台开发。</p>
+<p>来谈谈我的Offer选择吧，具体怎么选，这个见仁见智，我个人是从城市、公司、部门、技术、岗位、薪资这几个角度来考虑的。</p>
+<h3 id="城市"><a href="#城市" class="headerlink" title="城市"></a>城市</h3><p>在北京上的大学，上海深圳都呆了不短的时间，由于气候和空气原因，我是坚决不选北京的。</p>
+<p>上海深圳房价较高，杭州略低，但是杭州房价有点虚高，对应的医疗方面我不了解，没有纳入考虑范畴。</p>
+<p>教育方面还不在考虑范围内（现在孩子都没，等有孩子上学了在哪工作还不知道呢），深圳和上海应该比杭州热一点，可游玩性和舒适度我更倾向上海和杭州（杭州到上海高铁75块，很近的）。</p>
+<h3 id="公司、部门"><a href="#公司、部门" class="headerlink" title="公司、部门"></a>公司、部门</h3><p>我个人倾向是大厂更好，大厂在员工福利、培养方案、晋升制度上更为完善，阿里和腾讯得分。</p>
+<p>谈到部门，这个其实是重点，阿里、腾讯、百度、美团、字节、滴滴其实都是很大的公司了，不同部门之间的区别其实很大。</p>
+<p>一个好的事业群，不论是人才培养、职位晋升、福利待遇上面都是远高于边缘部门的。</p>
+<ul>
+<li>美团到店比较中庸；</li>
+<li>网易云音乐是我很喜欢的产品，但是目前受到版权较少的困扰还未有明显突围的方向。</li>
+<li>腾讯的事业群是TEG，压力没那么大，相应的待遇上比WXG和IEG差一些。</li>
+<li>阿里是在阿里云，我对云这块比较熟悉，云市场上阿里云目前遥遥领先腾讯云和华为云，也跟面试官聊过好几次关于阿里云的发展方向，因此比较中意阿里云。</li>
+</ul>
+<p>具体部门的业务找内推人和石头学长也有了解，现状和前景都很不错。阿里这边我认为的比较好的部门有：阿里妈妈、淘系核心、天猫、阿里云，钉钉目前也是非常红火的（最近刚刚和阿里云智能融合）。</p>
+<h3 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h3><p>技术成长看公司也看你的技术栈。腾讯、百度的 C++ 和 PHP 较强，字节这边应该是都有，但是今年招聘情况来看对 Go 的需求很大，阿里这边的 Java 就不必说了，我个人更倾向 Java，看好 Java 和 Golang 的发展，因此阿里得分。</p>
+<blockquote>
+<p>石头注：学弟上面其实仅仅提到了编程语言，其实对于大多数程序员而言，我们在讨论技术的时候，其实不应该<strong>只限制</strong>于编程语言，毕竟语言知识帮助我们实现具体的业务需求的工具而已。</p>
+<p>石头在这篇文章谈了下关于大厂码农的基本能力的观点，仅供参考：<a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247484698&amp;idx=1&amp;sn=03cc4636e7ee7364a85788a98809cc03&amp;chksm=eb4704fedc308de8efd48ab9aed4fd1ddee5665d8e76d0d3767c1f704eac8b15a83e450a08f1&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">从一道面试题谈谈一线大厂码农应该具备的基本能力</a></p>
+</blockquote>
+<h3 id="岗位"><a href="#岗位" class="headerlink" title="岗位"></a>岗位</h3><p>岗位都是后台开发，没区别。</p>
+<h3 id="薪资"><a href="#薪资" class="headerlink" title="薪资"></a>薪资</h3><p>薪资上腾讯和阿里相当，美团得靠argue，云音乐略低一点（网易大本营还是游戏），薪资上其实我给的权重不是很高，我觉得差距在5W内都能接受。</p>
+<p>作为应届生的第一份工作，我觉得更应该考虑的是平台和技术成长，用发展的眼光来看待自己的职业生涯。</p>
+<h2 id="校招经验谈"><a href="#校招经验谈" class="headerlink" title="校招经验谈"></a>校招经验谈</h2><p>我是一个做事喜欢讲究方法论的人，要做一件事，搜集相关信息，理清楚现状，看到事物的本质，找到自己的定位，做好规划，再稳步推进。</p>
+<p>下面是一些资料，希望能给大家帮助：</p>
+<ul>
+<li>招聘信息渠道：在互联网行业，一般是公司官网、牛客网、官方招聘公众号、内推群、非官方号（OfferShow等等）。</li>
+<li>招聘信息时间线：可以去官网和牛客网，看看前一年的招聘时间，和牛客网前一年的帖子，知道大概的开始招聘的情况，避免投递过晚或者大量笔试面试堆在一起的情况。</li>
+<li>实习：时间允许的话，最好实习，尤其是大厂的实习，能作为简历的敲门砖，面试的话题点，我在牛客网上甚至看到过阿里、字节、腾讯都有实习经历的同学。</li>
+<li>笔试书籍：强推《剑指offer》、《编程之美》</li>
+<li>刷题：我是以LeetCode为主，一开始也不会，从看答案到自己慢慢想，再到后面的一题多解</li>
+<li>资源网站：<strong>图解算法</strong> 、<strong>AlgoCasts算法视频</strong>、<strong>Java Guide</strong></li>
+</ul>
+<p>数据库、计算机网络、操作系统这块的资料，作为一个非科班生，我觉得自己准备的也不好，就不献丑啦。</p>
+<p>行业越来越内卷，再加上今年的疫情，大量海归回流，大家找工作都很艰难。</p>
+<p>牛客网上每天都有不少负能量爆棚的帖子，但是心态是要靠自己调节的，负能量爆棚的帖子下面往往都是很多人鼓劲，找到情绪的宣泄点，做好生活、学习、工作的平衡，道阻且长，行则将至，与诸君共勉！</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>最后，求关注，求关注，求关注，本号会定期分享一些技术干货、职场经验等，如果大家对阿里或者其他大厂感兴趣，也可以找我内推，我可以帮忙提供简历 review 等，希望能和大家积极交流讨论，一起学习、共同进步。</p>
+<p>觉得本号分享的文章有价值，记得<strong>添加星标</strong>哦。周更很累，不要白 piao，需要来点正反馈，安排个 “一键三连”（点赞、在看、分享）如何？😝 这将是我持续输出优质文章的最强动力。</p>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader，欢迎关注，交流和指导！</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/经验技巧/" rel="tag"># 经验技巧</a>
+          
+            <a href="/tags/程序员/" rel="tag"># 程序员</a>
+          
+            <a href="/tags/校招/" rel="tag"># 校招</a>
+          
+            <a href="/tags/面经/" rel="tag"># 面经</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/how-to-study-cs-at-school-with-book-recommend-in-1024.html" rel="next" title="1024程序猿节，聊聊石头学了哪些课，屯了哪些书？">
+                <i class="fa fa-chevron-left"></i> 1024程序猿节，聊聊石头学了哪些课，屯了哪些书？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/why-java-cannot-allocate-mem-with-enough-physical-memory.html" rel="prev" title="内存充足，但是为什么 Java 总申请不到内存呢？">
+                内存充足，但是为什么 Java 总申请不到内存呢？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阿里云"><span class="nav-number">3.</span> <span class="nav-text">阿里云</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简历面"><span class="nav-number">3.1.</span> <span class="nav-text">简历面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二面（P9）"><span class="nav-number">3.2.</span> <span class="nav-text">二面（P9）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交叉面（P9）"><span class="nav-number">3.3.</span> <span class="nav-text">交叉面（P9）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字节（飞书）"><span class="nav-number">4.</span> <span class="nav-text">字节（飞书）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一面"><span class="nav-number">4.1.</span> <span class="nav-text">一面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二面"><span class="nav-number">4.2.</span> <span class="nav-text">二面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网易云音乐"><span class="nav-number">5.</span> <span class="nav-text">网易云音乐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一面-1"><span class="nav-number">5.1.</span> <span class="nav-text">一面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二面（主管面）"><span class="nav-number">5.2.</span> <span class="nav-text">二面（主管面）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shopee"><span class="nav-number">6.</span> <span class="nav-text">Shopee</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一面-2"><span class="nav-number">6.1.</span> <span class="nav-text">一面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#美团"><span class="nav-number">7.</span> <span class="nav-text">美团</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一面-3"><span class="nav-number">7.1.</span> <span class="nav-text">一面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二面-1"><span class="nav-number">7.2.</span> <span class="nav-text">二面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Offer情况与选择"><span class="nav-number">8.</span> <span class="nav-text">Offer情况与选择</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#城市"><span class="nav-number">8.1.</span> <span class="nav-text">城市</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公司、部门"><span class="nav-number">8.2.</span> <span class="nav-text">公司、部门</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#技术"><span class="nav-number">8.3.</span> <span class="nav-text">技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#岗位"><span class="nav-number">8.4.</span> <span class="nav-text">岗位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#薪资"><span class="nav-number">8.5.</span> <span class="nav-text">薪资</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#校招经验谈"><span class="nav-number">9.</span> <span class="nav-text">校招经验谈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">10.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/share-interview-experience-with-no-cs-background-when-gradudate-in-2021.html';
+
+      var disqus_title = "非科班学弟如何转行斩获 ATM 大厂的 Offer ？";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

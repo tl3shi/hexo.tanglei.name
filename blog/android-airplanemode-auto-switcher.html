@@ -1,0 +1,797 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Android,飞行模式,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="2015-01-18 (AutoSwitcher1.0)之后的更新说明文档在这里。/blog/android-airplanemode-auto-switcher-v2.html//2015-01-18 update UPDATE: 代码托管在GitHub上了, 欢迎有兴趣的童鞋加入一起完善。 之前写过一个Android手机根据时间设定自动切换飞行模式的代码，这次换了个屌丝红米手机之后安装后发现用">
+<meta name="keywords" content="Android,飞行模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 4.2 自动定时切换飞行模式">
+<meta property="og:url" content="https://www.tanglei.name/blog/android-airplanemode-auto-switcher.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="2015-01-18 (AutoSwitcher1.0)之后的更新说明文档在这里。/blog/android-airplanemode-auto-switcher-v2.html//2015-01-18 update UPDATE: 代码托管在GitHub上了, 欢迎有兴趣的童鞋加入一起完善。 之前写过一个Android手机根据时间设定自动切换飞行模式的代码，这次换了个屌丝红米手机之后安装后发现用">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2014/01/android-airplanemode-auto-switcher.png">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.140Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 4.2 自动定时切换飞行模式">
+<meta name="twitter:description" content="2015-01-18 (AutoSwitcher1.0)之后的更新说明文档在这里。/blog/android-airplanemode-auto-switcher-v2.html//2015-01-18 update UPDATE: 代码托管在GitHub上了, 欢迎有兴趣的童鞋加入一起完善。 之前写过一个Android手机根据时间设定自动切换飞行模式的代码，这次换了个屌丝红米手机之后安装后发现用">
+<meta name="twitter:image" content="https://www.tanglei.name/wp-content/uploads/2014/01/android-airplanemode-auto-switcher.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/android-airplanemode-auto-switcher.html">
+
+
+
+
+
+  <title> Android 4.2 自动定时切换飞行模式 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/android-airplanemode-auto-switcher.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android 4.2 自动定时切换飞行模式
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-01-23T00:05:31+00:00">
+                2014-01-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/coding小工具/" itemprop="url" rel="index">
+                    <span itemprop="name">coding小工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/android-airplanemode-auto-switcher.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/android-airplanemode-auto-switcher.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><span style="color: #ff0000;">2015-01-18 (AutoSwitcher1.0)之后的<a href="/blog/android-airplanemode-auto-switcher-v2.html">更新说明文档<span style="color: #ff0000;">在这里</span></a>。<a href="/blog/android-airplanemode-auto-switcher-v2.html"><span style="color: #000000;">/blog/android-airplanemode-auto-switcher-v2.html</span></a><span style="color: #333300;">//2015-01-18 update</span></span></p>
+<p><strong>UPDATE:</strong> 代码托管在<a href="https://github.com/tl3shi/AirPlanModeSwitcher" target="_blank" rel="noopener">GitHub</a>上了, 欢迎有兴趣的童鞋加入一起完善。</p>
+<p>之前写过一个<a href="/blog/android-switch-airplanemode-3.html">Android手机根据时间设定自动切换飞行模式的代码</a>，这次换了个屌丝红米手机之后安装后发现用不了。于是决定重新写一个。</p>
+<p>整个功能要实现的话思路很清晰，只要改变一下系统配置(System.AIRPLANE_MODE_ON)，发送一个通知即可。但发现Android的权限设置没有以前那么开放了。从<strong>Android 4.2</strong>开始(<a href="http://developer.android.com/about/versions/android-4.2.html" target="_blank" rel="noopener">SDK API 17</a>)，设备的这些属性是只读的，官网上说：</p>
+<blockquote>
+<p>Some device settings defined by Settings.System are now read-only. If your app attempts to write changes to settings defined in Settings.System that have moved to Settings.Global, the write operation will silently fail when running on Android 4.2 and higher.</p>
+</blockquote>
+<p>所以对于Android4.2及其以上版本的手机来说就悲剧了～</p>
+<p>刚开始在代码里面试图去修改System.AIRPLANE_MODE_ON 的属性，UI上貌似没有什么反映，log看到说缺少<strong>android.permission.WRITE_SECURE_SETTINGS</strong> 权限，在manifest里面声明，eclipse 又编译不过提示 <strong>Permission is only System Apps</strong>，说是必须得是系统应用才行。网上也有讨论各种解决方案，有说要写成系统应用，需要一个跟固件一起打包编译或者跟固件有相同的签名才行。同样也有人说通过反射可以实现。第一种方式应该很麻烦，得下某源码包编啊之类的，第二种方案有人说可以尝试下，但具体我也没试～不知道是否靠谱。</p>
+<p>后来的后来，还是从网上找到了解决方案，不过device必须得root，不然<strong>没办法</strong>搞定。原文来自<a href="http://zipta.ru/2012/11/borba-s-android-4-2/" target="_blank">这里</a>，虽然不知道是哪国语言～但代码还是认识。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//开启飞行模式</span><br><span class="line">settings put global airplane_mode_on 1</span><br><span class="line">am broadcast -a android.intent.action.AIRPLANE_MODE --ez state true</span><br><span class="line">//关闭飞行模式</span><br><span class="line">settings put global airplane_mode_on 0</span><br><span class="line">am broadcast -a android.intent.action.AIRPLANE_MODE --ez state false</span><br></pre></td></tr></table></figure>
+<p>通过adb shell，输入以上两句命令，可以将切换飞行模式。核心问题解决了～剩下的就是需要通过Java代码去调用shell命令，这个不难～不过得注意需要通过root去调用，另外得防止程序卡死～</p>
+<p>再后来在<a href="http://stackoverflow.com/questions/15861046/how-to-toggle-airplane-mode-on-android-4-2-using-root" target="_blank">stackoverflow</a>上也有人提到了这个解决方案，并且还给了另外一个解决方案，即通过sqlite去<strong>直接</strong>改变Android的系统配置。数据库位置在/data/data/com.android.providers.settings/databases/settings.db</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sqlite3 /data/data/com.android.providers.settings/databases/settings.db</span><br><span class="line">insert into global values(null, &apos;airplane_mode_on&apos;, 1); //相应的插入0值，即是取消飞行模式</span><br></pre></td></tr></table></figure>
+<p>当然上面的数据库修改之后要生效，还是必须得发上面的那个broadcast才能生效。</p>
+<p>下面是我写的小程序的界面：</p>
+<p><a href="/wp-content/uploads/2014/01/android-airplanemode-auto-switcher.png"><img class="size-large wp-image-2294" title="Android 自动定时切换飞行模式-android-airplanemode-auto-switcher" src="/wp-content/uploads/2014/01/android-airplanemode-auto-switcher.png" alt="android自动切换飞行模式"></a></p>
+<p>使用方法如下：</p>
+<ol>
+<li>分别设定好需要开启、关闭飞行模式的时间，默认情况下为凌晨12点30分开启飞行模式，早上7点关闭飞行模式。然后打开当前状态的按钮即可，打开后会提示下次切换飞行模式的时间。</li>
+<li>设定的时间到之后，App会自动尝试去启用飞行模式状态，如上图第二副图所示，当然得允许了(最好添加到信任程序列表，不然每次弹框)。另外，设定的时间到之后，有可能你还正在使用手机而不想马上切换飞行模式，App会给你5s的时间考虑，5秒之后你没有操作，app就会自动启用飞行模式了。当然你取消之后，这次就不会切换了，不过当你通过按手机返回键(Home键不会)或者杀掉这个进程再重新启动这个App的时候，会根据时间设定满足规则则自动切换。</li>
+<li>切换&#8221;关闭&#8221;状态即取消设定功能，若当前手机正处于飞行模式状态，也会切换为正常状态。</li>
+</ol>
+<p>注意：针对Android4.2及其以上的版本，手机需要ROOT才OK，且建议添加到信任程序列表。4.2之前的版本是木有问题的。</p>
+<p>欢迎有兴趣的同学<del datetime="2014-01-27T08:22:26+00:00">下载1</del> <a href="/wp-content/uploads/2014/01/airplanemode_auto_switcher.apk_v0.2.zip">下载2</a>试用，有建议/意见欢迎留言反馈～</p>
+<p>TODO：</p>
+<ol>
+<li>Android 各个版本UI风格的统一</li>
+<li>增加多个时间段的设置，支持晚上睡觉和中午睡觉都转飞行模式，既省电又防打扰</li>
+<li>自己写着瞎玩，应该有不少Bug</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/飞行模式/" rel="tag"># 飞行模式</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/how-to-batch-delete-uploading-files-in-baidu-pan.html" rel="next" title="百度云管家批量删除正在上传文件列表">
+                <i class="fa fa-chevron-left"></i> 百度云管家批量删除正在上传文件列表
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/how-to-generate-magic-picture-in-qzone.html" rel="prev" title="所谓QQ空间神奇的日志、图片~原来是酱紫&#8230;">
+                所谓QQ空间神奇的日志、图片~原来是酱紫&#8230; <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/android-airplanemode-auto-switcher.html';
+
+      var disqus_title = "Android 4.2 自动定时切换飞行模式";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

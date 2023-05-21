@@ -1,0 +1,815 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Eclipse,R语言,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="前面讲过如何在eclipse中配置R语言的开发环境插件，这两天写了几句代码发现一些自带的函数没有高亮显示，也没有自动补全，对于经常用eclipse做开发的童鞋来说很不习惯啊。于是网上搜了下+自己研究了下，搞定。 代码高亮问题 找到你设置的工作空间文件夹，然后依次打开workspace.metadata.plugins\org.eclipse.core.runtime.settings\，找到de.">
+<meta name="keywords" content="Eclipse,R语言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R语言开发eclipse插件statET-代码高亮和代码提示自动补全">
+<meta property="og:url" content="https://www.tanglei.name/blog/r-with-syntax-color-and-word-completion-in-eclipse-with-statet.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="前面讲过如何在eclipse中配置R语言的开发环境插件，这两天写了几句代码发现一些自带的函数没有高亮显示，也没有自动补全，对于经常用eclipse做开发的童鞋来说很不习惯啊。于是网上搜了下+自己研究了下，搞定。 代码高亮问题 找到你设置的工作空间文件夹，然后依次打开workspace.metadata.plugins\org.eclipse.core.runtime.settings\，找到de.">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/04/de.walware.statet.r.ui_.prefs_.bug_thumb.jpg">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/04/Rsyntaxcolor_thumb.jpg">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/04/Rwordcompletion_thumb.jpg">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/04/Rwordcompletion1_thumb.jpg">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.125Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="R语言开发eclipse插件statET-代码高亮和代码提示自动补全">
+<meta name="twitter:description" content="前面讲过如何在eclipse中配置R语言的开发环境插件，这两天写了几句代码发现一些自带的函数没有高亮显示，也没有自动补全，对于经常用eclipse做开发的童鞋来说很不习惯啊。于是网上搜了下+自己研究了下，搞定。 代码高亮问题 找到你设置的工作空间文件夹，然后依次打开workspace.metadata.plugins\org.eclipse.core.runtime.settings\，找到de.">
+<meta name="twitter:image" content="https://www.tanglei.name/wp-content/uploads/2012/04/de.walware.statet.r.ui_.prefs_.bug_thumb.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/r-with-syntax-color-and-word-completion-in-eclipse-with-statet.html">
+
+
+
+
+
+  <title> R语言开发eclipse插件statET-代码高亮和代码提示自动补全 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/r-with-syntax-color-and-word-completion-in-eclipse-with-statet.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                R语言开发eclipse插件statET-代码高亮和代码提示自动补全
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2012-04-26T23:03:14+00:00">
+                2012-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/r-with-syntax-color-and-word-completion-in-eclipse-with-statet.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/r-with-syntax-color-and-word-completion-in-eclipse-with-statet.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>前面讲过<a href="/blog/how-to-use-eclipse-to-program-in-r.html" target="_blank">如何在eclipse中配置R语言的开发环境插件</a>，这两天写了几句代码发现一些自带的函数没有高亮显示，也没有自动补全，对于经常用eclipse做开发的童鞋来说很不习惯啊。于是网上搜了下+自己研究了下，搞定。</p>
+<h3 id="代码高亮问题"><a href="#代码高亮问题" class="headerlink" title="代码高亮问题"></a>代码高亮问题</h3><blockquote>
+<p>找到你设置的工作空间文件夹，然后依次打开workspace.metadata.plugins\org.eclipse.core.runtime.settings\，找到de.walware.statet.r.ui.prefs这个文件（如果没有这个文件，见最后），在里面找找看有没有以&#8221;text_R_rDefault.Custom2.items=&#8221;为开头的语句，如果有的话，只需把你准备实现高亮的词语加到等号后面就可以了<strong>(用逗号把这些词语隔开)</strong>。保存之后进入Eclipse，选择Winow菜单中的Preferences对话框，顺次展开StatET-&gt;Source Editors-&gt;R Identifier Groups，在右边的框中选中Custom 1（注意，配置文件中对应的是Custom2，<strong>确实</strong>是个bug），如果下面的列表框中出现了你刚才添加进去的词语，就说明配置成功了。接下来，只要在R Syntax Coloring对话框中找到Custom 1这一项，然后应用你自定义的高亮方式就可以了。需要注意的是新加入的词语不能与StatET中已有的重复，否则可能会出错。</p>
+</blockquote>
+<p><a href="/wp-content/uploads/2012/04/de.walware.statet.r.ui_.prefs_.bug_.jpg"><img title="de.walware.statet.r.ui.prefs.-bug" border="0" alt="de.walware.statet.r.ui.prefs.-bug" src="/wp-content/uploads/2012/04/de.walware.statet.r.ui_.prefs_.bug_thumb.jpg"></a> </p>
+<p>添加之后，还得设置这些添加的词语以哪种方式展示，如果默认的话就没有效果。如下图设置，StatET-&gt;Source Editors-&gt;R Syntax Coloring,展开你添加的Custom 1，右边自定义格式，例如颜色加粗等。</p>
+<p><a href="/wp-content/uploads/2012/04/Rsyntaxcolor.jpg"><img title="R syntax color" border="0" alt="R syntax color" src="/wp-content/uploads/2012/04/Rsyntaxcolor_thumb.jpg"></a> </p>
+<p>手动一个一个添加肯定是比较麻烦的。下面这段代码是搜索所有安装的包的函数，并将这些函数输出到out.txt,就可以自己添加到相应的文本(如上配置文件)里面以实现高亮。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># date:2012-4-26</span></span><br><span class="line"><span class="comment"># Author: tanglei|http://www.tanglei.name</span></span><br><span class="line"><span class="comment">###############################################################################</span></span><br><span class="line"></span><br><span class="line">setwd(<span class="string">'S:/R/workspace/testR/'</span>)</span><br><span class="line">findfuns &lt;- function(x) &#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(require(x, character.only=TRUE)) &#123;</span><br><span class="line">		env &lt;- paste(<span class="string">"package"</span>, x, sep=<span class="string">":"</span>)</span><br><span class="line">		nm &lt;- ls(env, all=TRUE)</span><br><span class="line">		nm[unlist(lapply(nm, function(n) exists(n, where=env,</span><br><span class="line">											mode=<span class="string">"function"</span>,</span><br><span class="line">											inherits=FALSE)))]</span><br><span class="line">	&#125; <span class="keyword">else</span> character(<span class="number">0</span>)</span><br><span class="line">&#125;</span><br><span class="line">z &lt;-  lapply(.packages(all.available = FALSE), findfuns)</span><br><span class="line">z=unique(sort(unlist(z)))</span><br><span class="line">cat(z,file=<span class="string">'out.txt'</span>,sep=<span class="string">','</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="代码提示自动补全问题"><a href="#代码提示自动补全问题" class="headerlink" title="代码提示自动补全问题"></a>代码提示自动补全问题</h3><blockquote>
+<p>首先依然是打开Winow菜单中的Preferences对话框，然后顺次展开StatET-&gt;Source Editors-&gt;R Templates，右边框中的列表就是在编辑窗口中按&#8221;Alt+/&#8221;会出现的提示模板。点击New可以输入自定义的函数，如果只是要实现单词补全的话，就在Name和Pattern中填入函数名就行了，Description就是在出现的下拉供选择的提示函数中相应的描述，例如在Java中会显示API Doc。</p>
+</blockquote>
+<p><a href="/wp-content/uploads/2012/04/Rwordcompletion.jpg"><img title="R word completion" border="0" alt="R word completion" src="/wp-content/uploads/2012/04/Rwordcompletion_thumb.jpg"></a> </p>
+<p>看到图中可以导入导出，试着添加一个然后导出发现先其模版是按照这样的模式</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=”1.0″ encoding=”UTF-8″ standalone=”no”?&gt;</span><span class="tag">&lt;<span class="name">templates</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">”true”</span> <span class="attr">context</span>=<span class="string">”r-code”</span> <span class="attr">deleted</span>=<span class="string">”false”</span> <span class="attr">description</span>=<span class="string">”apply”</span> <span class="attr">enabled</span>=<span class="string">”true”</span> <span class="attr">name</span>=<span class="string">”apply”</span>&gt;</span>apply<span class="tag">&lt;/<span class="name">template</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">”true”</span> <span class="attr">context</span>=<span class="string">”r-code”</span> <span class="attr">deleted</span>=<span class="string">”false”</span> <span class="attr">description</span>=<span class="string">”</span>" <span class="attr">enabled</span>=<span class="string">”true”</span> <span class="attr">name</span>=<span class="string">”cbind”</span>&gt;</span>cbind<span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">templates</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>现在需要的就是将所有的函数按照这样的格式写下来即可，导入之后就可以了。用python写个脚本简单完成此功能。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># coding=UTF-8</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Created on Apr 26, 2012</span></span><br><span class="line"><span class="string">@author: tanglei|www.tanglei.name</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line">rfunctions = open(<span class="string">'out.txt'</span>,mode=<span class="string">'r'</span>)</span><br><span class="line">functions = []</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> rfunctions.readlines():</span><br><span class="line">    functions.extend(line.split(<span class="string">','</span>))</span><br><span class="line">    </span><br><span class="line">print(len(functions))</span><br><span class="line">rout = open(<span class="string">'r.functions.templetes.xml'</span>,<span class="string">'w'</span>)</span><br><span class="line">rfuns = open(<span class="string">'r.fun.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">rout.write(<span class="string">'''&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;&lt;templates&gt;'''</span>)</span><br><span class="line">rout.write(<span class="string">'\n'</span>)</span><br><span class="line"><span class="keyword">for</span> fun <span class="keyword">in</span> functions:</span><br><span class="line">    <span class="keyword">if</span> len(fun)&lt;<span class="number">3</span> :<span class="keyword">continue</span><span class="comment">#太短了</span></span><br><span class="line">    <span class="keyword">if</span> fun[<span class="number">0</span>] <span class="keyword">in</span> (<span class="string">'!'</span>,<span class="string">'$'</span>,<span class="string">'.'</span>,<span class="string">'-'</span>,<span class="string">'%'</span>,<span class="string">'&amp;'</span>,<span class="string">'*'</span>,<span class="string">'['</span>,<span class="string">'+'</span>,<span class="string">'&lt;'</span>,<span class="string">'|'</span>,<span class="string">':'</span>,<span class="string">'/'</span>,<span class="string">'@'</span>,<span class="string">'&lt;'</span>,<span class="string">'&gt;'</span>) :<span class="keyword">continue</span><span class="comment">#生成的函数可能以这些开头，过滤掉</span></span><br><span class="line">    <span class="keyword">if</span> fun.count(<span class="string">'&lt;'</span>)&gt;<span class="number">0</span>:<span class="keyword">continue</span><span class="comment">#非法字符，xml中解析可能出错</span></span><br><span class="line">    strFunc = <span class="string">"&lt;template autoinsert=\"true\" context=\"r-code\" deleted=\"false\" description=\""</span>+str(fun)+<span class="string">"   http://www.tanglei.name,You can modify this sentence by replacing them in the templetes.xml\" enabled=\"true\" name=\""</span>+str(fun)+<span class="string">"\"&gt;"</span>+str(fun)+<span class="string">"&lt;/template&gt;\n"</span></span><br><span class="line">    rout.write(strFunc)</span><br><span class="line">    rfuns.write(fun)</span><br><span class="line">    rfuns.write(<span class="string">'\n'</span>)</span><br><span class="line">rout.write(<span class="string">'''&lt;/templates&gt;'''</span>)</span><br><span class="line">print(<span class="string">'done'</span>)</span><br></pre></td></tr></table></figure>
+<p>以上代码将之前安装的包中的函数以固定的格式输出到r.functions.templetes.xml，然后在上图中StatET-&gt;Source Editors-&gt;R Templates,导入即可实现。效果如下图<br><a href="/wp-content/uploads/2012/04/Rwordcompletion1.jpg"><img title="R word completion-1" border="0" alt="R word completion-1" src="/wp-content/uploads/2012/04/Rwordcompletion1_thumb.jpg"></a> </p>
+<p>其实这样导入后，eclipse自动将这些配置写到了上面的那个配置文件de.walware.statet.r.ui.prefs(直接在这里添加也可以,不过建议不使用这种方式)。注意导入的时候可能会出错，原因是因为templetes.xml中一些函数包含类似”&lt;-“这样的符号，得去掉，或者转义吧。我直接去掉。上面python中前面几句就是过滤到之类的函数。</p>
+<p>在这里可以<a href="/wp-content/blogresources/r.functions.templetes.xml" target="_blank">下载</a>我的环境中生成的自动补全的函数列表。最好是你自己用上面的R script和python代码跑一遍得到你要用到的函数。</p>
+<p>参考资料：<a href="http://cos.name/cn/topic/12136" target="_blank">COS论坛Eclipse+StatET真的不错</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Eclipse/" rel="tag"># Eclipse</a>
+          
+            <a href="/tags/R语言/" rel="tag"># R语言</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/how-to-use-eclipse-to-program-in-r.html" rel="next" title="R语言开发的eclipse插件安装教程">
+                <i class="fa fa-chevron-left"></i> R语言开发的eclipse插件安装教程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/my-travel-to-beidaihe.html" rel="prev" title="北戴河之旅">
+                北戴河之旅 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码高亮问题"><span class="nav-number">1.</span> <span class="nav-text">代码高亮问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码提示自动补全问题"><span class="nav-number">2.</span> <span class="nav-text">代码提示自动补全问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/r-with-syntax-color-and-word-completion-in-eclipse-with-statet.html';
+
+      var disqus_title = "R语言开发eclipse插件statET-代码高亮和代码提示自动补全";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

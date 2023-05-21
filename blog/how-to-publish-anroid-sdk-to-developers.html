@@ -1,0 +1,801 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Java,Android,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="在Android开发过程中，我们经常会有这种需求，需要将自己开发一个类库打包成jar包以供他人(其他人一般指开发者)调用，而不是直接打包apk文件供最终用户使用。在打包成jar后，你往往会自己先测试一下看jar包能不能直接使用，这时就会常常有如下的几个问题： 1) Error…..Found duplicate file for APK:res/drawable-xxx/xxx.xx 2) res">
+<meta name="keywords" content="Java,Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 打包Jar(发布SDK)常见问题及解决方案">
+<meta property="og:url" content="https://www.tanglei.name/blog/how-to-publish-anroid-sdk-to-developers.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="在Android开发过程中，我们经常会有这种需求，需要将自己开发一个类库打包成jar包以供他人(其他人一般指开发者)调用，而不是直接打包apk文件供最终用户使用。在打包成jar后，你往往会自己先测试一下看jar包能不能直接使用，这时就会常常有如下的几个问题： 1) Error…..Found duplicate file for APK:res/drawable-xxx/xxx.xx 2) res">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2013/05/clip_image002_thumb.jpg">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2013/05/clip_image004_thumb.jpg">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2013/05/clip_image006_thumb.jpg">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.136Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 打包Jar(发布SDK)常见问题及解决方案">
+<meta name="twitter:description" content="在Android开发过程中，我们经常会有这种需求，需要将自己开发一个类库打包成jar包以供他人(其他人一般指开发者)调用，而不是直接打包apk文件供最终用户使用。在打包成jar后，你往往会自己先测试一下看jar包能不能直接使用，这时就会常常有如下的几个问题： 1) Error…..Found duplicate file for APK:res/drawable-xxx/xxx.xx 2) res">
+<meta name="twitter:image" content="https://www.tanglei.name/wp-content/uploads/2013/05/clip_image002_thumb.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/how-to-publish-anroid-sdk-to-developers.html">
+
+
+
+
+
+  <title> Android 打包Jar(发布SDK)常见问题及解决方案 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/how-to-publish-anroid-sdk-to-developers.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android 打包Jar(发布SDK)常见问题及解决方案
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-05-11T00:50:45+00:00">
+                2013-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/how-to-publish-anroid-sdk-to-developers.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/how-to-publish-anroid-sdk-to-developers.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在Android开发过程中，我们经常会有这种需求，需要将自己开发一个类库打包成jar包以供他人(其他人一般指开发者)调用，而不是直接打包apk文件供最终用户使用。在打包成jar后，你往往会自己先测试一下看jar包能不能直接使用，这时就会常常有如下的几个问题：</p>
+<p>1) Error…..Found duplicate file for APK:res/drawable-xxx/xxx.xx</p>
+<p>2) res.Resources$NotFoundException:XXX ID#0x7f090015</p>
+<p>3) java.lang.NullPointerException</p>
+<p>4) java.lang.NoClassDefFoundError: com.xxx.xxx.R$layout</p>
+<p>几个问题常见的原因是因为<strong>资源文件</strong>在作怪。</p>
+<p>在第一个问你中，<strong>资源文件</strong>被打包进jar，在目标使用project中，也有相同id的资源文件，引起了冲突，解决方案是别打包资源文件啦，打包进去也不用的，后面会提到。或许你提到可能改变src project(提供jar包的project)里面的资源id可以表面上解决这个问题。</p>
+<p>不打包资源文件，但src project中又引用了res的资源文件，即便你把相应的layout的xml啊String.xml啊等copy到目标project中，也会造成如res.Resources$NotFoundException或者java.lang.NullPointerException，原因是在src中的一些activity调用xml中的资源时，控件id找不到，例如一个btn = findViewById(R.id.btnXXX);这个btn为空，就会NullPointerException.这个问题原因还是在stackoverflow上有人给出了合理的解释.</p>
+<blockquote>
+<p>As you want to import the resources,Since Android makes R class automatically with resources files under /res folder, using R class as final static is impossible.in your source code which will be exported in jar file, DON&#8217;T USE R variable because it will be replaced with final static memory address in compile time. Instead of using R use method below……</p>
+</blockquote>
+<p>src项目中导出src文件夹成jar，不包含资源文件，资源文件copy到要引用的的其他项目中，但src中不能通过R.id.XXX 获取xml中的布局等。因为打包成class的时候，final int 等死了(具体可以看看gen/xxx.xx.R.java)，在新项目中是不对应的。解决方案就是用<strong>反射</strong>的方法.代码如下.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getResourseIdByName</span><span class="params">(String packageName, String className,</span></span></span><br><span class="line"><span class="function"><span class="params">			String name)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		Class r = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">int</span> id = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">try</span></span><br><span class="line">		&#123;</span><br><span class="line">			r = Class.forName(packageName + <span class="string">".R"</span>);</span><br><span class="line"></span><br><span class="line">			Class[] classes = r.getClasses();</span><br><span class="line">			Class desireClass = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; classes.length; i++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (classes[i].getName().split(<span class="string">"\\$"</span>)[<span class="number">1</span>].equals(className))</span><br><span class="line">				&#123;</span><br><span class="line">					desireClass = classes[i];</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (desireClass != <span class="keyword">null</span>)</span><br><span class="line">				id = desireClass.getField(name).getInt(desireClass);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (ClassNotFoundException e)</span><br><span class="line">		&#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IllegalArgumentException e)</span><br><span class="line">		&#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (SecurityException e)</span><br><span class="line">		&#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IllegalAccessException e)</span><br><span class="line">		&#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (NoSuchFieldException e)</span><br><span class="line">		&#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> id;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>然后利用int id = getResourceIdByName(context.getPackageName(), &#8220;layout&#8221;, &#8220;main&#8221;);获取layout文件夹下main.xml的配置layout，通过int id = getResourceIdByName(context.getPackageName(), &#8220;string&#8221;, &#8220;text1&#8221;);获取string.xml下key为text1的字符串，通过int id = getResourceIdByName(context.getPackageName(), &#8220;id&#8221;, &#8220;btn&#8221;)获得id为btn的控件等。这个代码利用反射运行时找的。</p>
+<p>当然具体应用过程中你可以根据上面的这个方法重构一下去掉循环找配置而修改成单独的一些id(key),dimen(key),color(key)之类的方法.这里就不便(工作需要)将源码给出当然也没必要给出了.</p>
+<p>网上说使用library方法加载资源文件可以解决,即将src project作为library,目标project引用src project.然后说这个方法解决了通过R.XX.XX获取资源的问题，但还有一个问题是不可能把这个源码发布出去让其他人使用。我试了试，在我的项目中貌似通过R.XX.XX获取的控件仍然为null，让人会报空指针异常。</p>
+<p>但这个给我提供了一个思路解决了一个比较方便的提供SDK的方式。因为上面的提到的那种需要手动copy layout等xml文件.如果利用library的话可以避免copy这个操作。具体方案就是，同样src project打包成lib.jar，然后自己手动建一个library project作为中间project，这个project添加lib.jar并将相应的xml文件copy到此project.如下图中的nebula_sdk,然后再发布nebula_sdk这个项目给其他人用，这样既满足了功能需求同样也使代码不易泄漏(打包过程仍然可以使用一定的代码混淆技术).</p>
+<p>新建一个类库项目，如命名nebula_sdk.</p>
+<p><a href="/wp-content/uploads/2013/05/clip_image002.jpg"><img title="clip_image002" src="/wp-content/uploads/2013/05/clip_image002_thumb.jpg" alt="clip_image002"></a><a href="/wp-content/uploads/2013/05/clip_image004.jpg"><img title="clip_image004" src="/wp-content/uploads/2013/05/clip_image004_thumb.jpg" alt="clip_image004"></a></p>
+<p>发布出去后，开发者需要将上面提到的nebula_sdk作为library引用进来。如下图.</p>
+<p><a href="/wp-content/uploads/2013/05/clip_image006.jpg"><img title="clip_image006" src="/wp-content/uploads/2013/05/clip_image006_thumb.jpg" alt="clip_image006"></a></p>
+<p>因此得到了<strong>两种android下发布sdk方案</strong>：</p>
+<ol>
+<li>生成jar,发布jar包同时提供layout xml等配置资源文件.这也是现在很多sdk发布的方式，比如一下广告的SDKdomob_android_sdk，统计分析的SDK等.</li>
+<li>生成jar包，先将library project并将此library project发布出去.这个方法可以省了让开发者copy 资源文件这一个过程.</li>
+</ol>
+<p>当然如果src project中<strong>只</strong>涉及图片之类的(R.drawable.xx)文件（不涉及通过R.ID.xxx得到布局等控件）的话也可以按照网上所说的方法把图片copy到assert目录下然后通过File IO的方式获取原本应该放在drawable下的资源文件.当然如果涉及布局等控件外，还有另外一个解决方案然后布局的话可以用硬coding的方式编码(不读取xml布局)，不过这个应该比较繁琐吧。</p>
+<p>参考资料：</p>
+<p>[1] android中级之Android类库打包方法探究<a href="http://blog.csdn.net/zp522123428/article/details/7437027" target="_blank" rel="noopener">http://blog.csdn.net/zp522123428/article/details/7437027</a></p>
+<p>[2] android 关于生成jar包的问题 <a href="http://blog.sina.com.cn/s/blog_5da93c8f010108df.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_5da93c8f010108df.html</a></p>
+<p>[3] java.lang.NoClassDefFoundError: com.facebook.android.R$layout error when using facebook sdk jar</p>
+<p><a href="http://stackoverflow.com/questions/14373004/java-lang-noclassdeffounderror-com-facebook-android-rlayout-error-when-using-f" target="_blank" rel="noopener">http://stackoverflow.com/questions/14373004/java-lang-noclassdeffounderror-com-facebook-android-rlayout-error-when-using-f</a></p>
+<p>[4] Android 中jar包封装及调用<a href="http://blog.csdn.net/huangyic1986/article/details/7452177" target="_blank" rel="noopener">http://blog.csdn.net/huangyic1986/article/details/7452177</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/complaint-yuantong-express-to-chinapost.html" rel="next" title="对快递业务不满的投诉方法">
+                <i class="fa fa-chevron-left"></i> 对快递业务不满的投诉方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/bibtex-batch-export.html" rel="prev" title="BibTex Batch Export|latex论文引用批量导出">
+                BibTex Batch Export|latex论文引用批量导出 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/how-to-publish-anroid-sdk-to-developers.html';
+
+      var disqus_title = "Android 打包Jar(发布SDK)常见问题及解决方案";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

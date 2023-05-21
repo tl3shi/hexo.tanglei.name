@@ -1,0 +1,844 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Java,程序员,编程,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景石头同学是某大公司高级开发工程师，某日收到不少错误告警信息，于是便去开始排查。 跟踪日志发现是某个服务抛出的异常信息，奇怪的是这个服务上线也有一段时间了">
+<meta name="keywords" content="Java,程序员,编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="你可能也会掉进这个简单的 String 的坑">
+<meta property="og:url" content="https://www.tanglei.name/blog/constuct-of-string-is-not-easy.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景石头同学是某大公司高级开发工程师，某日收到不少错误告警信息，于是便去开始排查。 跟踪日志发现是某个服务抛出的异常信息，奇怪的是这个服务上线也有一段时间了">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/constuct-of-string-is-not-easy/easy.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/constuct-of-string-is-not-easy/%E5%AE%8C%E7%BE%8E.jpeg">
+<meta property="og:image" content="https://www.tanglei.name/resources/constuct-of-string-is-not-easy/%E5%B0%8F%E6%9C%8B%E5%8F%8B%E9%97%AE%E5%8F%B7.jpeg">
+<meta property="og:image" content="https://www.tanglei.name/resources/constuct-of-string-is-not-easy/testcase-tangleithu.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/constuct-of-string-is-not-easy/testcase-%E4%B8%AD%E6%96%87.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/constuct-of-string-is-not-easy/testcase-%E4%B8%AD%E6%96%871.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/constuct-of-string-is-not-easy/string-bytes-constructor.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/constuct-of-string-is-not-easy/string-bytes-constructor-1.png">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.168Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="你可能也会掉进这个简单的 String 的坑">
+<meta name="twitter:description" content="关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景石头同学是某大公司高级开发工程师，某日收到不少错误告警信息，于是便去开始排查。 跟踪日志发现是某个服务抛出的异常信息，奇怪的是这个服务上线也有一段时间了">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/constuct-of-string-is-not-easy/easy.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/constuct-of-string-is-not-easy.html">
+
+
+
+
+
+  <title> 你可能也会掉进这个简单的 String 的坑 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/constuct-of-string-is-not-easy.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                你可能也会掉进这个简单的 String 的坑
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-11-12T00:00:00+00:00">
+                2020-11-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/constuct-of-string-is-not-easy.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/constuct-of-string-is-not-easy.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247490188&amp;idx=1&amp;sn=19c2259724a855cdfac48855a870368d&amp;chksm=eb471b68dc30927eb17b1e5a999eebe808084a9f3aa64d3041f73dd3a8327ccc1d84353cf51f&amp;token=105401824&amp;lang=zh_CN#rd" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “<strong>1024</strong>” 获取程序员大厂面试指南。</p>
+</blockquote>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>石头同学是某大公司高级开发工程师，某日收到不少错误告警信息，于是便去开始排查。</p>
+<p>跟踪日志发现是某个服务抛出的异常信息，奇怪的是这个服务上线也有一段时间了。之前很少看到类似的错误信息，最近偶尔多了起来。</p>
+<p>后来才定位到是因为服务调用了某外部接口，发现对方对参数长度做了限制，如果输入参数超过 1000 bytes，就直接抛异常，代码类似如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> status</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> result, the size should less than 1000 bytes</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">XXResult</span><span class="params">(<span class="keyword">boolean</span> status, String result)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (result != <span class="keyword">null</span> &amp;&amp; result.getBytes().length &gt; <span class="number">1000</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"result size more than 1000 bytes!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">		......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>心想，这还不简单，咱们的 <code>result</code> 也不是什么关键性的东西，你有限制，我直接 trim 一下不就行了？</p>
+<p><img src="https://www.tanglei.name/resources/constuct-of-string-is-not-easy/easy.png" alt="easy"></p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>于是三下五除二，给搞了个 <code>trim</code> 方法，支持传不同参数按需 trim，代码如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 将给定的字符串 trim 到指定大小</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> input</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> trimTo 需要 trim 的字节长度</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> trim 后的 String</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">trimAsByte</span><span class="params">(String input, <span class="keyword">int</span> trimTo)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (Objects.isNull(input)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">byte</span>[] bytes = input.getBytes();</span><br><span class="line">    <span class="keyword">if</span> (bytes.length &gt; trimTo) &#123;</span><br><span class="line">        <span class="keyword">byte</span> [] subArray = Arrays.copyOfRange(bytes, <span class="number">0</span>, trimTo);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(subArray);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> input;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>再在需要调用外部服务的地方，先调用这个 <code>trimAsByte</code> 方法，一顿操作连忙上线，一切完美~</p>
+<p><img src="https://www.tanglei.name/resources/constuct-of-string-is-not-easy/%E5%AE%8C%E7%BE%8E.jpeg" alt="完美"></p>
+<h2 id="灾难现场"><a href="#灾难现场" class="headerlink" title="灾难现场"></a>灾难现场</h2><p>一切完美，石头哥也是这样认为的。然后幸福总是短暂的。 </p>
+<p>经过一段时间后（前面也提到，业务场景确实是偶发的），相同的错误仍然发生了。</p>
+<p>简直不敢相信，都 trim 了为啥还会超出？你也帮忙想想，是哪里的问题？</p>
+<p><img src="https://www.tanglei.name/resources/constuct-of-string-is-not-easy/%E5%B0%8F%E6%9C%8B%E5%8F%8B%E9%97%AE%E5%8F%B7.jpeg" alt="小朋友问号"></p>
+<p><img src="https://www.tanglei.name/resources/constuct-of-string-is-not-easy/testcase-tangleithu.png" alt="testcase-tangleithu"></p>
+<p>看看上面的例子（为了方便展示，简单修改了下文首代码），</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">trimAsByte(<span class="string">"WeChat:tangleithu"</span>, <span class="number">8</span>)</span><br></pre></td></tr></table></figure>
+<p>输入字符串 <code>WeChat:tangleithu</code> 太长了，只 trim 到剩下 8 个字节，对应的字节数组是从 <code>[87,101,67,104,97,116,58,116,97,110,103,108,101,105,116,104,117]</code> 变为了 <code>[87,101,67,104,97,116,58,116]</code>，字符串变成了 <code>WeChat:t</code> ，结果正确。</p>
+<p>其实在写这个方法的时候还是太草率了，本应该很容易想到中文的情况的，我们来试试：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">trimAsByte(<span class="string">"程序猿石头"</span>, <span class="number">8</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="/resources/constuct-of-string-is-not-easy/testcase-%E4%B8%AD%E6%96%87.png" alt="testcase-中文"></p>
+<p>看上述截图，悲剧了，输入<code>程序猿石头</code>，3 个字节一个汉字，一共 15 个字节 <code>[-25,-88,-117,-27,-70,-113,-25,-116,-65,-25,-97,-77,-27,-92,-76]</code>，trim 到 8 位，剩下前 8 位 <code>[-25,-88,-117,-27,-70,-113,-25,-116]</code> 也正确。再 <code>new String</code>，又变成3 个 “中文” 了，虽然第 3 个“中文”，咱也不认识，咱也不敢问到底读啥，总之再转换成字节数组，长度多了 1 个，变成 9 了。</p>
+<p><img src="https://www.tanglei.name/resources/constuct-of-string-is-not-easy/testcase-%E4%B8%AD%E6%96%871.png" alt="testcase-中文1"></p>
+<p>问题算是定位到了。</p>
+<h2 id="不禁要问，为什么？"><a href="#不禁要问，为什么？" class="headerlink" title="不禁要问，为什么？"></a>不禁要问，为什么？</h2><p>来看看这个 String 的构造函数，看看上面注释才发现，才发现其实我们忽略了一个很重要的概念，就是编码方式。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Constructs a new &#123;<span class="doctag">@code</span> String&#125; by decoding the specified array of bytes</span></span><br><span class="line"><span class="comment"> * using the platform's default charset.  The length of the new &#123;<span class="doctag">@code</span></span></span><br><span class="line"><span class="comment"> * String&#125; is a function of the charset, and hence may not be equal to the</span></span><br><span class="line"><span class="comment"> * length of the byte array.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * &lt;p&gt; The behavior of this constructor when the given bytes are not valid</span></span><br><span class="line"><span class="comment"> * in the default charset is unspecified.  The &#123;<span class="doctag">@link</span></span></span><br><span class="line"><span class="comment"> * java.nio.charset.CharsetDecoder&#125; class should be used when more control</span></span><br><span class="line"><span class="comment"> * over the decoding process is required.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span>  bytes</span></span><br><span class="line"><span class="comment"> *         The bytes to be decoded into characters</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span>  JDK1.1</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">String</span><span class="params">(<span class="keyword">byte</span> bytes[])</span> </span>&#123;</span><br><span class="line">    <span class="comment">//this(bytes, 0, bytes.length);</span></span><br><span class="line">    checkBounds(bytes, offset, length);</span><br><span class="line">    <span class="keyword">this</span>.value = StringCoding.decode(bytes, offset, length);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当我们用默认的构造函数 new String 的时候，只是用了系统默认的编码（本文是“UTF-8”）去尝试解码，构造出字符串。</p>
+<p>所以，当我们在用字节数组（字节流）来表达具体的语义的时候，一定要约定好以什么方式进行编码，本文不具体阐述编码问题了。下面用一个例子来解释上文的现象：</p>
+<p><img src="https://www.tanglei.name/resources/constuct-of-string-is-not-easy/string-bytes-constructor.png" alt="string-bytes-constructor"></p>
+<p> <code>[-25,-88,-117,-27,-70,-113,-25,-116,-65,-25,-97,-77,-27,-92,-76]</code> 仍然用这串字节数组来实验，这串字节数组，如果用 “UTF-8” 编码去解释，那么其想表达的语义就是中文“程序猿石头”，从上文标注的 1，2，3 中可以看出来，没有写即用了系统中的默认编码“UTF-8”。</p>
+<p>假设按照 “GBK” 来解释（标注 4），就是表达的 “绋嬪簭鐚跨煶澶�”，注意看下其中的 <code>�</code> 是不是似曾相识；</p>
+<p>注意标注 5，通过 GBK 解释构造字符串后，再通过默认的 “UTF-8” 获取字节数组，长度就变成 24 了，然后还通过 “GBK” 编码得到的字节数组长度为 15（标注 6），再试图构造字符串（标注 7），其中“程序猿石头”的“头”字，已经没了。说明这个转换过程中，其实信息已经被丢了。</p>
+<p>上面的 <code>�</code> 其实是 UNICODE 编码方式中的一个特殊的字符，也就是 0xFFFD(65535)，其实是一个占位符(REPLACEMENT CHARACTER)，用来表达未知的、没办法表达的东东。 上文中在进行编码转换过程中，出现了这个玩意，其实也就是没办法准确表达含义，会被替换成这个东西，因此信息也就丢失了。 你可以试试前面的例子，比如把前 8 个字节中的最后一两个字节随便改改，都是一样的。 </p>
+<p><img src="https://www.tanglei.name/resources/constuct-of-string-is-not-easy/string-bytes-constructor-1.png" alt="string-bytes-constructor1"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总结一下，其实本来是一个很简单的问题，却经过几次修改才最终解决，说明对 “基础” 掌握得还是不够，提醒我们，在处理二进制数据的时候，一定要联想到 “编码” 方式。</p>
+<p>另外，提醒我们，看似简单的问题，我们往往容易忽略。比如如果单纯看到文中提到的这个<code>trim</code> 方法，其实很容易写个<strong>单元测试</strong>就能尽早发现有问题；越是基础的方法，我们越应该考虑其代码的健壮性，在之前的 <a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247484698&amp;idx=1&amp;sn=03cc4636e7ee7364a85788a98809cc03&amp;chksm=eb4704fedc308de8efd48ab9aed4fd1ddee5665d8e76d0d3767c1f704eac8b15a83e450a08f1&amp;token=1702436273&amp;lang=zh_CN#rd" target="_blank" rel="noopener">从一道面试题谈谈一线大厂码农应该具备的基本能力</a> 中，我也谈到了写单元测试、测试用例的重要性。 </p>
+<blockquote>
+<p>关于作者：程序猿石头(ID: tangleithu)，现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader，欢迎关注，交流和指导！</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/程序员/" rel="tag"># 程序员</a>
+          
+            <a href="/tags/编程/" rel="tag"># 编程</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/why-java-cannot-allocate-mem-with-enough-physical-memory.html" rel="next" title="内存充足，但是为什么 Java 总申请不到内存呢？">
+                <i class="fa fa-chevron-left"></i> 内存充足，但是为什么 Java 总申请不到内存呢？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/experience-of-buying-a-house-in-peking-part-1.html" rel="prev" title="毕业两年半，如何帝都购房上车|石头购房经验谈（上）">
+                毕业两年半，如何帝都购房上车|石头购房经验谈（上） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#灾难现场"><span class="nav-number">3.</span> <span class="nav-text">灾难现场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不禁要问，为什么？"><span class="nav-number">4.</span> <span class="nav-text">不禁要问，为什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/constuct-of-string-is-not-easy.html';
+
+      var disqus_title = "你可能也会掉进这个简单的 String 的坑";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

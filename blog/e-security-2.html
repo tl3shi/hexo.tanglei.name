@@ -1,0 +1,833 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="电子商务,网路安全,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="上接/blog/e-security-1.html   数字签名：数字签名（Digital Signature）就是附加在数据单元上的一些数据，或是对数据单元所作的密码变换. 可用来防止电子信息因被修改而有人作伪；或冒用别人名义发送信息；或发出（收到）信件后又加以否认等情况发生。 ** **数字水印: **是通过一定的算法将数字、序列号、文字、图像标志等版权信息嵌入到多媒体数据中，但不影响原内">
+<meta name="keywords" content="电子商务,网路安全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="电子安全(二)">
+<meta property="og:url" content="https://www.tanglei.name/blog/e-security-2.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="上接/blog/e-security-1.html   数字签名：数字签名（Digital Signature）就是附加在数据单元上的一些数据，或是对数据单元所作的密码变换. 可用来防止电子信息因被修改而有人作伪；或冒用别人名义发送信息；或发出（收到）信件后又加以否认等情况发生。 ** **数字水印: **是通过一定的算法将数字、序列号、文字、图像标志等版权信息嵌入到多媒体数据中，但不影响原内">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.075Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="电子安全(二)">
+<meta name="twitter:description" content="上接/blog/e-security-1.html   数字签名：数字签名（Digital Signature）就是附加在数据单元上的一些数据，或是对数据单元所作的密码变换. 可用来防止电子信息因被修改而有人作伪；或冒用别人名义发送信息；或发出（收到）信件后又加以否认等情况发生。 ** **数字水印: **是通过一定的算法将数字、序列号、文字、图像标志等版权信息嵌入到多媒体数据中，但不影响原内">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/e-security-2.html">
+
+
+
+
+
+  <title> 电子安全(二) | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/e-security-2.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                电子安全(二)
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-05-24T18:25:30+00:00">
+                2011-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">课程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/e-security-2.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/e-security-2.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <div><br>  上接<a href="/blog/e-security-1.html">/blog/e-security-1.html</a><br></div>
+
+<ol>
+<li><strong>数字签名：</strong>数字签名（Digital Signature）就是附加在数据单元上的一些数据，或是对数据单元所作的密码变换. 可用来防止电子信息因被修改而有人作伪；或冒用别人名义发送信息；或发出（收到）信件后又加以否认等情况发生。 <em>**</em></li>
+<li><strong>**</strong>数字水印:<strong> **</strong>是通过一定的算法将数字、序列号、文字、图像标志等版权信息嵌入到多媒体数据中，但不影响原内容的价值和使用，并且不能被人的感知系统觉察或注意到。 <em>**</em></li>
+<li><strong>数字时间戳:</strong> 数字时间戳服务(DTS: Digital Time-stamp Service)能提供电子文件发表时间的安全保护。数字时间戳服务是网上电子商务安全服务项目之一，由专门的机构提供，该机构被称之为DTS部门。<strong>数字时间戳是一个经加密后形成的证书文档，它包括三个部分：</strong></li>
+</ol>
+<p>a)         需加时间戳的文件的摘要（digest）；(Hash编码加密形成摘要)</p>
+<p>b)         DTS收到文件的日期和时间；(DTS加入收到文件摘要的日期和时间信息)</p>
+<p>c)         DTS的数字签名。(DTS对该文件加密（数字签名）)</p>
+<ol>
+<li><strong>4.</strong> <strong>数字证书:</strong> 数字证书(Digital Certificate, Digital ID)又称为数字凭证，是采用公钥密码体制经证书授权中心数字签名的，包括公开密钥拥有者信息以及公开密钥的文件。最简单的证书包括一个公开密钥、名称以及证书授权中心的数字签名。数字证书采用公钥体制, 如果用户需要发送加密数据，发送方需要使用接收方的数字证书中的公开密钥对数据进行加密，而接收方则使用自己的私有密钥进行解密，从而保证数据的安全保密性。<strong>数字证书有三种类型**</strong>:**</li>
+</ol>
+<p>a)         <strong>个人证书</strong>(Personal Digital ID): 帮助其个人在网上进行安全交易操作。个人身份的数字证书通常是安装在客户端的浏览器内的，并通过安全的电子邮件(S/MIME)来进行交易操作。</p>
+<p>b)         <strong>企业服务器证书</strong>(Server ID): 为网上的某个Web服务器提供证书, 有证书的Web服务器会自动地将其与客户端Web浏览器通信的信息加密.</p>
+<p>c)         <strong>软件开发者证书</strong>(Developer ID): 为Internet中被下载的软件提供证书</p>
+<ol>
+<li><strong>生物识别：</strong>指纹、手型、脸型、语音、视网膜……</li>
+</ol>
+<p>l  <strong>电子认证系统</strong></p>
+<ol>
+<li><strong>认证中心：</strong>CA(Certification Authority)就是提供交易双方身份认证并保证交易安全进行的第三方服务机构，它承担网上安全电子交易认证服务、能签发数字证书、并能确认用户身份。功能有：证书的颁发、更新、查询、作废、归档；密钥的备份和恢复。主要由以下三部分组成：</li>
+</ol>
+<p>a)         <strong>注册服务器：</strong>通过 Web Server 建立的站点，可为客户提供每日24小时的服务。因此客户可在自己方便的时候在网上提出证书申请和填写相应的证书申请表，免去了排队等候等烦恼。</p>
+<p>b)         <strong>证书申请受理和审核机构</strong>：负责证书的申请和审核。它的主要功能是接受客户证书申请并进行审核。</p>
+<p>c)         <strong>认证中心服务器：</strong>是数字证书生成、发放的运行实体，同时提供发放证书的管理、证书废止列表（CRL）的生成和处理等服务。</p>
+<ol>
+<li><strong>2.</strong> <strong>SSL**</strong>协议：<strong>安全套接字层协议(Secure Sockets Layer, SSL)是由Netscape公司研究制定的基于WEB应用的安全协议，包括“SSL记录协议”和“SSL握手协议”两部分。**</strong></li>
+<li><strong>3.</strong> <strong>SET**</strong>协议：<strong>安全电子交易(Secure Electronic Transaction, SET)是由美国Visa和MasterCard两大信用卡组织提出的应用于Internet上的以</strong>信用卡为基础的电子支付<strong>系统协议。**</strong></li>
+<li><strong>4.</strong> <strong>S-HTTP**</strong>协议：<strong>S-HTTP（安全的超文本传输）协议通过对密钥对的加密，保障Web站点间交易信息传输的安全性，它提供了文件级的安全机制，每个文件都可以被设成私人/签字状态。**</strong></li>
+</ol>
+<p>l  <strong>防火墙</strong></p>
+<ol>
+<li><strong>1.</strong> <strong>防火墙概述:</strong> 防火墙(Firewall)是一项协助确保信息安全的设备，会依照特定的规则，允许或是限制传输的数据通过。防火墙可以是一台专属的硬件也可以是架设在一般硬件上的一套软件。<em>**</em></li>
+<li><strong>2.</strong> <strong>防火墙作用：</strong></li>
+</ol>
+<p>a)         过滤不安全服务和非法用户。</p>
+<p>b)         控制对特殊站点的访问。</p>
+<p>c)         提供监视Internet安全和预警的方便端口。</p>
+<p>d)         可以连接到一个单独的网段上，将Internet上的用户所访问的系统与只由内部员工访问的系统分离出来。</p>
+<ol>
+<li><strong>3.</strong> <strong>防火墙分类：</strong></li>
+</ol>
+<p>a)         <strong>包过滤防火墙</strong>：采用包过滤技术，对所有通过防火墙的信息包的IP地址进行检查，并按照事先给定的过滤规则进行过滤。</p>
+<p>b)         <strong>应用级网关</strong>：也称为代理防火墙，是在网络应用层上建立协议过滤和转发功能。</p>
+<p>c)         <strong>状态检测防火墙</strong>：采用基于连接状态的检测技术，将属于同一连接的所有包作为一个整体的数据流看待。</p>
+<ol>
+<li><strong>4.</strong> <strong>缺点：</strong></li>
+</ol>
+<p>a)         不能防范来自内部的攻击。</p>
+<p>b)         不能防范不通过它的连接。</p>
+<p>c)         不能防范未知的威胁。</p>
+<p>d)         不能完全防范病毒的破坏。</p>
+<hr>
+<p>l  <strong>网络病毒</strong></p>
+<ol>
+<li><strong>1.</strong> <strong>病毒概述：</strong>编制或者在计算机程序中插入的破坏计算机功能或者破坏数据，影响计算机使用并且能够自我复制的一组计算机指令或者程序代码被称为计算机病毒（Computer Virus）。 <em>**</em></li>
+<li><strong>2.</strong> <strong>网络病毒特点：</strong></li>
+</ol>
+<p>a)         传染方式多，传染性强。</p>
+<p>b)         破坏性强。</p>
+<p>c)         具有潜伏性和可激发性。</p>
+<p>d)         清除难度大。</p>
+<ol>
+<li><strong>3.</strong> <strong>防治：</strong>要从防毒、查毒、杀毒三方面来进行，遵循“预防为主、消防结合”的原则，管理和技术两方面着手有防治方案硬件保护和软件结合，手工检测和自动检测，需要结合使用。<em>**</em></li>
+</ol>
+<p>l  <strong>黑客</strong></p>
+<p>l  <strong>个人信息的保护</strong></p>
+<p>&nbsp;</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/电子商务/" rel="tag"># 电子商务</a>
+          
+            <a href="/tags/网路安全/" rel="tag"># 网路安全</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/e-security-1.html" rel="next" title="电子安全(一)">
+                <i class="fa fa-chevron-left"></i> 电子安全(一)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/e-payment.html" rel="prev" title="电子支付">
+                电子支付 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/e-security-2.html';
+
+      var disqus_title = "电子安全(二)";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

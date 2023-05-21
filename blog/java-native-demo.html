@@ -1,0 +1,797 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Java,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="研究了下 Java native 方法的例子，供需要的同学看看。  首先看下什么是 Native method，参考了下http://www.80&amp;#215;86.cn/article.asp?id=1448上的文章：  Simply put, a native method is the Java interface to non-Java code. It is Java&amp;#8217;s li">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java native例子">
+<meta property="og:url" content="https://www.tanglei.name/blog/java-native-demo.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="研究了下 Java native 方法的例子，供需要的同学看看。  首先看下什么是 Native method，参考了下http://www.80&amp;#215;86.cn/article.asp?id=1448上的文章：  Simply put, a native method is the Java interface to non-Java code. It is Java&amp;#8217;s li">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2010/12/native1.png">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.035Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java native例子">
+<meta name="twitter:description" content="研究了下 Java native 方法的例子，供需要的同学看看。  首先看下什么是 Native method，参考了下http://www.80&amp;#215;86.cn/article.asp?id=1448上的文章：  Simply put, a native method is the Java interface to non-Java code. It is Java&amp;#8217;s li">
+<meta name="twitter:image" content="https://www.tanglei.name/wp-content/uploads/2010/12/native1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/java-native-demo.html">
+
+
+
+
+
+  <title> java native例子 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/java-native-demo.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                java native例子
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2010-12-21T15:33:37+00:00">
+                2010-12-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">课程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/java-native-demo.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/java-native-demo.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>研究了下 Java native 方法的例子，供需要的同学看看。 </p>
+<p>首先看下什么是 Native method，参考了下<a href="http://www.80&#215;86.cn/article.asp?id=1448上的文章：" target="_blank" rel="noopener">http://www.80&#215;86.cn/article.asp?id=1448上的文章：</a></p>
+<blockquote>
+<p>Simply put, a native method is the Java interface to non-Java code. It is Java&#8217;s link to the &#8220;outside world.&#8221; More specifically, a native method is a Java method whose implementation is provided by non-Java code, most likely C。</p>
+</blockquote>
+<p>大概意思就是说 native 方法是通过java调用其他 非java的代码。</p>
+<blockquote>
+<p>in your Java class, you mark the methods you wish to implement outside of Java with the native method modifier-much like you would use the public or static modifiers. Then, rather than supplying the method&#8217;s body, you simply place a semicolon in its place.The only thing special about this declaration is that the keyword native is used as a modifier. Every other Java method modifier can be used along with native, except abstract.</p>
+</blockquote>
+<p>说的是native关键字跟其他什么public static修饰符一样也可以用来修饰方法，但除了abstract。</p>
+<blockquote>
+<p>This is logical, because the native modifier implies that an implementation exists, and the abstract modifier insists that there is no implementation. Your native methods can be static methods, thus not requiring the creation of an object (or instance of a class).</p>
+</blockquote>
+<p>这是合理的，因为native暗示这些方法是有实现体的，只不过这些实现体是非java的，但是abstract却显然的指明这些方法无实现体。呵呵。我就不翻译原文了。有兴趣的看看原文去吧。</p>
+<p>再查了些资料，就写了如下的代码。这个代码又是helloworld。唉，继续helloworld吧。用java去调用一个用C实现的方法。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* project_name：nativeTest</span></span><br><span class="line"><span class="comment">*  Description:</span></span><br><span class="line"><span class="comment">*  Copyright: Copyright (c) 2010 by 程序员升级打怪.</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="keyword">package</span> com.i3zhai.www;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*  Title: NativeHelloWorld.java</span></span><br><span class="line"><span class="comment">*  Description:测试java关键字中native的方法</span></span><br><span class="line"><span class="comment">* <span class="doctag">@author</span> ： 程序员升级打怪</span></span><br><span class="line"><span class="comment">* <span class="doctag">@date</span>：2010-12-21 下午10:23:24</span></span><br><span class="line"><span class="comment">* <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NativeHelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 程序员升级打怪</span></span><br><span class="line"><span class="comment">    * 下午10:27:23</span></span><br><span class="line"><span class="comment">    * Discription: 构造方法，加载dll文件</span></span><br><span class="line"><span class="comment">    * 或者用static 引入dll文件也可以，总之就是要在</span></span><br><span class="line"><span class="comment">    * 程序用到的时候之前把dll加载进来</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NativeHelloWorld</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.loadLibrary(<span class="string">"hello"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 程序员升级打怪</span></span><br><span class="line"><span class="comment">    * 下午10:28:24</span></span><br><span class="line"><span class="comment">    * Discription:声明一个native的方法</span></span><br><span class="line"><span class="comment">    * 因为是native的 只是声明，实现由另外的诸如C语言去实现</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">native</span> <span class="keyword">void</span> <span class="title">nativeHello</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 程序员升级打怪</span></span><br><span class="line"><span class="comment">    * 下午10:28:59</span></span><br><span class="line"><span class="comment">    * Discription:在此类中去调用C语言中实现的方法</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        nativeHello(); <span class="comment">//调用方法</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面已经写好了注释了。刚开始的时候，我直接用了eclipse，但发现后来dll文件容易找不到(eclipse估计估计还得哪里配置下吧)。于是就改为控制台下。</p>
+<p>首先用javac命令 编译出class文件，没有编译错误就会产生class文件。</p>
+<p>然后执行javah命令。看 javah 的用法。直接控制台下就能看到</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">R:\native&gt;javah</span><br><span class="line"></span><br><span class="line">用法：javah [选项] &lt;类&gt;</span><br><span class="line"></span><br><span class="line">其中 [选项] 包括：</span><br><span class="line"></span><br><span class="line">-help 输出此帮助消息并退出</span><br><span class="line"></span><br><span class="line">-classpath &lt;路径&gt; 用于装入类的路径</span><br><span class="line"></span><br><span class="line">-bootclasspath &lt;路径&gt; 用于装入引导类的路径</span><br><span class="line"></span><br><span class="line">-d &lt;目录&gt; 输出目录</span><br><span class="line"></span><br><span class="line">-o &lt;文件&gt; 输出文件（只能使用 -d 或 -o 中的一个）</span><br><span class="line"></span><br><span class="line">-jni 生成 JNI样式的头文件（默认）</span><br><span class="line"></span><br><span class="line">-version 输出版本信息</span><br><span class="line"></span><br><span class="line">-verbose 启用详细输出</span><br><span class="line"></span><br><span class="line">-force 始终写入输出文件</span><br></pre></td></tr></table></figure>
+<p>直接用javah NativeHelloWorld 就会生成一个.h的文件。如下所示：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* DO NOT EDIT THIS FILE - it is machine generated */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span></span></span><br><span class="line"><span class="comment">/* Header for class NativeHelloWorld */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> _Included_NativeHelloWorld</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _Included_NativeHelloWorld</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span> &#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* Class:     NativeHelloWorld</span></span><br><span class="line"><span class="comment">* Method:    nativeHello</span></span><br><span class="line"><span class="comment">* Signature: ()V</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">JNIEXPORT <span class="keyword">void</span> JNICALL Java_NativeHelloWorld_nativeHello</span><br><span class="line">(JNIEnv * xx, jobject xxx);</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<p>然后在写<code>hello.c</code> 文件如下所示：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"NativeHelloWorld.h"</span></span></span><br><span class="line">JNIEXPORT <span class="keyword">void</span> JNICALL Java_NativeHelloWorld_nativeHello</span><br><span class="line">(JNIEnv * xx, jobject xxx)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"helloWorld,I am printing in the C "</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来要做的就是要生成dll文件，这个dll文件就是在类NativeHelloWorld中要load的参数名字。</p>
+<p>生成dll文件可以用VC6.0之类的工具。期间在build的时候可能会遇到问题。就是上面的方法签名的地方需要加上参数。如上面的XX,xxx。这个是后来加上去的，不是javah之后就有的.</p>
+<p>在build的时候，跟着错误信息就知道了，还会用到其他的dll文件。这个文件到jdk安装目录下search下就OK了。有jni.h,其中jni.h又会用到jni_md.h。直接copy过来到VC的工作路径下。然后就能在debug目录里面找到dll文件了。</p>
+<p>此时，已经差不多了。再写个Test就OK了。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* Title: NativeHelloWorld.java</span></span><br><span class="line"><span class="comment">* Description:测试java关键字中native的方法</span></span><br><span class="line"><span class="comment">* <span class="doctag">@author</span> ：程序员升级打怪</span></span><br><span class="line"><span class="comment">* <span class="doctag">@date</span>：2010-12-21 下午10:23:24</span></span><br><span class="line"><span class="comment">* <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 程序员升级打怪</span></span><br><span class="line"><span class="comment">    * 下午10:23:24</span></span><br><span class="line"><span class="comment">    * Discription:</span></span><br><span class="line"><span class="comment">    *<span class="doctag">@param</span> args</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        NativeHelloWorld nat = <span class="keyword">new</span> NativeHelloWorld();</span><br><span class="line">        nat.sayHello();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>再在控制台下执行javac Test.java java Test就能看到结果了。</p>
+<p><a href="/wp-content/uploads/2010/12/native1.png"><img class="size-full wp-image-125 aligncenter" title="native" src="/wp-content/uploads/2010/12/native1.png" alt></a></p>
+<p><a href="/wp-content/uploads/2010/12/native.zip"></a></p>
+<p><a href="/wp-content/uploads/2010/12/native.zip">文章例子中的源代码SRC下载</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/exam_j2ee.html" rel="next" title="J2EE考试有感">
+                <i class="fa fa-chevron-left"></i> J2EE考试有感
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/happy-12-22.html" rel="prev" title="Happy!">
+                Happy! <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/java-native-demo.html';
+
+      var disqus_title = "java native例子";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

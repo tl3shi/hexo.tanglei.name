@@ -1,0 +1,809 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Android,玩玩手机,Sqlite,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="一个朋友过来，准备玩玩Ta的android手机，给我之前还要拿回去看看，结果是ta把短信加密了(第三方短信)，怕我知道ta的啥见不得人的秘密。o(∩_∩)o 哈哈。TA威胁我说加密了，看我怎么看。结果我说要是我能看呢。ta威胁我说不行，我就非得试试。直接的思路是，他的手机已经root过，我应该能直接拿到sqlite数据库。（其他方法比如下对应软件的破解解密爆破等没试过）。 准备的工具是adb调试工">
+<meta name="keywords" content="Android,玩玩手机,Sqlite">
+<meta property="og:type" content="article">
+<meta property="og:title" content="android手机获取系统短信sqlite数据库并查看内容">
+<meta property="og:url" content="https://www.tanglei.name/blog/android-system-message-sqlite-database.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="一个朋友过来，准备玩玩Ta的android手机，给我之前还要拿回去看看，结果是ta把短信加密了(第三方短信)，怕我知道ta的啥见不得人的秘密。o(∩_∩)o 哈哈。TA威胁我说加密了，看我怎么看。结果我说要是我能看呢。ta威胁我说不行，我就非得试试。直接的思路是，他的手机已经root过，我应该能直接拿到sqlite数据库。（其他方法比如下对应软件的破解解密爆破等没试过）。 准备的工具是adb调试工">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/03/clip_image002_thumb.jpg">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/03/clip_image004_thumb.jpg">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/03/clip_image006_thumb.jpg">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/03/clip_image008_thumb.jpg">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/03/clip_image010_thumb.jpg">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/03/clip_image012_thumb.jpg">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/03/clip_image014_thumb.jpg">
+<meta property="og:image" content="https://www.tanglei.name/wp-content/uploads/2012/03/clip_image015_thumb.jpg">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.117Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="android手机获取系统短信sqlite数据库并查看内容">
+<meta name="twitter:description" content="一个朋友过来，准备玩玩Ta的android手机，给我之前还要拿回去看看，结果是ta把短信加密了(第三方短信)，怕我知道ta的啥见不得人的秘密。o(∩_∩)o 哈哈。TA威胁我说加密了，看我怎么看。结果我说要是我能看呢。ta威胁我说不行，我就非得试试。直接的思路是，他的手机已经root过，我应该能直接拿到sqlite数据库。（其他方法比如下对应软件的破解解密爆破等没试过）。 准备的工具是adb调试工">
+<meta name="twitter:image" content="https://www.tanglei.name/wp-content/uploads/2012/03/clip_image002_thumb.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/android-system-message-sqlite-database.html">
+
+
+
+
+
+  <title> android手机获取系统短信sqlite数据库并查看内容 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/android-system-message-sqlite-database.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                android手机获取系统短信sqlite数据库并查看内容
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2012-03-05T14:02:34+00:00">
+                2012-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/android-system-message-sqlite-database.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/android-system-message-sqlite-database.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>一个朋友过来，准备玩玩Ta的android手机，给我之前还要拿回去看看，结果是ta把短信加密了(第三方短信)，怕我知道ta的啥见不得人的秘密。o(∩_∩)o 哈哈。TA威胁我说加密了，看我怎么看。结果我说要是我能看呢。ta威胁我说不行，我就非得试试。直接的思路是，他的手机已经root过，我应该能直接拿到sqlite数据库。（其他方法比如下对应软件的破解解密爆破等没试过）。</p>
+<p>准备的工具是adb调试工具、sqlite工具。（之前搞过android开发，所以OK）</p>
+<p>手机连接电脑后，对应驱动安装好之后，直接进shell，adb shell。然后cd进系统短信数据库的目录。结果总提示没有permission. 然后觉得是否是这样没有root权限,再看看adb 帮助提示,说命令adb root是可以以root身份进入的.结果又提示说这个调试工具不能用于真实的手机产品.adbd cannot run as root in production builds .最后尝试什么sudo su啊之类的也不行.(当时一直关注于电脑上的commond端，没注意手机)，其实只要执行命令su 之后，手机有提示，点击一下允许root权限即可。命令行得到root之后就方便了。</p>
+<p>首先查看存放短信的sqlite数据库是不是在下面这个目录</p>
+<p>/data/data/com.android.providers.telephony/databases/mmssms.db</p>
+<p><a href="/wp-content/uploads/2012/03/clip_image002.jpg"><img title="clip_image002" src="/wp-content/uploads/2012/03/clip_image002_thumb.jpg" alt="clip_image002" hspace="12"></a></p>
+<p>OK，在滴。然后就是想的直接用命令cp或者copy命令复制到sdcard上，取回到电脑里。结果悲催的是居然木有cp命令。然后网上查询得到下面这个方法。可以用<a href="http://baike.baidu.com/view/3568252.htm" target="_blank" rel="noopener">dd命令</a>(链接百科详解)。(说是cat命令重定向输出也可以).</p>
+<p>现在已经将系统目录下的数据库copy到sdcard了。</p>
+<p><a href="/wp-content/uploads/2012/03/clip_image004.jpg"><img title="clip_image004" src="/wp-content/uploads/2012/03/clip_image004_thumb.jpg" alt="clip_image004" hspace="12" data-pinit="registered"></a></p>
+<p>然后退出adb调试器。(我不知道怎么在adb调试器里面直接将文件导出到数据库)用adb pull命令导出(之前只用过这种adb push 和adb pull 等)。</p>
+<p><a href="/wp-content/uploads/2012/03/clip_image006.jpg"><img title="clip_image006" src="/wp-content/uploads/2012/03/clip_image006_thumb.jpg" alt="clip_image006"></a></p>
+<p>OK，已经将数据库拿到电脑上了。</p>
+<p>打开sqlite命令，查看数据库。</p>
+<p><a href="/wp-content/uploads/2012/03/clip_image008.jpg"><img title="clip_image008" src="/wp-content/uploads/2012/03/clip_image008_thumb.jpg" alt="clip_image008" data-pinit="registered"></a></p>
+<p>看该数据库下的表。很明显sms是保存短信的，直接select就能知道短信内容。(涉及到电话号码，就给划掉了)</p>
+<p><a href="/wp-content/uploads/2012/03/clip_image010.jpg"><img title="clip_image010" src="/wp-content/uploads/2012/03/clip_image010_thumb.jpg" alt="clip_image010" data-pinit="registered"></a></p>
+<p>乱码，不着急。将查询结果导出到文件。</p>
+<p>.output是改变输出。返回标准输出。.output stdout</p>
+<p><a href="/wp-content/uploads/2012/03/clip_image012.jpg"><img title="clip_image012" src="/wp-content/uploads/2012/03/clip_image012_thumb.jpg" alt="clip_image012"></a></p>
+<p>再select一遍。已经在当前目录下生生成查询结果的文件。</p>
+<p><a href="/wp-content/uploads/2012/03/clip_image014.jpg"><img title="clip_image014" src="/wp-content/uploads/2012/03/clip_image014_thumb.jpg" alt="clip_image014" hspace="12"></a></p>
+<p>直接打开，即可。</p>
+<p><a href="/wp-content/uploads/2012/03/clip_image015.jpg"><img title="clip_image015" src="/wp-content/uploads/2012/03/clip_image015_thumb.jpg" alt="clip_image015" data-pinit="registered"></a></p>
+<p>参考资料：</p>
+<ol>
+<li><p>已经root，命令行获取不到root权限问题参考（adb root错误信息adbd cannot run as root in production builds问题解决）：<a href="http://blog.csdn.net/littletigerat/article/details/6549021" target="_blank" rel="noopener">http://blog.csdn.net/littletigerat/article/details/6549021</a></p>
+</li>
+<li><p>命令行没有cp copy命令 参考：<a href="http://blog.allenm.me/2010/04/android-shell-%E6%B2%A1%E6%9C%89-cp-%E5%91%BD%E4%BB%A4%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" target="_blank" rel="noopener">http://blog.allenm.me/2010/04/android-shell-%E6%B2%A1%E6%9C%89-cp-%E5%91%BD%E4%BB%A4%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</a></p>
+</li>
+<li><p>android系统短信数据库位置参考：(sms表字段信息)：<a href="http://blog.csdn.net/reachkate/article/details/6784082" target="_blank" rel="noopener">http://blog.csdn.net/reachkate/article/details/6784082</a></p>
+</li>
+<li><p>sqlite命令参考：<a href="http://wenku.baidu.com/view/17f8c720192e45361066f5e7.html" target="_blank" rel="noopener">http://wenku.baidu.com/view/17f8c720192e45361066f5e7.html</a></p>
+</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/玩玩手机/" rel="tag"># 玩玩手机</a>
+          
+            <a href="/tags/Sqlite/" rel="tag"># Sqlite</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/difference-between-array_merge-and-plus.html" rel="next" title="php中数组array_merge和运算符加号(+)的区别">
+                <i class="fa fa-chevron-left"></i> php中数组array_merge和运算符加号(+)的区别
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/use-writer-to-post-wordpress-blog.html" rel="prev" title="用Windows live writer快速发表Wordpress博客">
+                用Windows live writer快速发表Wordpress博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/android-system-message-sqlite-database.html';
+
+      var disqus_title = "android手机获取系统短信sqlite数据库并查看内容";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

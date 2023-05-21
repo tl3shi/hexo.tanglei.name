@@ -1,0 +1,1173 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="经验技巧,程序员,面经,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="唐磊的个人博客" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="关于程序猿石头(ID: tangleithu)：现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景大家好，我是石头哥。 开篇前希望做一个调查，不知道大家都习惯什么时候阅读公众号，目前我的发文时间并不规律，希望借此统计下大家的阅读习惯，尽量统一时间发送文章，">
+<meta name="keywords" content="经验技巧,程序员,面经">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法面试套路知多少">
+<meta property="og:url" content="https://www.tanglei.name/blog/the-14-comments-of-experience-of-coding-interview.html">
+<meta property="og:site_name" content="唐磊的个人博客">
+<meta property="og:description" content="关于程序猿石头(ID: tangleithu)：现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景大家好，我是石头哥。 开篇前希望做一个调查，不知道大家都习惯什么时候阅读公众号，目前我的发文时间并不规律，希望借此统计下大家的阅读习惯，尽量统一时间发送文章，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.tanglei.name/resources/the-14-comments-of-experience-of-coding-interview/640.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/the-14-comments-of-experience-of-coding-interview/640-20210328125059490.png">
+<meta property="og:image" content="https://www.tanglei.name/resources/the-14-comments-of-experience-of-coding-interview/640.jpeg">
+<meta property="og:image" content="https://www.tanglei.name/resources/the-14-comments-of-experience-of-coding-interview/640-20210328125118981.jpeg">
+<meta property="og:image" content="https://www.tanglei.name/resources/the-14-comments-of-experience-of-coding-interview/640-20210328125123778.jpeg">
+<meta property="og:image" content="https://www.tanglei.name/resources/the-14-comments-of-experience-of-coding-interview/640-20210328125128051.jpeg">
+<meta property="og:image" content="https://www.tanglei.name/resources/the-14-comments-of-experience-of-coding-interview/640-20210328125132201.jpeg">
+<meta property="og:image" content="https://www.tanglei.name/resources/the-14-comments-of-experience-of-coding-interview/640-20210328125136748.jpeg">
+<meta property="og:image" content="https://www.tanglei.name/resources/the-14-comments-of-experience-of-coding-interview/640-20210328125140742.jpeg">
+<meta property="og:image" content="https://www.tanglei.name/resources/the-14-comments-of-experience-of-coding-interview/640-20210328125145900.jpeg">
+<meta property="og:image" content="https://www.tanglei.name/resources/the-14-comments-of-experience-of-coding-interview/640-20210328125149929.jpeg">
+<meta property="og:image" content="https://www.tanglei.name/resources/the-14-comments-of-experience-of-coding-interview/640-20210328125154051.jpeg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2020-12-23/1608736213891-image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2020-12-23/1608736261780-image.png">
+<meta property="og:updated_time" content="2023-05-21T02:40:26.174Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法面试套路知多少">
+<meta name="twitter:description" content="关于程序猿石头(ID: tangleithu)：现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！ 本文首发于微信公众号，原文链接，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。  背景大家好，我是石头哥。 开篇前希望做一个调查，不知道大家都习惯什么时候阅读公众号，目前我的发文时间并不规律，希望借此统计下大家的阅读习惯，尽量统一时间发送文章，">
+<meta name="twitter:image" content="https://www.tanglei.name/resources/the-14-comments-of-experience-of-coding-interview/640.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.tanglei.name/blog/the-14-comments-of-experience-of-coding-interview.html">
+
+
+
+
+
+  <title> 算法面试套路知多少 | 唐磊的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0117177475f54027bfcaceb8d668cee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">唐磊的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">记录我的学习、生活、工作。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://www.tanglei.name/blog/the-14-comments-of-experience-of-coding-interview.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tanglei">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/tx.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="唐磊的个人博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="唐磊的个人博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                算法面试套路知多少
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-03-13T00:00:00+00:00">
+                2021-03-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">经验技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/the-14-comments-of-experience-of-coding-interview.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/the-14-comments-of-experience-of-coding-interview.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>关于程序猿石头(ID: tangleithu)：现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader。欢迎关注，交流和指导！</p>
+<p>本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247491947&amp;idx=1&amp;sn=2ed551fa3b1d771a636d68a98eb8d4d5&amp;chksm=eb44e08fdc3369997db9d5cab2a2e423ecd1176ffb10db7ff63b4f252632d110db55e96a37a5&amp;token=1794827921&amp;lang=zh_CN#rd" target="_blank" rel="noopener">原文链接</a>，转载请全文保留。后台回复关键字 “1024” 获取程序员大厂面试指南。</p>
+</blockquote>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>大家好，我是石头哥。</p>
+<p>开篇前希望做一个调查，不知道大家都习惯什么时候阅读公众号，目前我的发文时间并不规律，希望借此统计下大家的阅读习惯，尽量统一时间发送文章，以下统计可多选。</p>
+<p>今天要分享的这篇文章，是14种针对常见算法的解题套路，经常出现在各大公司的笔试面试中的题目，仔细阅读并学习，你一定会有收获的。</p>
+<hr>
+<p>作者：Fahim ul Haq</p>
+<p>机器之心编译</p>
+<p>参与：Panda</p>
+<h2 id="解题套路"><a href="#解题套路" class="headerlink" title="解题套路"></a>解题套路</h2><p>咱们在面试程序员岗位时往往需要经历一个编程面试过程，雇主会借此考验面试者的技术实力。</p>
+<p>然而，这些技术问题有时候却和我们的实际工作并无太大关系，也由此可能给我们的编程面试准备阶段带来很大的压力。</p>
+<p>曾在 Facebook 和微软工作过的 Educative.io 创始人 Fahim ul Haq 近日发文总结了编程面试所遇到的问题的 14 种最常见的模式，也许能帮你看清各种编程面试问题「背后的真相」。</p>
+<p><img src="/resources/the-14-comments-of-experience-of-coding-interview/640.png" alt></p>
+<p>对很多开发者来说，编程工作的面试准备很容易让人焦虑。面试要涉及的东西实在太多，其中很多还往往与开发者的日常工作无关，只会额外增添压力。</p>
+<p>这种现状导致了一个后果：现在的开发者往往需要花费数周时间在 LeetCode 等网站上了解综合数百个问题。</p>
+<p>与我谈过的开发者在面试前的一个常见焦虑问题是：<strong>我是否已经解决过足够多的实际问题？我本可以做到更多吗？</strong></p>
+<p>这就是我想要帮助开发者了解每个问题背后的底层模式的原因——这样他们就不必担忧解决数百个问题以及被 LeetCode 整得疲惫不堪了。</p>
+<p>如果你理解面试的通用模式，你就可以将其用作模板，从而解决各种层级的稍有不同的问题。</p>
+<p>这里我将列出最常见的 14 种模式，它们可被用于解决任何编程面试问题。</p>
+<p>另外我还会说明如何识别每种模式，并会为每种模式提供一些问题示例。</p>
+<p>这些内容都只是蜻蜓点水 —— 我强烈建议你看看课程《Grokking the Coding Interview: Patterns for Coding Questions》，里面提供了全面的解释、示例和编程实践。</p>
+<p>下面的模式说明假设你已经知悉了数据结构。如果你还不了解，那需要补充一下知识点哦。</p>
+<p>我们今天将说明以下 14 种模式：</p>
+<blockquote>
+<ul>
+<li>1．滑动窗口</li>
+<li>2．二指针或迭代器</li>
+<li>3．快速和慢速指针或迭代器</li>
+<li>4．合并区间</li>
+<li>5．循环排序</li>
+<li>6．原地反转链表</li>
+<li>7．树的宽度优先搜索（Tree BFS）</li>
+<li>8．树的深度优先搜索（Tree DFS）</li>
+<li>9．Two Heaps</li>
+<li>10．子集</li>
+<li>11．经过修改的二叉搜索</li>
+<li>12．前 K 个元素</li>
+<li>13．K 路合并</li>
+<li>14．拓扑排序</li>
+</ul>
+</blockquote>
+<p>我们开始吧！</p>
+<h2 id="1．滑动窗口"><a href="#1．滑动窗口" class="headerlink" title="1．滑动窗口"></a>1．滑动窗口</h2><p>滑动窗口模式是用于在给定数组或链表的特定窗口大小上执行所需的操作，比如寻找包含所有 1 的最长子数组。</p>
+<p>从第一个元素开始滑动窗口并逐个元素地向右滑，并根据你所求解的问题调整窗口的长度。</p>
+<p>在某些情况下窗口大小会保持恒定，在其它情况下窗口大小会增大或减小。</p>
+<p><img src="/resources/the-14-comments-of-experience-of-coding-interview/640-20210328125059490.png" alt></p>
+<p>下面是一些你可以用来确定给定问题可能需要滑动窗口的方法：</p>
+<blockquote>
+<ul>
+<li>问题的输入是一种线性数据结构，比如链表、数组或字符串</li>
+<li>你被要求查找最长/最短的子字符串、子数组或所需的值</li>
+</ul>
+</blockquote>
+<p>你可以使用滑动窗口模式处理的常见问题：</p>
+<blockquote>
+<ul>
+<li>大小为 K 的子数组的最大和（简单）</li>
+<li>带有 K 个不同字符的最长子字符串（中等）</li>
+<li>寻找字符相同但排序不一样的字符串（困难）</li>
+</ul>
+</blockquote>
+<h2 id="2．二指针或迭代器"><a href="#2．二指针或迭代器" class="headerlink" title="2．二指针或迭代器"></a>2．二指针或迭代器</h2><p>二指针（Two Pointers）是这样一种模式：</p>
+<p>两个指针以一前一后的模式在数据结构中迭代，直到一个或两个指针达到某种特定条件。</p>
+<p>二指针通常在排序数组或链表中搜索配对时很有用：比如当你必须将一个数组的每个元素与其它元素做比较时。</p>
+<p>二指针是很有用的，因为如果只有一个指针，你必须继续在数组中循环回来才能找到答案。</p>
+<p>这种使用单个迭代器进行来回在时间和空间复杂度上都很低效——这个概念被称为「渐进分析（asymptotic analysis）」。</p>
+<p>尽管使用 1 个指针进行暴力搜索或简单普通的解决方案也有效果，但这会沿 O(n²) 线得到一些东西。在很多情况中，二指针有助于你寻找有更好空间或运行时间复杂度的解决方案。</p>
+<p><img src="/resources/the-14-comments-of-experience-of-coding-interview/640.jpeg" alt></p>
+<p>用于识别使用二指针的时机的方法：</p>
+<blockquote>
+<ul>
+<li>可用于你要处理排序数组（或链接列表）并需要查找满足某些约束的一组元素的问题</li>
+<li>数组中的元素集是配对、三元组甚至子数组</li>
+</ul>
+</blockquote>
+<p>下面是一些满足二指针模式的问题：</p>
+<blockquote>
+<ul>
+<li>求一个排序数组的平方（简单）</li>
+<li>求总和为零的三元组（中等）</li>
+<li>比较包含回退（backspace）的字符串（中等）</li>
+</ul>
+</blockquote>
+<h2 id="3．快速和慢速指针"><a href="#3．快速和慢速指针" class="headerlink" title="3．快速和慢速指针"></a>3．快速和慢速指针</h2><p>快速和慢速指针方法也被称为 Hare &amp; Tortoise 算法，该算法会使用两个在数组（或序列/链表）中以不同速度移动的指针。该方法在处理循环链表或数组时非常有用。</p>
+<p>通过以不同的速度进行移动（比如在一个循环链表中），该算法证明这两个指针注定会相遇。只要这两个指针在同一个循环中，快速指针就会追赶上慢速指针。</p>
+<p><img src="/resources/the-14-comments-of-experience-of-coding-interview/640-20210328125118981.jpeg" alt></p>
+<p>如何判别使用快速和慢速模式的时机？</p>
+<blockquote>
+<ul>
+<li>处理链表或数组中的循环的问题</li>
+<li>当你需要知道特定元素的位置或链表的总长度时</li>
+</ul>
+</blockquote>
+<p>何时应该优先选择这种方法，而不是上面提到的二指针方法？</p>
+<blockquote>
+<ul>
+<li>有些情况不适合使用二指针方法，比如在不能反向移动的单链接链表中。使用快速和慢速模式的一个案例是当你想要确定一个链表是否为回文（palindrome）时。</li>
+</ul>
+</blockquote>
+<p>下面是一些满足快速和慢速指针模式的问题：</p>
+<blockquote>
+<ul>
+<li>链表循环（简单）</li>
+<li>回文链表（中等）</li>
+<li>环形数组中的循环（困难）</li>
+</ul>
+</blockquote>
+<h2 id="4．合并区间"><a href="#4．合并区间" class="headerlink" title="4．合并区间"></a>4．合并区间</h2><p>合并区间模式是一种处理重叠区间的有效技术。</p>
+<p>在很多涉及区间的问题中，你既需要找到重叠的区间，也需要在这些区间重叠时合并它们。该模式的工作方式为：</p>
+<p>给定两个区间（a 和 b），这两个区间有 6 种不同的互相关联的方式：</p>
+<p><img src="/resources/the-14-comments-of-experience-of-coding-interview/640-20210328125123778.jpeg" alt></p>
+<p>理解并识别这六种情况有助于你求解范围广泛的问题，从插入区间到优化区间合并等。</p>
+<p>那么如何确定何时该使用合并区间模式呢？</p>
+<blockquote>
+<ul>
+<li>如果你被要求得到一个仅含互斥区间的列表</li>
+<li>如果你听到了术语「重叠区间（overlapping intervals）」</li>
+</ul>
+</blockquote>
+<p>合并区间模式的问题：</p>
+<blockquote>
+<ul>
+<li>区间交叉（中等）</li>
+<li>最大 CPU 负载（困难）</li>
+</ul>
+</blockquote>
+<h2 id="5-循环排序"><a href="#5-循环排序" class="headerlink" title="5. 循环排序"></a>5. 循环排序</h2><p>这一模式描述了一种有趣的方法，处理的是涉及包含给定范围内数值的数组的问题。</p>
+<p>循环排序模式一次会在数组上迭代一个数值，如果所迭代的当前数值不在正确的索引处，就将其与其正确索引处的数值交换。</p>
+<p>你可以尝试替换其正确索引处的数值，但这会带来 O(n^2) 的复杂度，这不是最优的，因此要用循环排序模式。</p>
+<p><img src="/resources/the-14-comments-of-experience-of-coding-interview/640-20210328125128051.jpeg" alt></p>
+<p>如何识别这种模式？</p>
+<blockquote>
+<ul>
+<li>涉及数值在给定范围内的排序数组的问题</li>
+<li>如果问题要求你在一个排序/旋转的数组中找到缺失值/重复值/最小值</li>
+</ul>
+</blockquote>
+<p>循环排序模式的问题：</p>
+<blockquote>
+<ul>
+<li>找到缺失值（简单）</li>
+<li>找到最小的缺失的正数值（中等）</li>
+</ul>
+</blockquote>
+<h2 id="6-原地反转链表"><a href="#6-原地反转链表" class="headerlink" title="6. 原地反转链表"></a>6. 原地反转链表</h2><p>在很多问题中，你可能会被要求反转一个链表中一组节点之间的链接。</p>
+<p>通常而言，你需要原地完成这一任务，即使用已有的节点对象且不占用额外的内存。这就是这个模式的用武之地。</p>
+<p>该模式会从一个指向链表头的变量（current）开始一次反转一个节点，然后一个变量（previous）将指向已经处理过的前一个节点。</p>
+<p>以锁步的方式，在移动到下一个节点之前将其指向前一个节点，可实现对当前节点的反转。</p>
+<p>另外，也将更新变量「previous」，使其总是指向已经处理过的前一个节点。</p>
+<p><img src="/resources/the-14-comments-of-experience-of-coding-interview/640-20210328125132201.jpeg" alt></p>
+<p>如何识别使用该模式的时机：</p>
+<blockquote>
+<ul>
+<li>如果你被要求在不使用额外内存的前提下反转一个链表</li>
+</ul>
+</blockquote>
+<p>原地反转链表模式的问题：</p>
+<blockquote>
+<ul>
+<li>反转一个子列表（中等）</li>
+<li>反转每个 K 个元素的子列表（中等）</li>
+</ul>
+</blockquote>
+<h2 id="7-宽度优先搜索（BFS）"><a href="#7-宽度优先搜索（BFS）" class="headerlink" title="7. 宽度优先搜索（BFS）"></a>7. 宽度优先搜索（BFS）</h2><p>该模式基于宽度优先搜索（BFS）技术，可遍历一个树并使用一个队列来跟踪一个层级的所有节点，之后再跳转到下一个层级。</p>
+<p>任何涉及到以逐层级方式遍历树的问题都可以使用这种方法有效解决。</p>
+<p>Tree BFS 模式的工作方式是：将根节点推至队列，然后连续迭代知道队列为空。在每次迭代中，我们移除队列头部的节点并「访问」该节点。在移除了队列中的每个节点之后，我们还将其所有子节点插入到队列中。</p>
+<p>如何识别 Tree BFS 模式：</p>
+<blockquote>
+<ul>
+<li>如果你被要求以逐层级方式遍历（或按层级顺序遍历）一个树</li>
+</ul>
+</blockquote>
+<p>Tree BFS 模式的问题：</p>
+<blockquote>
+<ul>
+<li>二叉树层级顺序遍历（简单）</li>
+<li>之字型遍历（Zigzag Traversal）（中等）</li>
+</ul>
+</blockquote>
+<h2 id="8．深度优先搜索（DFS）"><a href="#8．深度优先搜索（DFS）" class="headerlink" title="8．深度优先搜索（DFS）"></a>8．深度优先搜索（DFS）</h2><p>Tree DFS 是基于深度优先搜索（DFS）技术来遍历树。</p>
+<p>你可以使用递归（或该迭代方法的技术栈）来在遍历期间保持对所有之前的（父）节点的跟踪。</p>
+<p>Tree DFS 模式的工作方式是从树的根部开始，如果这个节点不是一个叶节点，则需要做两件事：</p>
+<blockquote>
+<ul>
+<li>1．决定现在是处理当前的节点（pre-order），或是在处理两个子节点之间（in-order），还是在处理两个子节点之后（post-order）</li>
+<li>2．为当前节点的两个子节点执行两次递归调用以处理它们</li>
+</ul>
+</blockquote>
+<p>如何识别 Tree DFS 模式：</p>
+<blockquote>
+<ul>
+<li>如果你被要求用 in-order、pre-order 或 post-order DFS 来遍历一个树</li>
+<li>如果问题需要搜索其中节点更接近叶节点的东西</li>
+</ul>
+</blockquote>
+<p>Tree DFS 模式的问题：</p>
+<blockquote>
+<ul>
+<li>路径数量之和（中等）</li>
+<li>一个和的所有路径（中等）</li>
+</ul>
+</blockquote>
+<h2 id="9．Two-Heaps"><a href="#9．Two-Heaps" class="headerlink" title="9．Two Heaps"></a>9．Two Heaps</h2><p>在很多问题中，我们要将给定的一组元素分为两部分。</p>
+<p>为了求解这个问题，我们感兴趣的是了解一部分的最小元素以及另一部分的最大元素。这一模式是求解这类问题的一种有效方法。</p>
+<p>该模式要使用两个堆（heap）：一个用于寻找最小元素的 Min Heap 和一个用于寻找最大元素的 Max Heap。</p>
+<p>该模式的工作方式是：</p>
+<p>先将前一半的数值存储到 Max Heap，这是由于你要寻找前一半中的最大数值。然后再将另一半存储到 Min Heap，因为你要寻找第二半的最小数值。在任何时候，当前数值列表的中间值都可以根据这两个 heap 的顶部元素计算得到。</p>
+<p>这个题目，其实在我曾经<a href="https://mp.weixin.qq.com/s/bYQ1vXLn8VBTsqbF5ncz0Q" target="_blank" rel="noopener">参加校招</a>的时候，面试雅虎北研就遇到过，幸亏当初我有看到过类似的解法，最终成功解答。</p>
+<p>识别 Two Heaps 模式的方法：</p>
+<blockquote>
+<ul>
+<li>在优先级队列、调度等场景中有用</li>
+<li>如果问题说你需要找到一个集合的最小/最大/中间元素</li>
+<li>有时候可用于具有二叉树数据结构的问题</li>
+</ul>
+</blockquote>
+<p>Two Heaps 模式的问题：</p>
+<blockquote>
+<ul>
+<li>查找一个数值流的中间值（中等）</li>
+</ul>
+</blockquote>
+<h2 id="10．子集"><a href="#10．子集" class="headerlink" title="10．子集"></a>10．子集</h2><p>很多编程面试问题都涉及到处理给定元素集合的排列和组合。</p>
+<p>子集（Subsets）模式描述了一种用于有效处理所有这些问题的宽度优先搜索（BFS）方法。</p>
+<p>该模式看起来是这样：</p>
+<p>给定一个集合 [1, 5, 3]</p>
+<blockquote>
+<ul>
+<li>1． 从一个空集开始：[[]]</li>
+<li>2．向所有已有子集添加第一个数 (1)，从而创造新的子集：[[], [1]]</li>
+<li>3．向所有已有子集添加第二个数 (5)：[[], [1], [5], [1,5]]</li>
+<li>4．向所有已有子集添加第三个数 (3)：[[], [1], [5], [1,5], [3], [1,3], [5,3], [1,5,3]]</li>
+</ul>
+</blockquote>
+<p>下面是这种子集模式的一种视觉表示：</p>
+<p><img src="/resources/the-14-comments-of-experience-of-coding-interview/640-20210328125136748.jpeg" alt></p>
+<p>如何识别子集模式：</p>
+<blockquote>
+<ul>
+<li>你需要找到给定集合的组合或排列的问题</li>
+</ul>
+</blockquote>
+<p>子集模式的问题：</p>
+<blockquote>
+<ul>
+<li>带有重复项的子集（简单）</li>
+<li>通过改变大小写的字符串排列（中等）</li>
+</ul>
+</blockquote>
+<h2 id="11．经过修改的二叉搜索"><a href="#11．经过修改的二叉搜索" class="headerlink" title="11．经过修改的二叉搜索"></a>11．经过修改的二叉搜索</h2><p>只要给定了排序数组、链表或矩阵，并要求寻找一个特定元素，你可以使用的最佳算法就是二叉搜索。</p>
+<p>这一模式描述了一种用于处理所有涉及二叉搜索的问题的有效方法。</p>
+<p>对于一个升序的集合，该模式看起来是这样的：</p>
+<blockquote>
+<ul>
+<li>1．首先，找到起点和终点的中间位置。<br>寻找中间位置的一种简单方法是：middle = (start + end) / 2。<br>但这很有可能造成整数溢出，所以推荐你这样表示中间位置：middle = start + (end—start) / 2。</li>
+<li>2．如果键值（key）等于中间索引处的值，那么返回这个中间位置。</li>
+<li>3．如果键值不等于中间索引处的值：</li>
+<li>4．检查 key &lt; arr[middle] 是否成立。如果成立，将搜索约简到 end = middle—1【换行】5．检查 key &gt; arr[middle] 是否成立。如果成立，将搜索约简到 end = middle + 1</li>
+</ul>
+</blockquote>
+<p>下面给出了这种经过修改的二叉搜索模式的视觉表示：</p>
+<p><img src="/resources/the-14-comments-of-experience-of-coding-interview/640-20210328125140742.jpeg" alt></p>
+<p>经过修改的二叉搜索模式的问题：</p>
+<blockquote>
+<ul>
+<li>与顺序无关的二叉搜索（简单）</li>
+<li>在经过排序的无限数组中搜索（中等）</li>
+</ul>
+</blockquote>
+<p>石头在<a href="http://mp.weixin.qq.com/s?__biz=MzI3OTUzMzcwNw==&amp;mid=2247484698&amp;idx=1&amp;sn=03cc4636e7ee7364a85788a98809cc03&amp;chksm=eb4704fedc308de8efd48ab9aed4fd1ddee5665d8e76d0d3767c1f704eac8b15a83e450a08f1&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">从一道面试题谈谈一线大厂码农应该具备的基本能力</a><br>的时候，二分搜索也是其中主要想考察的点。</p>
+<h2 id="12-前-K-个元素"><a href="#12-前-K-个元素" class="headerlink" title="12. 前 K 个元素"></a>12. 前 K 个元素</h2><p>任何要求我们找到一个给定集合中前面的/最小的/最常出现的 K 的元素的问题都在这一模式的范围内。</p>
+<p>跟踪 K 个元素的最佳的数据结构是 Heap。</p>
+<p>这一模式会使用 Heap 来求解多个一次性处理一个给定元素集中 K 个元素的问题。</p>
+<p>该模式是这样工作的：</p>
+<blockquote>
+<ul>
+<li>1．根据问题的不同，将 K 个元素插入到 min-heap 或 max-heap 中</li>
+<li>2．迭代处理剩余的数，如果你找到一个比 heap 中数更大的数，那么就移除那个数并插入这个更大的数</li>
+</ul>
+</blockquote>
+<p><img src="/resources/the-14-comments-of-experience-of-coding-interview/640-20210328125145900.jpeg" alt></p>
+<p>这里无需排序算法，因为 heap 将为你跟踪这些元素。</p>
+<p>如何识别前 K 个元素模式：</p>
+<blockquote>
+<ul>
+<li>如果你被要求寻找一个给定集合中前面的/最小的/最常出现的 K 的元素</li>
+<li>如果你被要求对一个数值进行排序以找到一个确定元素</li>
+</ul>
+</blockquote>
+<p>前 K 个元素模式的问题：</p>
+<blockquote>
+<ul>
+<li>前面的 K 个数（简单）</li>
+<li>最常出现的 K 个数（中等）</li>
+</ul>
+</blockquote>
+<h2 id="13-K-路合并"><a href="#13-K-路合并" class="headerlink" title="13. K 路合并"></a>13. K 路合并</h2><p>K 路合并能帮助你求解涉及一组经过排序的数组的问题。</p>
+<p>当你被给出了 K 个经过排序的数组时，你可以使用 Heap 来有效地执行所有数组的所有元素的排序遍历。你可以将每个数组的最小元素推送至 Min Heap 以获得整体最小值。</p>
+<p>在获得了整体最小值后，将来自同一个数组的下一个元素推送至 heap。</p>
+<p>然后，重复这一过程以得到所有元素的排序遍历结果。</p>
+<p><img src="/resources/the-14-comments-of-experience-of-coding-interview/640-20210328125149929.jpeg" alt></p>
+<p>该模式看起来像这样：</p>
+<blockquote>
+<ul>
+<li>1．将每个数组的第一个元素插入 Min Heap</li>
+<li>2．之后，从该 Heap 取出最小（顶部的）元素，将其加入到合并的列表。</li>
+<li>3．在从 Heap 移除了最小的元素之后，将同一列表的下一个元素插入该 Heap</li>
+<li>4．重复步骤 2 和 3，以排序的顺序填充合并的列表</li>
+</ul>
+</blockquote>
+<p>如何识别 K 路合并模式：</p>
+<blockquote>
+<ul>
+<li>具有排序数组、列表或矩阵的问题</li>
+<li>如果问题要求你合并排序的列表，找到一个排序列表中的最小元素</li>
+</ul>
+</blockquote>
+<p>K 路合并模式的问题：</p>
+<blockquote>
+<ul>
+<li>合并 K 个排序的列表（中等）</li>
+<li>找到和最大的 K 个配对（困难）</li>
+</ul>
+</blockquote>
+<h2 id="14-拓扑排序"><a href="#14-拓扑排序" class="headerlink" title="14. 拓扑排序"></a>14. 拓扑排序</h2><p>拓扑排序可用于寻找互相依赖的元素的线性顺序。</p>
+<p>比如，如果事件 B 依赖于事件 A，那么 A 在拓扑排序时位于 B 之前。</p>
+<p>这个模式定义了一种简单方法来理解执行一组元素的拓扑排序的技术。</p>
+<p>该模式看起来是这样的：</p>
+<blockquote>
+<ul>
+<li><p>1．初始化。<br>a）使用 HashMap 将图（graph）存储到邻接的列表中；<br>b）为了查找所有源，使用 HashMap 记录 in-degree 的数量</p>
+</li>
+<li><p>2．构建图并找到所有顶点的 in-degree。<br>a）根据输入构建图并填充 in-degree HashMap</p>
+</li>
+<li><p>3．寻找所有的源。<br>a）所有 in-degree 为 0 的顶点都是源，并会被存入一个队列</p>
+</li>
+<li><p>4．排序。<br>a）对于每个源，执行以下操作：</p>
+<p>i）将其加入到排序的列表；<br>ii）根据图获取其所有子节点；<br>iii）将每个子节点的 in-degree 减少 1；<br>iv）如果一个子节点的 in-degree 变为 0，将其加入到源队列。</p>
+<p>b）重复 (a)，直到源队列为空。</p>
+</li>
+</ul>
+</blockquote>
+<p><img src="/resources/the-14-comments-of-experience-of-coding-interview/640-20210328125154051.jpeg" alt></p>
+<p>如何识别拓扑排序模式：</p>
+<blockquote>
+<ul>
+<li>处理无向有环图的问题</li>
+<li>如果你被要求以排序顺序更新所有对象</li>
+<li>如果你有一类遵循特定顺序的对象</li>
+</ul>
+</blockquote>
+<p>拓扑排序模式的问题：</p>
+<blockquote>
+<ul>
+<li>任务调度（中等）</li>
+<li>一个树的最小高度</li>
+</ul>
+</blockquote>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>数据结构和算法是重中之重，这里我跟大家推荐一本 Leetcode 算法指南，质量还挺不错的，推荐给大家参考。获取方式，在公众号后台回复 leetcode01 即可获取。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2020-12-23/1608736213891-image.png" alt="目录1">,<img src="https://cdn.jsdelivr.net/gh/tl3shi/blog-resources/2020-12-23/1608736261780-image.png" alt="目录2"></p>
+<p>最后，求关注，求关注，求关注，本号会定期分享一些技术干货、职场经验等，如果大家对阿里或者其他大厂感兴趣，也可以找我内推，我可以帮忙提供简历 review 等，希望能和大家积极交流讨论，一起学习、共同进步。</p>
+<blockquote>
+<p>关于程序猿石头(ID: tangleithu)：现任阿里巴巴技术专家，清华学渣，前大疆后端 Leader，欢迎关注，交流和指导！</p>
+<p>欢迎扫码加入互联网大厂内推群 &amp; 技术交流群，一起学习、共同进步。后台回复关键字 “<strong>0</strong>” 送阿里技术大礼包。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/resources/wechat-tangleithu-codershitou.jpg" alt="tanglei wechat" style="width: 400px; max-width: 100%;">
+    <div>欢迎扫码加入互联网大厂内推群 & 技术交流群，一起学习、共同进步</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/经验技巧/" rel="tag"># 经验技巧</a>
+          
+            <a href="/tags/程序员/" rel="tag"># 程序员</a>
+          
+            <a href="/tags/面经/" rel="tag"># 面经</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/a-phd-change-from-gov-onwed-enterprise-to-internet-company.html" rel="next" title="博士小姐姐转行互联网的面试之旅">
+                <i class="fa fa-chevron-left"></i> 博士小姐姐转行互联网的面试之旅
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/learn-from-tencent.html" rel="prev" title="在腾讯，能学到什么">
+                在腾讯，能学到什么 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/tx.jpg" alt="tanglei">
+          <p class="site-author-name" itemprop="name">tanglei</p>
+          <p class="site-description motion-element" itemprop="description">码农 @ 阿里云, 毕业于CSU && THU,  曾工作于大疆(DJI), 宜信大数据创新中心, <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">腾讯</a> && <a href="http://www.umeng.com/" target="_blank">友盟</a>.  &nbsp; <a href="/about/"> MORE </a></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">518</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">153</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="/resources/tl3shi-wechat.png" target="_blank" title="Wechat">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  Wechat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tl3shi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tangleithu" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解题套路"><span class="nav-number">2.</span> <span class="nav-text">解题套路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1．滑动窗口"><span class="nav-number">3.</span> <span class="nav-text">1．滑动窗口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2．二指针或迭代器"><span class="nav-number">4.</span> <span class="nav-text">2．二指针或迭代器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3．快速和慢速指针"><span class="nav-number">5.</span> <span class="nav-text">3．快速和慢速指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4．合并区间"><span class="nav-number">6.</span> <span class="nav-text">4．合并区间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-循环排序"><span class="nav-number">7.</span> <span class="nav-text">5. 循环排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-原地反转链表"><span class="nav-number">8.</span> <span class="nav-text">6. 原地反转链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-宽度优先搜索（BFS）"><span class="nav-number">9.</span> <span class="nav-text">7. 宽度优先搜索（BFS）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8．深度优先搜索（DFS）"><span class="nav-number">10.</span> <span class="nav-text">8．深度优先搜索（DFS）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9．Two-Heaps"><span class="nav-number">11.</span> <span class="nav-text">9．Two Heaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10．子集"><span class="nav-number">12.</span> <span class="nav-text">10．子集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11．经过修改的二叉搜索"><span class="nav-number">13.</span> <span class="nav-text">11．经过修改的二叉搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-前-K-个元素"><span class="nav-number">14.</span> <span class="nav-text">12. 前 K 个元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-K-路合并"><span class="nav-number">15.</span> <span class="nav-text">13. K 路合并</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-拓扑排序"><span class="nav-number">16.</span> <span class="nav-text">14. 拓扑排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">17.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2010 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tanglei</span>
+   
+  <span class="author" itemprop="copyrightHolder">
+      - 渝ICP备16013386号 
+  </span>
+ 
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-tanglei';
+      var disqus_identifier = 'blog/the-14-comments-of-experience-of-coding-interview.html';
+
+      var disqus_title = "算法面试套路知多少";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>
