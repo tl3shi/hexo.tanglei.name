@@ -1,4 +1,4 @@
-----
+---
 title: 2022 总结比以往来得更晚一些
 layout: post
 categories:
@@ -7,6 +7,7 @@ tags:
   - 总结
   - MyLife
 ---
+
 
 > 关于作者：程序猿石头(ID: tangleithu)，从十八县贫困农村一路逆袭上**清华**（[点这里查看我的逆袭之路](https://mp.weixin.qq.com/s/G3i7qWK1MPvJ-BfUxfOycQ)），BAT某厂P7，是前大疆（无人机）技术主管。
 >
